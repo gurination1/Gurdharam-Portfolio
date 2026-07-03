@@ -50,6 +50,28 @@ To automate appointment bookings and inquiry handling on WhatsApp, you must conn
 3. **Local Language Support:** Standard bots fail when users type in mixed Hinglish or regional terms. Custom NLP trees allow you to qualify leads in Hinglish, Hindi, and Punjabi natively.
 
 To see the full case study, check out my portfolio at [gurdharam.com](https://www.gurdharam.com/).`
+  },
+  {
+    title: 'Building an Autonomous 24/7 Faceless YouTube & Social Media Automation Pipeline',
+    body_markdown: `---
+title: Building an Autonomous 24/7 Faceless YouTube & Social Media Automation Pipeline
+published: true
+tags: automation, youtube, python, marketing
+canonical_url: https://www.gurdharam.com/services/ai-automation
+---
+
+Modern businesses and content creators are losing hundreds of hours manually editing and uploading marketing videos across multiple social platforms.
+
+To solve this, I engineered an **autonomous 24/7 video rendering and cross-posting pipeline** that requires zero human intervention.
+
+### How the Automation Works
+1. **Programmatic Video Generation:** Using a Python/Node.js backend, the system fetches trending topics or business content, generates voiceovers via TTS APIs, and programmatically renders video frames using FFmpeg and WebGL.
+2. **Omnichannel Cross-Posting:** The rendered video is automatically distributed. The script logs into YouTube (Shorts), Instagram (Reels), Facebook, Rumble, and Dailymotion using official APIs or Puppeteer headless browsers.
+3. **24/7 Serverless Execution:** Hosted on an autonomous server node, the pipeline runs continuously on cron schedules. It generates and uploads content while you sleep.
+
+This allows businesses to multiply their marketing reach, secure passive ad revenue, and build a massive audience without ever opening video editing software.
+
+To see the complete automation architecture and my other AI agent builds, check out my portfolio at [gurdharam.com](https://www.gurdharam.com/).`
   }
 ];
 
