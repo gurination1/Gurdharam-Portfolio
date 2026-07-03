@@ -1,0 +1,17 @@
+# Gurdharam Jeet Singh
+
+> AI Engineer & Full Stack Web/App Developer based in Muktsar & Bathinda, Punjab, India.
+
+## Services
+
+- [Web Development](https://gurdharam.com/services/web-development): High-end 2D & 3D web platforms built for Chandigarh, Ludhiana, Bathinda, and international markets.
+- [AI & WhatsApp Automation](https://gurdharam.com/services/ai-automation): Custom 24/7 WhatsApp AI agents (healthcare, hospitals, clinics, gyms, travel) and automated content creation pipelines.
+- [Crop Disease Detection App Development](https://gurdharam.com/services/crop-disease-detection-app): Offline AI agritech mobile solutions.
+- [Dairy Management App Flutter](https://gurdharam.com/services/dairy-management-app-flutter): Flutter-based rural offline milk ledgers.
+- [Offline AI App Development](https://gurdharam.com/services/offline-ai-app-development): Embedded ML/edge computing.
+- [Web Developer Muktsar Punjab](https://gurdharam.com/services/web-developer-muktsar-punjab): Local web development and digital systems.
+
+## Case Studies
+
+- [DoodHisaab](https://gurdharam.com/case-studies/doodhisaab): Offline milk accounting ledger app for rural Punjab.
+- [Fasal Doctor](https://gurdharam.com/case-studies/fasal-doctor): Camera-based crop disease diagnosis app.
