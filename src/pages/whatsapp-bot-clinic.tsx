@@ -206,7 +206,7 @@ export default function WhatsAppBotClinic() {
             <div className="flex items-start gap-4">
               <Lock className="text-accent-gold mt-1 flex-shrink-0" size={24} />
               <div>
-                <h3 className="font-bold text-white mb-1">Direct Meta Cloud API — Zero SaaS Reseller Fees</h3>
+                <h3 className="font-bold text-white mb-1">Direct <a href="https://developers.facebook.com/docs/whatsapp/cloud-api" target="_blank" rel="noopener noreferrer" className="text-accent-gold underline hover:text-white transition-colors">Meta Cloud API</a> — Zero SaaS Reseller Fees</h3>
                 <p className="text-secondary text-sm leading-relaxed">
                   Most agencies push you onto WATI, AiSensy, or Gupshup which charge ₹3,000–₹12,000/month and lock your number. I connect directly to the official Meta Cloud API. You own your number, your data, and your conversations — Meta's 1,000 free service chats per month apply directly to your account.
                 </p>

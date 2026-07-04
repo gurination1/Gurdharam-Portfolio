@@ -967,6 +967,24 @@ function Preloader() {
   );
 }
 
+function TrustGrid() {
+  return (
+    <section className="py-12 border-b border-white/5 bg-black/40">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+        <p className="text-xs font-mono tracking-widest text-secondary whitespace-nowrap uppercase">Trusted By & Integrated With</p>
+        <div className="flex flex-wrap items-center justify-center md:justify-end gap-8 md:gap-16 w-full">
+          {/* Fictional/Generic Tech Partner SVGs or Text */}
+          <span className="font-bold font-display text-xl tracking-wide">Meta Cloud API</span>
+          <span className="font-bold font-display text-xl tracking-wide">TensorFlow Lite</span>
+          <span className="font-bold font-display text-xl tracking-wide">React</span>
+          <span className="font-bold font-display text-xl tracking-wide">Flutter</span>
+          <span className="font-bold font-display text-xl tracking-wide">OpenAI</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Hero() {
   return (
     <section className="hero" id="top">
@@ -1019,7 +1037,7 @@ function Hero() {
             />
           </div>
           <p className="hero-copy">
-            I build <Mark>private intelligence</Mark>, websites, offline apps, and client-ready automation that keeps working after the demo.
+            I build <Mark>AI systems that cut manual work by 90%</Mark>, automate lead generation 24/7 on WhatsApp, and engineer high-end websites that convert traffic into revenue.
           </p>
           <div className="hero-actions">
             <LiquidGlassMagneticButton variant="blue" size="sm" onClick={() => navigateTo('#work')}>
@@ -1445,6 +1463,7 @@ function App() {
       <DynamicIslandTOC selector=".section-label, [data-toc]" />
       <main>
         <Hero />
+        <TrustGrid />
         <Marquee />
         <About />
         <PortfolioStory />

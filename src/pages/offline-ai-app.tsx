@@ -242,7 +242,7 @@ export default function OfflineAiAppDevelopment() {
                 What is TensorFlow Lite and why is it ideal for farm apps in India?
               </h3>
               <p className="text-secondary text-sm leading-relaxed max-w-[66ch]">
-                TensorFlow Lite (TFLite) is Google's mobile-optimized version of TensorFlow designed to run on devices with limited RAM and processing power. It is ideal for Indian farm apps because farmers often use ₹6,000–₹10,000 Android phones with weak processors and unreliable 4G — TFLite delivers AI inference in under 2 seconds even on these low-spec devices.
+                <a href="https://www.tensorflow.org/lite" target="_blank" rel="noopener noreferrer" className="text-accent-green underline hover:text-white transition-colors">TensorFlow Lite (TFLite)</a> is Google's mobile-optimized version of TensorFlow designed to run on devices with limited RAM and processing power. It is ideal for Indian farm apps because farmers often use ₹6,000–₹10,000 Android phones with weak processors and unreliable 4G — TFLite delivers AI inference in under 2 seconds even on these low-spec devices.
               </p>
             </div>
 

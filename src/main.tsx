@@ -69,6 +69,7 @@ function ScrollToTop() {
 }
 
 import SchemaMarkup from './components/SchemaMarkup';
+import WhatsAppWidget from './components/ui/WhatsAppWidget';
 
 function Main() {
   return (
@@ -76,6 +77,7 @@ function Main() {
       <ScrollToTop />
       <CanonicalUpdater />
       <SchemaMarkup />
+      <WhatsAppWidget />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services/web-development" element={<WebDevelopment />} />
