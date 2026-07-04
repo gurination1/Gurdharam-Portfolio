@@ -835,7 +835,9 @@ function WipeMenu() {
       setIsOpen(false);
 
       // Kill all running GSAP animations to prevent stale callbacks
-      gsap.globalTimeline.clear();
+      try {
+        gsap.killTweensOf("*");
+      } catch (_) {}
 
       // Destroy Lenis if active
       if ((window as any).lenis) {
