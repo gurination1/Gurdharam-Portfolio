@@ -1,38 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { ArrowLeft, MapPin, Globe, Code2, Layers, Sparkles, ChevronDown, CheckCircle } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, MapPin, Globe, Code2, Layers, Sparkles, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Footer from '@/components/ui/footer';
 
 export default function WebDeveloperMuktsar() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
-
-  const [activeFaq, setActiveFaq] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
-
-  const faqs = [
-    {
-      q: "What is the cost of building a website in Punjab?",
-      a: "The cost depends on complexity. A standard 2D landing page or portfolio starts at ₹15,000. Interactive 3D websites with custom WebGL, Three.js, or complex animations start at ₹35,000. Custom enterprise portals or apps (like dairy ledgers or agritech diagnostics) require scoping and start at ₹50,000+. I offer clear milestone-based pricing with zero hidden fees."
-    },
-    {
-      q: "Can you help optimize my local Google Business Profile (GBP)?",
-      a: "Yes. I combine web development with local SEO optimization. Every site I deliver is connected to Google Search Console and includes Schema.org LocalBusiness structured data. I also guide clients in configuring their GBP, citations, and maps to rank for local 'near me' keywords in Muktsar, Bathinda, and Ludhiana."
-    },
-    {
-      q: "Do your WhatsApp bots work for gyms, clinics, and travel agencies?",
-      a: "Absolutely. I build custom WhatsApp AI agents integrated with calendar booking, database lookup, and CRM systems. They are perfect for dental clinics, hospitals, fitness clubs, travel agents, and corporate services to automate lead response and schedule bookings 24/7 without manual administrative work."
-    },
-    {
-      q: "Why do you focus on offline-first app architectures?",
-      a: "In rural Punjab and agritech deployments, 4G/5G connections are often unreliable or non-existent in the fields. Offline-first architectures using local SQLite databases and on-device TensorFlow Lite machine learning (like Fasal Doctor) guarantee the app functions perfectly under any conditions with zero network latency and zero recurring cloud database hosting costs."
-    },
-    {
-      q: "How long does it take to deploy a custom website or app?",
-      a: "A professional landing page or small business website is typically deployed in 10-14 days. Complex 3D platforms, multi-user mobile apps, or custom AI automations take 3-6 weeks. I provide a staging environment so you can track progress live as I write the code."
-    }
-  ];
 
   return (
     <main className="min-h-screen bg-void text-primary pt-24 px-6 md:px-16 pb-20">
@@ -46,6 +18,7 @@ export default function WebDeveloperMuktsar() {
             Web Developer in Muktsar & Bathinda, Punjab <br />
             <span className="text-accent-cold">AI-Powered SEO & High-Performance Websites</span>
           </h1>
+          {/* Answer-first summary block for AI Overviews (Phase E & G) */}
           <p className="text-lg md:text-xl text-secondary max-w-[66ch] leading-relaxed mb-6">
             Gurdharam Jeet Singh is a professional web developer and AI engineer serving <a href="https://chandigarh.gov.in/" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Chandigarh</a>, Mohali, Ludhiana, Jalandhar, Amritsar, Bathinda, and Muktsar. I build interactive 3D WebGL websites, cross-platform Flutter mobile applications, and autonomous WhatsApp AI booking bots. Serving local <a href="https://punjab.gov.in/" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Punjab</a> and global markets, I bridge the gap between premium design aesthetics, fast indexing, and Generative Engine Optimization (GEO) to help your business rank on day one. My custom development standards align with ratings guidelines on <a href="https://threebestrated.in/" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Three Best Rated India</a> and business indexes on <a href="https://www.joonsquare.com" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">JoonSquare</a>.
           </p>
@@ -168,28 +141,53 @@ export default function WebDeveloperMuktsar() {
         </section>
 
         {/* FAQ Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 font-display text-white">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border border-white/5 rounded-2xl overflow-hidden bg-card/25">
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-colors focus:outline-none"
-                >
-                  <span className="font-bold text-white text-sm pr-4">{faq.q}</span>
-                  <ChevronDown
-                    className={`text-accent-cold transition-transform flex-shrink-0 ${activeFaq === index ? 'transform rotate-180' : ''}`}
-                    size={18}
-                  />
-                </button>
-                {activeFaq === index && (
-                  <div className="p-6 pt-0 border-t border-white/5 text-secondary text-sm leading-relaxed bg-black/20">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
+        <section className="mb-16 space-y-6">
+          <h2 className="text-2xl font-bold font-display text-white">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div className="border-b border-white/5 pb-6">
+              <h3 className="text-lg font-bold text-white mb-2">
+                What is the cost of building a website in Punjab?
+              </h3>
+              <p className="text-secondary text-sm leading-relaxed max-w-[66ch]">
+                The cost depends on complexity. A standard 2D landing page or portfolio starts at ₹15,000. Interactive 3D websites with custom WebGL, Three.js, or complex animations start at ₹35,000. Custom enterprise portals or apps (like dairy ledgers or agritech diagnostics) require scoping and start at ₹50,000+. I offer clear milestone-based pricing with zero hidden fees.
+              </p>
+            </div>
+
+            <div className="border-b border-white/5 pb-6">
+              <h3 className="text-lg font-bold text-white mb-2">
+                Can you help optimize my local Google Business Profile (GBP)?
+              </h3>
+              <p className="text-secondary text-sm leading-relaxed max-w-[66ch]">
+                Yes. I combine web development with local SEO optimization. Every site I deliver is connected to Google Search Console and includes Schema.org LocalBusiness structured data. I also guide clients in configuring their GBP, citations, and maps to rank for local 'near me' keywords in Muktsar, Bathinda, and Ludhiana.
+              </p>
+            </div>
+
+            <div className="border-b border-white/5 pb-6">
+              <h3 className="text-lg font-bold text-white mb-2">
+                Do your WhatsApp bots work for gyms, clinics, and travel agencies?
+              </h3>
+              <p className="text-secondary text-sm leading-relaxed max-w-[66ch]">
+                Absolutely. I build custom WhatsApp AI agents integrated with calendar booking, database lookup, and CRM systems. They are perfect for dental clinics, hospitals, fitness clubs, travel agents, and corporate services to automate lead response and schedule bookings 24/7 without manual administrative work.
+              </p>
+            </div>
+
+            <div className="border-b border-white/5 pb-6">
+              <h3 className="text-lg font-bold text-white mb-2">
+                Why do you focus on offline-first app architectures?
+              </h3>
+              <p className="text-secondary text-sm leading-relaxed max-w-[66ch]">
+                In rural Punjab and agritech deployments, 4G/5G connections are often unreliable or non-existent in the fields. Offline-first architectures using local SQLite databases and on-device TensorFlow Lite machine learning (like Fasal Doctor) guarantee the app functions perfectly under any conditions with zero network latency and zero recurring cloud database hosting costs.
+              </p>
+            </div>
+
+            <div className="border-b border-white/5 pb-6">
+              <h3 className="text-lg font-bold text-white mb-2">
+                How long does it take to deploy a custom website or app?
+              </h3>
+              <p className="text-secondary text-sm leading-relaxed max-w-[66ch]">
+                A professional landing page or small business website is typically deployed in 10-14 days. Complex 3D platforms, multi-user mobile apps, or custom AI automations take 3-6 weeks. I provide a staging environment so you can track progress live as I write the code.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -210,6 +208,8 @@ export default function WebDeveloperMuktsar() {
             </Link>
           </div>
         </section>
+
+        <Footer />
       </div>
     </main>
   );

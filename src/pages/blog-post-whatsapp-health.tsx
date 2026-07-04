@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Calendar, User, Clock, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, CheckCircle, ShieldAlert, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Footer from '@/components/ui/footer';
 
 export default function BlogPostWhatsAppHealth() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -59,6 +60,14 @@ export default function BlogPostWhatsAppHealth() {
               <li><strong>HIPAA & Privacy compliance:</strong> Patient health information is kept separate from standard logging servers, using encrypted SQLite structures.</li>
             </ul>
 
+            <h3 className="text-xl font-bold text-white mt-6 mb-2">Self-Hosted Webhook Architectures (n8n & Node.js)</h3>
+            <p>
+              Rather than relying on third-party SaaS middle-layers which charge per-message and per-contact fees, I build the webhook infrastructure directly on cheap, self-hosted Linux containers (like DigitalOcean or Railway) using Node.js or self-hosted n8n workflows. The webhook parses raw WhatsApp API JSON payloads containing message text, triggers the corresponding node in the conversational logic tree, queries the calendar database, and sends a REST POST request back to Meta to reply.
+            </p>
+            <p>
+              This setup operates with massive speed (sub-50ms API request latency) and keeps client data fully under the control of the healthcare provider.
+            </p>
+
             <h2 className="text-2xl font-bold text-white mt-10 mb-4 font-display">Cost Comparison: Custom Build vs. SaaS Platforms</h2>
             <p>
               Most businesses look at platforms like WATI, AiSensy, or Gupshup. However, SaaS models present significant disadvantages for growing clinics:
@@ -97,10 +106,11 @@ export default function BlogPostWhatsAppHealth() {
               Automating your practice does not require complex software migrations. I can deploy a custom WhatsApp agent on top of your existing phone number and CRM setup.
             </p>
             <p>
-              To learn more about custom WhatsApp automations, explore my <Link to="/services/whatsapp-bot-dental-clinic" className="text-accent-gold underline">WhatsApp Bot Services</Link> or view my <Link to="/services/ai-automation" className="text-accent-gold underline">AI Automation Capabilities</Link>.
+              To learn more about custom WhatsApp automations, explore my <Link to="/services/whatsapp-bot-dental-clinic" className="text-accent-gold underline">WhatsApp Bot Services</Link> or view my <Link to="/services/ai-automation" className="text-accent-gold underline">AI Automation Capabilities</Link>. I also assist businesses in configuring and verifying official Meta Business Suite numbers, registering webhook callback URLs, managing secure database connections, and tuning conversational workflows for high conversion performance.
             </p>
           </div>
         </article>
+        <Footer />
       </div>
     </main>
   );

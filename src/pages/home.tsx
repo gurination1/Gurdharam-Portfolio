@@ -21,6 +21,7 @@ import SendButton from '@/components/ui/send-button';
 import ImageParticleField from '@/components/ui/image-particle-field';
 import ParticleAnimation from '@/components/ui/particle-animation';
 import { Cursor as InvertedCursor } from '@/components/ui/inverted-cursor';
+import Footer from '@/components/ui/footer';
 import { StackedCards } from '@/components/ui/glass-cards';
 import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scrolling-text-effect';
 import { ContainerScroll as PerspectiveContainerScroll } from '@/components/ui/container-scroll-animation';
@@ -1424,37 +1425,7 @@ function Contact() {
           <p className="availability"><i />AVAILABLE NOW - INDIA / WORLDWIDE</p>
         </div>
       </div>
-      <footer>
-        <div className="footer-links" style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap', marginBottom: '2.5rem', width: '100%', textAlign: 'left' }}>
-          <div>
-            <h4 style={{ color: 'var(--accent-gold)', marginBottom: '0.75rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 600 }}>Specialized AI Solutions</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.8rem' }}>
-              <li><Link to="/services/whatsapp-bot-dental-clinic" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }} className="hover:text-accent-gold transition-colors">WhatsApp Clinic & Hospital Bot</Link></li>
-              <li><Link to="/services/crop-disease-detection-app" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }} className="hover:text-accent-gold transition-colors">Crop Disease Detection AI Developer</Link></li>
-              <li><Link to="/services/dairy-management-app-flutter" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }} className="hover:text-accent-gold transition-colors">Dairy Management App (Flutter)</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style={{ color: 'var(--accent-cold)', marginBottom: '0.75rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 600 }}>Core Services</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.8rem' }}>
-              <li><Link to="/services/offline-ai-app-development" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }} className="hover:text-accent-cold transition-colors">Offline AI App Development</Link></li>
-              <li><Link to="/services/web-developer-muktsar-punjab" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }} className="hover:text-accent-cold transition-colors">Web Developer Muktsar Punjab</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '0.75rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 600 }}>Resources</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.8rem' }}>
-              <li><Link to="/blog" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }} className="hover:text-white transition-colors">Engineering Blog</Link></li>
-              <li><Link to="/case-studies/doodhisaab" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }} className="hover:text-white transition-colors">DoodHisaab Case Study</Link></li>
-              <li><Link to="/case-studies/fasal-doctor" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }} className="hover:text-white transition-colors">Fasal Doctor Case Study</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.5rem', flexWrap: 'wrap', gap: '1rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.05em' }}>
-          <span>GURDHARAM JEET SINGH © 2026</span>
-          <span>DESIGNED & BUILT BY GJS</span>
-        </div>
-      </footer>
+      <Footer />
     </section>
   );
 }

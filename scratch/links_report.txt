@@ -1,0 +1,81 @@
+=== RUNNING LINK GRAPH ANALYSIS ===
+⚠️  Link from /blog to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /blog/offline-ai-crop-disease-scanner-flutter to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /blog/whatsapp-ai-agents-healthcare-india to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /case-studies/doodhisaab to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /case-studies/fasal-doctor to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from / to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /services/ai-automation to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /services/crop-disease-detection-app to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /services/dairy-management-app-flutter to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /services/offline-ai-app-development to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /services/web-developer-muktsar-punjab to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /services/web-development to unresolved route: /assets/index-B2qfwcoi.css
+⚠️  Link from /services/whatsapp-bot-dental-clinic to unresolved route: /assets/index-B2qfwcoi.css
+
+--- Link Analysis Summary ---
+Route: /blog
+  File: blog/index.html
+  Incoming Links (16): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (18): [/blog, /assets/index-B2qfwcoi.css, /, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor]
+
+Route: /blog/offline-ai-crop-disease-scanner-flutter
+  File: blog/offline-ai-crop-disease-scanner-flutter/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/blog/offline-ai-crop-disease-scanner-flutter, /assets/index-B2qfwcoi.css, /blog, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog/whatsapp-ai-agents-healthcare-india, /]
+
+Route: /blog/whatsapp-ai-agents-healthcare-india
+  File: blog/whatsapp-ai-agents-healthcare-india/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/blog/whatsapp-ai-agents-healthcare-india, /assets/index-B2qfwcoi.css, /blog, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog/offline-ai-crop-disease-scanner-flutter, /]
+
+Route: /case-studies/doodhisaab
+  File: case-studies/doodhisaab/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/case-studies/doodhisaab, /assets/index-B2qfwcoi.css, /, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/fasal-doctor, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /case-studies/fasal-doctor
+  File: case-studies/fasal-doctor/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/case-studies/fasal-doctor, /assets/index-B2qfwcoi.css, /, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /
+  File: index.html
+  Incoming Links (24): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (23): [/, /assets/index-B2qfwcoi.css, /services/web-development, /services/ai-automation, /services/whatsapp-bot-dental-clinic, /services/offline-ai-app-development, /services/dairy-management-app-flutter, /services/web-developer-muktsar-punjab, /case-studies/doodhisaab, /case-studies/fasal-doctor, /services/crop-disease-detection-app, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /services/ai-automation
+  File: services/ai-automation/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/services/ai-automation, /assets/index-B2qfwcoi.css, /, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /services/crop-disease-detection-app
+  File: services/crop-disease-detection-app/index.html
+  Incoming Links (14): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/services/crop-disease-detection-app, /assets/index-B2qfwcoi.css, /, /services/whatsapp-bot-dental-clinic, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /services/dairy-management-app-flutter
+  File: services/dairy-management-app-flutter/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/services/dairy-management-app-flutter, /assets/index-B2qfwcoi.css, /, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /services/offline-ai-app-development
+  File: services/offline-ai-app-development/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/services/offline-ai-app-development, /assets/index-B2qfwcoi.css, /, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /services/web-developer-muktsar-punjab
+  File: services/web-developer-muktsar-punjab/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/services/web-developer-muktsar-punjab, /assets/index-B2qfwcoi.css, /, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /services/web-development
+  File: services/web-development/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/services/web-development, /assets/index-B2qfwcoi.css, /, /services/whatsapp-bot-dental-clinic, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+
+Route: /services/whatsapp-bot-dental-clinic
+  File: services/whatsapp-bot-dental-clinic/index.html
+  Incoming Links (15): [/blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india, /case-studies/doodhisaab, /case-studies/fasal-doctor, /, /services/ai-automation, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/whatsapp-bot-dental-clinic]
+  Outgoing Links (16): [/services/whatsapp-bot-dental-clinic, /assets/index-B2qfwcoi.css, /, /services/crop-disease-detection-app, /services/dairy-management-app-flutter, /services/offline-ai-app-development, /services/web-developer-muktsar-punjab, /services/web-development, /services/ai-automation, /case-studies/doodhisaab, /case-studies/fasal-doctor, /blog, /blog/offline-ai-crop-disease-scanner-flutter, /blog/whatsapp-ai-agents-healthcare-india]
+

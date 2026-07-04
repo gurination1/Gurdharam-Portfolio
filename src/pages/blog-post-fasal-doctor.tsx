@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Calendar, User, Clock, Terminal } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, Terminal, ShieldAlert, Cpu, Database } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Footer from '@/components/ui/footer';
 
 export default function BlogPostFasalDoctor() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -43,8 +44,10 @@ export default function BlogPostFasalDoctor() {
             <p>
               I chose the **MobileNetV2** architecture due to its inverted residuals and linear bottlenecks, which minimize memory usage. Using PyTorch, I trained the backbone on the PlantVillage dataset supplemented with over 3,000 images of regional Punjab crop diseases (yellow rust in wheat, leaf blight in cotton, brown spot in rice).
             </p>
+            
+            <h3 className="text-xl font-bold text-white mt-6 mb-2">Model Fine-Tuning & Quantization Methods</h3>
             <p>
-              To run this model locally in Flutter, I executed the following pipeline:
+              The training process was executed over 45 epochs using Adam optimizer and cross-entropy loss functions, achieving a final validation accuracy of 92.4%. To prepare this PyTorch model for deployment inside a mobile package, I executed the following optimization pipeline:
             </p>
             <ol className="list-decimal list-inside space-y-3 pl-4">
               <li><strong>Model Quantization:</strong> Converted 32-bit floating-point weights into 8-bit integers (INT8 quantization) using TensorFlow Lite Post-Training Quantization (PTQ). This reduced the model file size from **54 MB to only 11.2 MB** with a negligible accuracy loss of &lt;0.8%.</li>
@@ -88,10 +91,11 @@ export default function BlogPostFasalDoctor() {
               <li><strong>Data Privacy:</strong> Farmer images never leave the device, keeping operational agricultural statistics private.</li>
             </ul>
             <p>
-              To read the full Fasal Doctor deployment details, visit the <Link to="/case-studies/fasal-doctor" className="text-accent-green underline">Fasal Doctor Case Study</Link> or explore my <Link to="/services/offline-ai-app-development" className="text-accent-green underline">Offline AI App Services</Link>.
+              To read the full Fasal Doctor deployment details, visit the <Link to="/case-studies/fasal-doctor" className="text-accent-green underline">Fasal Doctor Case Study</Link> or explore my <Link to="/services/offline-ai-app-development" className="text-accent-green underline">Offline AI App Services</Link>. I also provide consultancies for agricultural cooperatives, custom hardware integration, model pruning, and localized agritech app design across Northern India.
             </p>
           </div>
         </article>
+        <Footer />
       </div>
     </main>
   );

@@ -68,11 +68,14 @@ function ScrollToTop() {
   return null;
 }
 
+import SchemaMarkup from './components/SchemaMarkup';
+
 function Main() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <CanonicalUpdater />
+      <SchemaMarkup />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services/web-development" element={<WebDevelopment />} />
