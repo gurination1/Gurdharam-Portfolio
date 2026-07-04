@@ -74,6 +74,21 @@ export default function DoodHisaab() {
             ))}
           </div>
         </section>
+
+        <section className="bg-card border border-white/5 p-8 rounded-3xl mb-12 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+          <div>
+            <h3 className="text-white font-bold mb-1">Looking for a similar custom mobile ledger or app?</h3>
+            <p className="text-secondary text-sm">Explore my design and consulting services for offline architectures.</p>
+          </div>
+          <div className="flex gap-4">
+            <Link to="/services/dairy-management-app-flutter" className="px-4 py-2 bg-accent-gold/10 hover:bg-accent-gold/20 text-accent-gold border border-accent-gold/20 rounded-xl text-xs font-mono uppercase tracking-wider transition-colors">
+              Dairy App Services
+            </Link>
+            <Link to="/services/offline-ai-app-development" className="px-4 py-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-xl text-xs font-mono uppercase tracking-wider transition-colors">
+              Offline AI Dev
+            </Link>
+          </div>
+        </section>
       </div>
     </main>
   );

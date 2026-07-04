@@ -3,8 +3,9 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/((?!services/|case-studies/|assets/|nk4rh81h1zqdr5yvwrt8w9dtutjyhw9a.txt|robots.txt|sitemap.xml|llms.txt|og-card.png).*)",
+      "source": "/((?!blog|services|case-studies|assets|nk4rh81h1zqdr5yvwrt8w9dtutjyhw9a.txt|robots.txt|sitemap.xml|llms.txt|og-card.png).*)",
       "destination": "/index.html"
     }
   ]
 }
+

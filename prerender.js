@@ -88,6 +88,7 @@ const routes = [
               <li><a href="/services/web-developer-muktsar-punjab">Web Developer Muktsar Punjab</a></li>
               <li><a href="/services/web-development">Web Development Services</a></li>
               <li><a href="/services/ai-automation">AI Automation Services</a></li>
+              <li><a href="/blog">Engineering Blog</a></li>
             </ul>
           </div>
           <p>Gurdharam Jeet Singh © 2026. Designed & Built by GJS.</p>
@@ -97,7 +98,7 @@ const routes = [
   },
   {
     path: '/services/web-development',
-    title: 'Website Developer in Chandigarh & Punjab | Gurdharam Jeet Singh',
+    title: 'Web Developer Chandigarh & Punjab | Gurdharam',
     description: 'High-end 2D and 3D websites, custom WebGL, Three.js, and technical SEO architecture. Serving Chandigarh, Ludhiana, Bathinda, and global clients.',
     canonical: 'https://www.gurdharam.com/services/web-development',
     html: `
@@ -139,7 +140,7 @@ const routes = [
   },
   {
     path: '/services/ai-automation',
-    title: 'AI Automation Expert India | Custom Bots & Media Pipelines',
+    title: 'AI Automation & Bots Developer | Gurdharam',
     description: 'Engineer custom WhatsApp AI bots for dental clinics, hospitals, travel agencies, and gyms, plus automated YouTube/Instagram content creation machines.',
     canonical: 'https://www.gurdharam.com/services/ai-automation',
     jsonld: {
@@ -285,7 +286,7 @@ const routes = [
   },
   {
     path: '/services/dairy-management-app-flutter',
-    title: 'Dairy Management App Developer | Flutter Offline Milk Ledger',
+    title: 'Dairy Ledger App Developer | Gurdharam',
     description: 'Develop offline milk ledger apps in Flutter for rural dairy businesses in Punjab. Custom milk collection tracking, P&L calculations, and SQLite.',
     canonical: 'https://www.gurdharam.com/services/dairy-management-app-flutter',
     html: `
@@ -314,7 +315,7 @@ const routes = [
   },
   {
     path: '/services/whatsapp-bot-dental-clinic',
-    title: 'WhatsApp Bot Developer for Dental Clinics & Hospitals',
+    title: 'WhatsApp Bot Developer India | Gurdharam',
     description: 'Build custom 24/7 WhatsApp AI bots for healthcare, dental clinics, travel agents, and businesses. Appointment booking and lead conversion.',
     canonical: 'https://www.gurdharam.com/services/whatsapp-bot-dental-clinic',
     jsonld: {
@@ -415,7 +416,7 @@ const routes = [
   },
   {
     path: '/services/web-developer-muktsar-punjab',
-    title: 'Web Developer in Muktsar & Bathinda, Punjab | Gurdharam Jeet Singh',
+    title: 'Web Developer Muktsar & Bathinda | Gurdharam',
     description: 'Full-stack web developer and AI engineer in Muktsar, Bathinda, and Punjab. Custom business websites, local SEO, and agritech apps.',
     canonical: 'https://www.gurdharam.com/services/web-developer-muktsar-punjab',
     jsonld: {
@@ -605,7 +606,7 @@ const routes = [
   },
   {
     path: '/case-studies/doodhisaab',
-    title: 'DoodHisaab Case Study | Offline Flutter Dairy Ledger App',
+    title: 'DoodHisaab Offline Dairy App Case Study',
     description: 'Detailed case study of DoodHisaab, an offline dairy ledger and milk accounting app built in Flutter for milkmen in rural Punjab.',
     canonical: 'https://www.gurdharam.com/case-studies/doodhisaab',
     html: `
@@ -633,7 +634,7 @@ const routes = [
   },
   {
     path: '/case-studies/fasal-doctor',
-    title: 'Fasal Doctor Case Study | Offline ML Crop Disease Scan App',
+    title: 'Fasal Doctor Offline Crop AI Case Study',
     description: 'Detailed case study of Fasal Doctor, an offline agritech app using TensorFlow Lite and MobileNetV2 for crop disease detection in Punjab.',
     canonical: 'https://www.gurdharam.com/case-studies/fasal-doctor',
     html: `
@@ -661,7 +662,7 @@ const routes = [
   },
   {
     path: '/blog',
-    title: 'AI Automation Case Studies & Offline App Architectures | Gurdharam Jeet Singh',
+    title: 'AI Automation & Offline App Blog | Gurdharam',
     description: 'In-depth case studies, development insights, and architectures for custom WhatsApp booking bots, offline-first agricultural apps, and high-performance local SEO optimization.',
     canonical: 'https://www.gurdharam.com/blog',
     html: `
@@ -694,7 +695,7 @@ const routes = [
   },
   {
     path: '/blog/offline-ai-crop-disease-scanner-flutter',
-    title: 'How I Built an Offline AI Crop Disease Scanner using Flutter and TensorFlow Lite',
+    title: 'Build Offline AI Crop Scanner with Flutter | Gurdharam',
     description: 'Detailed engineering breakdown of Fasal Doctor: running MobileNetV2 models locally on smartphones in rural farming fields of Punjab with zero API latency and zero cloud costs.',
     canonical: 'https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter',
     html: `
@@ -724,7 +725,7 @@ const routes = [
   },
   {
     path: '/blog/whatsapp-ai-agents-healthcare-india',
-    title: 'Why Healthcare Practices in India are Automating Bookings with WhatsApp AI Agents',
+    title: 'WhatsApp AI Booking Bots for Clinics | Gurdharam',
     description: 'How dental clinics and hospitals use conversational AI logic trees to manage bookings, qualify patients, and capture midnight leads 24/7 without manual administrative work.',
     canonical: 'https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india',
     html: `

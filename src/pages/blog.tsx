@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   useEffect(() => { 
     window.scrollTo(0, 0); 
-    document.title = "AI Automation Case Studies & Offline App Architectures | Gurdharam Jeet Singh";
+    document.title = "AI Automation & Offline App Blog | Gurdharam";
   }, []);
 
   const posts = [
