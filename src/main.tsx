@@ -87,6 +87,7 @@ function Main() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/offline-ai-crop-disease-scanner-flutter" element={<BlogPostFasalDoctor />} />
         <Route path="/blog/whatsapp-ai-agents-healthcare-india" element={<BlogPostWhatsAppHealth />} />
+        <Route path="*" element={<div style={{ padding: '50px', color: '#fff', fontFamily: 'monospace', fontSize: '14px' }}>Route Mismatch: {window.location.pathname}</div>} />
       </Routes>
     </BrowserRouter>
   );
