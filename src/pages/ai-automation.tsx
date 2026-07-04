@@ -174,6 +174,15 @@ export default function AiAutomation() {
             </div>
 
             <div className="border-b border-white/5 pb-6">
+              <h2 className="text-xl font-bold text-white mb-2">
+                What AI Automation Services Does Gurdharam Provide?
+              </h2>
+              <p className="text-secondary text-sm leading-relaxed max-w-[66ch]">
+                Gurdharam Jeet Singh engineers custom AI automation systems using Node.js, WebGL, FFmpeg, and Meta Cloud API webhooks. These systems eliminate repetitive manual labor for businesses across Punjab by programmatically handling customer interactions and video content pipelines.
+              </p>
+            </div>
+
+            <div className="border-b border-white/5 pb-6">
               <h3 className="text-lg font-bold text-white mb-2">
                 Why do you offer API reverse engineering services?
               </h3>

@@ -62,7 +62,7 @@ function VideoGenFullCard() {
           <span style={{ color: 'rgba(91,143,212,0.9)', fontWeight: 700 }}>Offline</span> video & image generation.{' '}
           <span style={{ color: 'rgba(91,143,212,0.9)', fontWeight: 700 }}>Built from scratch</span>.
         </p>
-        <a href="https://github.com/gdharam94" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/gdharam94" target="_blank" rel="me noopener noreferrer"
           style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 18px', borderRadius: 10, marginTop: 16,
             background: 'rgba(91,143,212,0.1)', border: '1px solid rgba(91,143,212,0.25)', backdropFilter: 'blur(12px)',
             color: '#5b8fd4', fontSize: '0.78rem', fontWeight: 600, textDecoration: 'none', pointerEvents: 'auto' }}>

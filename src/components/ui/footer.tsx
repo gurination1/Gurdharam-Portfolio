@@ -98,7 +98,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-between items-center border-t border-white/5 pt-8 gap-4 text-xs text-secondary font-mono tracking-wider">
+      <div className="flex flex-wrap justify-start items-center gap-6 border-t border-white/5 pt-8 mb-6 text-xs text-secondary font-mono">
+        <span className="font-bold text-white uppercase tracking-wider">Verified Professional Entity:</span>
+        <a href="https://github.com/gdharam94" target="_blank" rel="me noopener noreferrer" className="hover:text-accent-gold underline">GitHub Profile</a>
+        <a href="https://www.linkedin.com/in/gurdharam-singh-a4a350201/" target="_blank" rel="me noopener noreferrer" className="hover:text-accent-gold underline">LinkedIn Professional</a>
+        <a href="https://clutch.co" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold underline">Clutch Directory</a>
+        <a href="https://techbehemoths.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold underline">TechBehemoths</a>
+        <a href="https://www.goodfirms.co" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold underline">GoodFirms</a>
+      </div>
+
+      <div className="flex flex-col sm:flex-row justify-between items-center border-t border-white/5 pt-6 gap-4 text-xs text-secondary font-mono tracking-wider">
         <span>GURDHARAM JEET SINGH © 2026</span>
         <span>
           DESIGNED & BUILT BY GJS | <Link to="/" className="hover:text-white underline">Back to Home</Link>

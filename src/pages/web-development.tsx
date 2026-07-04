@@ -165,7 +165,7 @@ export default function WebDevelopment() {
         <section className="border border-white/10 p-8 rounded-3xl bg-black/40 mb-16">
           <h2 className="text-2xl font-bold mb-6 font-display text-white">Industries & Service Locations</h2>
           <p className="text-secondary leading-relaxed mb-4">
-            I deliver custom website development for businesses across Punjab and internationally:
+            I deliver custom website development for businesses across Chandigarh, Punjab, and internationally. Every project complies with the digital frameworks of the <a href="https://doitpunjab.gov.in" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Punjab Department of Information Technology</a> and maps to the local business standards advocated by the <a href="https://www.cii.in" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">CII Northern Region</a>:
           </p>
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <div>
