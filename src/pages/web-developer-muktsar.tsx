@@ -47,7 +47,7 @@ export default function WebDeveloperMuktsar() {
             <span className="text-accent-cold">AI-Powered SEO & High-Performance Websites</span>
           </h1>
           <p className="text-lg md:text-xl text-secondary max-w-[66ch] leading-relaxed mb-6">
-            Gurdharam Jeet Singh is a professional web developer and AI engineer serving Chandigarh, Mohali, Ludhiana, Jalandhar, Amritsar, Bathinda, and Muktsar. I build interactive 3D WebGL websites, cross-platform Flutter mobile applications, and autonomous WhatsApp AI booking bots. Serving local Punjab and global markets, I bridge the gap between premium design aesthetics, fast indexing, and Generative Engine Optimization (GEO) to help your business rank on day one.
+            Gurdharam Jeet Singh is a professional web developer and AI engineer serving <a href="https://chandigarh.gov.in/" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Chandigarh</a>, Mohali, Ludhiana, Jalandhar, Amritsar, Bathinda, and Muktsar. I build interactive 3D WebGL websites, cross-platform Flutter mobile applications, and autonomous WhatsApp AI booking bots. Serving local <a href="https://punjab.gov.in/" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Punjab</a> and global markets, I bridge the gap between premium design aesthetics, fast indexing, and Generative Engine Optimization (GEO) to help your business rank on day one. My custom development standards align with ratings guidelines on <a href="https://threebestrated.in/web-designers-in-chandigarh" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Three Best Rated Chandigarh</a> and business indexes on <a href="https://www.joonsquare.com" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">JoonSquare</a>.
           </p>
           <div className="flex flex-wrap gap-4 text-xs font-mono text-secondary">
             <span className="flex items-center gap-1"><MapPin size={14} className="text-accent-cold" /> Muktsar, Bathinda, Chandigarh, Ludhiana, Punjab</span>
@@ -66,7 +66,7 @@ export default function WebDeveloperMuktsar() {
             <div className="bg-card border border-white/5 p-8 rounded-3xl">
               <Sparkles className="text-accent-cold mb-4" size={28} />
               <h3 className="font-bold text-white mb-2 text-lg">WhatsApp AI Automations</h3>
-              <p className="text-secondary text-sm leading-relaxed">Custom chatbots utilizing large language models and RAG data. Designed for dental clinics, gyms, travel agencies, and hospitals to capture midnight leads and book clients 24/7.</p>
+              <p className="text-secondary text-sm leading-relaxed">Custom chatbots utilizing large language models and RAG data. Designed for dental clinics, gyms, travel agencies, and hospitals to capture leads and book clients 24/7 using the official <a href="https://developers.facebook.com/docs/whatsapp/cloud-api" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Meta Cloud API</a>.</p>
             </div>
             <div className="bg-card border border-white/5 p-8 rounded-3xl">
               <Code2 className="text-accent-cold mb-4" size={28} />
@@ -76,7 +76,7 @@ export default function WebDeveloperMuktsar() {
             <div className="bg-card border border-white/5 p-8 rounded-3xl">
               <Globe className="text-accent-cold mb-4" size={28} />
               <h3 className="font-bold text-white mb-2 text-lg">Technical SEO & Schema</h3>
-              <p className="text-secondary text-sm leading-relaxed">Rigorous Core Web Vitals optimization, static pre-rendering, schema markup integration, and clean site architectures built for high-speed indexing by search bots.</p>
+              <p className="text-secondary text-sm leading-relaxed">Rigorous Core Web Vitals optimization, static pre-rendering, schema markup integration, and clean site architectures built for high-speed indexing aligned with <a href="https://developers.google.com/search" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">Google Search Central</a> guidelines.</p>
             </div>
           </div>
         </section>
@@ -161,7 +161,7 @@ export default function WebDeveloperMuktsar() {
             <div>
               <p className="text-white font-bold mb-2">Based in Muktsar, Punjab</p>
               <p className="text-secondary text-sm leading-relaxed">
-                I provide local in-person software development consultation and website building services across **Muktsar Sahib, Bathinda, Faridkot, Ferozepur, Ludhiana, Jalandhar, Amritsar, and Chandigarh**. Combining native Punjabi and Hindi support with global development standards, I build tailored systems for local agriculture cooperatives, hospitals, clinics, hotels, and travel agencies.
+                I provide local in-person software development consultation and website building services across **Muktsar Sahib, Bathinda, Faridkot, Ferozepur, Ludhiana, Jalandhar, Amritsar, and Chandigarh**. Combining native Punjabi and Hindi support with global development standards, my processes align with skill frameworks from <a href="https://nsdcindia.org" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">NSDC India</a>, IT guidelines of <a href="https://doitpunjab.gov.in" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">DOIT Punjab</a>, and local commercial benchmarks set by the <a href="https://www.cii.in" target="_blank" rel="noopener noreferrer" className="text-accent-cold underline">CII Northern Region</a>. I build tailored systems for local agriculture cooperatives, hospitals, clinics, hotels, and travel agencies.
               </p>
             </div>
           </div>

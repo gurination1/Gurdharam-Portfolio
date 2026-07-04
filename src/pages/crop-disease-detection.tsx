@@ -18,7 +18,7 @@ export default function CropDiseaseDetection() {
             <span className="text-accent-green">AI-Powered Agricultural Technology</span>
           </h1>
           <p className="text-lg md:text-xl text-secondary max-w-[66ch] leading-relaxed">
-            I build crop disease detection apps that run entirely offline using on-device machine learning. My shipped product, Fasal Doctor, uses a fine-tuned MobileNetV2 model to scan infected plants through a smartphone camera, identify the disease in under 2 seconds, and provide PAU-affiliated treatment advisory — all without requiring internet connectivity in remote farming regions of Punjab.
+            I build crop disease detection apps that run entirely offline using on-device machine learning. My shipped product, Fasal Doctor, uses a fine-tuned MobileNetV2 model to scan infected plants through a smartphone camera, identify the disease in under 2 seconds, and provide <a href="https://www.pau.edu/" target="_blank" rel="noopener noreferrer" className="text-accent-green underline">PAU-affiliated</a> treatment advisory — all without requiring internet connectivity in remote farming regions of Punjab.
           </p>
         </header>
 
@@ -49,12 +49,12 @@ export default function CropDiseaseDetection() {
             <div className="bg-card border border-white/5 p-8 rounded-3xl">
               <WifiOff className="text-accent-green mb-4" size={28} />
               <h3 className="font-bold text-white mb-2">Offline-First Design</h3>
-              <p className="text-secondary text-sm leading-relaxed">Built with Flutter and TensorFlow Lite for complete offline execution. The entire ML model runs on the device processor, meaning zero cloud API costs and zero latency even in fields with no 4G coverage.</p>
+              <p className="text-secondary text-sm leading-relaxed">Built with <a href="https://flutter.dev" target="_blank" rel="noopener noreferrer" className="text-accent-green underline">Flutter</a> and <a href="https://www.tensorflow.org/lite" target="_blank" rel="noopener noreferrer" className="text-accent-green underline">TensorFlow Lite</a> for complete offline execution. The entire ML model runs on the device processor, meaning zero cloud API costs and zero latency even in fields with no 4G coverage.</p>
             </div>
             <div className="bg-card border border-white/5 p-8 rounded-3xl">
               <Cpu className="text-accent-green mb-4" size={28} />
               <h3 className="font-bold text-white mb-2">Transfer Learning Pipeline</h3>
-              <p className="text-secondary text-sm leading-relaxed">Custom model built using transfer learning on MobileNetV2 backbone, fine-tuned on PlantVillage and regional Punjab crop disease datasets for high accuracy on local varieties including wheat, rice, and cotton diseases.</p>
+              <p className="text-secondary text-sm leading-relaxed">Custom model built using transfer learning on <a href="https://arxiv.org/abs/1801.04381" target="_blank" rel="noopener noreferrer" className="text-accent-green underline">MobileNetV2</a> backbone, fine-tuned on PlantVillage and regional Punjab crop disease datasets for high accuracy on local varieties including wheat, rice, and cotton diseases.</p>
             </div>
           </div>
         </section>
