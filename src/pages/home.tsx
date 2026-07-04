@@ -212,7 +212,9 @@ function usePortfolioMotion() {
           snap: { textContent: 1 },
           onUpdate() {
             const el = document.querySelector('.loader-count');
-            el.textContent = String(Math.round(Number(el.textContent))).padStart(3, '0');
+            if (el) {
+              el.textContent = String(Math.round(Number(el.textContent))).padStart(3, '0');
+            }
           },
         })
           .from('.loader-mark path', { strokeDashoffset: 260, duration: 0.7, stagger: 0.1 }, '-=0.35')
