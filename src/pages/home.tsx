@@ -313,12 +313,20 @@ function usePortfolioMotion() {
     return () => {
       ctx.revert();
       if (lenis) {
-        lenis.off('scroll', ScrollTrigger.update);
-        gsap.ticker.remove(updateRaf);
-        lenis.destroy();
+        try {
+          lenis.off('scroll', ScrollTrigger.update);
+          gsap.ticker.remove(updateRaf);
+          lenis.destroy();
+        } catch (e) {
+          console.error('Error cleaning up Lenis:', e);
+        }
       }
       delete (window as any).lenis;
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      try {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      } catch (e) {
+        console.error('Error killing ScrollTriggers:', e);
+      }
     };
   }, []);
 }
