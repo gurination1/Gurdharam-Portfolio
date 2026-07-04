@@ -32,15 +32,15 @@ By running everything on-device, we eliminated API costs entirely, making it 100
 To see the full case study and code breakdowns, check out my portfolio at [gurdharam.com](https://www.gurdharam.com/).`
   },
   {
-    title: 'Why Healthcare Practices in India are Automating Bookings with WhatsApp AI Agents',
+    title: 'How Businesses in India are Automating Sales & Bookings with WhatsApp AI Agents',
     body_markdown: `---
-title: Why Healthcare Practices in India are Automating Bookings with WhatsApp AI Agents
+title: How Businesses in India are Automating Sales & Bookings with WhatsApp AI Agents
 published: true
 tags: whatsapp, ai, automation, webhooks
 canonical_url: https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india
 ---
 
-For dental clinics, private hospitals, gyms, and travel agencies in India, WhatsApp is the primary communication channel. Customers expect instantaneous replies.
+Whether you run a consultancy, car dealership, cleaning service, hospital, or real estate agency in India, WhatsApp is the primary communication channel. Customers expect instantaneous replies.
 
 To automate appointment bookings and inquiry handling on WhatsApp, you must connect the official Meta Cloud API to a custom Node.js webhook server linked to Google Calendar or CRM APIs.
 
