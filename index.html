@@ -1,6 +1,28 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      window.addEventListener('error', function(e) {
+        var div = document.createElement('div');
+        div.style.position = 'fixed';
+        div.style.bottom = '15px';
+        div.style.left = '15px';
+        div.style.right = '15px';
+        div.style.background = '#850000';
+        div.style.color = '#fff';
+        div.style.padding = '20px';
+        div.style.zIndex = '999999';
+        div.style.fontFamily = 'monospace';
+        div.style.fontSize = '12px';
+        div.style.lineHeight = '1.5';
+        div.style.borderRadius = '12px';
+        div.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+        div.style.border = '1px solid #ff4d4d';
+        div.innerHTML = '<strong>Client-Side Crash Detected:</strong><br/>' + 
+                        e.message + '<br/><em>at ' + e.filename + ':' + e.lineno + '</em>';
+        document.body.appendChild(div);
+      });
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#080808" />
