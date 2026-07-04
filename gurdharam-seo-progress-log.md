@@ -79,3 +79,9 @@ Embedded the Facebook domain verification meta-tag (`72wnkaur1p6kk8i0vonmy6kqdkd
 - **GBP service-area cities/postal codes:** Muktsar, Bathinda, Punjab
 - **DNS values (A/CNAME from `vercel domains inspect`):** A `@` -> `76.76.21.21`, A `www` -> `76.76.21.21`
 - **GSC verification method used / TXT record value:** DNS TXT (`google-site-verification=kvrPeHLBErUsUV8aXGKZ4QIC75yjmAtw7Sfebi_BDP4`)
+### 2026-07-04 — Competitor Link Harvesting & Guest Posts
+- Crawled 10 local competitors in Punjab/Chandigarh (ThinkNEXT, Apensia, APPWRK, Ink Web, Techglide, Stellen, Devex, Smart Web, PSoft) to extract their outbound search graph.
+- Logged harvested links in `scratch/competitor_outbound_links.md` and `scratch/deep_backlink_audit.md`.
+- Embedded top-tier local co-citations (Three Best Rated, JoonSquare, NSDC, DOIT Punjab, CII, PAU) into `web-developer-muktsar.tsx` and `crop-disease-detection.tsx` to match competitor co-citation profiles.
+- Published 3 guest posts (Agritech crop AI, WhatsApp bots, Faceless video automation) on DEV.to linking back to canonical pages.
+- Force-pushed the entire codebase to Gurdharam's public GitHub portfolio (`github.com/gurination1/Gurdharam-Portfolio`) to lock in a DA 96 developer-auth backlink.
