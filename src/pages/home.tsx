@@ -190,10 +190,16 @@ function usePortfolioMotion() {
           smoothWheel: true,
         });
 
+    const updateRaf = (time: number) => {
+      if (lenis) {
+        lenis.raf(time * 1000);
+      }
+    };
+
     if (lenis) {
       (window as any).lenis = lenis;
       lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.add(updateRaf);
       gsap.ticker.lagSmoothing(0);
     }
 
@@ -306,7 +312,11 @@ function usePortfolioMotion() {
 
     return () => {
       ctx.revert();
-      lenis?.destroy();
+      if (lenis) {
+        lenis.off('scroll', ScrollTrigger.update);
+        gsap.ticker.remove(updateRaf);
+        lenis.destroy();
+      }
       delete (window as any).lenis;
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
