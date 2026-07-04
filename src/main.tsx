@@ -10,9 +10,10 @@ import DoodHisaab from './pages/doodhisaab';
 import FasalDoctor from './pages/fasaldoctor';
 import CropDiseaseDetection from './pages/crop-disease-detection';
 import DairyManagementApp from './pages/dairy-management-app';
-import WhatsAppBotClinic from './pages/whatsapp-bot-clinic';
+import WhatsAppBusinessBot from './pages/whatsapp-business-bot';
 import WebDeveloperMuktsar from './pages/web-developer-muktsar';
 import OfflineAiApp from './pages/offline-ai-app';
+import VerticalServicePage from './pages/VerticalServicePage';
 
 import Blog from './pages/blog';
 import BlogPostFasalDoctor from './pages/blog-post-fasal-doctor';
@@ -84,7 +85,13 @@ function Main() {
         <Route path="/services/ai-automation" element={<AiAutomation />} />
         <Route path="/services/crop-disease-detection-app" element={<CropDiseaseDetection />} />
         <Route path="/services/dairy-management-app-flutter" element={<DairyManagementApp />} />
-        <Route path="/services/whatsapp-bot-dental-clinic" element={<WhatsAppBotClinic />} />
+        <Route path="/services/whatsapp-business-bot" element={<WhatsAppBusinessBot />} />
+        
+        {/* Dynamic Vertical Routes */}
+        <Route path="/services/whatsapp-bot-:verticalId" element={<VerticalServicePage type="whatsapp-bot" />} />
+        <Route path="/services/social-media-automation-:verticalId" element={<VerticalServicePage type="social-media-automation" />} />
+        <Route path="/services/website-design-:verticalId" element={<VerticalServicePage type="website-design" />} />
+
         <Route path="/services/web-developer-muktsar-punjab" element={<WebDeveloperMuktsar />} />
         <Route path="/services/offline-ai-app-development" element={<OfflineAiApp />} />
         <Route path="/case-studies/doodhisaab" element={<DoodHisaab />} />

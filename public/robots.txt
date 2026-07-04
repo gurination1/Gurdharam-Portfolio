@@ -17,4 +17,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://gurdharam.com/sitemap.xml
+Sitemap: https://www.gurdharam.com/sitemap.xml

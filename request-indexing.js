@@ -4,13 +4,15 @@ const https = require('https');
 const KEY_FILE = './gsc-key.json';
 const SITE_URL = 'https://www.gurdharam.com';
 
+const verticals = require('./src/data/verticals.json');
+
 const URLS = [
   'https://www.gurdharam.com/',
   'https://www.gurdharam.com/services/web-development',
   'https://www.gurdharam.com/services/ai-automation',
   'https://www.gurdharam.com/services/crop-disease-detection-app',
   'https://www.gurdharam.com/services/dairy-management-app-flutter',
-  'https://www.gurdharam.com/services/whatsapp-bot-dental-clinic',
+  'https://www.gurdharam.com/services/whatsapp-business-bot',
   'https://www.gurdharam.com/services/web-developer-muktsar-punjab',
   'https://www.gurdharam.com/services/offline-ai-app-development',
   'https://www.gurdharam.com/case-studies/doodhisaab',
@@ -19,6 +21,12 @@ const URLS = [
   'https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter',
   'https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india',
 ];
+
+// Add dynamic vertical URLs
+verticals.forEach(v => {
+  const route = `/services/${v.type === 'whatsapp-bot' ? 'whatsapp-bot-' + v.id : v.type === 'social-media-automation' ? 'social-media-automation-' + v.id : 'website-design-' + v.id}`;
+  URLS.push(`https://www.gurdharam.com${route}`);
+});
 
 async function main() {
   const auth = new google.auth.GoogleAuth({

@@ -3,7 +3,7 @@ import { ArrowLeft, MessageSquare, Clock, Calendar, Brain, ShieldCheck, Database
 import { Link } from 'react-router-dom';
 import Footer from '@/components/ui/footer';
 
-export default function WhatsAppBotClinic() {
+export default function WhatsAppBusinessBot() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (

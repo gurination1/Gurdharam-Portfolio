@@ -262,7 +262,7 @@ export default function WebDevelopment() {
               </div>
               <ArrowRight className="text-accent-cold ml-auto flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" size={16} />
             </Link>
-            <Link to="/services/whatsapp-bot-dental-clinic" className="flex items-center gap-4 bg-card border border-white/5 p-6 rounded-2xl hover:border-accent-cold/30 transition-colors group">
+            <Link to="/services/whatsapp-business-bot" className="flex items-center gap-4 bg-card border border-white/5 p-6 rounded-2xl hover:border-accent-cold/30 transition-colors group">
               <MessageSquare className="text-accent-cold flex-shrink-0" size={24} />
               <div>
                 <div className="text-white font-bold text-sm group-hover:text-accent-cold transition-colors">WhatsApp Automation Bots</div>

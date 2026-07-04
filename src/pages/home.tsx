@@ -1361,6 +1361,71 @@ function AIBotShowcase() {
   );
 }
 
+function HomeFAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqItems = [
+    {
+      q: "What specialized services does Gurdharam Jeet Singh offer?",
+      a: "I build production-ready systems: custom WhatsApp Business automation bots (official Meta Cloud API), automated YouTube/Instagram content generation pipelines, high-end 3D/2D React websites (Three.js/GSAP), and offline-first mobile apps (Flutter + TFLite machine learning)."
+    },
+    {
+      q: "Why should my business choose a custom WhatsApp bot over monthly SaaS platforms?",
+      a: "Standard SaaS subscriptions (like WATI or AiSensy) charge heavy monthly platform fees (₹3,000–₹12,000/mo) and lock your phone number. I build custom, direct integrations to the official Meta Cloud API. You pay zero reseller markups, retain 100% of your customer data on your own servers, and utilize custom NLP trained for English, Hindi, and Punjabi."
+    },
+    {
+      q: "How do your websites load so quickly and rank on Google?",
+      a: "No slow WordPress templates or rigid builders. I write custom, lightweight React code compiled via Vite. We pre-render every page statically (SSG) so search engine crawlers can read the text without executing JS. We include JSON-LD schemas and push routes instantly to IndexNow (Bing/Yandex) and GSC Indexing APIs."
+    },
+    {
+      q: "Can your mobile applications run AI models and databases completely offline?",
+      a: "Yes. In rural or weak signal areas of Punjab, cloud-reliant apps fail. I design offline-first mobile apps using Flutter. Your SQLite database is fully local, and machine learning models (like TensorFlow Lite image classifiers) run directly in the phone's processor. Zero cloud database latency and zero server costs."
+    }
+  ];
+
+  return (
+    <section className="faq-panel" style={{ padding: '6rem 2rem', borderTop: '1px solid rgba(255,255,255,0.05)', background: '#050505' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <span style={{ color: 'var(--accent-gold)', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem', textAlign: 'center' }}>
+          [ Frequently Asked Questions ]
+        </span>
+        <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-display)', color: '#fff', textAlign: 'center', marginBottom: '3rem', fontWeight: 800 }}>
+          HAVE QUESTIONS?
+        </h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          {faqItems.map((item, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <div 
+                key={idx} 
+                style={{ 
+                  background: 'rgba(255,255,255,0.02)', 
+                  border: '1px solid rgba(255,255,255,0.05)', 
+                  borderRadius: '16px', 
+                  padding: '1.5rem', 
+                  cursor: 'pointer',
+                  transition: 'background 0.3s'
+                }}
+                onClick={() => setOpenIndex(isOpen ? null : idx)}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
+                  <h3 style={{ fontSize: '1.05rem', color: '#fff', margin: 0, fontWeight: 700, flexGrow: 1, textAlign: 'left' }}>{item.q}</h3>
+                  <span style={{ color: 'var(--accent-gold)', fontSize: '1.25rem', fontWeight: 'bold' }}>{isOpen ? '−' : '+'}</span>
+                </div>
+                {isOpen && (
+                  <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: '1.6', margin: '1rem 0 0 0', textAlign: 'left' }}>
+                    {item.a}
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Quote() {
   return (
     <section className="quote-panel">
@@ -1470,6 +1535,7 @@ function App() {
         <Projects />
         <Skills />
         <AIBotShowcase />
+        <HomeFAQ />
         <Quote />
         <Contact />
       </main>

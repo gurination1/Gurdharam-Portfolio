@@ -11,7 +11,7 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2 text-sm text-secondary">
             <li>
-              <Link to="/services/whatsapp-bot-dental-clinic" className="hover:text-accent-gold transition-colors">
+              <Link to="/services/whatsapp-business-bot" className="hover:text-accent-gold transition-colors">
                 WhatsApp Business Bot
               </Link>
             </li>

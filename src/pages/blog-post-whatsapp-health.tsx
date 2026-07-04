@@ -106,7 +106,7 @@ export default function BlogPostWhatsAppHealth() {
               Automating your practice does not require complex software migrations. I can deploy a custom WhatsApp agent on top of your existing phone number and CRM setup.
             </p>
             <p>
-              To learn more about custom WhatsApp automations, explore my <Link to="/services/whatsapp-bot-dental-clinic" className="text-accent-gold underline">WhatsApp Bot Services</Link> or view my <Link to="/services/ai-automation" className="text-accent-gold underline">AI Automation Capabilities</Link>. I also assist businesses in configuring and verifying official Meta Business Suite numbers, registering webhook callback URLs, managing secure database connections, and tuning conversational workflows for high conversion performance.
+              To learn more about custom WhatsApp automations, explore my <Link to="/services/whatsapp-business-bot" className="text-accent-gold underline">WhatsApp Bot Services</Link> or view my <Link to="/services/ai-automation" className="text-accent-gold underline">AI Automation Capabilities</Link>. I also assist businesses in configuring and verifying official Meta Business Suite numbers, registering webhook callback URLs, managing secure database connections, and tuning conversational workflows for high conversion performance.
             </p>
           </div>
         </article>

@@ -1,0 +1,287 @@
+[
+  {
+    "id": "jewelry-stores",
+    "type": "whatsapp-bot",
+    "name": "Jewelry Stores",
+    "title": "WhatsApp Bot for Jewelry Stores | Gurdharam",
+    "metaDescription": "Automate gold rate quotes, showcase design catalogs, and pre-qualify high-value buyers 24/7 with a custom WhatsApp bot for jewelry showrooms.",
+    "painPoint": "High-value prospects drop off when waiting hours for custom pricing quotes on daily gold rates or specific ornament availability.",
+    "example": "A client texts asking for 22k gold bracelet availability. The bot queries your inventory database, calculates pricing dynamically using live market gold rates, and replies with HD design cards in under a second.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-furniture-showrooms",
+      "/services/whatsapp-bot-automobile-dealerships"
+    ]
+  },
+  {
+    "id": "coaching-institutes",
+    "type": "whatsapp-bot",
+    "name": "Coaching Institutes & Schools",
+    "title": "WhatsApp Bot for Coaching Institutes & Schools | Gurdharam",
+    "metaDescription": "Automate student lead capture, answer course queries, and book trial classes 24/7 with a custom WhatsApp chatbot built for coaching centers.",
+    "painPoint": "Front-desk staff spends hours answering repetitive questions about fee structures, batch timings, and course syllabus instead of closing enrollments.",
+    "example": "A student texts asking about NEET prep batches. The bot checks Google Sheets, sends the timing options, gathers their name and phone, and schedules a free trial class instantly.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-clinics-hospitals",
+      "/services/whatsapp-bot-gyms-fitness"
+    ]
+  },
+  {
+    "id": "clinics-hospitals",
+    "type": "whatsapp-bot",
+    "name": "Clinics & Hospitals",
+    "title": "WhatsApp Bot for Clinics & Hospitals | Gurdharam",
+    "metaDescription": "Automate doctor appointments, patient lead triage, and follow-ups 24/7. Direct Meta API WhatsApp bot with Zero recurring platform fees.",
+    "painPoint": "Staff is overwhelmed during morning rushes, leading to unanswered calls, patient queue delays, and missed appointments.",
+    "example": "A patient asks for doctor availability on Wednesday. The bot checks your hospital database, proposes open slots, registers the patient, and sends a booking confirmation with a map location.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-salons-spas",
+      "/services/whatsapp-bot-gyms-fitness"
+    ]
+  },
+  {
+    "id": "salons-spas",
+    "type": "whatsapp-bot",
+    "name": "Salons & Spas",
+    "title": "WhatsApp Bot for Salons & Spas | Gurdharam",
+    "metaDescription": "Automate appointment bookings, stylist scheduling, and send no-show reminders on auto-pilot with a custom salon WhatsApp bot integration.",
+    "painPoint": "Last-minute cancellations and no-shows leave open slots that cost salons thousands in lost revenue daily.",
+    "example": "A client requests a hair spa session. The bot lists available stylists, schedules the booking, and sends automated reminder notifications 24 hours and 2 hours before the slot.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-clinics-hospitals",
+      "/services/whatsapp-bot-gyms-fitness"
+    ]
+  },
+  {
+    "id": "real-estate",
+    "type": "whatsapp-bot",
+    "name": "Real Estate Agents",
+    "title": "WhatsApp Bot for Real Estate | Property Leads Automation | Gurdharam",
+    "metaDescription": "Automate property lead capture, send PDF catalogs, and filter buyers by budget 24/7 with an AI-powered WhatsApp bot for real estate.",
+    "painPoint": "Brokers waste hours calling unqualified leads who are 'just browsing' or don't match the budget requirements of active listings.",
+    "example": "A homebuyer searches for 3BHK flats. The bot asks for their budget and preferred location, filters active inventory, sends brochure PDFs, and routes qualified buyers to your phone.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-furniture-showrooms",
+      "/services/whatsapp-bot-wedding-planners"
+    ]
+  },
+  {
+    "id": "malls-retail",
+    "type": "whatsapp-bot",
+    "name": "Malls & Retail Complexes",
+    "title": "WhatsApp Bot for Malls & Retail Complexes | Gurdharam",
+    "metaDescription": "Automate tenant directory lookup, share ongoing store offers, and answer parking queries 24/7 with a custom retail WhatsApp bot.",
+    "painPoint": "Visitors struggle to find store locations, running promotions, or customer service desks, leading to a degraded retail experience.",
+    "example": "A mall visitor texts asking for Zara's floor location. The bot replies instantly with 'First Floor, Wing B', and shows active discounts running at the store.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-restaurants-cafes",
+      "/services/whatsapp-bot-wedding-planners"
+    ]
+  },
+  {
+    "id": "gyms-fitness",
+    "type": "whatsapp-bot",
+    "name": "Gyms & Fitness Centers",
+    "title": "WhatsApp Bot for Gyms & Fitness Centers | Gurdharam",
+    "metaDescription": "Automate gym membership renewals, trainer scheduling, and trial booking 24/7 with a custom WhatsApp automation bot for fitness centers.",
+    "painPoint": "Gyms lose up to 30% of members simply because they forget to renew on time, and staff fails to follow up manually.",
+    "example": "A member's plan expires in 3 days. The bot automatically sends a personalized renewal warning containing a direct UPI payment link to complete the transaction.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-salons-spas",
+      "/services/whatsapp-bot-clinics-hospitals"
+    ]
+  },
+  {
+    "id": "restaurants-cafes",
+    "type": "whatsapp-bot",
+    "name": "Restaurants & Cafes",
+    "title": "WhatsApp Bot for Restaurants & Cafes | Order & Booking | Gurdharam",
+    "metaDescription": "Automate table reservations, display digital menus, and handle takeaway orders directly on WhatsApp 24/7 with a custom restaurant bot.",
+    "painPoint": "Third-party delivery platforms take massive 20-30% commissions, destroying profit margins for local restaurants and cafes.",
+    "example": "A customer opens WhatsApp, browses your interactive food menu, selects items, inputs delivery address, and completes a direct UPI order without platform cuts.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-malls-retail",
+      "/services/whatsapp-bot-wedding-planners"
+    ]
+  },
+  {
+    "id": "travel-agencies",
+    "type": "whatsapp-bot",
+    "name": "Travel Agencies",
+    "title": "WhatsApp Bot for Travel Agencies | Package Booking | Gurdharam",
+    "metaDescription": "Pre-qualify travel leads, distribute itinerary PDFs, and handle booking queries 24/7 with a custom WhatsApp automation bot.",
+    "painPoint": "Agents spend hours explaining package options to window shoppers who ultimately book elsewhere.",
+    "example": "A client inquires about Himachal tours. The bot asks for duration and budget, sends pre-configured package PDFs, and collects contact info for customization.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-real-estate",
+      "/services/whatsapp-bot-automobile-dealerships"
+    ]
+  },
+  {
+    "id": "wedding-planners",
+    "type": "whatsapp-bot",
+    "name": "Wedding Planners & Venues",
+    "title": "WhatsApp Bot for Wedding Planners & Venues | Gurdharam",
+    "metaDescription": "Automate venue availability checks, send catalog pricing, and pre-qualify clients 24/7 with a custom WhatsApp bot for event planners.",
+    "painPoint": "Event managers lose leads during busy wedding seasons due to slow response times for venue pricing and capacity details.",
+    "example": "A client requests a quote for a 500-guest banquet. The bot checks the venue calendar, sends base pricing packages, and registers details for a physical tour.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-real-estate",
+      "/services/whatsapp-bot-furniture-showrooms"
+    ]
+  },
+  {
+    "id": "furniture-showrooms",
+    "type": "whatsapp-bot",
+    "name": "Furniture Showrooms",
+    "title": "WhatsApp Bot for Furniture Showrooms | Gurdharam",
+    "metaDescription": "Showcase catalog designs, automate size queries, and book showroom visits 24/7 with a custom WhatsApp bot for home decor brands.",
+    "painPoint": "Customers repeatedly ask for dimensions, wood types, and shipping costs on individual items, tying up active sales reps.",
+    "example": "A buyer queries about a sofa set. The bot outputs color variants, dimensions, wood options, delivery estimates, and invites them to book a showroom visit.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-jewelry-stores",
+      "/services/whatsapp-bot-wedding-planners"
+    ]
+  },
+  {
+    "id": "automobile-dealerships",
+    "type": "whatsapp-bot",
+    "name": "Automobile Dealerships",
+    "title": "WhatsApp Bot for Automobile Dealerships & Service Centers | Gurdharam",
+    "metaDescription": "Automate test drives, schedule vehicle service slots, and send service reminders 24/7 with a custom dealership WhatsApp bot.",
+    "painPoint": "Service centers lose repeat business because they forget to follow up with clients when their vehicle's periodic service is due.",
+    "example": "A vehicle's service is due. The bot sends a reminder, lets the owner select their preferred time slot, reserves it in the service calendar, and sends confirmation.",
+    "parentPath": "/services/whatsapp-business-bot",
+    "parentName": "WhatsApp Business Bot",
+    "crossLinks": [
+      "/services/whatsapp-bot-travel-agencies",
+      "/services/whatsapp-bot-furniture-showrooms"
+    ]
+  },
+  {
+    "id": "coaching-institutes",
+    "type": "social-media-automation",
+    "name": "Coaching Institutes & Schools",
+    "title": "YouTube Automation for Coaching Institutes & Schools | Gurdharam",
+    "metaDescription": "Automate study guide videos, daily quizzes, and batch announcement reels programmatically on YouTube and Instagram for coaching centers.",
+    "painPoint": "Educators waste hours editing repetitive lecture clips, rendering slides, and manually posting content on social channels.",
+    "example": "A Python script reads your mock test questions, auto-generates dynamic study quiz slides with realistic TTS audio, compiles it to MP4, and schedules it to YouTube Shorts.",
+    "parentPath": "/services/ai-automation",
+    "parentName": "AI Automation & Media Pipelines",
+    "crossLinks": [
+      "/services/social-media-automation-jewelry-brands",
+      "/services/social-media-automation-real-estate"
+    ]
+  },
+  {
+    "id": "jewelry-brands",
+    "type": "social-media-automation",
+    "name": "Jewelry Brands",
+    "title": "Instagram Reels Automation for Jewelry Brands | Gurdharam",
+    "metaDescription": "Automate jewelry catalog video rendering and schedule Reels uploads programmatically without manual graphic design overhead.",
+    "painPoint": "High-end showrooms struggle to generate the massive volume of vertical video content required by social algorithms to stay visible.",
+    "example": "Your inventory spreadsheet gets updated with a new necklace. The script pulls the high-res image, renders a panning video with dynamic price tags, and auto-posts it.",
+    "parentPath": "/services/ai-automation",
+    "parentName": "AI Automation & Media Pipelines",
+    "crossLinks": [
+      "/services/social-media-automation-coaching-institutes",
+      "/services/social-media-automation-real-estate"
+    ]
+  },
+  {
+    "id": "real-estate",
+    "type": "social-media-automation",
+    "name": "Real Estate Agents",
+    "title": "Content Pipelines for Real Estate Brokers | Gurdharam",
+    "metaDescription": "Automate property listings video tours and schedule daily multi-platform distribution on YouTube Shorts and Instagram Reels.",
+    "painPoint": "Agents have zero time to record, edit, and post property tour videos across 5 different social networks every day.",
+    "example": "A backend pipeline ingests raw property photos, overlays neighborhood stats and pricing, renders a transition-rich Tour Short, and pushes it to Reels, YouTube, and Facebook.",
+    "parentPath": "/services/ai-automation",
+    "parentName": "AI Automation & Media Pipelines",
+    "crossLinks": [
+      "/services/social-media-automation-coaching-institutes",
+      "/services/social-media-automation-jewelry-brands"
+    ]
+  },
+  {
+    "id": "jewelry-showrooms",
+    "type": "website-design",
+    "name": "Jewelry Showrooms",
+    "title": "3D Interactive Websites for Jewelry Showrooms | Gurdharam",
+    "metaDescription": "Build immersive 3D showrooms with interactive WebGL product viewers to showcase your premium jewelry collections online in high fidelity.",
+    "painPoint": "Flat 2D websites fail to convey the premium look, shine, and detailed craftsmanship of luxury gold and diamond ornaments.",
+    "example": "A user visits your site and spins a high-fidelity 3D model of a diamond ring, zooms in to see the details, changes gold color options, and clicks to book in-store trial.",
+    "parentPath": "/services/web-development",
+    "parentName": "Web Development Services",
+    "crossLinks": [
+      "/services/website-design-mall-retail",
+      "/services/website-design-coaching-institutes"
+    ]
+  },
+  {
+    "id": "coaching-institutes",
+    "type": "website-design",
+    "name": "Coaching Institutes",
+    "title": "High-Performance Websites for Coaching Institutes | Gurdharam",
+    "metaDescription": "Build lightning-fast React websites for coaching institutes, with integrated student admission portals and course directories.",
+    "painPoint": "Slow-loading WordPress platforms drop student admission leads and crash during result announcements due to bad server scaling.",
+    "example": "A static-pre-rendered admission site built with Vite that loads in under 0.5s, features search filters for courses, and scales effortlessly to handle 10k+ concurrent users.",
+    "parentPath": "/services/web-development",
+    "parentName": "Web Development Services",
+    "crossLinks": [
+      "/services/website-design-jewelry-showrooms",
+      "/services/website-design-clinic-websites"
+    ]
+  },
+  {
+    "id": "clinic-websites",
+    "type": "website-design",
+    "name": "Clinics & Hospitals",
+    "title": "Medical & Clinic Websites with Booking Portals | Gurdharam",
+    "metaDescription": "Build secure, HIPAA-compliant React websites for clinics and doctors, with fast-loading schedules and direct appointment integration.",
+    "painPoint": "Patients bounce off medical websites when they can't easily find doctor availability or when the online booking calendar is slow.",
+    "example": "A clinic site with clean SEO pages for each doctor, an instant scheduling portal, and automated SMS confirmation connected directly to patient records.",
+    "parentPath": "/services/web-development",
+    "parentName": "Web Development Services",
+    "crossLinks": [
+      "/services/website-design-coaching-institutes",
+      "/services/website-design-mall-retail"
+    ]
+  },
+  {
+    "id": "mall-retail",
+    "type": "website-design",
+    "name": "Malls & Retail complexes",
+    "title": "Interactive Websites for Malls & Retail Centers | Gurdharam",
+    "metaDescription": "Create high-end React websites for retail malls, featuring interactive maps, dynamic tenant directories, and live brand promotion logs.",
+    "painPoint": "Shoppers struggle to find which shops are open, causing friction in mall attendance and reducing footfall for minor tenants.",
+    "example": "A custom web application with interactive floor layouts, search bars for finding specific brands, and a dynamic database showing real-time mall deals.",
+    "parentPath": "/services/web-development",
+    "parentName": "Web Development Services",
+    "crossLinks": [
+      "/services/website-design-jewelry-showrooms",
+      "/services/website-design-clinic-websites"
+    ]
+  }
+]

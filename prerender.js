@@ -42,8 +42,8 @@ const routes = [
               <p>Autonomous content creation machines (YouTube, Instagram, Facebook) and intelligent database search engines (RAG).</p>
             </li>
             <li>
-              <h3><a href="/services/whatsapp-bot-dental-clinic">WhatsApp Business Bot</a></h3>
-              <p>Custom 24/7 WhatsApp AI agents for dental clinics, hospitals, travel agents, and gyms. Integrated appointment booking and lead conversion.</p>
+              <h3><a href="/services/whatsapp-business-bot">WhatsApp Business Bot</a></h3>
+              <p>Custom 24/7 WhatsApp AI agents for all businesses. Integrated appointment booking and lead conversion.</p>
             </li>
             <li>
               <h3><a href="/services/offline-ai-app-development">Offline AI App Development</a></h3>
@@ -78,7 +78,7 @@ const routes = [
           <div class="footer-links">
             <h4>Specialized AI Solutions</h4>
             <ul>
-              <li><a href="/services/whatsapp-bot-dental-clinic">WhatsApp Business Bot</a></li>
+              <li><a href="/services/whatsapp-business-bot">WhatsApp Business Bot</a></li>
               <li><a href="/services/crop-disease-detection-app">Crop Disease Detection AI Developer</a></li>
               <li><a href="/services/dairy-management-app-flutter">Dairy Management App (Flutter)</a></li>
             </ul>
@@ -619,17 +619,17 @@ const routes = [
     `
   },
   {
-    path: '/services/whatsapp-bot-dental-clinic',
+    path: '/services/whatsapp-business-bot',
     title: 'WhatsApp Business Automation Developer | Gurdharam',
-    description: 'Build custom 24/7 WhatsApp AI bots for spas, gyms, lawyers, companies, factories, and clinics. Automated bookings, orders, and lead conversion.',
-    canonical: 'https://www.gurdharam.com/services/whatsapp-bot-dental-clinic',
+    description: 'Build custom 24/7 WhatsApp AI bots for all business types. Automated bookings, orders, and lead conversion.',
+    canonical: 'https://www.gurdharam.com/services/whatsapp-business-bot',
     jsonld: {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": "https://www.gurdharam.com/services/whatsapp-bot-dental-clinic#webpage",
-          "url": "https://www.gurdharam.com/services/whatsapp-bot-dental-clinic",
+          "@id": "https://www.gurdharam.com/services/whatsapp-business-bot#webpage",
+          "url": "https://www.gurdharam.com/services/whatsapp-business-bot",
           "name": "WhatsApp Business Automation Developer | Gurdharam Jeet Singh",
           "description": "Build custom 24/7 WhatsApp AI bots for spas, gyms, lawyers, companies, factories, and clinics. Automated bookings, orders, and lead conversion."
         },
@@ -1303,12 +1303,62 @@ const routes = [
         </section>
 
         <footer>
-          <p><a href="/blog">Back to Blog</a> | <a href="/services/whatsapp-bot-dental-clinic">WhatsApp Services</a></p>
+          <p><a href="/blog">Back to Blog</a> | <a href="/services/whatsapp-business-bot">WhatsApp Services</a></p>
         </footer>
       </main>
     `
   }
 ];
+
+// Dynamically generate vertical pages for SEO prerendering
+const verticals = require('./src/data/verticals.json');
+verticals.forEach(v => {
+  const path = `/services/${v.type === 'whatsapp-bot' ? 'whatsapp-bot-' + v.id : v.type === 'social-media-automation' ? 'social-media-automation-' + v.id : 'website-design-' + v.id}`;
+  
+  const jsonld = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": v.title,
+    "description": v.metaDescription,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Gurdharam AI Engineering",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Muktsar",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN"
+      }
+    }
+  };
+
+  routes.push({
+    path: path,
+    title: v.title,
+    description: v.metaDescription,
+    canonical: `https://www.gurdharam.com${path}`,
+    jsonld: jsonld,
+    html: `
+      <main>
+        <header>
+          <h1>${v.title.split('|')[0].trim()}</h1>
+          <p>${v.metaDescription}</p>
+        </header>
+        <section>
+          <h2>Core Industry Pain Point for ${v.name}</h2>
+          <p>${v.painPoint}</p>
+        </section>
+        <section>
+          <h2>How Gurdharam Automates This</h2>
+          <p>${v.example}</p>
+        </section>
+        <footer>
+          <p><a href="/">Home</a> | <a href="${v.parentPath}">${v.parentName}</a></p>
+        </footer>
+      </main>
+    `
+  });
+});
 
 const masterFooter = `
         <footer>
@@ -1316,7 +1366,7 @@ const masterFooter = `
             <div>
               <h4>Specialized AI Solutions</h4>
               <ul>
-                <li><a href="/services/whatsapp-bot-dental-clinic">WhatsApp Business Bot</a></li>
+                <li><a href="/services/whatsapp-business-bot">WhatsApp Business Bot</a></li>
                 <li><a href="/services/crop-disease-detection-app">Crop Disease Detection AI Developer</a></li>
                 <li><a href="/services/dairy-management-app-flutter">Dairy Management App (Flutter)</a></li>
               </ul>
