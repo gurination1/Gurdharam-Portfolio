@@ -585,17 +585,27 @@ const routes = [
         <header>
           <a href="/">Back to Home</a>
           <h1>Offline AI App Developer — Flutter & On-Device ML</h1>
-          <p>I specialize in building offline-first mobile applications with integrated AI intelligence. By running neural networks directly on the device using TensorFlow Lite and ONNX, my apps process camera feeds, images, and audio with zero latency, zero cloud API costs, and total data privacy.</p>
+          <p>I specialize in building offline-first mobile applications with integrated AI intelligence. By running neural networks directly on the device using TensorFlow Lite, PyTorch Mobile, and ONNX, my apps process camera feeds, images, and audio with zero latency, zero cloud API costs, and total data privacy.</p>
         </header>
 
         <section>
           <h2>Advantages of On-Device AI</h2>
           <ul>
-            <li>Zero API Fees: Run AI inference millions of times without paying OpenAI, Google, or AWS cloud hosting bills.</li>
+            <li>Zero API Fees: Run AI inference millions of times without paying OpenAI, Google Gemini, or AWS cloud hosting bills.</li>
             <li>Offline Reliability: Essential for agricultural fields, rural clinics, and travel apps where 4G/5G connections are unstable.</li>
             <li>Instant Response: Millisecond inference speeds without waiting for round-trip network requests.</li>
             <li>Absolute Data Privacy: User data never leaves the physical smartphone processor.</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Key Engineering Capabilities</h2>
+          <p>Building high-performance on-device AI requires specialized optimization techniques. I design systems that prevent battery drain and CPU overheating. This includes post-training INT8 quantization to compress models (e.g. MobileNetV2 from 54MB to 11MB) and configuring TensorFlow Lite delegates to offload computation to mobile NPUs and GPUs. To keep the UI responsive, all inference runs inside background threads (Flutter Isolates).</p>
+        </section>
+
+        <section>
+          <h2>Why Businesses Choose Local AI</h2>
+          <p>Traditional cloud-based AI systems introduce massive recurring API expenses that scale with user activity. By moving model execution onto the client's device, your business can serve 100,000 users for the exact same infrastructure cost as 10. Local execution also guarantees 100% operational availability, even in completely disconnected environments like remote farms, basement workshops, or rural healthcare clinics.</p>
         </section>
 
         <footer>
@@ -614,16 +624,26 @@ const routes = [
         <header>
           <a href="/">Back to Home</a>
           <h1>DoodHisaab Case Study — Offline Dairy Ledger App</h1>
-          <p>An agritech milk accounting application built for rural dairy operators in Punjab, India. Running entirely offline using a local SQLite database, the app replaces physical accounting registers and automates collection ledgers and fat-based pricing calculations.</p>
+          <p>DoodHisaab is a custom Flutter mobile application built for rural dairy businesses and milk cooperative collection operators in Punjab (Bathinda and Muktsar). Operating entirely offline with a local SQLite database, the app replaces manual ledger registers and paper-based accounting with automated pricing calculations based on milk fat content and volume.</p>
         </header>
 
         <section>
-          <h2>Project Metrics</h2>
+          <h2>Project Core Metrics</h2>
           <ul>
-            <li>Tech Stack: Flutter, Dart, SQLite, Local State Management.</li>
-            <li>Active Users: Local dairy operators in Muktsar & Bathinda districts.</li>
-            <li>Key Results: 100% manual math error reduction, zero cloud infrastructure cost.</li>
+            <li>Tech Stack: Flutter, Dart, SQLite, Local State Management (Provider).</li>
+            <li>Target Area: Muktsar, Bathinda, and Faridkot districts, Punjab, India.</li>
+            <li>Operational Benefit: 100% manual calculation error reduction, zero monthly cloud server hosting fees.</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Problem Statement & Context</h2>
+          <p>Dairy farming is the backbone of rural Punjab's economy. However, many milk collectors and local dairy owners still track morning and evening milk collection, fat parameters, and payments using physical notebook registers. These manual calculations are highly susceptible to human error, resulting in financial discrepancies. Furthermore, cellular network signals in remote agricultural fields are notoriously unstable, rendering standard cloud-based SaaS solutions impractical.</p>
+        </section>
+
+        <section>
+          <h2>Technical Architecture & Implementation</h2>
+          <p>To address connectivity constraints, I engineered DoodHisaab using an offline-first architecture. The application is built with Flutter and stores all data locally in an optimized SQLite database on the user's mobile device. Payment calculations are automated using preconfigured formula matrices based on milk volume, fat content, and regional pricing slabs. The user interface was built with high contrast and large touch targets to ensure seamless usability for individuals with low digital literacy.</p>
         </section>
 
         <footer>
@@ -642,16 +662,26 @@ const routes = [
         <header>
           <a href="/">Back to Home</a>
           <h1>Fasal Doctor Case Study — Offline ML Crop Disease Scan</h1>
-          <p>Agricultural technology application that detects crop diseases offline using on-device computer vision. Powered by a fine-tuned MobileNetV2 model running on TensorFlow Lite, it provides instant diagnostic outputs and localized PAU treatment advisories for farmers in Punjab.</p>
+          <p>Fasal Doctor is an agritech mobile application that performs real-time crop disease diagnostics directly on the device using computer vision. Powered by a fine-tuned MobileNetV2 model quantized into TensorFlow Lite format, it identifies leaf diseases in under 2 seconds and displays localized PAU treatment guidelines without requiring an active internet connection.</p>
         </header>
 
         <section>
-          <h2>Project Details</h2>
+          <h2>Project Metrics</h2>
           <ul>
-            <li>Tech Stack: Flutter, TensorFlow Lite, Python (PyTorch for training MobileNetV2).</li>
-            <li>Model Performance: 90%+ diagnostic accuracy on target crop leaf patterns.</li>
-            <li>Offline Capability: Completely runs without 4G/internet connectivity.</li>
+            <li>Tech Stack: Flutter, TensorFlow Lite, PyTorch (model training), Python.</li>
+            <li>Model Accuracy: 90%+ diagnostic confidence on regional Punjab crops (Wheat, Cotton, Rice).</li>
+            <li>Data Model: On-device SQLite advisory database compiled from PAU recommendations.</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>The Rural Connectivity Challenge</h2>
+          <p>In the fields of Muktsar Sahib, Bathinda, and Faridkot, cellular connectivity is often unstable or non-existent. Standard machine learning solutions that rely on sending high-resolution images to cloud API servers fail due to network latency and high operational bandwidth costs. Farmers need a fast, free, and reliable diagnostic tool that operates instantly in the field.</p>
+        </section>
+
+        <section>
+          <h2>Model Optimization & Quantization Pipeline</h2>
+          <p>To run computer vision on mid-range and low-end mobile devices, I optimized a MobileNetV2 model. By training the neural network on the PlantVillage dataset supplemented with custom regional crop disease samples (yellow rust, leaf blight), and utilizing post-training INT8 quantization, I compressed the model file size from 54 MB to just 11.2 MB. This allows fast CPU inference with under 2-second latency and minimal battery consumption.</p>
         </section>
 
         <footer>
@@ -754,8 +784,49 @@ const routes = [
   }
 ];
 
+const masterFooter = `
+        <footer>
+          <div class="footer-links">
+            <div>
+              <h4>Specialized AI Solutions</h4>
+              <ul>
+                <li><a href="/services/whatsapp-bot-dental-clinic">WhatsApp Clinic & Hospital Bot</a></li>
+                <li><a href="/services/crop-disease-detection-app">Crop Disease Detection AI Developer</a></li>
+                <li><a href="/services/dairy-management-app-flutter">Dairy Management App (Flutter)</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Core Services</h4>
+              <ul>
+                <li><a href="/services/offline-ai-app-development">Offline AI App Development</a></li>
+                <li><a href="/services/web-developer-muktsar-punjab">Web Developer Muktsar Punjab</a></li>
+                <li><a href="/services/web-development">Web Development Services</a></li>
+                <li><a href="/services/ai-automation">AI Automation Services</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Case Studies</h4>
+              <ul>
+                <li><a href="/case-studies/doodhisaab">DoodHisaab Case Study</a></li>
+                <li><a href="/case-studies/fasal-doctor">Fasal Doctor Case Study</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Resources & Blog</h4>
+              <ul>
+                <li><a href="/blog">Engineering Blog Hub</a></li>
+                <li><a href="/blog/offline-ai-crop-disease-scanner-flutter">Offline Crop AI Scanner Article</a></li>
+                <li><a href="/blog/whatsapp-ai-agents-healthcare-india">WhatsApp AI Booking Bots Article</a></li>
+              </ul>
+            </div>
+          </div>
+          <p>Gurdharam Jeet Singh © 2026. Designed & Built by GJS. <a href="/">Back to Home</a></p>
+        </footer>
+`;
+
 routes.forEach(route => {
-  const routeContent = `<div class="seo-prerender-container" style="opacity: 0.002; position: absolute; pointer-events: none; height: 1px; width: 1px; overflow: hidden; white-space: nowrap;">\n${route.html}\n</div>`;
+  const routeHtml = route.html.replace(/<footer>[\s\S]*?<\/footer>/, masterFooter);
+  const routeContent = `<div class="seo-prerender-container" style="opacity: 0.002; position: absolute; pointer-events: none; height: 1px; width: 1px; overflow: hidden; white-space: nowrap;">\n${routeHtml}\n</div>`;
   let pageHtml = template
     .replace('<div id="root"></div>', `<div id="root">${routeContent}</div>`)
     .replace('<title>Gurdharam Jeet Singh | AI & Web Developer in Punjab</title>', `<title>${route.title}</title>`)

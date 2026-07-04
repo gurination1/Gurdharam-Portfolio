@@ -46,6 +46,15 @@ function CanonicalUpdater() {
 function ScrollToTop() {
   const { pathname } = useLocation();
   React.useEffect(() => {
+    if ((window as any).lenis) {
+      try {
+        (window as any).lenis.scrollTo(0, { immediate: true });
+        (window as any).lenis.destroy();
+        delete (window as any).lenis;
+      } catch (e) {
+        console.error(e);
+      }
+    }
     window.scrollTo(0, 0);
     document.documentElement.scrollTo(0, 0);
     document.body.scrollTo(0, 0);

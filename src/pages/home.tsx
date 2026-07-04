@@ -191,6 +191,7 @@ function usePortfolioMotion() {
         });
 
     if (lenis) {
+      (window as any).lenis = lenis;
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add((time) => lenis.raf(time * 1000));
       gsap.ticker.lagSmoothing(0);
@@ -306,6 +307,7 @@ function usePortfolioMotion() {
     return () => {
       ctx.revert();
       lenis?.destroy();
+      delete (window as any).lenis;
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
@@ -818,18 +820,53 @@ function WipeMenu() {
   };
 
   const handleLinkClick = (href: string) => {
-    close();
-    setTimeout(() => {
-      if (href.startsWith('#')) {
+    if (href.startsWith('#')) {
+      // Same-page anchor — animate close then scroll
+      close();
+      setTimeout(() => {
         if (location.pathname === '/') {
           document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
         } else {
           navigate('/' + href);
         }
-      } else {
-        navigate(href);
+      }, 600);
+    } else {
+      // Cross-route navigation — force-reset everything immediately
+      setIsOpen(false);
+
+      // Kill all running GSAP animations to prevent stale callbacks
+      gsap.globalTimeline.clear();
+
+      // Destroy Lenis if active
+      if ((window as any).lenis) {
+        try {
+          (window as any).lenis.stop();
+          (window as any).lenis.destroy();
+          delete (window as any).lenis;
+        } catch (_) {}
       }
-    }, 600);
+
+      // Force body/html cleanup
+      document.body.classList.remove('wipe-menu-open');
+      document.body.classList.remove('native-cursor-active');
+      document.body.style.cssText = '';
+      document.documentElement.style.cssText = '';
+
+      // Force scroll to top on all scroll containers
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      // Hide overlay immediately
+      const overlay = overlayRef.current;
+      if (overlay) {
+        overlay.style.visibility = 'hidden';
+        overlay.style.clipPath = 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)';
+      }
+
+      // Navigate immediately — no delay needed since we cleaned up synchronously
+      navigate(href);
+    }
   };
 
   return (
