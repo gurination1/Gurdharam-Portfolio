@@ -25,6 +25,7 @@ import Footer from '@/components/ui/footer';
 import LogoMarquee from '@/components/ui/logo-marquee';
 import TextRevealFAQs from '@/components/ui/text-reveal-faqs';
 import { MagicText } from '@/components/ui/magic-text';
+import AnimatedTextRoller from '@/components/ui/animated-text-04';
 import { StackedCards } from '@/components/ui/glass-cards';
 import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scrolling-text-effect';
 
@@ -1030,15 +1031,15 @@ function Hero() {
             <b>x</b>
             <span>PROMPT ARCHITECT</span>
           </p>
-          <FluidTextMorph
-            wordPairs={[
-              ['WEBSITES', 'LAUNCH'],
-              ['AI BOTS', 'AUTOMATE'],
-              ['MOBILE APPS', 'SHIP'],
-              ['OFFLINE AI', 'DEPLOY'],
+          <AnimatedTextRoller
+            items={[
+              { text: "3D WEBSITES.", color: "text-[var(--accent-gold)]", label: "LAUNCH" },
+              { text: "AI BOTS.", color: "text-sky-400", label: "AUTOMATE" },
+              { text: "MOBILE APPS.", color: "text-amber-300", label: "SHIP" },
+              { text: "OFFLINE AI.", color: "text-emerald-400", label: "DEPLOY" },
             ]}
-            className="hero-fluid-text"
-            intervalMs={3300}
+            intervalMs={2500}
+            className="hero-fluid-text mt-4"
           />
         </div>
         <aside className="hero-card" data-cursor="hover">
