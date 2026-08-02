@@ -23,6 +23,7 @@ import ParticleAnimation from '@/components/ui/particle-animation';
 import { Cursor as InvertedCursor } from '@/components/ui/inverted-cursor';
 import Footer from '@/components/ui/footer';
 import LogoMarquee from '@/components/ui/logo-marquee';
+import TextRevealFAQs from '@/components/ui/text-reveal-faqs';
 import { StackedCards } from '@/components/ui/glass-cards';
 import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scrolling-text-effect';
 
@@ -1519,7 +1520,7 @@ function App() {
         <Projects />
         <Skills />
         <AIBotShowcase />
-        <HomeFAQ />
+        <TextRevealFAQs />
         <Quote />
         <Contact />
       </main>
