@@ -1001,6 +1001,22 @@ footer {
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: logoMarquee 32s linear infinite;
+}
+
+.logo-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logoMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .section {
   padding: clamp(5rem, 11vw, 10rem) clamp(1rem, 4vw, 4rem);
 }
