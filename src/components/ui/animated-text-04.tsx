@@ -17,10 +17,10 @@ export interface AnimatedTextRollerProps {
 
 const defaultItems: TextRollerItem[] = [
   { text: "3D WEBSITES.", color: "text-[var(--accent-gold)]" },
-  { text: "AI BOTS.", color: "text-sky-400" },
-  { text: "MOBILE APPS.", color: "text-amber-300" },
-  { text: "OFFLINE AI.", color: "text-emerald-400" },
-  { text: "AUTOMATION.", color: "text-orange-400" },
+  { text: "AI BOTS.", color: "text-[var(--accent-gold)]" },
+  { text: "MOBILE APPS.", color: "text-[var(--accent-gold)]" },
+  { text: "OFFLINE AI.", color: "text-[var(--accent-gold)]" },
+  { text: "AUTOMATION.", color: "text-[var(--accent-gold)]" },
 ];
 
 const AnimatedTextRoller = ({
@@ -44,7 +44,7 @@ const AnimatedTextRoller = ({
     <div className={cn("w-full max-w-full overflow-hidden my-2", className)}>
       <div className="flex items-center gap-2 flex-wrap w-full max-w-full">
         {prefix && (
-          <span className="text-lg sm:text-2xl md:text-3xl font-black text-white tracking-tight leading-none shrink-0">
+          <span className="text-lg sm:text-2xl md:text-3xl font-black text-white tracking-tight leading-none shrink-0 font-mono">
             {prefix}
           </span>
         )}
@@ -60,8 +60,8 @@ const AnimatedTextRoller = ({
               >
                 <span
                   className={cn(
-                    "font-black uppercase tracking-tight leading-none transition-opacity duration-300",
-                    g.color || "text-[var(--accent-gold)]",
+                    "font-black uppercase tracking-tight leading-none transition-opacity duration-300 font-mono",
+                    "text-[var(--accent-gold)] drop-shadow-[0_0_24px_rgba(232,192,112,0.25)]",
                     index === i ? "opacity-100" : "opacity-20"
                   )}
                 >

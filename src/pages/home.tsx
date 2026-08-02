@@ -1033,12 +1033,13 @@ function Hero() {
           </p>
           <AnimatedTextRoller
             items={[
-              { text: "3D WEBSITES.", color: "text-[var(--accent-gold)]", label: "LAUNCH" },
-              { text: "AI BOTS.", color: "text-sky-400", label: "AUTOMATE" },
-              { text: "MOBILE APPS.", color: "text-amber-300", label: "SHIP" },
-              { text: "OFFLINE AI.", color: "text-emerald-400", label: "DEPLOY" },
+              { text: "3D WEBSITES." },
+              { text: "AI BOTS." },
+              { text: "MOBILE APPS." },
+              { text: "OFFLINE AI." },
+              { text: "AUTOMATION." },
             ]}
-            intervalMs={2000}
+            intervalMs={2200}
             className="mt-4"
           />
         </div>
