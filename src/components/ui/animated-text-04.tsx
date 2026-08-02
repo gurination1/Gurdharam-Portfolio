@@ -38,6 +38,8 @@ const AnimatedTextRoller = ({
     return () => clearInterval(interval);
   }, [items.length, intervalMs]);
 
+  const stepPercent = items.length > 0 ? 100 / items.length : 0;
+
   return (
     <div className={cn("w-full max-w-full overflow-hidden my-2", className)}>
       <div className="flex items-center gap-2 flex-wrap w-full max-w-full">
@@ -48,8 +50,8 @@ const AnimatedTextRoller = ({
         )}
         <div className="overflow-hidden h-[1.3em] relative w-full max-w-full text-left font-mono text-[clamp(1.4rem,3.8vw,3.2rem)] leading-none">
           <div
-            className="transition-transform duration-500 ease-in-out flex flex-col justify-start w-full"
-            style={{ transform: `translateY(-${index * 100}%)` }}
+            className="transition-transform duration-600 ease-out flex flex-col justify-start w-full"
+            style={{ transform: `translateY(-${index * stepPercent}%)` }}
           >
             {items.map((g, i) => (
               <div
