@@ -115,14 +115,16 @@ const InfiniteSlider = memo(function InfiniteSlider({
 
 const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {
   return (
-    <img
-      alt={logo.alt}
-      src={logo.src}
-      width={logo.width ?? "auto"}
-      height={logo.height ?? "auto"}
-      loading="lazy"
-      className="pointer-events-none h-6 select-none md:h-7 opacity-80 hover:opacity-100 transition-all object-contain min-w-[24px]"
-    />
+    <div className="flex flex-shrink-0 items-center justify-center h-8 px-3">
+      <img
+        alt={logo.alt}
+        src={logo.src}
+        width={logo.width ?? "auto"}
+        height={logo.height ?? "auto"}
+        loading="lazy"
+        className="pointer-events-none h-6 select-none md:h-7 opacity-85 hover:opacity-100 transition-all object-contain max-w-[140px]"
+      />
+    </div>
   );
 });
 
@@ -136,12 +138,12 @@ export const LogoMarquee = memo(function LogoMarquee({
   return (
     <div
       className={cn(
-        "max-w-7xl mx-auto overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]",
+        "max-w-7xl mx-auto overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]",
         className,
       )}
     >
-      <InfiniteSlider gap={72} reverse duration={45} durationOnHover={20}>
-        {[...logos, ...logos].map((logo, i) => (
+      <InfiniteSlider gap={64} reverse duration={35} durationOnHover={18}>
+        {logos.map((logo, i) => (
           <LogoImage key={`${logo.alt}-${i}`} logo={logo} />
         ))}
       </InfiniteSlider>

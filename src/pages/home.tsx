@@ -28,8 +28,9 @@ import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scr
 
 const techLogos = [
   { src: "https://svgl.app/library/openai_wordmark_light.svg", alt: "OpenAI" },
+  { src: "https://svgl.app/library/claude-ai-wordmark-icon_light.svg", alt: "Claude AI" },
+  { src: "https://cdn.simpleicons.org/googlegemini/white", alt: "Google Gemini" },
   { src: "https://cdn.simpleicons.org/nvidia/white", alt: "Nvidia" },
-  { src: "https://cdn.simpleicons.org/anthropic/white", alt: "Claude / Anthropic" },
   { src: "https://svgl.app/library/meta.svg", alt: "Meta" },
   { src: "https://svgl.app/library/supabase_wordmark_light.svg", alt: "Supabase" },
   { src: "https://svgl.app/library/vercel_wordmark.svg", alt: "Vercel" },
