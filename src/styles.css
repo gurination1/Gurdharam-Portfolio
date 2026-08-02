@@ -1029,6 +1029,18 @@ footer {
   contain-intrinsic-size: auto 100vh;
 }
 
+/* GPU Hardware Acceleration & 60fps Smooth Motion */
+.gpu-accelerate,
+.glass-card-item,
+.hero-spline,
+.contact-word,
+.project-deck {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 .section-label {
   margin-bottom: 2rem;
   color: var(--accent-gold);
