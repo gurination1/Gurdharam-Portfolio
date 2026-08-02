@@ -22,8 +22,23 @@ import ImageParticleField from '@/components/ui/image-particle-field';
 import ParticleAnimation from '@/components/ui/particle-animation';
 import { Cursor as InvertedCursor } from '@/components/ui/inverted-cursor';
 import Footer from '@/components/ui/footer';
+import LogoMarquee from '@/components/ui/logo-marquee';
 import { StackedCards } from '@/components/ui/glass-cards';
 import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scrolling-text-effect';
+
+const techLogos = [
+  { src: "https://svgl.app/library/nvidia_wordmark_light.svg", alt: "Nvidia" },
+  { src: "https://svgl.app/library/supabase_wordmark_light.svg", alt: "Supabase" },
+  { src: "https://svgl.app/library/openai_wordmark_light.svg", alt: "OpenAI" },
+  { src: "https://svgl.app/library/vercel_wordmark.svg", alt: "Vercel" },
+  { src: "https://svgl.app/library/github_wordmark_light.svg", alt: "GitHub" },
+  { src: "https://svgl.app/library/clerk_wordmark_light.svg", alt: "Clerk" },
+  { src: "https://svgl.app/library/turso_wordmark_light.svg", alt: "Turso" },
+  { src: "https://svgl.app/library/claude_wordmark_light.svg", alt: "Claude" },
+  { src: "https://svgl.app/library/meta_wordmark_light.svg", alt: "Meta" },
+  { src: "https://svgl.app/library/flutter.svg", alt: "Flutter" },
+  { src: "https://svgl.app/library/react.svg", alt: "React" },
+];
 import { ContainerScroll as PerspectiveContainerScroll } from '@/components/ui/container-scroll-animation';
 import {
   ContainerAnimated,
@@ -967,19 +982,14 @@ function Preloader() {
   );
 }
 
-function TrustGrid() {
+function TechLogoMarquee() {
   return (
-    <section className="py-12 border-b border-white/5 bg-black/40">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-        <p className="text-xs font-mono tracking-widest text-secondary whitespace-nowrap uppercase">Trusted By & Integrated With</p>
-        <div className="flex flex-wrap items-center justify-center md:justify-end gap-8 md:gap-16 w-full">
-          {/* Fictional/Generic Tech Partner SVGs or Text */}
-          <span className="font-bold font-display text-xl tracking-wide">Meta Cloud API</span>
-          <span className="font-bold font-display text-xl tracking-wide">TensorFlow Lite</span>
-          <span className="font-bold font-display text-xl tracking-wide">React</span>
-          <span className="font-bold font-display text-xl tracking-wide">Flutter</span>
-          <span className="font-bold font-display text-xl tracking-wide">OpenAI</span>
-        </div>
+    <section className="py-6 border-y border-white/5 bg-black/40">
+      <div className="max-w-7xl mx-auto px-4">
+        <p className="text-center text-[0.7rem] font-mono tracking-widest text-white/40 uppercase mb-2">
+          Powered By & Integrated With Official Stacks
+        </p>
+        <LogoMarquee logos={techLogos} />
       </div>
     </section>
   );
@@ -1166,26 +1176,7 @@ function ProjectDeck({ project }) {
   );
 }
 
-function Marquee() {
-  const row1 = ['COMFYUI', 'TFLITE', 'ON-DEVICE ML', 'PYTHON', 'FLUTTER', 'GSAP', 'REACT', 'LLM PIPELINES', 'AUTONOMOUS AI BOTS', 'FFMPEG', 'COMFYUI', 'TFLITE', 'ON-DEVICE ML'];
-  const row2 = ['AVAILABLE GLOBALLY', '1 YR / REAL RESULTS', 'INDIA + INTERNATIONAL CLIENTS', 'OFFLINE AI', 'VIDEO GENERATION', 'CHROME EXTENSIONS', 'CROP DISEASE DETECTION'];
-  return (
-    <VelocityTextProvider>
-      <section className="marquee" aria-label="Capabilities ticker">
-        {[row1, row2].map((row, rowIndex) => (
-          <div className={`marquee-track ${rowIndex ? 'reverse' : ''}`} key={row.join('-')}>
-            {[...row, ...row].map((item, index) => (
-              <span className={item.includes('AVAILABLE') ? 'gold' : ''} key={`${item}-${index}`}>
-                <VelocityText text={item} />
-                <b>/</b>
-              </span>
-            ))}
-          </div>
-        ))}
-      </section>
-    </VelocityTextProvider>
-  );
-}
+
 
 function About() {
   const aboutShowcaseImage = secondPageImage || fallbackSecondPageImage;
@@ -1528,8 +1519,7 @@ function App() {
       <DynamicIslandTOC selector=".section-label, [data-toc]" />
       <main>
         <Hero />
-        <TrustGrid />
-        <Marquee />
+        <TechLogoMarquee />
         <About />
         <PortfolioStory />
         <Projects />
