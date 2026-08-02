@@ -2118,13 +2118,15 @@ footer {
 }
 
 .contact-word {
-  display: grid;
-  gap: 0.08em;
-  font-size: clamp(4.4rem, 14vw, 14rem);
-  line-height: 0.86;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  font-size: clamp(3.5rem, 11vw, 11.5rem);
+  line-height: 0.98;
   font-weight: 800;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
   max-width: 100%;
+  overflow: visible;
 }
 
 .contact-word span {
@@ -2135,17 +2137,16 @@ footer {
   position: relative;
   display: block;
   width: 100%;
-  min-height: 1.05em;
-  overflow: visible;
+  min-height: 1.3em;
+  overflow: hidden;
   color: var(--accent-gold);
 }
 
 .contact-rotator-item {
   position: absolute;
   inset: 0 auto auto 0;
-  max-width: 100%;
-  white-space: normal;
-  overflow-wrap: anywhere;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .contact-grid {
@@ -2996,22 +2997,20 @@ footer {
 
   .contact-word {
     width: 100%;
-    font-size: clamp(2rem, 10.5vw, 3.3rem);
-    line-height: 1;
-    overflow: hidden;
+    font-size: clamp(2rem, 9.5vw, 3.4rem);
+    line-height: 0.98;
+    overflow: visible;
   }
 
   .contact-rotator {
-    min-height: 1.08em;
+    min-height: 1.35em;
     overflow: hidden;
   }
 
   .contact-rotator-item {
     inset: 0;
     width: 100%;
-    white-space: normal;
-    overflow-wrap: normal;
-    word-break: normal;
+    white-space: nowrap;
   }
 
   .contact-grid {
