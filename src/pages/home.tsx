@@ -1004,9 +1004,18 @@ function Hero() {
     <section className="hero" id="top">
       <HeroThreeScene />
       <SignalCanvas />
-      <div className="hero-meta">
-        <span>[ AVAILABLE FOR WORK ]</span>
-        <span>INDIA / FREELANCE / WORLDWIDE</span>
+      <div className="hero-meta flex flex-wrap items-center gap-2 md:gap-3 text-xs font-mono">
+        <span className="text-[var(--accent-gold)] font-bold uppercase tracking-wider">
+          [ GOVT MSME: UDYAM-PB-03-0079744 ]
+        </span>
+        <span className="text-white/30 hidden sm:inline">•</span>
+        <span className="text-sky-400 font-bold uppercase tracking-wider">
+          POWERED BY SARVAM AI
+        </span>
+        <span className="text-white/30 hidden sm:inline">•</span>
+        <span className="text-emerald-400 font-bold uppercase tracking-wider">
+          ✓ 100% SECURITY AUDITED
+        </span>
       </div>
       <div className="hero-grid">
         <div>
@@ -1024,20 +1033,19 @@ function Hero() {
             <span>VIDEO PIPELINES</span>
             <span>CLIENT SYSTEMS</span>
           </div>
-          <p className="hero-sub">
-            <span>AI ENGINEER</span>
+          <p className="hero-sub text-xs sm:text-sm tracking-widest text-slate-300 uppercase font-mono">
+            <span>FULL CS PROFESSIONAL TEAM</span>
             <b>x</b>
-            <span>APP DEVELOPER</span>
-            <b>x</b>
-            <span>PROMPT ARCHITECT</span>
+            <span>META CLOUD API & SARVAM AI PARTNERS</span>
           </p>
           <AnimatedTextRoller
             items={[
-              { text: "3D WEBSITES." },
-              { text: "AI BOTS." },
-              { text: "MOBILE APPS." },
-              { text: "OFFLINE AI." },
-              { text: "AUTOMATION." },
+              { text: "AI CALLING.", color: "text-[var(--accent-gold)]" },
+              { text: "WHATSAPP BOTS.", color: "text-sky-400" },
+              { text: "3D WEBSITES.", color: "text-amber-300" },
+              { text: "SEO WITH GEO & NEO.", color: "text-emerald-400" },
+              { text: "MOBILE APPS.", color: "text-purple-400" },
+              { text: "MARKETING.", color: "text-orange-400" },
             ]}
             intervalMs={2200}
             className="mt-4"

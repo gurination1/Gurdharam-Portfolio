@@ -8,33 +8,33 @@ export default function TextRevealFAQs() {
   const faqItems = [
     {
       id: 'item-1',
-      question: 'How do your Meta Cloud API WhatsApp AI Agents operate with zero monthly SaaS fees?',
-      answer: 'Unlike third-party resellers (Wati, Interakt, AiSensy) that charge per-user SaaS subscriptions and markup fees, I build directly on Meta Cloud API infrastructure. Your business pays zero SaaS fees and gets full control over custom webhooks, instant lead booking, and automated CRM sync.',
+      question: 'What is SEO WITH GEO & NEO and how does it make my website rank inside ChatGPT & Perplexity?',
+      answer: 'Generative Engine Optimization (GEO) & Next-Gen Engine Optimization (NEO) structure your site\'s data using JSON-LD entity graphs, factual direct-answer blocks, and standardized /llms.txt endpoints. This ensures AI Search engines (ChatGPT Search, Perplexity, Claude, Google AI Overviews) parse, cite, and recommend your business as the #1 answer.',
     },
     {
       id: 'item-2',
-      question: 'What makes your Voice AI Calling Agents different from standard IVR systems?',
-      answer: 'Standard IVR uses rigid keypress menus ("Press 1 for Sales"). Our Voice AI Agents use Sarvam AI speech models for natural Hindi, Punjabi, and English voice synthesis with <500ms latency. They handle complex customer questions, schedule appointments, and update databases in real time.',
+      question: 'How do your WhatsApp AI Agents operate with zero monthly SaaS markup fees?',
+      answer: 'Unlike reseller SaaS platforms (Wati, Interakt, ManyChat) that charge $100–$1,000+/mo in platform subscriptions, we build directly on Meta\'s official Cloud Graph API. You pay Meta directly for raw conversation costs, retaining 100% data control and custom webhook flexibility.',
     },
     {
       id: 'item-3',
-      question: 'Why do you pre-render websites (SSG) instead of using WordPress or Wix?',
-      answer: 'Custom pre-rendered code (Vite SSG with pre-baked HTML) loads in under 0.8 seconds and scores 98+ on Google Lighthouse. Search crawlers read static HTML instantly without waiting for JS execution, boosting your Google SEO and AI Search (ChatGPT / Perplexity) rankings.',
+      question: 'What makes your Voice AI Calling Agents different from standard IVR systems?',
+      answer: 'Standard IVR relies on rigid keypress menus. Our Voice AI Callers use Sarvam AI speech synthesis in Hindi, Punjabi, and English at <500ms latency. They converse naturally, execute live database lookups during calls, and update CRMs live without holding customers.',
     },
     {
       id: 'item-4',
       question: 'Can your mobile applications run AI models and databases completely offline?',
-      answer: 'Yes. In rural or low-connectivity areas, cloud-reliant apps crash. I engineer Flutter mobile apps backed by local SQLite databases and embedded TensorFlow Lite models so image scanning, inventory, and ledger calculations execute 100% offline on the device.',
+      answer: 'Yes. We build Flutter mobile apps backed by local SQLite databases and embedded TensorFlow Lite models. Image scanning, diagnostic classification, and route ledgers run 100% on-device in zero-4G environments with sub-10ms inference and zero cloud server bills.',
     },
     {
       id: 'item-5',
-      question: 'What is your typical project delivery timeline and build process?',
-      answer: 'Standalone WhatsApp bots and automation pipelines ship in 5 to 7 days. Full 3D websites, AI voice agents, and custom mobile apps deliver in 2 to 3 weeks with daily progress links and continuous testing.',
+      question: 'How does your Full CS Professional Team handle security & code audits?',
+      answer: 'Every project undergoes rigorous penetration testing, vulnerability analysis, and OWASP code hardening before delivery, guaranteeing 100% security audit compliance for enterprise deployment.',
     },
     {
       id: 'item-6',
-      question: 'How do we get started on a project or system audit?',
-      answer: 'Click "Talk" or message gurination1@gmail.com. We schedule a 15-minute call to map your business bottleneck, define exact deliverables, and deliver a fixed-price scope.',
+      question: 'What is your typical project delivery timeline and build process?',
+      answer: 'Standalone WhatsApp bots and video engines ship in 5 to 7 days. Full 3D WebGL platforms, Indic voice callers, and offline mobile apps deliver in 2 to 3 weeks with daily progress links and continuous testing.',
     },
   ];
 
@@ -50,7 +50,7 @@ export default function TextRevealFAQs() {
               HAVE<br />QUESTIONS?
             </h2>
             <p className="text-slate-400 mt-4 text-balance text-base leading-relaxed">
-              Everything you need to know about our AI agents, custom apps, 3D web systems, and delivery timelines.
+              Everything you need to know about our Indic Voice AI callers, zero-fee Meta WhatsApp agents, 3D WebGL platforms, and SEO WITH GEO & NEO search rankings.
             </p>
             <p className="text-slate-400 mt-6 hidden md:block text-sm">
               Have a custom requirement? Reach out directly via{' '}
@@ -71,7 +71,7 @@ export default function TextRevealFAQs() {
                   value={item.id}
                   className="border-b border-white/10"
                 >
-                  <AccordionTrigger className="cursor-pointer text-base md:text-lg font-bold hover:no-underline py-4">
+                  <AccordionTrigger className="cursor-pointer text-base md:text-lg font-bold hover:no-underline py-4 text-left">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent>

@@ -16,11 +16,12 @@ export interface AnimatedTextRollerProps {
 }
 
 const defaultItems: TextRollerItem[] = [
-  { text: "3D WEBSITES.", color: "text-[var(--accent-gold)]" },
-  { text: "AI BOTS.", color: "text-[var(--accent-gold)]" },
-  { text: "MOBILE APPS.", color: "text-[var(--accent-gold)]" },
-  { text: "OFFLINE AI.", color: "text-[var(--accent-gold)]" },
-  { text: "AUTOMATION.", color: "text-[var(--accent-gold)]" },
+  { text: "AI CALLING.", color: "text-[var(--accent-gold)]" },
+  { text: "WHATSAPP BOTS.", color: "text-sky-400" },
+  { text: "3D WEBSITES.", color: "text-amber-300" },
+  { text: "SEO WITH GEO & NEO.", color: "text-emerald-400" },
+  { text: "MOBILE APPS.", color: "text-purple-400" },
+  { text: "MARKETING.", color: "text-orange-400" },
 ];
 
 const AnimatedTextRoller = ({
@@ -48,7 +49,7 @@ const AnimatedTextRoller = ({
             {prefix}
           </span>
         )}
-        <div className="overflow-hidden h-[1.3em] relative w-full max-w-full text-left font-mono text-[clamp(1.4rem,3.8vw,3.2rem)] leading-none">
+        <div className="overflow-hidden h-[1.3em] relative w-full max-w-full text-left font-mono text-[clamp(1.3rem,3.5vw,3rem)] leading-none">
           <div
             className="transition-transform duration-600 ease-out flex flex-col justify-start w-full"
             style={{ transform: `translateY(-${index * stepPercent}%)` }}
@@ -61,7 +62,8 @@ const AnimatedTextRoller = ({
                 <span
                   className={cn(
                     "font-black uppercase tracking-tight leading-none transition-opacity duration-300 font-mono",
-                    "text-[var(--accent-gold)] drop-shadow-[0_0_24px_rgba(232,192,112,0.25)]",
+                    g.color || "text-[var(--accent-gold)]",
+                    "drop-shadow-[0_0_24px_rgba(232,192,112,0.25)]",
                     index === i ? "opacity-100" : "opacity-20"
                   )}
                 >
