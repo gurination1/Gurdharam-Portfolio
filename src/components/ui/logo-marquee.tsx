@@ -140,7 +140,7 @@ export const LogoMarquee = memo(function LogoMarquee({
         className,
       )}
     >
-      <InfiniteSlider gap={42} reverse duration={40} durationOnHover={20}>
+      <InfiniteSlider gap={72} reverse duration={45} durationOnHover={20}>
         {[...logos, ...logos].map((logo, i) => (
           <LogoImage key={`${logo.alt}-${i}`} logo={logo} />
         ))}
