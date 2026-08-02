@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 export interface TextRollerItem {
   text: string;
   color?: string;
-  label?: string;
 }
 
 export interface AnimatedTextRollerProps {
@@ -16,18 +15,18 @@ export interface AnimatedTextRollerProps {
   className?: string;
 }
 
-const defaultGreetings: TextRollerItem[] = [
-  { text: "AI BOTS.", color: "text-[var(--accent-gold)]", label: "AUTOMATE" },
-  { text: "MOBILE APPS.", color: "text-sky-400", label: "SHIP" },
-  { text: "3D WEBSITES.", color: "text-amber-300", label: "LAUNCH" },
-  { text: "OFFLINE AI.", color: "text-emerald-400", label: "DEPLOY" },
-  { text: "AUTOMATION.", color: "text-orange-400", label: "SCALE" },
+const defaultItems: TextRollerItem[] = [
+  { text: "AI BOTS.", color: "text-[var(--accent-gold)]" },
+  { text: "MOBILE APPS.", color: "text-sky-400" },
+  { text: "3D WEBSITES.", color: "text-amber-300" },
+  { text: "OFFLINE AI.", color: "text-emerald-400" },
+  { text: "AUTOMATION.", color: "text-orange-400" },
 ];
 
 const AnimatedTextRoller = ({
   prefix,
-  items = defaultGreetings,
-  intervalMs = 2000,
+  items = defaultItems,
+  intervalMs = 2200,
   className,
 }: AnimatedTextRollerProps) => {
   const [index, setIndex] = useState(0);
@@ -40,35 +39,31 @@ const AnimatedTextRoller = ({
   }, [items.length, intervalMs]);
 
   return (
-    <div className={cn("flex items-center gap-3 flex-wrap my-2", className)}>
+    <div className={cn("flex items-center gap-2 flex-wrap my-1", className)}>
       {prefix && (
-        <span className="text-2xl sm:text-4xl md:text-6xl font-black text-white tracking-tight">
+        <span className="text-xl sm:text-3xl md:text-5xl font-black text-white tracking-tight leading-none">
           {prefix}
         </span>
       )}
-      <div className="overflow-hidden h-14 sm:h-20 md:h-28 text-left relative flex items-center">
+      <div className="overflow-hidden h-[1.3em] relative flex items-center max-w-full text-left font-mono text-[clamp(1.8rem,5vw,4.2rem)] leading-none">
         <div
-          className="transition-transform duration-700 ease-in-out flex flex-col"
+          className="transition-all duration-700 ease-in-out flex flex-col justify-start w-full"
           style={{ transform: `translateY(-${index * 100}%)` }}
         >
           {items.map((g, i) => (
             <div
               key={i}
-              className="h-14 sm:h-20 md:h-28 flex items-center justify-start gap-4 whitespace-nowrap"
+              className="h-[1.3em] flex items-center justify-start whitespace-nowrap shrink-0"
             >
               <span
                 className={cn(
-                  "text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight leading-none",
-                  g.color || "text-[var(--accent-gold)]"
+                  "font-black uppercase tracking-tight leading-none transition-opacity duration-500",
+                  g.color || "text-[var(--accent-gold)]",
+                  index === i ? "opacity-100 scale-100" : "opacity-20 scale-95"
                 )}
               >
                 {g.text}
               </span>
-              {g.label && (
-                <span className="text-xs sm:text-sm font-mono tracking-widest text-slate-400 border border-white/10 rounded px-2.5 py-1 uppercase hidden sm:inline-block">
-                  [{g.label}]
-                </span>
-              )}
             </div>
           ))}
         </div>
