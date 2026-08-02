@@ -27,17 +27,17 @@ import { StackedCards } from '@/components/ui/glass-cards';
 import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scrolling-text-effect';
 
 const techLogos = [
-  { src: "https://svgl.app/library/nvidia_wordmark_light.svg", alt: "Nvidia" },
-  { src: "https://svgl.app/library/supabase_wordmark_light.svg", alt: "Supabase" },
-  { src: "https://svgl.app/library/openai_wordmark_light.svg", alt: "OpenAI" },
-  { src: "https://svgl.app/library/vercel_wordmark.svg", alt: "Vercel" },
-  { src: "https://svgl.app/library/github_wordmark_light.svg", alt: "GitHub" },
-  { src: "https://svgl.app/library/clerk_wordmark_light.svg", alt: "Clerk" },
-  { src: "https://svgl.app/library/turso_wordmark_light.svg", alt: "Turso" },
-  { src: "https://svgl.app/library/claude_wordmark_light.svg", alt: "Claude" },
-  { src: "https://svgl.app/library/meta_wordmark_light.svg", alt: "Meta" },
-  { src: "https://svgl.app/library/flutter.svg", alt: "Flutter" },
-  { src: "https://svgl.app/library/react.svg", alt: "React" },
+  { src: "https://cdn.simpleicons.org/nvidia/white", alt: "Nvidia" },
+  { src: "https://cdn.simpleicons.org/anthropic/white", alt: "Claude / Anthropic" },
+  { src: "https://cdn.simpleicons.org/meta/white", alt: "Meta" },
+  { src: "https://cdn.simpleicons.org/openai/white", alt: "OpenAI" },
+  { src: "https://cdn.simpleicons.org/supabase/white", alt: "Supabase" },
+  { src: "https://cdn.simpleicons.org/vercel/white", alt: "Vercel" },
+  { src: "https://cdn.simpleicons.org/github/white", alt: "GitHub" },
+  { src: "https://cdn.simpleicons.org/react/white", alt: "React" },
+  { src: "https://cdn.simpleicons.org/flutter/white", alt: "Flutter" },
+  { src: "https://cdn.simpleicons.org/tensorflow/white", alt: "TensorFlow" },
+  { src: "https://cdn.simpleicons.org/python/white", alt: "Python" },
 ];
 import { ContainerScroll as PerspectiveContainerScroll } from '@/components/ui/container-scroll-animation';
 import {
