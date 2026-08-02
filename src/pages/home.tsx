@@ -1038,8 +1038,8 @@ function Hero() {
               { text: "MOBILE APPS.", color: "text-amber-300", label: "SHIP" },
               { text: "OFFLINE AI.", color: "text-emerald-400", label: "DEPLOY" },
             ]}
-            intervalMs={2500}
-            className="hero-fluid-text mt-4"
+            intervalMs={2000}
+            className="mt-4"
           />
         </div>
         <aside className="hero-card" data-cursor="hover">
