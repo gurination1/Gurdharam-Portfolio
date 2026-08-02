@@ -1376,32 +1376,25 @@ function HomeFAQ() {
   ];
 
   return (
-    <section className="faq-panel" style={{ padding: '6rem 2rem', borderTop: '1px solid rgba(255,255,255,0.05)', background: '#050505' }}>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+    <section className="faq-panel">
+      <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
         <span style={{ color: 'var(--accent-gold)', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem', textAlign: 'center' }}>
           [ Frequently Asked Questions ]
         </span>
-        <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-display)', color: '#fff', textAlign: 'center', marginBottom: '3rem', fontWeight: 800 }}>
+        <h2 className="faq-title">
           HAVE QUESTIONS?
         </h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%' }}>
           {faqItems.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div 
                 key={idx} 
-                style={{ 
-                  background: 'rgba(255,255,255,0.02)', 
-                  border: '1px solid rgba(255,255,255,0.05)', 
-                  borderRadius: '16px', 
-                  padding: '1.5rem', 
-                  cursor: 'pointer',
-                  transition: 'background 0.3s'
-                }}
+                className="faq-item-card"
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-                  <h3 style={{ fontSize: '1.05rem', color: '#fff', margin: 0, fontWeight: 700, flexGrow: 1, textAlign: 'left' }}>{item.q}</h3>
+                  <h3 style={{ fontSize: 'clamp(0.95rem, 3.8vw, 1.1rem)', color: '#fff', margin: 0, fontWeight: 700, flexGrow: 1, textAlign: 'left' }}>{item.q}</h3>
                   <span style={{ color: 'var(--accent-gold)', fontSize: '1.25rem', fontWeight: 'bold' }}>{isOpen ? '−' : '+'}</span>
                 </div>
                 {isOpen && (
