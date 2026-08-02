@@ -24,6 +24,7 @@ import { Cursor as InvertedCursor } from '@/components/ui/inverted-cursor';
 import Footer from '@/components/ui/footer';
 import LogoMarquee from '@/components/ui/logo-marquee';
 import TextRevealFAQs from '@/components/ui/text-reveal-faqs';
+import { MagicText } from '@/components/ui/magic-text';
 import { StackedCards } from '@/components/ui/glass-cards';
 import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scrolling-text-effect';
 
@@ -1221,9 +1222,9 @@ function About() {
           ))}
         </div>
         <div className="about-copy">
-          <p data-split>
-            Gurdharam Jeet Singh is an AI Engineer and Web Developer in Punjab specializing in custom web platforms and offline apps. I build <Mark>things that think</Mark>: autonomous AI bots, local video pipelines, and practical apps for real client work.
-          </p>
+          <MagicText
+            text="Gurdharam Jeet Singh is an AI Engineer and Web Developer in Punjab specializing in custom web platforms and offline apps. I build things that think: autonomous AI bots, local video pipelines, and practical apps for real client work."
+          />
           <div className="chips">
             {['LLM Engineering', 'Prompt Architecture', 'Autonomous AI Bots', 'Website', 'Web Design', 'Dashboard', 'Visual Documentation', 'AI Fine Tuning', 'AI Training', 'AI Optimisation', 'Flutter / Dart', 'Python', 'FFmpeg Pipelines', 'ComfyUI', 'On-Device ML', 'REST APIs'].map((chip) => (
               <span key={chip}>{chip}</span>
