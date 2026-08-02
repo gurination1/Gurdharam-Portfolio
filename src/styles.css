@@ -1023,8 +1023,7 @@ footer {
 
 .section,
 .ai-bot-section,
-.quote-panel,
-.contact {
+.quote-panel {
   content-visibility: auto;
   contain-intrinsic-size: auto 100vh;
 }
@@ -1033,7 +1032,6 @@ footer {
 .gpu-accelerate,
 .glass-card-item,
 .hero-spline,
-.contact-word,
 .project-deck {
   will-change: transform;
   transform: translateZ(0);
