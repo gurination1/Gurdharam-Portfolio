@@ -603,14 +603,16 @@ footer {
   margin: 0;
   font-family: var(--font-hero-name);
   font-weight: 400;
-  font-size: clamp(4.2rem, 11vw, 12rem);
-  line-height: 0.82;
-  letter-spacing: 0;
+  font-size: clamp(3.2rem, 9.5vw, 10.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+  overflow: visible;
 }
 
 .hero-line {
   display: block;
-  overflow: hidden;
+  overflow: visible;
+  padding: 0.03em 0;
 }
 
 .hero-word {
@@ -711,14 +713,14 @@ footer {
 .hero-card {
   position: relative;
   container: hero-visual / inline-size;
-  --spline-bleed-block: clamp(2.2rem, 6cqi, 4.6rem);
-  --spline-bleed-inline: clamp(5rem, 16cqi, 9rem);
-  --spline-shift: clamp(4.8rem, 9cqi, 6.6rem);
-  --spline-fit: 1.18;
+  --spline-bleed-block: clamp(1rem, 4cqi, 2.5rem);
+  --spline-bleed-inline: clamp(1rem, 4cqi, 2.5rem);
+  --spline-shift: 0px;
+  --spline-fit: 1.15;
   width: 100%;
-  justify-self: end;
-  margin-top: clamp(-1.6rem, -2vw, -0.35rem);
-  padding: 0.1rem 0 0;
+  justify-self: center;
+  margin-top: 0;
+  padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -737,6 +739,9 @@ footer {
   border: 0;
   border-radius: 0;
   background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   filter: drop-shadow(0 34px 70px rgba(0, 0, 0, 0.34));
   mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
@@ -744,34 +749,33 @@ footer {
 
 .hero-spline {
   position: absolute;
-  inset:
-    calc(var(--spline-bleed-block) * -1)
-    calc(var(--spline-bleed-inline) * -1);
-  width: auto;
-  height: auto;
-  transform: translateX(var(--spline-shift)) scale(var(--spline-fit));
-  transform-origin: center;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0) scale(var(--spline-fit));
+  transform-origin: center center;
 }
 
 @container hero-visual (max-width: 28rem) {
   .hero-spline-shell {
-    --spline-bleed-block: clamp(1.7rem, 7cqi, 4.2rem);
-    --spline-bleed-inline: clamp(4.2rem, 22cqi, 8.5rem);
-    --spline-shift: clamp(2.9rem, 7.5cqi, 4.4rem);
+    --spline-bleed-block: 0px;
+    --spline-bleed-inline: 0px;
+    --spline-shift: 0px;
     --spline-fit: 1.06;
   }
 }
 
 @container hero-visual (min-width: 34rem) {
   .hero-spline-shell {
-    --spline-fit: 1.24;
+    --spline-fit: 1.15;
+    --spline-shift: 0px;
   }
 }
 
 @container hero-visual (min-width: 40rem) {
   .hero-spline-shell {
-    --spline-fit: 1.3;
-    --spline-shift: clamp(5rem, 8cqi, 6.4rem);
+    --spline-fit: 1.18;
+    --spline-shift: 0px;
   }
 }
 
@@ -1867,6 +1871,14 @@ footer {
 .story-flow {
   position: relative;
   z-index: 2;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+
+.story-flow [data-flow-section] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .ai-bot-section {
@@ -2300,8 +2312,8 @@ footer {
   }
 
   .hero-title {
-    font-size: clamp(3.1rem, 12.5vw, 6.1rem);
-    line-height: 0.88;
+    font-size: clamp(2.8rem, 11vw, 5.5rem);
+    line-height: 0.96;
   }
 
   .hero-card {
@@ -2595,9 +2607,10 @@ footer {
   }
 
   .hero-title {
-    font-size: clamp(2.42rem, 11.9vw, 3.72rem);
-    line-height: 0.92;
-    max-width: 11ch;
+    font-size: clamp(2.1rem, 10vw, 3.5rem);
+    line-height: 0.96;
+    max-width: 100%;
+    overflow: visible;
   }
 
   .signal-strip {

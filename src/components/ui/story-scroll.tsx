@@ -19,13 +19,17 @@ export interface FlowSectionProps {
 }
 
 export const FlowSection: React.FC<FlowSectionProps> = ({ className, style = {}, children, "aria-label": ariaLabel }) => (
-  <section data-flow-section aria-label={ariaLabel} className={cx("relative min-h-screen w-full overflow-hidden", className)}>
+  <section 
+    data-flow-section 
+    aria-label={ariaLabel} 
+    className={cx("sticky top-0 min-h-screen w-full overflow-hidden flex flex-col justify-center", className)}
+  >
     <div
       data-flow-inner
       className={cx(
-        "flow-art-container relative flex min-h-screen w-full flex-col justify-between gap-6 px-[4vw] pb-[4vw] pt-[clamp(2rem,8vw,4vw)] will-change-transform",
+        "flow-art-container relative flex min-h-screen w-full flex-col justify-between gap-6 px-[5vw] pb-[6vw] pt-[clamp(3rem,8vw,5vw)] will-change-transform translate-z-0",
       )}
-      style={{ transformOrigin: "bottom left", ...style }}
+      style={{ transformOrigin: "center center", ...style }}
     >
       {children}
     </div>
@@ -55,43 +59,76 @@ const FlowArt: React.FC<FlowArtProps> = ({ children, className, "aria-label": ar
   useGSAP(
     () => {
       if (!containerRef.current || reducedMotion) return
-      if (window.matchMedia("(max-width: 860px)").matches) return
 
       const sections = Array.from(containerRef.current.querySelectorAll<HTMLElement>("[data-flow-section]"))
       if (sections.length === 0) return
 
+      const isMobile = window.matchMedia("(max-width: 768px)").matches
       const triggers: ScrollTrigger[] = []
 
       sections.forEach((section, i) => {
-        gsap.set(section, { zIndex: i + 1 })
+        gsap.set(section, { zIndex: (i + 1) * 10 })
         const inner = section.querySelector<HTMLElement>(".flow-art-container")
+        const heading = section.querySelector<HTMLElement>("h2")
+        const eyebrow = section.querySelector<HTMLElement>("p:first-child")
+
         if (!inner) return
 
-        if (i > 0) {
-          gsap.set(inner, { rotation: 30, transformOrigin: "bottom left" })
-          const tween = gsap.to(inner, {
-            rotation: 0,
+        // Scale down previous section as next section covers it
+        if (i < sections.length - 1) {
+          const nextSection = sections[i + 1]
+          const scaleTween = gsap.to(inner, {
+            scale: isMobile ? 0.96 : 0.92,
+            opacity: 0.35,
+            filter: isMobile ? "none" : "blur(4px)",
             ease: "none",
             scrollTrigger: {
-              trigger: section,
+              trigger: nextSection,
               start: "top bottom",
-              end: "top 25%",
+              end: "top top",
               scrub: true,
             },
           })
-          if (tween.scrollTrigger) triggers.push(tween.scrollTrigger)
+          if (scaleTween.scrollTrigger) triggers.push(scaleTween.scrollTrigger)
         }
 
-        if (i < sections.length - 1) {
-          triggers.push(
-            ScrollTrigger.create({
-              trigger: section,
-              start: "bottom bottom",
-              end: "bottom top",
-              pin: true,
-              pinSpacing: false,
-            }),
+        // Headline entrance
+        if (heading) {
+          const headingTween = gsap.fromTo(
+            heading,
+            { y: 30, opacity: 0.8 },
+            {
+              y: 0,
+              opacity: 1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                end: "top 30%",
+                scrub: 0.5,
+              },
+            }
           )
+          if (headingTween.scrollTrigger) triggers.push(headingTween.scrollTrigger)
+        }
+
+        // Eyebrow parallax
+        if (eyebrow) {
+          const eyebrowTween = gsap.fromTo(
+            eyebrow,
+            { x: -15 },
+            {
+              x: 15,
+              ease: "none",
+              scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            }
+          )
+          if (eyebrowTween.scrollTrigger) triggers.push(eyebrowTween.scrollTrigger)
         }
       })
 
@@ -104,7 +141,7 @@ const FlowArt: React.FC<FlowArtProps> = ({ children, className, "aria-label": ar
   )
 
   return (
-    <main ref={containerRef} aria-label={ariaLabel} className={cx("w-full overflow-x-hidden", className)}>
+    <main ref={containerRef} aria-label={ariaLabel} className={cx("relative w-full overflow-x-hidden", className)}>
       {children}
     </main>
   )
