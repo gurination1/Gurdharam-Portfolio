@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { AlertTriangle, ArrowUpRight, Bot, BrainCircuit, Code2, Cpu, HeartPulse, Mail, MessageCircle, MoveRight, Sparkles } from 'lucide-react';
+import { AlertTriangle, ArrowUpRight, Bot, BrainCircuit, CheckCircle2, Code2, Cpu, HeartPulse, Mail, MessageCircle, MoveRight, ShieldCheck, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
@@ -1005,15 +1005,18 @@ function Hero() {
       <HeroThreeScene />
       <SignalCanvas />
       <div className="hero-meta flex flex-wrap items-center gap-2 md:gap-3 text-xs font-mono">
-        <span className="text-[var(--accent-gold)] font-bold uppercase tracking-wider">
+        <span className="text-[var(--accent-gold)] font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <ShieldCheck size={14} className="text-[var(--accent-gold)]" />
           [ GOVT MSME: UDYAM-PB-03-0079744 ]
         </span>
         <span className="text-white/30 hidden sm:inline">•</span>
-        <span className="text-sky-400 font-bold uppercase tracking-wider">
+        <span className="text-sky-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <Cpu size={14} className="text-sky-400" />
           POWERED BY SARVAM AI
         </span>
         <span className="text-white/30 hidden sm:inline">•</span>
-        <span className="text-emerald-400 font-bold uppercase tracking-wider">
+        <span className="text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <CheckCircle2 size={14} className="text-emerald-400" />
           ✓ 100% SECURITY AUDITED
         </span>
       </div>
@@ -1041,11 +1044,11 @@ function Hero() {
           <AnimatedTextRoller
             items={[
               { text: "AI CALLING.", color: "text-[var(--accent-gold)]" },
-              { text: "WHATSAPP BOTS.", color: "text-sky-400" },
-              { text: "3D WEBSITES.", color: "text-amber-300" },
-              { text: "SEO WITH GEO & NEO.", color: "text-emerald-400" },
-              { text: "MOBILE APPS.", color: "text-purple-400" },
-              { text: "MARKETING.", color: "text-orange-400" },
+              { text: "WHATSAPP BOTS.", color: "text-[var(--accent-gold)]" },
+              { text: "3D WEBSITES.", color: "text-[var(--accent-gold)]" },
+              { text: "SEO WITH GEO & NEO.", color: "text-sky-400" },
+              { text: "MOBILE APPS.", color: "text-[var(--accent-gold)]" },
+              { text: "MARKETING.", color: "text-sky-400" },
             ]}
             intervalMs={2200}
             className="mt-4"

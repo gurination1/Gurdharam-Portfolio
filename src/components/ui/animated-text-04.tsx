@@ -17,11 +17,11 @@ export interface AnimatedTextRollerProps {
 
 const defaultItems: TextRollerItem[] = [
   { text: "AI CALLING.", color: "text-[var(--accent-gold)]" },
-  { text: "WHATSAPP BOTS.", color: "text-sky-400" },
-  { text: "3D WEBSITES.", color: "text-amber-300" },
-  { text: "SEO WITH GEO & NEO.", color: "text-emerald-400" },
-  { text: "MOBILE APPS.", color: "text-purple-400" },
-  { text: "MARKETING.", color: "text-orange-400" },
+  { text: "WHATSAPP BOTS.", color: "text-[var(--accent-gold)]" },
+  { text: "3D WEBSITES.", color: "text-[var(--accent-gold)]" },
+  { text: "SEO WITH GEO & NEO.", color: "text-sky-400" },
+  { text: "MOBILE APPS.", color: "text-[var(--accent-gold)]" },
+  { text: "MARKETING.", color: "text-sky-400" },
 ];
 
 const AnimatedTextRoller = ({
