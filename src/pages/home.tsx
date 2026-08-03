@@ -1004,21 +1004,9 @@ function Hero() {
     <section className="hero" id="top">
       <HeroThreeScene />
       <SignalCanvas />
-      <div className="hero-meta flex flex-wrap items-center gap-2 md:gap-3 text-xs font-mono">
-        <span className="text-[var(--accent-gold)] font-bold uppercase tracking-wider flex items-center gap-1.5">
-          <ShieldCheck size={14} className="text-[var(--accent-gold)]" />
-          [ GOVT MSME: UDYAM-PB-03-0079744 ]
-        </span>
-        <span className="text-white/30 hidden sm:inline">•</span>
-        <span className="text-sky-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-          <Cpu size={14} className="text-sky-400" />
-          POWERED BY SARVAM AI
-        </span>
-        <span className="text-white/30 hidden sm:inline">•</span>
-        <span className="text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-          <CheckCircle2 size={14} className="text-emerald-400" />
-          ✓ 100% SECURITY AUDITED
-        </span>
+      <div className="hero-meta">
+        <span>[ AVAILABLE FOR WORK ]</span>
+        <span>MSME ID: UDYAM-PB-03-0079744</span>
       </div>
       <div className="hero-grid">
         <div>
@@ -1036,10 +1024,12 @@ function Hero() {
             <span>VIDEO PIPELINES</span>
             <span>CLIENT SYSTEMS</span>
           </div>
-          <p className="hero-sub text-xs sm:text-sm tracking-widest text-slate-300 uppercase font-mono">
-            <span>FULL CS PROFESSIONAL TEAM</span>
+          <p className="hero-sub">
+            <span>AI ENGINEER</span>
             <b>x</b>
-            <span>META CLOUD API & SARVAM AI PARTNERS</span>
+            <span>APP DEVELOPER</span>
+            <b>x</b>
+            <span>PROMPT ARCHITECT</span>
           </p>
           <AnimatedTextRoller
             items={[
