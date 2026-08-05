@@ -5,7 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-/** Portfolio project cards data for the StackedCards component. */
 export const cardData = [
   {
     id: 1,
@@ -13,6 +12,7 @@ export const cardData = [
     description: 'Self-hosted AI video generation pipeline: automated script generation, local SD rendering, voice narration, and MP4 assembly with zero cloud API subscriptions.',
     color: 'rgba(212, 168, 83, 0.85)',
     cardType: 'videogen',
+    metrics: ['⚡ $0 Cloud Cost', '🔒 100% Offline', '🎬 SD Render Engine', '4.2x Render Speed'],
   },
   {
     id: 2,
@@ -20,6 +20,7 @@ export const cardData = [
     description: 'Field-ready Flutter apps engineered for rural India: MobileNetV2 crop disease scanner (<2s inference on 2GB RAM) and a phone-first milk delivery ledger.',
     color: 'rgba(56, 189, 248, 0.85)',
     cardType: 'cow-apps',
+    metrics: ['⚡ <2s On-Device AI', '📱 2GB RAM Spec', '📦 100% Offline Ledger', '<12ms SQLite Commit'],
   },
   {
     id: 3,
@@ -27,6 +28,7 @@ export const cardData = [
     description: 'Real-time conversational voice interview agent (<500ms latency) alongside photorealistic 3D WebGL digital twin platforms built in Three.js and GSAP.',
     color: 'rgba(212, 168, 83, 0.85)',
     cardType: 'dashboard',
+    metrics: ['🎙️ <500ms Latency', '🗣️ Indic Voice AI', '🎮 60 FPS WebGL', 'Sarvam AI Speech'],
   },
   {
     id: 4,
@@ -34,5 +36,7 @@ export const cardData = [
     description: 'Static pre-rendered web platforms structured with JSON-LD entity graphs, factual direct-answer blocks, and /llms.txt endpoints to rank #1 in AI Search.',
     color: 'rgba(56, 189, 248, 0.85)',
     cardType: 'manymore',
+    metrics: ['🏆 #1 Google Rank', '🤖 ChatGPT / Perplexity', '🕸️ JSON-LD Graph', 'Vite SSG Static'],
   },
 ];
+

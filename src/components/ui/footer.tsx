@@ -52,6 +52,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/services/ai-voice-agents" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
+                  Sub-300ms Voice AI Agents
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/automated-video-generation-engine" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
+                  VideoGen Engine Automation
+                </Link>
+              </li>
+              <li>
                 <Link to="/services/crop-disease-detection-app" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
                   Crop Disease Detection AI Developer
                 </Link>
@@ -69,6 +79,11 @@ export default function Footer() {
               Core Services
             </h4>
             <ul className="space-y-1 text-sm">
+              <li>
+                <Link to="/services/local-gpu-llm-quantization" className="py-2.5 px-1 block text-slate-400 hover:text-white transition-colors min-h-[44px] inline-flex items-center">
+                  Local GPU LLM Quantization
+                </Link>
+              </li>
               <li>
                 <Link to="/services/offline-ai-app-development" className="py-2.5 px-1 block text-slate-400 hover:text-white transition-colors min-h-[44px] inline-flex items-center">
                   Offline AI App Development

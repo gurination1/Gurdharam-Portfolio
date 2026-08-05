@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ArrowLeft, Calendar, User, Clock, ArrowRight, BookOpen, Brain, Terminal, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/ui/footer';
+import AuthorBioCard from '@/components/ui/AuthorBioCard';
 
 export default function Blog() {
   useEffect(() => { 
@@ -10,6 +11,38 @@ export default function Blog() {
   }, []);
 
   const posts = [
+    {
+      slug: 'sarvam-indic-voice-ai-telephony-agent',
+      title: 'Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony: SIP, WebRTC, and Custom VAD',
+      excerpt: 'Detailed engineering breakdown of building full-duplex Indic voice callers using Pipecat, Sarvam AI, Exotel WebSockets, and Silero VAD over 8kHz PSTN phone lines with zero platform markups.',
+      date: 'August 4, 2026',
+      readTime: '10 min read',
+      tag: 'Voice AI'
+    },
+    {
+      slug: 'local-gpu-llm-quantization-mcp-legal-server',
+      title: 'Local GPU LLM Quantization & Model Context Protocol (MCP) Legal Server',
+      excerpt: 'Running 70B parameter open-weights models (Qwen 2.5, Llama 3.3) 100% air-gapped on single workstation GPUs with AWQ, GGUF Q4_K_M, FlashAttention-2, and custom MCP statutory tools.',
+      date: 'August 2, 2026',
+      readTime: '9 min read',
+      tag: 'Local GPU LLM'
+    },
+    {
+      slug: 'automated-1080p60-videogen-pipeline',
+      title: 'yt-auto: Scaling Automated 1080p60 Video Pipelines at $0 Cloud Cost',
+      excerpt: 'How we built a self-hosted media pipeline combining Remotion, PyTorch SDXL, NumPy audio DSP, word-timestamped ASS subtitles, and hardware-accelerated FFmpeg NVENC encoding.',
+      date: 'July 28, 2026',
+      readTime: '8 min read',
+      tag: 'VideoGen Engine'
+    },
+    {
+      slug: 'high-ticket-webgl-3d-spatial-digital-twin',
+      title: 'NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins with Three.js & GSAP',
+      excerpt: 'High-ticket real estate and B2B SaaS digital twin engine built on Three.js r128, DRACO geometry compression (93% size reduction), and GSAP ScrollTrigger camera lerp smoothing.',
+      date: 'July 18, 2026',
+      readTime: '7 min read',
+      tag: '3D WebGL'
+    },
     {
       slug: 'offline-ai-crop-disease-scanner-flutter',
       title: 'How I Built an Offline AI Crop Disease Scanner using Flutter and TensorFlow Lite',
@@ -34,6 +67,11 @@ export default function Blog() {
         <Link to="/" className="inline-flex items-center text-accent-cold hover:opacity-80 transition-opacity mb-12 font-mono text-sm tracking-widest uppercase">
           <ArrowLeft className="mr-2" size={16} /> Back to Home
         </Link>
+
+        {/* Author Bio Banner Card */}
+        <div className="mb-12">
+          <AuthorBioCard />
+        </div>
 
         <header className="mb-16">
           <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-6">

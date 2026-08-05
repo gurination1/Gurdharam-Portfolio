@@ -9,6 +9,9 @@ const staticRoutes = [
   '/',
   '/services/web-development',
   '/services/ai-automation',
+  '/services/ai-voice-agents',
+  '/services/local-gpu-llm-quantization',
+  '/services/automated-video-generation-engine',
   '/services/crop-disease-detection-app',
   '/services/dairy-management-app-flutter',
   '/services/whatsapp-business-bot',
@@ -17,6 +20,10 @@ const staticRoutes = [
   '/case-studies/doodhisaab',
   '/case-studies/fasal-doctor',
   '/blog',
+  '/blog/sarvam-indic-voice-ai-telephony-agent',
+  '/blog/local-gpu-llm-quantization-mcp-legal-server',
+  '/blog/automated-1080p60-videogen-pipeline',
+  '/blog/high-ticket-webgl-3d-spatial-digital-twin',
   '/blog/offline-ai-crop-disease-scanner-flutter',
   '/blog/whatsapp-ai-agents-healthcare-india'
 ];

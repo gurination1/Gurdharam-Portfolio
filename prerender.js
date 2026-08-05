@@ -42,6 +42,18 @@ const routes = [
               <p>Autonomous content creation machines (YouTube, Instagram, Facebook) and intelligent database search engines (RAG).</p>
             </li>
             <li>
+              <h3><a href="/services/ai-voice-agents">Sub-300ms Voice AI Agents</a></h3>
+              <p>Sarvam Indic voice callers and SIP/PSTN telephony integrations with sub-300ms turn-taking latency.</p>
+            </li>
+            <li>
+              <h3><a href="/services/local-gpu-llm-quantization">Local GPU LLM Quantization</a></h3>
+              <p>Air-gapped 70B parameter open-weights LLM deployment (vLLM, llama.cpp GGUF/AWQ) and MCP legal servers.</p>
+            </li>
+            <li>
+              <h3><a href="/services/automated-video-generation-engine">VideoGen Engine Automation</a></h3>
+              <p>Programmatic 1080p60 video generation engine with Remotion, PyTorch SDXL, and FFmpeg NVENC encoding.</p>
+            </li>
+            <li>
               <h3><a href="/services/whatsapp-business-bot">WhatsApp Business Bot</a></h3>
               <p>Custom 24/7 WhatsApp AI agents for all businesses. Integrated appointment booking and lead conversion.</p>
             </li>
@@ -61,8 +73,24 @@ const routes = [
         </section>
 
         <section id="portfolio">
-          <h2>Case Studies</h2>
+          <h2>Case Studies & Deep Technical Articles</h2>
           <ul>
+            <li>
+              <h3><a href="/blog/sarvam-indic-voice-ai-telephony-agent">Sub-300ms Sarvam Indic Voice AI Telephony Agent</a></h3>
+              <p>Deep engineering breakdown of building real-time Indic voice callers with Exotel WebSockets, Pipecat, and Silero VAD.</p>
+            </li>
+            <li>
+              <h3><a href="/blog/local-gpu-llm-quantization-mcp-legal-server">Local GPU LLM Quantization & MCP Legal Server</a></h3>
+              <p>Running 70B open-weights models 100% air-gapped on single workstation GPUs with vLLM, AWQ, and MCP tools.</p>
+            </li>
+            <li>
+              <h3><a href="/blog/automated-1080p60-videogen-pipeline">yt-auto: Automated 1080p60 VideoGen Pipeline</a></h3>
+              <p>Self-hosted programmatic video generation engine using Remotion React rendering and FFmpeg NVENC encoding at $0 cloud cost.</p>
+            </li>
+            <li>
+              <h3><a href="/blog/high-ticket-webgl-3d-spatial-digital-twin">NEOVRIT: 60 FPS WebGL 3D Spatial Digital Twins</a></h3>
+              <p>High-ticket 3D spatial web design built on Three.js r128, DRACO geometry compression, and GSAP ScrollTrigger.</p>
+            </li>
             <li>
               <h3><a href="/case-studies/doodhisaab">DoodHisaab — Offline Dairy Ledger App</a></h3>
               <p>A rural agritech application built in Flutter with local SQLite database for milk ledger accounts and cooperative collection tracking.</p>
@@ -73,28 +101,137 @@ const routes = [
             </li>
           </ul>
         </section>
-
-        <footer>
-          <div class="footer-links">
-            <h4>Specialized AI Solutions</h4>
-            <ul>
-              <li><a href="/services/whatsapp-business-bot">WhatsApp Business Bot</a></li>
-              <li><a href="/services/crop-disease-detection-app">Crop Disease Detection AI Developer</a></li>
-              <li><a href="/services/dairy-management-app-flutter">Dairy Management App (Flutter)</a></li>
-            </ul>
-            <h4>Core Services</h4>
-            <ul>
-              <li><a href="/services/offline-ai-app-development">Offline AI App Development</a></li>
-              <li><a href="/services/web-developer-muktsar-punjab">Web Developer Muktsar Punjab</a></li>
-              <li><a href="/services/web-development">Web Development Services</a></li>
-              <li><a href="/services/ai-automation">AI Automation Services</a></li>
-              <li><a href="/blog">Engineering Blog</a></li>
-            </ul>
-          </div>
-          <p>Gurdharam Jeet Singh © 2026. Designed & Built by GJS.</p>
-        </footer>
       </main>
     `
+  },
+  {
+    path: '/services/ai-voice-agents',
+    title: 'Sub-300ms Indic Voice AI Telephony Agents | Gurdharam',
+    description: 'Bilingual Voice AI callers in Hindi, Punjabi, and English. Sub-300ms turn-taking latency over PSTN/SIP phone calls with Sarvam AI and Pipecat.',
+    canonical: 'https://www.gurdharam.com/services/ai-voice-agents',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.gurdharam.com/services/ai-voice-agents#webpage",
+          "url": "https://www.gurdharam.com/services/ai-voice-agents",
+          "name": "Sub-300ms Indic Voice AI Telephony Agents | Gurdharam",
+          "description": "Bilingual Voice AI callers in Hindi, Punjabi, and English."
+        }
+      ]
+    },
+    html: `<main><h1>Sub-300ms Indic Voice AI Telephony Agents</h1><p>Sarvam Indic Voice AI Callers and SIP/PSTN telephony integrations with sub-300ms turn-taking latency.</p></main>`
+  },
+  {
+    path: '/services/local-gpu-llm-quantization',
+    title: 'Air-Gapped Local GPU LLM & MCP Legal Server | Gurdharam',
+    description: 'Run 70B parameter open-weights models 100% air-gapped on single RTX GPUs with AWQ, GGUF Q4_K_M, vLLM, and Model Context Protocol legal tools.',
+    canonical: 'https://www.gurdharam.com/services/local-gpu-llm-quantization',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.gurdharam.com/services/local-gpu-llm-quantization#webpage",
+          "url": "https://www.gurdharam.com/services/local-gpu-llm-quantization",
+          "name": "Air-Gapped Local GPU LLM & MCP Legal Server | Gurdharam",
+          "description": "Run 70B parameter open-weights models 100% air-gapped on single RTX GPUs."
+        }
+      ]
+    },
+    html: `<main><h1>Air-Gapped Local GPU LLM & MCP Legal Server</h1><p>Run 70B parameter open-weights models 100% air-gapped on single workstation GPUs.</p></main>`
+  },
+  {
+    path: '/services/automated-video-generation-engine',
+    title: 'VideoGen — Automated 1080p60 Video Pipeline ($0 Cloud Cost) | Gurdharam',
+    description: 'Self-hosted programmatic video generation engine for YouTube Shorts, Reels, and educational videos using Remotion, PyTorch SDXL, and FFmpeg NVENC.',
+    canonical: 'https://www.gurdharam.com/services/automated-video-generation-engine',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.gurdharam.com/services/automated-video-generation-engine#webpage",
+          "url": "https://www.gurdharam.com/services/automated-video-generation-engine",
+          "name": "VideoGen — Automated 1080p60 Video Pipeline ($0 Cloud Cost) | Gurdharam",
+          "description": "Self-hosted programmatic video generation engine."
+        }
+      ]
+    },
+    html: `<main><h1>VideoGen Automated 1080p60 Video Pipeline</h1><p>Self-hosted programmatic video generation engine for YouTube Shorts and Reels.</p></main>`
+  },
+  {
+    path: '/blog/sarvam-indic-voice-ai-telephony-agent',
+    title: 'Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony | Gurdharam',
+    description: 'Detailed engineering breakdown of building full-duplex Indic voice callers using Pipecat, Sarvam AI, Exotel WebSockets, and Silero VAD over 8kHz PSTN phone lines.',
+    canonical: 'https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechnicalArticle",
+          "@id": "https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent#article",
+          "headline": "Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony",
+          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+        }
+      ]
+    },
+    html: `<main><h1>Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony</h1><p>Full-duplex Indic voice callers using Pipecat, Sarvam AI, and Exotel WebSockets.</p></main>`
+  },
+  {
+    path: '/blog/local-gpu-llm-quantization-mcp-legal-server',
+    title: 'Local GPU LLM Quantization & Model Context Protocol (MCP) Legal Server | Gurdharam',
+    description: 'Running 70B parameter open-weights models (Qwen 2.5, Llama 3.3) 100% air-gapped on single workstation GPUs with AWQ, GGUF Q4_K_M, and MCP statutory tools.',
+    canonical: 'https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechnicalArticle",
+          "@id": "https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server#article",
+          "headline": "Local GPU LLM Quantization & Model Context Protocol (MCP) Legal Server",
+          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+        }
+      ]
+    },
+    html: `<main><h1>Local GPU LLM Quantization & MCP Legal Server</h1><p>Running 70B parameter open-weights models 100% air-gapped on single workstation GPUs.</p></main>`
+  },
+  {
+    path: '/blog/automated-1080p60-videogen-pipeline',
+    title: 'yt-auto: Scaling Automated 1080p60 Video Pipelines at $0 Cloud Cost | Gurdharam',
+    description: 'How we built a self-hosted media pipeline combining Remotion, PyTorch SDXL, NumPy audio DSP, and hardware-accelerated FFmpeg NVENC encoding.',
+    canonical: 'https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechnicalArticle",
+          "@id": "https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline#article",
+          "headline": "yt-auto: Scaling Automated 1080p60 Video Pipelines at $0 Cloud Cost",
+          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+        }
+      ]
+    },
+    html: `<main><h1>yt-auto: Scaling Automated 1080p60 Video Pipelines</h1><p>Self-hosted programmatic video generation engine at $0 cloud cost.</p></main>`
+  },
+  {
+    path: '/blog/high-ticket-webgl-3d-spatial-digital-twin',
+    title: 'NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins | Gurdharam',
+    description: 'High-ticket real estate and B2B SaaS digital twin engine built on Three.js r128, DRACO geometry compression (93% size reduction), and GSAP ScrollTrigger.',
+    canonical: 'https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechnicalArticle",
+          "@id": "https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin#article",
+          "headline": "NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins",
+          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+        }
+      ]
+    },
+    html: `<main><h1>NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins</h1><p>Three.js r128, DRACO geometry compression, and GSAP ScrollTrigger camera lerp smoothing.</p></main>`
   },
   {
     path: '/services/web-development',
@@ -1367,6 +1504,8 @@ const masterFooter = `
               <h4>Specialized AI Solutions</h4>
               <ul>
                 <li><a href="/services/whatsapp-business-bot">WhatsApp Business Bot</a></li>
+                <li><a href="/services/ai-voice-agents">Sub-300ms Voice AI Agents</a></li>
+                <li><a href="/services/automated-video-generation-engine">VideoGen Engine Automation</a></li>
                 <li><a href="/services/crop-disease-detection-app">Crop Disease Detection AI Developer</a></li>
                 <li><a href="/services/dairy-management-app-flutter">Dairy Management App (Flutter)</a></li>
               </ul>
@@ -1374,6 +1513,7 @@ const masterFooter = `
             <div>
               <h4>Core Services</h4>
               <ul>
+                <li><a href="/services/local-gpu-llm-quantization">Local GPU LLM Quantization</a></li>
                 <li><a href="/services/offline-ai-app-development">Offline AI App Development</a></li>
                 <li><a href="/services/web-developer-muktsar-punjab">Web Developer Muktsar Punjab</a></li>
                 <li><a href="/services/web-development">Web Development Services</a></li>
@@ -1391,6 +1531,10 @@ const masterFooter = `
               <h4>Resources & Blog</h4>
               <ul>
                 <li><a href="/blog">Engineering Blog Hub</a></li>
+                <li><a href="/blog/sarvam-indic-voice-ai-telephony-agent">Sub-300ms Voice AI Case Study</a></li>
+                <li><a href="/blog/local-gpu-llm-quantization-mcp-legal-server">Local GPU LLM & MCP Legal Server</a></li>
+                <li><a href="/blog/automated-1080p60-videogen-pipeline">Automated VideoGen Pipeline</a></li>
+                <li><a href="/blog/high-ticket-webgl-3d-spatial-digital-twin">WebGL 3D Spatial Digital Twin</a></li>
                 <li><a href="/blog/offline-ai-crop-disease-scanner-flutter">Offline Crop AI Scanner Article</a></li>
                 <li><a href="/blog/whatsapp-ai-agents-healthcare-india">WhatsApp AI Booking Bots Article</a></li>
               </ul>

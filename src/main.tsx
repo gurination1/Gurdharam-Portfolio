@@ -18,6 +18,14 @@ import VerticalServicePage from './pages/VerticalServicePage';
 import Blog from './pages/blog';
 import BlogPostFasalDoctor from './pages/blog-post-fasal-doctor';
 import BlogPostWhatsAppHealth from './pages/blog-post-whatsapp-health';
+import BlogPostVoiceAI from './pages/blog-post-voice-ai';
+import BlogPostLocalGPU from './pages/blog-post-local-gpu';
+import BlogPostVideoGen from './pages/blog-post-videogen';
+import BlogPostWebGL from './pages/blog-post-webgl';
+
+import AIVoiceAgents from './pages/ai-voice-agents';
+import LocalGPULLMQuantization from './pages/local-gpu-llm-quantization';
+import AutomatedVideoGeneration from './pages/automated-video-generation';
 
 import { useLocation } from 'react-router-dom';
 
@@ -83,6 +91,9 @@ function Main() {
         <Route path="/" element={<Home />} />
         <Route path="/services/web-development" element={<WebDevelopment />} />
         <Route path="/services/ai-automation" element={<AiAutomation />} />
+        <Route path="/services/ai-voice-agents" element={<AIVoiceAgents />} />
+        <Route path="/services/local-gpu-llm-quantization" element={<LocalGPULLMQuantization />} />
+        <Route path="/services/automated-video-generation-engine" element={<AutomatedVideoGeneration />} />
         <Route path="/services/crop-disease-detection-app" element={<CropDiseaseDetection />} />
         <Route path="/services/dairy-management-app-flutter" element={<DairyManagementApp />} />
         <Route path="/services/whatsapp-business-bot" element={<WhatsAppBusinessBot />} />
@@ -97,6 +108,10 @@ function Main() {
         <Route path="/case-studies/doodhisaab" element={<DoodHisaab />} />
         <Route path="/case-studies/fasal-doctor" element={<FasalDoctor />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/sarvam-indic-voice-ai-telephony-agent" element={<BlogPostVoiceAI />} />
+        <Route path="/blog/local-gpu-llm-quantization-mcp-legal-server" element={<BlogPostLocalGPU />} />
+        <Route path="/blog/automated-1080p60-videogen-pipeline" element={<BlogPostVideoGen />} />
+        <Route path="/blog/high-ticket-webgl-3d-spatial-digital-twin" element={<BlogPostWebGL />} />
         <Route path="/blog/offline-ai-crop-disease-scanner-flutter" element={<BlogPostFasalDoctor />} />
         <Route path="/blog/whatsapp-ai-agents-healthcare-india" element={<BlogPostWhatsAppHealth />} />
         <Route path="*" element={<div style={{ padding: '50px', color: '#fff', fontFamily: 'monospace', fontSize: '14px' }}>Route Mismatch: {window.location.pathname}</div>} />
