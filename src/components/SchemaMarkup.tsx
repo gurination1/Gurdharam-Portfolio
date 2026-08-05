@@ -26,8 +26,8 @@ export default function SchemaMarkup() {
     "url": "https://www.gurdharam.com",
     "logo": "https://www.gurdharam.com/assets/portfolio/person-a8f8d951.webp",
     "sameAs": [
-      "https://github.com/gdharam94",
-      "https://www.linkedin.com/in/gurdharam-singh-a4a350201/"
+      "https://github.com/gurination1",
+      "https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -57,8 +57,8 @@ export default function SchemaMarkup() {
       "jobTitle": "AI Engineer & Full-Stack Developer",
       "url": "https://www.gurdharam.com",
       "sameAs": [
-        "https://github.com/gdharam94",
-        "https://www.linkedin.com/in/gurdharam-singh-a4a350201/"
+        "https://github.com/gurination1",
+        "https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275"
       ],
       "address": {
         "@type": "PostalAddress",
