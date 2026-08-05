@@ -62,6 +62,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/services/ai-college-automation" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
+                  AI College & Campus Automation
+                </Link>
+              </li>
+              <li>
                 <Link to="/services/crop-disease-detection-app" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
                   Crop Disease Detection AI Developer
                 </Link>

@@ -12,6 +12,14 @@ export default function Blog() {
 
   const posts = [
     {
+      slug: 'ai-college-admission-bot-punjab',
+      title: 'How Indian Colleges Automate Admissions & Inquiries with WhatsApp AI Agents',
+      excerpt: 'Case study on deploying bilingual (English, Punjabi, Hinglish) WhatsApp AI bots for higher education colleges in Punjab to capture 24/7 applicant leads, collect marksheets, and process fee reminders.',
+      date: 'August 5, 2026',
+      readTime: '6 min read',
+      tag: 'Campus AI'
+    },
+    {
       slug: 'sarvam-indic-voice-ai-telephony-agent',
       title: 'Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony: SIP, WebRTC, and Custom VAD',
       excerpt: 'Detailed engineering breakdown of building full-duplex Indic voice callers using Pipecat, Sarvam AI, Exotel WebSockets, and Silero VAD over 8kHz PSTN phone lines with zero platform markups.',

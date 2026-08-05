@@ -105,6 +105,43 @@ const routes = [
     `
   },
   {
+    path: '/services/ai-college-automation',
+    title: 'AI College & University Admission Automation | Gurdharam',
+    description: 'Automate student admission inquiries, fee reminders, and document verification for colleges and institutes in Punjab with WhatsApp AI agents.',
+    canonical: 'https://www.gurdharam.com/services/ai-college-automation',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.gurdharam.com/services/ai-college-automation#webpage",
+          "url": "https://www.gurdharam.com/services/ai-college-automation",
+          "name": "AI College & University Admission Automation | Gurdharam",
+          "description": "Automate student admission inquiries, fee reminders, and document verification."
+        }
+      ]
+    },
+    html: `<main><h1>AI College & University Admission Automation</h1><p>WhatsApp AI admission bots for higher education colleges and universities in Punjab.</p></main>`
+  },
+  {
+    path: '/blog/ai-college-admission-bot-punjab',
+    title: 'How Indian Colleges Automate Admissions with WhatsApp AI Agents | Gurdharam',
+    description: 'Case study on deploying bilingual WhatsApp AI bots for higher education colleges in Punjab to capture 24/7 applicant leads and collect marksheets.',
+    canonical: 'https://www.gurdharam.com/blog/ai-college-admission-bot-punjab',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechnicalArticle",
+          "@id": "https://www.gurdharam.com/blog/ai-college-admission-bot-punjab#article",
+          "headline": "How Indian Colleges Automate Admissions with WhatsApp AI Agents",
+          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+        }
+      ]
+    },
+    html: `<main><h1>How Indian Colleges Automate Admissions with WhatsApp AI Agents</h1><p>Deploying bilingual WhatsApp AI bots for higher education colleges in Punjab.</p></main>`
+  },
+  {
     path: '/services/ai-voice-agents',
     title: 'Sub-300ms Indic Voice AI Telephony Agents | Gurdharam',
     description: 'Bilingual Voice AI callers in Hindi, Punjabi, and English. Sub-300ms turn-taking latency over PSTN/SIP phone calls with Sarvam AI and Pipecat.',
