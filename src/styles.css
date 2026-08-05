@@ -44,9 +44,10 @@
   --text-dim: #47423b;
   --accent-gold: #d4a853;
   --accent-glow: #e8c070;
-  --accent-cold: #5b8fd4;
-  --accent-green: #4ade80;
-  --accent-talk: #4ade80;
+  --accent-cyan: #38bdf8;
+  --accent-cold: #38bdf8;
+  --accent-green: #25D366;
+  --accent-talk: #25D366;
   --accent-ink: #07100b;
   --line: rgba(240, 237, 230, 0.12);
   --font-display: 'Syne', sans-serif;
@@ -385,18 +386,20 @@ body.wipe-menu-open .site-nav {
   position: relative;
   width: 100%;
   max-width: 900px;
-  padding: clamp(6rem, 12vh, 10rem) clamp(2rem, 6vw, 5rem) clamp(2rem, 4vh, 4rem);
+  padding: clamp(4.5rem, 8vh, 6.5rem) clamp(1.5rem, 5vw, 4rem) clamp(1.5rem, 2.5vh, 2.5rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
   min-height: 100vh;
+  max-height: 100vh;
 }
 
 .wipe-menu-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  flex: 1;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -411,9 +414,9 @@ body.wipe-menu-open .site-nav {
 .wipe-menu-item {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 3vw, 2.5rem);
+  gap: clamp(0.75rem, 2vw, 2rem);
   width: 100%;
-  padding: clamp(1rem, 2.5vh, 2rem) 0;
+  padding: clamp(0.4rem, 1.2vh, 1.2rem) 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -424,7 +427,7 @@ body.wipe-menu-open .site-nav {
 }
 
 .wipe-menu-item:hover {
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
 }
 
 .wipe-menu-item::after {
@@ -432,7 +435,7 @@ body.wipe-menu-open .site-nav {
   position: absolute;
   right: 0;
   font-family: var(--font-mono);
-  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  font-size: clamp(0.85rem, 1.2vw, 1.1rem);
   color: var(--accent-gold);
   opacity: 0;
   transform: translateX(-16px);
@@ -448,11 +451,11 @@ body.wipe-menu-open .site-nav {
 
 .wipe-menu-number {
   font-family: var(--font-mono);
-  font-size: clamp(0.68rem, 0.9vw, 0.82rem);
+  font-size: clamp(0.65rem, 0.8vw, 0.78rem);
   color: var(--accent-gold);
   letter-spacing: 0.15em;
   opacity: 0.7;
-  min-width: 2.5rem;
+  min-width: 2.2rem;
 }
 
 .wipe-menu-link-wrap {
@@ -463,7 +466,7 @@ body.wipe-menu-open .site-nav {
 .wipe-menu-link-text {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-size: clamp(1.4rem, 4.2vh + 0.8vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -479,13 +482,14 @@ body.wipe-menu-open .site-nav {
 /* ─── Wipe Menu Footer ───────────────────────────────────────── */
 .wipe-menu-footer {
   display: flex;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  padding-top: clamp(1.5rem, 3vh, 3rem);
+  gap: clamp(1.2rem, 3.5vw, 3rem);
+  padding-top: clamp(1rem, 2vh, 1.8rem);
   font-family: var(--font-mono);
-  font-size: clamp(0.62rem, 0.75vw, 0.76rem);
+  font-size: clamp(0.6rem, 0.7vw, 0.72rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-secondary);
+  shrink: 0;
 }
 
 .wipe-menu-footer a {
