@@ -6,7 +6,8 @@ import { Leaf, Milk, GitBranch, ExternalLink, Sparkles, Globe, BarChart3, ArrowR
 import { Link } from 'react-router-dom';
 import Floating, { FloatingElement } from './parallax-floating';
 import { FlipCard, FlipCardFront, FlipCardBack } from './flip-card';
-const VRDashboard = React.lazy(() => import('./vr-dashboard'));
+import { safeLazy, LazyErrorBoundary } from '../../lib/safe-lazy';
+const VRDashboard = safeLazy(() => import('./vr-dashboard'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -237,9 +238,11 @@ function VRDashboardFullCard() {
         overflow: 'hidden',
         borderRadius: '24px',
       }}>
-        <React.Suspense fallback={<div style={{ width: '100%', height: '100%', background: '#020c18' }} />}>
-          <VRDashboard />
-        </React.Suspense>
+        <LazyErrorBoundary fallback={<div style={{ width: '100%', height: '100%', background: '#020c18' }} />}>
+          <React.Suspense fallback={<div style={{ width: '100%', height: '100%', background: '#020c18' }} />}>
+            <VRDashboard />
+          </React.Suspense>
+        </LazyErrorBoundary>
       </div>
       {/* Gradient overlay at bottom so the edge fades nicely */}
       <div style={{
