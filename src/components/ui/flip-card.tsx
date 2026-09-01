@@ -2,19 +2,12 @@
 
 import * as React from "react"
 import { HTMLMotionProps, motion } from "motion/react"
-
 import { cn } from "@/lib/utils"
 
 const TRANSITION_CONFIG = {
-  duration: 0.7,
+  duration: 0.6,
   ease: [0.4, 0.2, 0.2, 1],
-  transition: "0.7s cubic-bezier(0.4, 0.2, 0.2, 1)",
 } as const
-const TRANSFORM_STYLES: React.CSSProperties = {
-  transformStyle: "preserve-3d",
-  perspective: "1000px",
-  backfaceVisibility: "hidden",
-}
 
 type FlipDirection = "horizontal" | "vertical"
 interface FlipCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -56,16 +49,38 @@ const FlipCard = React.memo(
       const [isFlipped, setIsFlipped] = React.useState(initialFlipped)
 
       const handleMouseEnter = React.useCallback(() => {
-        if (!disabled) {
+        // Only trigger hover flip on devices with actual hover capability
+        if (!disabled && window.matchMedia?.('(hover: hover)').matches) {
           setIsFlipped(true)
           onFlip?.(true)
         }
       }, [disabled, onFlip])
 
       const handleMouseLeave = React.useCallback(() => {
-        if (!disabled) {
+        if (!disabled && window.matchMedia?.('(hover: hover)').matches) {
           setIsFlipped(false)
           onFlip?.(false)
+        }
+      }, [disabled, onFlip])
+
+      const handleClick = React.useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!disabled) {
+          setIsFlipped(prev => {
+            const next = !prev
+            onFlip?.(next)
+            return next
+          })
+        }
+      }, [disabled, onFlip])
+
+      const handleKeyDown = React.useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (!disabled && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault()
+          setIsFlipped(prev => {
+            const next = !prev
+            onFlip?.(next)
+            return next
+          })
         }
       }, [disabled, onFlip])
 
@@ -79,16 +94,19 @@ const FlipCard = React.memo(
           <div
             ref={ref}
             className={cn(
-              "relative border-none bg-none shadow-none",
+              "relative border-none bg-none shadow-none cursor-pointer select-none",
               disabled && "pointer-events-none",
               className
             )}
             style={{
-              ...TRANSFORM_STYLES,
+              transformStyle: "preserve-3d",
+              perspective: "1000px",
               ...props.style,
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
+            onKeyDown={handleKeyDown}
             role="button"
             tabIndex={disabled ? -1 : 0}
             aria-pressed={isFlipped}
@@ -117,14 +135,17 @@ const FlipCardFront = React.memo(
         <motion.div
           ref={ref}
           className={cn(
-            "absolute inset-0 z-20 size-full overflow-hidden",
+            "absolute inset-0 size-full",
+            isFlipped ? "z-10 pointer-events-none" : "z-20 pointer-events-auto",
             className
           )}
           initial={false}
           animate={rotation}
           transition={TRANSITION_CONFIG}
           style={{
-            ...TRANSFORM_STYLES,
+            transformStyle: "preserve-3d",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
             ...props.style,
           }}
           {...props}
@@ -140,22 +161,34 @@ const FlipCardBack = React.memo(
     ({ className, ...props }, ref) => {
       const { isFlipped, flipDirection } = useFlipCardContext()
 
-      const rotation = React.useMemo(() => {
+      const initialRotation = React.useMemo(
+        () =>
+          flipDirection === "horizontal"
+            ? { rotateY: 180, rotateX: 0 }
+            : { rotateX: 180, rotateY: 0 },
+        [flipDirection]
+      )
+
+      const animateRotation = React.useMemo(() => {
         if (isFlipped) return { rotateX: 0, rotateY: 0 }
-        return flipDirection === "horizontal"
-          ? { rotateY: 180, rotateX: 0 }
-          : { rotateX: 180, rotateY: 0 }
-      }, [isFlipped, flipDirection])
+        return initialRotation
+      }, [isFlipped, initialRotation])
 
       return (
         <motion.div
           ref={ref}
-          className={cn("absolute inset-0 z-10 size-full", className)}
-          initial={false}
-          animate={rotation}
+          className={cn(
+            "absolute inset-0 size-full",
+            isFlipped ? "z-20 pointer-events-auto" : "z-10 pointer-events-none",
+            className
+          )}
+          initial={initialRotation}
+          animate={animateRotation}
           transition={TRANSITION_CONFIG}
           style={{
-            ...TRANSFORM_STYLES,
+            transformStyle: "preserve-3d",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
             ...props.style,
           }}
           {...props}

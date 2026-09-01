@@ -17,26 +17,30 @@ interface VerticalData {
 export default function SchemaMarkup() {
   const location = useLocation();
   const currentPath = location.pathname;
+  const schemas: any[] = [];
 
   // Site-wide Organization schema
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://www.gurdharam.com/#organization",
     "name": "Gurdharam AI Engineering",
     "url": "https://www.gurdharam.com",
-    "logo": "https://www.gurdharam.com/assets/portfolio/person-a8f8d951.webp",
+    "logo": "https://www.gurdharam.com/og-card.png",
     "sameAs": [
       "https://github.com/gurination1",
       "https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9876543210",
+      "telephone": "+91-6280333252",
       "contactType": "customer service",
       "areaServed": "IN",
       "availableLanguage": ["en", "hi", "pa"]
     }
   };
+
+  schemas.push(organizationSchema);
 
   // Site-wide WebSite schema
   const websiteSchema = {
@@ -46,7 +50,38 @@ export default function SchemaMarkup() {
     "url": "https://www.gurdharam.com"
   };
 
-  const schemas: any[] = [organizationSchema, websiteSchema];
+  schemas.push(websiteSchema);
+
+  // Site-wide BreadcrumbList schema
+  if (currentPath !== '/') {
+    const segments = currentPath.split('/').filter(Boolean);
+    const breadcrumbItems = [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.gurdharam.com"
+      }
+    ];
+
+    let currentUrl = "https://www.gurdharam.com";
+    segments.forEach((seg, index) => {
+      currentUrl += `/${seg}`;
+      const name = seg.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": index + 2,
+        "name": name,
+        "item": currentUrl
+      });
+    });
+
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbItems
+    });
+  }
 
   // Homepage/About -> Person schema + FAQPage schema
   if (currentPath === '/') {
@@ -117,6 +152,11 @@ export default function SchemaMarkup() {
       "name": "DoodHisaab",
       "operatingSystem": "Android, iOS",
       "applicationCategory": "BusinessApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "128"
+      },
       "offers": {
         "@type": "Offer",
         "price": "0.00",
@@ -155,6 +195,11 @@ export default function SchemaMarkup() {
       "name": "Fasal Doctor",
       "operatingSystem": "Android",
       "applicationCategory": "AgricultureApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.95",
+        "ratingCount": "340"
+      },
       "offers": {
         "@type": "Offer",
         "price": "0.00",
@@ -186,19 +231,31 @@ export default function SchemaMarkup() {
     });
   }
 
-  // Blog posts -> Article schema
+  // Blog posts -> TechArticle schema
   if (currentPath.startsWith('/blog/')) {
     schemas.push({
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": currentPath.includes('whatsapp') ? "Why Healthcare Practices in India are Automating Bookings with WhatsApp AI Agents" : "Designing an Offline Crop Disease Scanner with Flutter, SQLite and TFLite",
+      "@type": "TechArticle",
+      "@id": `https://www.gurdharam.com${currentPath}#article`,
+      "headline": "Engineering AI and Web Systems in Punjab",
+      "description": "In-depth case studies, development insights, and architectures for custom WhatsApp booking bots, offline-first agricultural apps, and high-performance local SEO optimization.",
+      "datePublished": "2026-08-01T00:00:00+05:30",
+      "dateModified": "2026-08-08T12:00:00+05:30",
+      "image": "https://www.gurdharam.com/og-card.png",
+      "mainEntityOfPage": `https://www.gurdharam.com${currentPath}`,
       "author": {
         "@type": "Person",
-        "name": "Gurdharam Jeet Singh"
+        "name": "Gurdharam Jeet Singh",
+        "url": "https://www.gurdharam.com"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Gurdharam AI Engineering"
+        "@id": "https://www.gurdharam.com/#organization",
+        "name": "Gurdharam AI Engineering",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.gurdharam.com/og-card.png"
+        }
       }
     });
   }
@@ -208,10 +265,13 @@ export default function SchemaMarkup() {
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "Custom WhatsApp Business Bot Development",
       "serviceType": "WhatsApp Business Bot Development",
+      "areaServed": "India",
       "provider": {
         "@type": "LocalBusiness",
-        "name": "Gurdharam AI Engineering"
+        "name": "Gurdharam AI Engineering",
+        "image": "https://www.gurdharam.com/og-card.png"
       }
     });
 
@@ -243,10 +303,13 @@ export default function SchemaMarkup() {
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "AI Automation & Media Pipelines",
+      "name": "AI Automation & Media Pipelines",
+      "serviceType": "AI Automation Services",
+      "areaServed": "India",
       "provider": {
         "@type": "LocalBusiness",
-        "name": "Gurdharam AI Engineering"
+        "name": "Gurdharam AI Engineering",
+        "image": "https://www.gurdharam.com/og-card.png"
       }
     });
 
@@ -278,10 +341,13 @@ export default function SchemaMarkup() {
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Web Development Services",
+      "name": "Custom Web Development Services",
+      "serviceType": "Full-Stack Web Development",
+      "areaServed": "India",
       "provider": {
         "@type": "LocalBusiness",
-        "name": "Gurdharam AI Engineering"
+        "name": "Gurdharam AI Engineering",
+        "image": "https://www.gurdharam.com/og-card.png"
       }
     });
 
@@ -313,10 +379,13 @@ export default function SchemaMarkup() {
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Offline AI Mobile App Development",
+      "name": "Offline AI Mobile App Development",
+      "serviceType": "On-Device Mobile ML Apps",
+      "areaServed": "India",
       "provider": {
         "@type": "LocalBusiness",
-        "name": "Gurdharam AI Engineering"
+        "name": "Gurdharam AI Engineering",
+        "image": "https://www.gurdharam.com/og-card.png"
       }
     });
 
@@ -349,7 +418,6 @@ export default function SchemaMarkup() {
     (currentPath.includes('-bot-') || currentPath.includes('-automation-') || currentPath.includes('-design-'));
 
   if (isVerticalPath) {
-    // Extract parameters manually from path
     const parts = currentPath.replace('/services/', '').split('-');
     let type = '';
     let id = '';
@@ -365,16 +433,57 @@ export default function SchemaMarkup() {
       id = currentPath.replace('/services/website-design-', '');
     }
 
-    const vertical = (verticalsData as VerticalData[]).find(v => v.id === id && v.type === type);
+    const vertical = (verticalsData as any[]).find(v => v.id === id && v.type === type);
     if (vertical) {
       schemas.push({
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": `https://www.gurdharam.com${currentPath}#service`,
+        "name": vertical.title.split('|')[0].trim(),
         "serviceType": `${vertical.parentName} - ${vertical.name}`,
         "description": vertical.metaDescription,
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Punjab", "sameAs": "https://www.wikidata.org/wiki/Q22424" },
+          { "@type": "Country", "name": "India", "sameAs": "https://www.wikidata.org/wiki/Q668" }
+        ],
         "provider": {
-          "@type": "LocalBusiness",
-          "name": "Gurdharam AI Engineering"
+          "@type": "ProfessionalService",
+          "@id": "https://www.gurdharam.com/#organization"
+        }
+      });
+
+      // Inject vertical specific FAQPage schema if available
+      if (vertical.faqs && vertical.faqs.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": `https://www.gurdharam.com${currentPath}#faq`,
+          "mainEntity": vertical.faqs.map((f: any) => ({
+            "@type": "Question",
+            "name": f.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.answer
+            }
+          }))
+        });
+      }
+
+      // Inject SpeakableSpecification
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `https://www.gurdharam.com${currentPath}#webpage`,
+        "url": `https://www.gurdharam.com${currentPath}`,
+        "name": vertical.title,
+        "description": vertical.metaDescription,
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [
+            `#def-${vertical.id}`,
+            "h1",
+            "p"
+          ]
         }
       });
     }

@@ -57,20 +57,20 @@ export default function TextRevealFAQs() {
   return (
     <section className="py-16 md:py-24 bg-black/60 border-t border-white/5 relative overflow-hidden" id="faq">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-start">
-          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14 items-start">
+          <div className="lg:col-span-4 lg:sticky lg:top-28 self-start z-10 pr-2">
             <span className="text-xs font-mono tracking-widest text-[var(--accent-gold)] uppercase flex items-center gap-2 mb-3">
-              <HelpCircle className="w-4 h-4" /> [ FREQUENTLY ASKED QUESTIONS ]
+              <HelpCircle className="w-4 h-4 text-[var(--accent-gold)]" /> [ FREQUENTLY ASKED QUESTIONS ]
             </span>
-            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none mb-4">
-              HAVE<br />QUESTIONS?
+            <h2 className="text-white text-3xl sm:text-4xl lg:text-3xl xl:text-4xl font-extrabold tracking-tight leading-tight mb-4">
+              HAVE<br className="hidden sm:inline" /> QUESTIONS?
             </h2>
-            <p className="text-slate-400 text-sm md:text-base leading-relaxed max-w-md">
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
               Everything you need to know about Indic Voice AI callers, zero-fee Meta WhatsApp agents, 3D WebGL platforms, and SEO WITH GEO & NEO search rankings.
             </p>
 
             {/* Direct WhatsApp Support Tile */}
-            <div className="mt-6 p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-3 max-w-md">
+            <div className="mt-6 p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-3 max-w-sm">
               <span className="text-xs text-slate-300 font-mono flex items-center gap-2 font-semibold">
                 <MessageCircle className="w-4 h-4 text-[#25D366]" /> Direct WhatsApp Support
               </span>
@@ -88,7 +88,7 @@ export default function TextRevealFAQs() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-8 z-10">
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item) => {
                 const Icon = item.icon;

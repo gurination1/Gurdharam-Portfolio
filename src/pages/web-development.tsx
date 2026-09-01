@@ -270,6 +270,14 @@ export default function WebDevelopment() {
               </div>
               <ArrowRight className="text-accent-cold ml-auto flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" size={16} />
             </Link>
+            <Link to="/blog/high-ticket-webgl-3d-spatial-digital-twin" className="flex items-center gap-4 bg-card border border-white/5 p-6 rounded-2xl hover:border-accent-cold/30 transition-colors group">
+              <Star className="text-accent-cold flex-shrink-0" size={24} />
+              <div>
+                <div className="text-white font-bold text-sm group-hover:text-accent-cold transition-colors">3D WebGL Digital Twins Case Study</div>
+                <div className="text-secondary text-xs mt-1">60 FPS Three.js engineering blueprint</div>
+              </div>
+              <ArrowRight className="text-accent-cold ml-auto flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" size={16} />
+            </Link>
             <Link to="/blog" className="flex items-center gap-4 bg-card border border-white/5 p-6 rounded-2xl hover:border-accent-cold/30 transition-colors group">
               <Star className="text-accent-cold flex-shrink-0" size={24} />
               <div>

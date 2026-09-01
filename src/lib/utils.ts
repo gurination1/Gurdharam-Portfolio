@@ -5,38 +5,38 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+/** Portfolio project cards data for the StackedCards component. */
 export const cardData = [
   {
     id: 1,
-    title: 'VideoGen — Local Prompt-to-MP4 Video Engine ($0 API Cost)',
-    description: 'Self-hosted AI video generation pipeline: automated script generation, local SD rendering, voice narration, and MP4 assembly with zero cloud API subscriptions.',
-    color: 'rgba(212, 168, 83, 0.85)',
-    cardType: 'videogen',
-    metrics: ['⚡ $0 Cloud Cost', '🔒 100% Offline', '🎬 SD Render Engine', '4.2x Render Speed'],
+    title: 'AI Voice Calling Agent — Sub-300ms Real-Time Indic Telephony',
+    description: 'Full-duplex conversational voice AI on real phone lines. Streams Sarvam Indic ASR, local Llama 3, and neural TTS in Punjabi, Hindi & English with 50ms interruption handling.',
+    color: 'rgba(245, 158, 11, 0.9)',
+    cardType: 'calling-agent',
+    metrics: ['⚡ <290ms Latency', '🎙️ SIP Trunks + PBX', '🗣️ Punjabi & Hindi AI', '🛡️ DPDP Compliant'],
   },
   {
     id: 2,
+    title: 'WhatsApp Business Bot — Official Meta Cloud API (Zero SaaS Fees)',
+    description: 'Direct Meta Cloud API webhook automation with ₹0 monthly platform subscription markups. Auto-qualifies leads, books appointments, and delivers dynamic catalog PDFs.',
+    color: 'rgba(34, 197, 94, 0.9)',
+    cardType: 'whatsapp-bot',
+    metrics: ['⚡ ₹0 SaaS Markups', '📱 Meta Cloud API v20', '💬 1,000 Free Chats', '📄 Instant PDF Dispatch'],
+  },
+  {
+    id: 3,
     title: 'Fasal Doctor & DoodhiSaab — Offline AI Rural Tech Apps',
-    description: 'Field-ready Flutter apps engineered for rural India: MobileNetV2 crop disease scanner (<2s inference on 2GB RAM) and a phone-first milk delivery ledger.',
-    color: 'rgba(56, 189, 248, 0.85)',
+    description: 'Field-ready Flutter apps engineered for rural Punjab: MobileNetV2 crop disease scanner (<2s inference on 2GB RAM) and an on-device milk collection ledger with WhatsApp receipts.',
+    color: 'rgba(56, 189, 248, 0.9)',
     cardType: 'cow-apps',
     metrics: ['⚡ <2s On-Device AI', '📱 2GB RAM Spec', '📦 100% Offline Ledger', '<12ms SQLite Commit'],
   },
   {
-    id: 3,
-    title: 'TakeMyInterview & Neovrit — Indic Voice AI & 3D WebGL',
-    description: 'Real-time conversational voice interview agent (<500ms latency) alongside photorealistic 3D WebGL digital twin platforms built in Three.js and GSAP.',
-    color: 'rgba(212, 168, 83, 0.85)',
-    cardType: 'dashboard',
-    metrics: ['🎙️ <500ms Latency', '🗣️ Indic Voice AI', '🎮 60 FPS WebGL', 'Sarvam AI Speech'],
-  },
-  {
     id: 4,
-    title: 'SEO WITH GEO & NEO — Google #1 + ChatGPT & Perplexity Ranking',
-    description: 'Static pre-rendered web platforms structured with JSON-LD entity graphs, factual direct-answer blocks, and /llms.txt endpoints to rank #1 in AI Search.',
-    color: 'rgba(56, 189, 248, 0.85)',
-    cardType: 'manymore',
-    metrics: ['🏆 #1 Google Rank', '🤖 ChatGPT / Perplexity', '🕸️ JSON-LD Graph', 'Vite SSG Static'],
+    title: '21 GitHub Projects — Open Source Pipelines & Offline Engines',
+    description: '21 public repositories spanning automated 1080p60 video generation (yt-auto / Videogen-Max), local voice interviewers (TakeMyInterview-Ai), GPU assistant engines (Neo Assistant), and agritech mobile apps.',
+    color: 'rgba(91, 143, 212, 0.95)',
+    cardType: 'videogen',
+    metrics: ['⚡ 21 Public Repos', '🎬 yt-auto & Videogen', '🎤 TakeMyInterview-Ai', '🤖 Neo Assistant & MCP'],
   },
 ];
-

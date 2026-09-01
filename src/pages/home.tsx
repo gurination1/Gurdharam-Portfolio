@@ -28,6 +28,9 @@ import { MagicText } from '@/components/ui/magic-text';
 import AnimatedTextRoller from '@/components/ui/animated-text-04';
 import { StackedCards } from '@/components/ui/glass-cards';
 import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scrolling-text-effect';
+import CodropsEmergingImage from '@/components/ui/codrops-emerging-image';
+import TextArcEffect from '@/components/ui/text-arc-effect';
+import AnimatedStatsStrip from '@/components/ui/gsap-rolling-counter';
 
 const techLogos = [
   { src: "https://svgl.app/library/openai_wordmark_light.svg", alt: "OpenAI" },
@@ -83,87 +86,7 @@ const secondPageImage = pickAsset('2nd page', 'second page');
 const quoteParticleImage = pickAsset('quote-particle-source');
 const fallbackSecondPageImage = 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=80';
 
-const projects = [
-  {
-    id: 'videogen',
-    no: '01',
-    titleA: 'VIDEO',
-    titleB: 'GEN',
-    year: '2024-2025',
-    type: 'AI / PYTHON / LOCAL',
-    desc: <>Local AI video generation from one prompt: script, visuals, narration, and MP4 output. <strong className="charming-word">Zero cloud</strong>.</>,
-    tags: ['Python', 'ComfyUI', 'FFmpeg', 'LLM'],
-    image: pickAsset('videogen', 'video', 'gen'),
-    href: 'https://github.com/gurination1/Videogen',
-    icon: <Bot size={28} />,
-    deck: ['QWEN', 'COMFY', 'PIPER'],
-    telemetry: ['LOCAL GPU', 'NO API KEYS', 'MP4 OUTPUT'],
-    color: 'rgba(91, 143, 212, 0.82)',
-  },
-  {
-    id: 'doodhisaab',
-    no: '02',
-    titleA: 'DOODH',
-    titleB: 'ISAAB',
-    year: '2024',
-    type: 'FLUTTER / MOBILE APP / BUSINESS',
-    desc: <>A <strong className="charming-word">phone-first</strong> milk business ledger for deliveries, customer accounts, and monthly profit. Crafted specifically for the vibrant Indian market.</>,
-    tags: ['Flutter', 'Dart', 'SQLite', 'Offline-first'],
-    image: pickAsset('doodhisaab', 'doodhi'),
-    status: 'IN DEVELOPMENT - PLAY STORE SOON',
-    icon: <Code2 size={28} />,
-    deck: ['LEDGER', 'ROUTES', 'PROFIT'],
-    telemetry: ['OFFLINE DB', 'LOW-LITERACY UI', 'PLAY STORE'],
-    color: 'rgba(212, 168, 83, 0.82)',
-  },
-  {
-    id: 'fasaldoctor',
-    no: '03',
-    titleA: 'FASAL',
-    titleB: 'DOCTOR',
-    year: '2024-2025',
-    type: 'FLUTTER / OFFLINE AI / COMPUTER VISION',
-    desc: <>Point your camera at a sick crop and get an <strong className="charming-word">instant offline diagnosis</strong>. Built for remote fields where 4G is just a myth.</>,
-    tags: ['Flutter', 'TFLite', 'Offline AI', 'Computer Vision'],
-    image: pickAsset('fasal', 'doctor'),
-    icon: <BrainCircuit size={28} />,
-    deck: ['CAMERA', 'TFLITE', 'ACTION'],
-    telemetry: ['13 CLASSES', 'NO 4G', 'PUNJAB FIELD'],
-    color: 'rgba(74, 222, 128, 0.72)',
-  },
-  {
-    id: 'aiinterviewer',
-    no: '04',
-    titleA: 'AI',
-    titleB: 'INTERVIEWER',
-    year: '2026',
-    type: 'LOCAL AI / VOICE / PYTHON',
-    desc: <>A <strong className="charming-word">hyper-local</strong> voice interview agent that asks, listens, transcribes, speaks, and neatly saves structured transcripts.</>,
-    tags: ['Python', 'Qwen2.5', 'Whisper', 'Piper TTS', 'Voice AI'],
-    image: pickAsset('aiinterviewer', 'interviewer'),
-    href: 'https://github.com/gurination1/TakeMyInterview-Ai',
-    icon: <Mail size={28} />,
-    deck: ['VOICE', 'QWEN', 'VAD'],
-    telemetry: ['LOCAL GPU', 'NO INTERNET', 'JSON TRANSCRIPTS'],
-    color: 'rgba(232, 192, 112, 0.82)',
-  },
-  {
-    id: 'manymore',
-    no: '05',
-    titleA: 'MANY',
-    titleB: 'MORE',
-    year: 'ONGOING',
-    type: 'WEB / AI / DASHBOARDS / DOCS',
-    desc: <>Exquisite websites, dynamic dashboards, and <strong className="charming-word">client-ready</strong> product systems powered by robust AI training workflows.</>,
-    tags: ['Website', 'Web Design', 'Dashboard', 'Documentation', 'AI Training', 'AI Optimisation'],
-    image: pickAsset('last 2nd slide', 'slide'),
-    status: 'MANY MORE REAL WORLD PROJECTS',
-    icon: <Sparkles size={28} />,
-    deck: ['WEB', 'DOCS', 'AI OPS'],
-    telemetry: ['CLIENT WORK', 'DASHBOARDS', 'REAL SYSTEMS'],
-    color: 'rgba(240, 237, 230, 0.66)',
-  },
-];
+
 
 const skills = [
   ['Prompt Engineering', 92],
@@ -1053,7 +976,7 @@ function Hero() {
             />
           </div>
           <p className="hero-copy">
-            I build <Mark>AI systems that cut manual work by 90%</Mark>, automate lead generation 24/7 on WhatsApp, and engineer high-end websites that convert traffic into revenue.
+            We build <Mark>AI systems that eliminate 90% of manual work</Mark>, automate lead generation 24/7 on WhatsApp, and engineer luxury websites that convert traffic into enterprise revenue.
           </p>
           <div className="hero-actions">
             <LiquidGlassMagneticButton variant="blue" size="sm" onClick={() => navigateTo('#work')}>
@@ -1208,25 +1131,26 @@ function About() {
             alt="Gurdharam portfolio second page preview"
             className="h-full w-full rounded-2xl object-cover object-center"
             draggable={false}
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={675}
           />
         </PerspectiveContainerScroll>
       </div>
       <div className="about-grid">
         <div className="stats-col">
-          {[
-            ['1', 'YR', 'HARD EXPERIENCE'],
-            ['12', '+', 'PROJECTS SHIPPED'],
-            ['8', '+', 'CLIENTS WORLDWIDE'],
-          ].map(([target, unit, label]) => (
-            <div className="stat" key={label}>
-              <strong><span className="stat-number" data-target={target}>0</span><em>{unit}</em></strong>
-              <span>{label}</span>
-            </div>
-          ))}
+          <CodropsEmergingImage
+            src="/assets/gurdharam-portrait-bg.webp"
+            cutoutSrc="/assets/gurdharam-cutout.webp"
+            arcText="• GURDHARAM ENTERPRISE STUDIO • AI & WEB ARCHITECTURE •"
+            fillColor="#d4a853"
+          />
+          <AnimatedStatsStrip className="mt-3" />
         </div>
         <div className="about-copy">
           <MagicText
-            text="Gurdharam Jeet Singh is an AI Engineer and Web Developer in Punjab specializing in custom web platforms and offline apps. I build things that think: autonomous AI bots, local video pipelines, and practical apps for real client work."
+            text="Our enterprise engineering studio architects high-impact web platforms, autonomous AI pipelines, and offline-first mobile apps. We build systems that think, automate revenue, and scale operations worldwide."
           />
           <div className="chips">
             {['LLM Engineering', 'Prompt Architecture', 'Autonomous AI Bots', 'Website', 'Web Design', 'Dashboard', 'Visual Documentation', 'AI Fine Tuning', 'AI Training', 'AI Optimisation', 'Flutter / Dart', 'Python', 'FFmpeg Pipelines', 'ComfyUI', 'On-Device ML', 'REST APIs'].map((chip) => (
@@ -1239,6 +1163,9 @@ function About() {
             </Link>
             <Link to="/services/web-development" className="btn-primary" style={{ padding: '0.8rem 1.5rem', border: '1px solid var(--accent-cold)', borderRadius: '99px', color: 'var(--accent-cold)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>
               Web Development Services
+            </Link>
+            <Link to="/websites" className="btn-primary" style={{ padding: '0.8rem 1.5rem', border: '1px solid rgba(255,255,255,0.25)', borderRadius: '99px', color: '#f0ede6', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em', background: 'rgba(255,255,255,0.04)' }}>
+              Live Websites & 3D Showcase →
             </Link>
           </div>
         </div>
@@ -1421,8 +1348,8 @@ function Quote() {
     <section className="quote-panel">
       <ImageParticleField src={quoteParticleImage} density={8} opacity={0.36} />
       <Sparkles size={34} />
-      <blockquote data-split>He engineers <span>intelligence</span> clients can use.</blockquote>
-      <cite>- CLIENT, INTERNATIONAL PROJECT</cite>
+      <blockquote data-split>They engineer <span>usable intelligence</span> that scales businesses.</blockquote>
+      <cite>- CLIENT, INTERNATIONAL ENTERPRISE PROJECT</cite>
     </section>
   );
 }

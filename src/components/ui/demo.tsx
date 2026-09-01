@@ -1,42 +1,30 @@
-import React from 'react';
-import { StackedCards } from './glass-cards';
-import '../../styles.css';
+import { ShineBorder } from "@/components/ui/shine-border"
 
-// Demo component showcasing the stacked cards with different configurations
-export const DefaultDemo: React.FC = () => {
+export function ShineBorderDemo() {
   return (
-    <div style={{ 
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      width: '100%'
-    }}>
-      <StackedCards />
-    </div>
-  );
-};
+    <ShineBorder
+      className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+      color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+    >
+      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+        Shine Border
+      </span>
+    </ShineBorder>
+  )
+}
 
-// Alternative demo with different styling
-export const AlternativeDemo: React.FC = () => {
+export function ShineBorderMonotone({ theme = "dark" }: { theme?: string }) {
   return (
-    <div style={{ 
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%)',
-      width: '100%'
-    }}>
-      <div style={{ padding: '2rem' }}>
-        <h1 style={{ 
-          textAlign: 'center', 
-          color: 'white', 
-          marginBottom: '2rem',
-          fontSize: '2.5rem',
-          textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)'
-        }}>
-          Alternative Style Demo
-        </h1>
-        <StackedCards />
-      </div>
-    </div>
-  );
-};
+    <ShineBorder
+      className="text-center text-2xl font-bold capitalize"
+      color={theme === "dark" ? "white" : "black"}
+    >
+      Shine Border
+    </ShineBorder>
+  )
+}
 
-export default DefaultDemo;
+export default {
+  ShineBorderDemo,
+  ShineBorderMonotone,
+}

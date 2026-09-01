@@ -1,5 +1,18 @@
 User-agent: *
 Allow: /
+Disallow: /google*.html
+Disallow: /google*
+Disallow: /b4f8e2a1c7d94e5f8a3b6c9d2e1f4a7b.txt
+Disallow: /nk4rh81h1zqdr5yvwrt8w9dtutjyhw9a.txt
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
 
 # AI Crawlers - explicitly allowed for GEO citation eligibility
 User-agent: GPTBot

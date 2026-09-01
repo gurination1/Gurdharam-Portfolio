@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gurdharam Jeet Singh — AI & Web Engineering</title>
+    <link>https://www.gurdharam.com/blog</link>
+    <description>Technical articles, architectural blueprints, and engineering case studies on production AI agents, local LLMs, and high-performance WebGL platforms.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Aug 2026 12:00:00 +0530</lastBuildDate>
+    <atom:link href="https://www.gurdharam.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>How Indian Colleges Automate Admissions with WhatsApp AI Agents</title>
+      <link>https://www.gurdharam.com/blog/ai-college-admission-bot-punjab</link>
+      <guid>https://www.gurdharam.com/blog/ai-college-admission-bot-punjab</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+      <description>Case study on deploying bilingual WhatsApp AI bots for higher education colleges in Punjab to capture 24/7 applicant leads and collect marksheets.</description>
+      <author>gurination1@gmail.com (Gurdharam Jeet Singh)</author>
+    </item>
+
+    <item>
+      <title>Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony</title>
+      <link>https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent</link>
+      <guid>https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+      <description>Full-stack architecture breakdown: Silero VAD, Sarvam Indic streaming ASR, Groq Llama 3 8B, and FastSpeech2 TTS over WebRTC & SIP trunks.</description>
+      <author>gurination1@gmail.com (Gurdharam Jeet Singh)</author>
+    </item>
+
+    <item>
+      <title>Local GPU LLM Quantization & Model Context Protocol (MCP) Legal Server</title>
+      <link>https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server</link>
+      <guid>https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+      <description>Deploying air-gapped Qwen 2.5 72B with AWQ 4-bit quantization on local RTX 6000 Ada GPUs for confidential case law document analysis.</description>
+      <author>gurination1@gmail.com (Gurdharam Jeet Singh)</author>
+    </item>
+
+    <item>
+      <title>yt-auto: Scaling Automated 1080p60 Video Pipelines at $0 Cloud Cost</title>
+      <link>https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline</link>
+      <guid>https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+      <description>How we built a self-hosted media pipeline combining Remotion, PyTorch SDXL, NumPy audio DSP, and hardware-accelerated FFmpeg NVENC encoding.</description>
+      <author>gurination1@gmail.com (Gurdharam Jeet Singh)</author>
+    </item>
+
+    <item>
+      <title>NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins</title>
+      <link>https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin</link>
+      <guid>https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+      <description>High-ticket real estate and B2B SaaS digital twin engine built on Three.js r128, DRACO geometry compression, and GSAP ScrollTrigger.</description>
+      <author>gurination1@gmail.com (Gurdharam Jeet Singh)</author>
+    </item>
+
+    <item>
+      <title>Designing an Offline Crop Disease Scanner with Flutter, SQLite and TFLite</title>
+      <link>https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter</link>
+      <guid>https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+      <description>Technical breakdown of running on-device MobileNetV2 computer vision models on 2GB RAM Android phones in rural Punjab with zero cellular data.</description>
+      <author>gurination1@gmail.com (Gurdharam Jeet Singh)</author>
+    </item>
+
+    <item>
+      <title>Why Healthcare Practices in India are Automating Bookings with WhatsApp AI Agents</title>
+      <link>https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india</link>
+      <guid>https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+      <description>How clinics and diagnostic labs eliminate reception congestion, prevent no-shows, and automate patient triage through WhatsApp Cloud API.</description>
+      <author>gurination1@gmail.com (Gurdharam Jeet Singh)</author>
+    </item>
+
+    <item>
+      <title>DPDP Act Compliant Air-Gapped Local LLM Deployment for Law Firms</title>
+      <link>https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech</link>
+      <guid>https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0530</pubDate>
+      <description>Architecture guide for Indian legal enterprises to process sensitive contracts and client filings locally with zero third-party cloud data exposure.</description>
+      <author>gurination1@gmail.com (Gurdharam Jeet Singh)</author>
+    </item>
+  </channel>
+</rss>

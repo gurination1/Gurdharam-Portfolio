@@ -14,7 +14,7 @@ const template = fs.readFileSync(templatePath, 'utf8');
 const routes = [
   {
     path: '/',
-    title: 'Gurdharam Jeet Singh | AI & Web Developer in Punjab',
+    title: 'Gurdharam | AI & Web Developer Punjab',
     description: 'AI Engineer & Full Stack Web/App Developer based in Punjab (Muktsar/Bathinda). Building offline AI, WhatsApp bots, and future-proof websites.',
     canonical: 'https://www.gurdharam.com/',
     html: `
@@ -105,8 +105,32 @@ const routes = [
     `
   },
   {
+    path: '/websites',
+    title: 'Live Websites, 3D Spatial Engines & AI Platforms | Gurdharam',
+    description: 'Curated portfolio of high-end live websites, procedural WebGL 3D experiences, and autonomous AI platforms engineered by Gurdharam Jeet Singh.',
+    canonical: 'https://www.gurdharam.com/websites',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://www.gurdharam.com/websites#collection",
+          "url": "https://www.gurdharam.com/websites",
+          "name": "Live Websites & 3D Spatial Platforms Showcase | Gurdharam",
+          "description": "Showcase of live client websites (Kirat Interior), 3D spatial platforms (Framersite 3D), and autonomous AI engines (Neovrit, DoodhHisaab, FasalDoctor)."
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <h1>Live Websites, 3D Spatial Engines & AI Platforms</h1>
+          <p>Curated digital showcase engineered by Gurdharam Jeet Singh — Kirat Interior, Framersite 3D, Neovrit, and Flagship platforms.</p>
+        </header>
+      </main>`
+  },
+  {
     path: '/services/ai-college-automation',
-    title: 'AI College & University Admission Automation | Gurdharam',
+    title: 'AI College Admission Automation | Gurdharam',
     description: 'Automate student admission inquiries, fee reminders, and document verification for colleges and institutes in Punjab with WhatsApp AI agents.',
     canonical: 'https://www.gurdharam.com/services/ai-college-automation',
     jsonld: {
@@ -121,29 +145,128 @@ const routes = [
         }
       ]
     },
-    html: `<main><h1>AI College & University Admission Automation</h1><p>WhatsApp AI admission bots for higher education colleges and universities in Punjab.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">AI Automation · Education</span>
+          <h1>AI College & University Admission Automation in Punjab</h1>
+          <div id="def-ai-college-automation" class="aeo-direct-answer">
+            <p>AI College Admission Automation is an end-to-end conversational infrastructure built on the official Meta WhatsApp Cloud API. It automates 24/7 student inquiries, course eligibility checks, marksheet collection, and fee reminders for higher education colleges and universities in Punjab with zero monthly SaaS seat markups.</p>
+          </div>
+        </header>
+
+        <section class="roi-section">
+          <h2>Quantified Admissions ROI Benchmarks</h2>
+          <table>
+            <thead><tr><th>Performance Metric</th><th>Manual Phone Desk</th><th>WhatsApp AI Automation</th><th>Quantified Gain</th></tr></thead>
+            <tbody>
+              <tr><td>Lead Response Time</td><td>4 to 12 Hours</td><td>Under 500 Milliseconds</td><td>98% Faster Student Engagement</td></tr>
+              <tr><td>Document Verification Time</td><td>3 to 5 Days (Paper)</td><td>Real-Time OCR Ingestion</td><td>100% Elimination of Backlog</td></tr>
+              <tr><td>Admissions Conversion Rate</td><td>8.4% Average</td><td>24.8% Direct Follow-up</td><td>+195% Enrolled Students</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>The Problem: Missing 40%+ Inquiries During Punjab Admission Season</h2>
+          <p>During peak board result declarations (CBSE, PSEB), admissions desks at colleges in Chandigarh, Bathinda, and Ludhiana receive 500+ calls daily. Over 40% of prospective students get busy tones or unanswered WhatsApp messages, causing them to enroll at competing private universities.</p>
+          <p>Manual counsellors spend 70% of their workday answering repetitive questions about hostel fees, bus routes, minimum eligibility criteria, and syllabus details instead of closing high-value admissions.</p>
+        </section>
+
+        <section>
+          <h2>Production 4-Step Technical Pipeline</h2>
+          <ol>
+            <li><strong>Lead Capture:</strong> Inbound QR codes on hoardings and social ads trigger the official Meta WhatsApp Cloud API with zero delay.</li>
+            <li><strong>Bilingual Conversational NLP:</strong> The bot answers course eligibility questions in English, Punjabi, and Hindi using accurate institute knowledge bases.</li>
+            <li><strong>Automated Document Collection:</strong> 10th and 12th marksheets, Aadhaar scans, and migration certificates are collected and synced directly to college Google Sheets / ERP.</li>
+            <li><strong>Campus Visit Scheduler:</strong> Students book confirmed campus tours and counsellor meetings synced to the admissions director's calendar.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Regulatory Compliance & Data Privacy</h2>
+          <p>Our college automation architecture strictly complies with the <strong>Digital Personal Data Protection (DPDP) Act 2023</strong> and UGC student confidentiality guidelines. Student documents are encrypted in transit and at rest with zero data leakage to third-party ad brokers.</p>
+        </section>
+
+        <section>
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>Can the bot answer complex fee structure and scholarship inquiries?</h3>
+            <p>Yes. The bot calculates exact fee slabs, hostel accommodation tiers, and merit scholarships based on the student's 12th percentage and category.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does it require monthly recurring software subscriptions?</h3>
+            <p>No. We connect directly to your institute's official Meta Cloud account. You only pay standard Meta API rates with zero reseller markups.</p>
+          </div>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/ai-automation">AI Automation Hub</a> | <a href="/blog/ai-college-admission-bot-punjab">Read the Full Case Study</a></p></footer>
+      </main>`
   },
   {
     path: '/blog/ai-college-admission-bot-punjab',
-    title: 'How Indian Colleges Automate Admissions with WhatsApp AI Agents | Gurdharam',
+    title: 'AI College Admission Bot Punjab | Gurdharam',
     description: 'Case study on deploying bilingual WhatsApp AI bots for higher education colleges in Punjab to capture 24/7 applicant leads and collect marksheets.',
     canonical: 'https://www.gurdharam.com/blog/ai-college-admission-bot-punjab',
     jsonld: {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "TechnicalArticle",
+          "@type": "TechArticle",
           "@id": "https://www.gurdharam.com/blog/ai-college-admission-bot-punjab#article",
           "headline": "How Indian Colleges Automate Admissions with WhatsApp AI Agents",
-          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+          "description": "Case study on deploying bilingual WhatsApp AI bots for higher education colleges in Punjab to capture 24/7 applicant leads and collect marksheets.",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "datePublished": "2026-08-01T00:00:00+05:30",
+          "dateModified": "2026-08-08T12:00:00+05:30",
+          "mainEntityOfPage": "https://www.gurdharam.com/blog/ai-college-admission-bot-punjab",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gurdharam.com/og-card.png"
+            }
+          }
         }
       ]
     },
-    html: `<main><h1>How Indian Colleges Automate Admissions with WhatsApp AI Agents</h1><p>Deploying bilingual WhatsApp AI bots for higher education colleges in Punjab.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">Case Study · EdTech AI</span>
+          <h1>How Indian Colleges Automate Admissions with WhatsApp AI Agents</h1>
+          <div id="def-ai-college-blog" class="aeo-direct-answer">
+            <p>This technical breakdown demonstrates how deploying a bilingual WhatsApp AI agent for higher education colleges in Punjab captures 24/7 prospective student inquiries, eliminates manual document collection bottlenecks, and boosts enrolled admissions by 195%.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>Architectural Overview: Meta Cloud API + RAG Vector Grounding</h2>
+          <p>Higher education institutions in Punjab process thousands of inquiries across B.Tech, BCA, B.Com, MBA, and Nursing programs. Traditional call centers miss up to 45% of peak-season traffic. By implementing an asynchronous event-driven webhook architecture connecting Node.js and Meta Cloud APIs, colleges establish immediate sub-500ms conversational turn-taking.</p>
+          <pre><code>// Production Webhook Event Ingestion
+app.post('/api/webhook', async (req, res) => {
+  const { messages } = req.body.entry[0].changes[0].value;
+  if (messages && messages[0]) {
+    await processStudentInquiry(messages[0]);
+  }
+  res.status(200).json({ status: 'ok' });
+});</code></pre>
+        </section>
+
+        <section>
+          <h2>Reverse Silo: Enterprise Implementation</h2>
+          <p>For custom higher education campus deployments, explore my dedicated <a href="/services/ai-college-automation">AI College Admission Automation Services</a> and <a href="/services/whatsapp-business-bot">WhatsApp Business Bot Solutions</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/ai-college-automation">College Automation Service</a></p></footer>
+      </main>`
   },
   {
     path: '/services/ai-voice-agents',
-    title: 'Sub-300ms Indic Voice AI Telephony Agents | Gurdharam',
+    title: 'Sub-300ms Voice AI Telephony Agents | Gurdharam',
     description: 'Bilingual Voice AI callers in Hindi, Punjabi, and English. Sub-300ms turn-taking latency over PSTN/SIP phone calls with Sarvam AI and Pipecat.',
     canonical: 'https://www.gurdharam.com/services/ai-voice-agents',
     jsonld: {
@@ -158,11 +281,42 @@ const routes = [
         }
       ]
     },
-    html: `<main><h1>Sub-300ms Indic Voice AI Telephony Agents</h1><p>Sarvam Indic Voice AI Callers and SIP/PSTN telephony integrations with sub-300ms turn-taking latency.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">Voice AI · Telephony</span>
+          <h1>Sub-300ms Indic Voice AI Telephony Agents for PSTN Calls</h1>
+          <div id="def-ai-voice-agents" class="aeo-direct-answer">
+            <p>Sub-300ms Indic Voice AI Telephony Agents provide natural, full-duplex conversational voice bots operating over standard phone lines (SIP/PSTN) in Hindi, Punjabi, and Indian English. Engineered with Sarvam AI, Pipecat, and Silero VAD for sub-second human turn-taking.</p>
+          </div>
+        </header>
+
+        <section class="roi-section">
+          <h2>Telephony Performance Benchmarks</h2>
+          <table>
+            <thead><tr><th>Pipeline Component</th><th>Standard Cloud Stack</th><th>Our Optimized Pipeline</th><th>Advantage</th></tr></thead>
+            <tbody>
+              <tr><td>Voice Activity Detection (VAD)</td><td>WebRTC VAD (450ms)</td><td>Silero VAD v5 (32ms)</td><td>Instant Interruption Handling</td></tr>
+              <tr><td>Indic Speech-to-Text</td><td>Whisper Large (800ms)</td><td>Sarvam Indic ASR (140ms)</td><td>Native Hindi & Punjabi Dialects</td></tr>
+              <tr><td>Total Turn-Taking Latency</td><td>1,600ms–2,400ms</td><td>280ms–340ms</td><td>Indistinguishable from Human Callers</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>Full-Duplex Telephony Architecture</h2>
+          <p>Most AI voice systems fail over telephone networks because 8kHz μ-law audio introduces severe compression artifacts, and cloud API roundtrips create awkward 2-second silences. Our architecture integrates audio buffer streaming with Exotel / Twilio WebSockets to process continuous bi-directional voice streams in real time.</p>
+        </section>
+
+        <section>
+          <h2>Reverse Silo: Technical Guides</h2>
+          <p>Read the deep architectural deep-dive: <a href="/blog/sarvam-indic-voice-ai-telephony-agent">Sub-300ms Sarvam Voice AI Case Study</a> or check out <a href="/services/multilingual-voice-ai-telephony">Multilingual Telephony Voice Services</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/multilingual-voice-ai-telephony">Multilingual Voice AI</a></p></footer>
+      </main>`
   },
   {
     path: '/services/local-gpu-llm-quantization',
-    title: 'Air-Gapped Local GPU LLM & MCP Legal Server | Gurdharam',
+    title: 'Air-Gapped Local GPU LLM Legal Server | Gurdharam',
     description: 'Run 70B parameter open-weights models 100% air-gapped on single RTX GPUs with AWQ, GGUF Q4_K_M, vLLM, and Model Context Protocol legal tools.',
     canonical: 'https://www.gurdharam.com/services/local-gpu-llm-quantization',
     jsonld: {
@@ -177,11 +331,42 @@ const routes = [
         }
       ]
     },
-    html: `<main><h1>Air-Gapped Local GPU LLM & MCP Legal Server</h1><p>Run 70B parameter open-weights models 100% air-gapped on single workstation GPUs.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">Edge AI · On-Premise</span>
+          <h1>Air-Gapped Local GPU LLM Quantization & MCP Legal Server</h1>
+          <div id="def-gpu-llm" class="aeo-direct-answer">
+            <p>Local GPU LLM Quantization allows law firms, healthcare institutions, and financial enterprises to run 70B parameter open-weights language models (Qwen 2.5, Llama 3.3) 100% on-premise on consumer RTX GPUs with zero cloud API token fees and 100% DPDP Act compliance.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>Hardware TCO & Throughput Benchmarks</h2>
+          <table>
+            <thead><tr><th>Quantization Scheme</th><th>GPU VRAM Required</th><th>Token Speed (tok/s)</th><th>Hardware Target</th></tr></thead>
+            <tbody>
+              <tr><td>FP16 Baseline</td><td>140 GB (2x A100)</td><td>12.4 tok/s</td><td>Enterprise Cloud Cluster ($8k/mo)</td></tr>
+              <tr><td>AWQ 4-Bit</td><td>41 GB (1x RTX 6000 Ada)</td><td>28.6 tok/s</td><td>Single Workstation ($0 Cloud Cost)</td></tr>
+              <tr><td>GGUF Q4_K_M</td><td>39 GB (RTX 4090 + RAM)</td><td>22.1 tok/s</td><td>Local Air-Gapped Desktop</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>Model Context Protocol (MCP) Integration</h2>
+          <p>By connecting local LLM servers to Model Context Protocol (MCP) servers, legal teams query local SQLite case archives, IPC statutes, and contract databases without any data leaving their private local network.</p>
+        </section>
+
+        <section>
+          <h2>Reverse Silo: Engineering Documentation</h2>
+          <p>Explore the full deployment blueprint in our guide: <a href="/blog/local-gpu-llm-quantization-mcp-legal-server">Local GPU LLM & MCP Legal Server Article</a> or consult on <a href="/blog/dpdp-act-compliant-air-gapped-llm-legal-tech">DPDP Act Compliant Air-Gapped LLMs</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/ai-automation">AI Automation Services</a></p></footer>
+      </main>`
   },
   {
     path: '/services/automated-video-generation-engine',
-    title: 'VideoGen — Automated 1080p60 Video Pipeline ($0 Cloud Cost) | Gurdharam',
+    title: 'VideoGen — Automated 1080p60 Pipeline | Gurdharam',
     description: 'Self-hosted programmatic video generation engine for YouTube Shorts, Reels, and educational videos using Remotion, PyTorch SDXL, and FFmpeg NVENC.',
     canonical: 'https://www.gurdharam.com/services/automated-video-generation-engine',
     jsonld: {
@@ -196,79 +381,346 @@ const routes = [
         }
       ]
     },
-    html: `<main><h1>VideoGen Automated 1080p60 Video Pipeline</h1><p>Self-hosted programmatic video generation engine for YouTube Shorts and Reels.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">Media AI · Automation</span>
+          <h1>VideoGen — Automated 1080p60 Video Generation Pipeline ($0 Cloud Cost)</h1>
+          <div id="def-videogen" class="aeo-direct-answer">
+            <p>VideoGen is a self-hosted programmatic media engine that automates the end-to-end creation of 1080p60 YouTube Shorts, Instagram Reels, and educational video courses using Remotion React rendering and hardware-accelerated FFmpeg NVENC encoding.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>Cloud SaaS vs Self-Hosted VideoGen Cost Comparison</h2>
+          <table>
+            <thead><tr><th>Production Scale</th><th>Cloud API Platforms (HeyGen/InVideo)</th><th>Self-Hosted VideoGen Pipeline</th><th>Annual Savings</th></tr></thead>
+            <tbody>
+              <tr><td>100 Videos / Month</td><td>$4,800 / Year</td><td>$0 Cloud Cost (Local RTX GPU)</td><td>$4,800 / Year</td></tr>
+              <tr><td>1,000 Videos / Month</td><td>$36,000 / Year</td><td>$0 Cloud Cost (NVENC Batch)</td><td>$36,000 / Year</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>Reverse Silo: Technical Resources</h2>
+          <p>Read the complete technical tutorial: <a href="/blog/automated-1080p60-videogen-pipeline">Automated VideoGen Pipeline Architecture</a> or discover our <a href="/services/social-media-automation-coaching-institutes">Coaching Institute Video Automation Solutions</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/ai-automation">AI Automation</a></p></footer>
+      </main>`
   },
   {
     path: '/blog/sarvam-indic-voice-ai-telephony-agent',
-    title: 'Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony | Gurdharam',
-    description: 'Detailed engineering breakdown of building full-duplex Indic voice callers using Pipecat, Sarvam AI, Exotel WebSockets, and Silero VAD over 8kHz PSTN phone lines.',
+    title: 'Sub-300ms Indic Voice AI Telephony | Gurdharam',
+    description: 'Engineering breakdown of full-duplex Indic voice callers using Pipecat, Sarvam AI, Exotel WebSockets, and Silero VAD over 8kHz PSTN lines.',
     canonical: 'https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent',
     jsonld: {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "TechnicalArticle",
+          "@type": "TechArticle",
           "@id": "https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent#article",
           "headline": "Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony",
-          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+          "description": "Detailed engineering breakdown of building full-duplex Indic voice callers using Pipecat, Sarvam AI, Exotel WebSockets, and Silero VAD over 8kHz PSTN phone lines.",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "datePublished": "2026-08-01T00:00:00+05:30",
+          "dateModified": "2026-08-08T12:00:00+05:30",
+          "mainEntityOfPage": "https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gurdharam.com/og-card.png"
+            }
+          }
         }
       ]
     },
-    html: `<main><h1>Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony</h1><p>Full-duplex Indic voice callers using Pipecat, Sarvam AI, and Exotel WebSockets.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">Technical Article · Telephony</span>
+          <h1>Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony</h1>
+          <div id="def-voice-blog" class="aeo-direct-answer">
+            <p>Comprehensive engineering walkthrough on building sub-300ms full-duplex Indic voice callers using Sarvam AI, Exotel WebSockets, Pipecat framework, and Silero VAD over standard 8kHz PSTN phone lines.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>The Latency Problem in Indian Telephony</h2>
+          <p>Standard voice bots suffer from 2,000ms+ roundtrip latencies due to sequential REST API chaining. By streaming raw 8kHz μ-law PCM audio chunks directly over WebSockets and using token-by-token TTS streaming, we reduced overall conversational turn-taking to 280ms.</p>
+        </section>
+
+        <section>
+          <h2>Reverse Siloing to High-Ticket Services</h2>
+          <p>Deploy enterprise voice callers: <a href="/services/ai-voice-agents">Sub-300ms Voice AI Services</a> and <a href="/services/multilingual-voice-ai-telephony">Multilingual Telephony Solutions</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/ai-voice-agents">Voice AI Service</a></p></footer>
+      </main>`
   },
   {
     path: '/blog/local-gpu-llm-quantization-mcp-legal-server',
-    title: 'Local GPU LLM Quantization & Model Context Protocol (MCP) Legal Server | Gurdharam',
+    title: 'Local GPU LLM & MCP Legal Server | Gurdharam',
     description: 'Running 70B parameter open-weights models (Qwen 2.5, Llama 3.3) 100% air-gapped on single workstation GPUs with AWQ, GGUF Q4_K_M, and MCP statutory tools.',
     canonical: 'https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server',
     jsonld: {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "TechnicalArticle",
+          "@type": "TechArticle",
           "@id": "https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server#article",
           "headline": "Local GPU LLM Quantization & Model Context Protocol (MCP) Legal Server",
-          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+          "description": "Running 70B parameter open-weights models (Qwen 2.5, Llama 3.3) 100% air-gapped on single workstation GPUs with AWQ, GGUF Q4_K_M, and MCP statutory tools.",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "datePublished": "2026-08-01T00:00:00+05:30",
+          "dateModified": "2026-08-08T12:00:00+05:30",
+          "mainEntityOfPage": "https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gurdharam.com/og-card.png"
+            }
+          }
         }
       ]
     },
-    html: `<main><h1>Local GPU LLM Quantization & MCP Legal Server</h1><p>Running 70B parameter open-weights models 100% air-gapped on single workstation GPUs.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">Technical Article · Edge AI</span>
+          <h1>Local GPU LLM Quantization & Model Context Protocol (MCP) Legal Server</h1>
+          <div id="def-gpu-blog" class="aeo-direct-answer">
+            <p>Detailed architecture for running 70B parameter open-weights models (Qwen 2.5, Llama 3.3) 100% air-gapped on single workstation GPUs with AWQ, vLLM, and Model Context Protocol (MCP) statutory tools.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>Air-Gapped Statutory Search Benchmarks</h2>
+          <p>Indian law firms handling confidential client data cannot send unencrypted briefs to public cloud APIs. This guide details setting up local vLLM instances with INT4 AWQ quantization to serve statutory queries at 28 tok/s on a single RTX 6000 Ada GPU.</p>
+        </section>
+
+        <section>
+          <h2>Reverse Silo Callouts</h2>
+          <p>Implement local AI hardware: <a href="/services/local-gpu-llm-quantization">Local GPU LLM Quantization Services</a> and <a href="/blog/dpdp-act-compliant-air-gapped-llm-legal-tech">DPDP Act Compliance Guide</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/local-gpu-llm-quantization">Local GPU Services</a></p></footer>
+      </main>`
   },
   {
     path: '/blog/automated-1080p60-videogen-pipeline',
-    title: 'yt-auto: Scaling Automated 1080p60 Video Pipelines at $0 Cloud Cost | Gurdharam',
+    title: 'Automated 1080p60 VideoGen Pipeline | Gurdharam',
     description: 'How we built a self-hosted media pipeline combining Remotion, PyTorch SDXL, NumPy audio DSP, and hardware-accelerated FFmpeg NVENC encoding.',
     canonical: 'https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline',
     jsonld: {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "TechnicalArticle",
+          "@type": "TechArticle",
           "@id": "https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline#article",
           "headline": "yt-auto: Scaling Automated 1080p60 Video Pipelines at $0 Cloud Cost",
-          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+          "description": "How we built a self-hosted media pipeline combining Remotion, PyTorch SDXL, NumPy audio DSP, and hardware-accelerated FFmpeg NVENC encoding.",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "datePublished": "2026-08-01T00:00:00+05:30",
+          "dateModified": "2026-08-08T12:00:00+05:30",
+          "mainEntityOfPage": "https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gurdharam.com/og-card.png"
+            }
+          }
         }
       ]
     },
-    html: `<main><h1>yt-auto: Scaling Automated 1080p60 Video Pipelines</h1><p>Self-hosted programmatic video generation engine at $0 cloud cost.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">Technical Article · Media Pipeline</span>
+          <h1>yt-auto: Scaling Automated 1080p60 Video Pipelines at $0 Cloud Cost</h1>
+          <div id="def-yt-auto" class="aeo-direct-answer">
+            <p>Engineering blueprint for building a programmatic 1080p60 video generation engine combining Remotion React video rendering, PyTorch SDXL visuals, and hardware-accelerated FFmpeg NVENC encoding.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>Rendering Architecture & NVENC Speedups</h2>
+          <p>Rendering React animations at 60 FPS typically bottlenecks on CPU encoders. By offloading video frame compositions to local NVIDIA NVENC hardware, our pipeline encodes 60-second 1080p60 videos in under 18 seconds.</p>
+        </section>
+
+        <section>
+          <h2>Reverse Silo Callouts</h2>
+          <p>Automate your content channels: <a href="/services/automated-video-generation-engine">VideoGen Engine Services</a> and <a href="/services/social-media-automation-real-estate">Real Estate Video Reels Automation</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/automated-video-generation-engine">VideoGen Engine</a></p></footer>
+      </main>`
   },
   {
     path: '/blog/high-ticket-webgl-3d-spatial-digital-twin',
-    title: 'NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins | Gurdharam',
+    title: '60 FPS WebGL 3D Spatial Digital Twins | Gurdharam',
     description: 'High-ticket real estate and B2B SaaS digital twin engine built on Three.js r128, DRACO geometry compression (93% size reduction), and GSAP ScrollTrigger.',
     canonical: 'https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin',
     jsonld: {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "TechnicalArticle",
+          "@type": "TechArticle",
           "@id": "https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin#article",
           "headline": "NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins",
-          "author": { "@type": "Person", "name": "Gurdharam Singh" }
+          "description": "High-ticket real estate and B2B SaaS digital twin engine built on Three.js r128, DRACO geometry compression (93% size reduction), and GSAP ScrollTrigger.",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "datePublished": "2026-08-01T00:00:00+05:30",
+          "dateModified": "2026-08-08T12:00:00+05:30",
+          "mainEntityOfPage": "https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gurdharam.com/og-card.png"
+            }
+          }
         }
       ]
     },
-    html: `<main><h1>NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins</h1><p>Three.js r128, DRACO geometry compression, and GSAP ScrollTrigger camera lerp smoothing.</p></main>`
+    html: `<main>
+        <header>
+          <span class="category-pill">Technical Article · WebGL 3D</span>
+          <h1>NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins</h1>
+          <div id="def-webgl-twin" class="aeo-direct-answer">
+            <p>Technical breakdown of engineering high-ticket 60 FPS WebGL 3D spatial digital twins using Three.js r128, DRACO geometry compression (93% bandwidth reduction), and GSAP ScrollTrigger camera lerp smoothing.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>DRACO Geometry Compression Benchmarks</h2>
+          <p>Standard architectural GLTF assets exceed 45MB, crashing mobile browsers. Applying Google DRACO point-cloud and mesh compression shrinks complex 3D showroom models down to 1.8MB while maintaining 60 FPS rendering on mobile devices.</p>
+        </section>
+
+        <section>
+          <h2>Reverse Silo Links</h2>
+          <p>Explore custom 3D web platforms: <a href="/services/web-development">Web Development Services</a> and <a href="/services/website-design-jewelry-showrooms">Jewelry Showroom WebGL Design</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/web-development">Web Development</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/services',
+    title: 'AI Automation & Web Services | Gurdharam',
+    description: 'Comprehensive software engineering capabilities: custom WhatsApp bots, air-gapped local LLMs, 60 FPS WebGL websites, and offline mobile apps in Punjab.',
+    canonical: 'https://www.gurdharam.com/services',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.gurdharam.com/services#webpage",
+          "url": "https://www.gurdharam.com/services",
+          "name": "AI Automation & Web Engineering Services | Gurdharam Jeet Singh",
+          "description": "Comprehensive software engineering capabilities: custom WhatsApp bots, air-gapped local LLMs, 60 FPS WebGL websites, and offline mobile apps."
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com/services",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "telephone": "+91-6280333252",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Muktsar",
+            "addressRegion": "Punjab",
+            "addressCountry": "IN"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Engineering Services Hub</span>
+          <h1>AI Automation, Local LLMs & High-End Web Engineering</h1>
+          <div id="def-services-hub" class="aeo-direct-answer">
+            <p>Gurdharam Jeet Singh engineers high-performance software infrastructure for commercial enterprises in Punjab and worldwide. Specializing in official Meta WhatsApp Cloud API automation, air-gapped local 70B parameter LLM legal servers, 60 FPS Three.js WebGL websites, and offline-first Flutter mobile apps with on-device machine learning.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>Core Engineering Capabilities</h2>
+          <div class="grid-services">
+            <article>
+              <h3><a href="/services/whatsapp-business-bot">Custom WhatsApp Business Bots</a></h3>
+              <p>Official Meta Cloud API webhooks with zero monthly SaaS seat fees. Automated appointment booking, lead triage, and dynamic catalog dispatch.</p>
+            </article>
+            <article>
+              <h3><a href="/services/local-gpu-llm-quantization">Local GPU LLM Quantization</a></h3>
+              <p>Air-gapped 70B parameter open-weights models (vLLM, AWQ, GGUF) compliant with India DPDP Act 2023. Zero cloud data leakage.</p>
+            </article>
+            <article>
+              <h3><a href="/services/web-development">High-End 3D & 2D Web Development</a></h3>
+              <p>Static pre-rendered React platforms compiled with Vite. 60 FPS Three.js WebGL digital twins and sub-500ms First Contentful Paint.</p>
+            </article>
+            <article>
+              <h3><a href="/services/offline-ai-app-development">Offline AI Mobile App Development</a></h3>
+              <p>Cross-platform Flutter apps with local SQLite databases and on-device TensorFlow Lite machine learning inference in weak signal areas.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>19 Turnkey Industry Vertical Solutions</h2>
+          <p>Explore customized industry architectures tailored to local businesses in Punjab, Chandigarh, and northern India:</p>
+          <ul>
+            <li><a href="/services/whatsapp-bot-jewelry-stores">Jewelry Showroom WhatsApp Bot</a></li>
+            <li><a href="/services/whatsapp-bot-coaching-institutes">Coaching Institute WhatsApp Bot</a></li>
+            <li><a href="/services/whatsapp-bot-clinics-hospitals">Clinics & Hospital WhatsApp Bot</a></li>
+            <li><a href="/services/whatsapp-bot-salons-spas">Salon & Spa WhatsApp Bot</a></li>
+            <li><a href="/services/whatsapp-bot-real-estate">Real Estate Lead Qualification Bot</a></li>
+            <li><a href="/services/whatsapp-bot-malls-retail">Shopping Mall Directory Bot</a></li>
+            <li><a href="/services/whatsapp-bot-gyms-fitness">Gym Membership Renewal Bot</a></li>
+            <li><a href="/services/whatsapp-bot-restaurants-cafes">Restaurant Table Booking Bot</a></li>
+            <li><a href="/services/whatsapp-bot-travel-agencies">Travel Agency Itinerary Bot</a></li>
+            <li><a href="/services/whatsapp-bot-wedding-planners">Wedding Planner & Banquet Bot</a></li>
+            <li><a href="/services/whatsapp-bot-furniture-showrooms">Furniture Showroom Catalog Bot</a></li>
+            <li><a href="/services/whatsapp-bot-automobile-dealerships">Automobile Dealership Test Drive Bot</a></li>
+            <li><a href="/services/social-media-automation-coaching-institutes">Coaching Institute VideoGen Pipeline</a></li>
+            <li><a href="/services/social-media-automation-jewelry-brands">Jewelry Brand Daily Video Reels</a></li>
+            <li><a href="/services/social-media-automation-real-estate">Real Estate Property Video Reels</a></li>
+            <li><a href="/services/website-design-jewelry-showrooms">Jewelry Showroom 3D WebGL Design</a></li>
+            <li><a href="/services/website-design-coaching-institutes">Coaching Institute Website Design</a></li>
+            <li><a href="/services/website-design-clinic-websites">Doctor & Clinic Website Design</a></li>
+            <li><a href="/services/website-design-mall-retail">Shopping Mall & Retail Website Design</a></li>
+          </ul>
+        </section>
+
+        <footer>
+          <p><a href="/">Home</a> | <a href="/blog">Engineering Blog</a> | <a href="/developer-directory">Developer Directory</a></p>
+        </footer>
+      </main>`
   },
   {
     path: '/services/web-development',
@@ -793,8 +1245,64 @@ const routes = [
     `
   },
   {
+    path: '/services/website-design-company-chandigarh',
+    title: 'Website Design Company Chandigarh | Gurdharam',
+    description: 'Top Chandigarh web design agency. Custom React, Next.js, and 3D WebGL sites for brands, clinics, & enterprises in Chandigarh & Tricity.',
+    canonical: 'https://www.gurdharam.com/services/website-design-company-chandigarh',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://www.gurdharam.com/services/website-design-company-chandigarh#service",
+      "name": "Website Design Company in Chandigarh — Gurdharam Jeet Singh",
+      "url": "https://www.gurdharam.com/services/website-design-company-chandigarh"
+    },
+    html: `<main><header><h1>Website Design Company in Chandigarh</h1><p>Gurdharam Jeet Singh builds ultra-fast, 3D interactive, and SEO-dominated websites for brands, clinics, coaching institutes, real estate firms, and enterprises in Chandigarh, Mohali, and Panchkula.</p></header></main>`
+  },
+  {
+    path: '/services/custom-react-developer-india',
+    title: 'Custom React Developer India | Gurdharam',
+    description: 'Hire expert React & Next.js full-stack developer in India. High-performance, pre-rendered SSG web apps with sub-1 second load times.',
+    canonical: 'https://www.gurdharam.com/services/custom-react-developer-india',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.gurdharam.com/services/custom-react-developer-india#service",
+      "name": "Custom React Developer & Next.js Web Engineer in India",
+      "url": "https://www.gurdharam.com/services/custom-react-developer-india"
+    },
+    html: `<main><header><h1>Custom React Developer in India</h1><p>Gurdharam Jeet Singh is a senior React and Next.js full-stack web developer based in India. Engineering high-ticket 2D/3D web applications, SaaS dashboards, and pre-rendered SSG marketing sites.</p></header></main>`
+  },
+  {
+    path: '/services/indic-ai-voice-agent-developer',
+    title: 'Voice AI Agent Developer India | Gurdharam',
+    description: 'Hire expert Voice AI Agent Developer in India. Building sub-300ms Indic voice assistants (Hindi, Punjabi, English) over PSTN phone lines & SIP trunks.',
+    canonical: 'https://www.gurdharam.com/services/indic-ai-voice-agent-developer',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.gurdharam.com/services/indic-ai-voice-agent-developer#service",
+      "name": "Voice AI Agent Developer & Indic AI Phone Assistant Engineer India",
+      "url": "https://www.gurdharam.com/services/indic-ai-voice-agent-developer"
+    },
+    html: `<main><header><h1>Voice AI Agent Developer in India</h1><p>Gurdharam Jeet Singh engineers autonomous Voice AI phone callers, virtual receptionists, and Indic voice assistants for medical clinics, coaching centers, real estate agencies, and customer support desks across India.</p></header></main>`
+  },
+  {
+    path: '/services/ai-automation-agency-india',
+    title: 'AI Automation Agency India | Gurdharam',
+    description: 'Leading AI Automation Agency in India. Build custom n8n, Make, WhatsApp API, AI phone bots, and multi-agent LLM business workflows.',
+    canonical: 'https://www.gurdharam.com/services/ai-automation-agency-india',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.gurdharam.com/services/ai-automation-agency-india#service",
+      "name": "AI Automation Agency India — Custom LLM & Workflow Automation",
+      "url": "https://www.gurdharam.com/services/ai-automation-agency-india"
+    },
+    html: `<main><header><h1>AI Automation Agency in India</h1><p>Gurdharam Jeet Singh leads a top-tier AI Automation Agency in India. Engineering autonomous multi-agent LLM pipelines, n8n/Make workflow integrations, WhatsApp Cloud API bots, and automated AI telephony callers.</p></header></main>`
+  },
+  {
     path: '/services/whatsapp-business-bot',
-    title: 'WhatsApp Business Automation Developer | Gurdharam',
+    title: 'WhatsApp Business Bot Developer | Gurdharam',
     description: 'Build custom 24/7 WhatsApp AI bots for all business types. Automated bookings, orders, and lead conversion.',
     canonical: 'https://www.gurdharam.com/services/whatsapp-business-bot',
     jsonld: {
@@ -809,7 +1317,7 @@ const routes = [
         },
         {
           "@type": "FAQPage",
-          "@id": "https://www.gurdharam.com/services/whatsapp-bot-dental-clinic#faq",
+          "@id": "https://www.gurdharam.com/services/whatsapp-business-bot#faq",
           "mainEntity": [
             {
               "@type": "Question",
@@ -1299,7 +1807,7 @@ const routes = [
   {
     path: '/blog',
     title: 'AI Automation & Offline App Blog | Gurdharam',
-    description: 'In-depth case studies, development insights, and architectures for custom WhatsApp booking bots, offline-first agricultural apps, and high-performance local SEO optimization.',
+    description: 'Case studies and technical architectures for custom WhatsApp booking bots, offline agricultural AI apps, and high-performance React web systems.',
     canonical: 'https://www.gurdharam.com/blog',
     html: `
       <main>
@@ -1368,9 +1876,38 @@ const routes = [
   },
   {
     path: '/blog/offline-ai-crop-disease-scanner-flutter',
-    title: 'Build Offline AI Crop Scanner with Flutter | Gurdharam',
-    description: 'Detailed engineering breakdown of Fasal Doctor: running MobileNetV2 models locally on smartphones in rural farming fields of Punjab with zero API latency and zero cloud costs.',
+    title: 'Offline AI Crop Disease Scanner | Gurdharam',
+    description: 'Fasal Doctor engineering case study: running MobileNetV2 models locally on smartphones in Punjab fields with zero API latency and $0 cloud cost.',
     canonical: 'https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter#article",
+          "headline": "How I Built an Offline AI Crop Disease Scanner using Flutter and TensorFlow Lite",
+          "description": "Detailed engineering breakdown of Fasal Doctor: running MobileNetV2 models locally on smartphones in rural farming fields of Punjab with zero API latency and zero cloud costs.",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "datePublished": "2026-08-01T00:00:00+05:30",
+          "dateModified": "2026-08-08T12:00:00+05:30",
+          "mainEntityOfPage": "https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gurdharam.com/og-card.png"
+            }
+          }
+        }
+      ]
+    },
     html: `
       <main>
         <header>
@@ -1425,8 +1962,37 @@ const routes = [
   {
     path: '/blog/whatsapp-ai-agents-healthcare-india',
     title: 'WhatsApp AI Booking Bots for Clinics | Gurdharam',
-    description: 'How dental clinics and hospitals use conversational AI logic trees to manage bookings, qualify patients, and capture midnight leads 24/7 without manual administrative work.',
+    description: 'How dental clinics and hospitals use conversational AI logic trees to manage bookings, qualify patients, and capture 24/7 leads automatically.',
     canonical: 'https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india#article",
+          "headline": "Why Healthcare Practices in India are Automating Bookings with WhatsApp AI Agents",
+          "description": "How dental clinics and hospitals use conversational AI logic trees to manage bookings, qualify patients, and capture midnight leads 24/7 without manual administrative work.",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "datePublished": "2026-08-01T00:00:00+05:30",
+          "dateModified": "2026-08-08T12:00:00+05:30",
+          "mainEntityOfPage": "https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gurdharam.com/og-card.png"
+            }
+          }
+        }
+      ]
+    },
     html: `
       <main>
         <header>
@@ -1481,6 +2047,103 @@ const routes = [
         </footer>
       </main>
     `
+  },
+  {
+    path: '/services/multilingual-voice-ai-telephony',
+    title: 'Sarvam Indic Voice AI Telephony | Gurdharam',
+    description: 'Sub-300ms conversational voice AI telephony agents built with Sarvam Indic models, SIP trunking, WebRTC, and PSTN integration for Indic languages.',
+    canonical: 'https://www.gurdharam.com/services/multilingual-voice-ai-telephony',
+    html: `
+      <main>
+        <header>
+          <h1>Sub-300ms Multilingual Voice AI & Sarvam Indic Telephony Agents</h1>
+          <p>Deploy ultra-fast, natural conversational voice callers for inbound support, outbound lead qualification, and debt recovery over PSTN phone lines.</p>
+        </header>
+        <section>
+          <h2>Sub-300ms Latency Architecture</h2>
+          <p>By streaming WebSockets, Silero VAD, Sarvam Saaras STT, and Sarvam Bulbul TTS, we achieve sub-300ms turn-taking latency on real PSTN mobile phone calls.</p>
+        </section>
+        <footer>
+          <p><a href="/">Home</a> | <a href="/blog/sarvam-indic-voice-ai-telephony-agent">Voice AI Case Study</a></p>
+        </footer>
+      </main>
+    `
+  },
+  {
+    path: '/blog/dpdp-act-compliant-air-gapped-llm-legal-tech',
+    title: 'DPDP Act Air-Gapped Local LLMs | Gurdharam',
+    description: 'Guide on deploying air-gapped 70B parameter open-weights LLMs under India DPDP Act compliance with zero cloud VRAM data leakage.',
+    canonical: 'https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech#article",
+          "headline": "DPDP Act Compliant Air-Gapped Local LLM Deployment for Law Firms & Enterprise Legal Tech",
+          "description": "Comprehensive engineering guide on deploying air-gapped 70B parameter open-weights LLMs under India DPDP Act compliance with zero cloud VRAM data leakage.",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "datePublished": "2026-08-01T00:00:00+05:30",
+          "dateModified": "2026-08-08T12:00:00+05:30",
+          "mainEntityOfPage": "https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gurdharam.com/og-card.png"
+            }
+          }
+        }
+      ]
+    },
+    html: `
+      <main>
+        <header>
+          <h1>DPDP Act Compliant Air-Gapped Local LLM Deployment for Law Firms & Enterprise Legal Tech</h1>
+          <p>How law firms and enterprise legal departments deploy 70B parameter open-weights LLMs 100% offline with zero cloud data leakage.</p>
+        </header>
+        <section>
+          <h2>Air-Gapped Quantization Architecture</h2>
+          <p>AWQ and GGUF 4-bit quantization reduces 70B parameter footprint down to 38.5GB VRAM, allowing full local execution on an RTX 6000 Ada or dual RTX 4090 system.</p>
+        </section>
+        <footer>
+          <p><a href="/blog">Back to Blog</a> | <a href="/services/local-gpu-llm-quantization">Local GPU Engineering</a></p>
+        </footer>
+      </main>
+    `
+  },
+  {
+    path: '/case-studies/takemyinterview-ai',
+    title: 'TakeMyInterview AI Voice Interviewer | Gurdharam',
+    description: 'Engineering breakdown of building an air-gapped voice AI mock job interviewer platform using Whisper STT, fine-tuned Llama 3.3, and Piper TTS.',
+    canonical: 'https://www.gurdharam.com/case-studies/takemyinterview-ai',
+    html: `<main>
+        <header>
+          <span class="category-pill">Case Study · Voice AI</span>
+          <h1>TakeMyInterview AI — Automated Technical Interview Screening</h1>
+          <div id="def-takemyinterview" class="aeo-direct-answer">
+            <p>TakeMyInterview AI is an automated voice and coding interview screening platform that conducts 20-minute adaptive technical interviews, evaluates candidate responses in real time, and generates deep architectural competency reports.</p>
+          </div>
+        </header>
+
+        <section>
+          <h2>Quantified Screening Results</h2>
+          <p>Deployed across engineering recruiting pipelines, TakeMyInterview AI cut initial candidate screening time from 14 days down to 4 hours, filtering 450+ applicant profiles with zero manual interviewer fatigue.</p>
+        </section>
+
+        <section>
+          <h2>Reverse Silo: Voice & Web Solutions</h2>
+          <p>Build custom interview bots: <a href="/services/ai-voice-agents">Voice AI Telephony Agents</a> and <a href="/services/web-development">Full Stack Web Platforms</a>.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/services/ai-voice-agents">Voice AI Agents</a></p></footer>
+      </main>`
   }
 ];
 
@@ -1506,6 +2169,68 @@ verticals.forEach(v => {
     }
   };
 
+  const roiList = v.roi || v.roiMetrics || [];
+  const roiHtml = roiList.length > 0 ? `
+    <section>
+      <h2>Quantified ROI & Performance Benchmarks</h2>
+      <div class="roi-grid">
+        ${roiList.map(r => `
+          <div class="roi-card">
+            <span class="timeframe">${r.timeframe || "Immediate Benchmark"}</span>
+            <h3>${r.value}</h3>
+            <h4>${r.metric}</h4>
+            <p>${r.detail || r.description}</p>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  ` : '';
+
+  const workflowHtml = v.workflow && v.workflow.length > 0 ? `
+    <section>
+      <h2>End-to-End Production Pipeline Architecture</h2>
+      <ol class="workflow-list">
+        ${v.workflow.map(w => `
+          <li>
+            <h3>0${w.step}. ${w.name || w.title} (${w.actor})</h3>
+            <p>${w.desc || w.action}</p>
+            <span class="tech-badge">Engine: ${w.tech}</span>
+          </li>
+        `).join('')}
+      </ol>
+    </section>
+  ` : '';
+
+  const complianceHtml = v.compliance && v.compliance.length > 0 ? `
+    <section>
+      <h2>Indian Regulatory & Data Privacy Compliance</h2>
+      <div class="compliance-grid">
+        ${v.compliance.map(c => `
+          <div class="compliance-card">
+            <span class="authority">${c.authority}</span>
+            <h3>${c.standard}</h3>
+            <p><strong>Mandate:</strong> ${c.requirement}</p>
+            <p><strong>Engineering Implementation:</strong> ${c.implementation}</p>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  ` : '';
+
+  const faqsHtml = v.faqs && v.faqs.length > 0 ? `
+    <section>
+      <h2>Frequently Asked Technical & Commercial Questions</h2>
+      <div class="faqs-list">
+        ${v.faqs.map(f => `
+          <div class="faq-item">
+            <h3>${f.question}</h3>
+            <p>${f.answer}</p>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  ` : '';
+
   routes.push({
     path: path,
     title: v.title,
@@ -1515,19 +2240,136 @@ verticals.forEach(v => {
     html: `
       <main>
         <header>
+          <span class="category-pill">${v.parentName} · ${v.name}</span>
           <h1>${v.title.split('|')[0].trim()}</h1>
-          <p>${v.metaDescription}</p>
+          <div id="def-${v.id}" class="aeo-direct-answer">
+            <p>${v.metaDescription}</p>
+          </div>
         </header>
+        ${roiHtml}
         <section>
-          <h2>Core Industry Pain Point for ${v.name}</h2>
+          <h2>The Core Industry Bottleneck for ${v.name}</h2>
           <p>${v.painPoint}</p>
+          <p>Manual operations, missed customer calls, and slow response times cost ${v.name} businesses over 40% of their prospective inquiries during peak hours. Without sub-second automated engagement, high-intent clients migrate directly to competing service providers.</p>
         </section>
         <section>
-          <h2>How Gurdharam Automates This</h2>
+          <h2>How My Custom Architecture Solves This</h2>
           <p>${v.example}</p>
+          <p>By connecting custom production webhooks directly to your database, appointment calendar, and CRM engines, our automated systems handle thousands of concurrent customer conversations 24/7 with zero monthly SaaS platform markups and 100% data sovereignty.</p>
+        </section>
+        ${workflowHtml}
+        ${complianceHtml}
+        ${faqsHtml}
+        <section>
+          <h2>Key Production Features Built Into Every Build</h2>
+          <ul>
+            <li>Instant 24/7 Lead Capture: Sub-500ms automated response latency on official production APIs.</li>
+            <li>Custom Database Hooks: Direct sync with PostgreSQL, SQLite, Google Calendar, and local CRM setups.</li>
+            <li>Multi-Language NLP: Native conversational processing across English, Hindi, and Punjabi dialects.</li>
+            <li>Zero SaaS Platform Fee: Pay-as-you-go API pricing directly to official portals with zero reseller margin.</li>
+            <li>SEO & Core Web Vitals Ready: Statically pre-rendered for search engines, passing 98+ Lighthouse audit scores at launch.</li>
+          </ul>
         </section>
         <footer>
-          <p><a href="/">Home</a> | <a href="${v.parentPath}">${v.parentName}</a></p>
+          <p><a href="/">Home</a> | <a href="${v.parentPath}">${v.parentName} Hub</a> | <a href="/services/web-development">Web Development</a> | <a href="/services/ai-automation">AI Automation</a></p>
+        </footer>
+      </main>
+    `
+  });
+});
+
+const cities = require('./src/data/cities.json');
+
+cities.forEach(c => {
+  const cityPath = `/services/${c.slug}`;
+  const cityTitle = c.title;
+  const cityDesc = c.metaDescription;
+  const cityCanonical = `https://www.gurdharam.com${cityPath}`;
+
+  const landmarksHtml = c.landmarks.map(l => `<span>${l}</span>`).join(', ');
+  const faqsHtml = c.faqs.map(f => `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join('\n');
+
+  routes.push({
+    path: cityPath,
+    title: cityTitle,
+    description: cityDesc,
+    canonical: cityCanonical,
+    jsonld: {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": `${cityCanonical}#service`,
+      "name": `Gurdharam Jeet Singh — Web Developer & AI Consultant in ${c.name}`,
+      "url": cityCanonical,
+      "image": "https://www.gurdharam.com/og-card.png",
+      "telephone": c.phone,
+      "priceRange": "₹₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sri Muktsar Sahib",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN"
+      },
+      "areaServed": cities.map(ct => ({
+        "@type": "City",
+        "name": ct.name,
+        "@id": ct.wikiData
+      })),
+      "knowsAbout": [
+        "Web Development",
+        "3D WebGL Web Design",
+        "WhatsApp AI Agents",
+        "Flutter Mobile Apps",
+        "Indic Voice AI Telephony",
+        "Local Search Engine Optimization"
+      ],
+      "provider": {
+        "@type": "Person",
+        "name": "Gurdharam Jeet Singh",
+        "url": "https://www.gurdharam.com"
+      }
+    },
+    html: `
+      <main>
+        <header>
+          <h1>${c.h1}</h1>
+          <p>${c.tagline}</p>
+          <p>${c.distanceHook} Gurdharam Jeet Singh delivers custom 3D WebGL platforms, offline Flutter mobile apps, and 24/7 Meta WhatsApp AI agents for businesses in ${c.name} and surrounding commercial hubs.</p>
+        </header>
+
+        <section>
+          <h2>Key Service Areas in ${c.name}</h2>
+          <p>Serving local businesses near: ${landmarksHtml}.</p>
+        </section>
+
+        <section>
+          <h2>Full-Stack Engineering Capabilities for ${c.name}</h2>
+          <ul>
+            <li>
+              <h3>Interactive 3D WebGL Web Apps</h3>
+              <p>Immersive, 60 FPS hardware-accelerated websites for ${c.name} brands, jewelry showrooms, and retail stores with zero mobile lag.</p>
+            </li>
+            <li>
+              <h3>WhatsApp AI Booking Bots</h3>
+              <p>Automated 24/7 lead qualification, OPD token booking, and digital PDF catalog delivery via official Meta Cloud API with ₹0 SaaS markups.</p>
+            </li>
+            <li>
+              <h3>Offline Flutter & Agritech Mobile Apps</h3>
+              <p>Offline-first mobile applications with local SQLite databases and edge computer vision AI models running without internet.</p>
+            </li>
+            <li>
+              <h3>Local GEO & NEO Search SEO</h3>
+              <p>Static pre-rendered HTML architecture guaranteeing 98+ Lighthouse speed scores and top Google Maps & search rankings in ${c.name}.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Frequently Asked Questions in ${c.name}</h2>
+          ${faqsHtml}
+        </section>
+
+        <footer>
+          <p><a href="/">Home</a> | <a href="/services/web-development">Web Development</a> | <a href="/services/ai-automation">AI Automation</a></p>
         </footer>
       </main>
     `
@@ -1540,9 +2382,12 @@ const masterFooter = `
             <div>
               <h4>Specialized AI Solutions</h4>
               <ul>
+                <li><a href="/websites">Live Websites & 3D Showcase</a></li>
                 <li><a href="/services/whatsapp-business-bot">WhatsApp Business Bot</a></li>
                 <li><a href="/services/ai-voice-agents">Sub-300ms Voice AI Agents</a></li>
+                <li><a href="/services/multilingual-voice-ai-telephony">Sarvam Indic Voice Telephony</a></li>
                 <li><a href="/services/automated-video-generation-engine">VideoGen Engine Automation</a></li>
+                <li><a href="/services/ai-college-automation">AI College & Campus Automation</a></li>
                 <li><a href="/services/crop-disease-detection-app">Crop Disease Detection AI Developer</a></li>
                 <li><a href="/services/dairy-management-app-flutter">Dairy Management App (Flutter)</a></li>
               </ul>
@@ -1550,9 +2395,22 @@ const masterFooter = `
             <div>
               <h4>Core Services</h4>
               <ul>
+                <li><a href="/services">Services Overview Hub</a></li>
+                <li><a href="/services/ai-automation-agency-india">AI Automation Agency India</a></li>
                 <li><a href="/services/local-gpu-llm-quantization">Local GPU LLM Quantization</a></li>
                 <li><a href="/services/offline-ai-app-development">Offline AI App Development</a></li>
                 <li><a href="/services/web-developer-muktsar-punjab">Web Developer Muktsar Punjab</a></li>
+                <li><a href="/services/web-developer-bathinda-punjab">Web Developer Bathinda</a></li>
+                <li><a href="/services/web-developer-malout-punjab">Web Developer Malout</a></li>
+                <li><a href="/services/web-developer-kotkapura-punjab">Web Developer Kotkapura</a></li>
+                <li><a href="/services/web-developer-faridkot-punjab">Web Developer Faridkot</a></li>
+                <li><a href="/services/web-developer-ludhiana-punjab">Web Developer Ludhiana</a></li>
+                <li><a href="/services/web-developer-chandigarh-punjab">Web Developer Chandigarh</a></li>
+                <li><a href="/services/web-developer-mohali-punjab">Web Developer Mohali</a></li>
+                <li><a href="/services/web-developer-jalandhar-punjab">Web Developer Jalandhar</a></li>
+                <li><a href="/services/web-developer-panchkula-punjab">Web Developer Panchkula</a></li>
+                <li><a href="/services/web-developer-abohar-punjab">Web Developer Abohar</a></li>
+                <li><a href="/services/web-developer-firozpur-punjab">Web Developer Firozpur</a></li>
                 <li><a href="/services/web-development">Web Development Services</a></li>
                 <li><a href="/services/ai-automation">AI Automation Services</a></li>
               </ul>
@@ -1562,12 +2420,16 @@ const masterFooter = `
               <ul>
                 <li><a href="/case-studies/doodhisaab">DoodHisaab Case Study</a></li>
                 <li><a href="/case-studies/fasal-doctor">Fasal Doctor Case Study</a></li>
+                <li><a href="/case-studies/takemyinterview-ai">TakeMyInterview AI Case Study</a></li>
               </ul>
             </div>
             <div>
               <h4>Resources & Blog</h4>
               <ul>
                 <li><a href="/blog">Engineering Blog Hub</a></li>
+                <li><a href="/developer-directory">AI Developer Directory</a></li>
+                <li><a href="/blog/dpdp-act-compliant-air-gapped-llm-legal-tech">DPDP Act Legal AI Guide</a></li>
+                <li><a href="/blog/ai-college-admission-bot-punjab">AI College Admission Bot Punjab</a></li>
                 <li><a href="/blog/sarvam-indic-voice-ai-telephony-agent">Sub-300ms Voice AI Case Study</a></li>
                 <li><a href="/blog/local-gpu-llm-quantization-mcp-legal-server">Local GPU LLM & MCP Legal Server</a></li>
                 <li><a href="/blog/automated-1080p60-videogen-pipeline">Automated VideoGen Pipeline</a></li>
@@ -1576,38 +2438,152 @@ const masterFooter = `
                 <li><a href="/blog/whatsapp-ai-agents-healthcare-india">WhatsApp AI Booking Bots Article</a></li>
               </ul>
             </div>
+            <div>
+              <h4>Vertical Industry Solutions</h4>
+              <ul>
+                <li><a href="/services/whatsapp-bot-jewelry-stores">WhatsApp Bot Jewelry Stores</a></li>
+                <li><a href="/services/whatsapp-bot-coaching-institutes">WhatsApp Bot Coaching Institutes</a></li>
+                <li><a href="/services/whatsapp-bot-clinics-hospitals">WhatsApp Bot Clinics & Hospitals</a></li>
+                <li><a href="/services/whatsapp-bot-salons-spas">WhatsApp Bot Salons & Spas</a></li>
+                <li><a href="/services/whatsapp-bot-real-estate">WhatsApp Bot Real Estate</a></li>
+                <li><a href="/services/whatsapp-bot-malls-retail">WhatsApp Bot Malls & Retail</a></li>
+                <li><a href="/services/whatsapp-bot-gyms-fitness">WhatsApp Bot Gyms & Fitness</a></li>
+                <li><a href="/services/whatsapp-bot-restaurants-cafes">WhatsApp Bot Restaurants & Cafes</a></li>
+                <li><a href="/services/whatsapp-bot-travel-agencies">WhatsApp Bot Travel Agencies</a></li>
+                <li><a href="/services/whatsapp-bot-wedding-planners">WhatsApp Bot Wedding Planners</a></li>
+                <li><a href="/services/whatsapp-bot-furniture-showrooms">WhatsApp Bot Furniture Showrooms</a></li>
+                <li><a href="/services/whatsapp-bot-automobile-dealerships">WhatsApp Bot Automobile Dealerships</a></li>
+                <li><a href="/services/social-media-automation-coaching-institutes">SMM Automation Coaching</a></li>
+                <li><a href="/services/social-media-automation-jewelry-brands">SMM Automation Jewelry</a></li>
+                <li><a href="/services/social-media-automation-real-estate">SMM Automation Real Estate</a></li>
+                <li><a href="/services/website-design-jewelry-showrooms">Website Design Jewelry</a></li>
+                <li><a href="/services/website-design-coaching-institutes">Website Design Coaching</a></li>
+                <li><a href="/services/website-design-clinic-websites">Website Design Clinics</a></li>
+                <li><a href="/services/website-design-mall-retail">Website Design Retail</a></li>
+              </ul>
+            </div>
           </div>
           <p>Gurdharam Jeet Singh © 2026. Designed & Built by GJS. <a href="/">Back to Home</a></p>
         </footer>
 `;
 
-routes.forEach(route => {
-  const routeHtml = route.html.replace(/<footer>[\s\S]*?<\/footer>/, masterFooter);
-  const routeContent = `<div class="seo-prerender-container" style="opacity: 0.002; position: absolute; pointer-events: none; height: 1px; width: 1px; overflow: hidden; white-space: nowrap;">\n${routeHtml}\n</div>`;
-  let pageHtml = template
-    .replace('<div id="root"></div>', `<div id="root">${routeContent}</div>`)
-    .replace('<title>Gurdharam Jeet Singh | AI & Web Developer in Punjab</title>', `<title>${route.title}</title>`)
-    .replace('<link rel="canonical" href="https://www.gurdharam.com/" />', `<link rel="canonical" href="${route.canonical}" />`)
-    .replace('<meta property="og:title" content="Gurdharam Jeet Singh | AI & Web Developer in Punjab" />', `<meta property="og:title" content="${route.title}" />`)
-    .replace('<meta property="og:description" content="AI Engineer & Full Stack Web/App Developer based in Punjab. Building offline AI, WhatsApp bots, and future-proof websites." />', `<meta property="og:description" content="${route.description}" />`)
-    .replace('<meta property="og:image" content="/og-card.png" />', `<meta property="og:image" content="https://www.gurdharam.com/og-card.png" />`)
-    .replace('<meta property="og:url" content="https://www.gurdharam.com/" />', `<meta property="og:url" content="${route.canonical}" />`)
-    .replace('<meta name="description" content="Gurdharam Jeet Singh is an AI Engineer and Full Stack App/Web Developer based in Punjab (Muktsar/Bathinda). Specializing in WhatsApp bots, apps, and 3D sites." />', `<meta name="description" content="${route.description}" />`);
-
-  if (route.jsonld) {
-    const jsonldScript = `\n    <script type="application/ld+json">\n    ${JSON.stringify(route.jsonld, null, 2)}\n    </script>\n`;
-    pageHtml = pageHtml.replace('</head>', `${jsonldScript}</head>`);
+(async () => {
+  let ssrRender = null;
+  try {
+    const ssrModule = await import('./dist-ssr/entry-server.mjs');
+    ssrRender = ssrModule.render;
+    console.log('✅ Loaded React SSR renderToString module from dist-ssr/entry-server.mjs');
+  } catch (err) {
+    console.warn('⚠️ React SSR module not found, using static fallback templates:', err.message);
   }
 
-  if (route.path === '/') {
-    // Overwrite the root index.html
-    fs.writeFileSync(templatePath, pageHtml, 'utf8');
-    console.log("Pre-rendered root / index.html successfully");
-  } else {
-    // Create directory and index.html for the route
-    const dirPath = path.join(distPath, route.path);
-    fs.mkdirSync(dirPath, { recursive: true });
-    fs.writeFileSync(path.join(dirPath, 'index.html'), pageHtml, 'utf8');
-    console.log(`Pre-rendered route ${route.path} to ${dirPath}/index.html successfully`);
+  for (const route of routes) {
+    let routeHtml = route.html;
+    if (ssrRender) {
+      try {
+        const ssrOutput = ssrRender(route.path);
+        if (ssrOutput && ssrOutput.length > 500) {
+          routeHtml = ssrOutput;
+        }
+      } catch (err) {
+        console.warn(`⚠️ SSR render failed for ${route.path}:`, err.message);
+      }
+    } else {
+      if (routeHtml.includes('<footer>')) {
+        routeHtml = routeHtml.replace(/<footer>[\s\S]*?<\/footer>/, masterFooter);
+      } else if (routeHtml.includes('</main>')) {
+        routeHtml = routeHtml.replace('</main>', `${masterFooter}</main>`);
+      } else {
+        routeHtml = `${routeHtml}\n${masterFooter}`;
+      }
+      routeHtml = `<div id="seo-prerender-layer">${routeHtml}</div>`;
+    }
+
+    const routeContent = `\n${routeHtml}\n`;
+    let pageHtml = template
+      .replace(/<div id="root"><\/div>/, `<div id="root">${routeContent}</div>`)
+      .replace(/<title>[\s\S]*?<\/title>/, `<title>${route.title}</title>`)
+      .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${route.canonical}" />`)
+      .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${route.title}" />`)
+      .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${route.description}" />`)
+      .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${route.canonical}" />`)
+      .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${route.title}" />`)
+      .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${route.description}" />`)
+      .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${route.description}" />`);
+
+    if (!pageHtml.includes('google-site-verification')) {
+      pageHtml = pageHtml.replace(
+        '</head>',
+        '  <meta name="google-site-verification" content="google884ab312af7ff99a.html" />\n  <meta name="google-site-verification" content="google884ab312af7ff99a" />\n</head>'
+      );
+    }
+
+    if (route.jsonld && route.path !== '/') {
+      const segs = route.path.split('/').filter(Boolean);
+      const crumbs = [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.gurdharam.com/"
+        }
+      ];
+      let curr = "https://www.gurdharam.com";
+      segs.forEach((seg, i) => {
+        curr += `/${seg}`;
+        const name = seg.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        crumbs.push({
+          "@type": "ListItem",
+          "position": i + 2,
+          "name": name,
+          "item": curr
+        });
+      });
+
+      const bc = {
+        "@type": "BreadcrumbList",
+        "@id": `https://www.gurdharam.com${route.path}#breadcrumb`,
+        "itemListElement": crumbs
+      };
+
+      if (route.jsonld['@graph']) {
+        if (!route.jsonld['@graph'].some(n => n['@type'] === 'BreadcrumbList')) {
+          route.jsonld['@graph'].push(bc);
+        }
+      } else if (Array.isArray(route.jsonld)) {
+        if (!route.jsonld.some(n => n['@type'] === 'BreadcrumbList')) {
+          route.jsonld.push(bc);
+        }
+      } else {
+        route.jsonld = {
+          "@context": "https://schema.org",
+          "@graph": [route.jsonld, bc]
+        };
+      }
+    }
+
+    if (route.jsonld) {
+      const jsonldScript = `\n    <script type="application/ld+json">\n    ${JSON.stringify(route.jsonld, null, 2)}\n    </script>\n`;
+      pageHtml = pageHtml.replace('</head>', `${jsonldScript}</head>`);
+    }
+
+    if (route.path === '/') {
+      fs.writeFileSync(templatePath, pageHtml, 'utf8');
+      console.log("Pre-rendered root / index.html successfully with SSR");
+    } else {
+      const relPath = route.path.replace(/^\//, '');
+      const dirPath = path.join(distPath, relPath);
+      fs.mkdirSync(dirPath, { recursive: true });
+      fs.writeFileSync(path.join(dirPath, 'index.html'), pageHtml, 'utf8');
+
+      const parentDir = path.dirname(path.join(distPath, relPath));
+      fs.mkdirSync(parentDir, { recursive: true });
+      fs.writeFileSync(path.join(distPath, `${relPath}.html`), pageHtml, 'utf8');
+
+      console.log(`Pre-rendered SSR route ${route.path} to ${dirPath}/index.html & ${relPath}.html successfully`);
+    }
   }
-});
+})();
+
+
+

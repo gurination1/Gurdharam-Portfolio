@@ -62,7 +62,7 @@ export default function ParticleAnimation({
   const mouseRef = useRef<Mouse>({ x: 0, y: 0, smoothX: 0, smoothY: 0, diff: 0 });
   const particlesRef = useRef<Particle[]>([]);
   const animationIdRef = useRef<number | null>(null);
-  const isIntersecting = useIntersection(svgRef);
+  const isIntersecting = useIntersection(svgRef as any);
   const isIntersectingRef = useRef(isIntersecting);
   const renderRef = useRef<() => void>(null);
 

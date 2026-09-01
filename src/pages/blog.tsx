@@ -12,6 +12,14 @@ export default function Blog() {
 
   const posts = [
     {
+      slug: 'dpdp-act-compliant-air-gapped-llm-legal-tech',
+      title: 'DPDP Act Compliant Air-Gapped Local LLM Deployment for Law Firms & Enterprise Legal Tech',
+      excerpt: 'Engineering guide on deploying air-gapped 70B parameter open-weights LLMs (Qwen 2.5, Llama 3.3) under India DPDP Act compliance with zero cloud VRAM data leakage and local MCP RAG.',
+      date: 'August 5, 2026',
+      readTime: '8 min read',
+      tag: 'Legal AI Compliance'
+    },
+    {
       slug: 'ai-college-admission-bot-punjab',
       title: 'How Indian Colleges Automate Admissions & Inquiries with WhatsApp AI Agents',
       excerpt: 'Case study on deploying bilingual (English, Punjabi, Hinglish) WhatsApp AI bots for higher education colleges in Punjab to capture 24/7 applicant leads, collect marksheets, and process fee reminders.',

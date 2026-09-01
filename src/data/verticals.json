@@ -1,287 +1,499 @@
 [
   {
     "id": "jewelry-stores",
+    "name": "Jewelry Stores & Showrooms",
     "type": "whatsapp-bot",
-    "name": "Jewelry Stores",
     "title": "WhatsApp Bot for Jewelry Stores | Gurdharam",
-    "metaDescription": "Automate gold rate quotes, showcase design catalogs, and pre-qualify high-value buyers 24/7 with a custom WhatsApp bot for jewelry showrooms.",
-    "painPoint": "High-value prospects drop off when waiting hours for custom pricing quotes on daily gold rates or specific ornament availability.",
-    "example": "A client texts asking for 22k gold bracelet availability. The bot queries your inventory database, calculates pricing dynamically using live market gold rates, and replies with HD design cards in under a second.",
+    "metaDescription": "WhatsApp AI agent for jewelry showrooms. Automated 22k/24k gold rate quotes, custom bridal catalog lookups, and private showroom appointment bookings.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-furniture-showrooms",
-      "/services/whatsapp-bot-automobile-dealerships"
+    "painPoint": "Jewelry buyers demand instant live 22k/24k gold & silver bullion rates, custom bridal ring catalogs, and discrete VIP showroom visits. Manual staff take hours to reply, losing high-ticket sales.",
+    "example": "Customer texts 'Today 22k Hallmark rate' -> Bot queries live bullion API, returns ₹6,850/g with GST calculation, renders carousel of certified bridal necklaces, and schedules private lounge appointment.",
+    "roi": [
+      { "metric": "VIP Booking Conversion", "value": "+185%", "detail": "Sub-500ms response captures high-intent buyers while browsing online." },
+      { "metric": "Staff Inquiry Overhead", "value": "-80%", "detail": "Automates 300+ daily repetitive gold rate inquiries without manual typing." },
+      { "metric": "Average Ticket Size", "value": "₹2.4L+", "detail": "Instant HD video catalog delivery increases customer trust and visit readiness." }
+    ],
+    "compliance": [
+      { "standard": "BIS Hallmarking & HUID", "requirement": "Mandatory display of 6-digit alphanumeric HUID & BIS hallmark standards.", "implementation": "Bot dynamically appends BIS compliance verification links and HUID lookups on quote generation." },
+      { "standard": "Digital Personal Data Protection Act 2023", "requirement": "Explicit opt-in consent for catalog updates and price alerts.", "implementation": "Compliant double opt-in mechanism with one-tap unsubscribe keyword ('STOP')." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Direct Inbound Trigger", "desc": "Customer clicks QR code or Instagram ad into verified WhatsApp business account.", "actor": "Prospect / Buyer", "tech": "Meta Cloud API" },
+      { "step": 2, "name": "Bullion Rate Computation", "desc": "Fetches live MCX gold bullion rates and calculates making charges and GST automatically.", "actor": "Node.js Webhook", "tech": "Live Bullion API" },
+      { "step": 3, "name": "HD Catalog Rendering", "desc": "Renders dynamic interactive carousels of certified diamond & gold ornaments.", "actor": "AI Visual Agent", "tech": "WhatsApp Interactive Messages" },
+      { "step": 4, "name": "VIP Lounge Scheduling", "desc": "Books private showroom consultation slots synced with manager calendar.", "actor": "CRM Engine", "tech": "Google Calendar / ERP Sync" }
+    ],
+    "faqs": [
+      { "question": "Can the bot update gold rates automatically every morning?", "answer": "Yes. The bot syncs with your daily bullion rate feed or an easy Google Sheet, updating 18k, 22k, and 24k rates across all conversations." },
+      { "question": "Does it support Punjabi, Hindi, and English?", "answer": "Yes. The bot processes natural conversational messages across English, Hindi, and Punjabi dialects." },
+      { "question": "Are there monthly recurring software license fees?", "answer": "No. You pay only official Meta API usage rates directly to Meta with zero recurring SaaS markups." }
     ]
   },
   {
     "id": "coaching-institutes",
+    "name": "Coaching & IELTS Institutes",
     "type": "whatsapp-bot",
-    "name": "Coaching Institutes & Schools",
-    "title": "WhatsApp Bot for Coaching Institutes & Schools | Gurdharam",
-    "metaDescription": "Automate student lead capture, answer course queries, and book trial classes 24/7 with a custom WhatsApp chatbot built for coaching centers.",
-    "painPoint": "Front-desk staff spends hours answering repetitive questions about fee structures, batch timings, and course syllabus instead of closing enrollments.",
-    "example": "A student texts asking about NEET prep batches. The bot checks Google Sheets, sends the timing options, gathers their name and phone, and schedules a free trial class instantly.",
+    "title": "WhatsApp Bot for Coaching Centers | Gurdharam",
+    "metaDescription": "Bilingual WhatsApp AI bot for IELTS, NEET, and JEE coaching institutes in Punjab. Capture demo class bookings, syllabus brochures, and fee breakdowns 24/7.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-clinics-hospitals",
-      "/services/whatsapp-bot-gyms-fitness"
+    "painPoint": "Students research coaching institutes and study visa eligibility late at night. Delayed morning responses result in students joining competing academies.",
+    "example": "Student texts 'IELTS band score requirements for Canada 2026' -> Bot shares criteria, sends study brochure PDF, and registers student for free demo session.",
+    "roi": [
+      { "metric": "Demo Class Attendance", "value": "+210%", "detail": "Instant WhatsApp confirmation with automated 24h & 1h calendar reminders." },
+      { "metric": "Lead Capture Velocity", "value": "< 1 Sec", "detail": "Engages prospective students while they are actively researching." },
+      { "metric": "Counselor Time Saved", "value": "25h/Week", "detail": "Eliminates repetitive manual PDF sharing and basic fee inquiries." }
+    ],
+    "compliance": [
+      { "standard": "DPDP Act 2023 Student Data Privacy", "requirement": "Secure handling of academic transcripts, marksheets, and passport copies.", "implementation": "End-to-end encrypted document storage with automated CRM role-based access control." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Inbound Lead Ingestion", "desc": "Student initiates chat via Google Maps, website button, or flyer QR code.", "actor": "Student", "tech": "WhatsApp Business API" },
+      { "step": 2, "name": "Course & Visa Qualification", "desc": "Bot assesses current academic profile, test goals, and target intake session.", "actor": "Conversational Bot", "tech": "Custom NLP Router" },
+      { "step": 3, "name": "Brochure & Fee Delivery", "desc": "Dispatches localized course syllabus PDF and scholarship fee matrix.", "actor": "Document Service", "tech": "Cloud Storage CDN" },
+      { "step": 4, "name": "Demo Class Slot Booking", "desc": "Schedules confirmed seat in upcoming batch and notifies branch counsellor.", "actor": "Academy CRM", "tech": "PostgreSQL / Sheets Sync" }
+    ],
+    "faqs": [
+      { "question": "Can the bot collect marksheet scans directly in WhatsApp?", "answer": "Yes. Students can upload photos or PDFs of marksheets, which are verified and routed to counsellors." },
+      { "question": "Can it broadcast batch timings to enrolled students?", "answer": "Yes. Using Meta-approved utility templates, you can broadcast timetable changes and exam alerts." }
     ]
   },
   {
     "id": "clinics-hospitals",
-    "type": "whatsapp-bot",
     "name": "Clinics & Hospitals",
+    "type": "whatsapp-bot",
     "title": "WhatsApp Bot for Clinics & Hospitals | Gurdharam",
-    "metaDescription": "Automate doctor appointments, patient lead triage, and follow-ups 24/7. Direct Meta API WhatsApp bot with Zero recurring platform fees.",
-    "painPoint": "Staff is overwhelmed during morning rushes, leading to unanswered calls, patient queue delays, and missed appointments.",
-    "example": "A patient asks for doctor availability on Wednesday. The bot checks your hospital database, proposes open slots, registers the patient, and sends a booking confirmation with a map location.",
+    "metaDescription": "Automated WhatsApp appointment booking bot for clinics and hospitals. OPD slot scheduling, doctor availability lookups, and instant appointment reminders.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-salons-spas",
-      "/services/whatsapp-bot-gyms-fitness"
+    "painPoint": "Clinic phone lines stay engaged during morning OPD hours. Patients face long wait times, missed calls, and high no-show rates for specialized doctor consultations.",
+    "example": "Patient texts 'Book appointment with Dr. Sharma for knee consultation tomorrow' -> Bot checks live HMS schedule, offers 11:30 AM slot, confirms booking, and delivers digital OPD token.",
+    "roi": [
+      { "metric": "OPD No-Show Reduction", "value": "-65%", "detail": "Automated WhatsApp confirmation tokens with interactive Reschedule/Cancel buttons." },
+      { "metric": "Reception Call Volume", "value": "-75%", "detail": "Automates routine slot inquiries, visiting hours, and clinic location requests." },
+      { "metric": "Patient Satisfaction", "value": "99.2%", "detail": "Zero hold times and instant bilingual confirmation directly on patient mobile." }
+    ],
+    "compliance": [
+      { "standard": "DISHA & NMC Telemedicine Guidelines", "requirement": "Strict confidentiality of medical history, prescriptions, and patient records.", "implementation": "HIPAA-grade encryption; zero diagnostic data leakage; distinct consent logs." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Patient Request Ingestion", "desc": "Patient messages clinic number from prescription slip or Google profile.", "actor": "Patient", "tech": "WhatsApp Business API" },
+      { "step": 2, "name": "Department & Doctor Routing", "desc": "Identifies required specialty (Cardiology, Ortho, Dental) and checks on-duty doctors.", "actor": "Hospital Bot", "tech": "HMS REST Webhook" },
+      { "step": 3, "name": "Slot Selection & Token Issuance", "desc": "Provides available consultation slots and issues verifiable digital OPD token.", "actor": "Booking Engine", "tech": "PostgreSQL Database" },
+      { "step": 4, "name": "Automated Reminder Broadcast", "desc": "Sends location pin, doctor room number, and fasting preparation notes prior to visit.", "actor": "Notification Dispatcher", "tech": "Meta Utility Templates" }
+    ],
+    "faqs": [
+      { "question": "Can it integrate with our existing Hospital Management System (HMS)?", "answer": "Yes. We connect seamlessly via REST APIs, webhooks, or SQL database connectors." },
+      { "question": "Can patients share previous blood reports and lab tests?", "answer": "Yes. Lab PDF reports and images are ingested and synced to the patient's electronic medical record." }
     ]
   },
   {
     "id": "salons-spas",
+    "name": "Salons & Luxury Spas",
     "type": "whatsapp-bot",
-    "name": "Salons & Spas",
     "title": "WhatsApp Bot for Salons & Spas | Gurdharam",
-    "metaDescription": "Automate appointment bookings, stylist scheduling, and send no-show reminders on auto-pilot with a custom salon WhatsApp bot integration.",
-    "painPoint": "Last-minute cancellations and no-shows leave open slots that cost salons thousands in lost revenue daily.",
-    "example": "A client requests a hair spa session. The bot lists available stylists, schedules the booking, and sends automated reminder notifications 24 hours and 2 hours before the slot.",
+    "metaDescription": "Automated WhatsApp appointment booking bot for luxury salons and spas. Service catalog browsing, bridal makeup inquiries, and stylist calendar scheduling.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-clinics-hospitals",
-      "/services/whatsapp-bot-gyms-fitness"
+    "painPoint": "Salons lose high-value weekend bookings while stylists are busy serving clients and unable to answer continuous phone calls.",
+    "example": "Client texts 'Hair spa and bridal makeup package for Saturday' -> Bot shares visual rate card, checks senior stylist slot, confirms booking, and adds to Google Calendar.",
+    "roi": [
+      { "metric": "Weekend Bookings Captured", "value": "+90%", "detail": "24/7 automated booking captures evening and early morning client inquiries." },
+      { "metric": "Bridal Package Conversions", "value": "+140%", "detail": "Instant HD portfolio and bridal rate card delivery builds immediate premium trust." }
+    ],
+    "compliance": [
+      { "standard": "Consumer Protection (E-Commerce) Rules", "requirement": "Transparent pricing, refund terms, and clear cancellation disclosures.", "implementation": "Clear breakdown of service prices, tax rates, and cancellation policies before booking." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Client Inbound Query", "desc": "Client initiates chat from Instagram story link or salon WhatsApp QR.", "actor": "Client", "tech": "WhatsApp Business API" },
+      { "step": 2, "name": "Interactive Menu Selection", "desc": "Displays interactive categories: Hair, Skin, Bridal, Massage Packages.", "actor": "Salon Bot", "tech": "Interactive List Messages" },
+      { "step": 3, "name": "Stylist Calendar Sync", "desc": "Checks real-time chair availability and locks selected appointment slot.", "actor": "Booking System", "tech": "Google Calendar API" },
+      { "step": 4, "name": "Confirmation & Directions", "desc": "Sends appointment confirmation card, Google Maps pin, and preparation guidelines.", "actor": "Bot Engine", "tech": "Meta Messaging API" }
+    ],
+    "faqs": [
+      { "question": "Can clients pick a specific hair stylist or makeup artist?", "answer": "Yes. The bot supports stylist-specific rosters and service duration tracking." }
     ]
   },
   {
     "id": "real-estate",
+    "name": "Real Estate Brokers & Colonizers",
     "type": "whatsapp-bot",
-    "name": "Real Estate Agents",
-    "title": "WhatsApp Bot for Real Estate | Property Leads Automation | Gurdharam",
-    "metaDescription": "Automate property lead capture, send PDF catalogs, and filter buyers by budget 24/7 with an AI-powered WhatsApp bot for real estate.",
-    "painPoint": "Brokers waste hours calling unqualified leads who are 'just browsing' or don't match the budget requirements of active listings.",
-    "example": "A homebuyer searches for 3BHK flats. The bot asks for their budget and preferred location, filters active inventory, sends brochure PDFs, and routes qualified buyers to your phone.",
+    "title": "WhatsApp Bot for Real Estate | Gurdharam",
+    "metaDescription": "WhatsApp AI bot for real estate brokers and builders. Automated property brochures, layout maps, site visit scheduling, and budget qualification.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-furniture-showrooms",
-      "/services/whatsapp-bot-wedding-planners"
+    "painPoint": "Real estate ads generate hundreds of unqualified leads asking 'Price?'. Agents waste entire days manually filtering buyers instead of closing serious site visits.",
+    "example": "Buyer texts '3 BHK villa in Mohali under 1.2 Cr' -> Bot verifies budget, sends RERA layout plan PDF and walkthrough video, and schedules Saturday site visit with lead agent.",
+    "roi": [
+      { "metric": "Site Visit Conversion", "value": "+160%", "detail": "Instant delivery of RERA floor plans and video walkthroughs filters high-intent buyers." },
+      { "metric": "Agent Filtering Hours Saved", "value": "30h/Week", "detail": "Automates budget qualification and location preferences before transferring to agent." }
+    ],
+    "compliance": [
+      { "standard": "Punjab RERA Section 11(2) Disclosure", "requirement": "Mandatory display of RERA registration number and approved sanction plans.", "implementation": "Bot automatically displays project RERA ID and approved municipal layout drawings on all brochure sends." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Lead Ingestion from Ads", "desc": "Buyer clicks 'Send WhatsApp Message' on Meta/Google property ad.", "actor": "Buyer", "tech": "Click-to-WhatsApp Ads" },
+      { "step": 2, "name": "Budget & Locality Triage", "desc": "Captures preferred configuration (2BHK/3BHK/Plot), budget range, and timeline.", "actor": "Real Estate Bot", "tech": "Conversational Logic" },
+      { "step": 3, "name": "RERA Brochure & Video Dispatch", "desc": "Sends approved layout PDF, price sheet, and 4K video walkthrough.", "actor": "Media Server", "tech": "Cloud Storage CDN" },
+      { "step": 4, "name": "VIP Site Visit Booking", "desc": "Schedules date/time for cab pickup or onsite visit with senior sales manager.", "actor": "Sales CRM", "tech": "LeadSquared / HubSpot Sync" }
+    ],
+    "faqs": [
+      { "question": "Can it integrate with Meta Click-to-WhatsApp ads?", "answer": "Yes. It reads the ad campaign ID and context, personalizing the response to the exact property advertised." }
     ]
   },
   {
     "id": "malls-retail",
+    "name": "Shopping Malls & Retail Plazas",
     "type": "whatsapp-bot",
-    "name": "Malls & Retail Complexes",
-    "title": "WhatsApp Bot for Malls & Retail Complexes | Gurdharam",
-    "metaDescription": "Automate tenant directory lookup, share ongoing store offers, and answer parking queries 24/7 with a custom retail WhatsApp bot.",
-    "painPoint": "Visitors struggle to find store locations, running promotions, or customer service desks, leading to a degraded retail experience.",
-    "example": "A mall visitor texts asking for Zara's floor location. The bot replies instantly with 'First Floor, Wing B', and shows active discounts running at the store.",
+    "title": "WhatsApp Bot for Malls & Retail | Gurdharam",
+    "metaDescription": "WhatsApp bot for shopping malls and retail complexes. Store directories, movie cinema timings, valet parking guidance, and brand promo updates 24/7.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-restaurants-cafes",
-      "/services/whatsapp-bot-wedding-planners"
+    "painPoint": "Mall visitors struggle to find specific brand store locations, movie showtimes, parking zones, and active weekend discount sales.",
+    "example": "Visitor texts 'Zara store floor and cinema timings' -> Bot returns 'Zara: Level 1, Unit 104' and displays today's PVR movie schedule with direct booking link.",
+    "roi": [
+      { "metric": "Visitor Footfall Engagement", "value": "+85%", "detail": "Digital directory guidance increases visit duration and retail store discoveries." }
+    ],
+    "compliance": [
+      { "standard": "Telecom Commercial Communications (TCCCPR)", "requirement": "Strict adherence to commercial promotional messaging opt-in protocols.", "implementation": "Opt-in confirmation before sending weekend promotional discounts or mall events." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Onsite QR Scanning", "desc": "Visitor scans QR codes placed across mall entry points and elevators.", "actor": "Shopper", "tech": "WhatsApp QR Code" },
+      { "step": 2, "name": "Directory Search Query", "desc": "Visitor searches store names, dining cuisine, or entertainment facilities.", "actor": "Mall AI Bot", "tech": "Vector Semantic Search" },
+      { "step": 3, "name": "Floor Map Delivery", "desc": "Sends crisp floor plan image and route directions to the requested retail store.", "actor": "Map Service", "tech": "WhatsApp Media Delivery" }
+    ],
+    "faqs": [
+      { "question": "Can individual mall stores update their own promotional deals?", "answer": "Yes. We provide a simple management dashboard for store managers to submit weekend flash sales." }
     ]
   },
   {
     "id": "gyms-fitness",
-    "type": "whatsapp-bot",
     "name": "Gyms & Fitness Centers",
-    "title": "WhatsApp Bot for Gyms & Fitness Centers | Gurdharam",
-    "metaDescription": "Automate gym membership renewals, trainer scheduling, and trial booking 24/7 with a custom WhatsApp automation bot for fitness centers.",
-    "painPoint": "Gyms lose up to 30% of members simply because they forget to renew on time, and staff fails to follow up manually.",
-    "example": "A member's plan expires in 3 days. The bot automatically sends a personalized renewal warning containing a direct UPI payment link to complete the transaction.",
+    "type": "whatsapp-bot",
+    "title": "WhatsApp Bot for Gyms & Fitness | Gurdharam",
+    "metaDescription": "Automated WhatsApp bot for gym membership renewals, personal trainer class bookings, diet chart deliveries, and fee payment reminders.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-salons-spas",
-      "/services/whatsapp-bot-clinics-hospitals"
+    "painPoint": "Gym owners lose up to 35% of recurring monthly membership dues because manual phone reminders are awkward, delayed, or ignored.",
+    "example": "Bot sends friendly membership renewal alert 3 days before expiry with 1-click UPI payment link -> Member pays, bot issues digital access pass instantly.",
+    "roi": [
+      { "metric": "Membership Renewal Rate", "value": "+75%", "detail": "Automated WhatsApp reminders with 1-click UPI links eliminate payment friction." }
+    ],
+    "compliance": [
+      { "standard": "PCI-DSS / RBI UPI Tokenization", "requirement": "Secure payment link generation without collecting raw banking credentials.", "implementation": "Direct dynamic UPI Intent and verified Razorpay/Cashfree payment links." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Expiry Trigger", "desc": "Database triggers automated alert 3 days prior to membership subscription end.", "actor": "System Cron", "tech": "Node.js Scheduler" },
+      { "step": 2, "name": "WhatsApp Alert Dispatch", "desc": "Sends personalized renewal message with tailored plan options and UPI QR.", "actor": "Gym Bot", "tech": "Meta Cloud API" },
+      { "step": 3, "name": "Payment Webhook Verification", "desc": "Verifies payment receipt from payment gateway and updates member active status.", "actor": "Payment Webhook", "tech": "Razorpay / UPI Sync" }
+    ],
+    "faqs": [
+      { "question": "Can members book personal training session slots via WhatsApp?", "answer": "Yes. Members can check trainer rosters and book slots directly in chat." }
     ]
   },
   {
     "id": "restaurants-cafes",
-    "type": "whatsapp-bot",
     "name": "Restaurants & Cafes",
-    "title": "WhatsApp Bot for Restaurants & Cafes | Order & Booking | Gurdharam",
-    "metaDescription": "Automate table reservations, display digital menus, and handle takeaway orders directly on WhatsApp 24/7 with a custom restaurant bot.",
-    "painPoint": "Third-party delivery platforms take massive 20-30% commissions, destroying profit margins for local restaurants and cafes.",
-    "example": "A customer opens WhatsApp, browses your interactive food menu, selects items, inputs delivery address, and completes a direct UPI order without platform cuts.",
+    "type": "whatsapp-bot",
+    "title": "WhatsApp Bot for Restaurants | Gurdharam",
+    "metaDescription": "Direct WhatsApp table booking and food ordering bot for restaurants. Digital PDF menu cards, party reservations, and 0% commission takeaway orders.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-malls-retail",
-      "/services/whatsapp-bot-wedding-planners"
+    "painPoint": "Restaurants pay 25%–35% commissions to food aggregator apps (Zomato/Swiggy) and miss high-volume table booking calls during evening rush hours.",
+    "example": "Guest texts 'Book table for 6 tonight at 8 PM' -> Bot checks floor availability, books table, sends confirmation with digital menu, and alerts restaurant host.",
+    "roi": [
+      { "metric": "Delivery Commission Saved", "value": "100%", "detail": "Direct ordering via WhatsApp eliminates 30% aggregator commissions." }
+    ],
+    "compliance": [
+      { "standard": "FSSAI Display Regulations", "requirement": "Mandatory display of FSSAI license number and allergen declarations.", "implementation": "Digital menu displays valid FSSAI registration details and standard dietary indicators." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Guest Chat Initiation", "desc": "Guest clicks WhatsApp button on Google profile, Instagram, or table QR.", "actor": "Diner", "tech": "WhatsApp Business API" },
+      { "step": 2, "name": "Table Booking or Order Flow", "desc": "Offers Table Reservation, Digital Menu PDF, or Direct Takeaway Order.", "actor": "Restaurant Bot", "tech": "Interactive Buttons" },
+      { "step": 3, "name": "Kitchen Notification", "desc": "Prints KOT order ticket or alerts floor manager with guest table confirmation.", "actor": "POS System", "tech": "Thermal Printer / POS API" }
+    ],
+    "faqs": [
+      { "question": "Can it send our digital PDF menu card automatically?", "answer": "Yes. The bot instantly sends your updated food menu PDF whenever requested." }
     ]
   },
   {
     "id": "travel-agencies",
+    "name": "Travel & Tour Agencies",
     "type": "whatsapp-bot",
-    "name": "Travel Agencies",
-    "title": "WhatsApp Bot for Travel Agencies | Package Booking | Gurdharam",
-    "metaDescription": "Pre-qualify travel leads, distribute itinerary PDFs, and handle booking queries 24/7 with a custom WhatsApp automation bot.",
-    "painPoint": "Agents spend hours explaining package options to window shoppers who ultimately book elsewhere.",
-    "example": "A client inquires about Himachal tours. The bot asks for duration and budget, sends pre-configured package PDFs, and collects contact info for customization.",
+    "title": "WhatsApp Bot for Travel Agencies | Gurdharam",
+    "metaDescription": "WhatsApp AI bot for travel agencies. Automated holiday package brochures, visa checklist delivery, flight inquiry capture, and custom itinerary planning.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-real-estate",
-      "/services/whatsapp-bot-automobile-dealerships"
+    "painPoint": "Travel inquiries for Dubai, Canada, Europe, and Thailand require extensive itinerary PDFs, visa checklists, and hotel options that take hours to prepare manually.",
+    "example": "Traveler texts 'Dubai 5 nights package for family of 4' -> Bot instantly shares comprehensive PDF itinerary, inclusions list, visa requirements, and quote breakdown.",
+    "roi": [
+      { "metric": "Quote Delivery Speed", "value": "< 30 Sec", "detail": "Instant PDF package dispatch beats competitor response times by hours." }
+    ],
+    "compliance": [
+      { "standard": "Ministry of Tourism Guidelines", "requirement": "Transparent disclosure of package inclusions, visa rejection clauses, and cancellations.", "implementation": "Clear breakdown of inclusions, exclusions, and statutory visa disclosures in all PDF quotes." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Travel Inquiry Ingestion", "desc": "Traveler queries destination packages from social media ad or website.", "actor": "Traveler", "tech": "WhatsApp Cloud API" },
+      { "step": 2, "name": "Itinerary Match & PDF Dispatch", "desc": "Fetches matching package and delivers branded itinerary PDF with pricing tiers.", "actor": "Travel Bot", "tech": "Dynamic PDF Generator" },
+      { "step": 3, "name": "Agent Escalation", "desc": "Notifies senior travel consultant when traveler selects confirmed travel dates.", "actor": "Agency CRM", "tech": "CRM Webhook Sync" }
+    ],
+    "faqs": [
+      { "question": "Can it send country-specific visa document checklists?", "answer": "Yes. The bot provides comprehensive document checklists for Schengen, UK, Canada, and Gulf visas." }
     ]
   },
   {
     "id": "wedding-planners",
+    "name": "Wedding Planners & Banquet Halls",
     "type": "whatsapp-bot",
-    "name": "Wedding Planners & Venues",
-    "title": "WhatsApp Bot for Wedding Planners & Venues | Gurdharam",
-    "metaDescription": "Automate venue availability checks, send catalog pricing, and pre-qualify clients 24/7 with a custom WhatsApp bot for event planners.",
-    "painPoint": "Event managers lose leads during busy wedding seasons due to slow response times for venue pricing and capacity details.",
-    "example": "A client requests a quote for a 500-guest banquet. The bot checks the venue calendar, sends base pricing packages, and registers details for a physical tour.",
+    "title": "WhatsApp Bot for Wedding Planners | Gurdharam",
+    "metaDescription": "WhatsApp automation bot for wedding planners and luxury resort banquet halls. Date availability checks, per-plate catering quotes, and venue photo tours.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-real-estate",
-      "/services/whatsapp-bot-furniture-showrooms"
+    "painPoint": "Families planning weddings message multiple resorts and banquet halls simultaneously. Slow replies on date availability lead to lost bookings worth ₹5L–₹25L.",
+    "example": "Client texts 'Is banquet hall available on 18th November for 500 guests?' -> Bot checks calendar, confirms availability, and shares decor photo gallery and per-plate menu.",
+    "roi": [
+      { "metric": "High-Value Date Capture", "value": "+130%", "detail": "Instant date checks and catering brochure delivery secures VIP wedding walkthroughs." }
+    ],
+    "compliance": [
+      { "standard": "GST & Contractual Terms", "requirement": "Clear breakdown of advance booking deposits, GST rates, and cancellation terms.", "implementation": "Transparent fee schedule with advance security deposit milestones." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Inbound Venue Inquiry", "desc": "Family initiates inquiry for specific marriage or reception date.", "actor": "Host / Family", "tech": "WhatsApp Cloud API" },
+      { "step": 2, "name": "Live Date Verification", "desc": "Checks resort booking ledger for morning/evening hall availability.", "actor": "Venue Bot", "tech": "Calendar Database" },
+      { "step": 3, "name": "Brochure & Video Tour Dispatch", "desc": "Sends 4K venue photo gallery, decor themes, and per-plate food menus.", "actor": "Media CDN", "tech": "WhatsApp Interactive Media" }
+    ],
+    "faqs": [
+      { "question": "Can it showcase different catering menus (Veg/Non-Veg/Snacks)?", "answer": "Yes. It delivers complete multi-cuisine menus with transparent per-plate pricing." }
     ]
   },
   {
     "id": "furniture-showrooms",
+    "name": "Furniture Showrooms & Interior Designers",
     "type": "whatsapp-bot",
-    "name": "Furniture Showrooms",
-    "title": "WhatsApp Bot for Furniture Showrooms | Gurdharam",
-    "metaDescription": "Showcase catalog designs, automate size queries, and book showroom visits 24/7 with a custom WhatsApp bot for home decor brands.",
-    "painPoint": "Customers repeatedly ask for dimensions, wood types, and shipping costs on individual items, tying up active sales reps.",
-    "example": "A buyer queries about a sofa set. The bot outputs color variants, dimensions, wood options, delivery estimates, and invites them to book a showroom visit.",
+    "title": "WhatsApp Bot for Furniture Stores | Gurdharam",
+    "metaDescription": "WhatsApp bot for luxury furniture showrooms. Sofa and bed catalog lookups, custom woodwork quotes, fabric selection galleries, and showroom visit booking.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-jewelry-stores",
-      "/services/whatsapp-bot-wedding-planners"
+    "painPoint": "Homeowners renovating houses need quick dimensions, wood specifications (Teak/Sheesham), fabric swatches, and approximate price estimates.",
+    "example": "Customer texts 'L-shape sofa sets with price' -> Bot shares 10 top designs with dimensions, wood warranty details, and showroom directions.",
+    "roi": [
+      { "metric": "Showroom Walk-in Rate", "value": "+110%", "detail": "Instant catalog delivery with location pin converts online browsers into in-store shoppers." }
+    ],
+    "compliance": [
+      { "standard": "Consumer Protection Warranties", "requirement": "Explicit disclosure of wood warranty, polish durability, and delivery timeframes.", "implementation": "Clear warranty terms and maintenance guides sent with every quotation." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Catalog Query Inbound", "desc": "Customer messages showroom for living room or bedroom furniture.", "actor": "Shopper", "tech": "WhatsApp API" },
+      { "step": 2, "name": "Visual Swatch Carousel", "desc": "Renders interactive carousel of modern sofa sets, dining tables, and beds.", "actor": "Furniture Bot", "tech": "WhatsApp Carousels" },
+      { "step": 3, "name": "Visit Scheduling", "desc": "Invites client to test comfort in showroom and sends direct Google Maps directions.", "actor": "CRM System", "tech": "Google Maps Location Sync" }
+    ],
+    "faqs": [
+      { "question": "Can customers submit custom room dimensions for quotes?", "answer": "Yes. Customers can send room sketches and dimensions for custom carpentry estimates." }
     ]
   },
   {
     "id": "automobile-dealerships",
+    "name": "Automobile Dealerships & Service Centers",
     "type": "whatsapp-bot",
-    "name": "Automobile Dealerships",
-    "title": "WhatsApp Bot for Automobile Dealerships & Service Centers | Gurdharam",
-    "metaDescription": "Automate test drives, schedule vehicle service slots, and send service reminders 24/7 with a custom dealership WhatsApp bot.",
-    "painPoint": "Service centers lose repeat business because they forget to follow up with clients when their vehicle's periodic service is due.",
-    "example": "A vehicle's service is due. The bot sends a reminder, lets the owner select their preferred time slot, reserves it in the service calendar, and sends confirmation.",
+    "title": "WhatsApp Bot for Auto Dealerships | Gurdharam",
+    "metaDescription": "WhatsApp bot for car dealerships and service centers. Automated test drive bookings, service slot scheduling, insurance alerts, and on-road quotes.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
-    "crossLinks": [
-      "/services/whatsapp-bot-travel-agencies",
-      "/services/whatsapp-bot-furniture-showrooms"
+    "painPoint": "Vehicle buyers want immediate on-road pricing and EMI estimates. Service centers miss workshop bookings due to congested service reception desks.",
+    "example": "Buyer texts 'On-road price of SUV top model in Punjab' -> Bot calculates RTO registration, insurance, and ex-showroom price, and books home test drive.",
+    "roi": [
+      { "metric": "Test Drive Bookings", "value": "+170%", "detail": "Instant price breakdown and frictionless 1-click test drive scheduling." },
+      { "metric": "Periodic Service Retention", "value": "+60%", "detail": "Automated periodic maintenance and insurance renewal alerts via WhatsApp." }
+    ],
+    "compliance": [
+      { "standard": "Motor Vehicles Act Disclosures", "requirement": "Accurate representation of statutory RTO road tax and state cess guidelines.", "implementation": "Clear statutory breakdown of ex-showroom, state RTO fees, and insurance components." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Price & Test Drive Ingestion", "desc": "Buyer requests quotation for specific vehicle model or variant.", "actor": "Car Buyer", "tech": "WhatsApp Cloud API" },
+      { "step": 2, "name": "On-Road Price Computation", "desc": "Calculates state road tax, insurance, Fastag, and optional accessories instantly.", "actor": "Pricing Engine", "tech": "Node.js Logic" },
+      { "step": 3, "name": "Test Drive Slot Booking", "desc": "Schedules doorstep or showroom test drive synced with dealership sales CRM.", "actor": "Dealership CRM", "tech": "CRM REST Sync" }
+    ],
+    "faqs": [
+      { "question": "Can vehicle owners book periodic service and oil change appointments?", "answer": "Yes. Owners can pick convenient service dates, select pickup/drop, and receive status updates." }
     ]
   },
   {
     "id": "coaching-institutes",
+    "name": "Coaching & IELTS Video Automation",
     "type": "social-media-automation",
-    "name": "Coaching Institutes & Schools",
-    "title": "YouTube Automation for Coaching Institutes & Schools | Gurdharam",
-    "metaDescription": "Automate study guide videos, daily quizzes, and batch announcement reels programmatically on YouTube and Instagram for coaching centers.",
-    "painPoint": "Educators waste hours editing repetitive lecture clips, rendering slides, and manually posting content on social channels.",
-    "example": "A Python script reads your mock test questions, auto-generates dynamic study quiz slides with realistic TTS audio, compiles it to MP4, and schedules it to YouTube Shorts.",
-    "parentPath": "/services/ai-automation",
-    "parentName": "AI Automation & Media Pipelines",
-    "crossLinks": [
-      "/services/social-media-automation-jewelry-brands",
-      "/services/social-media-automation-real-estate"
+    "title": "Coaching Video Automation | Gurdharam",
+    "metaDescription": "Programmatic video generation engine for coaching institutes. Daily educational shorts, grammar tips, and study abroad visa updates produced automatically.",
+    "parentPath": "/services/automated-video-generation-engine",
+    "parentName": "Automated VideoGen Engine",
+    "painPoint": "Coaching institutes struggle to record daily Instagram reels and YouTube shorts manually. Inconsistent posting causes organic student discovery to stall.",
+    "example": "System takes daily IELTS vocabulary list -> Generates 1080p60 dynamic Reel with professional audio, subtitles, and branding -> Auto-posts across platforms.",
+    "roi": [
+      { "metric": "Monthly Video Output", "value": "60+ Videos", "detail": "Consistent 2x daily programmatic posting without camera or editing studio time." },
+      { "metric": "Organic Student Inquiries", "value": "+240%", "detail": "Viral short-form educational clips compound organic local student discovery." }
+    ],
+    "compliance": [
+      { "standard": "ASCI Education Advertising Code", "requirement": "Truthful representation of student achievements and test preparation guidance.", "implementation": "Automated disclaimer watermarks and verified instructional syllabus content." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Curriculum Feed Ingestion", "desc": "Pulls daily IELTS tip, vocabulary word, or exam update from institute syllabus.", "actor": "Content Engine", "tech": "Node.js Pipeline" },
+      { "step": 2, "name": "Programmatic React Composition", "desc": "Renders high-energy 60 FPS motion graphics, subtitles, and sound effects.", "actor": "Remotion Renderer", "tech": "Remotion React / WebGL" },
+      { "step": 3, "name": "Hardware NVENC Encoding", "desc": "Encodes 1080p60 MP4 video in under 20 seconds on local GPU hardware.", "actor": "Video Encoder", "tech": "FFmpeg NVENC" },
+      { "step": 4, "name": "Multi-Platform Publishing", "desc": "Publishes scheduled video across YouTube Shorts, Instagram Reels, and Facebook.", "actor": "Social Publisher", "tech": "Official Meta / YouTube APIs" }
+    ],
+    "faqs": [
+      { "question": "Do I need to stand in front of a camera to create these videos?", "answer": "No. The system uses high-quality AI voiceover, dynamic kinetic typography, and motion graphics." }
     ]
   },
   {
     "id": "jewelry-brands",
+    "name": "Jewelry Brand Video Automation",
     "type": "social-media-automation",
-    "name": "Jewelry Brands",
-    "title": "Instagram Reels Automation for Jewelry Brands | Gurdharam",
-    "metaDescription": "Automate jewelry catalog video rendering and schedule Reels uploads programmatically without manual graphic design overhead.",
-    "painPoint": "High-end showrooms struggle to generate the massive volume of vertical video content required by social algorithms to stay visible.",
-    "example": "Your inventory spreadsheet gets updated with a new necklace. The script pulls the high-res image, renders a panning video with dynamic price tags, and auto-posts it.",
-    "parentPath": "/services/ai-automation",
-    "parentName": "AI Automation & Media Pipelines",
-    "crossLinks": [
-      "/services/social-media-automation-coaching-institutes",
-      "/services/social-media-automation-real-estate"
+    "title": "Jewelry Video Automation | Gurdharam",
+    "metaDescription": "Automated video generation for jewelry brands. Daily 1080p60 gold rate reels, new bridal design showcases, and festival offers rendered automatically.",
+    "parentPath": "/services/automated-video-generation-engine",
+    "parentName": "Automated VideoGen Engine",
+    "painPoint": "Jewelry showrooms need to post daily gold rate updates and new product highlights on Instagram, but hiring manual video editors every day is cost-prohibitive.",
+    "example": "Daily gold rate updates in Google Sheet -> Pipeline renders luxury 1080p60 Reel with sparkling 3D effects and audio -> Auto-publishes to Instagram at 9:30 AM.",
+    "roi": [
+      { "metric": "Daily Video Production Cost", "value": "₹0 / Day", "detail": "Fully self-hosted programmatic video pipeline eliminates monthly agency retainer fees." }
+    ],
+    "compliance": [
+      { "standard": "BIS Hallmark & Disclosure Standards", "requirement": "Mandatory inclusion of purity standards and hallmark verification advisories.", "implementation": "Auto-inserts BIS hallmark authentication badge and purity disclaimers on every frame." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Daily Rate & Photo Sync", "desc": "Ingests daily 22k/24k gold rates and new product photos from showroom catalog.", "actor": "Data Connector", "tech": "Google Sheets / DB Sync" },
+      { "step": 2, "name": "Luxury Motion Design Rendering", "desc": "Composes gold shimmer particle effects, typography, and background audio.", "actor": "Media Pipeline", "tech": "Remotion React Video" },
+      { "step": 3, "name": "Automated Social Dispatch", "desc": "Publishes to Instagram Stories and Reels every morning before showroom opening.", "actor": "Publishing Bot", "tech": "Meta Graph API" }
+    ],
+    "faqs": [
+      { "question": "Can it display our showroom logo and contact details on every video?", "answer": "Yes. Your brand watermark, phone number, and showroom address are rendered on every video." }
     ]
   },
   {
     "id": "real-estate",
+    "name": "Real Estate Property Reels Automation",
     "type": "social-media-automation",
-    "name": "Real Estate Agents",
-    "title": "Content Pipelines for Real Estate Brokers | Gurdharam",
-    "metaDescription": "Automate property listings video tours and schedule daily multi-platform distribution on YouTube Shorts and Instagram Reels.",
-    "painPoint": "Agents have zero time to record, edit, and post property tour videos across 5 different social networks every day.",
-    "example": "A backend pipeline ingests raw property photos, overlays neighborhood stats and pricing, renders a transition-rich Tour Short, and pushes it to Reels, YouTube, and Facebook.",
-    "parentPath": "/services/ai-automation",
-    "parentName": "AI Automation & Media Pipelines",
-    "crossLinks": [
-      "/services/social-media-automation-coaching-institutes",
-      "/services/social-media-automation-jewelry-brands"
+    "title": "Real Estate Video Reels | Gurdharam",
+    "metaDescription": "Programmatic video generation for real estate builders. Transform property photos and floor plans into cinematic 1080p60 walkthrough reels automatically.",
+    "parentPath": "/services/automated-video-generation-engine",
+    "parentName": "Automated VideoGen Engine",
+    "painPoint": "Real estate agencies take hundreds of site photos, but converting them into engaging video reels for Instagram and YouTube takes days of manual video editing.",
+    "example": "Upload 8 photos of a 3BHK flat -> Engine generates cinematic pan-and-zoom 1080p60 Reel with price callouts, key features, and background music in 25 seconds.",
+    "roi": [
+      { "metric": "Property Lead Volume", "value": "+190%", "detail": "Short-form video reels generate 4x higher organic reach than static photo listings." }
+    ],
+    "compliance": [
+      { "standard": "RERA Advertising Guidelines", "requirement": "Prominent display of project RERA registration number and approved super area.", "implementation": "Statutory RERA watermark and verified carpet area dimensions hardcoded into video layout." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Property Asset Ingestion", "desc": "Broker uploads property photos, price, location, and key highlights.", "actor": "Real Estate Agent", "tech": "Cloud Storage Ingestion" },
+      { "step": 2, "name": "Cinematic Motion Generation", "desc": "Applies Ken Burns zoom smoothing, spec badges, and voiceover audio.", "actor": "Video Engine", "tech": "Remotion React / FFmpeg" },
+      { "step": 3, "name": "Instant Social Broadcast", "desc": "Publishes high-res Reel across agency Instagram, Facebook, and YouTube channels.", "actor": "Social Dispatcher", "tech": "Social Media APIs" }
+    ],
+    "faqs": [
+      { "question": "Can it add background music and AI voice narration?", "answer": "Yes. It combines copyright-free ambient music with realistic voiceover describing property features." }
     ]
   },
   {
     "id": "jewelry-showrooms",
+    "name": "Jewelry Showrooms WebGL",
     "type": "website-design",
-    "name": "Jewelry Showrooms",
-    "title": "3D Interactive Websites for Jewelry Showrooms | Gurdharam",
-    "metaDescription": "Build immersive 3D showrooms with interactive WebGL product viewers to showcase your premium jewelry collections online in high fidelity.",
-    "painPoint": "Flat 2D websites fail to convey the premium look, shine, and detailed craftsmanship of luxury gold and diamond ornaments.",
-    "example": "A user visits your site and spins a high-fidelity 3D model of a diamond ring, zooms in to see the details, changes gold color options, and clicks to book in-store trial.",
+    "title": "Jewelry Website Design | Gurdharam",
+    "metaDescription": "Custom 3D WebGL website design for jewelry showrooms. Interactive 3D ring visualizers, live gold rate widgets, and instant WhatsApp booking integration.",
     "parentPath": "/services/web-development",
     "parentName": "Web Development Services",
-    "crossLinks": [
-      "/services/website-design-mall-retail",
-      "/services/website-design-coaching-institutes"
+    "painPoint": "Generic WordPress and Shopify jewelry websites look flat, load slowly on mobile phones, and fail to convey the luxury craftsmanship of bridal jewelry.",
+    "example": "Customer visits website -> Interacts with 3D diamond ring in 60 FPS WebGL, inspects cut clarity from all angles, and clicks 'Inquire on WhatsApp' to purchase.",
+    "roi": [
+      { "metric": "Customer Time on Site", "value": "4.2 Min", "detail": "Interactive 3D diamond visualizer keeps shoppers engaged 3x longer than flat photo catalogs." },
+      { "metric": "Lighthouse Mobile Speed", "value": "98/100", "detail": "Static pre-rendered React architecture ensures sub-second page loads on 4G mobile." }
+    ],
+    "compliance": [
+      { "standard": "BIS Hallmarking Certification Display", "requirement": "Prominent display of authorized BIS hallmark center credentials.", "implementation": "Certified hallmark badges and purity disclosures integrated into footer and product schemas." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "3D Asset Optimization", "desc": "Compresses 3D jewelry models using Google DRACO for sub-1.5MB loading sizes.", "actor": "3D Pipeline", "tech": "Three.js / DRACO Compression" },
+      { "step": 2, "name": "Interactive WebGL Canvas", "desc": "Renders real-time lighting reflections, diamond sparkle shaders, and 360-degree rotation.", "actor": "Frontend Engine", "tech": "React / Three.js Canvas" },
+      { "step": 3, "name": "Direct WhatsApp Inquiry", "desc": "1-click inquiry button passes active product SKU and ring specifications into chat.", "actor": "Sales Funnel", "tech": "WhatsApp Deeplink" }
+    ],
+    "faqs": [
+      { "question": "Will 3D jewelry models work smoothly on mobile phones?", "answer": "Yes. Using DRACO geometry compression, assets load in under 1.5MB and maintain 60 FPS on mobile." }
     ]
   },
   {
     "id": "coaching-institutes",
+    "name": "Coaching Institutes Website Design",
     "type": "website-design",
-    "name": "Coaching Institutes",
-    "title": "High-Performance Websites for Coaching Institutes | Gurdharam",
-    "metaDescription": "Build lightning-fast React websites for coaching institutes, with integrated student admission portals and course directories.",
-    "painPoint": "Slow-loading WordPress platforms drop student admission leads and crash during result announcements due to bad server scaling.",
-    "example": "A static-pre-rendered admission site built with Vite that loads in under 0.5s, features search filters for courses, and scales effortlessly to handle 10k+ concurrent users.",
+    "title": "Coaching Website Design | Gurdharam",
+    "metaDescription": "Fast website design for coaching institutes and IELTS centers in Punjab. Pre-rendered React architecture with result showcases and fee calculators.",
     "parentPath": "/services/web-development",
     "parentName": "Web Development Services",
-    "crossLinks": [
-      "/services/website-design-jewelry-showrooms",
-      "/services/website-design-clinic-websites"
+    "painPoint": "Slow, outdated WordPress websites lose student inquiries to modern private academies. Lack of localized SEO means institutes don't rank on Google Maps.",
+    "example": "Student searches 'Best IELTS coaching near me' -> Finds fast-loading website, views verified band score testimonials, and books free demo class in 2 clicks.",
+    "roi": [
+      { "metric": "Google Search Rankings", "value": "Top 3", "detail": "Locally-targeted schema and static pre-rendered HTML ranks high on local city searches." }
+    ],
+    "compliance": [
+      { "standard": "Academic E-E-A-T Standards", "requirement": "Verifiable faculty credentials and authentic student achievement records.", "implementation": "Structured Person schemas for faculty and validated review markup for alumni outcomes." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Local SEO & Schema Architecture", "desc": "Implements EducationalOrganization schema and localized city keyword targeting.", "actor": "SEO Engine", "tech": "Schema.org / JSON-LD" },
+      { "step": 2, "name": "Lightning Fast React Build", "desc": "Pre-renders all course pages into static HTML for instant sub-second page loads.", "actor": "Build Pipeline", "tech": "React / Vite SSG" },
+      { "step": 3, "name": "Automated Demo Booking Hook", "desc": "Connects inquiry forms directly to admissions desk WhatsApp and Google Sheets.", "actor": "Lead Router", "tech": "Serverless Webhooks" }
+    ],
+    "faqs": [
+      { "question": "Can students download syllabus PDFs and mock test papers directly?", "answer": "Yes. We include high-speed CDN download buttons for brochures, practice papers, and timetables." }
     ]
   },
   {
     "id": "clinic-websites",
+    "name": "Doctor & Clinic Websites",
     "type": "website-design",
-    "name": "Clinics & Hospitals",
-    "title": "Medical & Clinic Websites with Booking Portals | Gurdharam",
-    "metaDescription": "Build secure, HIPAA-compliant React websites for clinics and doctors, with fast-loading schedules and direct appointment integration.",
-    "painPoint": "Patients bounce off medical websites when they can't easily find doctor availability or when the online booking calendar is slow.",
-    "example": "A clinic site with clean SEO pages for each doctor, an instant scheduling portal, and automated SMS confirmation connected directly to patient records.",
+    "title": "Clinic Website Design | Gurdharam",
+    "metaDescription": "Professional website design for doctors and clinics in Punjab. Online doctor appointment booking, treatment showcases, and verified patient reviews.",
     "parentPath": "/services/web-development",
     "parentName": "Web Development Services",
-    "crossLinks": [
-      "/services/website-design-coaching-institutes",
-      "/services/website-design-mall-retail"
+    "painPoint": "Clinics without professional mobile websites lose patients to corporate hospital chains that offer modern online appointment booking and verified doctor credentials.",
+    "example": "Patient searches 'Dental implant specialist in Bathinda' -> Discovers doctor website, reviews before/after cases, and schedules consultation slot instantly.",
+    "roi": [
+      { "metric": "New Patient Inquiries", "value": "+150%", "detail": "Prominent 1-click WhatsApp booking button and verified doctor credentials build instant trust." }
+    ],
+    "compliance": [
+      { "standard": "NMC Medical Ethics & Medical Disclaimers", "requirement": "Ethical representation of medical qualifications and clear medical disclaimers.", "implementation": "Physician registration credentials displayed with standard medical consultation advisories." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Doctor Credential Showcase", "desc": "Presents qualifications (MBBS/MD/MDS), clinical experience, and surgery specialties.", "actor": "Medical Authority", "tech": "MedicalSpecialty Schema" },
+      { "step": 2, "name": "OPD Slot Booking Form", "desc": "Simple patient form connects directly to clinic reception WhatsApp and calendar.", "actor": "Patient Interface", "tech": "React / Webhook Form" },
+      { "step": 3, "name": "Google Maps & Review Sync", "desc": "Embeds verified clinic location, parking access, and Google patient reviews.", "actor": "Local Presence", "tech": "Google Places API" }
+    ],
+    "faqs": [
+      { "question": "Is the website easy for senior patients to navigate on mobile phones?", "answer": "Yes. Big readable fonts, simple one-touch call buttons, and fast loading make it accessible to everyone." }
     ]
   },
   {
     "id": "mall-retail",
+    "name": "Shopping Malls & Retail Web Design",
     "type": "website-design",
-    "name": "Malls & Retail complexes",
-    "title": "Interactive Websites for Malls & Retail Centers | Gurdharam",
-    "metaDescription": "Create high-end React websites for retail malls, featuring interactive maps, dynamic tenant directories, and live brand promotion logs.",
-    "painPoint": "Shoppers struggle to find which shops are open, causing friction in mall attendance and reducing footfall for minor tenants.",
-    "example": "A custom web application with interactive floor layouts, search bars for finding specific brands, and a dynamic database showing real-time mall deals.",
+    "title": "Mall & Retail Web Design | Gurdharam",
+    "metaDescription": "Dynamic website design for shopping malls & retail plazas. Interactive store directory, cinema showtimes, leasing forms, and weekend event calendars.",
     "parentPath": "/services/web-development",
     "parentName": "Web Development Services",
-    "crossLinks": [
-      "/services/website-design-jewelry-showrooms",
-      "/services/website-design-clinic-websites"
+    "painPoint": "Mall websites are often slow and outdated, failing to attract new retail tenant leases or inform shoppers about cinema movies and weekend events.",
+    "example": "Shopper looks up cinema movies -> Views showtimes with 1-click booking and discovers current weekend dining discounts in the mall food court.",
+    "roi": [
+      { "metric": "Commercial Leasing Inquiries", "value": "+80%", "detail": "Dedicated retail leasing portal with downloadable floor plans attracts high-end brand tenants." }
+    ],
+    "compliance": [
+      { "standard": "Web Content Accessibility Guidelines (WCAG 2.1)", "requirement": "Accessible high-contrast UI navigation for all visitors.", "implementation": "Strict ARIA labels, semantic markup, and keyboard-accessible navigation." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Interactive Brand Directory", "desc": "Searchable store directory categorized by Fashion, Dining, Entertainment, and Services.", "actor": "Mall Visitor", "tech": "Client-Side Search Index" },
+      { "step": 2, "name": "Event & Cinema Calendar", "desc": "Live schedule of weekend musical events, seasonal sales, and movie showtimes.", "actor": "Content Manager", "tech": "Dynamic Event Feed" },
+      { "step": 3, "name": "Retail Leasing Portal", "desc": "Downloadable architectural floor plans and commercial leasing inquiry gateway.", "actor": "Brand Tenant", "tech": "Lead Capture Gateway" }
+    ],
+    "faqs": [
+      { "question": "Can we update store lists and weekend events without coding knowledge?", "answer": "Yes. A simple CMS allows mall marketing staff to add new brands and update movie listings in seconds." }
     ]
   }
 ]

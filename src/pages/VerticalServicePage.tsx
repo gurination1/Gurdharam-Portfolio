@@ -1,10 +1,40 @@
 import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, ArrowRight, MessageSquare, Sparkles, Code2, AlertTriangle, Lightbulb } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, MessageSquare, Sparkles, Code2, AlertTriangle, Lightbulb } from 'lucide-react';
 import Footer from '@/components/ui/footer';
 import verticalsData from '../data/verticals.json';
 
-interface VerticalData {
+interface RoiMetric {
+  metric: string;
+  value: string;
+  detail?: string;
+  timeframe?: string;
+  description?: string;
+}
+
+interface ComplianceStandard {
+  standard: string;
+  authority: string;
+  requirement: string;
+  implementation: string;
+}
+
+interface WorkflowStep {
+  step: number;
+  name?: string;
+  desc?: string;
+  title?: string;
+  actor: string;
+  action?: string;
+  tech: string;
+}
+
+interface VerticalFaq {
+  question: string;
+  answer: string;
+}
+
+export interface VerticalData {
   id: string;
   type: string;
   name: string;
@@ -14,16 +44,22 @@ interface VerticalData {
   example: string;
   parentPath: string;
   parentName: string;
-  crossLinks: string[];
+  roi?: RoiMetric[];
+  roiMetrics?: RoiMetric[];
+  compliance?: ComplianceStandard[];
+  workflow?: WorkflowStep[];
+  faqs?: VerticalFaq[];
+  techStack?: string[];
 }
 
-export default function VerticalServicePage({ type }: { type: string }) {
-  const { verticalId } = useParams<{ verticalId: string }>();
-  const navigate = useNavigate();
+export default function VerticalServicePage({ type, vertical: propVertical }: { type?: string; vertical?: VerticalData }) {
+  const { verticalId } = useParams<{ verticalId?: string }>();
 
   // Find current vertical data
-  const vertical = (verticalsData as VerticalData[]).find(
-    v => v.id === verticalId && v.type === type
+  const vertical = propVertical || (verticalsData as VerticalData[]).find(
+    v => (v.id === verticalId || `whatsapp-bot-${v.id}` === verticalId || `social-media-automation-${v.id}` === verticalId || `website-design-${v.id}` === verticalId) && (!type || v.type === type)
+  ) || (verticalsData as VerticalData[]).find(
+    v => v.id === verticalId
   );
 
   useEffect(() => {
@@ -49,17 +85,21 @@ export default function VerticalServicePage({ type }: { type: string }) {
   }
 
   // Get other verticals of the same type for cross-linking
+  const currentType = vertical.type || type || 'whatsapp-bot';
   const siblingVerticals = (verticalsData as VerticalData[]).filter(
-    v => v.type === type && v.id !== vertical.id
+    v => v.type === currentType && v.id !== vertical.id
   ).slice(0, 3);
 
   // Styling properties depending on the service type
   const theme = {
-    color: type === 'whatsapp-bot' ? 'text-accent-gold' : type === 'social-media-automation' ? 'text-accent-gold' : 'text-accent-cold',
-    border: type === 'whatsapp-bot' ? 'border-accent-gold/20' : type === 'social-media-automation' ? 'border-accent-gold/20' : 'border-accent-cold/20',
-    bg: type === 'whatsapp-bot' ? 'bg-accent-gold/5' : type === 'social-media-automation' ? 'bg-accent-gold/5' : 'bg-accent-cold/5',
-    icon: type === 'whatsapp-bot' ? <MessageSquare size={28} className="text-accent-gold" /> : type === 'social-media-automation' ? <Sparkles size={28} className="text-accent-gold" /> : <Code2 size={28} className="text-accent-cold" />
+    color: currentType === 'whatsapp-bot' ? 'text-accent-gold' : currentType === 'social-media-automation' ? 'text-accent-gold' : 'text-accent-cold',
+    border: currentType === 'whatsapp-bot' ? 'border-accent-gold/20' : currentType === 'social-media-automation' ? 'border-accent-gold/20' : 'border-accent-cold/20',
+    bg: currentType === 'whatsapp-bot' ? 'bg-accent-gold/5' : currentType === 'social-media-automation' ? 'bg-accent-gold/5' : 'bg-accent-cold/5',
+    icon: currentType === 'whatsapp-bot' ? <MessageSquare size={28} className="text-accent-gold" /> : currentType === 'social-media-automation' ? <Sparkles size={28} className="text-accent-gold" /> : <Code2 size={28} className="text-accent-cold" />
   };
+
+  const roiList = vertical.roi || vertical.roiMetrics || [];
+  const workflowList = vertical.workflow || [];
 
   return (
     <main className="min-h-screen bg-void text-primary pt-24 px-6 md:px-16 pb-20">
@@ -78,20 +118,41 @@ export default function VerticalServicePage({ type }: { type: string }) {
             {vertical.title.split('|')[0].trim()}
           </h1>
           
-          {/* Answer Capsule */}
-          <div className={`bg-card border ${theme.border} rounded-2xl p-6 mb-8`}>
+          {/* Direct-Answer Summary Card */}
+          <div id={`def-${vertical.id}`} className={`bg-card border ${theme.border} rounded-2xl p-6 md:p-8 mb-8`}>
             <p className="text-lg md:text-xl text-primary leading-relaxed font-medium">
               {vertical.metaDescription}
             </p>
           </div>
         </header>
 
+        {/* Quantified ROI Benchmark Section */}
+        {roiList.length > 0 && (
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 font-display text-white flex items-center gap-2">
+              <span className="text-accent-gold font-mono">[ 01 ]</span> Quantified ROI & Performance Benchmarks
+            </h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              {roiList.map((roi, idx) => (
+                <div key={idx} className="bg-card border border-white/10 p-6 rounded-2xl flex flex-col justify-between">
+                  <div>
+                    <div className="text-xs font-mono text-secondary uppercase tracking-wider mb-1">{roi.timeframe || 'Immediate Gain'}</div>
+                    <div className="text-3xl font-bold font-mono text-accent-gold mb-2">{roi.value}</div>
+                    <div className="text-sm font-bold text-white mb-2">{roi.metric}</div>
+                  </div>
+                  <p className="text-xs text-secondary leading-relaxed mt-2">{roi.detail || roi.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Pain Point Section */}
         <section className="mb-12 bg-card border border-white/5 p-8 rounded-3xl relative overflow-hidden">
           <div className="flex items-start gap-4">
             <AlertTriangle className="text-red-500 mt-1 flex-shrink-0" size={24} />
             <div>
-              <h2 className="text-xl font-bold text-white mb-2 font-display">The Core Industry Pain Point</h2>
+              <h2 className="text-xl font-bold text-white mb-2 font-display">The Core Industry Bottleneck</h2>
               <p className="text-secondary text-base leading-relaxed">
                 {vertical.painPoint}
               </p>
@@ -104,7 +165,7 @@ export default function VerticalServicePage({ type }: { type: string }) {
           <div className="flex items-start gap-4">
             <Lightbulb className="text-green-500 mt-1 flex-shrink-0" size={24} />
             <div>
-              <h2 className="text-xl font-bold text-white mb-2 font-display">How My Custom System Solves This</h2>
+              <h2 className="text-xl font-bold text-white mb-2 font-display">How My Custom Architecture Solves This</h2>
               <p className="text-secondary text-base leading-relaxed mb-4">
                 {vertical.example}
               </p>
@@ -115,32 +176,73 @@ export default function VerticalServicePage({ type }: { type: string }) {
           </div>
         </section>
 
-        {/* General Pitch Grid */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 font-display text-white">Key Features Built Into Every Build</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-card border border-white/5 p-6 rounded-2xl">
-              <CheckCircle className="text-green-500 mb-2" size={20} />
-              <h3 className="font-bold text-white mb-1 text-sm">Empathetic Conversational UX</h3>
-              <p className="text-secondary text-xs leading-relaxed">System messaging configured to mirror actual client communication styles in English, Hindi, and Punjabi.</p>
+        {/* 4-Step Production Workflow */}
+        {workflowList.length > 0 && (
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 font-display text-white flex items-center gap-2">
+              <span className="text-accent-gold font-mono">[ 02 ]</span> End-to-End Production Pipeline
+            </h2>
+            <div className="space-y-4">
+              {workflowList.map((step) => (
+                <div key={step.step} className="bg-card border border-white/5 p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <span className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center font-mono font-bold text-accent-gold flex-shrink-0 text-sm">
+                      0{step.step}
+                    </span>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-bold text-white text-base">{step.name || step.title}</h3>
+                        <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 text-slate-400 border border-white/10">{step.actor}</span>
+                      </div>
+                      <p className="text-secondary text-xs leading-relaxed">{step.desc || step.action}</p>
+                    </div>
+                  </div>
+                  <div className="text-xs font-mono text-accent-gold bg-accent-gold/10 border border-accent-gold/20 px-3 py-1.5 rounded-lg whitespace-nowrap self-start md:self-auto">
+                    {step.tech}
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="bg-card border border-white/5 p-6 rounded-2xl">
-              <CheckCircle className="text-green-500 mb-2" size={20} />
-              <h3 className="font-bold text-white mb-1 text-sm">Full Database & API Integration</h3>
-              <p className="text-secondary text-xs leading-relaxed">Pipes parameters directly to Google Sheets, SQLite databases, calendar software, or your business ERP.</p>
+          </section>
+        )}
+
+        {/* Regional & National Regulatory Compliance */}
+        {vertical.compliance && vertical.compliance.length > 0 && (
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 font-display text-white flex items-center gap-2">
+              <span className="text-accent-gold font-mono">[ 03 ]</span> Indian Regulatory & Data Compliance
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {vertical.compliance.map((comp, idx) => (
+                <div key={idx} className="bg-card border border-white/5 p-6 rounded-2xl">
+                  <div className="text-xs font-mono text-accent-gold uppercase tracking-wider mb-1">{comp.authority}</div>
+                  <h3 className="font-bold text-white mb-2 text-base">{comp.standard}</h3>
+                  <p className="text-secondary text-xs leading-relaxed mb-3">{comp.requirement}</p>
+                  <div className="pt-3 border-t border-white/5 text-[11px] font-mono text-emerald-400">
+                    <strong>Implementation:</strong> {comp.implementation}
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="bg-card border border-white/5 p-6 rounded-2xl">
-              <CheckCircle className="text-green-500 mb-2" size={20} />
-              <h3 className="font-bold text-white mb-1 text-sm">No Forced Reseller Billing</h3>
-              <p className="text-secondary text-xs leading-relaxed">Configured directly via production keys (Meta/Tensorflow/AWS) to ensure you pay zero markup subscription costs.</p>
+          </section>
+        )}
+
+        {/* Vertical Specific FAQ Accordion */}
+        {vertical.faqs && vertical.faqs.length > 0 && (
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 font-display text-white flex items-center gap-2">
+              <span className="text-accent-gold font-mono">[ 04 ]</span> Frequently Asked Technical & Commercial Questions
+            </h2>
+            <div className="space-y-4">
+              {vertical.faqs.map((faq, idx) => (
+                <div key={idx} className="bg-card border border-white/5 p-6 rounded-2xl">
+                  <h3 className="font-bold text-white text-base mb-2">{faq.question}</h3>
+                  <p className="text-secondary text-sm leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
             </div>
-            <div className="bg-card border border-white/5 p-6 rounded-2xl">
-              <CheckCircle className="text-green-500 mb-2" size={20} />
-              <h3 className="font-bold text-white mb-1 text-sm">SEO & Core Web Vitals Ready</h3>
-              <p className="text-secondary text-xs leading-relaxed">Built statically pre-rendered for search engines, passing 95+ lighthouse audit goals at launch.</p>
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Cross-linking Section */}
         <section className="mb-16">
@@ -161,7 +263,7 @@ export default function VerticalServicePage({ type }: { type: string }) {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Direct CTA */}
         <section className={`bg-card border ${theme.border} p-8 md:p-12 rounded-3xl mb-16`}>
           <h2 className="text-2xl font-bold mb-4 font-display text-white">Scale Your {vertical.name} Operations Today</h2>
           <p className="text-secondary max-w-[66ch] leading-relaxed mb-6">

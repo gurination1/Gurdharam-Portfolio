@@ -63,7 +63,7 @@ export default function CropDiseaseDetection() {
               <WifiOff className="text-accent-green mb-4" size={28} />
               <h4 className="font-bold text-white mb-2 text-lg">Offline-First Flutter Design</h4>
               <p className="text-secondary text-sm leading-relaxed">
-                Built with <a href="https://flutter.dev" target="_blank" rel="noopener noreferrer" className="text-accent-green underline hover:text-white transition-colors">Flutter</a> and <a href="https://www.tensorflow.org/lite" target="_blank" rel="noopener noreferrer" className="text-accent-green underline hover:text-white transition-colors">TensorFlow Lite</a> for complete offline execution. The entire machine learning model runs directly on the device processor, resulting in zero cloud API latency and seamless operation in deep agricultural fields.
+                Built with <a href="https://flutter.dev" target="_blank" rel="noopener noreferrer" className="text-accent-green underline hover:text-white transition-colors">Flutter</a> and <a href="https://developers.google.com/edge/litert" target="_blank" rel="noopener noreferrer" className="text-accent-green underline hover:text-white transition-colors">TensorFlow Lite</a> for complete offline execution. The entire machine learning model runs directly on the device processor, resulting in zero cloud API latency and seamless operation in deep agricultural fields.
               </p>
             </div>
             <div className="bg-card border border-white/5 p-8 rounded-3xl">
@@ -83,13 +83,13 @@ export default function CropDiseaseDetection() {
             Standard computer vision apps fail in remote agricultural contexts because they upload high-resolution photos to cloud APIs. My agritech apps bypass this requirement entirely by compressing heavy deep learning models into optimized on-device binaries.
           </p>
 
-          <div className="space-y-6 bg-card border border-white/5 p-8 rounded-3xl">
+            <div className="space-y-6 bg-card border border-white/5 p-8 rounded-3xl">
             <div className="flex items-start gap-4">
               <ShieldAlert className="text-accent-green mt-1 flex-shrink-0" size={24} />
               <div>
-                <h4 className="font-bold text-white mb-1">INT8 Model Quantization</h4>
+                <h4 className="font-bold text-white mb-1">INT8 Quantization & NNAPI Acceleration</h4>
                 <p className="text-secondary text-sm leading-relaxed">
-                  I compress 32-bit floating-point weights into 8-bit integers (INT8 quantization) via TensorFlow Lite Post-Training Quantization (PTQ). This drops model sizes from 50MB+ down to just 11MB, allowing it to run smoothly on budget smartphones without draining batteries or causing overheating.
+                  I compress 32-bit floating-point weights into 8-bit integers (INT8 quantization) via TensorFlow Lite Post-Training Quantization (PTQ). Model size drops from 50MB+ down to just 11.2MB. On Android 8.0+ devices, inference delegates directly to NNAPI (Neural Networks API) hardware acceleration, running on-device NPU/GPU chips in under 1.4 seconds.
                 </p>
               </div>
             </div>
@@ -97,9 +97,19 @@ export default function CropDiseaseDetection() {
             <div className="flex items-start gap-4">
               <Award className="text-accent-green mt-1 flex-shrink-0" size={24} />
               <div>
-                <h4 className="font-bold text-white mb-1">Local Agricultural Advisory Database</h4>
+                <h4 className="font-bold text-white mb-1">Flutter Isolate Multi-Threading</h4>
                 <p className="text-secondary text-sm leading-relaxed">
-                  AI diagnosis is useless without immediate action. My system parses on-device SQLite databases populated with official university advisory boards. It returns exact chemical composition formulas, volume calculations, and safety instructions in multiple languages instantly.
+                  To prevent camera preview stutter or UI jank during neural network processing, image tensor transformations and TFLite interpreter execution run inside a dedicated background Flutter Isolate (`Isolate.spawn()`).
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Award className="text-accent-green mt-1 flex-shrink-0" size={24} />
+              <div>
+                <h4 className="font-bold text-white mb-1">Local SQLite WAL Concurrency Database</h4>
+                <p className="text-secondary text-sm leading-relaxed">
+                  AI diagnosis is mapped to an on-device SQLite database configured with Write-Ahead Logging (`PRAGMA journal_mode=WAL;`). It returns exact chemical composition formulas, volume calculations, and safety instructions in Punjabi and English instantly.
                 </p>
               </div>
             </div>

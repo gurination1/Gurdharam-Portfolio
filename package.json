@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "vite build && node prerender.js",
+    "build": "vite build --ssr src/entry-server.tsx --outDir dist-ssr && vite build && node prerender.js",
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
@@ -41,6 +41,7 @@
   "devDependencies": {
     "@types/node": "^25.9.1",
     "@types/react": "^19.2.15",
-    "@types/react-dom": "^19.2.3"
+    "@types/react-dom": "^19.2.3",
+    "puppeteer-core": "^25.5.0"
   }
 }

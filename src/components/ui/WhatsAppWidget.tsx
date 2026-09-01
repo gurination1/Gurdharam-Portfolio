@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import { MessageCircle, X, CheckCircle2 } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
+
+function getInitialMessage(pathname: string): string {
+  if (pathname.includes('whatsapp-bot')) return "Hi Gurdharam, I'd like to discuss a custom WhatsApp bot for my business.";
+  if (pathname.includes('crop-disease')) return "Hi Gurdharam, I'm interested in an offline AI crop detection app.";
+  if (pathname.includes('ai-automation')) return "Hi Gurdharam, I need help automating some workflows with AI.";
+  if (pathname.includes('web-development')) return "Hi Gurdharam, I need a high-end 3D website built.";
+  if (pathname.includes('ai-voice')) return "Hi Gurdharam, I need a Sub-300ms Voice AI Telephony Agent.";
+  if (pathname.includes('local-gpu')) return "Hi Gurdharam, I need an Air-Gapped Local GPU LLM setup.";
+  return "Hi Gurdharam, I'd like to discuss a project.";
+}
 
 export default function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const currentPath = location.pathname;
-
-  const phoneNumber = "919876543210";
-  
-  // Contextual pre-filled message based on the route
-  let baseMessage = "Hi Gurdharam, I'd like to discuss a project.";
-  if (currentPath.includes('whatsapp-bot')) baseMessage = "Hi Gurdharam, I'd like to discuss a custom WhatsApp bot for my business.";
-  if (currentPath.includes('crop-disease')) baseMessage = "Hi Gurdharam, I'm interested in an offline AI crop detection app.";
-  if (currentPath.includes('ai-automation')) baseMessage = "Hi Gurdharam, I need help automating some workflows with AI.";
-  if (currentPath.includes('web-development')) baseMessage = "Hi Gurdharam, I need a high-end 3D website built.";
-  
-  const encodedMessage = encodeURIComponent(baseMessage);
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const pathname = location?.pathname || '';
+  const baseMessage = React.useMemo(() => getInitialMessage(pathname), [pathname]);
+  const whatsappUrl = React.useMemo(() => getWhatsAppUrl(baseMessage), [baseMessage]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
@@ -27,7 +28,7 @@ export default function WhatsAppWidget() {
           <div className="bg-[#128C7E] p-4 flex justify-between items-center text-white">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <img src="/assets/portfolio/person.webp" alt="Gurdharam" className="w-10 h-10 rounded-full border-2 border-white/20 object-cover" onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Gurdharam&background=128C7E&color=fff'; }} />
+                <img src="https://ui-avatars.com/api/?name=Gurdharam+Singh&background=d4a853&color=000&font-size=0.45" alt="Gurdharam" className="w-10 h-10 rounded-full border-2 border-white/20 object-cover" />
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#128C7E] rounded-full"></span>
               </div>
               <div>

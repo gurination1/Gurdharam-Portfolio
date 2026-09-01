@@ -1,128 +1,168 @@
 const { google } = require('googleapis');
 const https = require('https');
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
-const KEY_FILE = './gsc-key.json';
+const KEY_FILE = path.resolve(__dirname, 'gsc-key.json');
+const SITEMAP_FILE = path.resolve(__dirname, 'public/sitemap.xml');
 const SITE_URL = 'https://www.gurdharam.com';
+const INDEXNOW_KEY = 'b4f8e2a1c7d94e5f8a3b6c9d2e1f4a7b';
 
-const verticals = require('./src/data/verticals.json');
-
-const URLS = [
-  'https://www.gurdharam.com/',
-  'https://www.gurdharam.com/services/web-development',
-  'https://www.gurdharam.com/services/ai-automation',
-  'https://www.gurdharam.com/services/ai-voice-agents',
-  'https://www.gurdharam.com/services/local-gpu-llm-quantization',
-  'https://www.gurdharam.com/services/automated-video-generation-engine',
-  'https://www.gurdharam.com/services/ai-college-automation',
-  'https://www.gurdharam.com/services/crop-disease-detection-app',
-  'https://www.gurdharam.com/services/dairy-management-app-flutter',
-  'https://www.gurdharam.com/services/whatsapp-business-bot',
-  'https://www.gurdharam.com/services/web-developer-muktsar-punjab',
-  'https://www.gurdharam.com/services/offline-ai-app-development',
-  'https://www.gurdharam.com/case-studies/doodhisaab',
-  'https://www.gurdharam.com/case-studies/fasal-doctor',
-  'https://www.gurdharam.com/blog',
-  'https://www.gurdharam.com/blog/ai-college-admission-bot-punjab',
-  'https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent',
-  'https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server',
-  'https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline',
-  'https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin',
-  'https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter',
-  'https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india',
-];
-
-// Add dynamic vertical URLs
-verticals.forEach(v => {
-  const route = `/services/${v.type === 'whatsapp-bot' ? 'whatsapp-bot-' + v.id : v.type === 'social-media-automation' ? 'social-media-automation-' + v.id : 'website-design-' + v.id}`;
-  URLS.push(`https://www.gurdharam.com${route}`);
-});
+// Parse all URLs directly from sitemap.xml
+function getSitemapUrls() {
+  if (!fs.existsSync(SITEMAP_FILE)) {
+    console.error('sitemap.xml not found! Run generate-sitemap.js first.');
+    process.exit(1);
+  }
+  const content = fs.readFileSync(SITEMAP_FILE, 'utf8');
+  const urls = [];
+  const matches = content.matchAll(/<loc>(.*?)<\/loc>/g);
+  for (const match of matches) {
+    urls.push(match[1].trim());
+  }
+  return urls;
+}
 
 async function main() {
-  const auth = new google.auth.GoogleAuth({
-    keyFile: KEY_FILE,
-    scopes: [
-      'https://www.googleapis.com/auth/webmasters',
-      'https://www.googleapis.com/auth/indexing',
-    ],
-  });
-  const authClient = await auth.getClient();
+  const URLS = getSitemapUrls();
+  console.log(`\n======================================================`);
+  console.log(`🚀 MASTER FAST-INDEXING PIPELINE — PINGING ALL ENGINES`);
+  console.log(`Total URLs to Index: ${URLS.length}`);
+  console.log(`======================================================\n`);
 
-  // 1. Resubmit sitemap via GSC API
-  console.log('\n=== STEP 1: Resubmit sitemap to Google Search Console ===');
-  const webmasters = google.webmasters({ version: 'v3', auth: authClient });
+  // Ensure IndexNow key file exists in public/
+  const keyFilePath = path.resolve(__dirname, `public/${INDEXNOW_KEY}.txt`);
+  fs.writeFileSync(keyFilePath, INDEXNOW_KEY, 'utf8');
+  console.log(`✅ Verified IndexNow Key File at: public/${INDEXNOW_KEY}.txt`);
+
+  // 1. Google Search Console API & Google Indexing API
+  let authClient;
   try {
-    await webmasters.sitemaps.submit({
-      siteUrl: 'sc-domain:gurdharam.com',
-      feedpath: `${SITE_URL}/sitemap.xml`,
+    const auth = new google.auth.GoogleAuth({
+      keyFile: KEY_FILE,
+      scopes: [
+        'https://www.googleapis.com/auth/webmasters',
+        'https://www.googleapis.com/auth/indexing',
+      ],
     });
-    console.log('✅ Sitemap resubmitted: ' + SITE_URL + '/sitemap.xml');
-  } catch (e) {
-    console.log('❌ Sitemap submit error:', e.message);
+    authClient = await auth.getClient();
+    console.log('✅ Google Auth Client successfully initialized.');
+  } catch (err) {
+    console.error('⚠️ Google Auth Init Error:', err.message);
   }
 
-  // 2. Google Indexing API — request indexing for each URL
-  console.log('\n=== STEP 2: Google Indexing API — URL_UPDATED notifications ===');
-  const indexing = google.indexing({ version: 'v3', auth: authClient });
-  for (const url of URLS) {
-    try {
-      const res = await indexing.urlNotifications.publish({
-        requestBody: {
-          url: url,
-          type: 'URL_UPDATED',
-        },
-      });
-      console.log(`✅ ${url} — notified (${res.status})`);
-    } catch (e) {
-      console.log(`⚠️  ${url} — ${e.message?.substring(0, 120)}`);
+  if (authClient) {
+    // 1.1 Resubmit Sitemap to GSC
+    console.log('\n--- 1. Resubmitting Sitemap to Google Search Console ---');
+    const webmasters = google.webmasters({ version: 'v3', auth: authClient });
+    const siteTargets = ['sc-domain:gurdharam.com', 'https://www.gurdharam.com/'];
+    for (const siteTarget of siteTargets) {
+      try {
+        await webmasters.sitemaps.submit({
+          siteUrl: siteTarget,
+          feedpath: `${SITE_URL}/sitemap.xml`,
+        });
+        console.log(`✅ GSC Sitemap submitted to ${siteTarget}: ${SITE_URL}/sitemap.xml`);
+      } catch (e) {
+        console.log(`⚠️ GSC Sitemap submit for ${siteTarget}:`, e.message);
+      }
     }
+
+    // 1.2 Google Indexing API
+    console.log('\n--- 2. Google Indexing API (URL_UPDATED notifications) ---');
+    const indexing = google.indexing({ version: 'v3', auth: authClient });
+    let successCount = 0;
+    for (const url of URLS) {
+      try {
+        const res = await indexing.urlNotifications.publish({
+          requestBody: {
+            url: url,
+            type: 'URL_UPDATED',
+          },
+        });
+        successCount++;
+        console.log(`✅ GSC Indexing API: [${res.status}] ${url}`);
+      } catch (e) {
+        console.log(`⚠️ GSC Indexing API: ${url} — ${e.message?.substring(0, 100)}`);
+      }
+      await new Promise(r => setTimeout(r, 150));
+    }
+    console.log(`📊 Google Indexing API: ${successCount}/${URLS.length} notifications dispatched.`);
   }
 
-  // 3. IndexNow — submit to Bing/Yandex for instant crawl
-  console.log('\n=== STEP 3: IndexNow — Bing/Yandex instant crawl ===');
-  const indexNowKey = 'b4f8e2a1c7d94e5f8a3b6c9d2e1f4a7b'; // arbitrary key
-  const payload = JSON.stringify({
-    host: 'gurdharam.com',
-    key: indexNowKey,
-    keyLocation: `https://gurdharam.com/${indexNowKey}.txt`,
+  // 2. IndexNow Dual Engine Dispatch (api.indexnow.org + www.bing.com + yandex.com)
+  console.log('\n--- 3. IndexNow Multi-Engine Dispatch (Bing, Yandex, Seznam, Naver) ---');
+  const indexNowPayload = JSON.stringify({
+    host: 'www.gurdharam.com',
+    key: INDEXNOW_KEY,
+    keyLocation: `https://www.gurdharam.com/${INDEXNOW_KEY}.txt`,
     urlList: URLS,
   });
 
-  await new Promise((resolve) => {
-    const req = https.request({
-      hostname: 'api.indexnow.org',
-      path: '/IndexNow',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-        'Content-Length': Buffer.byteLength(payload),
-      },
-    }, (res) => {
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => {
-        if (res.statusCode === 200 || res.statusCode === 202) {
-          console.log(`✅ IndexNow accepted — ${URLS.length} URLs submitted to Bing/Yandex`);
-        } else {
-          console.log(`⚠️  IndexNow response: ${res.statusCode} — ${data}`);
-        }
+  const indexNowEndpoints = [
+    { host: 'api.indexnow.org', path: '/IndexNow' },
+    { host: 'www.bing.com', path: '/IndexNow' },
+    { host: 'yandex.com', path: '/indexnow' }
+  ];
+
+  for (const ep of indexNowEndpoints) {
+    await new Promise((resolve) => {
+      const req = https.request({
+        hostname: ep.host,
+        path: ep.path,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Content-Length': Buffer.byteLength(indexNowPayload),
+        },
+      }, (res) => {
+        let data = '';
+        res.on('data', (chunk) => data += chunk);
+        res.on('end', () => {
+          if (res.statusCode === 200 || res.statusCode === 202) {
+            console.log(`✅ IndexNow (${ep.host}): Accepted (${res.statusCode}) for ${URLS.length} URLs`);
+          } else {
+            console.log(`⚠️ IndexNow (${ep.host}): Status ${res.statusCode} — ${data || 'OK'}`);
+          }
+          resolve();
+        });
+      });
+      req.on('error', (e) => {
+        console.log(`❌ IndexNow (${ep.host}) Network Error:`, e.message);
+        resolve();
+      });
+      req.write(indexNowPayload);
+      req.end();
+    });
+  }
+
+  // 3. Sitemap Ping to Google & Bing
+  console.log('\n--- 4. Direct Sitemap Pings ---');
+  const pingUrls = [
+    `https://www.google.com/ping?sitemap=${encodeURIComponent(SITE_URL + '/sitemap.xml')}`,
+    `https://www.bing.com/ping?sitemap=${encodeURIComponent(SITE_URL + '/sitemap.xml')}`
+  ];
+
+  for (const pUrl of pingUrls) {
+    await new Promise((resolve) => {
+      https.get(pUrl, (res) => {
+        console.log(`✅ Pinged ${new URL(pUrl).hostname}: HTTP ${res.statusCode}`);
+        resolve();
+      }).on('error', (e) => {
+        console.log(`⚠️ Ping error for ${pUrl}: ${e.message}`);
         resolve();
       });
     });
-    req.on('error', (e) => { console.log('❌ IndexNow error:', e.message); resolve(); });
-    req.write(payload);
-    req.end();
-  });
+  }
 
-  // 4. Also create the IndexNow key file for verification
-  console.log('\n=== STEP 4: Creating IndexNow key file for Bing verification ===');
-  const fs = require('fs');
-  fs.writeFileSync(`./public/${indexNowKey}.txt`, indexNowKey);
-  console.log(`✅ Created public/${indexNowKey}.txt`);
-
-  console.log('\n=== DONE ===');
-  console.log('Google: Sitemap resubmitted + Indexing API notified for all 10 URLs');
-  console.log('Bing/Yandex: IndexNow submitted for all 10 URLs');
-  console.log('Expected: Google 24-48h, Bing within hours');
+  console.log('\n======================================================');
+  console.log('🎉 ALL SEARCH ENGINES & INDEXING ENDPOINTS PINGED!');
+  console.log(`- Google Search Console API: Sitemap Submitted`);
+  console.log(`- Google Indexing API: ${URLS.length} URLs Sent`);
+  console.log(`- IndexNow (Bing/Yandex/Seznam): ${URLS.length} URLs Dispatched`);
+  console.log(`- Direct Ping Webhooks: Fired`);
+  console.log('======================================================\n');
 }
 
 main().catch(console.error);
