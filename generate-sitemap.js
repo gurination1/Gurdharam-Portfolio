@@ -24,7 +24,7 @@ const staticRoutes = [
   '/services/custom-react-developer-india',
   '/services/indic-ai-voice-agent-developer',
   '/services/ai-automation-agency-india',
-  '/services/marketing',
+  '/websites',
   '/services/web-developer-muktsar-punjab',
   '/services/offline-ai-app-development',
   '/case-studies/doodhisaab',
