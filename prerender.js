@@ -106,8 +106,8 @@ const routes = [
   },
   {
     path: '/websites',
-    title: 'Live Websites, 3D Spatial Engines & AI Platforms | Gurdharam',
-    description: 'Curated portfolio of high-end live websites, procedural WebGL 3D experiences, and autonomous AI platforms engineered by Gurdharam Jeet Singh.',
+    title: 'Website Development Rates (₹5k - ₹20k) & Live Showcase | Gurdharam',
+    description: 'Transparent website development packages (₹5k Basic, ₹7k SEO, ₹12k Interactive 3D, ₹20k Flagship Spatial) and live production showcase with real PC views.',
     canonical: 'https://www.gurdharam.com/websites',
     jsonld: {
       "@context": "https://schema.org",
@@ -116,16 +116,24 @@ const routes = [
           "@type": "CollectionPage",
           "@id": "https://www.gurdharam.com/websites#collection",
           "url": "https://www.gurdharam.com/websites",
-          "name": "Live Websites & 3D Spatial Platforms Showcase | Gurdharam",
-          "description": "Showcase of live client websites (Kirat Interior), 3D spatial platforms (Framersite 3D), and autonomous AI engines (Neovrit, DoodhHisaab, FasalDoctor)."
+          "name": "Website Development Rates (₹5,000 - ₹20,000) & Live Client Showcase",
+          "description": "Transparent website development rates and production client showcase: Kirat Interior (₹5k/₹7k), NEOVRIT Studio (₹12k), and Dream Heights 3D (₹20k)."
         }
       ]
     },
     html: `<main>
         <header>
-          <h1>Live Websites, 3D Spatial Engines & AI Platforms</h1>
-          <p>Curated digital showcase engineered by Gurdharam Jeet Singh — Kirat Interior, Framersite 3D, Neovrit, and Flagship platforms.</p>
+          <h1>Transparent Website Development Rates & Production Showcase</h1>
+          <p>Fixed-price packages: ₹5,000 Starter Business, ₹7,000 Growth Business with Google Local SEO & GSC Indexing, ₹12,000 2D + 3D Interactive, and ₹20,000 Ultra 3D Spatial Flagship.</p>
         </header>
+        <section>
+          <h2>Live Production Showcase</h2>
+          <ul>
+            <li><strong>Kirat Interior</strong>: Bespoke luxury furniture & interior studio (Bathinda, Punjab).</li>
+            <li><strong>NEOVRIT Studio</strong>: 3D × AI agency web environment with Three.js GLTF model viewport.</li>
+            <li><strong>Dream Heights</strong>: 16-storey ultra-luxury residential architectural 3D showcase.</li>
+          </ul>
+        </section>
       </main>`
   },
   {

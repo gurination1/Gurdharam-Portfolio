@@ -4,237 +4,331 @@ import {
   ArrowUpRight, 
   Sparkles, 
   ArrowLeft,
-  CheckCircle2,
-  Clock,
-  Laptop,
-  Code2,
-  ExternalLink
+  Check,
+  X,
+  Zap,
+  Globe,
+  Box,
+  Layers,
+  Search,
+  ShieldCheck,
+  MessageCircle,
+  ExternalLink,
+  ChevronRight,
+  HelpCircle
 } from 'lucide-react';
 import Footer from '../components/ui/footer';
+import { getWhatsAppUrl } from '../lib/whatsapp';
 
-interface WebsiteItem {
+interface PricingTier {
   id: string;
-  title: string;
-  url: string;
-  displayUrl: string;
+  name: string;
+  price: string;
+  originalPrice?: string;
   tagline: string;
-  category: '3d-spatial' | 'production' | 'ai-engine' | 'client-brand';
-  categoryLabel: string;
-  status: 'live' | 'development' | 'flagship';
-  statusLabel: string;
-  description: string;
-  highlights: string[];
-  techStack: string[];
-  metrics: { label: string; value: string }[];
-  previewGradient: string;
-  iframeAllowed?: boolean;
+  badge?: string;
+  badgeColor?: string;
+  bestFor: string;
+  timeline: string;
+  features: { title: string; included: boolean; detail?: string }[];
+  exampleName: string;
+  exampleUrl: string;
+  exampleNote: string;
+  whatsappMessage: string;
+  accentBorder: string;
+  accentBg: string;
 }
 
-const WEBSITES: WebsiteItem[] = [
+const PRICING_TIERS: PricingTier[] = [
   {
-    id: 'framersite',
-    title: 'Dream Heights // Ultra-Luxury 3D Architectural Flagship',
-    url: 'https://framersite.vercel.app/',
-    displayUrl: 'framersite.vercel.app',
-    tagline: '16-Storey Luxury Residences, Royal Clubhouse & Botanical Sanctuary Showcase',
-    category: '3d-spatial',
-    categoryLabel: '3D // REAL ESTATE & ARCHITECTURE',
-    status: 'development',
-    statusLabel: 'UNDER ACTIVE DEVELOPMENT',
-    description: 'High-fidelity 3D architectural showcase created for Dream Heights Bathinda. Features 16-storey iconic luxury towers, royal clubhouse amenities, botanical sanctuary walkthroughs, and apartment layout previews with cinematic scroll choreography and RevealFlow preloader transitions.',
-    highlights: [
-      'Cinematic 3D architectural rendering & floor plan visualizers',
-      'RevealFlow progressive preloader & butter-smooth scroll choreography',
-      'Luxury real estate VIP booking & consultation funnels',
-      'Sub-second edge CDN delivery for ultra-high-resolution asset galleries'
+    id: 'basic-5k',
+    name: 'Starter Business',
+    price: '₹5,000',
+    originalPrice: '₹8,000',
+    tagline: 'Fast, modern single-page business presence',
+    bestFor: 'Freelancers, small local vendors, or consultants needing a clean digital identity.',
+    timeline: '2–3 Days Delivery',
+    features: [
+      { title: 'Responsive Mobile & Desktop UI', included: true },
+      { title: 'Fast Vercel Edge Hosting (₹0/month lifetime)', included: true },
+      { title: 'Direct WhatsApp & Phone Click-to-Call CTAs', included: true },
+      { title: 'Custom Domain Connection & SSL Security', included: true },
+      { title: 'Clean Typography & Product / Service Showcase', included: true },
+      { title: 'Google Search Console (GSC) API Fast-Indexing', included: false, detail: 'Not included' },
+      { title: 'Google LocalBusiness Schema Markup', included: false, detail: 'Not included' },
+      { title: 'Interactive 3D WebGL Viewport', included: false, detail: 'Not included' },
     ],
-    techStack: ['Framer Engine', 'WebGL Renders', 'React', 'Motion FX', 'TailwindCSS', 'Vercel Edge'],
-    metrics: [
-      { label: 'Render Target', value: '120 FPS' },
-      { label: 'Architecture', value: '16 Storeys' },
-      { label: 'Asset Pipeline', value: 'Edge CDN' }
+    exampleName: 'Kirat Interior (Core Layout)',
+    exampleUrl: 'https://kiratinterior.com',
+    exampleNote: 'Baseline spatial catalog & inquiry flow (Without GSC fast-indexing or schema)',
+    whatsappMessage: "Hi Gurdharam, I want to book the ₹5,000 Starter Business Website package.",
+    accentBorder: 'border-white/15 hover:border-white/40',
+    accentBg: 'bg-[#111111]/80',
+  },
+  {
+    id: 'basic-plus-7k',
+    name: 'Growth Business + SEO',
+    price: '₹7,000',
+    originalPrice: '₹12,000',
+    tagline: 'High-ranking local flagship engineered for Google Search',
+    badge: 'MOST POPULAR',
+    badgeColor: 'bg-[#d4a853] text-[#080808]',
+    bestFor: 'Showrooms, clinics, local architects, & stores that want actual paying customers from Google.',
+    timeline: '3–5 Days Delivery',
+    features: [
+      { title: 'Everything in Starter (₹5,000)', included: true },
+      { title: 'Google Search Console (GSC) API Instant Indexing', included: true, detail: 'Pushed to Google index in hours' },
+      { title: '100% Google LocalBusiness Schema & Geo Coordinates', included: true, detail: 'Rich local snippets' },
+      { title: 'Local Search Keyword Optimization & Meta Tags', included: true, detail: 'Rank in your city/region' },
+      { title: 'Dynamic XML Sitemap & Search Engine Ping Protocol', included: true },
+      { title: '98+ Google Lighthouse Performance & Zero-CLS Layout', included: true },
+      { title: 'Interactive 3D WebGL Viewport', included: false, detail: 'Not included' },
+      { title: 'Custom Shader & Cinematic Walkthrough', included: false, detail: 'Not included' },
     ],
-    previewGradient: 'from-[#1e1035] via-[#0d1b2a] to-[#080808]',
-    iframeAllowed: true,
+    exampleName: 'Kirat Interior (Live Production)',
+    exampleUrl: 'https://kiratinterior.com',
+    exampleNote: 'Complete Google Local SEO, schema markup, and high-conversion furniture booking funnel',
+    whatsappMessage: "Hi Gurdharam, I want to book the ₹7,000 Growth Business + SEO package with Google indexing.",
+    accentBorder: 'border-[#d4a853]/60 shadow-[0_0_35px_rgba(212,168,83,0.15)]',
+    accentBg: 'bg-[#15130f]/90',
+  },
+  {
+    id: 'interactive-12k',
+    name: '2D + 3D Interactive',
+    price: '₹12,000',
+    originalPrice: '₹18,000',
+    tagline: 'Interactive 3D model viewport & butter-smooth scroll motion',
+    badge: 'HIGH IMPACT',
+    badgeColor: 'bg-[#38bdf8] text-[#080808]',
+    bestFor: 'Modern tech agencies, creative design studios, and brands looking to outshine generic sites.',
+    timeline: '5–7 Days Delivery',
+    features: [
+      { title: 'Everything in Growth + SEO (₹7,000)', included: true },
+      { title: 'Three.js / WebGL 3D Model Viewport (GLTF / GLB)', included: true, detail: 'Interactive 3D asset orbit' },
+      { title: 'Lenis Hardware-Accelerated Smooth Scroll', included: true, detail: 'Ultra-fluid 60–120Hz physics' },
+      { title: 'Cybernetic HUD / Dark-Mode Studio Aesthetics', included: true },
+      { title: 'Dynamic Mouse-Tracking & Interactive Hover Effects', included: true },
+      { title: 'Real-time Lead Capture Backend (Supabase / Webhook)', included: true },
+      { title: '120 FPS Multi-Scene Architectural Walkthrough', included: false, detail: 'Available in ₹20k Tier' },
+      { title: 'Custom Procedural GLSL Shaders', included: false, detail: 'Available in ₹20k Tier' },
+    ],
+    exampleName: 'NEOVRIT Studio (3D × AI)',
+    exampleUrl: 'https://neovrit.vercel.app',
+    exampleNote: 'Interactive GLTF viewport, stacked section scroll physics, and Supabase integration',
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹12,000 2D + 3D Interactive Website package like NEOVRIT.",
+    accentBorder: 'border-[#38bdf8]/40 hover:border-[#38bdf8]/70',
+    accentBg: 'bg-[#0b161b]/80',
+  },
+  {
+    id: 'flagship-20k',
+    name: 'Ultra 3D Flagship',
+    price: '₹20,000',
+    originalPrice: '₹35,000',
+    tagline: 'Awwwards-grade cinematic 3D spatial experience',
+    badge: 'STUDIO FLAGSHIP',
+    badgeColor: 'bg-gradient-to-r from-[#d4a853] to-[#e6c07b] text-[#080808]',
+    bestFor: 'Ultra-luxury real estate developers, spatial architecture firms, and high-ticket flagship brands.',
+    timeline: '7–14 Days Delivery',
+    features: [
+      { title: 'Full Three.js WebGL / Framer Spatial Architecture', included: true },
+      { title: '120 FPS Cinematic Camera Walkthroughs & Transitions', included: true },
+      { title: '3D Architectural / Digital Twin Visualizer', included: true, detail: 'Tower / product showcase' },
+      { title: 'RevealFlow Cinematic Preloader & Custom GLSL Shaders', included: true },
+      { title: 'Full Google Search Console Indexing & Knowledge Graph', included: true },
+      { title: 'Bespoke Editorial Typography & High-Ticket VIP Funnels', included: true },
+      { title: 'Full SSR / SSG Prerendered Zero-Flicker Architecture', included: true },
+      { title: 'Priority Developer Support & Quarterly Refresh Pass', included: true },
+    ],
+    exampleName: 'Dream Heights & NEOVRIT Tier',
+    exampleUrl: 'https://framersite.vercel.app/',
+    exampleNote: '16-Storey luxury towers, botanical sanctuary walkthrough, and VIP booking pipeline',
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 Ultra 3D Spatial Flagship Website like Dream Heights.",
+    accentBorder: 'border-[#d4a853] shadow-[0_0_40px_rgba(212,168,83,0.22)]',
+    accentBg: 'bg-[#18140c]/90',
+  },
+];
+
+interface ShowcaseItem {
+  id: string;
+  title: string;
+  category: 'business' | 'spatial-3d' | 'apps';
+  categoryLabel: string;
+  tierBadge: string;
+  tierColor: string;
+  liveUrl: string;
+  displayUrl: string;
+  imageSrc: string;
+  tagline: string;
+  description: string;
+  specs: string[];
+  techPills: string[];
+  rateText: string;
+  inquiryMessage: string;
+}
+
+const SHOWCASE_ITEMS: ShowcaseItem[] = [
+  {
+    id: 'kirat',
+    title: 'Kirat Interior // Bespoke Furniture Studio',
+    category: 'business',
+    categoryLabel: 'CLIENT PRODUCTION FLAGSHIP',
+    tierBadge: 'TIER: ₹7,000 [GROWTH + SEO]',
+    tierColor: 'border-[#d4a853]/40 bg-[#d4a853]/15 text-[#d4a853]',
+    liveUrl: 'https://kiratinterior.com',
+    displayUrl: 'kiratinterior.com',
+    imageSrc: '/assets/showcase/kirat-interior-pc.webp',
+    tagline: 'Luxury modular kitchens, custom wardrobes & bespoke furniture in Bathinda',
+    description: 'High-conversion regional flagship for Kirat Interior by Handeep Singh. Engineered for immediate Google Search capture with local schema, fast consultation booking, and editorial design.',
+    specs: [
+      'Google LocalBusiness Schema & instant search ranking in Bathinda',
+      'High-conversion luxury consultation booking with instant WhatsApp dispatch',
+      '99/100 Core Web Vitals score on mobile and desktop'
+    ],
+    techPills: ['React', 'Local Schema', 'TailwindCSS', 'Meta Pixel', 'Vercel Edge'],
+    rateText: '₹5,000 (Basic) or ₹7,000 (With Full SEO)',
+    inquiryMessage: "Hi Gurdharam, I saw the Kirat Interior website. I want to build a similar website for my business."
   },
   {
     id: 'neovrit',
     title: 'NEOVRIT // 3D × AI Engineering Studio',
-    url: 'https://neovrit.vercel.app',
+    category: 'spatial-3d',
+    categoryLabel: '3D SPATIAL & AI',
+    tierBadge: 'TIER: ₹12,000 [2D + 3D INTERACTIVE]',
+    tierColor: 'border-[#38bdf8]/40 bg-[#38bdf8]/15 text-[#38bdf8]',
+    liveUrl: 'https://neovrit.vercel.app',
     displayUrl: 'neovrit.vercel.app',
-    tagline: 'High-impact 3D GLTF interactive canvas with stacked Lenis scroll & Supabase',
-    category: '3d-spatial',
-    categoryLabel: '3D // AI ENGINEERING',
-    status: 'live',
-    statusLabel: 'LIVE IN PRODUCTION',
-    description: 'Cutting-edge 3D × AI agency web environment. Features interactive Three.js GLTF model viewports, Lenis sticky stacked-section scroll choreographies, typography in Unbounded & Instrument Serif, and real-time Supabase backend integrations.',
-    highlights: [
-      'Real-time Three.js r128 GLTF model rendering & ambient lighting',
-      'Sticky stack layered scroll architecture with hardware acceleration',
-      'Live Supabase database integration for instant client lead telemetries',
-      'Cybernetic dark-mode HUD aesthetic with custom typography in Unbounded'
+    imageSrc: '/assets/showcase/neovrit-pc.webp',
+    tagline: 'Interactive Three.js GLTF canvas with stacked Lenis smooth scroll',
+    description: 'Cutting-edge agency web environment featuring interactive 3D model viewports, hardware-accelerated scroll choreographies, and real-time Supabase backend integrations.',
+    specs: [
+      'Interactive Three.js r128 GLTF model viewport with mouse orbit controls',
+      'Sticky-stack layered scroll physics engineered with Lenis',
+      'Live Supabase client telemetry & instant lead capture'
     ],
-    techStack: ['Three.js', 'GLTF Loader', 'GSAP 3.12', 'Lenis Scroll', 'Supabase Realtime', 'Vercel'],
-    metrics: [
-      { label: '3D Engine', value: 'Three.js r128' },
-      { label: 'Scroll Physics', value: 'Lenis Sticky' },
-      { label: 'Database', value: 'Supabase' }
-    ],
-    previewGradient: 'from-[#0b242e] via-[#09181f] to-[#080808]',
-    iframeAllowed: true,
+    techPills: ['Three.js', 'GLTF Loader', 'Lenis Scroll', 'Supabase', 'Vercel'],
+    rateText: '₹12,000 (Interactive 3D Tier)',
+    inquiryMessage: "Hi Gurdharam, I want an interactive 3D website like NEOVRIT with Three.js and smooth scrolling."
   },
   {
-    id: 'kiratinterior',
-    title: 'Kirat Interior // Bespoke Furniture & Spatial Studio',
-    url: 'https://kiratinterior.com',
-    displayUrl: 'kiratinterior.com',
-    tagline: 'Luxury modular kitchens, custom wardrobes & bespoke architectural fit-outs',
-    category: 'client-brand',
-    categoryLabel: 'LUXURY CLIENT FLAGSHIP',
-    status: 'live',
-    statusLabel: 'LIVE IN PRODUCTION',
-    description: 'Premier digital flagship for Kirat Interior by Handeep Singh in Bathinda, Punjab. Curates custom furniture design, PVC/WPC modular kitchens, acoustic fluted wall panelling, and high-conversion consultation booking funnels.',
-    highlights: [
-      'High-conversion luxury consultation booking funnel with instant dispatch',
-      'Curated spatial architectural case studies (Kitchens, Wardrobes, TV Units)',
-      'Editorial typography hierarchy in Cormorant Garamond & Jost',
-      '100% Google Local Business Schema & verified Punjab regional SEO'
+    id: 'dreamheights',
+    title: 'Dream Heights // Ultra-Luxury 3D Real Estate',
+    category: 'spatial-3d',
+    categoryLabel: 'ULTRA-LUXURY FLAGSHIP',
+    tierBadge: 'TIER: ₹20,000 [ULTRA 3D FLAGSHIP]',
+    tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
+    liveUrl: 'https://framersite.vercel.app/',
+    displayUrl: 'framersite.vercel.app',
+    imageSrc: '/assets/showcase/dreamheights-pc.webp',
+    tagline: '16-Storey Luxury Residences, Royal Clubhouse & Botanical Walkthrough',
+    description: 'Cinematic 3D architectural showcase created for Dream Heights. Features 16-storey iconic luxury towers, royal clubhouse amenities, and luxury VIP booking funnels.',
+    specs: [
+      'Cinematic 3D architectural rendering & progressive RevealFlow preloader',
+      'Butter-smooth scroll choreography running at steady 120 FPS',
+      'VIP booking funnels engineered for high-net-worth real estate buyers'
     ],
-    techStack: ['React', 'Next-Gen CSS', 'Local Business Schema', 'TailwindCSS', 'Meta Pixel', 'Vercel Edge'],
-    metrics: [
-      { label: 'Load Performance', value: '99/100' },
-      { label: 'Lead Conversion', value: '+340%' },
-      { label: 'SEO Status', value: 'Top Ranked' }
-    ],
-    previewGradient: 'from-[#2b1e11] via-[#1a140f] to-[#080808]',
-    iframeAllowed: false,
-  },
-  {
-    id: 'gurdharam',
-    title: 'Gurdharam.com // Master Studio Headquarters',
-    url: 'https://gurdharam.com',
-    displayUrl: 'gurdharam.com',
-    tagline: 'Flagship AI engineering & high-performance WebGL portfolio',
-    category: 'production',
-    categoryLabel: 'FLAGSHIP PLATFORM',
-    status: 'flagship',
-    statusLabel: 'FLAGSHIP // PRODUCTION',
-    description: 'The core digital headquarters of our enterprise technology studio. Houses local GPU quantization case studies, autonomous WhatsApp bots, offline Flutter apps, Codrops emerging WebGL visual engines, and full static site generation with 40+ prerendered route hubs.',
-    highlights: [
-      '40+ fully prerendered SSR / SSG routes with zero hydration flicker',
-      'Codrops Emerging Images WebGL GLSL shader interactions',
-      'Dynamic Spline 3D viewport and custom VR dashboard telemetry',
-      '100% compliant with India DPDP Act 2023 air-gapped guidelines'
-    ],
-    techStack: ['Vite', 'React 19', 'Three.js', 'GSAP 3', 'TailwindCSS 4', 'SSR Prerender'],
-    metrics: [
-      { label: 'Indexed Routes', value: '42 Hubs' },
-      { label: 'Core Web Vitals', value: 'Pass (Green)' },
-      { label: 'Architecture', value: 'Static SSG' }
-    ],
-    previewGradient: 'from-[#231b0a] via-[#141108] to-[#080808]',
-    iframeAllowed: false,
+    techPills: ['Framer WebGL', 'React', 'Motion FX', 'TailwindCSS', 'Edge CDN'],
+    rateText: '₹20,000 (Flagship Spatial Tier)',
+    inquiryMessage: "Hi Gurdharam, I want a luxury 3D architectural flagship website like Dream Heights."
   },
   {
     id: 'doodhisaab',
-    title: 'DoodhHisaab // Offline Dairy Management Suite',
-    url: 'https://gurdharam.com/case-studies/doodhisaab',
+    title: 'DoodhHisaab // Offline Dairy Ledger App',
+    category: 'apps',
+    categoryLabel: 'OFFLINE ENTERPRISE SUITE',
+    tierBadge: 'CUSTOM ENTERPRISE',
+    tierColor: 'border-emerald-500/40 bg-emerald-500/15 text-emerald-400',
+    liveUrl: 'https://gurdharam.com/case-studies/doodhisaab',
     displayUrl: 'gurdharam.com/case-studies/doodhisaab',
+    imageSrc: '/assets/portfolio/doodhisaab-screenshot.jpg',
     tagline: 'Zero-internet milk pricing matrix, shift ledgers & Bluetooth thermal printing',
-    category: 'client-brand',
-    categoryLabel: 'OFFLINE ENTERPRISE APP',
-    status: 'live',
-    statusLabel: 'DEPLOYED & ACTIVE',
-    description: 'Industrial-grade offline dairy management application engineered for rural dairy centers across Punjab. Calculates complex FAT/SNF automated pricing matrices, tracks daily farmer shifts locally in SQLite, and prints thermal receipts via Bluetooth ESC/POS without needing internet.',
-    highlights: [
-      '100% offline local SQLite storage with zero cloud dependency',
-      'Instant FAT/SNF rate calculation matrix with custom pricing formulas',
+    description: 'Industrial-grade offline dairy management application engineered for rural dairy centers across Punjab. Operates 100% locally in SQLite without cloud dependencies.',
+    specs: [
+      '100% offline local SQLite storage with automated FAT/SNF pricing',
       'Thermal receipt printer integration via Bluetooth ESC/POS (58mm/80mm)',
       'Multilingual interface in Punjabi (Gurmukhi), Hindi, and English'
     ],
-    techStack: ['Flutter', 'Dart', 'SQLite', 'Bluetooth ESC/POS', 'Offline-First'],
-    metrics: [
-      { label: 'Offline Sync', value: '100% Zero Net' },
-      { label: 'Daily Shifts', value: '500+ Logs' },
-      { label: 'Hardware', value: 'Thermal BT' }
-    ],
-    previewGradient: 'from-[#172517] via-[#0d160d] to-[#080808]',
-    iframeAllowed: false,
+    techPills: ['Flutter', 'Dart', 'SQLite', 'Bluetooth ESC/POS', 'Offline-First'],
+    rateText: 'Custom Enterprise Quoting',
+    inquiryMessage: "Hi Gurdharam, I want to discuss a custom offline app or software system like DoodhHisaab."
   },
   {
-    id: 'fasal-doctor',
-    title: 'FasalDoctor // On-Device Computer Vision Diagnostics',
-    url: 'https://gurdharam.com/case-studies/fasal-doctor',
-    displayUrl: 'gurdharam.com/case-studies/fasal-doctor',
-    tagline: '85ms quantized edge-AI neural network for agricultural disease diagnosis',
-    category: 'ai-engine',
+    id: 'fasaldoctor',
+    title: 'FasalDoctor // On-Device Neural Diagnostics',
+    category: 'apps',
     categoryLabel: 'ON-DEVICE ML & AGRI',
-    status: 'live',
-    statusLabel: 'DEPLOYED & ACTIVE',
-    description: 'Edge-AI mobile diagnostic tool built for farmers in Punjab. Runs quantized MobileNet neural network models directly on budget Android smartphones in 85ms with zero cloud API dependencies, providing immediate voice-guided disease remedies in Punjabi.',
-    highlights: [
+    tierBadge: 'CUSTOM ENTERPRISE',
+    tierColor: 'border-emerald-500/40 bg-emerald-500/15 text-emerald-400',
+    liveUrl: 'https://gurdharam.com/case-studies/fasal-doctor',
+    displayUrl: 'gurdharam.com/case-studies/fasal-doctor',
+    imageSrc: '/assets/portfolio/fasal-doctor-screenshot.png',
+    tagline: '85ms quantized edge-AI neural network for crop disease diagnosis',
+    description: 'Edge-AI mobile diagnostic tool built for farmers in Punjab. Runs quantized MobileNet neural network models directly on budget Android phones in 85ms with voice remedies.',
+    specs: [
       'Quantized MobileNetV3 / TFLite models running locally at 45 FPS',
-      'Identifies 30+ regional crop diseases in <300ms with zero data signal',
-      'Voice-guided Punjabi & Hindi audio playback of organic/chemical cures',
-      'Zero recurring cloud inference cost ($0/month per farmer)'
+      'Identifies 30+ regional crop diseases with zero internet connection',
+      'Voice-guided Punjabi & Hindi audio playback of organic and chemical cures'
     ],
-    techStack: ['TensorFlow Lite', 'Flutter', 'Edge Computer Vision', 'Offline ML', 'Voice TTS'],
-    metrics: [
-      { label: 'Model Inference', value: '85ms On-Device' },
-      { label: 'Accuracy', value: '94.2% Top-1' },
-      { label: 'Cloud Cost', value: '$0 / Month' }
-    ],
-    previewGradient: 'from-[#292211] via-[#161309] to-[#080808]',
-    iframeAllowed: false,
+    techPills: ['TensorFlow Lite', 'Flutter', 'Edge Computer Vision', 'Voice TTS'],
+    rateText: 'Custom Enterprise Quoting',
+    inquiryMessage: "Hi Gurdharam, I want to discuss a computer vision or on-device AI project like FasalDoctor."
   },
   {
     id: 'takemyinterview',
     title: 'TakeMyInterview.ai // Realtime Voice AI Agent',
-    url: 'https://gurdharam.com/case-studies/takemyinterview-ai',
-    displayUrl: 'gurdharam.com/case-studies/takemyinterview-ai',
-    tagline: 'Sub-second real-time voice AI technical interview simulation',
-    category: 'ai-engine',
+    category: 'apps',
     categoryLabel: 'REALTIME VOICE AI',
-    status: 'live',
-    statusLabel: 'SHIPPED & DEPLOYED',
-    description: 'Enterprise-grade technical interview simulation platform featuring continuous real-time audio streams, natural speech interruptions, live coding evaluations, and automated rubric scoring.',
-    highlights: [
+    tierBadge: 'CUSTOM ENTERPRISE',
+    tierColor: 'border-purple-500/40 bg-purple-500/15 text-purple-400',
+    liveUrl: 'https://gurdharam.com/case-studies/takemyinterview-ai',
+    displayUrl: 'gurdharam.com/case-studies/takemyinterview-ai',
+    imageSrc: '/assets/portfolio/aiinterviewer.png',
+    tagline: 'Sub-500ms real-time voice AI interview simulation with live code testing',
+    description: 'Enterprise technical interview simulation platform featuring continuous real-time audio streams, natural speech interruptions, and automated rubric scoring.',
+    specs: [
       'Sub-500ms voice round-trip latency via streaming WebRTC audio',
-      'Adaptive interview question generation tailored to candidate seniority',
-      'Instant code execution sandbox and automated architecture critiques',
-      'Detailed competency scorecard and comprehensive transcript feedback'
+      'Adaptive question generation tailored to candidate seniority',
+      'Instant code execution sandbox & competency scorecards'
     ],
-    techStack: ['WebRTC', 'FastAPI', 'Whisper STT', 'Sarvam Voice', 'React', 'TailwindCSS'],
-    metrics: [
-      { label: 'Voice Latency', value: '450ms' },
-      { label: 'Scoring Precision', value: '96%' },
-      { label: 'Stack', value: 'Voice Telephony' }
-    ],
-    previewGradient: 'from-[#171126] via-[#0d0918] to-[#080808]',
-    iframeAllowed: false,
+    techPills: ['WebRTC', 'FastAPI', 'Whisper STT', 'Sarvam Voice', 'React'],
+    rateText: 'Custom Enterprise Quoting',
+    inquiryMessage: "Hi Gurdharam, I want to discuss a voice AI or automated agent platform like TakeMyInterview.ai."
   }
 ];
 
-const CATEGORIES = [
-  { id: 'all', label: 'ALL PLATFORMS' },
-  { id: '3d-spatial', label: '3D & SPATIAL' },
-  { id: 'client-brand', label: 'CLIENT WEBSITES' },
-  { id: 'ai-engine', label: 'AI ENGINES & SAAS' },
-  { id: 'production', label: 'FLAGSHIP & CASE STUDIES' },
+const FAQS = [
+  {
+    q: 'What is the exact difference between the ₹5,000 and ₹7,000 packages?',
+    a: 'Both packages give you a clean, hand-coded, fast website. However, the ₹5,000 package is a standard web presence for clients who only need a portfolio to share via WhatsApp or social media. The ₹7,000 package adds full Google Search Console API fast-indexing, 100% Google LocalBusiness Schema, local keyword optimization, and Google Maps alignment. This means when local customers search for your service on Google (e.g. "Interior Designer Bathinda"), your website is properly structured to rank and bring in organic leads.'
+  },
+  {
+    q: 'How are your rates (₹5k–₹20k) so affordable compared to big agencies?',
+    a: 'Big agencies charge ₹50,000 to ₹1.5 Lakhs because they have large overheads: project managers, account executives, sales commissions, and expensive office leases. When you work with us, you work directly with senior software engineers. You get 100% custom, production-grade code with zero bloated agency markups.'
+  },
+  {
+    q: 'Are there any recurring monthly or hidden hosting charges?',
+    a: 'No. All our sites are deployed on modern global Edge CDN networks (like Vercel) that provide a free lifetime hosting tier for small-to-medium business traffic. You only pay for your custom domain name (approx ₹700–₹900/year directly to GoDaddy or Namecheap) which you 100% own.'
+  },
+  {
+    q: 'How fast will my website be live?',
+    a: 'Standard business websites (₹5k and ₹7k) are typically completed and launched within 3 to 5 business days. Interactive 3D sites (₹12k) take 5 to 7 days. Full architectural 3D flagships (₹20k) take 7 to 14 days depending on 3D asset modeling and camera choreography.'
+  },
+  {
+    q: 'Can I request edits and changes after launch?',
+    a: 'Yes. Every project includes dedicated revision rounds before launch and 30 days of post-launch technical support to guarantee your satisfaction.'
+  }
 ];
 
 export default function WebsitesShowcase() {
-  const [activeFilter, setActiveFilter] = useState<string>('all');
-  const [activeIframe, setActiveIframe] = useState<string | null>(null);
+  const [activeShowcaseFilter, setActiveShowcaseFilter] = useState<'all' | 'business' | 'spatial-3d' | 'apps'>('all');
 
-  const filteredWebsites = activeFilter === 'all' 
-    ? WEBSITES 
-    : WEBSITES.filter((item) => item.category === activeFilter);
+  const filteredItems = activeShowcaseFilter === 'all' 
+    ? SHOWCASE_ITEMS 
+    : SHOWCASE_ITEMS.filter((item) => item.category === activeShowcaseFilter);
 
   return (
-    <div className="min-h-screen bg-[#080808] text-[#f0ede6] selection:bg-[#d4a853]/30 selection:text-white font-sans">
+    <div className="min-h-screen bg-[#080808] text-[#f0ede6] selection:bg-[#d4a853]/30 selection:text-white font-sans antialiased">
       {/* Top Header Navigation Bar */}
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#080808]/90 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080808]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link
             to="/"
@@ -243,293 +337,545 @@ export default function WebsitesShowcase() {
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
             <span>[ RETURN TO HOME ]</span>
           </Link>
-          <div className="flex items-center gap-3">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#25D366]" />
-            </span>
-            <span className="font-mono text-[0.7rem] uppercase tracking-widest text-[#9a958c]">
-              PORTFOLIO // LIVE SITES & 3D
-            </span>
+          
+          <div className="flex items-center gap-4">
+            <div className="hidden sm:flex items-center gap-2 text-xs font-mono text-[#9a958c]">
+              <span className="h-2 w-2 rounded-full bg-[#25D366] animate-pulse" />
+              <span>Q3 2026 COMMISSIONS OPEN</span>
+            </div>
+            <a
+              href="#pricing"
+              className="rounded-lg bg-white/5 border border-white/15 px-3 py-1.5 font-mono text-xs text-[#d4a853] hover:border-[#d4a853] transition-colors"
+            >
+              RATES: ₹5K — ₹20K
+            </a>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-white/10 px-6 py-20 lg:py-24">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(212,168,83,0.14),transparent_65%)]" />
-        <div className="pointer-events-none absolute right-10 top-10 h-72 w-72 rounded-full bg-[#38bdf8]/10 blur-[100px]" />
-
+      <section className="relative overflow-hidden border-b border-white/10 px-6 pt-20 pb-16 lg:pt-24 lg:pb-20">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(212,168,83,0.12),transparent_70%)]" />
+        
         <div className="relative mx-auto max-w-5xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d4a853]/30 bg-[#d4a853]/10 px-4 py-1.5 font-mono text-xs text-[#d4a853]">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>CURATED DIGITAL ARCHITECTURE // 2024 - 2026</span>
+            <span>TRANSPARENT RATES & PRODUCTION SHOWCASE // 2026</span>
           </div>
 
-          <h1 className="mb-6 font-['Syne'] text-4xl font-extrabold uppercase tracking-tight text-white md:text-6xl lg:text-7xl">
-            Live Websites, 3D Spatial Engines & AI Platforms
+          <h1 className="mb-6 font-['Syne'] text-[clamp(1.4rem,6.2vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
+            Systems That Scale.<br />
+            <span className="text-[#d4a853]">Web Architecture That Sells.</span>
           </h1>
 
-          <p className="mx-auto max-w-3xl text-base leading-relaxed text-[#9a958c] md:text-lg">
-            A comprehensive showcase of client digital flagships, procedural WebGL 3D builds, and autonomous software platforms engineered by our{' '}
-            <strong className="text-[#f0ede6]">enterprise technology studio</strong>.
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#9a958c] sm:text-lg">
+            Fixed-price, production-grade websites with zero agency bureaucracy. From fast local business flagships to 120 FPS 3D spatial environments.
           </p>
 
-          {/* Quick Metrics Strip */}
-          <div className="mt-12 grid grid-cols-2 gap-4 border-y border-white/10 py-6 sm:grid-cols-4">
-            <div className="text-center">
-              <div className="font-['Syne'] text-2xl font-bold text-[#d4a853] sm:text-3xl">7+</div>
-              <div className="font-mono text-[0.68rem] tracking-wider text-[#9a958c] uppercase">Featured Platforms</div>
-            </div>
-            <div className="text-center">
-              <div className="font-['Syne'] text-2xl font-bold text-[#38bdf8] sm:text-3xl">120 FPS</div>
-              <div className="font-mono text-[0.68rem] tracking-wider text-[#9a958c] uppercase">3D WebGL Target</div>
-            </div>
-            <div className="text-center">
-              <div className="font-['Syne'] text-2xl font-bold text-[#25D366] sm:text-3xl">&lt; 0.6s</div>
-              <div className="font-mono text-[0.68rem] tracking-wider text-[#9a958c] uppercase">Avg Global TTFB</div>
-            </div>
-            <div className="text-center">
-              <div className="font-['Syne'] text-2xl font-bold text-[#f0ede6] sm:text-3xl">100%</div>
-              <div className="font-mono text-[0.68rem] tracking-wider text-[#9a958c] uppercase">Custom Code Quality</div>
-            </div>
+          {/* Core Guarantees Badges */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 font-mono text-xs text-[#f0ede6]">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              <Zap className="h-3.5 w-3.5 text-[#d4a853]" />
+              <span>₹5k – ₹20k Flat Pricing</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              <Check className="h-3.5 w-3.5 text-[#25D366]" />
+              <span>3 to 7 Days Turnaround</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              <Search className="h-3.5 w-3.5 text-[#38bdf8]" />
+              <span>Google Fast-Indexing</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#d4a853]" />
+              <span>100% Code Ownership</span>
+            </span>
           </div>
-        </div>
-      </section>
 
-      {/* Filter Tabs Bar */}
-      <section className="sticky top-[57px] z-30 border-b border-white/10 bg-[#080808]/95 py-4 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between overflow-x-auto px-6 gap-3 scrollbar-none">
-          <div className="flex items-center gap-2">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveFilter(cat.id)}
-                className={`cursor-pointer whitespace-nowrap rounded-lg px-3.5 py-1.5 font-mono text-xs transition-all ${
-                  activeFilter === cat.id
-                    ? 'border border-[#d4a853] bg-[#d4a853]/15 font-semibold text-[#d4a853] shadow-[0_0_15px_rgba(212,168,83,0.15)]'
-                    : 'border border-white/10 bg-white/5 text-[#9a958c] hover:border-white/20 hover:text-white'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-          <span className="hidden font-mono text-xs text-[#9a958c] md:inline-block">
-            SHOWING {filteredWebsites.length} OF {WEBSITES.length} SITES
-          </span>
-        </div>
-      </section>
-
-      {/* Main Showcase Grid */}
-      <main className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 lg:gap-16">
-          {filteredWebsites.map((site) => (
-            <article
-              key={site.id}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0f0f0f]/90 p-6 backdrop-blur-lg transition-all duration-300 hover:border-[#d4a853]/40 hover:shadow-[0_15px_40px_-15px_rgba(0,0,0,0.8)] md:p-8 lg:p-10"
+          {/* Quick Anchor Jumper */}
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <a
+              href="#pricing"
+              className="rounded-xl bg-[#d4a853] px-6 py-3 font-mono text-xs font-bold text-[#080808] transition-all hover:bg-white hover:shadow-[0_0_20px_rgba(212,168,83,0.3)]"
             >
-              {/* Subtle background glow */}
-              <div className={`pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-gradient-to-br ${site.previewGradient} opacity-30 blur-3xl transition-opacity duration-500 group-hover:opacity-60`} />
+              EXPLORE PRICING PACKAGES ↓
+            </a>
+            <a
+              href="#showcase"
+              className="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-mono text-xs font-semibold text-white transition-all hover:border-[#d4a853] hover:text-[#d4a853]"
+            >
+              VIEW LIVE SHOWCASE ↓
+            </a>
+          </div>
+        </div>
+      </section>
 
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
-                {/* Left Side: Information & Specs (5 Cols) */}
-                <div className="flex flex-col justify-between lg:col-span-5">
-                  <div>
-                    {/* Header Tags */}
-                    <div className="mb-4 flex flex-wrap items-center gap-2 font-mono text-[0.68rem]">
-                      <span className="rounded border border-white/10 bg-white/5 px-2.5 py-1 text-[#d4a853]">
-                        {site.categoryLabel}
-                      </span>
-                      <span
-                        className={`inline-flex items-center gap-1.5 rounded px-2.5 py-1 font-semibold ${
-                          site.status === 'development'
-                            ? 'border border-amber-500/30 bg-amber-500/10 text-amber-400'
-                            : site.status === 'flagship'
-                            ? 'border border-[#d4a853]/40 bg-[#d4a853]/15 text-[#d4a853]'
-                            : 'border border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
-                        }`}
-                      >
-                        {site.status === 'development' ? (
-                          <Clock className="h-3 w-3 animate-spin" />
-                        ) : (
-                          <CheckCircle2 className="h-3 w-3" />
-                        )}
-                        {site.statusLabel}
-                      </span>
-                    </div>
+      {/* SECTION 1: THE 4 TRANSPARENT PRICING TIERS */}
+      <section id="pricing" className="relative scroll-mt-20 border-b border-white/10 px-6 py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
+              // CLEAR & HONEST ENGINEERING RATES
+            </span>
+            <h2 className="mt-2 font-['Syne'] text-2xl sm:text-4xl font-extrabold text-white leading-snug">
+              Choose the Right Architecture for Your Business
+            </h2>
+            <p className="mt-3 text-sm text-[#9a958c] max-w-xl mx-auto">
+              Transparent tiering with zero hidden fees. Pick your tier, review the real production example, and book directly via WhatsApp.
+            </p>
+          </div>
 
-                    {/* Title & Tagline */}
-                    <h2 className="font-['Syne'] text-2xl font-bold tracking-tight text-white md:text-3xl">
-                      {site.title}
-                    </h2>
-                    <p className="mt-1 font-mono text-xs text-[#d4a853]">{site.tagline}</p>
+          {/* 4 Pricing Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PRICING_TIERS.map((tier) => (
+              <div
+                key={tier.id}
+                className={`relative flex flex-col justify-between rounded-2xl border ${tier.accentBorder} ${tier.accentBg} p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1`}
+              >
+                {/* Badge if present */}
+                {tier.badge && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className={`rounded-full px-3 py-1 font-mono text-[0.65rem] font-extrabold tracking-wider ${tier.badgeColor} shadow-md`}>
+                      {tier.badge}
+                    </span>
+                  </div>
+                )}
 
-                    {/* Description */}
-                    <p className="mt-4 text-sm leading-relaxed text-[#9a958c]">
-                      {site.description}
+                <div>
+                  {/* Tier Title & Price */}
+                  <div className="mb-4">
+                    <h3 className="font-['Syne'] text-xl font-bold text-white">
+                      {tier.name}
+                    </h3>
+                    <p className="mt-1 font-mono text-xs text-[#9a958c] min-h-[32px]">
+                      {tier.tagline}
                     </p>
+                  </div>
 
-                    {/* Key Highlights Bullet points */}
-                    <div className="mt-5 space-y-2 border-t border-white/10 pt-4">
-                      <div className="font-mono text-[0.68rem] tracking-wider text-[#f0ede6] uppercase">
-                        Architecture Highlights:
-                      </div>
-                      <ul className="space-y-1.5 text-xs text-[#9a958c]">
-                        {site.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d4a853]" />
-                            <span>{h}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  {/* Price Block */}
+                  <div className="mb-6 border-b border-white/10 pb-5">
+                    <div className="flex items-baseline gap-2">
+                      <span className="font-['Syne'] text-3xl font-extrabold text-white">
+                        {tier.price}
+                      </span>
+                      {tier.originalPrice && (
+                        <span className="font-mono text-xs line-through text-[#9a958c]">
+                          {tier.originalPrice}
+                        </span>
+                      )}
+                      <span className="font-mono text-xs text-[#d4a853]">/ flat</span>
                     </div>
-
-                    {/* Tech Stack Pills */}
-                    <div className="mt-5">
-                      <div className="mb-2 font-mono text-[0.68rem] tracking-wider text-[#9a958c] uppercase">
-                        Technology Stack:
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {site.techStack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-[0.65rem] text-[#f0ede6]"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                    <div className="mt-1.5 flex items-center gap-1.5 font-mono text-[0.7rem] text-[#25D366]">
+                      <Zap className="h-3 w-3" />
+                      <span>{tier.timeline}</span>
                     </div>
                   </div>
 
-                  {/* Actions & Metrics Bottom */}
-                  <div className="mt-8 border-t border-white/10 pt-5">
-                    <div className="mb-4 grid grid-cols-3 gap-2">
-                      {site.metrics.map((m, i) => (
-                        <div key={i} className="rounded-lg border border-white/5 bg-white/[0.02] p-2 text-center">
-                          <div className="font-['Syne'] text-sm font-bold text-white">{m.value}</div>
-                          <div className="font-mono text-[0.6rem] text-[#9a958c]">{m.label}</div>
-                        </div>
-                      ))}
-                    </div>
+                  {/* Best For */}
+                  <div className="mb-5 rounded-lg border border-white/5 bg-white/[0.02] p-3 text-xs">
+                    <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1 uppercase tracking-wider font-semibold">
+                      Best For:
+                    </span>
+                    <p className="text-[#9a958c] leading-relaxed">
+                      {tier.bestFor}
+                    </p>
+                  </div>
 
-                    <div className="flex flex-wrap items-center gap-3">
-                      <a
-                        href={site.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-xl bg-[#d4a853] px-5 py-2.5 font-mono text-xs font-bold text-[#080808] transition-all hover:bg-white hover:shadow-[0_0_20px_rgba(212,168,83,0.4)]"
-                      >
-                        <span>LAUNCH LIVE SITE</span>
-                        <ArrowUpRight className="h-4 w-4" />
-                      </a>
-                      {site.iframeAllowed && (
-                        <button
-                          onClick={() => setActiveIframe(activeIframe === site.id ? null : site.id)}
-                          className="inline-flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 font-mono text-xs text-[#f0ede6] transition-colors hover:border-[#d4a853] hover:text-[#d4a853] cursor-pointer"
-                        >
-                          <Laptop className="h-3.5 w-3.5" />
-                          <span>{activeIframe === site.id ? 'CLOSE PREVIEW' : 'INLINE PREVIEW'}</span>
-                        </button>
-                      )}
-                    </div>
+                  {/* What's Included */}
+                  <div className="mb-6 space-y-2.5">
+                    <span className="font-mono text-[0.68rem] text-[#f0ede6] block uppercase tracking-wider font-semibold">
+                      Included Architecture:
+                    </span>
+                    <ul className="space-y-2">
+                      {tier.features.map((feat, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-xs">
+                          {feat.included ? (
+                            <Check className="h-4 w-4 shrink-0 text-[#25D366] mt-0.5" />
+                          ) : (
+                            <X className="h-4 w-4 shrink-0 text-red-400/50 mt-0.5" />
+                          )}
+                          <span className={feat.included ? 'text-[#f0ede6]' : 'text-[#9a958c]/60 line-through'}>
+                            {feat.title}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Real Client Example Proof */}
+                  <div className="mb-6 rounded-xl border border-white/10 bg-black/40 p-3.5">
+                    <span className="font-mono text-[0.65rem] uppercase tracking-wider text-[#d4a853] block mb-1">
+                      REAL PRODUCTION EXAMPLE:
+                    </span>
+                    <a 
+                      href={tier.exampleUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="font-['Syne'] font-bold text-sm text-white hover:text-[#d4a853] flex items-center gap-1.5 transition-colors"
+                    >
+                      <span>{tier.exampleName}</span>
+                      <ExternalLink className="h-3 w-3 text-[#d4a853]" />
+                    </a>
+                    <p className="mt-1 font-mono text-[0.68rem] text-[#9a958c] leading-normal">
+                      {tier.exampleNote}
+                    </p>
                   </div>
                 </div>
 
-                {/* Right Side: Browser Shell Mockup Frame (7 Cols) */}
-                <div className="flex flex-col lg:col-span-7">
-                  <div className="overflow-hidden rounded-xl border border-white/15 bg-[#050505] shadow-2xl">
-                    {/* Browser Chrome Header */}
-                    <div className="flex items-center justify-between border-b border-white/10 bg-[#121212] px-4 py-2.5">
-                      <div className="flex items-center gap-2">
+                {/* Direct CTA */}
+                <a
+                  href={getWhatsAppUrl(tier.whatsappMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full text-center rounded-xl py-3 font-mono text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                    tier.id === 'basic-plus-7k' || tier.id === 'flagship-20k'
+                      ? 'bg-[#d4a853] text-[#080808] hover:bg-white hover:shadow-[0_0_20px_rgba(212,168,83,0.35)]'
+                      : 'border border-white/20 bg-white/5 text-white hover:border-[#d4a853] hover:text-[#d4a853]'
+                  }`}
+                >
+                  <MessageCircle className="h-3.5 w-3.5" />
+                  <span>ORDER {tier.price} PACKAGE</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: SCANNABLE COMPARISON TABLE */}
+      <section className="border-b border-white/10 px-6 py-16 bg-[#0a0a0a]">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
+              // FEATURE BREAKDOWN
+            </span>
+            <h2 className="mt-1 font-['Syne'] text-2xl font-bold text-white sm:text-3xl">
+              Side-by-Side Architectural Comparison
+            </h2>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-[#080808]">
+            <table className="w-full text-left font-sans text-xs">
+              <thead>
+                <tr className="border-b border-white/10 bg-white/[0.02] font-mono">
+                  <th className="p-4 text-[#9a958c]">FEATURE / DELIVERABLE</th>
+                  <th className="p-4 text-center text-white">₹5,000<br/><span className="text-[#9a958c] text-[0.65rem]">BASIC</span></th>
+                  <th className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5">₹7,000<br/><span className="text-[0.65rem]">BASIC+ SEO</span></th>
+                  <th className="p-4 text-center text-[#38bdf8]">₹12,000<br/><span className="text-[#9a958c] text-[0.65rem]">2D+3D</span></th>
+                  <th className="p-4 text-center text-[#d4a853]">₹20,000<br/><span className="text-[#9a958c] text-[0.65rem]">FLAGSHIP</span></th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5 font-mono text-[0.75rem]">
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">Turnaround Time</td>
+                  <td className="p-4 text-center text-[#9a958c]">2–3 Days</td>
+                  <td className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5 font-bold">3–5 Days</td>
+                  <td className="p-4 text-center text-[#9a958c]">5–7 Days</td>
+                  <td className="p-4 text-center text-[#d4a853] font-bold">7–14 Days</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">Responsive Mobile + Desktop</td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366] bg-[#d4a853]/5"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">Free Edge CDN Hosting (₹0/mo)</td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366] bg-[#d4a853]/5"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">Google Search Console (GSC) API Fast-Indexing</td>
+                  <td className="p-4 text-center text-red-400/50"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366] bg-[#d4a853]/5 font-bold"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">Google LocalBusiness Schema Markup</td>
+                  <td className="p-4 text-center text-red-400/50"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366] bg-[#d4a853]/5 font-bold"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">Three.js / WebGL 3D Model Canvas</td>
+                  <td className="p-4 text-center text-red-400/50"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-red-400/50 bg-[#d4a853]/5"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#38bdf8] font-bold">Single GLTF Viewport</td>
+                  <td className="p-4 text-center text-[#d4a853] font-bold">Multi-Scene Spatial</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">Kinetic Lenis Smooth Scroll</td>
+                  <td className="p-4 text-center text-red-400/50"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-red-400/50 bg-[#d4a853]/5"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#25D366]"><Check className="h-4 w-4 mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">RevealFlow Preloader & Shaders</td>
+                  <td className="p-4 text-center text-red-400/50"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-red-400/50 bg-[#d4a853]/5"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-red-400/50"><X className="h-4 w-4 mx-auto" /></td>
+                  <td className="p-4 text-center text-[#d4a853] font-bold"><Check className="h-4 w-4 mx-auto" /></td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-sans font-medium text-white">Real-World Case Study Reference</td>
+                  <td className="p-4 text-center text-[#9a958c]">Kirat Interior (Core)</td>
+                  <td className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5 font-bold">Kirat Interior (Live)</td>
+                  <td className="p-4 text-center text-[#38bdf8]">NEOVRIT Studio</td>
+                  <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights 3D</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: VISUAL CLIENT SHOWCASE WITH PC SCREENSHOT MOCKUPS */}
+      <section id="showcase" className="relative scroll-mt-20 px-6 py-20 lg:py-24 border-b border-white/10">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
+                // VERIFIED DIGITAL BUILDS
+              </span>
+              <h2 className="mt-2 font-['Syne'] text-3xl font-extrabold text-white sm:text-4xl">
+                Real Projects. Real Performance.
+              </h2>
+              <p className="mt-2 text-sm text-[#9a958c] max-w-lg">
+                Explore real desktop views of deployed websites and platforms built for commercial clients.
+              </p>
+            </div>
+
+            {/* Filter Buttons */}
+            <div className="flex flex-wrap gap-2 font-mono text-xs">
+              <button
+                onClick={() => setActiveShowcaseFilter('all')}
+                className={`cursor-pointer rounded-lg px-3.5 py-1.5 transition-all ${
+                  activeShowcaseFilter === 'all'
+                    ? 'border border-[#d4a853] bg-[#d4a853]/15 font-semibold text-[#d4a853]'
+                    : 'border border-white/10 bg-white/5 text-[#9a958c] hover:border-white/20 hover:text-white'
+                }`}
+              >
+                ALL PROJECTS
+              </button>
+              <button
+                onClick={() => setActiveShowcaseFilter('business')}
+                className={`cursor-pointer rounded-lg px-3.5 py-1.5 transition-all ${
+                  activeShowcaseFilter === 'business'
+                    ? 'border border-[#d4a853] bg-[#d4a853]/15 font-semibold text-[#d4a853]'
+                    : 'border border-white/10 bg-white/5 text-[#9a958c] hover:border-white/20 hover:text-white'
+                }`}
+              >
+                LOCAL BUSINESS (₹5K–₹7K)
+              </button>
+              <button
+                onClick={() => setActiveShowcaseFilter('spatial-3d')}
+                className={`cursor-pointer rounded-lg px-3.5 py-1.5 transition-all ${
+                  activeShowcaseFilter === 'spatial-3d'
+                    ? 'border border-[#d4a853] bg-[#d4a853]/15 font-semibold text-[#d4a853]'
+                    : 'border border-white/10 bg-white/5 text-[#9a958c] hover:border-white/20 hover:text-white'
+                }`}
+              >
+                3D SPATIAL (₹12K–₹20K)
+              </button>
+              <button
+                onClick={() => setActiveShowcaseFilter('apps')}
+                className={`cursor-pointer rounded-lg px-3.5 py-1.5 transition-all ${
+                  activeShowcaseFilter === 'apps'
+                    ? 'border border-[#d4a853] bg-[#d4a853]/15 font-semibold text-[#d4a853]'
+                    : 'border border-white/10 bg-white/5 text-[#9a958c] hover:border-white/20 hover:text-white'
+                }`}
+              >
+                ENTERPRISE APPS & AI
+              </button>
+            </div>
+          </div>
+
+          {/* Clean Showcase Cards Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {filteredItems.map((item) => (
+              <article
+                key={item.id}
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 backdrop-blur-md transition-all duration-300 hover:border-[#d4a853]/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)] sm:p-8"
+              >
+                <div>
+                  {/* Card Header: Tier Badge & Category */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <span className={`rounded border px-2.5 py-1 font-mono text-[0.68rem] font-bold ${item.tierColor}`}>
+                      {item.tierBadge}
+                    </span>
+                    <span className="font-mono text-[0.68rem] text-[#9a958c]">
+                      {item.categoryLabel}
+                    </span>
+                  </div>
+
+                  {/* Browser Window Device Mockup Shell */}
+                  <div className="relative mb-6 overflow-hidden rounded-xl border border-white/15 bg-[#050505] shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]">
+                    {/* Browser Toolbar Header */}
+                    <div className="flex items-center justify-between border-b border-white/10 bg-[#141414] px-3.5 py-2">
+                      <div className="flex items-center gap-1.5">
                         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]/80" />
                         <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/80" />
                         <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]/80" />
                       </div>
-                      <div className="flex items-center gap-2 rounded-md border border-white/10 bg-black/60 px-3 py-1 font-mono text-[0.68rem] text-[#9a958c]">
+                      <div className="flex items-center gap-1.5 rounded-md border border-white/10 bg-black/60 px-3 py-0.5 font-mono text-[0.65rem] text-[#9a958c]">
                         <span className="h-1.5 w-1.5 rounded-full bg-[#25D366]" />
-                        <span>https://{site.displayUrl}</span>
+                        <span>https://{item.displayUrl}</span>
                       </div>
-                      <a
-                        href={site.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#9a958c] transition-colors hover:text-white"
-                        aria-label="Open in new tab"
-                      >
-                        <ExternalLink className="h-3.5 w-3.5" />
-                      </a>
+                      <ExternalLink className="h-3 w-3 text-[#9a958c]" />
                     </div>
 
-                    {/* Browser Content Viewport */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
-                      {activeIframe === site.id ? (
-                        <iframe
-                          src={site.url}
-                          title={site.title}
-                          className="h-full w-full border-none"
-                          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="group/card relative flex h-full w-full flex-col items-center justify-center p-6 text-center">
-                          {/* Rich Decorative Mockup Content */}
-                          <div
-                            className={`absolute inset-0 bg-gradient-to-br ${site.previewGradient} opacity-90 transition-transform duration-700 group-hover/card:scale-105`}
-                          />
-                          
-                          {/* Radial overlay */}
-                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.2),rgba(0,0,0,0.85))]" />
-
-                          {/* Decorative Grid Lines */}
-                          <div className="pointer-events-none absolute inset-0 opacity-15 bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-                          <div className="relative z-10 flex flex-col items-center max-w-sm">
-                            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/20 bg-white/5 backdrop-blur-md shadow-lg">
-                              <Code2 className="h-7 w-7 text-[#d4a853]" />
-                            </div>
-                            <span className="font-mono text-[0.7rem] uppercase tracking-widest text-[#d4a853]">
-                              {site.categoryLabel}
-                            </span>
-                            <h3 className="mt-1 font-['Syne'] text-xl font-bold text-white">
-                              {site.displayUrl}
-                            </h3>
-                            <p className="mt-2 font-mono text-xs text-[#9a958c] line-clamp-2">
-                              {site.tagline}
-                            </p>
-
-                            <div className="mt-6 flex flex-wrap justify-center gap-2">
-                              <a
-                                href={site.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-4 py-2 font-mono text-xs font-semibold text-white backdrop-blur-md transition-all hover:border-[#d4a853] hover:bg-[#d4a853] hover:text-[#080808]"
-                              >
-                                <span>Visit Live Site</span>
-                                <ArrowUpRight className="h-3.5 w-3.5" />
-                              </a>
-                              {site.iframeAllowed && (
-                                <button
-                                  onClick={() => setActiveIframe(site.id)}
-                                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-black/40 px-4 py-2 font-mono text-xs text-[#f0ede6] backdrop-blur-md transition-colors hover:border-white/30 cursor-pointer"
-                                >
-                                  <Laptop className="h-3.5 w-3.5" />
-                                  <span>Live Embed</span>
-                                </button>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      )}
+                    {/* Screenshot Image */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/90">
+                      <img
+                        src={item.imageSrc}
+                        alt={item.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
+                      {/* Subtle hover gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>
                   </div>
+
+                  {/* Title & Tagline */}
+                  <h3 className="font-['Syne'] text-xl font-bold text-white sm:text-2xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 font-mono text-xs text-[#d4a853]">
+                    {item.tagline}
+                  </p>
+
+                  <p className="mt-3 text-xs leading-relaxed text-[#9a958c]">
+                    {item.description}
+                  </p>
+
+                  {/* Bullet Specs */}
+                  <ul className="mt-4 space-y-1.5 border-t border-white/10 pt-3 text-xs text-[#f0ede6]">
+                    {item.specs.map((spec, sIdx) => (
+                      <li key={sIdx} className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d4a853]" />
+                        <span>{spec}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Tech Stack Badges */}
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {item.techPills.map((p, pIdx) => (
+                      <span
+                        key={pIdx}
+                        className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-[0.65rem] text-[#9a958c]"
+                      >
+                        {p}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+
+                {/* Bottom Actions */}
+                <div className="mt-6 border-t border-white/10 pt-4 flex flex-wrap items-center justify-between gap-3">
+                  <div className="font-mono text-xs text-[#d4a853]">
+                    Rate: <strong className="text-white">{item.rateText}</strong>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={item.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-2 font-mono text-xs text-white transition-colors hover:border-[#d4a853] hover:text-[#d4a853]"
+                    >
+                      <span>VISIT LIVE</span>
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href={getWhatsAppUrl(item.inquiryMessage)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-[#d4a853] px-3.5 py-2 font-mono text-xs font-bold text-[#080808] transition-all hover:bg-white"
+                    >
+                      <MessageCircle className="h-3.5 w-3.5" />
+                      <span>ORDER SIMILAR</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* SECTION 4: STRAIGHTFORWARD FAQS */}
+      <section className="border-b border-white/10 px-6 py-20 bg-[#080808]">
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center mb-14">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
+              // FREQUENTLY ASKED QUESTIONS
+            </span>
+            <h2 className="mt-2 font-['Syne'] text-3xl font-extrabold text-white">
+              Everything You Need to Know Before Starting
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {FAQS.map((faq, idx) => (
+              <div
+                key={idx}
+                className="rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 backdrop-blur-sm"
+              >
+                <h3 className="font-['Syne'] text-base font-bold text-white sm:text-lg flex items-start gap-3">
+                  <span className="font-mono text-xs text-[#d4a853] shrink-0 mt-1">0{idx + 1}.</span>
+                  <span>{faq.q}</span>
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm leading-relaxed text-[#9a958c] pl-7">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: FINAL DIRECT WHATSAPP BOOKING CALLOUT */}
+      <section className="px-6 py-20 bg-gradient-to-b from-[#0a0a0a] to-[#050505]">
+        <div className="mx-auto max-w-4xl rounded-3xl border border-[#d4a853]/40 bg-[#14120e] p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-[#d4a853]/10 blur-3xl" />
+          
+          <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
+            // READY TO SCALE YOUR BRAND ONLINE?
+          </span>
+          <h2 className="mt-3 font-['Syne'] text-3xl font-extrabold text-white sm:text-4xl">
+            Let&apos;s Build Your Website in the Next 3 to 7 Days
+          </h2>
+          <p className="mt-3 text-sm text-[#9a958c] max-w-xl mx-auto">
+            Direct access to lead software engineers. Send us your requirements, select your tier (₹5k, ₹7k, ₹12k, or ₹20k), and receive a live preview link in 48 hours.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={getWhatsAppUrl("Hi Gurdharam, I am ready to start my website project. Let's discuss requirements.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-8 py-4 font-mono text-xs font-bold text-black transition-all hover:bg-white hover:shadow-[0_0_25px_rgba(37,211,102,0.4)]"
+            >
+              <MessageCircle className="h-4 w-4" />
+              <span>CHAT ON WHATSAPP (+91 62803 33252)</span>
+            </a>
+            <Link
+              to="/"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-4 font-mono text-xs font-semibold text-white hover:border-white/40 transition-colors"
+            >
+              <span>EXPLORE STUDIO HEADQUARTERS</span>
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Global Studio Footer */}
       <Footer />
