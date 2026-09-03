@@ -7,15 +7,17 @@ import {
   Check,
   X,
   Zap,
-  Globe,
-  Box,
-  Layers,
   Search,
   ShieldCheck,
   MessageCircle,
   ExternalLink,
   ChevronRight,
-  HelpCircle
+  MapPin,
+  Flame,
+  Award,
+  Cpu,
+  Clock,
+  CheckCircle2
 } from 'lucide-react';
 import Footer from '../components/ui/footer';
 import { getWhatsAppUrl } from '../lib/whatsapp';
@@ -28,6 +30,7 @@ interface PricingTier {
   tagline: string;
   badge?: string;
   badgeColor?: string;
+  highlightPill: string;
   bestFor: string;
   timeline: string;
   features: { title: string; included: boolean; detail?: string }[];
@@ -45,25 +48,26 @@ const PRICING_TIERS: PricingTier[] = [
     name: 'Starter Business',
     price: '₹5,000',
     originalPrice: '₹8,000',
-    tagline: 'Fast, modern single-page business presence',
-    bestFor: 'Freelancers, small local vendors, or consultants needing a clean digital identity.',
+    tagline: 'Clean, high-speed single-page web presence',
+    highlightPill: '⚡ 48-Hour Rapid Launch',
+    bestFor: 'Freelancers, interior decorators, consultants, or local vendors who share their portfolio directly on WhatsApp & Instagram.',
     timeline: '2–3 Days Delivery',
     features: [
-      { title: 'Responsive Mobile & Desktop UI', included: true },
+      { title: 'Responsive Mobile & Desktop UI (Hand-Coded)', included: true },
       { title: 'Fast Vercel Edge Hosting (₹0/month lifetime)', included: true },
       { title: 'Direct WhatsApp & Phone Click-to-Call CTAs', included: true },
       { title: 'Custom Domain Connection & SSL Security', included: true },
       { title: 'Clean Typography & Product / Service Showcase', included: true },
-      { title: 'Google Search Console (GSC) API Fast-Indexing', included: false, detail: 'Not included' },
-      { title: 'Google LocalBusiness Schema Markup', included: false, detail: 'Not included' },
-      { title: 'Interactive 3D WebGL Viewport', included: false, detail: 'Not included' },
+      { title: 'Google Search Console (GSC) API Fast-Indexing', included: false, detail: 'Available in ₹7k Tier' },
+      { title: 'Google LocalBusiness Schema & Maps Alignment', included: false, detail: 'Available in ₹7k Tier' },
+      { title: 'Interactive 3D WebGL Model Viewport', included: false, detail: 'Available in ₹12k Tier' },
     ],
     exampleName: 'Kirat Interior (Core Layout)',
     exampleUrl: 'https://kiratinterior.com',
-    exampleNote: 'Baseline spatial catalog & inquiry flow (Without GSC fast-indexing or schema)',
+    exampleNote: 'Baseline luxury catalog & inquiry funnel (Without GSC fast-indexing or Google Local schema)',
     whatsappMessage: "Hi Gurdharam, I want to book the ₹5,000 Starter Business Website package.",
     accentBorder: 'border-white/15 hover:border-white/40',
-    accentBg: 'bg-[#111111]/80',
+    accentBg: 'bg-[#111111]/90',
   },
   {
     id: 'basic-plus-7k',
@@ -71,26 +75,27 @@ const PRICING_TIERS: PricingTier[] = [
     price: '₹7,000',
     originalPrice: '₹12,000',
     tagline: 'High-ranking local flagship engineered for Google Search',
-    badge: 'MOST POPULAR',
+    badge: 'MOST POPULAR // HIGH ROI',
     badgeColor: 'bg-[#d4a853] text-[#080808]',
-    bestFor: 'Showrooms, clinics, local architects, & stores that want actual paying customers from Google.',
+    highlightPill: '🔥 Google Inbound Leads Engine',
+    bestFor: 'Showrooms, furniture studios, clinics, architects, & stores that want actual paying customers finding them first on Google.',
     timeline: '3–5 Days Delivery',
     features: [
-      { title: 'Everything in Starter (₹5,000)', included: true },
+      { title: 'Everything in Starter Business (₹5,000)', included: true },
       { title: 'Google Search Console (GSC) API Instant Indexing', included: true, detail: 'Pushed to Google index in hours' },
-      { title: '100% Google LocalBusiness Schema & Geo Coordinates', included: true, detail: 'Rich local snippets' },
-      { title: 'Local Search Keyword Optimization & Meta Tags', included: true, detail: 'Rank in your city/region' },
-      { title: 'Dynamic XML Sitemap & Search Engine Ping Protocol', included: true },
-      { title: '98+ Google Lighthouse Performance & Zero-CLS Layout', included: true },
-      { title: 'Interactive 3D WebGL Viewport', included: false, detail: 'Not included' },
-      { title: 'Custom Shader & Cinematic Walkthrough', included: false, detail: 'Not included' },
+      { title: '100% Google LocalBusiness Schema & Geo Coordinates', included: true, detail: 'Rich local search snippets' },
+      { title: 'Local Search Keyword Optimization & Meta Tags', included: true, detail: 'Target your city & region' },
+      { title: 'Google Maps Business Listing Integration', included: true },
+      { title: '98+ Google Lighthouse Performance & Zero-CLS Score', included: true },
+      { title: 'Interactive 3D WebGL Model Viewport', included: false, detail: 'Available in ₹12k Tier' },
+      { title: '120 FPS Architectural Walkthrough', included: false, detail: 'Available in ₹20k Tier' },
     ],
-    exampleName: 'Kirat Interior (Live Production)',
+    exampleName: 'Kirat Interior (Live Production Flagship)',
     exampleUrl: 'https://kiratinterior.com',
-    exampleNote: 'Complete Google Local SEO, schema markup, and high-conversion furniture booking funnel',
+    exampleNote: 'Top-ranked in Bathinda for bespoke furniture via LocalBusiness schema & high-conversion WhatsApp funnel',
     whatsappMessage: "Hi Gurdharam, I want to book the ₹7,000 Growth Business + SEO package with Google indexing.",
-    accentBorder: 'border-[#d4a853]/60 shadow-[0_0_35px_rgba(212,168,83,0.15)]',
-    accentBg: 'bg-[#15130f]/90',
+    accentBorder: 'border-[#d4a853] shadow-[0_0_40px_rgba(212,168,83,0.18)]',
+    accentBg: 'bg-[#15130f]/95',
   },
   {
     id: 'interactive-12k',
@@ -98,9 +103,10 @@ const PRICING_TIERS: PricingTier[] = [
     price: '₹12,000',
     originalPrice: '₹18,000',
     tagline: 'Interactive 3D model viewport & butter-smooth scroll motion',
-    badge: 'HIGH IMPACT',
+    badge: 'HIGH TECH',
     badgeColor: 'bg-[#38bdf8] text-[#080808]',
-    bestFor: 'Modern tech agencies, creative design studios, and brands looking to outshine generic sites.',
+    highlightPill: '🕹️ 3D Model Orbit & Kinetic Scroll',
+    bestFor: 'Modern tech agencies, creative design studios, and product brands wanting an interactive edge over static templates.',
     timeline: '5–7 Days Delivery',
     features: [
       { title: 'Everything in Growth + SEO (₹7,000)', included: true },
@@ -116,8 +122,8 @@ const PRICING_TIERS: PricingTier[] = [
     exampleUrl: 'https://neovrit.vercel.app',
     exampleNote: 'Interactive GLTF viewport, stacked section scroll physics, and Supabase integration',
     whatsappMessage: "Hi Gurdharam, I want to commission the ₹12,000 2D + 3D Interactive Website package like NEOVRIT.",
-    accentBorder: 'border-[#38bdf8]/40 hover:border-[#38bdf8]/70',
-    accentBg: 'bg-[#0b161b]/80',
+    accentBorder: 'border-[#38bdf8]/50 hover:border-[#38bdf8]/80 shadow-[0_0_30px_rgba(56,189,248,0.12)]',
+    accentBg: 'bg-[#0b161b]/90',
   },
   {
     id: 'flagship-20k',
@@ -127,7 +133,8 @@ const PRICING_TIERS: PricingTier[] = [
     tagline: 'Awwwards-grade cinematic 3D spatial experience',
     badge: 'STUDIO FLAGSHIP',
     badgeColor: 'bg-gradient-to-r from-[#d4a853] to-[#e6c07b] text-[#080808]',
-    bestFor: 'Ultra-luxury real estate developers, spatial architecture firms, and high-ticket flagship brands.',
+    highlightPill: '👑 Awwwards-Caliber 3D Spatial Environment',
+    bestFor: 'Ultra-luxury real estate developers, spatial architecture firms, high-ticket brands, and visionary founders.',
     timeline: '7–14 Days Delivery',
     features: [
       { title: 'Full Three.js WebGL / Framer Spatial Architecture', included: true },
@@ -139,12 +146,12 @@ const PRICING_TIERS: PricingTier[] = [
       { title: 'Full SSR / SSG Prerendered Zero-Flicker Architecture', included: true },
       { title: 'Priority Developer Support & Quarterly Refresh Pass', included: true },
     ],
-    exampleName: 'Dream Heights & NEOVRIT Tier',
+    exampleName: 'Dream Heights & Gurdharam.com',
     exampleUrl: 'https://framersite.vercel.app/',
-    exampleNote: '16-Storey luxury towers, botanical sanctuary walkthrough, and VIP booking pipeline',
+    exampleNote: '16-Storey luxury towers, custom WebGL spatial environment & portfolio flagships',
     whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 Ultra 3D Spatial Flagship Website like Dream Heights.",
-    accentBorder: 'border-[#d4a853] shadow-[0_0_40px_rgba(212,168,83,0.22)]',
-    accentBg: 'bg-[#18140c]/90',
+    accentBorder: 'border-[#d4a853] shadow-[0_0_45px_rgba(212,168,83,0.25)]',
+    accentBg: 'bg-[#18140c]/95',
   },
 ];
 
@@ -160,6 +167,7 @@ interface ShowcaseItem {
   imageSrc: string;
   tagline: string;
   description: string;
+  highlightDeliverables: { label: string; value: string }[];
   specs: string[];
   techPills: string[];
   rateText: string;
@@ -169,20 +177,26 @@ interface ShowcaseItem {
 const SHOWCASE_ITEMS: ShowcaseItem[] = [
   {
     id: 'kirat',
-    title: 'Kirat Interior // Bespoke Furniture Studio',
+    title: 'Kirat Interior // Luxury Furniture & Modular Studio',
     category: 'business',
     categoryLabel: 'CLIENT PRODUCTION FLAGSHIP',
     tierBadge: 'TIER: ₹7,000 [GROWTH + SEO]',
-    tierColor: 'border-[#d4a853]/40 bg-[#d4a853]/15 text-[#d4a853]',
+    tierColor: 'border-[#d4a853] bg-[#d4a853]/15 text-[#d4a853]',
     liveUrl: 'https://kiratinterior.com',
     displayUrl: 'kiratinterior.com',
     imageSrc: '/assets/showcase/kirat-interior-pc.webp',
-    tagline: 'Luxury modular kitchens, custom wardrobes & bespoke furniture in Bathinda',
-    description: 'High-conversion regional flagship for Kirat Interior by Handeep Singh. Engineered for immediate Google Search capture with local schema, fast consultation booking, and editorial design.',
+    tagline: 'Hand-crafted modular kitchens, luxury wardrobes & bespoke interiors by Handeep Singh',
+    description: 'High-conversion regional flagship engineered for Kirat Interior. Designed with deep editorial typography, warm golden accents, direct room-dimension inquiry routing to WhatsApp, and 100% Google Local SEO dominance in Bathinda.',
+    highlightDeliverables: [
+      { label: 'Founder Authority', value: 'Handeep Singh' },
+      { label: 'Primary Region', value: 'Bathinda & Punjab' },
+      { label: 'Google Search', value: '#1 Ranked Locally' },
+      { label: 'Inquiry Funnel', value: 'Instant WhatsApp CTA' }
+    ],
     specs: [
       'Google LocalBusiness Schema & instant search ranking in Bathinda',
       'High-conversion luxury consultation booking with instant WhatsApp dispatch',
-      '99/100 Core Web Vitals score on mobile and desktop'
+      '99/100 Core Web Vitals score on mobile and desktop devices'
     ],
     techPills: ['React', 'Local Schema', 'TailwindCSS', 'Meta Pixel', 'Vercel Edge'],
     rateText: '₹5,000 (Basic) or ₹7,000 (With Full SEO)',
@@ -190,16 +204,22 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
   },
   {
     id: 'neovrit',
-    title: 'NEOVRIT // 3D × AI Engineering Studio',
+    title: 'NEOVRIT // 3D Simulation & AI Engineering Studio',
     category: 'spatial-3d',
-    categoryLabel: '3D SPATIAL & AI',
+    categoryLabel: '3D SPATIAL & AI AGENCY',
     tierBadge: 'TIER: ₹12,000 [2D + 3D INTERACTIVE]',
-    tierColor: 'border-[#38bdf8]/40 bg-[#38bdf8]/15 text-[#38bdf8]',
+    tierColor: 'border-[#38bdf8] bg-[#38bdf8]/15 text-[#38bdf8]',
     liveUrl: 'https://neovrit.vercel.app',
     displayUrl: 'neovrit.vercel.app',
     imageSrc: '/assets/showcase/neovrit-pc.webp',
-    tagline: 'Interactive Three.js GLTF canvas with stacked Lenis smooth scroll',
-    description: 'Cutting-edge agency web environment featuring interactive 3D model viewports, hardware-accelerated scroll choreographies, and real-time Supabase backend integrations.',
+    tagline: '"VR LIKE IT\'S REAL" — Unity, Maya, AI/LLM & Interactive Three.js WebGL',
+    description: 'Cutting-edge agency web environment featuring an interactive Three.js GLTF model viewport with mouse-orbit physics, stacked card scroll choreography via Lenis, and real-time Supabase backend integrations.',
+    highlightDeliverables: [
+      { label: 'Interactive 3D', value: 'Three.js GLTF Orbit' },
+      { label: 'Motion Physics', value: 'Lenis 120Hz Smooth Scroll' },
+      { label: 'Studio Traction', value: '200+ 3D Assets Delivered' },
+      { label: 'Telemetry', value: 'Supabase Real-Time' }
+    ],
     specs: [
       'Interactive Three.js r128 GLTF model viewport with mouse orbit controls',
       'Sticky-stack layered scroll physics engineered with Lenis',
@@ -211,7 +231,7 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
   },
   {
     id: 'dreamheights',
-    title: 'Dream Heights // Ultra-Luxury 3D Real Estate',
+    title: 'Dream Heights // Ultra-Luxury 3D Real Estate Towers',
     category: 'spatial-3d',
     categoryLabel: 'ULTRA-LUXURY FLAGSHIP',
     tierBadge: 'TIER: ₹20,000 [ULTRA 3D FLAGSHIP]',
@@ -219,8 +239,14 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     liveUrl: 'https://framersite.vercel.app/',
     displayUrl: 'framersite.vercel.app',
     imageSrc: '/assets/showcase/dreamheights-pc.webp',
-    tagline: '16-Storey Luxury Residences, Royal Clubhouse & Botanical Walkthrough',
-    description: 'Cinematic 3D architectural showcase created for Dream Heights. Features 16-storey iconic luxury towers, royal clubhouse amenities, and luxury VIP booking funnels.',
+    tagline: '"HIGH HEAVENS. Home is the nicest word there is." — 16-Storey Iconic Towers',
+    description: 'Cinematic 3D architectural showcase created for Dream Heights. Features 16-storey iconic luxury towers, 7.5-acre botanical sanctuary, royal clubhouse walkthroughs, RevealFlow preloader, and high-net-worth VIP booking funnels.',
+    highlightDeliverables: [
+      { label: 'Architectural Scale', value: '16-Storey Luxury Towers' },
+      { label: 'Spatial Engine', value: 'Framer WebGL 120 FPS' },
+      { label: 'Preloader', value: 'RevealFlow Asset Flow' },
+      { label: 'VIP Funnel', value: 'HNW Booking Funnel' }
+    ],
     specs: [
       'Cinematic 3D architectural rendering & progressive RevealFlow preloader',
       'Butter-smooth scroll choreography running at steady 120 FPS',
@@ -229,6 +255,33 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     techPills: ['Framer WebGL', 'React', 'Motion FX', 'TailwindCSS', 'Edge CDN'],
     rateText: '₹20,000 (Flagship Spatial Tier)',
     inquiryMessage: "Hi Gurdharam, I want a luxury 3D architectural flagship website like Dream Heights."
+  },
+  {
+    id: 'gurdharam-hq',
+    title: 'Gurdharam.com // Autonomous AI & Spatial Flagship',
+    category: 'spatial-3d',
+    categoryLabel: 'STUDIO HEADQUARTERS FLAGSHIP',
+    tierBadge: 'TIER: ₹20,000 [FLAGSHIP SPATIAL]',
+    tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
+    liveUrl: 'https://gurdharam.com',
+    displayUrl: 'gurdharam.com',
+    imageSrc: '/assets/showcase/gurdharam-pc.webp',
+    tagline: 'Procedural particle canvas, zero-latency WebRTC voice AI & offline enterprise ML',
+    description: 'Studio headquarters platform engineered with custom WebGL particle canvas, full static SSR prerendering, sub-500ms voice pipelines, and 100/100 Core Web Vitals score.',
+    highlightDeliverables: [
+      { label: 'Performance', value: '100/100 Core Web Vitals' },
+      { label: 'Track Record', value: '1+ Yr Exp, 20+ Clients' },
+      { label: 'Voice AI Latency', value: '<500ms WebRTC Stream' },
+      { label: 'Codebase', value: '100% Custom & Air-Gapped' }
+    ],
+    specs: [
+      '100/100 Core Web Vitals score across desktop and mobile devices',
+      'Procedural WebGL interactive particle canvas & dark mode cybernetic styling',
+      'Sub-500ms real-time WebRTC voice AI telephony integration'
+    ],
+    techPills: ['React 19', 'Three.js / WebGL', 'TailwindCSS', 'SSR Prerender', 'Vercel Edge'],
+    rateText: '₹20,000 (Flagship Spatial Tier)',
+    inquiryMessage: "Hi Gurdharam, I want to commission a flagship web platform like Gurdharam.com."
   },
   {
     id: 'doodhisaab',
@@ -242,6 +295,12 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     imageSrc: '/assets/portfolio/doodhisaab-screenshot.jpg',
     tagline: 'Zero-internet milk pricing matrix, shift ledgers & Bluetooth thermal printing',
     description: 'Industrial-grade offline dairy management application engineered for rural dairy centers across Punjab. Operates 100% locally in SQLite without cloud dependencies.',
+    highlightDeliverables: [
+      { label: 'Database', value: '100% Offline SQLite' },
+      { label: 'Hardware', value: 'ESC/POS Bluetooth Thermal' },
+      { label: 'Languages', value: 'Punjabi, Hindi, English' },
+      { label: 'Target', value: 'Rural Collection Centers' }
+    ],
     specs: [
       '100% offline local SQLite storage with automated FAT/SNF pricing',
       'Thermal receipt printer integration via Bluetooth ESC/POS (58mm/80mm)',
@@ -263,6 +322,12 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     imageSrc: '/assets/portfolio/fasal-doctor-screenshot.png',
     tagline: '85ms quantized edge-AI neural network for crop disease diagnosis',
     description: 'Edge-AI mobile diagnostic tool built for farmers in Punjab. Runs quantized MobileNet neural network models directly on budget Android phones in 85ms with voice remedies.',
+    highlightDeliverables: [
+      { label: 'Latency', value: '85ms On-Device Inference' },
+      { label: 'Model', value: 'Quantized MobileNetV3' },
+      { label: 'Accuracy', value: '30+ Regional Crop Diseases' },
+      { label: 'Audio', value: 'Punjabi & Hindi Voice TTS' }
+    ],
     specs: [
       'Quantized MobileNetV3 / TFLite models running locally at 45 FPS',
       'Identifies 30+ regional crop diseases with zero internet connection',
@@ -284,6 +349,12 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     imageSrc: '/assets/portfolio/aiinterviewer.png',
     tagline: 'Sub-500ms real-time voice AI interview simulation with live code testing',
     description: 'Enterprise technical interview simulation platform featuring continuous real-time audio streams, natural speech interruptions, and automated rubric scoring.',
+    highlightDeliverables: [
+      { label: 'Voice Latency', value: '<500ms WebRTC Stream' },
+      { label: 'Evaluation', value: 'Automated Rubric Scoring' },
+      { label: 'Testing', value: 'In-Browser Code Execution' },
+      { label: 'Speech Model', value: 'Whisper + Sarvam AI' }
+    ],
     specs: [
       'Sub-500ms voice round-trip latency via streaming WebRTC audio',
       'Adaptive question generation tailored to candidate seniority',
@@ -320,10 +391,19 @@ const FAQS = [
 
 export default function WebsitesShowcase() {
   const [activeShowcaseFilter, setActiveShowcaseFilter] = useState<'all' | 'business' | 'spatial-3d' | 'apps'>('all');
+  const [highlightedTier, setHighlightedTier] = useState<string | null>(null);
 
   const filteredItems = activeShowcaseFilter === 'all' 
     ? SHOWCASE_ITEMS 
     : SHOWCASE_ITEMS.filter((item) => item.category === activeShowcaseFilter);
+
+  const scrollToTier = (tierId: string) => {
+    setHighlightedTier(tierId);
+    const el = document.getElementById(tierId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#080808] text-[#f0ede6] selection:bg-[#d4a853]/30 selection:text-white font-sans antialiased">
@@ -372,8 +452,48 @@ export default function WebsitesShowcase() {
             Fixed-price, production-grade websites with zero agency bureaucracy. From fast local business flagships to 120 FPS 3D spatial environments.
           </p>
 
+          {/* Interactive Tier Helper / Quick Selector */}
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-4 max-w-3xl mx-auto backdrop-blur-md">
+            <span className="font-mono text-[0.68rem] uppercase tracking-widest text-[#d4a853] block mb-2.5">
+              // QUICK SELECTOR — WHAT DO YOU WANT TO BUILD?
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 font-mono text-xs">
+              <button
+                onClick={() => scrollToTier('basic-5k')}
+                className="cursor-pointer rounded-lg border border-white/10 bg-white/5 p-2.5 text-left hover:border-[#d4a853] hover:text-[#d4a853] transition-all"
+              >
+                <div className="text-white font-bold">₹5,000 Starter</div>
+                <div className="text-[0.65rem] text-[#9a958c]">Digital card & catalog</div>
+              </button>
+              <button
+                onClick={() => scrollToTier('basic-plus-7k')}
+                className="cursor-pointer rounded-lg border border-[#d4a853] bg-[#d4a853]/15 p-2.5 text-left text-[#d4a853] transition-all shadow-[0_0_15px_rgba(212,168,83,0.15)]"
+              >
+                <div className="font-bold flex items-center justify-between">
+                  <span>₹7,000 SEO</span>
+                  <Flame className="h-3 w-3 text-[#d4a853]" />
+                </div>
+                <div className="text-[0.65rem] text-[#d4a853]/80">Google search leads</div>
+              </button>
+              <button
+                onClick={() => scrollToTier('interactive-12k')}
+                className="cursor-pointer rounded-lg border border-white/10 bg-white/5 p-2.5 text-left hover:border-[#38bdf8] hover:text-[#38bdf8] transition-all"
+              >
+                <div className="text-white font-bold">₹12,000 3D</div>
+                <div className="text-[0.65rem] text-[#9a958c]">Interactive GLTF orbit</div>
+              </button>
+              <button
+                onClick={() => scrollToTier('flagship-20k')}
+                className="cursor-pointer rounded-lg border border-white/10 bg-white/5 p-2.5 text-left hover:border-[#d4a853] hover:text-[#d4a853] transition-all"
+              >
+                <div className="text-white font-bold">₹20,000 Flagship</div>
+                <div className="text-[0.65rem] text-[#9a958c]">120 FPS spatial twin</div>
+              </button>
+            </div>
+          </div>
+
           {/* Core Guarantees Badges */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 font-mono text-xs text-[#f0ede6]">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 font-mono text-xs text-[#f0ede6]">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
               <Zap className="h-3.5 w-3.5 text-[#d4a853]" />
               <span>₹5k – ₹20k Flat Pricing</span>
@@ -390,22 +510,6 @@ export default function WebsitesShowcase() {
               <ShieldCheck className="h-3.5 w-3.5 text-[#d4a853]" />
               <span>100% Code Ownership</span>
             </span>
-          </div>
-
-          {/* Quick Anchor Jumper */}
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <a
-              href="#pricing"
-              className="rounded-xl bg-[#d4a853] px-6 py-3 font-mono text-xs font-bold text-[#080808] transition-all hover:bg-white hover:shadow-[0_0_20px_rgba(212,168,83,0.3)]"
-            >
-              EXPLORE PRICING PACKAGES ↓
-            </a>
-            <a
-              href="#showcase"
-              className="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-mono text-xs font-semibold text-white transition-all hover:border-[#d4a853] hover:text-[#d4a853]"
-            >
-              VIEW LIVE SHOWCASE ↓
-            </a>
           </div>
         </div>
       </section>
@@ -430,7 +534,12 @@ export default function WebsitesShowcase() {
             {PRICING_TIERS.map((tier) => (
               <div
                 key={tier.id}
-                className={`relative flex flex-col justify-between rounded-2xl border ${tier.accentBorder} ${tier.accentBg} p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1`}
+                id={tier.id}
+                className={`relative flex flex-col justify-between rounded-2xl border ${
+                  highlightedTier === tier.id 
+                    ? 'border-[#d4a853] ring-2 ring-[#d4a853]/50 scale-[1.02]' 
+                    : tier.accentBorder
+                } ${tier.accentBg} p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1`}
               >
                 {/* Badge if present */}
                 {tier.badge && (
@@ -447,7 +556,10 @@ export default function WebsitesShowcase() {
                     <h3 className="font-['Syne'] text-xl font-bold text-white">
                       {tier.name}
                     </h3>
-                    <p className="mt-1 font-mono text-xs text-[#9a958c] min-h-[32px]">
+                    <div className="mt-1 inline-block rounded border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[0.68rem] text-[#d4a853]">
+                      {tier.highlightPill}
+                    </div>
+                    <p className="mt-2 font-mono text-xs text-[#9a958c] min-h-[32px]">
                       {tier.tagline}
                     </p>
                   </div>
@@ -466,7 +578,7 @@ export default function WebsitesShowcase() {
                       <span className="font-mono text-xs text-[#d4a853]">/ flat</span>
                     </div>
                     <div className="mt-1.5 flex items-center gap-1.5 font-mono text-[0.7rem] text-[#25D366]">
-                      <Zap className="h-3 w-3" />
+                      <Clock className="h-3 w-3" />
                       <span>{tier.timeline}</span>
                     </div>
                   </div>
@@ -623,11 +735,11 @@ export default function WebsitesShowcase() {
                   <td className="p-4 text-center text-[#d4a853] font-bold"><Check className="h-4 w-4 mx-auto" /></td>
                 </tr>
                 <tr>
-                  <td className="p-4 font-sans font-medium text-white">Real-World Case Study Reference</td>
+                  <td className="p-4 font-sans font-medium text-white">Real-World Production Proof</td>
                   <td className="p-4 text-center text-[#9a958c]">Kirat Interior (Core)</td>
                   <td className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5 font-bold">Kirat Interior (Live)</td>
                   <td className="p-4 text-center text-[#38bdf8]">NEOVRIT Studio</td>
-                  <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights 3D</td>
+                  <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights & Gurdharam.com</td>
                 </tr>
               </tbody>
             </table>
@@ -661,7 +773,7 @@ export default function WebsitesShowcase() {
                     : 'border border-white/10 bg-white/5 text-[#9a958c] hover:border-white/20 hover:text-white'
                 }`}
               >
-                ALL PROJECTS
+                ALL PROJECTS ({SHOWCASE_ITEMS.length})
               </button>
               <button
                 onClick={() => setActiveShowcaseFilter('business')}
@@ -754,6 +866,16 @@ export default function WebsitesShowcase() {
                   <p className="mt-3 text-xs leading-relaxed text-[#9a958c]">
                     {item.description}
                   </p>
+
+                  {/* Key Highlights Deliverables Box */}
+                  <div className="mt-4 grid grid-cols-2 gap-2 rounded-xl border border-white/5 bg-black/40 p-3">
+                    {item.highlightDeliverables.map((d, dIdx) => (
+                      <div key={dIdx} className="font-mono text-[0.68rem]">
+                        <span className="text-[#9a958c] block">{d.label}:</span>
+                        <strong className="text-white font-medium">{d.value}</strong>
+                      </div>
+                    ))}
+                  </div>
 
                   {/* Bullet Specs */}
                   <ul className="mt-4 space-y-1.5 border-t border-white/10 pt-3 text-xs text-[#f0ede6]">

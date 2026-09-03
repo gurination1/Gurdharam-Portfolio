@@ -117,7 +117,7 @@ const routes = [
           "@id": "https://www.gurdharam.com/websites#collection",
           "url": "https://www.gurdharam.com/websites",
           "name": "Website Development Rates (₹5,000 - ₹20,000) & Live Client Showcase",
-          "description": "Transparent website development rates and production client showcase: Kirat Interior (₹5k/₹7k), NEOVRIT Studio (₹12k), and Dream Heights 3D (₹20k)."
+          "description": "Transparent website development rates and production client showcase: Kirat Interior (₹5k/₹7k), NEOVRIT Studio (₹12k), and Dream Heights & Gurdharam.com (₹20k)."
         }
       ]
     },
@@ -131,7 +131,7 @@ const routes = [
           <ul>
             <li><strong>Kirat Interior</strong>: Bespoke luxury furniture & interior studio (Bathinda, Punjab).</li>
             <li><strong>NEOVRIT Studio</strong>: 3D × AI agency web environment with Three.js GLTF model viewport.</li>
-            <li><strong>Dream Heights</strong>: 16-storey ultra-luxury residential architectural 3D showcase.</li>
+            <li><strong>Dream Heights & Gurdharam.com</strong>: 16-storey ultra-luxury residential architectural 3D showcase & studio headquarters flagship.</li>
           </ul>
         </section>
       </main>`
