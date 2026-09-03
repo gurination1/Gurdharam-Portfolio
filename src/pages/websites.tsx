@@ -75,7 +75,7 @@ const PRICING_TIERS: PricingTier[] = [
     price: '₹7,000',
     originalPrice: '₹12,000',
     tagline: 'High-ranking local flagship engineered for Google Search',
-    badge: 'MOST POPULAR // HIGH ROI',
+    badge: 'MOST POPULAR',
     badgeColor: 'bg-[#d4a853] text-[#080808]',
     highlightPill: '🔥 Google Inbound Leads Engine',
     bestFor: 'Showrooms, furniture studios, clinics, architects, & stores that want actual paying customers finding them first on Google.',
@@ -544,7 +544,7 @@ export default function WebsitesShowcase() {
                 {/* Badge if present */}
                 {tier.badge && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className={`rounded-full px-3 py-1 font-mono text-[0.65rem] font-extrabold tracking-wider ${tier.badgeColor} shadow-md`}>
+                    <span className={`whitespace-nowrap rounded-full px-3 py-1 font-mono text-[0.65rem] font-extrabold tracking-wider ${tier.badgeColor} shadow-md`}>
                       {tier.badge}
                     </span>
                   </div>
