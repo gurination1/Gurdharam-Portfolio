@@ -14,20 +14,20 @@ const template = fs.readFileSync(templatePath, 'utf8');
 const routes = [
   {
     path: '/',
-    title: 'Gurdharam | AI & Web Developer Punjab',
-    description: 'AI Engineer & Full Stack Web/App Developer based in Punjab (Muktsar/Bathinda). Building offline AI, WhatsApp bots, and future-proof websites.',
+    title: 'Gurdharam | Enterprise AI & Web Developer',
+    description: 'Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence.',
     canonical: 'https://www.gurdharam.com/',
     html: `
       <main>
         <header>
-          <h1>AI & Web Developer in Punjab — Gurdharam Jeet Singh</h1>
-          <p>Professional Full Stack Developer and AI Engineer in Muktsar & Bathinda, Punjab. Building high-end websites, offline-first mobile apps, and custom WhatsApp automation bots.</p>
+          <h1>Enterprise AI & Web Developer — Gurdharam Jeet Singh</h1>
+          <p>Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence systems.</p>
         </header>
 
         <section id="about">
           <h2>About Gurdharam Jeet Singh</h2>
-          <p>Based in Muktsar, Punjab, I build production-grade web platforms and custom AI integrations. Specializing in Node.js, React, Python, and Flutter, I engineer usable intelligence systems that drive sales, automate workflows, and reduce operational overhead for local and international clients.</p>
-          <p>My work combines modern web architectures with on-device machine learning and conversational interfaces. Whether you need a 3D interactive marketing website, a custom WhatsApp AI assistant for client acquisition, or a localized mobile app that runs offline in rural areas, I deliver optimized, production-ready solutions tailored to your business needs.</p>
+          <p>Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence. Combining global enterprise execution with independent boutique development speed.</p>
+          <p>Specializing in Node.js, React, Python, and Flutter, I engineer usable intelligence systems that drive sales, automate workflows, and reduce operational overhead for local, enterprise, and international clients.</p>
         </section>
 
         <section id="services">

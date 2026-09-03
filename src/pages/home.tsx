@@ -933,8 +933,8 @@ function Hero() {
       </div>
       <div className="hero-grid">
         <div>
-          <h1 className="hero-title" aria-label="Gurdharam Jeet Singh | AI & Web Developer in Punjab">
-            <span className="sr-only">Professional Web Developer and AI Engineer in Muktsar & Bathinda, Punjab</span>
+          <h1 className="hero-title" aria-label="Gurdharam: Enterprise & Independent AI and Web Developer">
+            <span className="sr-only">Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence.</span>
             {['GURDHARAM', 'JEET', 'SINGH'].map((word) => (
               <span className="hero-line" key={word}>
                 <span className={`hero-word ${word === 'JEET' ? 'gold' : ''}`}>{word}</span>
@@ -1150,7 +1150,7 @@ function About() {
         </div>
         <div className="about-copy">
           <MagicText
-            text="Our enterprise engineering studio architects high-impact web platforms, autonomous AI pipelines, and offline-first mobile apps. We build systems that think, automate revenue, and scale operations worldwide."
+            text="Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence. Building systems that think, automate revenue, and scale operations worldwide."
           />
           <div className="chips">
             {['LLM Engineering', 'Prompt Architecture', 'Autonomous AI Bots', 'Website', 'Web Design', 'Dashboard', 'Visual Documentation', 'AI Fine Tuning', 'AI Training', 'AI Optimisation', 'Flutter / Dart', 'Python', 'FFmpeg Pipelines', 'ComfyUI', 'On-Device ML', 'REST APIs'].map((chip) => (

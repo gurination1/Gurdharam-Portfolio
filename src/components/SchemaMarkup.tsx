@@ -25,6 +25,7 @@ export default function SchemaMarkup() {
     "@type": "Organization",
     "@id": "https://www.gurdharam.com/#organization",
     "name": "Gurdharam AI Engineering",
+    "description": "Gurdharam: An Enterprise and independent AI & web engineering studio focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence.",
     "url": "https://www.gurdharam.com",
     "logo": "https://www.gurdharam.com/og-card.png",
     "sameAs": [
@@ -46,7 +47,8 @@ export default function SchemaMarkup() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Gurdharam Jeet Singh | AI & Web Developer",
+    "name": "Gurdharam Jeet Singh | Enterprise AI & Web Developer",
+    "description": "Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence.",
     "url": "https://www.gurdharam.com"
   };
 
@@ -89,7 +91,8 @@ export default function SchemaMarkup() {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Gurdharam Jeet Singh",
-      "jobTitle": "AI Engineer & Full-Stack Developer",
+      "jobTitle": "Enterprise AI Engineer & Full Stack Web Architect",
+      "description": "Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline machine learning.",
       "url": "https://www.gurdharam.com",
       "sameAs": [
         "https://github.com/gurination1",
