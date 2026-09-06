@@ -147,8 +147,8 @@ const PRICING_TIERS: PricingTier[] = [
       { title: 'Priority Developer Support & Quarterly Refresh Pass', included: true },
     ],
     exampleName: 'Dream Heights & Gurdharam.com',
-    exampleUrl: 'https://framersite.vercel.app/',
-    exampleNote: '16-Storey luxury towers, custom WebGL spatial environment & portfolio flagships',
+    exampleUrl: 'https://dreamheights-source.vercel.app/',
+    exampleNote: 'Luxury gated residences on Ring Road Bathinda (2&3 BHK, saltwater pool, Day/Night engine) & Framer spatial flagship',
     whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 Ultra 3D Spatial Flagship Website like Dream Heights.",
     accentBorder: 'border-[#d4a853] shadow-[0_0_45px_rgba(212,168,83,0.25)]',
     accentBg: 'bg-[#18140c]/95',
@@ -164,6 +164,8 @@ interface ShowcaseItem {
   tierColor: string;
   liveUrl: string;
   displayUrl: string;
+  secondaryLiveUrl?: string;
+  secondaryDisplayUrl?: string;
   imageSrc: string;
   tagline: string;
   description: string;
@@ -231,30 +233,33 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
   },
   {
     id: 'dreamheights',
-    title: 'Dream Heights // Ultra-Luxury 3D Real Estate Towers',
+    title: 'Dream Heights // Luxury Gated Residences (Bathinda)',
     category: 'spatial-3d',
-    categoryLabel: 'ULTRA-LUXURY FLAGSHIP',
+    categoryLabel: 'ULTRA-LUXURY ARCHITECTURAL FLAGSHIP',
     tierBadge: 'TIER: ₹20,000 [ULTRA 3D FLAGSHIP]',
     tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
-    liveUrl: 'https://framersite.vercel.app/',
-    displayUrl: 'framersite.vercel.app',
+    liveUrl: 'https://dreamheights-source.vercel.app/',
+    displayUrl: 'dreamheights-source.vercel.app',
+    secondaryLiveUrl: 'https://framersite.vercel.app/',
+    secondaryDisplayUrl: 'framersite.vercel.app',
     imageSrc: '/assets/showcase/dreamheights-pc.webp',
-    tagline: '"HIGH HEAVENS. Home is the nicest word there is." — 16-Storey Iconic Towers',
-    description: 'Cinematic 3D architectural showcase created for Dream Heights. Features 16-storey iconic luxury towers, 7.5-acre botanical sanctuary, royal clubhouse walkthroughs, RevealFlow preloader, and high-net-worth VIP booking funnels.',
+    tagline: '"A place to live — to return year after year." — 2 & 3 BHK Gated Residences',
+    description: 'Premier gated luxury community on Malout-Badal Ring Road, Bathinda by Dream Land Promoters. Features bespoke 2 & 3 BHK residences, ground floor basements, penthouse duplexes, interactive Day/Night lighting atmosphere engine, saltwater pool, spa, jacuzzi, 24/7 security, difference cursor canvas, and custom Lenis + Barba smooth choreography.',
     highlightDeliverables: [
-      { label: 'Architectural Scale', value: '16-Storey Luxury Towers' },
-      { label: 'Spatial Engine', value: 'Framer WebGL 120 FPS' },
-      { label: 'Preloader', value: 'RevealFlow Asset Flow' },
-      { label: 'VIP Funnel', value: 'HNW Booking Funnel' }
+      { label: 'Residences', value: '2 & 3 BHK Gated Penthouses' },
+      { label: 'Lighting Engine', value: 'Day / Night Atmosphere Switcher' },
+      { label: 'Wellness Amenities', value: 'Saltwater Pool, Spa & Jacuzzi' },
+      { label: 'Location', value: 'Ring Road, Bathinda' }
     ],
     specs: [
-      'Cinematic 3D architectural rendering & progressive RevealFlow preloader',
-      'Butter-smooth scroll choreography running at steady 120 FPS',
-      'VIP booking funnels engineered for high-net-worth real estate buyers'
+      'Interactive Day / Night lighting atmosphere switch with architectural pin hotspots',
+      'Bespoke editorial typography (Bodoni Moda & Pinyon Script) with difference cursor canvas',
+      'Lenis hardware-accelerated smooth scrolling with Barba page transition engine',
+      'Integrated VIP call booking modal & direct WhatsApp lead acquisition funnel'
     ],
-    techPills: ['Framer WebGL', 'React', 'Motion FX', 'TailwindCSS', 'Edge CDN'],
+    techPills: ['Day/Night Engine', 'Lenis Scroll', 'Barba.js', 'Typekit / Bodoni', 'WebGL Pins', 'Framer 3D'],
     rateText: '₹20,000 (Flagship Spatial Tier)',
-    inquiryMessage: "Hi Gurdharam, I want a luxury 3D architectural flagship website like Dream Heights."
+    inquiryMessage: "Hi Gurdharam, I want a luxury architectural flagship website like Dream Heights (dreamheights-source.vercel.app)."
   },
   {
     id: 'gurdharam-hq',
@@ -905,7 +910,7 @@ export default function WebsitesShowcase() {
                   <div className="font-mono text-xs text-[#d4a853]">
                     Rate: <strong className="text-white">{item.rateText}</strong>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <a
                       href={item.liveUrl}
                       target="_blank"
@@ -915,6 +920,18 @@ export default function WebsitesShowcase() {
                       <span>VISIT LIVE</span>
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </a>
+                    {item.secondaryLiveUrl && (
+                      <a
+                        href={item.secondaryLiveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-[#d4a853]/30 bg-[#d4a853]/10 px-3 py-2 font-mono text-xs text-[#d4a853] transition-colors hover:bg-[#d4a853] hover:text-[#080808]"
+                        title="View Framer 3D Architectural Site"
+                      >
+                        <span>FRAMER 3D</span>
+                        <ArrowUpRight className="h-3.5 w-3.5" />
+                      </a>
+                    )}
                     <a
                       href={getWhatsAppUrl(item.inquiryMessage)}
                       target="_blank"

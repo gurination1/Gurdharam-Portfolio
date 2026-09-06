@@ -131,7 +131,7 @@ const routes = [
           <ul>
             <li><strong>Kirat Interior</strong>: Bespoke luxury furniture & interior studio (Bathinda, Punjab).</li>
             <li><strong>NEOVRIT Studio</strong>: 3D × AI agency web environment with Three.js GLTF model viewport.</li>
-            <li><strong>Dream Heights & Gurdharam.com</strong>: 16-storey ultra-luxury residential architectural 3D showcase & studio headquarters flagship.</li>
+            <li><strong>Dream Heights & Gurdharam.com</strong>: Luxury gated residences on Ring Road Bathinda (2&3 BHK, saltwater pool, Day/Night engine) & studio headquarters flagship.</li>
           </ul>
         </section>
       </main>`
