@@ -105,6 +105,43 @@ const routes = [
     `
   },
   {
+    path: '/about',
+    title: 'About Us | Gurdharam & Manveer — AI Systems & Creative Growth | BFGI Bathinda',
+    description: 'Meet Gurdharam Jeet Singh (Founder & CEO, B.Sc Agri Hons student) and Manveer Singh (Co-Founder & Creative Director, BCA AI/ML student) from BFGI Deon Bathinda. Autonomous AI systems, WhatsApp automation, and 3D web platforms.',
+    canonical: 'https://www.gurdharam.com/about',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AboutPage",
+          "@id": "https://www.gurdharam.com/about#webpage",
+          "url": "https://www.gurdharam.com/about",
+          "name": "About Us | Executive Leadership — Gurdharam & Manveer",
+          "description": "Executive leadership profiles for Gurdharam Jeet Singh and Manveer Singh from Baba Farid Group of Institutions (BFGI), Deon, Bathinda."
+        }
+      ]
+    },
+    html: `
+      <main>
+        <header>
+          <h1>Executive Leadership & Domain Depth — Gurdharam & Manveer</h1>
+          <p>Agricultural Domain Reality × Autonomous AI/ML Systems & Creative Growth</p>
+        </header>
+        <section id="leadership">
+          <h2>Co-Founders</h2>
+          <article>
+            <h3>Gurdharam Jeet Singh — Founder & CEO</h3>
+            <p>B.Sc. Agriculture (Honours) Student at Baba Farid Group of Institutions (BFGI), Deon, Bathinda. Lead AI Systems Architect & Full-Stack Engineer.</p>
+          </article>
+          <article>
+            <h3>Manveer Singh — Co-Founder & Creative Director</h3>
+            <p>BCA (AI / ML) Student at Baba Farid Group of Institutions (BFGI), Deon, Bathinda. Head of Growth, Marketing & Creative Direction.</p>
+          </article>
+        </section>
+      </main>
+    `
+  },
+  {
     path: '/websites',
     title: 'Website Development Rates (₹5k - ₹20k) & Live Showcase | Gurdharam',
     description: 'Transparent website development packages (₹5k Basic, ₹7k SEO, ₹12k Interactive 3D, ₹20k Flagship Spatial) and live production showcase with real PC views.',

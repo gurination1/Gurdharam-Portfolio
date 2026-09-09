@@ -285,14 +285,27 @@ export default function Footer() {
         </div>
 
         {/* Verified Professional Entity Links */}
-        <div className="flex flex-wrap items-center gap-4 border-t border-white/10 pt-8 mb-6 text-xs text-slate-400 font-mono">
-          <span className="font-bold text-white uppercase tracking-wider mr-2">Verified Social Profiles:</span>
-          <a href="https://github.com/gurination1" target="_blank" rel="me noopener noreferrer" className="inline-flex items-center gap-1.5 py-2 px-3 rounded bg-white/5 text-white hover:text-[var(--accent-gold)] hover:bg-white/10 transition-colors min-h-[44px]">
-            <GithubIcon className="w-4 h-4" /> GitHub <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
-          <a href="https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275" target="_blank" rel="me noopener noreferrer" className="inline-flex items-center gap-1.5 py-2 px-3 rounded bg-white/5 text-white hover:text-[var(--accent-gold)] hover:bg-white/10 transition-colors min-h-[44px]">
-            <LinkedinIcon className="w-4 h-4" /> LinkedIn <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 border-t border-white/10 pt-8 mb-6 text-xs text-slate-400 font-mono">
+          <span className="font-bold text-white uppercase tracking-wider mr-1">Verified Profiles:</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[11px] text-slate-400 font-semibold">Gurdharam:</span>
+            <a href="https://github.com/gurination1" target="_blank" rel="me noopener noreferrer" className="inline-flex items-center gap-1.5 py-1.5 px-2.5 rounded bg-white/5 text-white hover:text-[var(--accent-gold)] hover:bg-white/10 transition-colors min-h-[36px]">
+              <GithubIcon className="w-3.5 h-3.5" /> GitHub <ArrowUpRight className="w-3 h-3 opacity-60" />
+            </a>
+            <a href="https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275" target="_blank" rel="me noopener noreferrer" className="inline-flex items-center gap-1.5 py-1.5 px-2.5 rounded bg-white/5 text-white hover:text-[var(--accent-gold)] hover:bg-white/10 transition-colors min-h-[36px]">
+              <LinkedinIcon className="w-3.5 h-3.5" /> LinkedIn <ArrowUpRight className="w-3 h-3 opacity-60" />
+            </a>
+          </div>
+          <span className="text-white/20 hidden md:inline">•</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[11px] text-slate-400 font-semibold">Manveer:</span>
+            <a href="https://github.com/manveersinghmudher-hub" target="_blank" rel="me noopener noreferrer" className="inline-flex items-center gap-1.5 py-1.5 px-2.5 rounded bg-white/5 text-white hover:text-[var(--accent-gold)] hover:bg-white/10 transition-colors min-h-[36px]">
+              <GithubIcon className="w-3.5 h-3.5" /> GitHub <ArrowUpRight className="w-3 h-3 opacity-60" />
+            </a>
+            <a href="https://www.linkedin.com/in/manveer-singh-25655337a" target="_blank" rel="me noopener noreferrer" className="inline-flex items-center gap-1.5 py-1.5 px-2.5 rounded bg-white/5 text-white hover:text-[var(--accent-gold)] hover:bg-white/10 transition-colors min-h-[36px]">
+              <LinkedinIcon className="w-3.5 h-3.5" /> LinkedIn <ArrowUpRight className="w-3 h-3 opacity-60" />
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center border-t border-white/5 pt-6 gap-4 text-xs text-slate-400 font-mono tracking-wider">

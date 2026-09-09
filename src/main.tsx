@@ -6,9 +6,9 @@ import citiesData from './data/cities.json';
 import SchemaMarkup from './components/SchemaMarkup';
 import WhatsAppWidget from './components/ui/WhatsAppWidget';
 import './styles.css';
+import Home from './pages/home';
 
-// Route Code-Splitting for instantaneous initial page load (<150KB JS budget)
-const Home = lazy(() => import('./pages/home'));
+// Route Code-Splitting for instantaneous subpage loads (<150KB JS budget)
 const AiAutomation = lazy(() => import('./pages/ai-automation'));
 const WebDevelopment = lazy(() => import('./pages/web-development'));
 const DoodHisaab = lazy(() => import('./pages/doodhisaab'));
@@ -43,6 +43,7 @@ const CustomReactDeveloperIndia = lazy(() => import('./pages/custom-react-develo
 const IndicAIVoiceAgentDeveloper = lazy(() => import('./pages/indic-ai-voice-agent-developer'));
 const AIAutomationAgencyIndia = lazy(() => import('./pages/ai-automation-agency-india'));
 const WebsitesShowcase = lazy(() => import('./pages/websites'));
+const AboutPage = lazy(() => import('./pages/about'));
 
 function CanonicalUpdater() {
   const { pathname } = useLocation();
@@ -154,6 +155,7 @@ function Main() {
           <Route path="/blog/high-ticket-webgl-3d-spatial-digital-twin" element={<BlogPostWebGL />} />
           <Route path="/blog/offline-ai-crop-disease-scanner-flutter" element={<BlogPostFasalDoctor />} />
           <Route path="/blog/whatsapp-ai-agents-healthcare-india" element={<BlogPostWhatsAppHealth />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<div style={{ padding: '50px', color: '#fff', fontFamily: 'monospace', fontSize: '14px' }}>Route Mismatch: {window.location.pathname}</div>} />
         </Routes>
       </Suspense>

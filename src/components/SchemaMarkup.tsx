@@ -103,6 +103,11 @@ export default function SchemaMarkup() {
         "addressLocality": "Muktsar",
         "addressRegion": "Punjab",
         "addressCountry": "IN"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Baba Farid Group of Institutions (BFGI), Deon, Bathinda",
+        "sameAs": "https://www.babafaridgroup.com"
       }
     });
 

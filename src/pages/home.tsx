@@ -81,10 +81,10 @@ function pickAsset(...needles) {
   return found;
 }
 
-const personImage = pickAsset('styling', 'person', 'me', 'gurdharam', 'jeet', 'singh', 'profile', 'photo');
-const secondPageImage = pickAsset('2nd page', 'second page');
+const personImage = pickAsset('styling', 'person', 'me', 'gurdharam', 'jeet', 'singh', 'profile', 'photo') || '/assets/gurdharam-portrait-bg.webp';
+const secondPageImage = '/assets/portfolio/second-page.jpg';
 const quoteParticleImage = pickAsset('quote-particle-source');
-const fallbackSecondPageImage = 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=80';
+const fallbackSecondPageImage = '/assets/portfolio/second-page.jpg';
 
 
 
@@ -147,39 +147,83 @@ function usePortfolioMotion() {
     }
 
     const ctx = gsap.context(() => {
-      if (!reduce) {
-        const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-        tl.to('.loader-count', {
-          textContent: 100,
-          duration: 1.1,
-          snap: { textContent: 1 },
-          onUpdate() {
-            const el = document.querySelector('.loader-count');
-            if (el) {
-              el.textContent = String(Math.round(Number(el.textContent))).padStart(3, '0');
-            }
-          },
-        })
-          .from('.loader-mark path', { strokeDashoffset: 260, duration: 0.7, stagger: 0.1 }, '-=0.35')
-          .from('.loader-name span', { yPercent: 110, duration: 0.55, stagger: 0.03 }, '-=0.3')
-          .to('.preloader', { yPercent: -100, duration: 0.85, ease: 'expo.inOut' });
+      const isBotOrCrawler = typeof navigator !== 'undefined' && (
+        Boolean(navigator.webdriver) ||
+        /bot|googlebot|bingbot|crawler|spider|robot|crawling|lighthouse|headless|prerender|bytespider/i.test(navigator.userAgent)
+      );
+      const isSlowConnection = typeof navigator !== 'undefined' && (
+        Boolean((navigator as any).connection?.saveData) ||
+        /(2g|slow-2g)/i.test(String((navigator as any).connection?.effectiveType || ''))
+      );
 
-        gsap.from('.hero-word', {
-          yPercent: 112,
-          duration: 1,
-          stagger: 0.1,
-          ease: 'expo.out',
-          delay: 2.0,
-        });
-        gsap.from('.hero-meta, .hero-copy, .hero-actions', {
-          y: 24,
-          opacity: 0,
-          stagger: 0.08,
-          duration: 0.75,
-          delay: 2.2,
-        });
-      } else {
+      const shouldBypass = reduce || isBotOrCrawler || isSlowConnection;
+
+      if (shouldBypass) {
         gsap.set('.preloader', { display: 'none' });
+        gsap.set('.hero-word', { yPercent: 0, opacity: 1 });
+        gsap.set('.hero-meta, .signal-strip, .hero-sub, .hero-actions, .hero-card, .site-nav', { y: 0, opacity: 1 });
+      } else {
+        let initialized = false;
+        const runPreloader = () => {
+          if (initialized) return;
+          initialized = true;
+
+          const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+          tl.to('.loader-count', {
+            textContent: 100,
+            duration: 1.1,
+            ease: 'power2.inOut',
+            snap: { textContent: 1 },
+            onUpdate() {
+              const el = document.querySelector('.loader-count');
+              if (el) {
+                el.textContent = String(Math.round(Number(el.textContent))).padStart(3, '0');
+              }
+            },
+          })
+            .from('.loader-mark path', { strokeDashoffset: 260, duration: 0.55, stagger: 0.08 }, '-=0.4')
+            .from('.loader-name span', { yPercent: 110, duration: 0.45, stagger: 0.02 }, '-=0.25')
+            .to('.preloader', {
+              yPercent: -100,
+              duration: 0.85,
+              ease: 'expo.inOut',
+              onComplete: () => {
+                const el = document.querySelector('.preloader') as HTMLElement | null;
+                if (el) el.style.display = 'none';
+              }
+            })
+            .from('.hero-word', {
+              yPercent: 120,
+              opacity: 0,
+              duration: 0.95,
+              stagger: 0.1,
+              ease: 'expo.out',
+            }, '-=0.25')
+            .from('.hero-meta, .signal-strip, .hero-sub, .site-nav', {
+              y: 20,
+              opacity: 0,
+              stagger: 0.05,
+              duration: 0.7,
+              ease: 'expo.out',
+            }, '-=0.7')
+            .from('.hero-card', {
+              y: 24,
+              opacity: 0,
+              duration: 0.8,
+              ease: 'expo.out',
+            }, '-=0.6');
+        };
+
+        if (typeof document !== 'undefined') {
+          if (document.readyState === 'complete') {
+            runPreloader();
+          } else {
+            window.addEventListener('load', runPreloader, { once: true });
+            setTimeout(runPreloader, 600);
+          }
+        } else {
+          runPreloader();
+        }
       }
 
       document.querySelectorAll('[data-split]').forEach((el) => {
@@ -669,13 +713,36 @@ function HeroThreeScene() {
 }
 
 const menuLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Work', href: '#work' },
-  { label: 'AI Bots', href: '#ai-bots' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'Engineering Blog', href: '/blog' },
-  { label: 'Web Developer Punjab', href: '/services/web-developer-muktsar-punjab' },
-  { label: 'Offline AI App Dev', href: '/services/offline-ai-app-development' },
+  {
+    label: 'Websites & 3D Spatial',
+    href: '/websites',
+    tagline: '₹5k–₹20k Flat Rates • Kirat Interior & Dream Heights 3D',
+  },
+  {
+    label: 'AI Automation & Bots',
+    href: '/services',
+    tagline: 'Meta WhatsApp Cloud API • AI Voice Agents • 15+ Industry Hubs',
+  },
+  {
+    label: 'Case Studies',
+    href: '/case-studies/takemyinterview-ai',
+    tagline: 'TakeMyInterview.ai • DoodhHisaab ERP • FasalDoctor Edge ML',
+  },
+  {
+    label: 'Engineering Whitepapers',
+    href: '/blog',
+    tagline: 'Local GPU Quantization • DPDP Legal Compliance • Offline AI',
+  },
+  {
+    label: 'About Us',
+    href: '/about',
+    tagline: 'Founders Gurdharam & Manveer • BFGI Bathinda Students • AgriTech × AIML',
+  },
+  {
+    label: 'Commission Project',
+    href: '#contact',
+    tagline: 'Direct WhatsApp Scope Intake • Q3 Commissions Open',
+  },
 ];
 
 function WipeMenu() {
@@ -838,7 +905,7 @@ function WipeMenu() {
     <>
       {/* Top-bar (always visible) */}
       <nav className="site-nav" aria-label="Primary">
-        <a href="#top" className="site-nav-logo">GJS</a>
+        <a href="#top" className="site-nav-logo">Gurdharam</a>
         <button
           className={`wipe-burger ${isOpen ? 'is-active' : ''}`}
           onClick={isOpen ? close : open}
@@ -870,18 +937,33 @@ function WipeMenu() {
                   <span className="wipe-menu-number">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="wipe-menu-link-wrap">
+                  <div className="wipe-menu-link-wrap">
                     <span className="wipe-menu-link-text">{link.label}</span>
-                  </span>
+                    {link.tagline && (
+                      <span className="wipe-menu-tagline">{link.tagline}</span>
+                    )}
+                  </div>
+                  <span className="wipe-menu-arrow" aria-hidden="true">→</span>
                 </button>
               </li>
             ))}
             <li><div className="wipe-menu-line" /></li>
           </ul>
           <div className="wipe-menu-footer">
-            <span>GURDHARAM JEET SINGH</span>
-            <span>AI ENGINEER × DEVELOPER</span>
-            <a href="mailto:gurination1@gmail.com">gurination1@gmail.com</a>
+            <div className="wipe-menu-footer-left">
+              <span className="wipe-menu-footer-dot" />
+              <span>GURDHARAM &amp; MANVEER • AI SYSTEMS &amp; CREATIVE STUDIO</span>
+            </div>
+            <div className="wipe-menu-footer-right">
+              <a
+                href="https://api.whatsapp.com/send?phone=918194824204&amp;text=Hi%20Gurdharam,%20I%20want%20to%20discuss%20a%20project"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp Direct
+              </a>
+              <a href="mailto:gurination1@gmail.com">gurination1@gmail.com</a>
+            </div>
           </div>
         </div>
       </div>
@@ -933,26 +1015,30 @@ function Hero() {
       </div>
       <div className="hero-grid">
         <div>
-          <h1 className="hero-title" aria-label="Gurdharam: Enterprise & Independent AI and Web Developer">
-            <span className="sr-only">Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence.</span>
-            {['GURDHARAM', 'JEET', 'SINGH'].map((word) => (
-              <span className="hero-line" key={word}>
-                <span className={`hero-word ${word === 'JEET' ? 'gold' : ''}`}>{word}</span>
+          <h1 className="hero-title hero-title-whatif" aria-label="BUILD WHAT IF? — Gurdharam Enterprise Studio">
+            <span className="sr-only">BUILD WHAT IF? — Gurdharam: Enterprise AI & Web Developer</span>
+            <span className="hero-line">
+              <span className="hero-word hero-word-build">BUILD</span>
+            </span>
+            <span className="hero-line">
+              <span className="hero-word hero-word-whatif">
+                <span className="whatif-text">WHAT IF</span>
+                <span className="whatif-punct">?</span>
               </span>
-            ))}
+            </span>
           </h1>
           <div className="signal-strip">
             <span>LOCAL AI</span>
-            <span>OFFLINE-FIRST APPS</span>
-            <span>VIDEO PIPELINES</span>
-            <span>CLIENT SYSTEMS</span>
+            <span>WHATSAPP AGENTS</span>
+            <span>VIDEO ENGINES</span>
+            <span>3D WEB</span>
           </div>
           <p className="hero-sub">
-            <span>AI ENGINEER</span>
+            <span>AI SYSTEMS ARCHITECT</span>
             <b>x</b>
-            <span>APP DEVELOPER</span>
+            <span>FULL-STACK ENGINEER</span>
             <b>x</b>
-            <span>PROMPT ARCHITECT</span>
+            <span>CREATIVE TECHNOLOGIST</span>
           </p>
           <AnimatedTextRoller
             items={[
@@ -1114,7 +1200,7 @@ function About() {
     <section
       className="section about has-about-visual"
       id="about"
-      style={{ '--about-image': `url("${aboutShowcaseImage}")` }}
+      style={{ '--about-image': `url("${aboutShowcaseImage}")` } as React.CSSProperties}
     >
       <h2 className="section-label">[ 01 - ABOUT ]</h2>
       <div className="about-scroll-stage">
@@ -1153,7 +1239,24 @@ function About() {
             text="Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence. Building systems that think, automate revenue, and scale operations worldwide."
           />
           <div className="chips">
-            {['LLM Engineering', 'Prompt Architecture', 'Autonomous AI Bots', 'Website', 'Web Design', 'Dashboard', 'Visual Documentation', 'AI Fine Tuning', 'AI Training', 'AI Optimisation', 'Flutter / Dart', 'Python', 'FFmpeg Pipelines', 'ComfyUI', 'On-Device ML', 'REST APIs'].map((chip) => (
+            {[
+              'WhatsApp AI',
+              'Voice AI Calling',
+              'Offline ML',
+              '3D Websites',
+              'Video Pipelines',
+              'Flutter Apps',
+              'LLM Fine-Tuning',
+              'Local LLMs',
+              'AI Agents',
+              'ComfyUI',
+              'Dashboards',
+              'Full-Stack Web',
+              'REST APIs',
+              'SEO & GEO',
+              'Prompt Architecture',
+              'Python Automation',
+            ].map((chip) => (
               <span key={chip}>{chip}</span>
             ))}
           </div>
@@ -1166,6 +1269,9 @@ function About() {
             </Link>
             <Link to="/websites" className="btn-primary" style={{ padding: '0.8rem 1.5rem', border: '1px solid rgba(255,255,255,0.25)', borderRadius: '99px', color: '#f0ede6', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em', background: 'rgba(255,255,255,0.04)' }}>
               Live Websites & 3D Showcase →
+            </Link>
+            <Link to="/about" className="btn-primary" style={{ padding: '0.8rem 1.5rem', border: '1px solid rgba(212,168,83,0.5)', borderRadius: '99px', color: 'var(--accent-gold)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em', background: 'rgba(212,168,83,0.08)' }}>
+              About Us / Leadership Duo →
             </Link>
           </div>
         </div>
