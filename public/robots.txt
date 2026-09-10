@@ -1,15 +1,42 @@
 User-agent: *
-Allow: /
-Disallow: /google*.html
+Disallow: /api/
 Disallow: /google*
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
+Disallow: /404
+Disallow: /404.html
+Disallow: /feed.xml
+Disallow: /rss.xml
+Disallow: /*.txt$
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /robots.txt
 Allow: /
 
 User-agent: AhrefsBot
+Disallow: /api/
+Disallow: /google*
+Disallow: /404
+Disallow: /404.html
+Disallow: /feed.xml
+Disallow: /rss.xml
+Disallow: /*.txt$
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /
+
+User-agent: Googlebot
+Disallow: /api/
+Disallow: /404
+Disallow: /404.html
+Disallow: /feed.xml
+Disallow: /rss.xml
+Allow: /
+
+User-agent: Bingbot
+Disallow: /api/
+Disallow: /404
+Disallow: /404.html
+Disallow: /feed.xml
+Disallow: /rss.xml
 Allow: /
 
 # AI Crawlers - explicitly allowed for GEO citation eligibility
@@ -29,3 +56,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://www.gurdharam.com/sitemap.xml
+

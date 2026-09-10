@@ -2650,7 +2650,7 @@ routes.push({
     if (!pageHtml.includes('google-site-verification')) {
       pageHtml = pageHtml.replace(
         '</head>',
-        '  <meta name="google-site-verification" content="google884ab312af7ff99a.html" />\n  <meta name="google-site-verification" content="google884ab312af7ff99a" />\n</head>'
+        '  <meta name="google-site-verification" content="kvrPeHLBErUsUV8aXGKZ4QIC75yjmAtw7Sfebi_BDP4" />\n</head>'
       );
     }
 
@@ -2707,8 +2707,12 @@ routes.push({
       fs.writeFileSync(templatePath, pageHtml, 'utf8');
       console.log("Pre-rendered root / index.html successfully with SSR");
     } else if (route.path === '/404') {
+      pageHtml = pageHtml.replace('</head>', '  <meta name="robots" content="noindex, nofollow" />\n</head>');
       fs.writeFileSync(path.join(distPath, '404.html'), pageHtml, 'utf8');
-      console.log("Pre-rendered 404.html successfully with SSR");
+      const dirPath = path.join(distPath, '404');
+      fs.mkdirSync(dirPath, { recursive: true });
+      fs.writeFileSync(path.join(dirPath, 'index.html'), pageHtml, 'utf8');
+      console.log("Pre-rendered 404.html and 404/index.html successfully with SSR");
     } else {
       const relPath = route.path.replace(/^\//, '');
       const dirPath = path.join(distPath, relPath);
@@ -2721,6 +2725,15 @@ routes.push({
 
       console.log(`Pre-rendered SSR route ${route.path} to ${dirPath}/index.html & ${relPath}.html successfully`);
     }
+  }
+
+  // Ensure developer-directory clean folder exists
+  const devDirSrc = path.join(distPath, 'developer-directory.html');
+  if (fs.existsSync(devDirSrc)) {
+    const devDir = path.join(distPath, 'developer-directory');
+    fs.mkdirSync(devDir, { recursive: true });
+    fs.writeFileSync(path.join(devDir, 'index.html'), fs.readFileSync(devDirSrc, 'utf8'), 'utf8');
+    console.log("Created dist/developer-directory/index.html");
   }
 })();
 

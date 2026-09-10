@@ -4,6 +4,16 @@ import { ArrowLeft, Home, Sparkles, Layers, Terminal } from 'lucide-react';
 import Footer from '../components/ui/footer';
 
 export default function NotFoundPage() {
+  React.useEffect(() => {
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.setAttribute('name', 'robots');
+      document.head.appendChild(robots);
+    }
+    robots.setAttribute('content', 'noindex, nofollow');
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#080808] text-white flex flex-col justify-between">
       <main className="max-w-3xl mx-auto pt-32 pb-20 px-6 text-center flex-1 flex flex-col items-center justify-center">
