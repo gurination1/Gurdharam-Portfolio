@@ -29,10 +29,25 @@ export default function TakeMyInterviewCaseStudy() {
         "@id": "https://www.gurdharam.com/case-studies/takemyinterview-ai#article",
         "headline": "TakeMyInterview AI: Building an Offline Voice-to-Voice AI Mock Interviewer",
         "description": "Comprehensive engineering breakdown of building an air-gapped voice-to-voice AI mock job interviewer platform using Whisper STT, fine-tuned Llama 3.3, and Piper neural TTS.",
-        "author": { "@id": "https://www.gurdharam.com/#person" },
-        "publisher": { "@id": "https://www.gurdharam.com/#organization" },
+        "image": "https://www.gurdharam.com/og-card.png",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "url": "https://www.gurdharam.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.gurdharam.com/og-card.png"
+          }
+        },
         "mainEntityOfPage": "https://www.gurdharam.com/case-studies/takemyinterview-ai",
         "datePublished": "2026-08-07",
+        "dateModified": "2026-08-08",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["h1", "p.leading-relaxed"]

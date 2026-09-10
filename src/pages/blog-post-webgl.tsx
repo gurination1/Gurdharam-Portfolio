@@ -21,8 +21,22 @@ export default function BlogPostWebGL() {
         "@id": "https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin#article",
         "headline": "NEOVRIT: Building 60 FPS WebGL 3D Spatial Digital Twins with Three.js & GSAP",
         "description": "Exhaustive engineering breakdown of compressing 300MB CAD/BIM models into 12.4MB Draco meshes, rendering 60 FPS spatial twins on web browsers using Three.js and custom GLSL shaders.",
-        "author": { "@id": "https://www.gurdharam.com/#person" },
-        "publisher": { "@id": "https://www.gurdharam.com/#organization" },
+        "image": "https://www.gurdharam.com/og-card.png",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "url": "https://www.gurdharam.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.gurdharam.com/og-card.png"
+          }
+        },
         "mainEntityOfPage": "https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin",
         "datePublished": "2026-07-18",
         "dateModified": "2026-08-07",

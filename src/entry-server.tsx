@@ -39,6 +39,7 @@ import CustomReactDeveloperIndia from './pages/custom-react-developer-india';
 import IndicAIVoiceAgentDeveloper from './pages/indic-ai-voice-agent-developer';
 import AIAutomationAgencyIndia from './pages/ai-automation-agency-india';
 import WebsitesShowcase from './pages/websites';
+import AboutPage from './pages/about';
 import SchemaMarkup from './components/SchemaMarkup';
 
 export function render(url: string) {
@@ -48,6 +49,7 @@ export function render(url: string) {
         <SchemaMarkup />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesHubPage />} />
           <Route path="/services/web-development" element={<WebDevelopment />} />
           <Route path="/services/ai-automation" element={<AiAutomation />} />

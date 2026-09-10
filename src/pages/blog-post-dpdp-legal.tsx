@@ -14,10 +14,25 @@ export default function BlogPostDPDPLegal() {
         "@id": "https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech#article",
         "headline": "DPDP Act Compliant Air-Gapped Local LLM Deployment for Law Firms & Enterprise Legal Tech",
         "description": "Comprehensive engineering guide on deploying air-gapped 70B parameter open-weights LLMs (Qwen 2.5, Llama 3.3) under India DPDP Act compliance with zero cloud VRAM data leakage.",
-        "author": { "@id": "https://www.gurdharam.com/#person" },
-        "publisher": { "@id": "https://www.gurdharam.com/#organization" },
+        "image": "https://www.gurdharam.com/og-card.png",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "url": "https://www.gurdharam.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.gurdharam.com/og-card.png"
+          }
+        },
         "mainEntityOfPage": "https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech",
         "datePublished": "2026-08-05",
+        "dateModified": "2026-08-08",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["h1", "p.leading-relaxed"]

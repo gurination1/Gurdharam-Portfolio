@@ -54,6 +54,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "gurdharam.com"
+        }
+      ],
+      "destination": "https://www.gurdharam.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/services/Marketing",
       "destination": "/services/marketing",
       "permanent": true

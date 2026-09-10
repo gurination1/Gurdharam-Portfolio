@@ -172,6 +172,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-1 text-sm">
               <li>
+                <Link to="/about" className="py-2.5 px-1 block text-slate-400 hover:text-white transition-colors min-h-[44px] inline-flex items-center font-semibold">
+                  About Us (Founders & Team)
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog" className="py-2.5 px-1 block text-slate-400 hover:text-white transition-colors min-h-[44px] inline-flex items-center font-semibold">
                   Engineering Blog Hub
                 </Link>
@@ -311,7 +316,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row justify-between items-center border-t border-white/5 pt-6 gap-4 text-xs text-slate-400 font-mono tracking-wider">
           <span>GURDHARAM JEET SINGH © 2026</span>
           <span>
-            DESIGNED & BUILT BY GJS | <Link to="/" className="hover:text-white underline py-1.5 px-2">Back to Home</Link>
+            DESIGNED & BUILT BY GJS | <Link to="/about" className="hover:text-white underline py-1.5 px-2">About Founders</Link> | <Link to="/" className="hover:text-white underline py-1.5 px-2">Back to Home</Link>
           </span>
         </div>
       </div>

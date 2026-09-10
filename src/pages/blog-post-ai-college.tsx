@@ -21,8 +21,22 @@ export default function BlogPostAICollege() {
         "@id": "https://www.gurdharam.com/blog/ai-college-admission-bot-punjab#article",
         "headline": "How Indian Colleges Automate Admissions & Inquiries with WhatsApp AI Agents",
         "description": "Exhaustive case study on deploying bilingual (English, Punjabi, Hinglish) WhatsApp AI bots for higher education colleges in Punjab to capture 24/7 applicant leads, collect marksheets via OCR, and process fee reminders.",
-        "author": { "@id": "https://www.gurdharam.com/#person" },
-        "publisher": { "@id": "https://www.gurdharam.com/#organization" },
+        "image": "https://www.gurdharam.com/og-card.png",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "url": "https://www.gurdharam.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.gurdharam.com/og-card.png"
+          }
+        },
         "mainEntityOfPage": "https://www.gurdharam.com/blog/ai-college-admission-bot-punjab",
         "datePublished": "2026-08-05",
         "dateModified": "2026-08-07",

@@ -40,8 +40,9 @@ export default function CityLanding({ cityId }: { cityId?: string }) {
       "Indic Voice AI Telephony",
       "Local Search Engine Optimization"
     ],
-    "provider": {
+    "founder": {
       "@type": "Person",
+      "@id": "https://www.gurdharam.com/#person",
       "name": "Gurdharam Jeet Singh",
       "url": "https://www.gurdharam.com"
     }

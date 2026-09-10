@@ -21,8 +21,22 @@ export default function BlogPostLocalGPU() {
         "@id": "https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server#article",
         "headline": "Local GPU LLM Quantization & Model Context Protocol (MCP) Legal Server",
         "description": "Comprehensive engineering blueprint on running 70B open-weights LLMs (Qwen 2.5, Llama 3.3) air-gapped on workstation GPUs using AWQ/GGUF 4-bit quantization, FlashAttention-2, and custom Model Context Protocol statutory legal servers.",
-        "author": { "@id": "https://www.gurdharam.com/#person" },
-        "publisher": { "@id": "https://www.gurdharam.com/#organization" },
+        "image": "https://www.gurdharam.com/og-card.png",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "url": "https://www.gurdharam.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.gurdharam.com/og-card.png"
+          }
+        },
         "mainEntityOfPage": "https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server",
         "datePublished": "2026-08-02",
         "dateModified": "2026-08-07",

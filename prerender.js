@@ -9,19 +9,20 @@ if (!fs.existsSync(templatePath)) {
   process.exit(1);
 }
 
-const template = fs.readFileSync(templatePath, 'utf8');
+const rawTemplate = fs.readFileSync(templatePath, 'utf8');
+const template = rawTemplate.replace(/<div id="root">[\s\S]*?<\/div>/, '<div id="root"></div>');
 
 const routes = [
   {
     path: '/',
     title: 'Gurdharam | Enterprise AI & Web Developer',
-    description: 'Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence.',
+    description: 'Gurdharam Jeet Singh: Enterprise AI and full-stack web developer building custom LLM pipelines, Meta WhatsApp Cloud bots, and offline edge systems.',
     canonical: 'https://www.gurdharam.com/',
     html: `
       <main>
         <header>
           <h1>Enterprise AI & Web Developer — Gurdharam Jeet Singh</h1>
-          <p>Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence systems.</p>
+          <p>Gurdharam Jeet Singh: Enterprise AI and full-stack web developer building custom LLM pipelines, Meta WhatsApp Cloud bots, and offline edge systems.</p>
         </header>
 
         <section id="about">
@@ -106,8 +107,8 @@ const routes = [
   },
   {
     path: '/about',
-    title: 'About Us | Gurdharam & Manveer — AI Systems & Creative Growth | BFGI Bathinda',
-    description: 'Meet Gurdharam Jeet Singh (Founder & CEO, B.Sc Agri Hons student) and Manveer Singh (Co-Founder & Creative Director, BCA AI/ML student) from BFGI Deon Bathinda. Autonomous AI systems, WhatsApp automation, and 3D web platforms.',
+    title: 'About Us | Gurdharam & Manveer',
+    description: 'Meet Gurdharam Jeet Singh and Manveer Singh from BFGI Bathinda. Engineering autonomous AI systems, Meta WhatsApp automation, and 3D web platforms.',
     canonical: 'https://www.gurdharam.com/about',
     jsonld: {
       "@context": "https://schema.org",
@@ -143,8 +144,8 @@ const routes = [
   },
   {
     path: '/websites',
-    title: 'Website Development Rates (₹5k - ₹20k) & Live Showcase | Gurdharam',
-    description: 'Transparent website development packages (₹5k Basic, ₹7k SEO, ₹12k Interactive 3D, ₹20k Flagship Spatial) and live production showcase with real PC views.',
+    title: 'Website Development Rates & Showcase | Gurdharam',
+    description: 'Transparent website packages (₹5k Basic, ₹7k SEO, ₹12k Interactive 3D, ₹20k Flagship Spatial) and live production client showcase with real PC views.',
     canonical: 'https://www.gurdharam.com/websites',
     jsonld: {
       "@context": "https://schema.org",
@@ -2203,14 +2204,11 @@ verticals.forEach(v => {
     "name": v.title,
     "description": v.metaDescription,
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
+      "@id": "https://www.gurdharam.com/#organization",
       "name": "Gurdharam AI Engineering",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Muktsar",
-        "addressRegion": "Punjab",
-        "addressCountry": "IN"
-      }
+      "url": "https://www.gurdharam.com",
+      "image": "https://www.gurdharam.com/og-card.png"
     }
   };
 
@@ -2367,8 +2365,9 @@ cities.forEach(c => {
         "Indic Voice AI Telephony",
         "Local Search Engine Optimization"
       ],
-      "provider": {
+      "founder": {
         "@type": "Person",
+        "@id": "https://www.gurdharam.com/#person",
         "name": "Gurdharam Jeet Singh",
         "url": "https://www.gurdharam.com"
       }
@@ -2541,12 +2540,12 @@ const masterFooter = `
       } else {
         routeHtml = `${routeHtml}\n${masterFooter}`;
       }
-      routeHtml = `<div id="seo-prerender-layer">${routeHtml}</div>`;
+      routeHtml = `<div class="seo-prerender-content">${routeHtml}</div>`;
     }
 
     const routeContent = `\n${routeHtml}\n`;
     let pageHtml = template
-      .replace(/<div id="root"><\/div>/, `<div id="root">${routeContent}</div>`)
+      .replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${routeContent}</div>`)
       .replace(/<title>[\s\S]*?<\/title>/, `<title>${route.title}</title>`)
       .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${route.canonical}" />`)
       .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${route.title}" />`)

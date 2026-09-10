@@ -36,12 +36,12 @@ function LinkedinIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
 
 export default function AboutPage() {
   useEffect(() => {
-    document.title = 'About Us | Gurdharam & Manveer — AI Systems & Creative Growth | BFGI Bathinda';
+    document.title = 'About Us | Gurdharam & Manveer';
     const metaDesc = document.querySelector("meta[name='description']");
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'Meet Gurdharam Jeet Singh (Founder & CEO, B.Sc Agri Hons student) and Manveer Singh (Co-Founder & Creative Director, BCA AI/ML student) from BFGI Deon Bathinda. Engineering autonomous AI systems, WhatsApp automation, and 3D web platforms.'
+        'Meet Gurdharam Jeet Singh and Manveer Singh from BFGI Bathinda. Engineering autonomous AI systems, Meta WhatsApp automation, and 3D web platforms.'
       );
     }
     window.scrollTo(0, 0);

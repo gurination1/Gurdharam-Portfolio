@@ -21,8 +21,22 @@ export default function BlogPostVideoGen() {
         "@id": "https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline#article",
         "headline": "yt-auto: Scaling Automated 1080p60 Video Pipelines at $0 Cloud Cost",
         "description": "Comprehensive technical architecture on building programmatic 1080p60 video generation engines using Remotion React video pipelines, FFmpeg NVENC GPU acceleration, and automated YouTube Data API v3 publishing.",
-        "author": { "@id": "https://www.gurdharam.com/#person" },
-        "publisher": { "@id": "https://www.gurdharam.com/#organization" },
+        "image": "https://www.gurdharam.com/og-card.png",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "url": "https://www.gurdharam.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.gurdharam.com/og-card.png"
+          }
+        },
         "mainEntityOfPage": "https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline",
         "datePublished": "2026-07-20",
         "dateModified": "2026-08-07",

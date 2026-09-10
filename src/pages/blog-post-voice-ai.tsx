@@ -21,8 +21,22 @@ export default function BlogPostVoiceAI() {
         "@id": "https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent#article",
         "headline": "Architecting a Sub-300ms Real-Time Voice AI Agent for Telephony: SIP, WebRTC, and Custom VAD",
         "description": "Exhaustive engineering breakdown of building sub-300ms full-duplex Indic voice callers using Pipecat, Sarvam Saaras STT, Bulbul TTS, Exotel WebSockets, and Silero VAD over PSTN phone lines.",
-        "author": { "@id": "https://www.gurdharam.com/#person" },
-        "publisher": { "@id": "https://www.gurdharam.com/#organization" },
+        "image": "https://www.gurdharam.com/og-card.png",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "url": "https://www.gurdharam.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.gurdharam.com/og-card.png"
+          }
+        },
         "mainEntityOfPage": "https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent",
         "datePublished": "2026-08-04",
         "dateModified": "2026-08-07",

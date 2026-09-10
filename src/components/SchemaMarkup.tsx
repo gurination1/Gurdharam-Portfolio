@@ -455,8 +455,10 @@ export default function SchemaMarkup() {
           { "@type": "Country", "name": "India", "sameAs": "https://www.wikidata.org/wiki/Q668" }
         ],
         "provider": {
-          "@type": "ProfessionalService",
-          "@id": "https://www.gurdharam.com/#organization"
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "image": "https://www.gurdharam.com/og-card.png"
         }
       });
 
