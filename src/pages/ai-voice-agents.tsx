@@ -19,7 +19,13 @@ export default function AIVoiceAgents() {
         "@type": "Service",
         "@id": "https://www.gurdharam.com/services/ai-voice-agents#service",
         "name": "Sub-300ms Voice AI Telephony Agents & Conversational Voice Bots",
-        "provider": { "@id": "https://www.gurdharam.com/#organization" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com",
+          "image": "https://www.gurdharam.com/og-card.png"
+        },
         "description": "Full-duplex sub-300ms conversational Voice AI agents built with Sarvam Indic models, SIP trunking, WebRTC, and Silero VAD over PSTN phone networks.",
         "areaServed": "Global"
       },

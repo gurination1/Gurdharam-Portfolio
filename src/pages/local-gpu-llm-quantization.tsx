@@ -5,7 +5,10 @@ import Footer from '@/components/ui/footer';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function LocalGPULLMQuantization() {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Air-Gapped Local GPU LLM Server | Gurdharam";
+  }, []);
 
   const waUrl = getWhatsAppUrl("Hi Gurdharam, I'd like to discuss setting up an Air-Gapped Local GPU LLM & MCP Server for our enterprise.");
 
@@ -16,7 +19,13 @@ export default function LocalGPULLMQuantization() {
         "@type": "Service",
         "@id": "https://www.gurdharam.com/services/local-gpu-llm-quantization#service",
         "name": "Air-Gapped Local GPU LLM Quantization & MCP Legal Server Deployment",
-        "provider": { "@id": "https://www.gurdharam.com/#organization" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com",
+          "image": "https://www.gurdharam.com/og-card.png"
+        },
         "description": "On-premise air-gapped 70B parameter open-weights LLM deployment (vLLM, AWQ, GGUF 4-bit) with Anthropic Model Context Protocol (MCP) server integration for enterprise legal and DPDP compliance.",
         "areaServed": "Global"
       },

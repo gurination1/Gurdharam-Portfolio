@@ -19,7 +19,13 @@ export default function AIAutomationAgencyIndia() {
         "@type": "Service",
         "@id": "https://www.gurdharam.com/services/ai-automation-agency-india#service",
         "name": "AI Automation Agency India — Custom LLM & Workflow Automation",
-        "provider": { "@id": "https://www.gurdharam.com/#organization" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com",
+          "image": "https://www.gurdharam.com/og-card.png"
+        },
         "description": "Leading AI Automation Agency in India. Build custom n8n, Make, WhatsApp API, AI phone bots, and multi-agent LLM business workflows.",
         "areaServed": ["India", "Global"]
       },

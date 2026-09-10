@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import Footer from '@/components/ui/footer';
 
 export default function BlogPostWhatsAppHealth() {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "WhatsApp AI Clinic Bots | Gurdharam";
+  }, []);
 
   return (
     <main className="min-h-screen bg-void text-primary pt-24 px-6 md:px-16 pb-20">

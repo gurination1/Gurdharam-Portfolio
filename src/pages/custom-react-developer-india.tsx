@@ -19,7 +19,13 @@ export default function CustomReactDeveloperIndia() {
         "@type": "Service",
         "@id": "https://www.gurdharam.com/services/custom-react-developer-india#service",
         "name": "Custom React Developer & Next.js Web Engineer in India",
-        "provider": { "@id": "https://www.gurdharam.com/#organization" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com",
+          "image": "https://www.gurdharam.com/og-card.png"
+        },
         "description": "Hire expert React, Next.js, and Three.js full-stack developer in India. High-performance, pre-rendered SSG web apps with sub-1 second load times.",
         "areaServed": ["India", "Global"]
       },

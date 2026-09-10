@@ -77,7 +77,12 @@
     },
     {
       "source": "/services/Marketing",
-      "destination": "/services/marketing",
+      "destination": "/services/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/services/marketing",
+      "destination": "/services/ai-automation",
       "permanent": true
     },
     {
@@ -94,10 +99,6 @@
     {
       "source": "/google884ab312af7ff99a",
       "destination": "/api/google884ab312af7ff99a"
-    },
-    {
-      "source": "/services/marketing",
-      "destination": "/services/marketing.html"
     },
     {
       "source": "/services",

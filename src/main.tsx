@@ -44,6 +44,7 @@ const IndicAIVoiceAgentDeveloper = lazy(() => import('./pages/indic-ai-voice-age
 const AIAutomationAgencyIndia = lazy(() => import('./pages/ai-automation-agency-india'));
 const WebsitesShowcase = lazy(() => import('./pages/websites'));
 const AboutPage = lazy(() => import('./pages/about'));
+const NotFoundPage = lazy(() => import('./pages/not-found'));
 
 function CanonicalUpdater() {
   const { pathname } = useLocation();
@@ -156,7 +157,7 @@ function Main() {
           <Route path="/blog/offline-ai-crop-disease-scanner-flutter" element={<BlogPostFasalDoctor />} />
           <Route path="/blog/whatsapp-ai-agents-healthcare-india" element={<BlogPostWhatsAppHealth />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="*" element={<div style={{ padding: '50px', color: '#fff', fontFamily: 'monospace', fontSize: '14px' }}>Route Mismatch: {window.location.pathname}</div>} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

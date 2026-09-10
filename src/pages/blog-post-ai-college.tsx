@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
 export default function BlogPostAICollege() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "AI College Admission & Campus Automation Bot | Gurdharam";
+    document.title = "AI College Admission Bot | Gurdharam";
   }, []);
 
   const waUrl = getWhatsAppUrl("Hi Gurdharam, I read your AI College Admission & Campus Automation case study.");

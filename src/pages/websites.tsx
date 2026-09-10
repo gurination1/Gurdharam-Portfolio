@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowUpRight, 
@@ -397,6 +397,11 @@ const FAQS = [
 export default function WebsitesShowcase() {
   const [activeShowcaseFilter, setActiveShowcaseFilter] = useState<'all' | 'business' | 'spatial-3d' | 'apps'>('all');
   const [highlightedTier, setHighlightedTier] = useState<string | null>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Website Rates & Showcase | Gurdharam";
+  }, []);
 
   const filteredItems = activeShowcaseFilter === 'all' 
     ? SHOWCASE_ITEMS 

@@ -16,7 +16,13 @@ export default function AICollegeAutomation() {
         "@type": "Service",
         "@id": "https://www.gurdharam.com/services/ai-college-automation#service",
         "name": "AI College & University Campus Admission Automation Punjab",
-        "provider": { "@id": "https://www.gurdharam.com/#organization" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com",
+          "image": "https://www.gurdharam.com/og-card.png"
+        },
         "description": "Bilingual WhatsApp AI bots, document OCR verification, fee payment reminders, and ERP integration for higher education degree colleges and universities in Punjab and India.",
         "areaServed": "India"
       },

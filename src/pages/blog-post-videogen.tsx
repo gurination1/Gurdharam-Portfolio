@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
 export default function BlogPostVideoGen() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "yt-auto: Automated 1080p60 Video Pipeline | Gurdharam";
+    document.title = "VideoGen 1080p60 Pipeline | Gurdharam";
   }, []);
 
   const waUrl = getWhatsAppUrl("Hi Gurdharam, I read your Automated 1080p60 Video Pipeline case study.");

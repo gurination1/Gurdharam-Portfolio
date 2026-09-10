@@ -277,8 +277,10 @@ export default function SchemaMarkup() {
       "serviceType": "WhatsApp Business Bot Development",
       "areaServed": "India",
       "provider": {
-        "@type": "LocalBusiness",
+        "@type": "Organization",
+        "@id": "https://www.gurdharam.com/#organization",
         "name": "Gurdharam AI Engineering",
+        "url": "https://www.gurdharam.com",
         "image": "https://www.gurdharam.com/og-card.png"
       }
     });
@@ -315,8 +317,10 @@ export default function SchemaMarkup() {
       "serviceType": "AI Automation Services",
       "areaServed": "India",
       "provider": {
-        "@type": "LocalBusiness",
+        "@type": "Organization",
+        "@id": "https://www.gurdharam.com/#organization",
         "name": "Gurdharam AI Engineering",
+        "url": "https://www.gurdharam.com",
         "image": "https://www.gurdharam.com/og-card.png"
       }
     });
@@ -353,8 +357,10 @@ export default function SchemaMarkup() {
       "serviceType": "Full-Stack Web Development",
       "areaServed": "India",
       "provider": {
-        "@type": "LocalBusiness",
+        "@type": "Organization",
+        "@id": "https://www.gurdharam.com/#organization",
         "name": "Gurdharam AI Engineering",
+        "url": "https://www.gurdharam.com",
         "image": "https://www.gurdharam.com/og-card.png"
       }
     });
@@ -391,8 +397,10 @@ export default function SchemaMarkup() {
       "serviceType": "On-Device Mobile ML Apps",
       "areaServed": "India",
       "provider": {
-        "@type": "LocalBusiness",
+        "@type": "Organization",
+        "@id": "https://www.gurdharam.com/#organization",
         "name": "Gurdharam AI Engineering",
+        "url": "https://www.gurdharam.com",
         "image": "https://www.gurdharam.com/og-card.png"
       }
     });

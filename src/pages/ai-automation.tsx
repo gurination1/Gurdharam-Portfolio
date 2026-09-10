@@ -6,7 +6,7 @@ import Footer from '@/components/ui/footer';
 export default function AiAutomation() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "AI Automation Services India | Custom Bots & Media Pipelines";
+    document.title = "AI Automation Services | Gurdharam";
   }, []);
 
   return (

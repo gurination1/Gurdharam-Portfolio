@@ -144,7 +144,7 @@ const routes = [
   },
   {
     path: '/websites',
-    title: 'Website Development Rates & Showcase | Gurdharam',
+    title: 'Website Rates & Showcase | Gurdharam',
     description: 'Transparent website packages (₹5k Basic, ₹7k SEO, ₹12k Interactive 3D, ₹20k Flagship Spatial) and live production client showcase with real PC views.',
     canonical: 'https://www.gurdharam.com/websites',
     jsonld: {
@@ -162,16 +162,42 @@ const routes = [
     html: `<main>
         <header>
           <h1>Transparent Website Development Rates & Production Showcase</h1>
-          <p>Fixed-price packages: ₹5,000 Starter Business, ₹7,000 Growth Business with Google Local SEO & GSC Indexing, ₹12,000 2D + 3D Interactive, and ₹20,000 Ultra 3D Spatial Flagship.</p>
+          <p>Fixed-price packages: ₹5,000 Starter Business, ₹7,000 Growth Business with Google Local SEO & GSC Indexing, ₹12,000 2D + 3D Interactive, and ₹20,000 Ultra 3D Spatial Flagship. Hand-crafted, ultra-fast web development by Gurdharam Jeet Singh and Manveer Singh.</p>
         </header>
         <section>
-          <h2>Live Production Showcase</h2>
+          <h2>Live Production Showcase & Case Studies</h2>
+          <p>Explore real production clients with verified live builds, interactive Three.js 3D spatial models, and enterprise-grade performance:</p>
           <ul>
-            <li><strong>Kirat Interior</strong>: Bespoke luxury furniture & interior studio (Bathinda, Punjab).</li>
-            <li><strong>NEOVRIT Studio</strong>: 3D × AI agency web environment with Three.js GLTF model viewport.</li>
-            <li><strong>Dream Heights & Gurdharam.com</strong>: Luxury gated residences on Ring Road Bathinda (2&3 BHK, saltwater pool, Day/Night engine) & studio headquarters flagship.</li>
+            <li><a href="https://www.kiratinterior.com/" target="_blank" rel="noopener noreferrer">Kirat Interior</a>: Bespoke luxury furniture & interior studio in Bathinda, Punjab. Hand-coded responsive UI with instant WhatsApp inquiries.</li>
+            <li><a href="https://neovrit.vercel.app" target="_blank" rel="noopener noreferrer">NEOVRIT Studio</a>: 3D × AI agency web environment featuring Three.js WebGL GLTF model viewport and 120Hz smooth scrolling.</li>
+            <li><a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer">Dream Heights Luxury Residences</a>: Flagship real estate 3D platform with spatial lighting, interactive floorplans, and zero mobile lag.</li>
+            <li><a href="/case-studies/doodhisaab">DoodHisaab Case Study</a>: Offline-first dairy management mobile application built with Flutter and on-device SQLite.</li>
+            <li><a href="/case-studies/fasal-doctor">Fasal Doctor Case Study</a>: Agricultural computer vision application powered by on-device TensorFlow Lite neural diagnostics.</li>
+            <li><a href="/case-studies/takemyinterview-ai">TakeMyInterview.ai Case Study</a>: Sub-300ms conversational voice-to-voice AI interviewer platform.</li>
           </ul>
         </section>
+        <section>
+          <h2>Development Packages & Transparent Pricing</h2>
+          <article>
+            <h3>₹5,000 — Starter Business Web Presence</h3>
+            <p>Hand-coded responsive mobile & desktop UI, lifetime ₹0/month Vercel edge hosting, direct WhatsApp integration, and custom domain connection with free SSL.</p>
+          </article>
+          <article>
+            <h3>₹7,000 — Growth Business with Google Local SEO</h3>
+            <p>Everything in Starter plus Google Search Console API instant indexing, 100% Google LocalBusiness Schema, local keyword optimization, and sub-1s Core Web Vitals.</p>
+          </article>
+          <article>
+            <h3>₹12,000 — Interactive 3D WebGL Web Platform</h3>
+            <p>Everything in Growth plus Three.js GLTF 3D model viewport, Lenis 120Hz smooth scroll, cybernetic dark-mode aesthetics, and real-time lead capture backend.</p>
+          </article>
+          <article>
+            <h3>₹20,000 — Ultra 3D Spatial Digital Twin Flagship</h3>
+            <p>Full Three.js WebGL spatial architecture, 120 FPS cinematic camera choreography, custom GLSL shaders, and full static SSR pre-rendered zero-flicker architecture.</p>
+          </article>
+        </section>
+        <footer>
+          <p><a href="/">Return Home</a> | <a href="/about">About the Founders</a> | <a href="/services">Services Hub</a> | <a href="/blog">Engineering Articles</a></p>
+        </footer>
       </main>`
   },
   {
@@ -362,7 +388,7 @@ app.post('/api/webhook', async (req, res) => {
   },
   {
     path: '/services/local-gpu-llm-quantization',
-    title: 'Air-Gapped Local GPU LLM Legal Server | Gurdharam',
+    title: 'Air-Gapped Local GPU LLM Server | Gurdharam',
     description: 'Run 70B parameter open-weights models 100% air-gapped on single RTX GPUs with AWQ, GGUF Q4_K_M, vLLM, and Model Context Protocol legal tools.',
     canonical: 'https://www.gurdharam.com/services/local-gpu-llm-quantization',
     jsonld: {
@@ -412,7 +438,7 @@ app.post('/api/webhook', async (req, res) => {
   },
   {
     path: '/services/automated-video-generation-engine',
-    title: 'VideoGen — Automated 1080p60 Pipeline | Gurdharam',
+    title: 'VideoGen 1080p60 Pipeline | Gurdharam',
     description: 'Self-hosted programmatic video generation engine for YouTube Shorts, Reels, and educational videos using Remotion, PyTorch SDXL, and FFmpeg NVENC.',
     canonical: 'https://www.gurdharam.com/services/automated-video-generation-engine',
     jsonld: {
@@ -621,7 +647,7 @@ app.post('/api/webhook', async (req, res) => {
   },
   {
     path: '/blog/high-ticket-webgl-3d-spatial-digital-twin',
-    title: '60 FPS WebGL 3D Spatial Digital Twins | Gurdharam',
+    title: 'WebGL 3D Spatial Digital Twins | Gurdharam',
     description: 'High-ticket real estate and B2B SaaS digital twin engine built on Three.js r128, DRACO geometry compression (93% size reduction), and GSAP ScrollTrigger.',
     canonical: 'https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin',
     jsonld: {
@@ -1056,7 +1082,7 @@ app.post('/api/webhook', async (req, res) => {
   },
   {
     path: '/services/crop-disease-detection-app',
-    title: 'Crop Disease Detection App Developer | AgTech AI',
+    title: 'Crop Disease Detection App | AgTech AI',
     description: 'Specialist in offline-first agricultural AI apps using on-device machine learning (MobileNetV2, Flutter, TensorFlow Lite) for crop disease scans.',
     canonical: 'https://www.gurdharam.com/services/crop-disease-detection-app',
     jsonld: {
@@ -1300,7 +1326,22 @@ app.post('/api/webhook', async (req, res) => {
       "@type": "ProfessionalService",
       "@id": "https://www.gurdharam.com/services/website-design-company-chandigarh#service",
       "name": "Website Design Company in Chandigarh — Gurdharam Jeet Singh",
-      "url": "https://www.gurdharam.com/services/website-design-company-chandigarh"
+      "url": "https://www.gurdharam.com/services/website-design-company-chandigarh",
+      "image": "https://www.gurdharam.com/og-card.png",
+      "telephone": "+916280333252",
+      "priceRange": "₹₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chandigarh",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN"
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.gurdharam.com/#person",
+        "name": "Gurdharam Jeet Singh",
+        "url": "https://www.gurdharam.com"
+      }
     },
     html: `<main><header><h1>Website Design Company in Chandigarh</h1><p>Gurdharam Jeet Singh builds ultra-fast, 3D interactive, and SEO-dominated websites for brands, clinics, coaching institutes, real estate firms, and enterprises in Chandigarh, Mohali, and Panchkula.</p></header></main>`
   },
@@ -1314,7 +1355,14 @@ app.post('/api/webhook', async (req, res) => {
       "@type": "Service",
       "@id": "https://www.gurdharam.com/services/custom-react-developer-india#service",
       "name": "Custom React Developer & Next.js Web Engineer in India",
-      "url": "https://www.gurdharam.com/services/custom-react-developer-india"
+      "url": "https://www.gurdharam.com/services/custom-react-developer-india",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.gurdharam.com/#organization",
+        "name": "Gurdharam AI Engineering",
+        "url": "https://www.gurdharam.com",
+        "image": "https://www.gurdharam.com/og-card.png"
+      }
     },
     html: `<main><header><h1>Custom React Developer in India</h1><p>Gurdharam Jeet Singh is a senior React and Next.js full-stack web developer based in India. Engineering high-ticket 2D/3D web applications, SaaS dashboards, and pre-rendered SSG marketing sites.</p></header></main>`
   },
@@ -1328,7 +1376,14 @@ app.post('/api/webhook', async (req, res) => {
       "@type": "Service",
       "@id": "https://www.gurdharam.com/services/indic-ai-voice-agent-developer#service",
       "name": "Voice AI Agent Developer & Indic AI Phone Assistant Engineer India",
-      "url": "https://www.gurdharam.com/services/indic-ai-voice-agent-developer"
+      "url": "https://www.gurdharam.com/services/indic-ai-voice-agent-developer",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.gurdharam.com/#organization",
+        "name": "Gurdharam AI Engineering",
+        "url": "https://www.gurdharam.com",
+        "image": "https://www.gurdharam.com/og-card.png"
+      }
     },
     html: `<main><header><h1>Voice AI Agent Developer in India</h1><p>Gurdharam Jeet Singh engineers autonomous Voice AI phone callers, virtual receptionists, and Indic voice assistants for medical clinics, coaching centers, real estate agencies, and customer support desks across India.</p></header></main>`
   },
@@ -1342,7 +1397,14 @@ app.post('/api/webhook', async (req, res) => {
       "@type": "Service",
       "@id": "https://www.gurdharam.com/services/ai-automation-agency-india#service",
       "name": "AI Automation Agency India — Custom LLM & Workflow Automation",
-      "url": "https://www.gurdharam.com/services/ai-automation-agency-india"
+      "url": "https://www.gurdharam.com/services/ai-automation-agency-india",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.gurdharam.com/#organization",
+        "name": "Gurdharam AI Engineering",
+        "url": "https://www.gurdharam.com",
+        "image": "https://www.gurdharam.com/og-card.png"
+      }
     },
     html: `<main><header><h1>AI Automation Agency in India</h1><p>Gurdharam Jeet Singh leads a top-tier AI Automation Agency in India. Engineering autonomous multi-agent LLM pipelines, n8n/Make workflow integrations, WhatsApp Cloud API bots, and automated AI telephony callers.</p></header></main>`
   },
@@ -1611,7 +1673,7 @@ app.post('/api/webhook', async (req, res) => {
   },
   {
     path: '/services/offline-ai-app-development',
-    title: 'Offline AI App Developer | Flutter & On-Device ML',
+    title: 'Offline AI App Developer | Flutter ML',
     description: 'Developer of offline-first AI mobile apps using on-device ML models, Flutter, and TFLite. Run AI inference with zero latency and zero cloud costs.',
     canonical: 'https://www.gurdharam.com/services/offline-ai-app-development',
     jsonld: {
@@ -2007,7 +2069,7 @@ app.post('/api/webhook', async (req, res) => {
   },
   {
     path: '/blog/whatsapp-ai-agents-healthcare-india',
-    title: 'WhatsApp AI Booking Bots for Clinics | Gurdharam',
+    title: 'WhatsApp AI Clinic Bots | Gurdharam',
     description: 'How dental clinics and hospitals use conversational AI logic trees to manage bookings, qualify patients, and capture 24/7 leads automatically.',
     canonical: 'https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india',
     jsonld: {
@@ -2167,7 +2229,7 @@ app.post('/api/webhook', async (req, res) => {
   },
   {
     path: '/case-studies/takemyinterview-ai',
-    title: 'TakeMyInterview AI Voice Interviewer | Gurdharam',
+    title: 'TakeMyInterview AI Voice Bot | Gurdharam',
     description: 'Engineering breakdown of building an air-gapped voice AI mock job interviewer platform using Whisper STT, fine-tuned Llama 3.3, and Piper TTS.',
     canonical: 'https://www.gurdharam.com/case-studies/takemyinterview-ai',
     html: `<main>
@@ -2511,6 +2573,36 @@ const masterFooter = `
         </footer>
 `;
 
+routes.push({
+  path: '/404',
+  title: 'Page Not Found | Gurdharam & Manveer',
+  description: 'The requested resource does not exist or has moved. Return to Gurdharam Jeet Singh and Manveer Singh portfolio home, services, or live websites.',
+  canonical: 'https://www.gurdharam.com/404',
+  jsonld: {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Page Not Found (404) | Gurdharam",
+    "url": "https://www.gurdharam.com/404"
+  },
+  html: `
+    <main>
+      <header>
+        <h1>Page Not Found</h1>
+        <p>The page or system resource you requested does not exist or has been relocated to an updated architectural path. Gurdharam Jeet Singh and Manveer Singh engineer high-performance software systems, on-premise AI automation pipelines, and spatial 3D web applications. Explore our services, case studies, or portfolio showcase.</p>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="/">Return Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/websites">Live Website Showcase</a></li>
+          <li><a href="/services">Services Hub</a></li>
+          <li><a href="/blog">Engineering Articles</a></li>
+        </ul>
+      </nav>
+    </main>
+  `
+});
+
 (async () => {
   let ssrRender = null;
   try {
@@ -2614,6 +2706,9 @@ const masterFooter = `
     if (route.path === '/') {
       fs.writeFileSync(templatePath, pageHtml, 'utf8');
       console.log("Pre-rendered root / index.html successfully with SSR");
+    } else if (route.path === '/404') {
+      fs.writeFileSync(path.join(distPath, '404.html'), pageHtml, 'utf8');
+      console.log("Pre-rendered 404.html successfully with SSR");
     } else {
       const relPath = route.path.replace(/^\//, '');
       const dirPath = path.join(distPath, relPath);

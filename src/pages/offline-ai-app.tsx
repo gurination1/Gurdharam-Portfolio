@@ -6,7 +6,7 @@ import Footer from '@/components/ui/footer';
 export default function OfflineAiAppDevelopment() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Offline AI App Developer India | Flutter + TFLite On-Device ML | Gurdharam";
+    document.title = "Offline AI App Developer | Flutter ML";
   }, []);
 
   return (

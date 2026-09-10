@@ -16,7 +16,7 @@ function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
 export default function TakeMyInterviewCaseStudy() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "TakeMyInterview AI: Offline Voice-to-Voice AI Interviewer | Gurdharam";
+    document.title = "TakeMyInterview AI Voice Bot | Gurdharam";
   }, []);
 
   const waUrl = getWhatsAppUrl("Hi Gurdharam, I read your TakeMyInterview AI voice-to-voice case study.");

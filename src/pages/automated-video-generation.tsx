@@ -5,7 +5,10 @@ import Footer from '@/components/ui/footer';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function AutomatedVideoGeneration() {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "VideoGen 1080p60 Pipeline | Gurdharam";
+  }, []);
 
   const waUrl = getWhatsAppUrl("Hi Gurdharam, I'd like to discuss building an automated 1080p60 VideoGen engine for our business.");
 
@@ -16,7 +19,13 @@ export default function AutomatedVideoGeneration() {
         "@type": "Service",
         "@id": "https://www.gurdharam.com/services/automated-video-generation-engine#service",
         "name": "Automated 1080p60 Video Generation Engine ($0 Cloud Render Cost)",
-        "provider": { "@id": "https://www.gurdharam.com/#organization" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com",
+          "image": "https://www.gurdharam.com/og-card.png"
+        },
         "description": "Programmatic 1080p60 video automation engine built with Remotion React video pipelines, FFmpeg NVENC GPU acceleration, and automated YouTube/Social publishing.",
         "areaServed": "Global"
       },

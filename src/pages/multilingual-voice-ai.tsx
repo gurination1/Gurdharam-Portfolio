@@ -13,7 +13,13 @@ export default function MultilingualVoiceAI() {
         "@type": "Service",
         "@id": "https://www.gurdharam.com/services/multilingual-voice-ai-telephony#service",
         "name": "Sub-300ms Multilingual Sarvam Indic Voice AI Telephony Agents",
-        "provider": { "@id": "https://www.gurdharam.com/#organization" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com",
+          "image": "https://www.gurdharam.com/og-card.png"
+        },
         "description": "Custom sub-300ms latency voice AI telephony agents built with Sarvam Indic models, WebRTC, SIP trunking, and PSTN integration for Indian languages.",
         "areaServed": "India"
       },

@@ -6,7 +6,7 @@ import Footer from '@/components/ui/footer';
 export default function DoodHisaab() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "DoodHisaab Case Study | Flutter App Punjab | Gurdharam";
+    document.title = "DoodHisaab Case Study | Gurdharam";
   }, []);
 
   return (

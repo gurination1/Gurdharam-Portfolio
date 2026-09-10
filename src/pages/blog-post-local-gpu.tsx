@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
 export default function BlogPostLocalGPU() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Local GPU LLM Quantization & MCP Legal Server | Gurdharam";
+    document.title = "Local GPU LLM & MCP Server | Gurdharam";
   }, []);
 
   const waUrl = getWhatsAppUrl("Hi Gurdharam, I read your Air-Gapped Local GPU LLM & MCP Server case study.");

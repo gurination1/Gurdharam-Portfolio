@@ -34,8 +34,12 @@ export default function WebsiteDesignCompanyChandigarh() {
           { "@type": "City", "name": "Mohali", "sameAs": "https://www.wikidata.org/wiki/Q2378875" },
           { "@type": "City", "name": "Panchkula", "sameAs": "https://www.wikidata.org/wiki/Q2288924" }
         ],
-        "knowsAbout": ["Website Design", "Custom React Web Development", "3D WebGL Web Apps", "Local SEO Chandigarh"],
-        "provider": { "@id": "https://www.gurdharam.com/#organization" }
+        "founder": {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "url": "https://www.gurdharam.com"
+        }
       },
       {
         "@type": "FAQPage",

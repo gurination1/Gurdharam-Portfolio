@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
 export default function BlogPostVoiceAI() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Architecting Sub-300ms Voice AI Telephony Agents | Gurdharam";
+    document.title = "Sub-300ms Voice AI Agents | Gurdharam";
   }, []);
 
   const waUrl = getWhatsAppUrl("Hi Gurdharam, I read your Sub-300ms Voice AI Telephony Agent case study.");

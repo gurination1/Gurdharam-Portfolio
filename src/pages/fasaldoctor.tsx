@@ -6,7 +6,7 @@ import Footer from '@/components/ui/footer';
 export default function FasalDoctor() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Fasal Doctor Case Study | Offline Crop AI Punjab | Gurdharam";
+    document.title = "Fasal Doctor Case Study | Gurdharam";
   }, []);
 
   return (

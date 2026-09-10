@@ -19,7 +19,13 @@ export default function IndicAIVoiceAgentDeveloper() {
         "@type": "Service",
         "@id": "https://www.gurdharam.com/services/indic-ai-voice-agent-developer#service",
         "name": "Voice AI Agent Developer & Indic AI Phone Assistant Engineer India",
-        "provider": { "@id": "https://www.gurdharam.com/#organization" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "url": "https://www.gurdharam.com",
+          "image": "https://www.gurdharam.com/og-card.png"
+        },
         "description": "Hire expert Voice AI Agent Developer in India. Building sub-300ms Indic voice assistants (Hindi, Punjabi, English) over PSTN phone lines & SIP trunks.",
         "areaServed": ["India", "Global"]
       },

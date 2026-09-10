@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
 export default function BlogPostWebGL() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "NEOVRIT: 60 FPS WebGL 3D Spatial Digital Twins | Gurdharam";
+    document.title = "WebGL 3D Spatial Digital Twins | Gurdharam";
   }, []);
 
   const waUrl = getWhatsAppUrl("Hi Gurdharam, I read your WebGL 3D Spatial Digital Twin case study.");
