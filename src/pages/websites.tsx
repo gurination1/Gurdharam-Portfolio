@@ -118,10 +118,10 @@ const PRICING_TIERS: PricingTier[] = [
       { title: '120 FPS Multi-Scene Architectural Walkthrough', included: false, detail: 'Available in ₹20k Tier' },
       { title: 'Custom Procedural GLSL Shaders', included: false, detail: 'Available in ₹20k Tier' },
     ],
-    exampleName: 'NEOVRIT Studio (3D × AI)',
-    exampleUrl: 'https://neovrit.vercel.app',
-    exampleNote: 'Interactive GLTF viewport, stacked section scroll physics, and Supabase integration',
-    whatsappMessage: "Hi Gurdharam, I want to commission the ₹12,000 2D + 3D Interactive Website package like NEOVRIT.",
+    exampleName: 'BioPrac (Precision Health & WebGL)',
+    exampleUrl: 'https://gurination1.github.io/bioprac/',
+    exampleNote: 'WebGL atmospheric fog, circular arc kinematics, 500+ biomarker telemetry (Secondary: NEOVRIT Studio)',
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹12,000 2D + 3D Interactive Website package like BioPrac.",
     accentBorder: 'border-[#38bdf8]/50 hover:border-[#38bdf8]/80 shadow-[0_0_30px_rgba(56,189,248,0.12)]',
     accentBg: 'bg-[#0b161b]/90',
   },
@@ -205,12 +205,42 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     inquiryMessage: "Hi Gurdharam, I saw the Kirat Interior website. I want to build a similar website for my business."
   },
   {
+    id: 'bioprac',
+    title: 'BioPrac // Precision Preventative Health & Cellular Diagnostics',
+    category: 'spatial-3d',
+    categoryLabel: 'CLINICAL INTELLIGENCE & INTERACTIVE ARCHITECTURE',
+    tierBadge: 'TIER: ₹12,000 [2D + 3D INTERACTIVE — MAIN FLAGSHIP]',
+    tierColor: 'border-[#38bdf8] bg-[#38bdf8]/15 text-[#38bdf8]',
+    liveUrl: 'https://gurination1.github.io/bioprac/',
+    displayUrl: 'gurination1.github.io/bioprac',
+    secondaryLiveUrl: 'https://neovrit.vercel.app',
+    secondaryDisplayUrl: 'neovrit.vercel.app',
+    imageSrc: '/assets/showcase/bioprac-pc.webp',
+    tagline: '"Decode Your Biology. Master Your Vitality." — Clinical Intelligence Console',
+    description: 'Next-generation clinical preventative healthcare web platform. Features interactive circular arc timeline choreography, Three.js Vanta WebGL fog atmosphere, split-type kinetic typography, iPad diagnostic telemetry console, dynamic tab matrix across 500+ biomarkers, and 120Hz Lenis hardware-accelerated scroll physics.',
+    highlightDeliverables: [
+      { label: 'WebGL Engine', value: 'Three.js Fog Atmosphere' },
+      { label: 'Kinematics', value: 'Interactive Arc Timeline' },
+      { label: 'Clinical Depth', value: '500+ Biomarkers Mapped' },
+      { label: 'Scroll Physics', value: 'Lenis 120Hz Smooth Scroll' }
+    ],
+    specs: [
+      'Procedural Three.js WebGL fog atmosphere with zero-lag GPU shader render',
+      'Interactive SVG circular arc timeline with synchronized rotational step triggers',
+      'High-DPI clinical diagnostic telemetry console & multi-system recovery tracking',
+      'Cleanroom legal decoupling & bank-grade zero-knowledge data architecture'
+    ],
+    techPills: ['Three.js', 'Lenis Scroll', 'SVG Arc Matrix', 'TailwindCSS', 'GitHub Pages'],
+    rateText: '₹12,000 (Interactive 3D / Precision Tier)',
+    inquiryMessage: "Hi Gurdharam, I saw the BioPrac website. I want to build a similar interactive platform for my business."
+  },
+  {
     id: 'neovrit',
     title: 'NEOVRIT // 3D Simulation & AI Engineering Studio',
     category: 'spatial-3d',
     categoryLabel: '3D SPATIAL & AI AGENCY',
-    tierBadge: 'TIER: ₹12,000 [2D + 3D INTERACTIVE]',
-    tierColor: 'border-[#38bdf8] bg-[#38bdf8]/15 text-[#38bdf8]',
+    tierBadge: 'TIER: ₹12,000 [2D + 3D INTERACTIVE — SECONDARY]',
+    tierColor: 'border-[#38bdf8]/60 bg-[#38bdf8]/10 text-[#38bdf8]',
     liveUrl: 'https://neovrit.vercel.app',
     displayUrl: 'neovrit.vercel.app',
     imageSrc: '/assets/showcase/neovrit-pc.webp',
@@ -228,7 +258,7 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
       'Live Supabase client telemetry & instant lead capture'
     ],
     techPills: ['Three.js', 'GLTF Loader', 'Lenis Scroll', 'Supabase', 'Vercel'],
-    rateText: '₹12,000 (Interactive 3D Tier)',
+    rateText: '₹12,000 (Interactive 3D Tier — Secondary)',
     inquiryMessage: "Hi Gurdharam, I want an interactive 3D website like NEOVRIT with Three.js and smooth scrolling."
   },
   {
@@ -748,7 +778,7 @@ export default function WebsitesShowcase() {
                   <td className="p-4 font-sans font-medium text-white">Real-World Production Proof</td>
                   <td className="p-4 text-center text-[#9a958c]">Kirat Interior (Core)</td>
                   <td className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5 font-bold">Kirat Interior (Live)</td>
-                  <td className="p-4 text-center text-[#38bdf8]">NEOVRIT Studio</td>
+                  <td className="p-4 text-center text-[#38bdf8]">BioPrac &amp; NEOVRIT</td>
                   <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights & Gurdharam.com</td>
                 </tr>
               </tbody>
