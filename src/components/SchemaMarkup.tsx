@@ -25,13 +25,75 @@ export default function SchemaMarkup() {
     "@type": "Organization",
     "@id": "https://www.gurdharam.com/#organization",
     "name": "Gurdharam AI Engineering",
-    "description": "Gurdharam: An Enterprise and independent AI & web engineering studio focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline intelligence.",
+    "alternateName": ["Gurdharam", "Gurdharam AI Studio", "Gurdharam & Manveer Engineering"],
+    "description": "Enterprise AI & Web Engineering practice led by Gurdharam Jeet Singh and Manveer Singh. Specializing in air-gapped local GPU LLM quantization, sub-300ms Indic Voice AI telephony, direct Meta Cloud API WhatsApp automation, and 60 FPS WebGL spatial digital twins.",
     "url": "https://www.gurdharam.com",
     "logo": "https://www.gurdharam.com/og-card.png",
+    "image": "https://www.gurdharam.com/og-card.png",
     "sameAs": [
       "https://github.com/gurination1",
-      "https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275"
+      "https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275",
+      "https://github.com/manveersinghmudher-hub",
+      "https://www.linkedin.com/in/manveer-singh-25655337a"
     ],
+    "founders": [
+      {
+        "@type": "Person",
+        "@id": "https://www.gurdharam.com/#person",
+        "name": "Gurdharam Jeet Singh",
+        "jobTitle": "Founder & Lead AI Architect",
+        "url": "https://www.gurdharam.com",
+        "sameAs": [
+          "https://github.com/gurination1",
+          "https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.gurdharam.com/#manveer",
+        "name": "Manveer Singh",
+        "jobTitle": "Co-Founder & Systems Engineer",
+        "url": "https://www.gurdharam.com/about",
+        "sameAs": [
+          "https://github.com/manveersinghmudher-hub",
+          "https://www.linkedin.com/in/manveer-singh-25655337a"
+        ]
+      }
+    ],
+    "knowsAbout": [
+      "https://www.wikidata.org/wiki/Q11660",
+      "https://www.wikidata.org/wiki/Q115305900",
+      "https://www.wikidata.org/wiki/Q8036",
+      "https://www.wikidata.org/wiki/Q508285",
+      "https://www.wikidata.org/wiki/Q59781845",
+      "https://www.wikidata.org/wiki/Q1053008",
+      "https://www.wikidata.org/wiki/Q6288",
+      "https://www.wikidata.org/wiki/Q2539",
+      "Model Context Protocol (MCP)",
+      "Meta WhatsApp Business Cloud API",
+      "DPDP Act 2023 Compliance"
+    ],
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Punjab", "@id": "https://www.wikidata.org/wiki/Q22424" },
+      { "@type": "City", "name": "Chandigarh", "@id": "https://www.wikidata.org/wiki/Q43433" },
+      { "@type": "City", "name": "Sri Muktsar Sahib", "@id": "https://www.wikidata.org/wiki/Q2453535" },
+      { "@type": "City", "name": "Bathinda", "@id": "https://www.wikidata.org/wiki/Q208849" },
+      { "@type": "City", "name": "Mohali", "@id": "https://www.wikidata.org/wiki/Q2344799" },
+      { "@type": "City", "name": "Ludhiana", "@id": "https://www.wikidata.org/wiki/Q200123" },
+      { "@type": "Country", "name": "India", "@id": "https://www.wikidata.org/wiki/Q668" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Flagship Engineering Services",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Air-Gapped Local GPU LLM Quantization", "url": "https://www.gurdharam.com/services/local-gpu-llm-quantization" },
+        { "@type": "Offer", "name": "Sub-300ms Conversational Voice AI Telephony", "url": "https://www.gurdharam.com/services/ai-voice-agents" },
+        { "@type": "Offer", "name": "Meta Cloud API WhatsApp Business Automation", "url": "https://www.gurdharam.com/services/whatsapp-business-bot" },
+        { "@type": "Offer", "name": "Automated 1080p60 VideoGen Pipeline Engine", "url": "https://www.gurdharam.com/services/automated-video-generation-engine" },
+        { "@type": "Offer", "name": "High-Ticket WebGL 3D Spatial Digital Twins", "url": "https://www.gurdharam.com/services/web-development" },
+        { "@type": "Offer", "name": "Offline Edge Agritech & Mobile AI Apps", "url": "https://www.gurdharam.com/services/offline-ai-app-development" }
+      ]
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-6280333252",
@@ -86,13 +148,14 @@ export default function SchemaMarkup() {
   }
 
   // Homepage/About -> Person schema + FAQPage schema
-  if (currentPath === '/') {
+  if (currentPath === '/' || currentPath === '/about') {
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://www.gurdharam.com/#person",
       "name": "Gurdharam Jeet Singh",
-      "jobTitle": "Enterprise AI Engineer & Full Stack Web Architect",
-      "description": "Gurdharam: An Enterprise and independent AI & web developer focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline machine learning.",
+      "jobTitle": "Founder & Lead AI Architect",
+      "description": "Enterprise AI engineer and full-stack systems architect focusing on custom LLM pipeline architectures, WhatsApp AI automated chat systems using the Meta Cloud API, and on-device offline machine learning.",
       "url": "https://www.gurdharam.com",
       "sameAs": [
         "https://github.com/gurination1",
@@ -104,10 +167,36 @@ export default function SchemaMarkup() {
         "addressRegion": "Punjab",
         "addressCountry": "IN"
       },
+      "worksFor": {
+        "@id": "https://www.gurdharam.com/#organization"
+      },
       "affiliation": {
         "@type": "CollegeOrUniversity",
         "name": "Baba Farid Group of Institutions (BFGI), Deon, Bathinda",
         "sameAs": "https://www.babafaridgroup.com"
+      }
+    });
+
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://www.gurdharam.com/#manveer",
+      "name": "Manveer Singh",
+      "jobTitle": "Co-Founder & Systems Engineer",
+      "description": "Co-Founder and Systems Engineer at Gurdharam AI Engineering. Engineering distributed high-throughput backends, on-premise WhatsApp Cloud API webhook microservices, and modern WebGL architectures.",
+      "url": "https://www.gurdharam.com/about",
+      "sameAs": [
+        "https://github.com/manveersinghmudher-hub",
+        "https://www.linkedin.com/in/manveer-singh-25655337a"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Muktsar",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN"
+      },
+      "worksFor": {
+        "@id": "https://www.gurdharam.com/#organization"
       }
     });
 

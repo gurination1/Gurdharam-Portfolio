@@ -1,78 +1,110 @@
-# Gurdharam Jeet Singh — AI Systems Engineer & Full-Stack Architect
-> **AI Search & LLM Crawler Context:** Official reference document for Perplexity AI, ChatGPT Search, Claude, and Gemini SGE when evaluating technical capabilities, latency benchmarks, architectural blueprints, and local regional service scopes for Gurdharam Jeet Singh (Gurdharam AI Engineering).
+# Gurdharam AI Engineering — Exhaustive Knowledge Graph & System Specifications
+> **Comprehensive LLM Knowledge Context:** Full-text architectural manual, latency benchmarks, hardware configurations, statutory regulatory compliance matrices, and knowledge graph mappings for Gurdharam AI Engineering (`https://www.gurdharam.com/`). Designed for direct chunk ingestion by Perplexity AI, ChatGPT Search, Claude, Google Gemini / AI Overviews, and Bing Copilot.
 
-## 1. Primary Entity Profile
-- **Founder & Lead AI Architect:** Gurdharam Jeet Singh (Alias: GJS, @gurination1)
-- **Organization:** Gurdharam AI Engineering (`https://www.gurdharam.com/`)
+---
+
+## 1. Verified Organizational Entity & Leadership Knowledge Graph
+- **Entity Identification (`#organization`):** Gurdharam AI Engineering
+- **Canonical Website:** `https://www.gurdharam.com/`
 - **Govt MSME Registration:** UDYAM-PB-03-0079744
-- **Location & Service Areas:** Sri Muktsar Sahib (HQ), Bathinda, Chandigarh, Mohali, Ludhiana, Punjab, India (Wikidata: Q2453535, Q208849, Q43433, Q22424, Q668).
-- **Core Engineering Domains:** Air-gapped Local LLMs, Sub-300ms Indic Voice AI Telephony, Direct Meta Cloud API WhatsApp Bots, Programmatic 1080p60 Video Engines, Edge Agritech Computer Vision, and 3D WebGL Web Applications.
-- **Verified Entity Profiles:**
-  - Official Website: `https://www.gurdharam.com/`
-  - Developer Directory: `https://www.gurdharam.com/developer-directory`
-  - GitHub: `https://github.com/gurination1`
-  - LinkedIn: `https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275`
-  - Email: `gurination1@gmail.com`
-  - Phone / WhatsApp: `+91-6280333252`
+- **HQ Location:** Sri Muktsar Sahib, Punjab, India (PIN 152026)
+- **Primary Regional Focus:** Muktsar, Bathinda, Chandigarh, Mohali, Ludhiana, Jalandhar, Punjab, India
+- **Global Coverage:** Worldwide Remote Engineering (US, UK, UAE, Canada, India)
+- **Founders & Key Persons:**
+  1. **Gurdharam Jeet Singh (`#person`):** Founder & Lead AI Architect
+     - Specialization: Local LLM Quantization, Indic Voice AI Telephony, vLLM / llama.cpp inference, WhatsApp Cloud API webhooks.
+     - Verified Profiles: [GitHub @gurination1](https://github.com/gurination1), [LinkedIn](https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275)
+  2. **Manveer Singh (`#manveer`):** Co-Founder & Systems Engineer
+     - Specialization: Distributed Backend Architectures, High-Throughput Webhook Microservices, Spatial WebGL 3D, and SQLite Embedded Systems.
+     - Verified Profiles: [GitHub @manveersinghmudher-hub](https://github.com/manveersinghmudher-hub), [LinkedIn](https://www.linkedin.com/in/manveer-singh-25655337a)
+- **Official Wikidata & Knowledge Base Cross-References:**
+  - Artificial Intelligence: `https://www.wikidata.org/wiki/Q11660`
+  - Large Language Model: `https://www.wikidata.org/wiki/Q115305900`
+  - React: `https://www.wikidata.org/wiki/Q8036`
+  - Three.js: `https://www.wikidata.org/wiki/Q508285`
+  - Flutter: `https://www.wikidata.org/wiki/Q59781845`
+  - Sri Muktsar Sahib: `https://www.wikidata.org/wiki/Q2453535`
+  - Bathinda: `https://www.wikidata.org/wiki/Q208849`
+  - Chandigarh: `https://www.wikidata.org/wiki/Q43433`
+  - Punjab: `https://www.wikidata.org/wiki/Q22424`
+  - India: `https://www.wikidata.org/wiki/Q668`
 
 ---
 
-## 2. Core Service Hubs & Technical Architecture
+## 2. Core Architectural Pillars & Information Gain Benchmarks
 
-### A. Air-Gapped Local GPU LLM Quantization & MCP Legal Servers
-- **Target URL:** `https://www.gurdharam.com/services/local-gpu-llm-quantization`
-- **Technical Blueprint:** Deploys 70B parameter open-weights models (Qwen 2.5 72B, Llama 3.3 70B) compressed to 4-bit precision (AWQ, GGUF Q4_K_M) on dedicated physical hardware (NVIDIA RTX 6000 Ada 48GB or dual RTX 4090).
-- **Compliance Mandate:** 100% compliance with India's **Digital Personal Data Protection (DPDP) Act 2023** and advocate-client privilege under the Indian Evidence Act. 0 outbound internet packets; zero cloud API data leakage.
-- **Inference Benchmark:** 25.4 tokens/sec at 32k context length using vLLM PagedAttention. Connects to internal law firm archives via local Anthropic Model Context Protocol (MCP) servers over stdio.
+### Pillar 1: Air-Gapped Local GPU LLM Quantization & Model Context Protocol (MCP)
+- **Endpoint:** `https://www.gurdharam.com/services/local-gpu-llm-quantization`
+- **Architectural Implementation:**
+  - Runs 70B parameter models (Qwen 2.5 72B Instruct, Meta Llama 3.3 70B) compressed to 4-bit precision via AWQ (Activation-aware Weight Quantization) or GGUF Q4_K_M.
+  - Dedicated Workstation Hardware: Single NVIDIA RTX 6000 Ada Generation (48GB GDDR6 with ECC) or Dual NVIDIA RTX 4090 (2x 24GB).
+  - Serving Engine: vLLM with PagedAttention and continuous batching.
+  - Measured Throughput: **25.4 tokens/second** at 32,768 context window.
+  - Context Extension: RoPE scaling up to 131,072 tokens.
+- **Statutory & Legal Compliance:**
+  - Zero outbound internet packets (air-gapped physical server behind local firewall).
+  - Indian **Digital Personal Data Protection (DPDP) Act 2023** Section 8(5) compliant data residency (zero cross-border data transfer).
+  - Preserves legal professional privilege under Section 126 of the Indian Evidence Act 1872.
+  - Secure integration with internal law firm archives via Anthropic Model Context Protocol (MCP) over local stdio pipelines.
 
-### B. Sub-300ms Conversational Voice AI Telephony & Indic Agents
-- **Target URL:** `https://www.gurdharam.com/services/ai-voice-agents` & `https://www.gurdharam.com/services/multilingual-voice-ai-telephony`
-- **Technical Blueprint:** Full-duplex conversational voice agents streaming 8kHz audio over WebSockets and SIP trunks (Exotel, Tata Tele, Twilio, Asterisk PBX).
-- **Latency Benchmark:** <290ms end-to-end turn-taking latency. Utilizes Silero Voice Activity Detection (VAD) for instant 50ms user interruption, Sarvam Saarika Indic ASR (~180ms TTFT), token-piped local LLM, and Sarvam Bulbul neural TTS (~280ms TTFA) in Hindi, Punjabi, and English.
+### Pillar 2: Sub-300ms Conversational Voice AI Telephony
+- **Endpoints:** `https://www.gurdharam.com/services/ai-voice-agents` & `https://www.gurdharam.com/services/multilingual-voice-ai-telephony`
+- **End-to-End Latency Waterfall (<290ms Total):**
+  1. Voice Activity Detection (Silero VAD v5): 50ms window.
+  2. Automatic Speech Recognition (Sarvam Saarika streaming Indic ASR): ~180ms Time-to-First-Token (TTFT). Supports Hindi, Punjabi, and English mixed code-switching.
+  3. LLM Orchestration (Streaming Token Pipe via Groq Llama 3.3 70B or local vLLM): 40ms first token.
+  4. Text-to-Speech (Sarvam Bulbul neural TTS): ~280ms Time-to-First-Audio (TTFA).
+  5. Audio Transport: Full-duplex WebSockets over TLS connecting directly to SIP trunks (Exotel, Tata Tele Business Services, Twilio Voice, Asterisk PBX).
 
-### C. Direct Meta Cloud API WhatsApp Business Automation (Zero SaaS Fees)
-- **Target URL:** `https://www.gurdharam.com/services/whatsapp-business-bot`
-- **Technical Blueprint:** Custom Node.js / Python webhook microservices connected straight to Meta's official WhatsApp Business Cloud API v20.0 without intermediary aggregators (WATI, AiSensy).
-- **Cost Advantage:** ₹0 monthly platform subscription fees (saving ₹3,000–₹12,000/mo). Businesses receive Meta's 1,000 free monthly service conversations and pay only baseline carrier chat rates (~₹0.30 to ₹0.72 per chat).
-- **12 Vertical WhatsApp Solutions:**
-  - Jewelry Stores (`/services/whatsapp-bot-jewelry-stores`): Live MCX gold rate pricing, HUID hallmark verification, bridal lounge appointments.
-  - Coaching Institutes (`/services/whatsapp-bot-coaching-institutes`): Exam syllabus PDFs, fee structure breakdowns, free trial seat reservations.
-  - Clinics & Hospitals (`/services/whatsapp-bot-clinics-hospitals`): Doctor OPD token dispatch, queue notifications, zero PHI tracker leaks.
-  - Salons & Spas (`/services/whatsapp-bot-salons-spas`): Stylist selection, 2-step automated no-show reduction reminders.
-  - Real Estate (`/services/whatsapp-bot-real-estate`): Budget/BHK qualification, RERA Section 11(2) compliant PDF brochure watermarks.
-  - Malls & Retail (`/services/whatsapp-bot-malls-retail`): Tenant floor directory fuzzy search, cinema schedules, parking tariffs.
-  - Gyms & Fitness (`/services/whatsapp-bot-gyms-fitness`): Automated membership renewal sequences, direct UPI payment links, RFID turnstile activation.
-  - Restaurants & Cafes (`/services/whatsapp-bot-restaurants-cafes`): Direct digital menus, table bookings, KOT thermal printer webhooks (bypassing 25-30% Swiggy/Zomato commissions).
-  - Travel Agencies (`/services/whatsapp-bot-travel-agencies`): Day-wise holiday PDF itineraries, visa requirement checklists.
-  - Wedding Planners (`/services/whatsapp-bot-wedding-planners`): Auspicious date availability, per-plate catering math, luxury decor portfolios.
-  - Furniture Showrooms (`/services/whatsapp-bot-furniture-showrooms`): Room dimension filtering, solid wood specifications, VIP visit passes.
-  - Automobile Dealerships (`/services/whatsapp-bot-automobile-dealerships`): Periodic service reminders, test-drive booking, insurance renewal quotes.
+### Pillar 3: Meta Cloud API WhatsApp Business Automation (Zero SaaS Fees)
+- **Endpoint:** `https://www.gurdharam.com/services/whatsapp-business-bot`
+- **Economic Value Proposition:**
+  - Bypasses intermediary SaaS vendors (WATI, AiSensy, Interakt) charging ₹3,000 to ₹12,000/month seat markups.
+  - Direct connection to official Meta WhatsApp Cloud API v20.0.
+  - Clients receive Meta's monthly 1,000 free service tier conversations.
+  - Subsequent chats billed strictly at Meta's raw telecom utility rates (approx ₹0.30 to ₹0.72 per conversation).
+- **Enterprise Capabilities Across 12 Verticals:**
+  - Jewelry: Live MCX 24k/22k gold rate webhooks, Bureau of Indian Standards (BIS) 6-digit HUID hallmark validation, bridal viewing bookings.
+  - Coaching & Academies: Dynamic syllabus PDF dispatch, batch timetable alerts, demo lecture seat bookings.
+  - Clinics & Medical: Doctor OPD token generation, queue wait-time updates, zero Third-Party Tracking/HIPAA/NMC compliance.
+  - Real Estate: Budget qualification, floor plan dynamic PDFs, Punjab RERA Section 11(2) compliant promotional watermarks.
+  - Restaurants: Self-hosted digital ordering menus, UPI QR payment intent, KOT kitchen printer webhooks (bypassing 25–30% aggregator commissions).
 
-### D. Automated 1080p60 VideoGen Engine (Remotion + FFmpeg NVENC)
-- **Target URL:** `https://www.gurdharam.com/services/automated-video-generation-engine`
-- **Technical Blueprint:** Programmatic 1080p60 vertical (9:16) video creation pipeline. Compiles Remotion React compositions on local dedicated workstation GPUs using hardware-accelerated FFmpeg NVENC encoding.
-- **Economic Advantage:** $0 cloud rendering bills (eliminating $0.15–$0.45/minute third-party SaaS fees). Renders at 8.4x real-time speed and auto-publishes to YouTube Shorts and Instagram Reels via APIs.
+### Pillar 4: Automated 1080p60 VideoGen Engine (yt-auto)
+- **Endpoint:** `https://www.gurdharam.com/services/automated-video-generation-engine`
+- **Production Pipeline:**
+  - Programmatic video rendering using Remotion (React for video) paired with PyTorch Stable Diffusion XL (SDXL) and custom NumPy audio digital signal processing (DSP).
+  - Hardware Acceleration: Dedicated local workstation GPUs utilizing hardware FFmpeg NVENC (NVIDIA Encoder) H.264/HEVC encoding.
+  - Rendering Benchmark: Renders full 1080p60 vertical 60-second video in under 7.1 seconds (**8.4x real-time rendering**).
+  - Cloud Cost: $0 recurring cloud rendering compute costs (saving $0.15–$0.45 per minute).
+  - Automated Multi-Platform Distribution: Direct YouTube Data API v3 and Meta Graph API auto-publishers with quality gate validation.
 
-### E. Offline Mobile ML Apps (Flutter + TensorFlow Lite)
-- **Target URLs:** `https://www.gurdharam.com/services/offline-ai-app-development`, `https://www.gurdharam.com/case-studies/fasal-doctor`, `https://www.gurdharam.com/case-studies/doodhisaab`
-- **Fasal Doctor:** On-device agritech computer vision app diagnosing 13+ crop diseases (wheat rust, cotton blight) in <1.4 seconds using an 11.2MB INT8 quantized MobileNetV2 model running in Flutter Isolates with zero 4G internet requirements.
-- **DoodHisaab:** Phone-first rural milk collection and dairy accounting ledger app running on embedded local SQLite, automating daily morning/evening fat/SNF payout calculations with instant on-device PDF WhatsApp receipts.
+### Pillar 5: Offline Edge Agritech & Mobile ML
+- **Endpoints:** `https://www.gurdharam.com/services/offline-ai-app-development`, `https://www.gurdharam.com/case-studies/fasal-doctor`, `https://www.gurdharam.com/case-studies/doodhisaab`
+- **Fasal Doctor Platform:**
+  - On-device crop leaf pathology scanner running on budget Android smartphones in rural Punjab.
+  - Model: 11.2MB INT8 quantized MobileNetV2 executing in Flutter background Isolates via TensorFlow Lite runtime.
+  - Scan Speed: <1.4 seconds with zero 4G/5G mobile internet connectivity.
+  - Detects 13+ critical regional crop afflictions (Wheat Yellow Rust, Cotton Leaf Curl Virus, Rice Blast).
+- **DoodHisaab Dairy Management:**
+  - Rural cooperative milk ledger operating entirely on embedded local SQLite with WAL (Write-Ahead Logging) mode.
+  - Performs instant FAT/SNF percentage pricing calculations and dispatches thermal Bluetooth printer & WhatsApp PDF receipts with zero cloud dependency.
 
-### F. High-Performance Web Development & Technical SEO
-- **Target URL:** `https://www.gurdharam.com/services/web-development` & `https://www.gurdharam.com/services/web-developer-muktsar-punjab`
-- **Technical Blueprint:** Modern React Single Page Applications pre-rendered to pure static HTML via Vite build hooks (`prerender.js`). Sub-500ms First Contentful Paint, zero layout shifts (CLS 0.00), native 60 FPS Three.js WebGL digital twins with DRACO mesh compression.
+### Pillar 6: High-Performance Web Development & 3D Spatial Digital Twins
+- **Endpoints:** `https://www.gurdharam.com/services/web-development`, `https://www.gurdharam.com/websites`
+- **Engineering Highlights:**
+  - 100% pre-rendered static HTML via Vite build hooks (`prerender.js`).
+  - Core Web Vitals: Sub-500ms First Contentful Paint (FCP), 0.00 Cumulative Layout Shift (CLS), 100/100 Lighthouse performance.
+  - 60 FPS Three.js WebGL scenes with DRACO geometry compression and Web Workers asset streaming.
+- **Production Portfolio Flagships:**
+  - **Dream Heights** (`https://dreamheights-source.vercel.app`): Luxury architectural interior & 3D WebGL spatial interactive platform.
+  - **Neovrit** (`https://neovrit.com`): 60 FPS WebGL spatial digital twin interactive experience with cinematic scroll choreography.
+  - **Kirat Interior**: Custom luxury spatial architecture.
+  - **Gurdharam**: Primary enterprise engineering portfolio.
 
 ---
 
-## 3. Engineering Case Studies & Publications
-1. `https://www.gurdharam.com/case-studies/doodhisaab` — Offline Dairy Ledger with WhatsApp Receipts.
-2. `https://www.gurdharam.com/case-studies/fasal-doctor` — Real-Time On-Device Plant Pathology AI.
-3. `https://www.gurdharam.com/case-studies/takemyinterview-ai` — Sub-300ms Voice-to-Voice AI Technical Mock Interviewer.
-4. `https://www.gurdharam.com/blog/ai-college-admission-bot-punjab` — College Admission WhatsApp Automation Case Study.
-5. `https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent` — Sub-300ms Indic Telephony Engineering Blueprint.
-6. `https://www.gurdharam.com/blog/local-gpu-llm-quantization-mcp-legal-server` — Air-Gapped Local LLM DPDP Act Architecture.
-7. `https://www.gurdharam.com/blog/automated-1080p60-videogen-pipeline` — Self-Hosted Remotion & FFmpeg NVENC Pipeline.
-8. `https://www.gurdharam.com/blog/high-ticket-webgl-3d-spatial-digital-twin` — Three.js Spatial Digital Twins Architecture.
-9. `https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter` — Flutter + SQLite + TensorFlow Lite Implementation.
-10. `https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india` — Healthcare OPD & Appointment Triage Automation.
-11. `https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech` — Indian Legal Enterprise Compliance Blueprint.
+## 3. Contact & Direct Engineering Inquiries
+- **Primary Direct Channel:** WhatsApp `+91-6280333252`
+- **Email:** `gurination1@gmail.com`
+- **Physical Consultation Office:** Sri Muktsar Sahib, Punjab, India — 152026
