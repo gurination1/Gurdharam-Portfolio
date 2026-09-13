@@ -5,7 +5,9 @@ Disallow: /404
 Disallow: /404.html
 Disallow: /feed.xml
 Disallow: /rss.xml
-Disallow: /*.txt$
+Disallow: /*.txt
+Disallow: /b4f8e2a1c7d94e5f8a3b6c9d2e1f4a7b.txt
+Disallow: /nk4rh81h1zqdr5yvwrt8w9dtutjyhw9a.txt
 Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /robots.txt
@@ -18,7 +20,9 @@ Disallow: /404
 Disallow: /404.html
 Disallow: /feed.xml
 Disallow: /rss.xml
-Disallow: /*.txt$
+Disallow: /*.txt
+Disallow: /b4f8e2a1c7d94e5f8a3b6c9d2e1f4a7b.txt
+Disallow: /nk4rh81h1zqdr5yvwrt8w9dtutjyhw9a.txt
 Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /

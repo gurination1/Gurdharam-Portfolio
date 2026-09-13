@@ -115,14 +115,6 @@
   ],
   "rewrites": [
     {
-      "source": "/google884ab312af7ff99a.html",
-      "destination": "/api/google884ab312af7ff99a"
-    },
-    {
-      "source": "/google884ab312af7ff99a",
-      "destination": "/api/google884ab312af7ff99a"
-    },
-    {
       "source": "/services",
       "destination": "/services.html"
     },

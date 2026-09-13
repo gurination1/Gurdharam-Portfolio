@@ -52,6 +52,26 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/services/website-design-under-5000" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
+                  Website Design Under ₹5,000
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/website-design-under-10000" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
+                  Website Under ₹10,000 (SEO)
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/3d-webgl-website-development" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
+                  3D WebGL Web Development
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/luxury-3d-spatial-website-design" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
+                  Ultra 3D Spatial Flagship
+                </Link>
+              </li>
+              <li>
                 <Link to="/services/whatsapp-business-bot" className="py-2.5 px-1 block text-slate-400 hover:text-[var(--accent-gold)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded min-h-[44px] inline-flex items-center">
                   WhatsApp Business Bot
                 </Link>
@@ -187,6 +207,26 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <Link to="/case-studies/kirat-interior" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Kirat Interior Case Study
+                </Link>
+              </li>
+              <li>
+                <Link to="/case-studies/bioprac" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  BioPrac 3D WebGL Case Study
+                </Link>
+              </li>
+              <li>
+                <Link to="/case-studies/dreamheights" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Dream Heights Spatial Case Study
+                </Link>
+              </li>
+              <li>
+                <Link to="/case-studies/neovrit" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  NEOVRIT 3D Simulation Case Study
+                </Link>
+              </li>
+              <li>
                 <Link to="/case-studies/doodhisaab" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
                   DoodHisaab Case Study
                 </Link>
@@ -199,6 +239,36 @@ export default function Footer() {
               <li>
                 <Link to="/case-studies/takemyinterview-ai" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
                   TakeMyInterview AI
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/affordable-business-website-development-india" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Affordable Website Design India
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/threejs-webgl-performance-mobile-optimization" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Three.js Mobile WebGL Optimization
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/multimodal-judge-ai-video-quality-gate" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Multimodal Judge AI Quality Gates
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/meta-whatsapp-cloud-api-webhook-architecture" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Meta WhatsApp Cloud Webhooks
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/flutter-escpos-bluetooth-thermal-printer-offline" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Offline Thermal Printing ESC/POS
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Sub-300ms WebRTC Voice AI
                 </Link>
               </li>
               <li>

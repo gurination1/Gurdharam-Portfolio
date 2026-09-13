@@ -10,7 +10,9 @@ if (!fs.existsSync(templatePath)) {
 }
 
 const rawTemplate = fs.readFileSync(templatePath, 'utf8');
-const template = rawTemplate.replace(/<div id="root">[\s\S]*?<\/div>/, '<div id="root"></div>');
+const template = rawTemplate
+  .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/g, '')
+  .replace(/<div id="root">[\s\S]*?<\/div>/, '<div id="root"></div>');
 
 const routes = [
   {
@@ -18,6 +20,119 @@ const routes = [
     title: 'Gurdharam | Enterprise AI & Web Developer',
     description: 'Gurdharam Jeet Singh: Enterprise AI and full-stack web developer building custom LLM pipelines, Meta WhatsApp Cloud bots, and offline edge systems.',
     canonical: 'https://www.gurdharam.com/',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.gurdharam.com/#website",
+          "url": "https://www.gurdharam.com/",
+          "name": "Gurdharam AI Engineering",
+          "alternateName": "Gurdharam Jeet Singh & Manveer Singh Portfolio",
+          "description": "Enterprise AI & Web Engineering studio by Gurdharam Jeet Singh and Manveer Singh. Air-gapped local GPU LLMs, sub-300ms Indic voice agents, and spatial WebGL platforms.",
+          "publisher": { "@id": "https://www.gurdharam.com/#organization" },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "#def-summary", "p.hero-lead"]
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.gurdharam.com/#organization",
+          "name": "Gurdharam AI Engineering",
+          "alternateName": ["Gurdharam", "Gurdharam AI Studio", "Gurdharam & Manveer Engineering"],
+          "url": "https://www.gurdharam.com/",
+          "logo": "https://www.gurdharam.com/og-card.png",
+          "image": "https://www.gurdharam.com/og-card.png",
+          "description": "Enterprise AI and web systems engineering practice led by Gurdharam Jeet Singh and Manveer Singh. Specializing in air-gapped local GPU LLM quantization, sub-300ms Indic Voice AI telephony, direct Meta Cloud API WhatsApp automation, and 60 FPS WebGL spatial digital twins.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Muktsar",
+            "addressRegion": "Punjab",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://github.com/gurination1",
+            "https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275",
+            "https://github.com/manveersinghmudher-hub",
+            "https://www.linkedin.com/in/manveer-singh-25655337a"
+          ],
+          "founders": [
+            { "@id": "https://www.gurdharam.com/#person" },
+            { "@id": "https://www.gurdharam.com/#manveer" }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-6280333252",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": ["en", "hi", "pa"]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#person",
+          "name": "Gurdharam Jeet Singh",
+          "jobTitle": "Founder & Lead AI Architect",
+          "url": "https://www.gurdharam.com/",
+          "worksFor": { "@id": "https://www.gurdharam.com/#organization" },
+          "sameAs": [
+            "https://github.com/gurination1",
+            "https://in.linkedin.com/in/gurdharam-jeet-singh-691a17275"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.gurdharam.com/#manveer",
+          "name": "Manveer Singh",
+          "jobTitle": "Co-Founder & Systems Engineer",
+          "url": "https://www.gurdharam.com/about",
+          "worksFor": { "@id": "https://www.gurdharam.com/#organization" },
+          "sameAs": [
+            "https://github.com/manveersinghmudher-hub",
+            "https://www.linkedin.com/in/manveer-singh-25655337a"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.gurdharam.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What specialized services does Gurdharam Jeet Singh offer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I build production-ready systems: custom WhatsApp Business automation bots (official Meta Cloud API), automated YouTube/Instagram content generation pipelines, high-end 3D/2D React websites (Three.js/GSAP), and offline-first mobile apps (Flutter + TFLite machine learning)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why should my business choose a custom WhatsApp bot over monthly SaaS platforms?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard SaaS subscriptions (like WATI or AiSensy) charge heavy monthly platform fees (₹3,000–₹12,000/mo) and lock your phone number. I build custom, direct integrations to the official Meta Cloud API. You pay zero reseller markups, retain 100% of your customer data on your own servers, and utilize custom NLP trained for English, Hindi, and Punjabi."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do your websites load so quickly and rank on Google?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No slow WordPress templates or rigid builders. I write custom, lightweight React code compiled via Vite. We pre-render every page statically (SSG) so search engine crawlers can read the text without executing JS. We include JSON-LD schemas and push routes instantly to IndexNow (Bing/Yandex) and GSC Indexing APIs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can your mobile applications run AI models and databases completely offline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. In rural or weak signal areas of Punjab, cloud-reliant apps fail. I design offline-first mobile apps using Flutter. Your SQLite database is fully local, and machine learning models (like TensorFlow Lite image classifiers) run directly in the phone's processor. Zero cloud database latency and zero server costs."
+              }
+            }
+          ]
+        }
+      ]
+    },
     html: `
       <main>
         <header>
@@ -2153,6 +2268,52 @@ app.post('/api/webhook', async (req, res) => {
     title: 'DoodHisaab Offline Dairy App Case Study',
     description: 'Comprehensive case study of DoodHisaab, an offline dairy ledger and milk collection accounting app built in Flutter for farmers in rural Punjab.',
     canonical: 'https://www.gurdharam.com/case-studies/doodhisaab',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.gurdharam.com/case-studies/doodhisaab#software",
+          "name": "DoodHisaab",
+          "operatingSystem": "Android, iOS",
+          "applicationCategory": "BusinessApplication",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "128"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "INR"
+          },
+          "author": { "@id": "https://www.gurdharam.com/#person" },
+          "publisher": { "@id": "https://www.gurdharam.com/#organization" }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.gurdharam.com/case-studies/doodhisaab#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can the app share monthly milk receipts with farmers over WhatsApp?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The application runs a local rendering engine that securely converts monthly collection tables into a professional PDF receipt shareable via WhatsApp."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the app handle both morning and evening milk collection shifts?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the tracking system is built explicitly to support the standard Indian dairy collection cycle, logging both morning and evening shifts."
+              }
+            }
+          ]
+        }
+      ]
+    },
     html: `
       <main>
         <header>
@@ -2218,6 +2379,52 @@ app.post('/api/webhook', async (req, res) => {
     title: 'Fasal Doctor Offline Crop AI Case Study',
     description: 'Detailed case study of Fasal Doctor, an offline agritech app using TensorFlow Lite and MobileNetV2 for crop disease detection in Punjab.',
     canonical: 'https://www.gurdharam.com/case-studies/fasal-doctor',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.gurdharam.com/case-studies/fasal-doctor#software",
+          "name": "Fasal Doctor",
+          "operatingSystem": "Android",
+          "applicationCategory": "AgricultureApplication",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.95",
+            "ratingCount": "340"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "INR"
+          },
+          "author": { "@id": "https://www.gurdharam.com/#person" },
+          "publisher": { "@id": "https://www.gurdharam.com/#organization" }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.gurdharam.com/case-studies/fasal-doctor#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which crops and diseases can your mobile AI models detect?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The offline MobileNetV2 model is fine-tuned to identify dozens of regional plant diseases including wheat rust and cotton blight, even offline."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you update agricultural advisories if the app runs completely offline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The app triggers silent sync webhooks when connected to Wi-Fi, updating the local SQLite database with fresh PAU (Punjab Agricultural University) advisory guidelines."
+              }
+            }
+          ]
+        }
+      ]
+    },
     html: `
       <main>
         <header>
@@ -2280,6 +2487,19 @@ app.post('/api/webhook', async (req, res) => {
     title: 'AI Automation & Offline App Blog | Gurdharam',
     description: 'Case studies and technical architectures for custom WhatsApp booking bots, offline agricultural AI apps, and high-performance React web systems.',
     canonical: 'https://www.gurdharam.com/blog',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://www.gurdharam.com/blog#collection",
+          "url": "https://www.gurdharam.com/blog",
+          "name": "Engineering Articles & Architecture Breakdowns | Gurdharam AI Engineering",
+          "description": "Deep engineering articles covering air-gapped local GPU LLM quantization, sub-300ms Sarvam Indic voice agents, Meta WhatsApp Cloud API webhooks, and 60 FPS WebGL spatial digital twins.",
+          "publisher": { "@id": "https://www.gurdharam.com/#organization" }
+        }
+      ]
+    },
     html: `
       <main>
         <header>
@@ -2524,6 +2744,20 @@ app.post('/api/webhook', async (req, res) => {
     title: 'Sarvam Indic Voice AI Telephony | Gurdharam',
     description: 'Sub-300ms conversational voice AI telephony agents built with Sarvam Indic models, SIP trunking, WebRTC, and PSTN integration for Indic languages.',
     canonical: 'https://www.gurdharam.com/services/multilingual-voice-ai-telephony',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://www.gurdharam.com/services/multilingual-voice-ai-telephony#service",
+          "name": "Multilingual Voice AI Telephony Development",
+          "url": "https://www.gurdharam.com/services/multilingual-voice-ai-telephony",
+          "description": "Full-duplex multilingual conversational AI voice callers for enterprise customer support, tele-sales, and appointment scheduling in Hindi, Punjabi, and Indian English.",
+          "serviceType": "Conversational Voice AI Telephony",
+          "provider": { "@id": "https://www.gurdharam.com/#organization" }
+        }
+      ]
+    },
     html: `
       <main>
         <header>
@@ -2595,6 +2829,21 @@ app.post('/api/webhook', async (req, res) => {
     title: 'TakeMyInterview AI Voice Bot | Gurdharam',
     description: 'Engineering breakdown of building an air-gapped voice AI mock job interviewer platform using Whisper STT, fine-tuned Llama 3.3, and Piper TTS.',
     canonical: 'https://www.gurdharam.com/case-studies/takemyinterview-ai',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.gurdharam.com/case-studies/takemyinterview-ai#software",
+          "name": "TakeMyInterview.ai",
+          "operatingSystem": "Web Application",
+          "applicationCategory": "EducationalApplication",
+          "description": "Sub-300ms conversational voice-to-voice AI interviewer platform conducting real-time technical assessments with adaptive questioning and automated rubrics.",
+          "author": { "@id": "https://www.gurdharam.com/#person" },
+          "publisher": { "@id": "https://www.gurdharam.com/#organization" }
+        }
+      ]
+    },
     html: `<main>
         <header>
           <span class="category-pill">Case Study · Voice AI</span>
@@ -3376,6 +3625,61 @@ routes.push({
   `
 });
 
+function formatAuthoritativeJsonLd(jsonld, routePath) {
+  if (!jsonld) return null;
+
+  let items = [];
+  if (jsonld['@graph'] && Array.isArray(jsonld['@graph'])) {
+    items = [...jsonld['@graph']];
+  } else if (Array.isArray(jsonld)) {
+    items = [...jsonld];
+  } else {
+    items = [jsonld];
+  }
+
+  // Ensure BreadcrumbList for all subpages
+  if (routePath !== '/' && routePath !== '/404' && !items.some(n => n && n['@type'] === 'BreadcrumbList')) {
+    const segs = routePath.split('/').filter(Boolean);
+    const crumbs = [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.gurdharam.com/"
+      }
+    ];
+    let curr = "https://www.gurdharam.com";
+    segs.forEach((seg, i) => {
+      curr += `/${seg}`;
+      const name = seg.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      crumbs.push({
+        "@type": "ListItem",
+        "position": i + 2,
+        "name": name,
+        "item": curr
+      });
+    });
+    items.push({
+      "@type": "BreadcrumbList",
+      "@id": `https://www.gurdharam.com${routePath}#breadcrumb`,
+      "itemListElement": crumbs
+    });
+  }
+
+  // Clean each item: remove internal '@context' so there is never duplicate/conflicting @context
+  const cleanedItems = items.map(item => {
+    if (typeof item !== 'object' || item === null) return item;
+    const cleanItem = { ...item };
+    delete cleanItem['@context'];
+    return cleanItem;
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": cleanedItems
+  };
+}
+
 (async () => {
   let ssrRender = null;
   try {
@@ -3408,6 +3712,9 @@ routes.push({
       routeHtml = `<div class="seo-prerender-content">${routeHtml}</div>`;
     }
 
+    // Guarantee body/root never contains conflicting JSON-LD scripts
+    routeHtml = routeHtml.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/g, '');
+
     const routeContent = `\n${routeHtml}\n`;
     let pageHtml = template
       .replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${routeContent}</div>`)
@@ -3430,53 +3737,12 @@ routes.push({
       );
     }
 
-    if (route.jsonld && route.path !== '/') {
-      const segs = route.path.split('/').filter(Boolean);
-      const crumbs = [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.gurdharam.com/"
-        }
-      ];
-      let curr = "https://www.gurdharam.com";
-      segs.forEach((seg, i) => {
-        curr += `/${seg}`;
-        const name = seg.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-        crumbs.push({
-          "@type": "ListItem",
-          "position": i + 2,
-          "name": name,
-          "item": curr
-        });
-      });
-
-      const bc = {
-        "@type": "BreadcrumbList",
-        "@id": `https://www.gurdharam.com${route.path}#breadcrumb`,
-        "itemListElement": crumbs
-      };
-
-      if (route.jsonld['@graph']) {
-        if (!route.jsonld['@graph'].some(n => n['@type'] === 'BreadcrumbList')) {
-          route.jsonld['@graph'].push(bc);
-        }
-      } else if (Array.isArray(route.jsonld)) {
-        if (!route.jsonld.some(n => n['@type'] === 'BreadcrumbList')) {
-          route.jsonld.push(bc);
-        }
-      } else {
-        route.jsonld = {
-          "@context": "https://schema.org",
-          "@graph": [route.jsonld, bc]
-        };
+    if (route.path !== '/404') {
+      const authoritativeJsonLd = formatAuthoritativeJsonLd(route.jsonld, route.path);
+      if (authoritativeJsonLd) {
+        const jsonldScript = `\n    <script type="application/ld+json">\n    ${JSON.stringify(authoritativeJsonLd, null, 2)}\n    </script>\n`;
+        pageHtml = pageHtml.replace('</head>', `${jsonldScript}</head>`);
       }
-    }
-
-    if (route.jsonld) {
-      const jsonldScript = `\n    <script type="application/ld+json">\n    ${JSON.stringify(route.jsonld, null, 2)}\n    </script>\n`;
-      pageHtml = pageHtml.replace('</head>', `${jsonldScript}</head>`);
     }
 
     if (route.path === '/') {

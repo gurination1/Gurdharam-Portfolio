@@ -596,10 +596,26 @@ export default function SchemaMarkup() {
     }
   }
 
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  const cleanedSchemas = schemas.map(s => {
+    if (typeof s !== 'object' || s === null) return s;
+    const copy = { ...s };
+    delete copy['@context'];
+    return copy;
+  });
+
+  const rootSchema = {
+    "@context": "https://schema.org",
+    "@graph": cleanedSchemas
+  };
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(rootSchema) }}
     />
   );
 }

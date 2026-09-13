@@ -52,13 +52,10 @@ import BlogPostFlutterEscpos from './pages/blog-post-flutter-escpos';
 import BlogPostWebrtcAudioworklet from './pages/blog-post-webrtc-audioworklet';
 import AboutPage from './pages/about';
 import NotFoundPage from './pages/not-found';
-import SchemaMarkup from './components/SchemaMarkup';
-
 export function render(url: string) {
   try {
     return ReactDOMServer.renderToString(
       <StaticRouter location={url}>
-        <SchemaMarkup />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
