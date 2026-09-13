@@ -56,7 +56,7 @@
       ]
     },
     {
-      "source": "/(b4f8e2a1c7d94e5f8a3b6c9d2e1f4a7b|nk4rh81h1zqdr5yvwrt8w9dtutjyhw9a).txt",
+      "source": "/(.*).txt",
       "headers": [
         {
           "key": "X-Robots-Tag",

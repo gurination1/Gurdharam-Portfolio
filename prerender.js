@@ -24,17 +24,25 @@ const routes = [
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebPage",
+          "@id": "https://www.gurdharam.com/#webpage",
+          "url": "https://www.gurdharam.com/",
+          "name": "Gurdharam AI Engineering | Enterprise Automation & WebGL Systems",
+          "isPartOf": { "@id": "https://www.gurdharam.com/#website" },
+          "about": { "@id": "https://www.gurdharam.com/#organization" },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "#def-summary", "p.hero-lead"]
+          }
+        },
+        {
           "@type": "WebSite",
           "@id": "https://www.gurdharam.com/#website",
           "url": "https://www.gurdharam.com/",
           "name": "Gurdharam AI Engineering",
           "alternateName": "Gurdharam Jeet Singh & Manveer Singh Portfolio",
           "description": "Enterprise AI & Web Engineering studio by Gurdharam Jeet Singh and Manveer Singh. Air-gapped local GPU LLMs, sub-300ms Indic voice agents, and spatial WebGL platforms.",
-          "publisher": { "@id": "https://www.gurdharam.com/#organization" },
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", "#def-summary", "p.hero-lead"]
-          }
+          "publisher": { "@id": "https://www.gurdharam.com/#organization" }
         },
         {
           "@type": "Organization",
@@ -57,7 +65,7 @@ const routes = [
             "https://github.com/manveersinghmudher-hub",
             "https://www.linkedin.com/in/manveer-singh-25655337a"
           ],
-          "founders": [
+          "founder": [
             { "@id": "https://www.gurdharam.com/#person" },
             { "@id": "https://www.gurdharam.com/#manveer" }
           ],
@@ -3666,13 +3674,39 @@ function formatAuthoritativeJsonLd(jsonld, routePath) {
     });
   }
 
-  // Clean each item: remove internal '@context' so there is never duplicate/conflicting @context
+  // Clean each item: remove internal '@context' so there is never duplicate/conflicting @context,
+  // and sanitize properties (founders -> founder, WebSite.speakable -> WebPage.speakable)
+  let companionWebPage = null;
   const cleanedItems = items.map(item => {
     if (typeof item !== 'object' || item === null) return item;
     const cleanItem = { ...item };
     delete cleanItem['@context'];
+
+    if (cleanItem.founders) {
+      cleanItem.founder = cleanItem.founders;
+      delete cleanItem.founders;
+    }
+
+    if (cleanItem['@type'] === 'WebSite' && cleanItem.speakable) {
+      const speakable = cleanItem.speakable;
+      delete cleanItem.speakable;
+      companionWebPage = {
+        "@type": "WebPage",
+        "@id": `https://www.gurdharam.com${routePath === '/' ? '' : routePath}#webpage`,
+        "url": `https://www.gurdharam.com${routePath}`,
+        "name": "Gurdharam AI Engineering | Enterprise Automation & WebGL Systems",
+        "isPartOf": { "@id": "https://www.gurdharam.com/#website" },
+        "about": { "@id": "https://www.gurdharam.com/#organization" },
+        "speakable": speakable
+      };
+    }
+
     return cleanItem;
   });
+
+  if (companionWebPage && !cleanedItems.some(n => n && n['@type'] === 'WebPage')) {
+    cleanedItems.unshift(companionWebPage);
+  }
 
   return {
     "@context": "https://schema.org",

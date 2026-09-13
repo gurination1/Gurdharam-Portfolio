@@ -6,11 +6,11 @@ Disallow: /404.html
 Disallow: /feed.xml
 Disallow: /rss.xml
 Disallow: /*.txt
+Disallow: /*.xml
 Disallow: /b4f8e2a1c7d94e5f8a3b6c9d2e1f4a7b.txt
 Disallow: /nk4rh81h1zqdr5yvwrt8w9dtutjyhw9a.txt
-Allow: /llms.txt
-Allow: /llms-full.txt
-Allow: /robots.txt
+Disallow: /llms.txt
+Disallow: /llms-full.txt
 Allow: /
 
 User-agent: AhrefsBot
@@ -21,10 +21,11 @@ Disallow: /404.html
 Disallow: /feed.xml
 Disallow: /rss.xml
 Disallow: /*.txt
+Disallow: /*.xml
 Disallow: /b4f8e2a1c7d94e5f8a3b6c9d2e1f4a7b.txt
 Disallow: /nk4rh81h1zqdr5yvwrt8w9dtutjyhw9a.txt
-Allow: /llms.txt
-Allow: /llms-full.txt
+Disallow: /llms.txt
+Disallow: /llms-full.txt
 Allow: /
 
 User-agent: Googlebot
@@ -33,6 +34,8 @@ Disallow: /404
 Disallow: /404.html
 Disallow: /feed.xml
 Disallow: /rss.xml
+Disallow: /*.txt
+Disallow: /*.xml
 Allow: /
 
 User-agent: Bingbot
@@ -41,6 +44,8 @@ Disallow: /404
 Disallow: /404.html
 Disallow: /feed.xml
 Disallow: /rss.xml
+Disallow: /*.txt
+Disallow: /*.xml
 Allow: /
 
 # AI Crawlers - explicitly allowed for GEO citation eligibility

@@ -36,7 +36,7 @@ export default function SchemaMarkup() {
       "https://github.com/manveersinghmudher-hub",
       "https://www.linkedin.com/in/manveer-singh-25655337a"
     ],
-    "founders": [
+    "founder": [
       {
         "@type": "Person",
         "@id": "https://www.gurdharam.com/#person",
