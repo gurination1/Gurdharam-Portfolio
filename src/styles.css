@@ -657,24 +657,11 @@ body.wipe-menu-open .dynamic-island-toc {
 }
 
 .signal-canvas,
-.hero-three,
 .constellation {
   position: absolute;
   inset: 0;
   opacity: 0.8;
   pointer-events: none;
-}
-
-.hero-three {
-  z-index: 0;
-  opacity: 0.78;
-  mix-blend-mode: screen;
-}
-
-.hero-three canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
 }
 
 .signal-canvas {
@@ -2911,7 +2898,6 @@ footer {
 }
 
 @media (max-width: 860px) {
-  .hero-three { display: none; }
   .hero-word-build,
   .hero-word-whatif {
     font-size: clamp(2.8rem, 13vw, 4.8rem);
