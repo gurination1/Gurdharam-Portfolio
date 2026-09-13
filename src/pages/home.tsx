@@ -1018,12 +1018,26 @@ function Hero() {
           <h1 className="hero-title hero-title-whatif" aria-label="BUILD WHAT IF? — Gurdharam Enterprise Studio">
             <span className="sr-only">BUILD WHAT IF? — Gurdharam: Enterprise AI & Web Developer</span>
             <span className="hero-line">
-              <span className="hero-word hero-word-build">BUILD</span>
+              <span className="hero-word hero-word-build" aria-hidden="true">
+                <span className="hero-letter">B</span>
+                <span className="hero-letter even">U</span>
+                <span className="hero-letter">I</span>
+                <span className="hero-letter even">L</span>
+                <span className="hero-letter">D</span>
+              </span>
             </span>
             <span className="hero-line">
-              <span className="hero-word hero-word-whatif">
-                <span className="whatif-text">WHAT IF</span>
-                <span className="whatif-punct">?</span>
+              <span className="hero-word hero-word-whatif" aria-hidden="true">
+                <span className="whatif-text">
+                  <span className="hero-letter">W</span>
+                  <span className="hero-letter even">H</span>
+                  <span className="hero-letter">A</span>
+                  <span className="hero-letter even">T</span>
+                  <span className="hero-space">&nbsp;</span>
+                  <span className="hero-letter">I</span>
+                  <span className="hero-letter even">F</span>
+                </span>
+                <span className="whatif-punct hero-letter punct">?</span>
               </span>
             </span>
           </h1>

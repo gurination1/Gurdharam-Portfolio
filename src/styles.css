@@ -766,13 +766,15 @@ footer {
 
 .hero-line {
   display: block;
-  overflow: hidden;
-  padding: 0.02em 0 0.14em 0;
+  overflow: visible;
+  padding: 0.08em 0 0.16em 0;
 }
 
 .hero-word {
-  display: inline-block;
+  display: inline-flex;
+  align-items: baseline;
   filter: drop-shadow(0 0 26px rgba(240, 237, 230, 0.04));
+  overflow: visible;
 }
 
 /* ─── Awwwards-Caliber Monumental BUILD × WHAT IF? ─────────────── */
@@ -783,12 +785,9 @@ footer {
   line-height: 0.95;
   letter-spacing: -0.015em;
   text-transform: uppercase;
-  color: #ffffff;
-  background: linear-gradient(180deg, #ffffff 0%, #e8e5df 35%, #9e988d 75%, #56534c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: inline-flex;
+  align-items: baseline;
   filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.85));
-  display: inline-block;
   will-change: transform;
 }
 
@@ -801,28 +800,90 @@ footer {
   text-transform: uppercase;
   display: inline-flex;
   align-items: baseline;
-  background: linear-gradient(180deg, #ffffff 0%, #f7ebd4 30%, #d4a853 68%, #946e24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.9));
   position: relative;
   will-change: transform;
 }
 
-.whatif-text {
+/* ── Zainab-Inspired Kinetic Letter Hover Engine ── */
+.hero-letter {
   display: inline-block;
+  transform-origin: 50% 100%;
+  transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1),
+              color 0.25s ease,
+              -webkit-text-fill-color 0.25s ease,
+              text-shadow 0.25s ease,
+              filter 0.25s ease;
+  cursor: default;
+  user-select: none;
+}
+
+/* Titanium metallic gradient for BUILD */
+.hero-word-build .hero-letter {
+  background: linear-gradient(180deg, #ffffff 0%, #e8e5df 35%, #9e988d 75%, #56534c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Warm gold gradient for WHAT IF */
+.hero-word-whatif .hero-letter {
+  background: linear-gradient(180deg, #ffffff 0%, #f7ebd4 30%, #d4a853 68%, #946e24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Accent for ? */
+.hero-word-whatif .hero-letter.punct {
+  background: linear-gradient(180deg, #ffffff 0%, #ffe9b8 25%, #d4a853 72%, #946e24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px rgba(212, 168, 83, 0.45));
+}
+
+.hero-space {
+  display: inline-block;
+  width: 0.28em;
+}
+
+/* 120Hz GPU compositor promotion on parent hover */
+.hero-line:hover .hero-letter {
+  will-change: transform;
+}
+
+/* Bouncy spring lift & tilt on hover with warm golden glow */
+.hero-letter:hover {
+  transform: translateY(-0.16em) rotate(-7deg);
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #fce79a !important;
+  color: #fce79a !important;
+  text-shadow: 0 0 25px rgba(212, 168, 83, 0.85), 0 0 50px rgba(212, 168, 83, 0.35);
+  filter: drop-shadow(0 0 16px rgba(212, 168, 83, 0.7));
+}
+
+.hero-letter.even:hover {
+  transform: translateY(-0.16em) rotate(6deg);
+}
+
+.hero-letter.punct:hover {
+  transform: translateY(-0.2em) rotate(14deg) scale(1.15);
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffd700 !important;
+  color: #ffd700 !important;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.95), 0 0 60px rgba(212, 168, 83, 0.5);
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.85));
+}
+
+.whatif-text {
+  display: inline-flex;
+  align-items: baseline;
   white-space: nowrap;
 }
 
 .whatif-punct {
   display: inline-block;
   margin-left: 0.02em;
-  font-family: 'Chillax', 'Syne', sans-serif;
-  font-weight: 800;
-  background: linear-gradient(180deg, #ffffff 0%, #ffe9b8 25%, #d4a853 72%, #946e24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 16px rgba(212, 168, 83, 0.45));
 }
 
 .gold { color: var(--accent-gold); }
