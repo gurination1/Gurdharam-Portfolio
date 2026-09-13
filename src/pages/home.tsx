@@ -20,7 +20,6 @@ import FlipTextReveal from '@/components/ui/next-reveal';
 import SendButton from '@/components/ui/send-button';
 import ImageParticleField from '@/components/ui/image-particle-field';
 import ParticleAnimation from '@/components/ui/particle-animation';
-import { Cursor as InvertedCursor } from '@/components/ui/inverted-cursor';
 import Footer from '@/components/ui/footer';
 import LogoMarquee from '@/components/ui/logo-marquee';
 import TextRevealFAQs from '@/components/ui/text-reveal-faqs';
@@ -323,59 +322,6 @@ function usePortfolioMotion() {
 function useGlobalPointerVars() {
   useEffect(() => {
     // Disabled pointer move CSS variable injection to prevent root layout thrashing
-  }, []);
-}
-
-function useCustomCursor() {
-  useEffect(() => {
-    const finePointer = window.matchMedia('(pointer: fine)').matches;
-    if (!finePointer) return undefined;
-    const dot = document.querySelector('.cursor-dot');
-    const ring = document.querySelector('.cursor-ring');
-    if (!dot || !ring) return undefined;
-    let prevX = 0;
-    // quickTo reuses the same tween instead of creating new ones per mousemove
-    const dotX = gsap.quickTo(dot, 'x', { duration: 0.06 });
-    const dotY = gsap.quickTo(dot, 'y', { duration: 0.06 });
-    const ringX = gsap.quickTo(ring, 'x', { duration: 0.35, ease: 'expo.out' });
-    const ringY = gsap.quickTo(ring, 'y', { duration: 0.35, ease: 'expo.out' });
-    const ringSkew = gsap.quickTo(ring, 'skewX', { duration: 0.35, ease: 'expo.out' });
-    const move = (event) => {
-      if (event.target instanceof Element && event.target.closest('#contact')) {
-        document.body.classList.add('native-cursor-active');
-        return;
-      }
-      document.body.classList.remove('native-cursor-active');
-      const { clientX: x, clientY: y } = event;
-      const skew = Math.max(-18, Math.min(18, (x - prevX) * 0.1));
-      dotX(x);
-      dotY(y);
-      ringX(x);
-      ringY(y);
-      ringSkew(skew);
-      prevX = x;
-    };
-    const enter = (event) => {
-      const state = event.currentTarget.dataset.cursor || 'hover';
-      ring.dataset.state = state;
-      gsap.to(ring, { scale: state === 'project' ? 3.2 : 1.8, duration: 0.25 });
-    };
-    const leave = () => {
-      ring.dataset.state = '';
-      gsap.to(ring, { scale: 1, skewX: 0, duration: 0.35 });
-    };
-    window.addEventListener('mousemove', move, { passive: true });
-    document.querySelectorAll('a, button, [data-cursor]').forEach((el) => {
-      el.addEventListener('mouseenter', enter, { passive: true });
-      el.addEventListener('mouseleave', leave, { passive: true });
-    });
-    return () => {
-      window.removeEventListener('mousemove', move);
-      document.querySelectorAll('a, button, [data-cursor]').forEach((el) => {
-        el.removeEventListener('mouseenter', enter);
-        el.removeEventListener('mouseleave', leave);
-      });
-    };
   }, []);
 }
 
@@ -1559,7 +1505,6 @@ function App() {
   return (
     <>
       <Preloader />
-      <InvertedCursor size={76} excludeSelector="#contact" />
       <div className="grain" aria-hidden="true" />
       <WipeMenu />
       <DynamicIslandTOC selector=".section-label, [data-toc]" />

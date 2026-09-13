@@ -5,6 +5,7 @@ import verticalsData from './data/verticals.json';
 import citiesData from './data/cities.json';
 import SchemaMarkup from './components/SchemaMarkup';
 import WhatsAppWidget from './components/ui/WhatsAppWidget';
+import ReggaeCanvasCursor from './components/ui/reggae-canvas-cursor';
 import './styles.css';
 import Home from './pages/home';
 
@@ -122,6 +123,7 @@ function Main() {
       <CanonicalUpdater />
       <SchemaMarkup />
       <WhatsAppWidget />
+      <ReggaeCanvasCursor />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
