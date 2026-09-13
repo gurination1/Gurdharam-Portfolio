@@ -172,7 +172,7 @@
     "name": "Gyms & Fitness Centers",
     "type": "whatsapp-bot",
     "title": "WhatsApp Bot for Gyms & Fitness | Gurdharam",
-    "metaDescription": "Automated WhatsApp bot for gym membership renewals, personal trainer class bookings, diet chart deliveries, and fee payment reminders.",
+    "metaDescription": "Automated WhatsApp bot for gym membership renewals, personal trainer class bookings, custom diet chart deliveries, and instant UPI payment reminders.",
     "parentPath": "/services/whatsapp-business-bot",
     "parentName": "WhatsApp Business Bot",
     "painPoint": "Gym owners lose up to 35% of recurring monthly membership dues because manual phone reminders are awkward, delayed, or ignored.",
@@ -399,7 +399,7 @@
     "id": "jewelry-showrooms",
     "name": "Jewelry Showrooms WebGL",
     "type": "website-design",
-    "title": "Jewelry Website Design | Gurdharam",
+    "title": "Jewelry Website Design | Gurdharam Studio",
     "metaDescription": "Custom 3D WebGL website design for jewelry showrooms. Interactive 3D ring visualizers, live gold rate widgets, and instant WhatsApp booking integration.",
     "parentPath": "/services/web-development",
     "parentName": "Web Development Services",
@@ -450,7 +450,7 @@
     "id": "clinic-websites",
     "name": "Doctor & Clinic Websites",
     "type": "website-design",
-    "title": "Clinic Website Design | Gurdharam",
+    "title": "Clinic Website Design | Gurdharam Studio",
     "metaDescription": "Professional website design for doctors and clinics in Punjab. Online doctor appointment booking, treatment showcases, and verified patient reviews.",
     "parentPath": "/services/web-development",
     "parentName": "Web Development Services",
@@ -494,6 +494,66 @@
     ],
     "faqs": [
       { "question": "Can we update store lists and weekend events without coding knowledge?", "answer": "Yes. A simple CMS allows mall marketing staff to add new brands and update movie listings in seconds." }
+    ]
+  },
+  {
+    "id": "furniture-interior",
+    "name": "Furniture & Interior Showrooms",
+    "type": "website-design",
+    "title": "Furniture & Interior Website Design | Gurdharam",
+    "metaDescription": "Luxury website design for furniture showrooms & interior designers. High-conversion room catalogs, Google Local SEO, and instant WhatsApp inquiry funnels.",
+    "parentPath": "/services/web-development",
+    "parentName": "Web Development Services",
+    "painPoint": "Interior designers and modular furniture studios in Punjab lose high-ticket clients (₹3L–₹15L budgets) due to lack of an authoritative digital portfolio and slow response times on Instagram DMs.",
+    "example": "Homeowner searches 'Modular Kitchen & Wardrobe Designer Bathinda' -> Discovers Kirat Interior, reviews bespoke finishes, submits room dimensions into instant quote calculator, and books home consultation.",
+    "roi": [
+      { "metric": "Consultation Booking Rate", "value": "+240%", "detail": "Direct WhatsApp room dimension inquiry routing captures homeowners at peak purchase intent." },
+      { "metric": "Google Local Search Rank", "value": "#1 Rank", "detail": "100% LocalBusiness Schema and static pre-rendered React pages dominate regional city search." },
+      { "metric": "Average Project Value", "value": "₹4.5L+", "detail": "Editorial high-res material catalogs build instant trust with luxury homeowners and architects." }
+    ],
+    "compliance": [
+      { "standard": "BIS Wood & Formaldehyde Safety Standards (IS 303 / IS 710)", "requirement": "Transparent disclosure of plywood grading (BWP/BWR) and emission certifications.", "implementation": "Material grade disclosure badges and warranty terms integrated into product showcase schema." },
+      { "standard": "Consumer Protection (E-Commerce) Rules 2020", "requirement": "Clear pricing transparency, delivery timelines, and dispute resolution details.", "implementation": "Statutory business address, GSTIN registration, and consumer care hotline displayed across all views." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "Bespoke Material & Finish Catalog", "desc": "Organizes modular kitchens, walk-in wardrobes, and vanity units by wood veneer, acrylic, and PU finishes.", "actor": "Design Studio", "tech": "React / Tailwind Showcase" },
+      { "step": 2, "name": "Google LocalBusiness & GSC Indexing", "desc": "Deploys LocalBusiness JSON-LD schema with geo-coordinates and registers sitemap via GSC API.", "actor": "SEO Engine", "tech": "Schema.org / GSC Indexing API" },
+      { "step": 3, "name": "Direct WhatsApp Measurement Routing", "desc": "Homeowners send room dimensions and finish preferences directly into owner WhatsApp chat.", "actor": "Sales Pipeline", "tech": "WhatsApp DeepLink Funnel" }
+    ],
+    "faqs": [
+      { "question": "Can prospective clients upload their floor plans or room photos?", "answer": "Yes. Our WhatsApp inquiry funnel allows clients to share room dimensions and architect blueprints directly with your design team in 1 click." },
+      { "question": "Will this help our showroom rank #1 in our city on Google?", "answer": "Yes. Kirat Interior achieved #1 Google search ranking in Bathinda for bespoke furniture using this exact technical SEO and schema architecture." },
+      { "question": "Can we update project photos after completing new homes?", "answer": "Yes. We set up an easy photo pipeline that lets your studio add new project completions without coding knowledge." }
+    ]
+  },
+  {
+    "id": "real-estate-builders",
+    "name": "Real Estate Builders & Luxury Towers",
+    "type": "website-design",
+    "title": "Real Estate 3D Website Design | Gurdharam",
+    "metaDescription": "Awwwards-grade 3D website design for real estate builders & luxury towers. Interactive floorplans, Day/Night lighting engines, and VIP WhatsApp booking.",
+    "parentPath": "/services/web-development",
+    "parentName": "Web Development Services",
+    "painPoint": "Real estate developers spend lakhs on outdoor hoardings and print brochures, but lose NRI and HNI buyers because their websites are static PDFs or sluggish WordPress templates.",
+    "example": "NRI investor searches 'Luxury Gated Residences Ring Road Bathinda' -> Explores Dream Heights 3D visualizer, toggles Day/Night lighting, views 2&3 BHK floorplans, and schedules VIP site tour via WhatsApp.",
+    "roi": [
+      { "metric": "NRI / HNI Engagement Time", "value": "5.8 Min", "detail": "Interactive Day/Night lighting engine and spatial 3D floorplans hold buyer attention 4x longer." },
+      { "metric": "VIP Site Tour Inquiries", "value": "+190%", "detail": "Integrated VIP concierge booking modal routes high-intent buyers directly to developer sales leadership." },
+      { "metric": "Mobile Load Latency", "value": "< 450ms", "detail": "Static SSR pre-rendering ensures instant load times even on mobile 4G connections." }
+    ],
+    "compliance": [
+      { "standard": "Punjab RERA Act 2016 (Section 11(2))", "requirement": "Mandatory display of RERA registration number, sanctioned building plans, and project completion dates.", "implementation": "Dynamic RERA compliance bar with direct hyperlinked certificates displayed above the fold." },
+      { "standard": "BIS National Building Code (NBC 2016)", "requirement": "Accurate architectural dimensions, structural stability disclaimers, and fire-safety compliance.", "implementation": "Standard architectural disclaimers and carpet area calculations aligned with RERA guidelines." }
+    ],
+    "workflow": [
+      { "step": 1, "name": "3D Digital Twin & Spatial Environment", "desc": "Builds procedural 3D model of towers, clubhouses, and saltwater pool visualizers with Three.js.", "actor": "3D Spatial Engine", "tech": "Three.js / GLTF / WebGL" },
+      { "step": 2, "name": "Interactive Day / Night Lighting Engine", "desc": "Implements real-time lighting atmosphere toggle with hotspot pin markers on key amenities.", "actor": "Shader Pipeline", "tech": "Custom GLSL Shaders" },
+      { "step": 3, "name": "VIP Concierge Booking Funnel", "desc": "Direct booking modal connected to developer WhatsApp and CRM for scheduling private penthouse visits.", "actor": "Lead Router", "tech": "WhatsApp CRM Webhook" }
+    ],
+    "faqs": [
+      { "question": "Can buyers explore floor plans and apartment layouts in 3D?", "answer": "Yes. Buyers can toggle between 2 BHK, 3 BHK, and penthouse duplex layouts with interactive amenity pins and dimension overlays." },
+      { "question": "How does the Day/Night lighting atmosphere engine work?", "answer": "A custom WebGL shader recalculates ambient sunlight, golden hour reflections, and evening architectural facade lighting with zero lag." },
+      { "question": "Is the website compliant with Punjab RERA regulations?", "answer": "Yes. We integrate mandatory RERA registration numbers, sanctioned layout plans, and statutory legal disclaimers directly into the footer and schema." }
     ]
   }
 ]

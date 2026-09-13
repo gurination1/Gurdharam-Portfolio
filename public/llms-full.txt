@@ -96,11 +96,27 @@
   - 100% pre-rendered static HTML via Vite build hooks (`prerender.js`).
   - Core Web Vitals: Sub-500ms First Contentful Paint (FCP), 0.00 Cumulative Layout Shift (CLS), 100/100 Lighthouse performance.
   - 60 FPS Three.js WebGL scenes with DRACO geometry compression and Web Workers asset streaming.
-- **Production Portfolio Flagships:**
-  - **Dream Heights** (`https://dreamheights-source.vercel.app`): Luxury architectural interior & 3D WebGL spatial interactive platform.
-  - **Neovrit** (`https://neovrit.com`): 60 FPS WebGL spatial digital twin interactive experience with cinematic scroll choreography.
-  - **Kirat Interior**: Custom luxury spatial architecture.
-  - **Gurdharam**: Primary enterprise engineering portfolio.
+- **Production Portfolio Flagships & Packages (`https://www.gurdharam.com/websites`):**
+  - **Starter Business (₹5,000):** `https://www.gurdharam.com/services/website-design-under-5000` (48-hour launch, hand-coded React UI, lifetime ₹0/mo Vercel edge hosting, direct WhatsApp inquiry funnels).
+  - **Growth Business + SEO (₹7,000):** `https://www.gurdharam.com/services/website-design-under-10000` (Google Search Console API fast-indexing, 100% Google LocalBusiness Schema, local keyword optimization, sub-1s Core Web Vitals).
+  - **2D + 3D Interactive (₹12,000):** `https://www.gurdharam.com/services/3d-webgl-website-development` (Three.js WebGL fog atmosphere, SVG circular arc kinematics, Lenis 120Hz smooth scroll, diagnostic telemetry consoles).
+  - **Ultra 3D Spatial Flagship (₹20,000):** `https://www.gurdharam.com/services/luxury-3d-spatial-website-design` (Full Three.js spatial architecture, 120 FPS camera walkthroughs, Day/Night lighting engine, digital twins).
+  - **Kirat Interior** (`https://www.kiratinterior.com/`): Bespoke luxury furniture & modular studio in Bathinda (#1 ranked on Google). Dedicated vertical: `https://www.gurdharam.com/services/website-design-furniture-interior`.
+  - **BioPrac** (`https://gurination1.github.io/bioprac/`): Clinical preventative health intelligence console with Three.js fog atmosphere & 500+ biomarker telemetry.
+  - **NEOVRIT** (`https://neovrit.vercel.app`): 3D simulation agency with interactive Three.js GLTF model orbit viewport.
+  - **Dream Heights** (`https://dreamheights-source.vercel.app/`): 2&3 BHK luxury residences on Ring Road Bathinda with Day/Night lighting engine. Dedicated vertical: `https://www.gurdharam.com/services/website-design-real-estate-builders`.
+  - **Gurdharam HQ** (`https://www.gurdharam.com`): Studio headquarters with procedural WebGL particle canvas & sub-500ms voice AI.
+- **Dedicated Case Studies & Deep Dives:**
+  - Kirat Interior: `https://www.gurdharam.com/case-studies/kirat-interior` (#1 Google Local Ranking & WhatsApp Lead Funnel)
+  - BioPrac: `https://www.gurdharam.com/case-studies/bioprac` (Three.js WebGL Fog & Clinical Diagnostic Telemetry Console)
+  - Dream Heights: `https://www.gurdharam.com/case-studies/dreamheights` (Real Estate Digital Twin & Day/Night Lighting Engine)
+  - Affordable Website Guide: `https://www.gurdharam.com/blog/affordable-business-website-development-india`
+  - Mobile WebGL 3D Guide: `https://www.gurdharam.com/blog/threejs-webgl-performance-mobile-optimization`
+  - NEOVRIT 3D Simulation: `https://www.gurdharam.com/case-studies/neovrit` (Interactive Three.js GLTF Orbit & DRACO)
+  - Multimodal Judge AI: `https://www.gurdharam.com/blog/multimodal-judge-ai-video-quality-gate` (Automated Video Quality Gates on GHA)
+  - Meta WhatsApp Webhooks: `https://www.gurdharam.com/blog/meta-whatsapp-cloud-api-webhook-architecture` (Self-Hosted HMAC-SHA256 & Redis Deduplication)
+  - Offline Bluetooth Printing: `https://www.gurdharam.com/blog/flutter-escpos-bluetooth-thermal-printer-offline` (Raw ESC/POS & SQLite WAL in Flutter)
+  - Sub-300ms Voice AI: `https://www.gurdharam.com/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency` (Web Audio Worklet & Silero VAD Telemetry)
 
 ---
 

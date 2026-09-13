@@ -74,6 +74,54 @@ export default function Blog() {
       date: 'June 28, 2026',
       readTime: '5 min read',
       tag: 'AI Automation'
+    },
+    {
+      slug: 'affordable-business-website-development-india',
+      title: 'Affordable Business Website Design in India (Under ₹10,000): An Engineering Guide',
+      excerpt: 'How Indian small businesses can get hand-coded, high-performance React websites with lifetime ₹0 hosting and sub-1s load times without paying recurring agency fees.',
+      date: 'September 10, 2026',
+      readTime: '11 min read',
+      tag: 'Web Engineering'
+    },
+    {
+      slug: 'threejs-webgl-performance-mobile-optimization',
+      title: 'Three.js WebGL Mobile Optimization: Achieving Locked 60–120 FPS on Mobile',
+      excerpt: 'Comprehensive engineering guide to mobile WebGL optimization: DPR clamping, Google DRACO mesh compression, IntersectionObserver canvas pausing, and Lenis smooth scroll.',
+      date: 'September 11, 2026',
+      readTime: '12 min read',
+      tag: '3D Graphics'
+    },
+    {
+      slug: 'multimodal-judge-ai-video-quality-gate',
+      title: 'Multimodal Judge AI & Automated Quality Gates: Zero-Defect Video Publishing on GitHub Actions',
+      excerpt: 'How we eliminate silent rendering defects across an autonomous 5-channel video fleet using Gemini Multimodal Judge AI, FFmpeg blackdetect, and sidechain audio ducking.',
+      date: 'September 12, 2026',
+      readTime: '12 min read',
+      tag: 'Autonomous Media'
+    },
+    {
+      slug: 'meta-whatsapp-cloud-api-webhook-architecture',
+      title: 'Self-Hosting Meta WhatsApp Webhooks: HMAC-SHA256 Security, Redis Deduplication & Zero SaaS Fees',
+      excerpt: 'Why Indian businesses waste ₹36k–₹1.8L annually on WhatsApp aggregators. Complete architecture to self-hosting a Node.js webhook with HMAC-SHA256 and Redis locks.',
+      date: 'September 12, 2026',
+      readTime: '11 min read',
+      tag: 'Cloud API Webhooks'
+    },
+    {
+      slug: 'flutter-escpos-bluetooth-thermal-printer-offline',
+      title: 'Offline Bluetooth Thermal Printing: Raw ESC/POS Byte Streaming & SQLite WAL in Flutter',
+      excerpt: 'How we solved zero-connectivity transaction printing for DoodHisaab in rural Punjab using Bluetooth SPP sockets, raw ESC/POS opcodes, and SQLite WAL concurrency.',
+      date: 'September 13, 2026',
+      readTime: '10 min read',
+      tag: 'Embedded Mobile'
+    },
+    {
+      slug: 'webrtc-audioworklet-voice-ai-sub-300ms-latency',
+      title: 'Sub-300ms Voice AI Latency: Web Audio Worklets, Silero VAD & Indic Telephony',
+      excerpt: 'How we cracked human-grade conversational turn-taking (<300ms latency) using Web Audio API AudioWorklet processors, client-side Silero ONNX VAD, and Indic neural synthesis.',
+      date: 'September 13, 2026',
+      readTime: '13 min read',
+      tag: 'Voice AI Systems'
     }
   ];
 

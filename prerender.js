@@ -107,7 +107,7 @@ const routes = [
   },
   {
     path: '/about',
-    title: 'About Us | Gurdharam & Manveer',
+    title: 'About Gurdharam & Manveer | AI Engineers',
     description: 'Meet Gurdharam Jeet Singh and Manveer Singh from BFGI Bathinda. Engineering autonomous AI systems, Meta WhatsApp automation, and 3D web platforms.',
     canonical: 'https://www.gurdharam.com/about',
     jsonld: {
@@ -155,7 +155,7 @@ const routes = [
           "@id": "https://www.gurdharam.com/websites#collection",
           "url": "https://www.gurdharam.com/websites",
           "name": "Website Development Rates (₹5,000 - ₹20,000) & Live Client Showcase",
-          "description": "Transparent website development rates and production client showcase: Kirat Interior (₹5k/₹7k), NEOVRIT Studio (₹12k), and Dream Heights & Gurdharam.com (₹20k)."
+          "description": "Transparent website development rates and production client showcase: Kirat Interior (₹5k/₹7k), BioPrac (₹12k), NEOVRIT Studio (₹12k), and Dream Heights & Gurdharam.com (₹20k)."
         }
       ]
     },
@@ -168,35 +168,398 @@ const routes = [
           <h2>Live Production Showcase & Case Studies</h2>
           <p>Explore real production clients with verified live builds, interactive Three.js 3D spatial models, and enterprise-grade performance:</p>
           <ul>
-            <li><a href="https://www.kiratinterior.com/" target="_blank" rel="noopener noreferrer">Kirat Interior</a>: Bespoke luxury furniture & interior studio in Bathinda, Punjab. Hand-coded responsive UI with instant WhatsApp inquiries.</li>
+            <li><a href="https://www.kiratinterior.com/" target="_blank" rel="noopener noreferrer">Kirat Interior</a>: Bespoke luxury furniture & interior studio in Bathinda, Punjab. Hand-coded responsive UI with instant WhatsApp inquiries. <a href="/services/website-design-furniture-interior">[View Furniture & Interior Vertical]</a></li>
+            <li><a href="https://gurination1.github.io/bioprac/" target="_blank" rel="noopener noreferrer">BioPrac Clinical Console</a>: Next-gen preventative healthcare platform with Three.js WebGL fog atmosphere, circular arc kinematics & 500+ biomarker telemetry. <a href="/services/3d-webgl-website-development">[View 3D WebGL Specs]</a></li>
             <li><a href="https://neovrit.vercel.app" target="_blank" rel="noopener noreferrer">NEOVRIT Studio</a>: 3D × AI agency web environment featuring Three.js WebGL GLTF model viewport and 120Hz smooth scrolling.</li>
-            <li><a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer">Dream Heights Luxury Residences</a>: Flagship real estate 3D platform with spatial lighting, interactive floorplans, and zero mobile lag.</li>
+            <li><a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer">Dream Heights Luxury Residences</a>: Flagship real estate 3D platform with Day/Night lighting engine, interactive floorplans, and zero mobile lag. <a href="/services/website-design-real-estate-builders">[View Real Estate 3D Vertical]</a></li>
+            <li><a href="https://www.gurdharam.com">Gurdharam.com Headquarters</a>: Spatial engineering portfolio with procedural particle canvas, sub-500ms voice AI, and 100/100 Core Web Vitals.</li>
             <li><a href="/case-studies/doodhisaab">DoodHisaab Case Study</a>: Offline-first dairy management mobile application built with Flutter and on-device SQLite.</li>
             <li><a href="/case-studies/fasal-doctor">Fasal Doctor Case Study</a>: Agricultural computer vision application powered by on-device TensorFlow Lite neural diagnostics.</li>
             <li><a href="/case-studies/takemyinterview-ai">TakeMyInterview.ai Case Study</a>: Sub-300ms conversational voice-to-voice AI interviewer platform.</li>
           </ul>
         </section>
         <section>
-          <h2>Development Packages & Transparent Pricing</h2>
+          <h2>Development Packages & Dedicated Architectural Specs</h2>
           <article>
-            <h3>₹5,000 — Starter Business Web Presence</h3>
-            <p>Hand-coded responsive mobile & desktop UI, lifetime ₹0/month Vercel edge hosting, direct WhatsApp integration, and custom domain connection with free SSL.</p>
+            <h3><a href="/services/website-design-under-5000">₹5,000 — Starter Business Web Presence</a></h3>
+            <p>Hand-coded responsive mobile & desktop UI, lifetime ₹0/month Vercel edge hosting, direct WhatsApp integration, and custom domain connection with free SSL. <a href="/services/website-design-under-5000">Explore ₹5,000 Package Specs →</a></p>
           </article>
           <article>
-            <h3>₹7,000 — Growth Business with Google Local SEO</h3>
-            <p>Everything in Starter plus Google Search Console API instant indexing, 100% Google LocalBusiness Schema, local keyword optimization, and sub-1s Core Web Vitals.</p>
+            <h3><a href="/services/website-design-under-10000">₹7,000 — Growth Business with Google Local SEO</a></h3>
+            <p>Everything in Starter plus Google Search Console API instant indexing, 100% Google LocalBusiness Schema, local keyword optimization, and sub-1s Core Web Vitals. <a href="/services/website-design-under-10000">Explore ₹7,000 SEO Package Specs →</a></p>
           </article>
           <article>
-            <h3>₹12,000 — Interactive 3D WebGL Web Platform</h3>
-            <p>Everything in Growth plus Three.js GLTF 3D model viewport, Lenis 120Hz smooth scroll, cybernetic dark-mode aesthetics, and real-time lead capture backend.</p>
+            <h3><a href="/services/3d-webgl-website-development">₹12,000 — Interactive 3D WebGL Web Platform</a></h3>
+            <p>Everything in Growth plus Three.js GLTF 3D model viewport, SVG circular arc kinematics, Lenis 120Hz smooth scroll, and clinical telemetry dashboards. <a href="/services/3d-webgl-website-development">Explore 3D WebGL Package Specs →</a></p>
           </article>
           <article>
-            <h3>₹20,000 — Ultra 3D Spatial Digital Twin Flagship</h3>
-            <p>Full Three.js WebGL spatial architecture, 120 FPS cinematic camera choreography, custom GLSL shaders, and full static SSR pre-rendered zero-flicker architecture.</p>
+            <h3><a href="/services/luxury-3d-spatial-website-design">₹20,000 — Ultra 3D Spatial Digital Twin Flagship</a></h3>
+            <p>Full Three.js WebGL spatial architecture, 120 FPS cinematic camera choreography, Day/Night lighting engine, custom GLSL shaders, and zero-flicker SSR. <a href="/services/luxury-3d-spatial-website-design">Explore Spatial Flagship Specs →</a></p>
           </article>
         </section>
         <footer>
           <p><a href="/">Return Home</a> | <a href="/about">About the Founders</a> | <a href="/services">Services Hub</a> | <a href="/blog">Engineering Articles</a></p>
+        </footer>
+      </main>`
+  },
+  {
+    path: '/services/website-design-under-5000',
+    title: 'Website Design Under ₹5,000 | Gurdharam',
+    description: 'Hand-coded single-page business websites for ₹5,000. 48-hour launch, free edge CDN hosting, and WhatsApp inquiry funnels with zero monthly fees.',
+    canonical: 'https://www.gurdharam.com/services/website-design-under-5000',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://www.gurdharam.com/services/website-design-under-5000#service",
+          "name": "Website Design Under ₹5,000",
+          "url": "https://www.gurdharam.com/services/website-design-under-5000",
+          "description": "Hand-coded single-page business websites for ₹5,000. 48-hour launch, free edge CDN hosting, and WhatsApp inquiry funnels with zero monthly fees.",
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "url": "https://www.gurdharam.com"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "5000",
+            "priceCurrency": "INR",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.gurdharam.com/services/website-design-under-5000"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.gurdharam.com/services/website-design-under-5000#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I really get a production website for just ₹5,000?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. ₹5,000 is our flat fee for a single-page, hand-coded business showcase. There are zero agency markups or hidden costs because you work directly with senior software engineers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there any recurring monthly or hidden hosting charges?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We deploy on modern global Edge CDN infrastructure that provides a free lifetime hosting tier for small-to-medium business traffic. You only pay your annual domain name registration directly to your registrar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast will my ₹5,000 website be live?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Within 48 to 72 hours of receiving your photos, text, and contact details."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I upgrade to Google Local SEO and Search Console later?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You can upgrade at any time to our ₹7,000 Growth tier to add Google Search Console API fast-indexing, Google LocalBusiness Schema, and Google Maps alignment."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <h1>Website Design Under ₹5,000 — Hand-Coded 48-Hour Rapid Launch</h1>
+          <p>Launch your business web presence in 48 hours for a flat ₹5,000. Hand-coded responsive mobile and desktop UI, lifetime ₹0/month Vercel edge hosting, and direct WhatsApp customer inquiries with zero monthly agency overhead.</p>
+        </header>
+        <section>
+          <h2>Package Specifications: ₹5,000 Starter Business</h2>
+          <ul>
+            <li>Responsive Mobile & Desktop UI hand-coded in modern React and TailwindCSS</li>
+            <li>Fast Vercel Edge CDN hosting with lifetime ₹0/month operating cost</li>
+            <li>Direct WhatsApp and phone click-to-call inquiry routing</li>
+            <li>Custom domain connection (.com / .in) with free automated SSL certificate</li>
+            <li>Clean editorial typography and high-resolution photo/catalog showcase</li>
+            <li>Turnaround: 2 to 3 business days</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Real-World Production Proof: Kirat Interior (Core Layout)</h2>
+          <p>Inspect the baseline single-page showcase built for <a href="https://www.kiratinterior.com/" target="_blank" rel="noopener noreferrer">Kirat Interior</a>. Features deep editorial styling, bespoke furniture portfolios, and instant customer WhatsApp chat dispatch.</p>
+        </section>
+        <section>
+          <h2>Frequently Asked Questions</h2>
+          <div>
+            <h3>Can I really get a production website for just ₹5,000?</h3>
+            <p>Yes. ₹5,000 is our flat fee for a single-page, hand-coded business showcase. You work directly with lead engineers with zero agency bureaucracy.</p>
+          </div>
+          <div>
+            <h3>Are there monthly hosting bills?</h3>
+            <p>No. Deployed on global Edge CDN infrastructure providing a lifetime free hosting tier for standard business traffic.</p>
+          </div>
+        </section>
+        <footer>
+          <p><a href="/websites">View All Website Packages</a> | <a href="/services/website-design-under-10000">Growth SEO Package (₹7,000)</a> | <a href="/">Studio Home</a></p>
+        </footer>
+      </main>`
+  },
+  {
+    path: '/services/website-design-under-10000',
+    title: 'Website Under ₹10,000 with SEO | Gurdharam',
+    description: 'Get high-ranking business websites under ₹10,000 (₹7k flat). Google Search Console API fast indexing, LocalBusiness schema, and sub-1s Core Web Vitals.',
+    canonical: 'https://www.gurdharam.com/services/website-design-under-10000',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://www.gurdharam.com/services/website-design-under-10000#service",
+          "name": "Website Design Under ₹10,000 with SEO",
+          "url": "https://www.gurdharam.com/services/website-design-under-10000",
+          "description": "High-ranking local business flagship for ₹7,000 flat (under ₹10,000). Google Search Console API fast indexing, LocalBusiness schema, and sub-1s Core Web Vitals.",
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "url": "https://www.gurdharam.com"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "7000",
+            "priceCurrency": "INR",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.gurdharam.com/services/website-design-under-10000"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.gurdharam.com/services/website-design-under-10000#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why choose the ₹7,000 Growth package over basic ₹5,000 web design?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The ₹5,000 package is ideal if you already share your link directly. The ₹7,000 package adds Google Search Console API fast-indexing, 100% Google LocalBusiness Schema, local keyword optimization, and Google Maps alignment so local searchers on Google find you first."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Google Search Console (GSC) API fast-indexing work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Instead of waiting weeks for Googlebot to randomly crawl your site, we submit your URLs directly to Google Indexing API and resubmit sitemaps to GSC, pushing your website into Google index in hours."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How did Kirat Interior rank #1 in Bathinda?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kirat Interior used this exact ₹7,000 architecture: schema markup, localized geographic tags, and sub-second load times that give it algorithmic dominance over slower competitors."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <h1>Website Under ₹10,000 with Google SEO — Rank #1 in Your Local City</h1>
+          <p>High-ranking business website for ₹7,000 flat (under ₹10,000). Engineered with official Google Search Console API fast-indexing, 100% Google LocalBusiness Schema, sub-1s Core Web Vitals, and direct WhatsApp lead acquisition funnels.</p>
+        </header>
+        <section>
+          <h2>Package Specifications: ₹7,000 Growth Business + SEO</h2>
+          <ul>
+            <li>Everything in Starter Business (₹5,000)</li>
+            <li>Google Search Console (GSC) API Instant Indexing (Pushed to Google index in hours)</li>
+            <li>100% Google LocalBusiness Schema & Geo Coordinates for rich search snippets</li>
+            <li>Local Search Keyword Optimization targeting your city, neighborhood, and service area</li>
+            <li>Google Maps Business Listing Integration & review synchronization</li>
+            <li>98+ Google Lighthouse Performance & 0.00 Cumulative Layout Shift</li>
+            <li>Turnaround: 3 to 5 business days</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Real-World Production Proof: Kirat Interior (Ranked #1 on Google)</h2>
+          <p>See the live flagship build at <a href="https://www.kiratinterior.com/" target="_blank" rel="noopener noreferrer">Kirat Interior</a>. Dominates local Google searches for bespoke furniture and modular kitchens in Bathinda, Punjab through localized schema and rapid lead dispatch.</p>
+        </section>
+        <section>
+          <h2>Frequently Asked Questions</h2>
+          <div>
+            <h3>How does GSC API indexing work?</h3>
+            <p>We trigger Google Indexing API endpoint notifications directly on deployment, notifying Googlebot to crawl and index your pages in hours rather than weeks.</p>
+          </div>
+          <div>
+            <h3>Are there monthly SEO retainer fees?</h3>
+            <p>No. This is a one-time flat ₹7,000 engineering fee. All technical SEO, schema, and API indexing are permanently built into your codebase.</p>
+          </div>
+        </section>
+        <footer>
+          <p><a href="/websites">View All Website Packages</a> | <a href="/services/website-design-under-5000">Starter Package (₹5,000)</a> | <a href="/services/3d-webgl-website-development">3D WebGL Package (₹12,000)</a> | <a href="/">Studio Home</a></p>
+        </footer>
+      </main>`
+  },
+  {
+    path: '/services/3d-webgl-website-development',
+    title: '3D WebGL Website Development | Gurdharam',
+    description: 'Interactive Three.js WebGL websites for ₹12,000. Procedural GPU fog atmosphere, SVG circular arc kinematics, and 120Hz Lenis smooth scroll physics.',
+    canonical: 'https://www.gurdharam.com/services/3d-webgl-website-development',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://www.gurdharam.com/services/3d-webgl-website-development#service",
+          "name": "3D WebGL Website Development",
+          "url": "https://www.gurdharam.com/services/3d-webgl-website-development",
+          "description": "Interactive Three.js WebGL web environments for ₹12,000 flat. Procedural fog atmospheres, SVG circular arc kinematics, and 120Hz Lenis smooth scroll physics.",
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "url": "https://www.gurdharam.com"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "12000",
+            "priceCurrency": "INR",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.gurdharam.com/services/3d-webgl-website-development"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.gurdharam.com/services/3d-webgl-website-development#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Will a Three.js 3D website run smoothly on mobile phones?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We optimize WebGL canvas render loops with dynamic resolution scaling, requestAnimationFrame throttling, and DRACO geometry compression to ensure 60 FPS on mobile."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does WebGL GPU rendering compare to video backgrounds?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Video backgrounds consume 10-30MB of data and buffer on mobile. WebGL shaders render in code under 150KB and interact with user cursor movements."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <h1>3D WebGL Website Development — Kinetic Arc Motion & Three.js Atmosphere</h1>
+          <p>Interactive Three.js WebGL web environments for ₹12,000 flat. Featuring procedural fog atmospheres, SVG circular arc kinematics, 120Hz Lenis smooth scroll physics, and clinical telemetry dashboards.</p>
+        </header>
+        <section>
+          <h2>Package Specifications: ₹12,000 2D + 3D Interactive Tier</h2>
+          <ul>
+            <li>Everything in Growth + SEO (₹7,000)</li>
+            <li>Three.js / WebGL Fog Atmosphere & 3D Interactive Canvas with GPU shader render</li>
+            <li>Interactive SVG Circular Arc Kinematics with rotational timeline choreography</li>
+            <li>Lenis Hardware-Accelerated Smooth Scroll with 60–120Hz physics</li>
+            <li>Clinical & Technical Telemetry Dashboards with dynamic tabs & biomarker metrics</li>
+            <li>Interactive Three.js GLTF 3D Model Viewport with mouse orbit controls</li>
+            <li>Turnaround: 5 to 7 business days</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Real-World Production Proof: BioPrac & NEOVRIT</h2>
+          <p>Explore <a href="https://gurination1.github.io/bioprac/" target="_blank" rel="noopener noreferrer">BioPrac</a> (preventative health clinical console with Three.js fog and circular arc kinematics) and <a href="https://neovrit.vercel.app" target="_blank" rel="noopener noreferrer">NEOVRIT</a> (3D agency environment with interactive GLTF model orbit).</p>
+        </section>
+        <footer>
+          <p><a href="/websites">View All Website Packages</a> | <a href="/services/luxury-3d-spatial-website-design">Ultra 3D Spatial Flagship (₹20,000)</a> | <a href="/">Studio Home</a></p>
+        </footer>
+      </main>`
+  },
+  {
+    path: '/services/luxury-3d-spatial-website-design',
+    title: '3D Spatial Website Development | Gurdharam',
+    description: 'Awwwards-caliber 3D spatial web environments for ₹20,000. 120 FPS camera walkthroughs, Day/Night lighting engines, and architectural digital twins.',
+    canonical: 'https://www.gurdharam.com/services/luxury-3d-spatial-website-design',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://www.gurdharam.com/services/luxury-3d-spatial-website-design#service",
+          "name": "Ultra 3D Spatial Website Development",
+          "url": "https://www.gurdharam.com/services/luxury-3d-spatial-website-design",
+          "description": "Awwwards-caliber 3D spatial web platforms for ₹20,000 flat. Designed for luxury real estate developers, spatial architecture firms, and visionary founders.",
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://www.gurdharam.com/#organization",
+            "name": "Gurdharam AI Engineering",
+            "url": "https://www.gurdharam.com"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "20000",
+            "priceCurrency": "INR",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.gurdharam.com/services/luxury-3d-spatial-website-design"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.gurdharam.com/services/luxury-3d-spatial-website-design#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is an architectural digital twin website?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It is an interactive 3D web platform that lets prospective buyers explore real-world buildings, penthouses, and amenities in real-time with Day/Night lighting and floorplan hotspots."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does a ₹20,000 spatial flagship take to build?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically 7 to 14 business days, including 3D model optimization, camera path choreography, and custom GLSL shader tuning."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <h1>Ultra 3D Spatial Flagships — Architectural Digital Twins & 120 FPS Walkthroughs</h1>
+          <p>Awwwards-caliber 3D spatial web platforms for ₹20,000 flat. Designed for luxury real estate developers, spatial architecture firms, and visionary founders demanding 120 FPS cinematic walkthroughs and digital twin environments.</p>
+        </header>
+        <section>
+          <h2>Package Specifications: ₹20,000 Studio Flagship</h2>
+          <ul>
+            <li>Full Three.js WebGL / Framer spatial architecture with multi-scene transitions</li>
+            <li>120 FPS cinematic camera walkthroughs through building towers and penthouses</li>
+            <li>Interactive Day / Night lighting atmosphere engine with architectural pin hotspots</li>
+            <li>RevealFlow cinematic preloader and custom procedural GLSL shaders</li>
+            <li>Full Google Search Console Indexing, Knowledge Graph, and schema alignment</li>
+            <li>Bespoke editorial typography and integrated VIP lead acquisition funnel</li>
+            <li>Turnaround: 7 to 14 business days</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Real-World Production Proof: Dream Heights & Gurdharam.com</h2>
+          <p>Inspect <a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer">Dream Heights</a> (luxury gated residences on Ring Road Bathinda with Day/Night lighting engine and saltwater pool visualizer) and <a href="https://www.gurdharam.com">Gurdharam.com</a> studio headquarters.</p>
+        </section>
+        <footer>
+          <p><a href="/websites">View All Website Packages</a> | <a href="/services/website-design-real-estate-builders">Real Estate 3D Vertical</a> | <a href="/">Studio Home</a></p>
         </footer>
       </main>`
   },
@@ -1348,7 +1711,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/services/custom-react-developer-india',
     title: 'Custom React Developer India | Gurdharam',
-    description: 'Hire expert React & Next.js full-stack developer in India. High-performance, pre-rendered SSG web apps with sub-1 second load times.',
+    description: 'Hire an expert React & Next.js full-stack developer in India. Building high-performance, pre-rendered SSG web apps with sub-second page loads.',
     canonical: 'https://www.gurdharam.com/services/custom-react-developer-india',
     jsonld: {
       "@context": "https://schema.org",
@@ -1390,7 +1753,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/services/ai-automation-agency-india',
     title: 'AI Automation Agency India | Gurdharam',
-    description: 'Leading AI Automation Agency in India. Build custom n8n, Make, WhatsApp API, AI phone bots, and multi-agent LLM business workflows.',
+    description: 'Top AI Automation Agency in India. Build custom n8n, Make, Meta WhatsApp Cloud API bots, Indic voice agents, and autonomous multi-agent pipelines.',
     canonical: 'https://www.gurdharam.com/services/ai-automation-agency-india',
     jsonld: {
       "@context": "https://schema.org",
@@ -1411,7 +1774,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/services/whatsapp-business-bot',
     title: 'WhatsApp Business Bot Developer | Gurdharam',
-    description: 'Build custom 24/7 WhatsApp AI bots for all business types. Automated bookings, orders, and lead conversion.',
+    description: 'Build custom 24/7 WhatsApp AI bots for all business types using official Meta Cloud API. Automated bookings, customer support, and direct CRM sync.',
     canonical: 'https://www.gurdharam.com/services/whatsapp-business-bot',
     jsonld: {
       "@context": "https://schema.org",
@@ -1513,7 +1876,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/services/web-developer-muktsar-punjab',
     title: 'Web Developer Muktsar & Bathinda | Gurdharam',
-    description: 'Full-stack web developer and AI engineer in Muktsar, Bathinda, and Punjab. Custom business websites, local SEO, and agritech apps.',
+    description: 'Full-stack web developer and AI engineer based in Muktsar and Bathinda, Punjab. Engineering custom business websites, local SEO, and agritech apps.',
     canonical: 'https://www.gurdharam.com/services/web-developer-muktsar-punjab',
     jsonld: {
       "@context": "https://schema.org",
@@ -1788,7 +2151,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/case-studies/doodhisaab',
     title: 'DoodHisaab Offline Dairy App Case Study',
-    description: 'Detailed case study of DoodHisaab, an offline dairy ledger and milk accounting app built in Flutter for milkmen in rural Punjab.',
+    description: 'Comprehensive case study of DoodHisaab, an offline dairy ledger and milk collection accounting app built in Flutter for farmers in rural Punjab.',
     canonical: 'https://www.gurdharam.com/case-studies/doodhisaab',
     html: `
       <main>
@@ -2180,7 +2543,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/blog/dpdp-act-compliant-air-gapped-llm-legal-tech',
     title: 'DPDP Act Air-Gapped Local LLMs | Gurdharam',
-    description: 'Guide on deploying air-gapped 70B parameter open-weights LLMs under India DPDP Act compliance with zero cloud VRAM data leakage.',
+    description: 'Comprehensive guide on deploying air-gapped 70B parameter open-weights LLMs under India DPDP Act compliance with zero cloud VRAM data leakage.',
     canonical: 'https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech',
     jsonld: {
       "@context": "https://schema.org",
@@ -2251,6 +2614,400 @@ app.post('/api/webhook', async (req, res) => {
           <p>Build custom interview bots: <a href="/services/ai-voice-agents">Voice AI Telephony Agents</a> and <a href="/services/web-development">Full Stack Web Platforms</a>.</p>
         </section>
         <footer><p><a href="/">Home</a> | <a href="/services/ai-voice-agents">Voice AI Agents</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/case-studies/kirat-interior',
+    title: 'Kirat Interior Case Study | Gurdharam',
+    description: 'How Kirat Interior achieved #1 Google search ranking in Bathinda for luxury furniture using React, LocalBusiness schema, and WhatsApp lead routing.',
+    canonical: 'https://www.gurdharam.com/case-studies/kirat-interior',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/case-studies/kirat-interior#article",
+          "headline": "Kirat Interior Case Study: #1 Google Local Ranking & WhatsApp Lead Funnel",
+          "description": "How Kirat Interior achieved #1 Google search ranking in Bathinda for luxury furniture using React, LocalBusiness schema, and WhatsApp lead routing.",
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.gurdharam.com/#person",
+            "name": "Gurdharam Jeet Singh"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Case Study · Local Business SEO</span>
+          <h1>Kirat Interior Case Study — #1 Google Ranking in Bathinda for Bespoke Furniture</h1>
+          <p>How Handeep Singh's luxury modular furniture studio scaled from word-of-mouth reliance to #1 Google Search dominance, driving a 240% surge in high-ticket consultation bookings with sub-second page loads and zero recurring monthly SaaS fees.</p>
+        </header>
+        <section>
+          <h2>Quantified Business Results</h2>
+          <ul>
+            <li>#1 Google Search Ranking in Bathinda for luxury modular furniture & custom kitchens</li>
+            <li>+240% increase in weekly homeowner consultation bookings via direct WhatsApp routing</li>
+            <li>99/100 Core Web Vitals score on mobile devices with zero layout shift (0.00 CLS)</li>
+            <li>Lifetime ₹0/month hosting expense on global Vercel Edge CDN</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Engineering Architecture</h2>
+          <p>Hand-coded in React and TailwindCSS, statically pre-rendered to pure HTML. Verified Google LocalBusiness Schema, GSC API fast indexing, and direct room-dimension inquiry dispatch.</p>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/websites">Website Packages</a> | <a href="/services/website-design-under-10000">Growth SEO Package</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/case-studies/bioprac',
+    title: 'BioPrac Three.js Case Study | Gurdharam',
+    description: 'Engineering BioPrac: Next-gen clinical health intelligence console with Three.js WebGL fog, circular arc kinematics, and 120Hz smooth scroll physics.',
+    canonical: 'https://www.gurdharam.com/case-studies/bioprac',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/case-studies/bioprac#article",
+          "headline": "BioPrac Case Study: Three.js WebGL Fog & Clinical Diagnostic Telemetry",
+          "description": "Engineering BioPrac: Next-gen clinical health intelligence console with Three.js WebGL fog, circular arc kinematics, and 120Hz smooth scroll physics.",
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.gurdharam.com/#person",
+            "name": "Gurdharam Jeet Singh"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Case Study · WebGL & Healthtech</span>
+          <h1>BioPrac Case Study — Three.js WebGL Fog Atmosphere & Circular Arc Kinematics</h1>
+          <p>Next-generation preventative healthcare web console featuring procedural Three.js WebGL fog shaders, synchronized circular arc kinematics, 120Hz Lenis scroll physics, and a diagnostic telemetry matrix spanning 500+ biomarkers.</p>
+        </header>
+        <section>
+          <h2>Performance & Benchmarks</h2>
+          <ul>
+            <li>60–120 FPS GPU-accelerated shader render loop on mobile & desktop screens</li>
+            <li>Sub-150KB code payload eliminating 20MB+ video background buffers</li>
+            <li>Interactive SVG circular arc matrix synchronized with scroll choreography</li>
+            <li>Zero-knowledge clinical telemetry architecture ensuring patient confidentiality</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/websites">Website Packages</a> | <a href="/services/3d-webgl-website-development">3D WebGL Package</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/case-studies/dreamheights',
+    title: 'Dream Heights 3D Case Study | Gurdharam',
+    description: 'Architectural case study: Building Dream Heights 3D real estate digital twin with Day/Night lighting engine, floorplan pins, and zero mobile lag.',
+    canonical: 'https://www.gurdharam.com/case-studies/dreamheights',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/case-studies/dreamheights#article",
+          "headline": "Dream Heights 3D Case Study: Real Estate Digital Twin & Day/Night Lighting",
+          "description": "Architectural case study: Building Dream Heights 3D real estate digital twin with Day/Night lighting engine, floorplan pins, and zero mobile lag.",
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.gurdharam.com/#person",
+            "name": "Gurdharam Jeet Singh"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Case Study · Real Estate Spatial 3D</span>
+          <h1>Dream Heights Case Study — 3D Spatial Digital Twin & Day/Night Lighting Engine</h1>
+          <p>Awwwards-caliber 3D spatial web platform for Dream Land Promoters' flagship gated luxury residences on Ring Road Bathinda. Real-time Day/Night lighting atmosphere engine, floorplan hotspots, and 120 FPS camera choreography.</p>
+        </header>
+        <section>
+          <h2>Quantified Real Estate Results</h2>
+          <ul>
+            <li>5.8 minute average dwell time for prospective NRI and HNI luxury home buyers</li>
+            <li>+190% increase in VIP site tour bookings via integrated WhatsApp concierge modal</li>
+            <li>Interactive Day/Night atmosphere switcher powered by custom WebGL GLSL shaders</li>
+            <li>100% compliant with Punjab RERA Act Sec 11(2) statutory disclosures</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/websites">Website Packages</a> | <a href="/services/luxury-3d-spatial-website-design">Spatial Flagship Package</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/blog/affordable-business-website-development-india',
+    title: 'Affordable Website Design India | Gurdharam',
+    description: 'Comprehensive guide to building high-ranking business websites under ₹10,000 in India. Hand-coded React, free edge CDN hosting, and Google Local SEO.',
+    canonical: 'https://www.gurdharam.com/blog/affordable-business-website-development-india',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/affordable-business-website-development-india#article",
+          "headline": "Affordable Business Website Design in India: Building High-Ranking Sites Under ₹10,000",
+          "description": "Comprehensive guide to building high-ranking business websites under ₹10,000 in India. Hand-coded React, free edge CDN hosting, and Google Local SEO.",
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.gurdharam.com/#person",
+            "name": "Gurdharam Jeet Singh"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Engineering Article · Web Architecture</span>
+          <h1>Affordable Business Website Design in India: How to Build a High-Ranking Site Under ₹10,000</h1>
+          <p>How Indian small businesses, local showrooms, and startups can bypass bloated ₹50k agency retainers and sluggish WordPress themes. A step-by-step engineering analysis of hand-coded React architecture, lifetime ₹0/month edge hosting, and official Google Search Console API fast-indexing.</p>
+        </header>
+        <section>
+          <h2>Core Architectural Pillars</h2>
+          <ul>
+            <li>Eliminating agency markups: working directly with senior software engineers</li>
+            <li>Static pre-rendered React: sub-500ms page loads and zero monthly hosting bills</li>
+            <li>Google Search Console API indexing: search crawler verification in hours, not weeks</li>
+            <li>Direct WhatsApp inquiry funnels converting search traffic into paying customers</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/websites">Website Packages</a> | <a href="/services/website-design-under-5000">₹5,000 Starter Package</a> | <a href="/services/website-design-under-10000">₹7,000 SEO Package</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/blog/threejs-webgl-performance-mobile-optimization',
+    title: 'Three.js WebGL Mobile Optimization | Gurdharam',
+    description: 'Deep engineering guide to achieving 60-120 FPS Three.js WebGL on mobile devices. DRACO mesh compression, shader render loops, and Lenis scroll sync.',
+    canonical: 'https://www.gurdharam.com/blog/threejs-webgl-performance-mobile-optimization',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/threejs-webgl-performance-mobile-optimization#article",
+          "headline": "Three.js WebGL Mobile Performance Optimization: Achieving Locked 60–120 FPS",
+          "description": "Deep engineering guide to achieving 60-120 FPS Three.js WebGL on mobile devices. DRACO mesh compression, shader render loops, and Lenis scroll sync.",
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.gurdharam.com/#person",
+            "name": "Gurdharam Jeet Singh"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Engineering Article · 3D Graphics</span>
+          <h1>Three.js WebGL Mobile Optimization — Achieving Locked 60–120 FPS on Mobile Devices</h1>
+          <p>An exhaustive engineering deep-dive into running hardware-accelerated 3D WebGL scenes on mobile smartphones. Covers dynamic pixel ratio throttling, IntersectionObserver canvas pausing, Google DRACO mesh compression, and Lenis smooth scroll synchronization.</p>
+        </header>
+        <section>
+          <h2>Key Optimization Strategies</h2>
+          <ul>
+            <li>DPR Clamping: Restricting devicePixelRatio to 1.5–1.75 to prevent mobile GPU overheating</li>
+            <li>DRACO Geometry Compression: Shrinking 25MB raw GLTF meshes down to 1.8MB for 4G streaming</li>
+            <li>IntersectionObserver RAF pausing when canvas is outside the active viewport</li>
+            <li>Virtual smooth scroll physics with Lenis eliminating touch-scroll jank</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/websites">Website Packages</a> | <a href="/services/3d-webgl-website-development">3D WebGL Package</a> | <a href="/case-studies/bioprac">BioPrac Case Study</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/case-studies/neovrit',
+    title: 'NEOVRIT 3D Simulation Case Study | Gurdharam',
+    description: 'Case study of NEOVRIT, a 3D simulation agency website featuring an interactive Three.js GLTF model orbit viewport with 60 FPS mobile WebGL rendering.',
+    canonical: 'https://www.gurdharam.com/case-studies/neovrit',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/case-studies/neovrit#article",
+          "headline": "NEOVRIT: Interactive Three.js GLTF Model Orbit Viewport & DRACO Compression",
+          "description": "How we built a 60 FPS WebGL agency platform with Google DRACO geometry compression, Web Worker mesh decoding, and real-time PBR material shaders.",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com/about"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Case Study · 3D Graphics</span>
+          <h1>NEOVRIT // 3D Simulation Agency — Interactive Three.js GLTF Model Orbit & DRACO Compression</h1>
+          <p>How we engineered a cutting-edge 3D simulation agency website featuring an interactive Three.js GLTF model orbit viewport, Google DRACO mesh compression, and real-time physical PBR materials running at locked 60 FPS across budget smartphones.</p>
+        </header>
+        <section>
+          <h2>Technical Architecture & Performance Benchmarks</h2>
+          <ul>
+            <li>60 FPS interactive WebGL orbit viewport on mobile smartphones</li>
+            <li>Google DRACO geometry compression shrinking 48MB CAD meshes down to 2.1MB</li>
+            <li>Web Worker thread decompression preventing UI freeze during model loading</li>
+            <li>+240% increase in qualified enterprise simulation consultation inquiries</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/websites">All Websites</a> | <a href="/services/3d-webgl-website-development">3D WebGL Package</a> | <a href="/case-studies/bioprac">BioPrac 3D Case Study</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/blog/multimodal-judge-ai-video-quality-gate',
+    title: 'Multimodal Judge AI Quality Gates | Gurdharam',
+    description: 'Engineering guide on building automated video quality gates using Gemini Multimodal Judge AI, FFmpeg blackdetect, and dynamic audio ducking on GitHub Actions.',
+    canonical: 'https://www.gurdharam.com/blog/multimodal-judge-ai-video-quality-gate',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/multimodal-judge-ai-video-quality-gate#article",
+          "headline": "Multimodal Judge AI & Quality Gates: Zero-Defect Autonomous Video Publishing on GitHub Actions",
+          "description": "How to eliminate silent rendering defects across an autonomous 5-channel video fleet using Gemini Multimodal Judge AI, FFmpeg blackdetect, and sidechain audio ducking.",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com/about"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Engineering Article · Autonomous Media</span>
+          <h1>Multimodal Judge AI & Automated Video Quality Gates — Zero-Defect Publishing on GitHub Actions</h1>
+          <p>How we eliminate silent rendering defects—black frames, audio desync, illegible subtitle overlays, and hallucinated visual artifacts—across an autonomous 5-channel YouTube Shorts media fleet using Gemini Multimodal Judge AI, FFmpeg hardware filters, and dynamic sidechain audio ducking.</p>
+        </header>
+        <section>
+          <h2>Key Architecture Components</h2>
+          <ul>
+            <li>FFmpeg hardware filters: blackdetect=d=0.5:pix_th=0.10 and silencedetect=noise=-45dB:d=1.5</li>
+            <li>Dynamic -18dB speech ducking via FFmpeg audio sidechain compression</li>
+            <li>Gemini 1.5/2.0 Flash multimodal vision API evaluation with strict >=85/100 publishing threshold</li>
+            <li>100% serverless cloud execution on GitHub Actions with $0 monthly server costs</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/blog">Blog</a> | <a href="/services/automated-video-generation-engine">VideoGen Engine</a> | <a href="/blog/automated-1080p60-videogen-pipeline">Remotion Pipeline Guide</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/blog/meta-whatsapp-cloud-api-webhook-architecture',
+    title: 'Meta WhatsApp Cloud API Webhook | Gurdharam',
+    description: 'Complete architectural guide to self-hosting Meta WhatsApp Cloud API webhooks with HMAC-SHA256 signature verification, Redis deduplication, and zero SaaS fees.',
+    canonical: 'https://www.gurdharam.com/blog/meta-whatsapp-cloud-api-webhook-architecture',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/meta-whatsapp-cloud-api-webhook-architecture#article",
+          "headline": "Self-Hosting Meta WhatsApp Webhooks: HMAC-SHA256 Security, Redis Deduplication & Zero SaaS Fees",
+          "description": "Complete architectural guide to self-hosting Meta WhatsApp Cloud API webhooks with HMAC-SHA256 signature verification, Redis deduplication, and zero SaaS fees.",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com/about"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Engineering Article · Cloud API Webhooks</span>
+          <h1>Self-Hosting Meta WhatsApp Cloud API Webhooks — HMAC-SHA256 Security & Zero SaaS Fees</h1>
+          <p>Why Indian businesses waste ₹36,000 to ₹1,80,000 annually on third-party WhatsApp SaaS aggregators (WATI, AiSensy, Interakt). Complete architectural guide to self-hosting a direct Node.js webhook service with cryptographic signature verification, Redis deduplication, and sub-100ms response times.</p>
+        </header>
+        <section>
+          <h2>Key Architecture Components</h2>
+          <ul>
+            <li>HMAC-SHA256 signature verification via X-Hub-Signature-256 header using timingSafeEqual</li>
+            <li>Redis distributed locking (SETNX with 60s TTL) preventing duplicate processing during Meta delivery retries</li>
+            <li>Sub-85ms webhook acknowledgment decoupling HTTP 200 from async AI worker queues</li>
+            <li>Lifetime zero SaaS subscription fees utilizing Meta's 1,000 free monthly service conversations</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/blog">Blog</a> | <a href="/services/whatsapp-business-bot">WhatsApp Bot Services</a> | <a href="/services/ai-automation-agency-india">AI Automation Agency</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/blog/flutter-escpos-bluetooth-thermal-printer-offline',
+    title: 'Offline Flutter ESC/POS Thermal Print | Gurdharam',
+    description: 'Engineering guide on integrating offline Flutter apps with 58mm/80mm Bluetooth ESC/POS thermal printers and embedded SQLite WAL mode in rural field conditions.',
+    canonical: 'https://www.gurdharam.com/blog/flutter-escpos-bluetooth-thermal-printer-offline',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/flutter-escpos-bluetooth-thermal-printer-offline#article",
+          "headline": "Offline Bluetooth Thermal Printing: Raw ESC/POS Byte Streaming & SQLite WAL in Flutter",
+          "description": "How we solved zero-connectivity transaction printing for the DoodHisaab dairy platform in rural Punjab using Bluetooth SPP sockets, raw ESC/POS opcodes, and SQLite WAL concurrency.",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com/about"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Engineering Article · Embedded Mobile</span>
+          <h1>Offline Bluetooth Thermal Printing — Raw ESC/POS Byte Streaming & SQLite WAL in Flutter</h1>
+          <p>How we solved zero-connectivity transaction printing for the DoodHisaab dairy platform across rural Punjab. An architectural deep-dive into Bluetooth SPP sockets, raw ESC/POS byte sequence compilation, and SQLite WAL concurrency on budget Android smartphones.</p>
+        </header>
+        <section>
+          <h2>Key Architecture Components</h2>
+          <ul>
+            <li>Direct Bluetooth SPP (Serial Port Profile) RFCOMM sockets bypassing fragile BLE stacks</li>
+            <li>Raw ESC/POS opcode compilation in Dart achieving sub-180ms receipt print latency</li>
+            <li>SQLite Write-Ahead Logging (WAL mode) eliminating database lock contention during concurrent entry and printing</li>
+            <li>100% offline-first functionality operating with zero reliance on 4G cellular signals</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/blog">Blog</a> | <a href="/case-studies/doodhisaab">DoodHisaab Case Study</a> | <a href="/services/offline-ai-app-development">Offline AI App Development</a></p></footer>
+      </main>`
+  },
+  {
+    path: '/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency',
+    title: 'Sub-300ms WebRTC AudioWorklet Voice AI | Gurdharam',
+    description: 'Technical blueprint for sub-300ms conversational Voice AI using Web Audio API AudioWorklet, 16kHz PCM streaming, client-side Silero ONNX VAD, and Indic TTS.',
+    canonical: 'https://www.gurdharam.com/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency#article",
+          "headline": "Sub-300ms Voice AI Latency: Web Audio Worklets, Silero VAD & Indic Telephony",
+          "description": "How we cracked human-grade conversational turn-taking (<300ms latency) using Web Audio API AudioWorklet processors, client-side Silero ONNX VAD, and Indic neural synthesis.",
+          "author": {
+            "@type": "Person",
+            "name": "Gurdharam Jeet Singh",
+            "url": "https://www.gurdharam.com/about"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Engineering Article · Voice AI Systems</span>
+          <h1>Sub-300ms Conversational Voice AI Latency — Web Audio Worklets, Silero VAD & Indic Telephony</h1>
+          <p>How we cracked human-grade conversational turn-taking (&lt;300ms latency) without audio crackle or speech overlap. An architectural blueprint covering Web Audio API AudioWorklet processors, client-side Silero ONNX Voice Activity Detection, and token-streamed Indic neural synthesis.</p>
+        </header>
+        <section>
+          <h2>Key Architecture Components</h2>
+          <ul>
+            <li>Web Audio API AudioWorkletProcessor executing in real-time priority audio thread with 128-sample buffers</li>
+            <li>Client-side Silero ONNX VAD running in a Web Worker for sub-40ms human interruption handling</li>
+            <li>Streaming chunked neural TTS pipelining with under 260ms Time to First Audio (TTFA)</li>
+            <li>WebRTC DataChannels delivering raw 16kHz mono PCM buffers with zero TCP head-of-line blocking</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/blog">Blog</a> | <a href="/services/ai-voice-agents">Voice AI Agents</a> | <a href="/case-studies/takemyinterview-ai">TakeMyInterview Case Study</a></p></footer>
       </main>`
   }
 ];
@@ -2489,6 +3246,10 @@ const masterFooter = `
               <h4>Specialized AI Solutions</h4>
               <ul>
                 <li><a href="/websites">Live Websites & 3D Showcase</a></li>
+                <li><a href="/services/website-design-under-5000">Website Design Under ₹5,000</a></li>
+                <li><a href="/services/website-design-under-10000">Website Under ₹10,000 (SEO)</a></li>
+                <li><a href="/services/3d-webgl-website-development">3D WebGL Three.js Development</a></li>
+                <li><a href="/services/luxury-3d-spatial-website-design">Ultra 3D Spatial Flagship</a></li>
                 <li><a href="/services/whatsapp-business-bot">WhatsApp Business Bot</a></li>
                 <li><a href="/services/ai-voice-agents">Sub-300ms Voice AI Agents</a></li>
                 <li><a href="/services/multilingual-voice-ai-telephony">Sarvam Indic Voice Telephony</a></li>
@@ -2524,6 +3285,10 @@ const masterFooter = `
             <div>
               <h4>Case Studies</h4>
               <ul>
+                <li><a href="/case-studies/kirat-interior">Kirat Interior Case Study</a></li>
+                <li><a href="/case-studies/bioprac">BioPrac 3D Fog Case Study</a></li>
+                <li><a href="/case-studies/dreamheights">Dream Heights 3D Case Study</a></li>
+                <li><a href="/case-studies/neovrit">NEOVRIT 3D Simulation Case Study</a></li>
                 <li><a href="/case-studies/doodhisaab">DoodHisaab Case Study</a></li>
                 <li><a href="/case-studies/fasal-doctor">Fasal Doctor Case Study</a></li>
                 <li><a href="/case-studies/takemyinterview-ai">TakeMyInterview AI Case Study</a></li>
@@ -2534,6 +3299,12 @@ const masterFooter = `
               <ul>
                 <li><a href="/blog">Engineering Blog Hub</a></li>
                 <li><a href="/developer-directory">AI Developer Directory</a></li>
+                <li><a href="/blog/affordable-business-website-development-india">Affordable Website Design India</a></li>
+                <li><a href="/blog/threejs-webgl-performance-mobile-optimization">Three.js Mobile WebGL Optimization</a></li>
+                <li><a href="/blog/multimodal-judge-ai-video-quality-gate">Multimodal Judge AI Quality Gates</a></li>
+                <li><a href="/blog/meta-whatsapp-cloud-api-webhook-architecture">Meta WhatsApp Cloud API Webhooks</a></li>
+                <li><a href="/blog/flutter-escpos-bluetooth-thermal-printer-offline">Offline Bluetooth Thermal Printing</a></li>
+                <li><a href="/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency">Sub-300ms WebRTC Voice AI</a></li>
                 <li><a href="/blog/dpdp-act-compliant-air-gapped-llm-legal-tech">DPDP Act Legal AI Guide</a></li>
                 <li><a href="/blog/ai-college-admission-bot-punjab">AI College Admission Bot Punjab</a></li>
                 <li><a href="/blog/sarvam-indic-voice-ai-telephony-agent">Sub-300ms Voice AI Case Study</a></li>
@@ -2566,6 +3337,8 @@ const masterFooter = `
                 <li><a href="/services/website-design-coaching-institutes">Website Design Coaching</a></li>
                 <li><a href="/services/website-design-clinic-websites">Website Design Clinics</a></li>
                 <li><a href="/services/website-design-mall-retail">Website Design Retail</a></li>
+                <li><a href="/services/website-design-furniture-interior">Website Design Furniture & Interiors</a></li>
+                <li><a href="/services/website-design-real-estate-builders">Website Design Real Estate 3D</a></li>
               </ul>
             </div>
           </div>

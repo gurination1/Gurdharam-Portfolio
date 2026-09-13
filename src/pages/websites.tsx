@@ -175,6 +175,8 @@ interface ShowcaseItem {
   techPills: string[];
   rateText: string;
   inquiryMessage: string;
+  internalCaseStudyUrl?: string;
+  internalCaseStudyLabel?: string;
 }
 
 const SHOWCASE_ITEMS: ShowcaseItem[] = [
@@ -203,7 +205,9 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     ],
     techPills: ['React', 'Local Schema', 'TailwindCSS', 'Meta Pixel', 'Vercel Edge'],
     rateText: '₹5,000 (Basic) or ₹7,000 (With Full SEO)',
-    inquiryMessage: "Hi Gurdharam, I saw the Kirat Interior website. I want to build a similar website for my business."
+    inquiryMessage: "Hi Gurdharam, I saw the Kirat Interior website. I want to build a similar website for my business.",
+    internalCaseStudyUrl: '/services/website-design-furniture-interior',
+    internalCaseStudyLabel: 'FURNITURE & INTERIOR VERTICAL'
   },
   {
     id: 'bioprac',
@@ -231,7 +235,9 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     ],
     techPills: ['Three.js', 'Lenis Scroll', 'SVG Arc Matrix', 'TailwindCSS', 'GitHub Pages'],
     rateText: '₹12,000 (Interactive 3D / Precision Tier)',
-    inquiryMessage: "Hi Gurdharam, I saw the BioPrac website. I want to build a similar interactive platform for my business."
+    inquiryMessage: "Hi Gurdharam, I saw the BioPrac website. I want to build a similar interactive platform for my business.",
+    internalCaseStudyUrl: '/services/3d-webgl-website-development',
+    internalCaseStudyLabel: '3D WEBGL SPECS'
   },
   {
     id: 'neovrit',
@@ -258,7 +264,9 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     ],
     techPills: ['Three.js', 'GLTF Loader', 'Lenis Scroll', 'Supabase', 'Vercel'],
     rateText: '₹12,000 (Interactive 3D Tier — Secondary)',
-    inquiryMessage: "Hi Gurdharam, I want an interactive 3D website like NEOVRIT with Three.js and smooth scrolling."
+    inquiryMessage: "Hi Gurdharam, I want an interactive 3D website like NEOVRIT with Three.js and smooth scrolling.",
+    internalCaseStudyUrl: '/case-studies/neovrit',
+    internalCaseStudyLabel: 'NEOVRIT 3D SPECS'
   },
   {
     id: 'dreamheights',
@@ -288,7 +296,9 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     ],
     techPills: ['Day/Night Engine', 'Lenis Scroll', 'Barba.js', 'Typekit / Bodoni', 'WebGL Pins', 'Framer 3D'],
     rateText: '₹20,000 (Flagship Spatial Tier)',
-    inquiryMessage: "Hi Gurdharam, I want a luxury architectural flagship website like Dream Heights (dreamheights-source.vercel.app)."
+    inquiryMessage: "Hi Gurdharam, I want a luxury architectural flagship website like Dream Heights (dreamheights-source.vercel.app).",
+    internalCaseStudyUrl: '/services/website-design-real-estate-builders',
+    internalCaseStudyLabel: 'REAL ESTATE 3D VERTICAL'
   },
   {
     id: 'gurdharam-hq',
@@ -687,6 +697,25 @@ export default function WebsitesShowcase() {
                   <MessageCircle className="h-3.5 w-3.5" />
                   <span>ORDER {tier.price} PACKAGE</span>
                 </a>
+
+                {/* Deep Tier Specs Link */}
+                <div className="mt-3 text-center">
+                  <Link
+                    to={
+                      tier.id === 'basic-5k'
+                        ? '/services/website-design-under-5000'
+                        : tier.id === 'basic-plus-7k'
+                        ? '/services/website-design-under-10000'
+                        : tier.id === 'interactive-12k'
+                        ? '/services/3d-webgl-website-development'
+                        : '/services/luxury-3d-spatial-website-design'
+                    }
+                    className="inline-flex items-center gap-1 font-mono text-[0.68rem] text-[#9a958c] hover:text-[#d4a853] transition-colors"
+                  >
+                    <span>View {tier.price} Deep Specs &amp; Architecture</span>
+                    <ChevronRight className="h-3 w-3" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -965,6 +994,16 @@ export default function WebsitesShowcase() {
                         <span>FRAMER 3D</span>
                         <ArrowUpRight className="h-3.5 w-3.5" />
                       </a>
+                    )}
+                    {item.internalCaseStudyUrl && (
+                      <Link
+                        to={item.internalCaseStudyUrl}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-2 font-mono text-xs text-[#d4a853] transition-colors hover:border-[#d4a853] hover:text-white"
+                        title={item.internalCaseStudyLabel}
+                      >
+                        <span>{item.internalCaseStudyLabel}</span>
+                        <ChevronRight className="h-3.5 w-3.5" />
+                      </Link>
                     )}
                     <a
                       href={getWhatsAppUrl(item.inquiryMessage)}

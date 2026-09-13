@@ -39,6 +39,17 @@ import CustomReactDeveloperIndia from './pages/custom-react-developer-india';
 import IndicAIVoiceAgentDeveloper from './pages/indic-ai-voice-agent-developer';
 import AIAutomationAgencyIndia from './pages/ai-automation-agency-india';
 import WebsitesShowcase from './pages/websites';
+import TierLandingPage from './pages/TierLandingPage';
+import CaseStudyKiratInterior from './pages/case-study-kirat-interior';
+import CaseStudyBioPrac from './pages/case-study-bioprac';
+import CaseStudyDreamHeights from './pages/case-study-dreamheights';
+import CaseStudyNeovrit from './pages/case-study-neovrit';
+import BlogPostAffordableWebsite from './pages/blog-post-affordable-website';
+import BlogPostThreeJSOptimization from './pages/blog-post-threejs-optimization';
+import BlogPostMultimodalJudge from './pages/blog-post-multimodal-judge';
+import BlogPostMetaWebhook from './pages/blog-post-meta-webhook';
+import BlogPostFlutterEscpos from './pages/blog-post-flutter-escpos';
+import BlogPostWebrtcAudioworklet from './pages/blog-post-webrtc-audioworklet';
 import AboutPage from './pages/about';
 import NotFoundPage from './pages/not-found';
 import SchemaMarkup from './components/SchemaMarkup';
@@ -70,6 +81,16 @@ export function render(url: string) {
           <Route path="/showcase" element={<WebsitesShowcase />} />
           <Route path="/websites-portfolio" element={<WebsitesShowcase />} />
           
+          <Route path="/services/website-design-under-5000" element={<TierLandingPage tierKey="basic-5k" />} />
+          <Route path="/services/website-design-under-10000" element={<TierLandingPage tierKey="basic-plus-7k" />} />
+          <Route path="/services/3d-webgl-website-development" element={<TierLandingPage tierKey="interactive-12k" />} />
+          <Route path="/services/luxury-3d-spatial-website-design" element={<TierLandingPage tierKey="flagship-20k" />} />
+          
+          <Route path="/websites/under-5000" element={<TierLandingPage tierKey="basic-5k" />} />
+          <Route path="/websites/under-10000" element={<TierLandingPage tierKey="basic-plus-7k" />} />
+          <Route path="/websites/interactive-3d" element={<TierLandingPage tierKey="interactive-12k" />} />
+          <Route path="/websites/spatial-flagship" element={<TierLandingPage tierKey="flagship-20k" />} />
+          
           {(verticalsData as any[]).map((v) => {
             const vPath = `/services/${v.type === 'whatsapp-bot' ? 'whatsapp-bot-' + v.id : v.type === 'social-media-automation' ? 'social-media-automation-' + v.id : 'website-design-' + v.id}`;
             return <Route key={v.id} path={vPath} element={<VerticalServicePage type={v.type} vertical={v} />} />;
@@ -84,6 +105,10 @@ export function render(url: string) {
           <Route path="/case-studies/doodhisaab" element={<DoodHisaab />} />
           <Route path="/case-studies/fasal-doctor" element={<FasalDoctor />} />
           <Route path="/case-studies/takemyinterview-ai" element={<TakeMyInterviewCaseStudy />} />
+          <Route path="/case-studies/kirat-interior" element={<CaseStudyKiratInterior />} />
+          <Route path="/case-studies/bioprac" element={<CaseStudyBioPrac />} />
+          <Route path="/case-studies/dreamheights" element={<CaseStudyDreamHeights />} />
+          <Route path="/case-studies/neovrit" element={<CaseStudyNeovrit />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/dpdp-act-compliant-air-gapped-llm-legal-tech" element={<BlogPostDPDPLegal />} />
           <Route path="/blog/ai-college-admission-bot-punjab" element={<BlogPostAICollege />} />
@@ -93,6 +118,12 @@ export function render(url: string) {
           <Route path="/blog/high-ticket-webgl-3d-spatial-digital-twin" element={<BlogPostWebGL />} />
           <Route path="/blog/offline-ai-crop-disease-scanner-flutter" element={<BlogPostFasalDoctor />} />
           <Route path="/blog/whatsapp-ai-agents-healthcare-india" element={<BlogPostWhatsAppHealth />} />
+          <Route path="/blog/affordable-business-website-development-india" element={<BlogPostAffordableWebsite />} />
+          <Route path="/blog/threejs-webgl-performance-mobile-optimization" element={<BlogPostThreeJSOptimization />} />
+          <Route path="/blog/multimodal-judge-ai-video-quality-gate" element={<BlogPostMultimodalJudge />} />
+          <Route path="/blog/meta-whatsapp-cloud-api-webhook-architecture" element={<BlogPostMetaWebhook />} />
+          <Route path="/blog/flutter-escpos-bluetooth-thermal-printer-offline" element={<BlogPostFlutterEscpos />} />
+          <Route path="/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency" element={<BlogPostWebrtcAudioworklet />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </StaticRouter>

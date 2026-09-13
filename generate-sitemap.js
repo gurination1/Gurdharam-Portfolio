@@ -24,12 +24,21 @@ const staticRoutes = [
   '/services/custom-react-developer-india',
   '/services/indic-ai-voice-agent-developer',
   '/services/ai-automation-agency-india',
+  '/about',
   '/websites',
+  '/services/website-design-under-5000',
+  '/services/website-design-under-10000',
+  '/services/3d-webgl-website-development',
+  '/services/luxury-3d-spatial-website-design',
   '/services/web-developer-muktsar-punjab',
   '/services/offline-ai-app-development',
   '/case-studies/doodhisaab',
   '/case-studies/fasal-doctor',
   '/case-studies/takemyinterview-ai',
+  '/case-studies/kirat-interior',
+  '/case-studies/bioprac',
+  '/case-studies/dreamheights',
+  '/case-studies/neovrit',
   '/blog',
   '/blog/dpdp-act-compliant-air-gapped-llm-legal-tech',
   '/blog/ai-college-admission-bot-punjab',
@@ -38,7 +47,13 @@ const staticRoutes = [
   '/blog/automated-1080p60-videogen-pipeline',
   '/blog/high-ticket-webgl-3d-spatial-digital-twin',
   '/blog/offline-ai-crop-disease-scanner-flutter',
-  '/blog/whatsapp-ai-agents-healthcare-india'
+  '/blog/whatsapp-ai-agents-healthcare-india',
+  '/blog/affordable-business-website-development-india',
+  '/blog/threejs-webgl-performance-mobile-optimization',
+  '/blog/multimodal-judge-ai-video-quality-gate',
+  '/blog/meta-whatsapp-cloud-api-webhook-architecture',
+  '/blog/flutter-escpos-bluetooth-thermal-printer-offline',
+  '/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency'
 ];
 
 let xmlContent = `<?xml version="1.0" encoding="UTF-8"?>

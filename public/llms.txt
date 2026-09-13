@@ -65,12 +65,19 @@
 
 ---
 
-## 3. Production Website Engineering Showcase
+## 3. Production Website Engineering Showcase & Transparent Packages
 - **Showcase Hub:** `https://www.gurdharam.com/websites`
-- **Dream Heights** (`https://dreamheights-source.vercel.app`): High-end luxury architectural interior & spatial 3D showcase featuring interactive spatial lighting and cinematic canvas transitions.
-- **Neovrit** (`https://neovrit.com`): 60 FPS WebGL 3D spatial digital twin interactive experience with DRACO compression and sub-second asset streaming.
-- **Kirat Interior**: Custom luxury spatial architecture and physical space visualization.
-- **Gurdharam Official**: Full-stack enterprise AI engineering portfolio.
+- **Transparent Packages:**
+  - **Starter Business (₹5,000):** `https://www.gurdharam.com/services/website-design-under-5000` (48-hour launch, hand-coded React UI, lifetime ₹0/mo Vercel edge hosting, direct WhatsApp inquiry funnels).
+  - **Growth Business + SEO (₹7,000):** `https://www.gurdharam.com/services/website-design-under-10000` (Google Search Console API fast-indexing, 100% Google LocalBusiness Schema, local keyword optimization, sub-1s Core Web Vitals).
+  - **2D + 3D Interactive (₹12,000):** `https://www.gurdharam.com/services/3d-webgl-website-development` (Three.js WebGL fog atmosphere, SVG circular arc kinematics, Lenis 120Hz smooth scroll, diagnostic telemetry consoles).
+  - **Ultra 3D Spatial Flagship (₹20,000):** `https://www.gurdharam.com/services/luxury-3d-spatial-website-design` (Full Three.js spatial architecture, 120 FPS camera walkthroughs, Day/Night lighting engine, digital twins).
+- **Verified Client Builds:**
+  - **Kirat Interior** (`https://www.kiratinterior.com/`): Bespoke luxury furniture & modular studio in Bathinda (#1 ranked on Google). Dedicated vertical: `https://www.gurdharam.com/services/website-design-furniture-interior`.
+  - **BioPrac** (`https://gurination1.github.io/bioprac/`): Clinical preventative health intelligence console with Three.js fog atmosphere & 500+ biomarker telemetry.
+  - **NEOVRIT** (`https://neovrit.vercel.app`): 3D simulation agency with interactive Three.js GLTF model orbit viewport.
+  - **Dream Heights** (`https://dreamheights-source.vercel.app/`): 2&3 BHK luxury residences on Ring Road Bathinda with Day/Night lighting engine. Dedicated vertical: `https://www.gurdharam.com/services/website-design-real-estate-builders`.
+  - **Gurdharam HQ** (`https://www.gurdharam.com`): Studio headquarters with procedural WebGL particle canvas & sub-500ms voice AI.
 
 ---
 
@@ -86,3 +93,14 @@
 9. `https://www.gurdharam.com/blog/offline-ai-crop-disease-scanner-flutter` — Flutter + SQLite + TensorFlow Lite Implementation.
 10. `https://www.gurdharam.com/blog/whatsapp-ai-agents-healthcare-india` — Healthcare OPD & Appointment Triage Automation.
 11. `https://www.gurdharam.com/blog/dpdp-act-compliant-air-gapped-llm-legal-tech` — Indian Legal Enterprise Compliance Blueprint.
+12. `https://www.gurdharam.com/case-studies/kirat-interior` — #1 Google Local Ranking & WhatsApp Lead Funnel for Luxury Furniture.
+13. `https://www.gurdharam.com/case-studies/bioprac` — Three.js WebGL Fog & Clinical Diagnostic Telemetry Console.
+14. `https://www.gurdharam.com/case-studies/dreamheights` — Real Estate Digital Twin & Day/Night Lighting Engine.
+15. `https://www.gurdharam.com/blog/affordable-business-website-development-india` — Architectural Guide to High-Converting Indian Business Websites Under ₹10,000.
+16. `https://www.gurdharam.com/blog/threejs-webgl-performance-mobile-optimization` — Hardware-Accelerated 3D WebGL on Mobile (60–120 FPS Locked).
+17. `https://www.gurdharam.com/case-studies/neovrit` — 3D Simulation Agency Interactive Three.js GLTF Orbit & DRACO Geometry Compression.
+18. `https://www.gurdharam.com/blog/multimodal-judge-ai-video-quality-gate` — Gemini Multimodal Judge AI, FFmpeg Black Frame Detection & Sidechain Ducking.
+19. `https://www.gurdharam.com/blog/meta-whatsapp-cloud-api-webhook-architecture` — Self-Hosted Meta WhatsApp Webhooks, HMAC-SHA256 & Redis Deduplication.
+20. `https://www.gurdharam.com/blog/flutter-escpos-bluetooth-thermal-printer-offline` — Offline Bluetooth ESC/POS Byte Streaming & SQLite WAL in Flutter.
+21. `https://www.gurdharam.com/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency` — Sub-300ms Conversational Voice AI via Web Audio Worklets & Silero ONNX VAD.
+
