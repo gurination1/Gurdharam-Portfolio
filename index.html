@@ -4,18 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#080808" />
-    <meta name="google-site-verification" content="kvrPeHLBErUsUV8aXGKZ4QIC75yjmAtw7Sfebi_BDP4" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'day') {
+            document.documentElement.classList.add('day');
+            document.documentElement.classList.remove('night');
+          } else {
+            document.documentElement.classList.add('night');
+            document.documentElement.classList.remove('day');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <style>
       html, body {
         background-color: #080808;
         color: #f0ede6;
         margin: 0;
         padding: 0;
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
+      html.day, html.day body {
+        background-color: #f7eaff;
+        color: #141312;
       }
       #root {
         background-color: #080808;
         color: #f0ede6;
         min-height: 100vh;
+      }
+      html.day #root {
+        background-color: transparent;
+        color: #141312;
       }
     </style>
     <meta

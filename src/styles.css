@@ -58,10 +58,41 @@
   --accent-talk: #25D366;
   --accent-ink: #07100b;
   --line: rgba(240, 237, 230, 0.12);
+  --toggle-track: rgba(20, 20, 25, 0.85);
+  --toggle-border: rgba(255, 255, 255, 0.16);
+  --focus-ring: #d4a853;
   --font-display: 'Syne', sans-serif;
   --font-hero-name: 'Glarenth Demo', 'Syne', sans-serif;
   --font-mono: 'DM Mono', monospace;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.day,
+body.day {
+  color-scheme: light;
+  --background: #fbf7f4;
+  --foreground: #141312;
+  --card: rgba(255, 255, 255, 0.78);
+  --card-foreground: #141312;
+  --popover: #ffffff;
+  --popover-foreground: #141312;
+  --primary: #946816;
+  --primary-foreground: #ffffff;
+  --muted: rgba(20, 19, 18, 0.08);
+  --muted-foreground: #5a554c;
+  --border: rgba(20, 19, 18, 0.12);
+  --bg-void: transparent;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-elevated: rgba(255, 255, 255, 0.95);
+  --text-primary: #141312;
+  --text-secondary: #4a453c;
+  --text-dim: #767064;
+  --accent-gold: #9e7019;
+  --accent-glow: #b88528;
+  --line: rgba(20, 19, 18, 0.12);
+  --toggle-track: rgba(255, 255, 255, 0.88);
+  --toggle-border: rgba(0, 0, 0, 0.15);
+  --focus-ring: #9e7019;
 }
 
 @keyframes spotlight {
@@ -140,6 +171,19 @@ body {
   font-family: var(--font-display);
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
+}
+
+html.day,
+html.day body,
+body.day {
+  background:
+    radial-gradient(ellipse 85% 65% at 8% 8%, rgba(175, 109, 255, 0.42), transparent 60%),
+    radial-gradient(ellipse 75% 60% at 75% 35%, rgba(255, 235, 170, 0.55), transparent 62%),
+    radial-gradient(ellipse 70% 60% at 15% 80%, rgba(255, 100, 180, 0.40), transparent 62%),
+    radial-gradient(ellipse 70% 60% at 92% 92%, rgba(120, 190, 255, 0.45), transparent 62%),
+    linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%) !important;
+  background-attachment: fixed !important;
+  color: #141312 !important;
 }
 
 .card-content {
@@ -370,6 +414,95 @@ body.wipe-menu-open .site-nav {
 .wipe-burger.is-active .wipe-burger-line--bot {
   width: 100%;
   transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ─── Site Nav Right (Theme Toggle + Menu) ────────────────────── */
+.site-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+/* ─── Zainab-Inspired Day / Night Celestial Toggle ─────────────── */
+.day-toggle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--toggle-track);
+  border: 1px solid var(--toggle-border);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.day-toggle:hover {
+  transform: scale(1.08);
+  border-color: var(--accent-gold);
+}
+
+.day-toggle:active {
+  transform: scale(0.92);
+}
+
+.day-toggle:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.toggle-ico {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.5, 1);
+  will-change: transform;
+}
+
+/* DAY: sun centered in circle, moon parked above (clipped) */
+html.day .ico-sun,
+body.day .ico-sun {
+  color: #f5a623;
+  width: 21px;
+  height: 21px;
+  transform: translate(-50%, -50%);
+}
+
+html.day .ico-moon,
+body.day .ico-moon {
+  color: #f2ead6;
+  transform: translate(-50%, -220%);
+}
+
+/* NIGHT: sun dropped down (clipped), moon centered */
+html:not(.day) .ico-sun,
+html.night .ico-sun,
+body.night .ico-sun {
+  transform: translate(-50%, 140%);
+}
+
+html:not(.day) .ico-moon,
+html.night .ico-moon,
+body.night .ico-moon {
+  color: #fce79a;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 640px) {
+  .site-nav-right {
+    gap: 0.85rem;
+  }
 }
 
 /* ─── Wipe Menu Overlay ──────────────────────────────────────── */
@@ -636,6 +769,198 @@ body.wipe-menu-open .dynamic-island-toc {
 }
 
 
+
+/* ─── Daylight Aurora Dream Corner Whispers Background ───────── */
+.daylight-aurora-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  background:
+    radial-gradient(ellipse 85% 65% at 8% 8%, rgba(175, 109, 255, 0.42), transparent 60%),
+    radial-gradient(ellipse 75% 60% at 75% 35%, rgba(255, 235, 170, 0.55), transparent 62%),
+    radial-gradient(ellipse 70% 60% at 15% 80%, rgba(255, 100, 180, 0.40), transparent 62%),
+    radial-gradient(ellipse 70% 60% at 92% 92%, rgba(120, 190, 255, 0.45), transparent 62%),
+    linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%);
+  background-attachment: fixed;
+}
+
+html.day .daylight-aurora-bg,
+body.day .daylight-aurora-bg {
+  opacity: 1 !important;
+}
+
+/* ─── Zainab Kabira Celestial Shooting Star (Night Mode) ───────── */
+.hero-meteor {
+  position: absolute;
+  top: var(--m-top, 120px);
+  left: 0;
+  width: var(--m-len, 220px);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(214, 235, 255, 0.75) 60%, #ffffff 100%);
+  filter: drop-shadow(0 0 6px rgba(165, 202, 246, 0.85));
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  display: none;
+}
+
+.hero-meteor::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px 3px rgba(214, 235, 255, 0.95),
+              0 0 24px 8px rgba(165, 202, 246, 0.7);
+}
+
+/* Active in night mode (default or html.night, hidden in html.day) */
+html:not(.day) .hero-meteor,
+html.night .hero-meteor {
+  display: block;
+}
+
+@keyframes hero-meteor-fly {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--m-angle, 12deg)) translateX(calc(-1 * var(--m-len, 220px)));
+  }
+  12% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--m-angle, 12deg)) translateX(var(--m-travel, 1600px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-meteor {
+    display: none !important;
+  }
+}
+
+/* ─── Day Mode High-Contrast Overrides ────────────────────────── */
+html.day .site-nav {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .site-nav-logo {
+  color: #141312 !important;
+}
+
+html.day .wipe-burger-line {
+  background: #141312 !important;
+}
+
+/* Hero text contrast */
+html.day .hero-word-build,
+html.day .hero-word-whatif {
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.08)) !important;
+}
+
+html.day .hero-word-build .hero-letter {
+  background: linear-gradient(180deg, #181614 0%, #2e2a25 35%, #4f4a42 75%, #7a7266 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.day .hero-word-whatif .hero-letter {
+  background: linear-gradient(180deg, #784f00 0%, #9e6d0a 30%, #b88316 68%, #573a00 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.day .hero-word-whatif .hero-letter.punct {
+  background: linear-gradient(180deg, #8a5700 0%, #b37704 25%, #cb8908 72%, #694400 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 0 12px rgba(184, 131, 22, 0.35)) !important;
+}
+
+html.day .hero-letter:hover {
+  -webkit-text-fill-color: #8a5700 !important;
+  color: #8a5700 !important;
+  text-shadow: 0 0 20px rgba(212, 140, 20, 0.4) !important;
+  filter: drop-shadow(0 0 12px rgba(212, 140, 20, 0.3)) !important;
+}
+
+html.day .hero-meta {
+  color: #5a554c !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.day .hero-sub,
+html.day .hero p {
+  color: #3b3731 !important;
+}
+
+/* Cards, Modules & Bento in Daylight */
+html.day .hero-card,
+html.day .project-card,
+html.day .bento-card,
+html.day .feature-card,
+html.day .faq-card,
+html.day .step-card,
+html.day .skills-category,
+html.day .pricing-card,
+html.day .interactive-spotlight-card,
+html.day .glass-panel {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 0 14px 34px -12px rgba(80, 50, 100, 0.08) !important;
+  color: #141312 !important;
+}
+
+html.day .copy-mark {
+  color: #946816 !important;
+}
+
+html.day .tag-pill,
+html.day .badge,
+html.day .hero-badge {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #2b2722 !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+}
+
+html.day .wipe-menu-overlay {
+  background: rgba(253, 247, 244, 0.96) !important;
+  backdrop-filter: blur(28px) !important;
+}
+
+html.day .wipe-menu-link-text {
+  color: #141312 !important;
+}
+
+html.day .wipe-menu-line {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .wipe-menu-footer {
+  color: #5a554c !important;
+}
+
+html.day .grain {
+  opacity: 0.035 !important;
+}
+
+html.day .signal-canvas {
+  opacity: 0.28 !important;
+}
 
 .hero {
   position: relative;

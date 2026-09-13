@@ -30,6 +30,8 @@ import { VelocityText, VelocityTextProvider } from '@/components/ui/parallax-scr
 import CodropsEmergingImage from '@/components/ui/codrops-emerging-image';
 import TextArcEffect from '@/components/ui/text-arc-effect';
 import AnimatedStatsStrip from '@/components/ui/gsap-rolling-counter';
+import ThemeToggle from '@/components/ui/theme-toggle';
+import HeroMeteor from '@/components/ui/hero-meteor';
 
 const techLogos = [
   { src: "https://svgl.app/library/openai_wordmark_light.svg", alt: "OpenAI" },
@@ -703,16 +705,19 @@ function WipeMenu() {
       {/* Top-bar (always visible) */}
       <nav className="site-nav" aria-label="Primary">
         <a href="#top" className="site-nav-logo">Gurdharam</a>
-        <button
-          className={`wipe-burger ${isOpen ? 'is-active' : ''}`}
-          onClick={isOpen ? close : open}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={isOpen}
-        >
-          <span className="wipe-burger-line wipe-burger-line--top" />
-          <span className="wipe-burger-line wipe-burger-line--mid" />
-          <span className="wipe-burger-line wipe-burger-line--bot" />
-        </button>
+        <div className="site-nav-right">
+          <ThemeToggle />
+          <button
+            className={`wipe-burger ${isOpen ? 'is-active' : ''}`}
+            onClick={isOpen ? close : open}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+          >
+            <span className="wipe-burger-line wipe-burger-line--top" />
+            <span className="wipe-burger-line wipe-burger-line--mid" />
+            <span className="wipe-burger-line wipe-burger-line--bot" />
+          </button>
+        </div>
       </nav>
 
       {/* Full-screen wipe overlay */}
@@ -804,6 +809,7 @@ function TechLogoMarquee() {
 function Hero() {
   return (
     <section className="hero" id="top">
+      <HeroMeteor />
       <SignalCanvas />
       <div className="hero-meta">
         <span>[ AVAILABLE FOR WORK ]</span>
@@ -1354,6 +1360,7 @@ function App() {
 
   return (
     <>
+      <div className="daylight-aurora-bg" aria-hidden="true" />
       <Preloader />
       <div className="grain" aria-hidden="true" />
       <WipeMenu />

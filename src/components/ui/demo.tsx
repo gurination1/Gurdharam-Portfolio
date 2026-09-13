@@ -1,4 +1,5 @@
 import { ShineBorder } from "@/components/ui/shine-border"
+import { Component } from "@/components/ui/background-gradient-glow";
 
 export function ShineBorderDemo() {
   return (
@@ -24,7 +25,13 @@ export function ShineBorderMonotone({ theme = "dark" }: { theme?: string }) {
   )
 }
 
+export function DemoOne() {
+  return <Component />;
+}
+
 export default {
   ShineBorderDemo,
   ShineBorderMonotone,
-}
+  DemoOne,
+};
+
