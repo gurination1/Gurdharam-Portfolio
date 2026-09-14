@@ -795,7 +795,7 @@ function Preloader() {
 
 function TechLogoMarquee() {
   return (
-    <section className="py-6 border-y border-white/5 bg-black/40">
+    <section className="tech-marquee-section py-6 border-y border-white/5 bg-black/40">
       <div className="max-w-7xl mx-auto px-4">
         <p className="text-center text-[0.7rem] font-mono tracking-widest text-white/40 uppercase mb-2">
           Powered By & Integrated With Official Stacks
@@ -858,15 +858,15 @@ function Hero() {
           </p>
           <AnimatedTextRoller
             items={[
-              { text: "AI CALLING.", color: "text-[var(--accent-gold)]" },
-              { text: "WHATSAPP BOTS.", color: "text-[var(--accent-gold)]" },
-              { text: "3D WEBSITES.", color: "text-[var(--accent-gold)]" },
-              { text: "SEO WITH GEO & NEO.", color: "text-sky-400" },
-              { text: "MOBILE APPS.", color: "text-[var(--accent-gold)]" },
-              { text: "MARKETING.", color: "text-sky-400" },
+              { text: "AI CALLING.", color: "hero-roller-gold text-[var(--accent-gold)]" },
+              { text: "WHATSAPP BOTS.", color: "hero-roller-gold text-[var(--accent-gold)]" },
+              { text: "3D WEBSITES.", color: "hero-roller-gold text-[var(--accent-gold)]" },
+              { text: "SEO WITH GEO & NEO.", color: "hero-roller-blue text-sky-400" },
+              { text: "MOBILE APPS.", color: "hero-roller-gold text-[var(--accent-gold)]" },
+              { text: "MARKETING.", color: "hero-roller-blue text-sky-400" },
             ]}
             intervalMs={2200}
-            className="mt-4"
+            className="mt-4 hero-roller"
           />
         </div>
         <aside className="hero-card" data-cursor="hover">

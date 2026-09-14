@@ -908,8 +908,31 @@ html.day .hero p {
   color: #3b3731 !important;
 }
 
+html.day .hero-card {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+html.day .hero-card::before,
+html.day .hero-card::after {
+  display: none !important;
+}
+
+html.day .hero-copy {
+  color: #24201c !important;
+}
+
+html.day .hero-copy mark,
+html.day mark,
+html.day .hero-copy .copy-mark,
+html.day .copy-mark {
+  color: #8c5b05 !important;
+  font-weight: 700 !important;
+}
+
 /* Cards, Modules & Bento in Daylight */
-html.day .hero-card,
 html.day .project-card,
 html.day .bento-card,
 html.day .feature-card,
@@ -925,16 +948,91 @@ html.day .glass-panel {
   color: #141312 !important;
 }
 
-html.day .copy-mark {
-  color: #946816 !important;
-}
-
+html.day .signal-strip span,
 html.day .tag-pill,
 html.day .badge,
 html.day .hero-badge {
   background: rgba(0, 0, 0, 0.05) !important;
-  color: #2b2722 !important;
-  border-color: rgba(0, 0, 0, 0.10) !important;
+  color: #1f1d1a !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  font-weight: 600 !important;
+}
+
+/* Floating Island TOC in Daylight */
+html.day .dynamic-island,
+html.day [class*="dynamic-island"],
+html.day .floating-toc {
+  background: rgba(255, 255, 255, 0.88) !important;
+  color: #1a1815 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.15) !important;
+}
+
+html.day .dynamic-island-toc {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+html.day .dynamic-island-toc > div {
+  background: rgba(255, 255, 255, 0.88) !important;
+  color: #1a1815 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+html.day .dynamic-island span,
+html.day .dynamic-island div,
+html.day .dynamic-island-toc span,
+html.day .dynamic-island-toc button,
+html.day .dynamic-island-toc div {
+  color: #1a1815 !important;
+}
+
+html.day .dynamic-island-toc [class*="bg-foreground"] {
+  background-color: #1a1815 !important;
+}
+
+/* Animated Text Roller Contrast in Daylight & Night */
+.hero-roller-gold {
+  color: var(--accent-gold);
+}
+
+.hero-roller-blue {
+  color: #38bdf8;
+}
+
+html.day .hero-roller span,
+html.day .hero [class*="animated-text"] span {
+  filter: none !important;
+}
+
+html.day .hero-roller-gold,
+html.day .hero-roller .text-\[var\(--accent-gold\)\],
+html.day .hero [class*="accent-gold"] {
+  color: #8c5b05 !important;
+  text-shadow: none !important;
+}
+
+html.day .hero-roller-blue,
+html.day .hero-roller .text-sky-400,
+html.day .hero .text-sky-400 {
+  color: #0369a1 !important;
+  text-shadow: none !important;
+}
+
+html.day .hero-actions button:first-child {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.day .hero-actions button:first-child span {
+  background: none !important;
+  -webkit-text-fill-color: #141312 !important;
+  color: #141312 !important;
 }
 
 html.day .wipe-menu-overlay {
@@ -960,6 +1058,301 @@ html.day .grain {
 
 html.day .signal-canvas {
   opacity: 0.28 !important;
+}
+
+/* ─── Daylight Harmonization: Tech Logo Marquee ─── */
+html.day .tech-marquee-section,
+html.day section:has(.logo-marquee-track),
+html.day .border-y.bg-black\/40 {
+  background: rgba(255, 255, 255, 0.55) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .tech-marquee-section p,
+html.day section:has(.logo-marquee-track) p {
+  color: #645e54 !important;
+}
+
+html.day .logo-marquee-track img {
+  filter: brightness(0) opacity(0.72) !important;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+html.day .logo-marquee-track img:hover,
+html.day .logo-marquee-track *:hover > img {
+  filter: brightness(0) opacity(1) !important;
+}
+
+/* ─── Daylight Harmonization: About Section ─── */
+html.day .about.has-about-visual::before {
+  background:
+    linear-gradient(90deg, rgba(253, 247, 244, 0.92) 0%, rgba(253, 247, 244, 0.78) 42%, rgba(253, 247, 244, 0.94) 100%),
+    var(--about-image) center 34% / cover no-repeat !important;
+}
+
+html.day .about.has-about-visual::after {
+  background:
+    radial-gradient(circle at 50% 22%, rgba(212, 168, 83, 0.15), transparent 25rem),
+    linear-gradient(180deg, transparent 0%, rgba(253, 247, 244, 0.95) 92%) !important;
+}
+
+html.day .about-scroll-title span {
+  color: #8c5b05 !important;
+}
+
+html.day .about-scroll-title strong {
+  color: #141312 !important;
+}
+
+.magic-text-word {
+  color: #f0ede6;
+}
+
+html.day .about-copy p,
+html.day .magic-text,
+html.day .magic-text-word {
+  color: #141312 !important;
+}
+
+html.day .about-copy .text-slate-500,
+html.day .about-copy [class*="text-slate"] {
+  color: rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Leadership Duo / Founder Cards in Daylight */
+html.day .founder-card {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 0 14px 34px -12px rgba(80, 50, 100, 0.08) !important;
+  color: #141312 !important;
+}
+
+html.day .founder-bio {
+  color: #423d37 !important;
+}
+
+html.day .founder-portrait-frame {
+  background: #f0ebe4 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .founder-chips span {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #5a554c !important;
+}
+
+/* ─── Daylight Harmonization: StoryFlow ─── */
+html.day .story-flow [aria-label="How I work"],
+html.day .story-flow [aria-label="How I work"] .flow-art-container,
+html.day .story-flow [aria-label="How I work"] [data-flow-inner] {
+  background-color: #18181b !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important;
+  color: #fff !important;
+}
+
+html.day .story-flow .copy-mark {
+  color: #fff !important;
+}
+
+/* ─── Daylight Harmonization: Skills Section ─── */
+html.day .section.skills {
+  background: transparent !important;
+}
+
+html.day .skills-category {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #141312 !important;
+}
+
+html.day .skills-category h3,
+html.day .skills-category span {
+  color: #141312 !important;
+}
+
+html.day .capability-chart {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #141312 !important;
+}
+
+html.day .skill-row span,
+html.day .skill-row b {
+  color: #141312 !important;
+}
+
+html.day .skill-bar {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .tools-cloud span {
+  background: rgba(255, 255, 255, 0.75) !important;
+  color: #2b2722 !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+}
+
+/* ─── Daylight Harmonization: AI Bots Showcase ─── */
+html.day .ai-bot-section {
+  background: transparent !important;
+}
+
+html.day .ai-sticky {
+  background:
+    radial-gradient(42% 42% at 50% 16%, rgba(175, 109, 255, 0.22) 0%, rgba(255, 255, 255, 0.88) 55%, rgba(253, 247, 244, 0.98) 100%) !important;
+  color: #141312 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 20px 60px -15px rgba(80, 50, 100, 0.1) !important;
+}
+
+html.day .ai-intro h2,
+html.day .ai-intro p,
+html.day .ai-flip {
+  color: #181614 !important;
+}
+
+html.day .ai-points > div {
+  border-left-color: rgba(0, 0, 0, 0.14) !important;
+}
+
+html.day .ai-points p {
+  color: #4a453e !important;
+}
+
+html.day .ai-points span {
+  color: #8c5b05 !important;
+}
+
+html.day .ai-orbit text,
+html.day .ai-orbit path,
+html.day .ai-orbit textPath {
+  fill: #6d665b !important;
+}
+
+html.day .ai-hero-button {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #141312 !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ─── Daylight Harmonization: FAQ Section ─── */
+html.day .faq-panel {
+  background: transparent !important;
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .faq-title {
+  color: #141312 !important;
+}
+
+html.day .faq-item-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.day .faq-item-card button,
+html.day .faq-item-card h3,
+html.day .faq-item-card [role="button"] {
+  color: #141312 !important;
+}
+
+html.day .faq-item-card p,
+html.day .faq-item-card div {
+  color: #3b3731 !important;
+}
+
+/* Also support Radix TextRevealFAQs (#faq) in daylight */
+html.day #faq {
+  background: transparent !important;
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day #faq h2,
+html.day #faq button,
+html.day #faq [data-state] {
+  color: #141312 !important;
+}
+
+html.day #faq p,
+html.day #faq .text-slate-300,
+html.day #faq .text-slate-400 {
+  color: #3b3731 !important;
+}
+
+html.day #faq .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day #faq .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ─── Daylight Harmonization: Quote, Contact & Footer ─── */
+html.day .quote-panel,
+html.day .contact,
+html.day footer {
+  background: transparent !important;
+  color: #141312 !important;
+}
+
+html.day .quote-panel::before {
+  display: none !important;
+}
+
+html.day .quote-panel blockquote {
+  color: #141312 !important;
+}
+
+html.day .quote-panel cite {
+  color: #555048 !important;
+}
+
+html.day .contact-word > span {
+  color: #141312 !important;
+}
+
+html.day .contact-grid p {
+  color: #3b3731 !important;
+}
+
+html.day .contact-cta-title,
+html.day .contact-cta-title span {
+  color: #141312 !important;
+}
+
+html.day .availability {
+  color: #555048 !important;
+}
+
+html.day footer {
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day footer p,
+html.day footer a,
+html.day footer span {
+  color: #645e54 !important;
+}
+
+html.day footer strong,
+html.day footer h4 {
+  color: #141312 !important;
+}
+
+html.day footer .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day footer .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day footer .bg-black\/40 {
+  background: transparent !important;
 }
 
 .hero {
@@ -1586,9 +1979,175 @@ footer {
   width: 100%;
 }
 
+html.day .section.projects {
+  background: transparent !important;
+}
+
 .section.projects .section-label {
   padding-left: clamp(1rem, 4vw, 4rem);
   margin-bottom: 0.5rem;
+}
+
+/* ─── Stacked Cards Container & Daylight Mode Architecture ─────────── */
+.stacked-cards-container {
+  background: #0a0a0a;
+  width: 100%;
+}
+
+html.day .stacked-cards-container {
+  background: transparent !important;
+}
+
+.stacked-cards-section {
+  color: #fff;
+  width: 100%;
+  position: relative;
+}
+
+html.day .stacked-cards-section {
+  color: #0f172a !important;
+}
+
+/* Stacked Project Cards Base (Night Mode Default) */
+.stacked-card {
+  background: rgba(10, 10, 12, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Daylight / Light Mode Luxury Glassmorphism */
+html.day .stacked-card,
+html.day [class*="stacked-card"],
+html.day .glass-card-item {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(28px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0 24px 60px -12px rgba(80, 50, 100, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+  color: #0f172a !important;
+}
+
+/* Background Video in Daylight */
+html.day .stacked-card .card-bg-video {
+  opacity: 0.22 !important;
+  filter: saturate(1.15) brightness(1.05) !important;
+}
+
+/* Card Ambient Tint & Specular Overlays in Daylight */
+html.day .stacked-card .card-bg-overlay,
+html.day .calling-agent-overlay {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(254, 243, 199, 0.42) 50%, rgba(255, 255, 255, 0.86) 100%) !important;
+}
+
+html.day .whatsapp-bot-overlay {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(220, 252, 231, 0.42) 50%, rgba(255, 255, 255, 0.86) 100%) !important;
+}
+
+html.day .cow-apps-overlay {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(224, 242, 254, 0.42) 50%, rgba(255, 255, 255, 0.86) 100%) !important;
+}
+
+html.day .videogen-overlay {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(238, 242, 255, 0.48) 50%, rgba(255, 255, 255, 0.90) 100%) !important;
+}
+
+/* Headings & Text Clarity in Daylight */
+html.day .stacked-card .card-title,
+html.day .stacked-card h2 {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+html.day .stacked-card .card-description,
+html.day .stacked-card .card-desc,
+html.day .stacked-card p {
+  color: #334155 !important;
+}
+
+html.day .stacked-card .card-category-label {
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+/* Brand Accents with Accessible Contrast in Daylight */
+html.day .stacked-card .text-\[\#f59e0b\] {
+  color: #d97706 !important;
+}
+html.day .stacked-card .text-\[\#22c55e\] {
+  color: #16a34a !important;
+}
+html.day .stacked-card .text-\[\#38bdf8\] {
+  color: #0284c7 !important;
+}
+html.day .stacked-card .text-\[\#5b8fd4\] {
+  color: #2563eb !important;
+}
+html.day .stacked-card .text-\[\#d4a853\] {
+  color: #b45309 !important;
+}
+html.day .stacked-card .text-\[\#4ade80\] {
+  color: #15803d !important;
+}
+
+/* Badges & Telemetry Pills in Daylight */
+html.day .stacked-card .card-spec-pill-neutral {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #1e293b !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Action Buttons & Links in Daylight */
+html.day .stacked-card .card-btn-secondary {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: #0f172a !important;
+}
+html.day .stacked-card .card-btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.10) !important;
+  color: #000000 !important;
+}
+
+/* VideoGen Bento Cards in Daylight */
+html.day .stacked-card .videogen-bento {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(91, 143, 212, 0.35) !important;
+  box-shadow: 0 4px 16px -2px rgba(91, 143, 212, 0.10) !important;
+}
+html.day .stacked-card .videogen-bento p {
+  color: #334155 !important;
+}
+
+html.day .stacked-card .videogen-gh-btn {
+  background: rgba(91, 143, 212, 0.12) !important;
+  border-color: rgba(91, 143, 212, 0.35) !important;
+  color: #1d4ed8 !important;
+}
+html.day .stacked-card .videogen-gh-btn:hover {
+  background: rgba(91, 143, 212, 0.20) !important;
+}
+
+/* FlipCards & Liquid Glass inside StackedCards in Daylight */
+html.day .stacked-card .liquid-glass-card {
+  box-shadow: 0 10px 24px -4px rgba(80, 50, 100, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+html.day .stacked-card .glass-ambient-tint {
+  background: rgba(255, 255, 255, 0.86) !important;
+}
+
+html.day .stacked-card .card-flip-title {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+html.day .stacked-card .card-flip-desc {
+  color: #475569 !important;
+}
+
+html.day .stacked-card .card-flip-tag {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
 }
 
 .section,

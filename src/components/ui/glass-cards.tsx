@@ -48,7 +48,7 @@ function CallingAgentFullCard() {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full rounded-[22px] overflow-hidden flex flex-col md:flex-row items-center justify-between p-3.5 sm:p-5 md:p-7 gap-3 sm:gap-4 md:gap-6 box-border"
+      className="card-inner-surface relative w-full rounded-[22px] overflow-hidden flex flex-col md:flex-row items-center justify-between p-3.5 sm:p-5 md:p-7 gap-3 sm:gap-4 md:gap-6 box-border"
     >
       <video
         ref={videoRef}
@@ -57,33 +57,33 @@ function CallingAgentFullCard() {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
           filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',
           willChange: 'filter',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#080c16]/60 via-[#080c16]/30 to-[#080c16]/65 pointer-events-none" />
+      <div className="card-bg-overlay calling-agent-overlay absolute inset-0 bg-gradient-to-br from-[#080c16]/60 via-[#080c16]/30 to-[#080c16]/65 pointer-events-none" />
 
       {/* Left Column on Desktop / Top Section on Mobile */}
       <div className="relative z-10 w-full md:max-w-[340px] flex flex-col items-center md:items-start text-center md:text-left gap-1 sm:gap-1.5 flex-shrink-0">
-        <span className="font-mono text-[0.66rem] sm:text-[0.76rem] tracking-[0.2em] text-[#f59e0b] font-bold uppercase flex items-center gap-1.5">
+        <span className="card-category-label font-mono text-[0.66rem] sm:text-[0.76rem] tracking-[0.2em] text-[#f59e0b] font-bold uppercase flex items-center gap-1.5">
           <PhoneCall size={12} className="text-[#f59e0b]" />
           Project 01 · Voice AI
         </span>
-        <h2 className="text-[1.25rem] sm:text-[1.75rem] md:text-[2.1rem] font-extrabold text-white leading-[1.12] tracking-tight drop-shadow-md">
+        <h2 className="card-title text-[1.25rem] sm:text-[1.75rem] md:text-[2.1rem] font-extrabold text-white leading-[1.12] tracking-tight drop-shadow-md">
           <span className="text-[#f59e0b]">Voice AI</span> Calling Agent
         </h2>
-        <p className="text-[0.72rem] sm:text-[0.8rem] md:text-[0.85rem] text-[#f0ede6]/90 leading-snug sm:leading-relaxed max-w-[360px]">
+        <p className="card-description text-[0.72rem] sm:text-[0.8rem] md:text-[0.85rem] text-[#f0ede6]/90 leading-snug sm:leading-relaxed max-w-[360px]">
           Sub-300ms turn-taking on real SIP trunks in Punjabi, Hindi & English.
         </p>
 
         {/* Architecture Specs Pill */}
         <div className="flex flex-wrap justify-center md:justify-start gap-1.5 mt-0.5 sm:mt-1">
-          <span className="text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/35 font-mono flex items-center gap-1">
+          <span className="card-spec-pill text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/35 font-mono flex items-center gap-1">
             <Zap size={9} /> &lt;290ms Latency
           </span>
-          <span className="text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-white/12 text-white/95 border border-white/25 font-mono flex items-center gap-1">
+          <span className="card-spec-pill-neutral text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-white/12 text-white/95 border border-white/25 font-mono flex items-center gap-1">
             <Shield size={9} /> DPDP Safe
           </span>
         </div>
@@ -91,13 +91,13 @@ function CallingAgentFullCard() {
         <div className="flex items-center gap-2 mt-1 sm:mt-2">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#f59e0b] text-[#080808] text-[0.68rem] sm:text-[0.76rem] font-bold shadow-md hover:scale-105 transition-transform cursor-pointer"
+            className="card-btn-primary inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#f59e0b] text-[#080808] text-[0.68rem] sm:text-[0.76rem] font-bold shadow-md hover:scale-105 transition-transform cursor-pointer"
           >
             <Play size={10} fill="#080808" /> Play Video
           </button>
           <Link
             to="/services/ai-voice-agents"
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg bg-white/12 border border-white/25 text-white text-[0.68rem] sm:text-[0.76rem] font-semibold hover:bg-white/25 transition-colors"
+            className="card-btn-secondary inline-flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg bg-white/12 border border-white/25 text-white text-[0.68rem] sm:text-[0.76rem] font-semibold hover:bg-white/25 transition-colors"
           >
             Services <ArrowRight size={10} />
           </Link>
@@ -116,8 +116,8 @@ function CallingAgentFullCard() {
                   <PhoneCall className="w-6 h-6 text-[#f59e0b] drop-shadow-[0_2px_8px_rgba(245,158,11,0.5)]" />
                 </div>
                 <div className="flex flex-col gap-0.5">
-                  <h3 className="text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Live SIP Trunks</h3>
-                  <p className="text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
+                  <h3 className="card-flip-title text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Live SIP Trunks</h3>
+                  <p className="card-flip-desc text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
                     Real PBX trunks & 8kHz audio
                   </p>
                 </div>
@@ -133,14 +133,14 @@ function CallingAgentFullCard() {
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-1">
                     <PhoneCall size={11} className="text-[#f59e0b]" />
-                    <span className="text-white text-[0.72rem] sm:text-[0.78rem] font-bold truncate">SIP & WebSockets</span>
+                    <span className="card-flip-title text-white text-[0.72rem] sm:text-[0.78rem] font-bold truncate">SIP & WebSockets</span>
                   </div>
-                  <p className="text-white/85 text-[0.58rem] sm:text-[0.64rem] leading-tight">
+                  <p className="card-flip-desc text-white/85 text-[0.58rem] sm:text-[0.64rem] leading-tight">
                     <span className="text-[#f59e0b] font-semibold">&lt;290ms latency</span> on real PBX lines. Zero jitter.
                   </p>
                   <div className="flex gap-1 flex-wrap mt-0.5">
                     {['SIP', 'VAD', '8kHz'].map(t => (
-                      <span key={t} className="text-[0.45rem] sm:text-[0.5rem] px-1.5 py-0.5 rounded bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/25 font-mono">
+                      <span key={t} className="card-flip-tag text-[0.45rem] sm:text-[0.5rem] px-1.5 py-0.5 rounded bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/25 font-mono">
                         {t}
                       </span>
                     ))}
@@ -167,8 +167,8 @@ function CallingAgentFullCard() {
                   <Mic className="w-6 h-6 text-[#f59e0b] drop-shadow-[0_2px_8px_rgba(245,158,11,0.5)]" />
                 </div>
                 <div className="flex flex-col gap-0.5">
-                  <h3 className="text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Indic Voice AI</h3>
-                  <p className="text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
+                  <h3 className="card-flip-title text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Indic Voice AI</h3>
+                  <p className="card-flip-desc text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
                     Punjabi & Hindi neural pipeline
                   </p>
                 </div>
@@ -184,14 +184,14 @@ function CallingAgentFullCard() {
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-1">
                     <Mic size={11} className="text-[#f59e0b]" />
-                    <span className="text-white text-[0.72rem] sm:text-[0.78rem] font-bold truncate">Sarvam + Llama</span>
+                    <span className="card-flip-title text-white text-[0.72rem] sm:text-[0.78rem] font-bold truncate">Sarvam + Llama</span>
                   </div>
-                  <p className="text-white/85 text-[0.58rem] sm:text-[0.64rem] leading-tight">
+                  <p className="card-flip-desc text-white/85 text-[0.58rem] sm:text-[0.64rem] leading-tight">
                     <span className="text-[#f59e0b] font-semibold">Punjabi & Hindi</span> neural recognition. 50ms interruption.
                   </p>
                   <div className="flex gap-1 flex-wrap mt-0.5">
                     {['Saarika', 'Bulbul', 'DPDP'].map(t => (
-                      <span key={t} className="text-[0.45rem] sm:text-[0.5rem] px-1.5 py-0.5 rounded bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/25 font-mono">
+                      <span key={t} className="card-flip-tag text-[0.45rem] sm:text-[0.5rem] px-1.5 py-0.5 rounded bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/25 font-mono">
                         {t}
                       </span>
                     ))}
@@ -286,7 +286,7 @@ function WhatsAppBotFullCard() {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full rounded-[22px] overflow-hidden flex flex-col md:flex-row items-center justify-between p-3.5 sm:p-5 md:p-7 gap-3 sm:gap-4 md:gap-6 box-border"
+      className="card-inner-surface relative w-full rounded-[22px] overflow-hidden flex flex-col md:flex-row items-center justify-between p-3.5 sm:p-5 md:p-7 gap-3 sm:gap-4 md:gap-6 box-border"
     >
       <video
         ref={videoRef}
@@ -295,33 +295,33 @@ function WhatsAppBotFullCard() {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
           filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',
           willChange: 'filter',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#06140c]/60 via-[#06140c]/30 to-[#06140c]/65 pointer-events-none" />
+      <div className="card-bg-overlay whatsapp-bot-overlay absolute inset-0 bg-gradient-to-br from-[#06140c]/60 via-[#06140c]/30 to-[#06140c]/65 pointer-events-none" />
 
       {/* Left Column on Desktop / Top Section on Mobile */}
       <div className="relative z-10 w-full md:max-w-[340px] flex flex-col items-center md:items-start text-center md:text-left gap-1 sm:gap-1.5 flex-shrink-0">
-        <span className="font-mono text-[0.66rem] sm:text-[0.76rem] tracking-[0.2em] text-[#22c55e] font-bold uppercase flex items-center gap-1.5">
+        <span className="card-category-label font-mono text-[0.66rem] sm:text-[0.76rem] tracking-[0.2em] text-[#22c55e] font-bold uppercase flex items-center gap-1.5">
           <img src="/assets/portfolio/whatsapp-icon.svg" alt="WhatsApp" className="w-3.5 h-3.5 object-contain" />
           Project 02 · Meta API
         </span>
-        <h2 className="text-[1.25rem] sm:text-[1.75rem] md:text-[2.1rem] font-extrabold text-white leading-[1.12] tracking-tight drop-shadow-md">
+        <h2 className="card-title text-[1.25rem] sm:text-[1.75rem] md:text-[2.1rem] font-extrabold text-white leading-[1.12] tracking-tight drop-shadow-md">
           <span className="text-[#22c55e]">WhatsApp</span> Business Bot
         </h2>
-        <p className="text-[0.72rem] sm:text-[0.8rem] md:text-[0.85rem] text-[#f0ede6]/90 leading-snug sm:leading-relaxed max-w-[360px]">
+        <p className="card-description text-[0.72rem] sm:text-[0.8rem] md:text-[0.85rem] text-[#f0ede6]/90 leading-snug sm:leading-relaxed max-w-[360px]">
           Official Meta Cloud API. Zero SaaS markups. Auto-qualifies leads 24/7.
         </p>
 
         {/* Architecture Specs Pill */}
         <div className="flex flex-wrap justify-center md:justify-start gap-1.5 mt-0.5 sm:mt-1">
-          <span className="text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/35 font-mono flex items-center gap-1">
+          <span className="card-spec-pill text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/35 font-mono flex items-center gap-1">
             <Zap size={9} /> ₹0 SaaS Markups
           </span>
-          <span className="text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-white/12 text-white/95 border border-white/25 font-mono flex items-center gap-1">
+          <span className="card-spec-pill-neutral text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-white/12 text-white/95 border border-white/25 font-mono flex items-center gap-1">
             <Bot size={9} /> 24/7 Lead Qual
           </span>
         </div>
@@ -329,13 +329,13 @@ function WhatsAppBotFullCard() {
         <div className="flex items-center gap-2 mt-1 sm:mt-2">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#22c55e] text-[#080808] text-[0.68rem] sm:text-[0.76rem] font-bold shadow-md hover:scale-105 transition-transform cursor-pointer"
+            className="card-btn-primary inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#22c55e] text-[#080808] text-[0.68rem] sm:text-[0.76rem] font-bold shadow-md hover:scale-105 transition-transform cursor-pointer"
           >
             <Play size={10} fill="#080808" /> Play Video
           </button>
           <Link
             to="/services/whatsapp-business-bot"
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg bg-white/12 border border-white/25 text-white text-[0.68rem] sm:text-[0.76rem] font-semibold hover:bg-white/25 transition-colors"
+            className="card-btn-secondary inline-flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg bg-white/12 border border-white/25 text-white text-[0.68rem] sm:text-[0.76rem] font-semibold hover:bg-white/25 transition-colors"
           >
             Services <ArrowRight size={10} />
           </Link>
@@ -354,8 +354,8 @@ function WhatsAppBotFullCard() {
                   <img src="/assets/portfolio/whatsapp-icon.svg" alt="Real WhatsApp" className="w-6 h-6 object-contain drop-shadow-[0_2px_8px_rgba(34,197,94,0.5)]" />
                 </div>
                 <div className="flex flex-col gap-0.5">
-                  <h3 className="text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Official Meta API</h3>
-                  <p className="text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
+                  <h3 className="card-flip-title text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Official Meta API</h3>
+                  <p className="card-flip-desc text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
                     Direct Cloud API, ₹0 SaaS fees
                   </p>
                 </div>
@@ -371,14 +371,14 @@ function WhatsAppBotFullCard() {
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-1">
                     <img src="/assets/portfolio/whatsapp-icon.svg" alt="WhatsApp" className="w-3.5 h-3.5 object-contain" />
-                    <span className="text-white text-[0.72rem] sm:text-[0.78rem] font-bold truncate">₹0 SaaS Markups</span>
+                    <span className="card-flip-title text-white text-[0.72rem] sm:text-[0.78rem] font-bold truncate">₹0 SaaS Markups</span>
                   </div>
-                  <p className="text-white/85 text-[0.58rem] sm:text-[0.64rem] leading-tight">
+                  <p className="card-flip-desc text-white/85 text-[0.58rem] sm:text-[0.64rem] leading-tight">
                     <span className="text-[#22c55e] font-semibold">Save ₹12,000/mo</span>. 1,000 free chats on Cloud API.
                   </p>
                   <div className="flex gap-1 flex-wrap mt-0.5">
                     {['Cloud API', 'Webhooks', 'No SaaS'].map(t => (
-                      <span key={t} className="text-[0.45rem] sm:text-[0.5rem] px-1.5 py-0.5 rounded bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/25 font-mono">
+                      <span key={t} className="card-flip-tag text-[0.45rem] sm:text-[0.5rem] px-1.5 py-0.5 rounded bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/25 font-mono">
                         {t}
                       </span>
                     ))}
@@ -405,8 +405,8 @@ function WhatsAppBotFullCard() {
                   <Bot className="w-6 h-6 text-[#22c55e] drop-shadow-[0_2px_8px_rgba(34,197,94,0.5)]" />
                 </div>
                 <div className="flex flex-col gap-0.5">
-                  <h3 className="text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Auto Lead Flow</h3>
-                  <p className="text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
+                  <h3 className="card-flip-title text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Auto Lead Flow</h3>
+                  <p className="card-flip-desc text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
                     Booking & instant PDF catalogs
                   </p>
                 </div>
@@ -422,14 +422,14 @@ function WhatsAppBotFullCard() {
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-1">
                     <Bot size={11} className="text-[#22c55e]" />
-                    <span className="text-white text-[0.72rem] sm:text-[0.78rem] font-bold truncate">24/7 Lead Qual</span>
+                    <span className="card-flip-title text-white text-[0.72rem] sm:text-[0.78rem] font-bold truncate">24/7 Lead Qual</span>
                   </div>
-                  <p className="text-white/85 text-[0.58rem] sm:text-[0.64rem] leading-tight">
+                  <p className="card-flip-desc text-white/85 text-[0.58rem] sm:text-[0.64rem] leading-tight">
                     <span className="text-[#22c55e] font-semibold">Dynamic PDF catalogs</span>, live booking & triage.
                   </p>
                   <div className="flex gap-1 flex-wrap mt-0.5">
                     {['12 Verticals', 'Auto PDF', 'Triage'].map(t => (
-                      <span key={t} className="text-[0.45rem] sm:text-[0.5rem] px-1.5 py-0.5 rounded bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/25 font-mono">
+                      <span key={t} className="card-flip-tag text-[0.45rem] sm:text-[0.5rem] px-1.5 py-0.5 rounded bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/25 font-mono">
                         {t}
                       </span>
                     ))}
@@ -516,7 +516,7 @@ function CowAppsFullCard() {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full rounded-[22px] overflow-hidden flex flex-col md:flex-row items-center justify-between p-3.5 sm:p-5 md:p-7 gap-2.5 sm:gap-4 md:gap-6 box-border"
+      className="card-inner-surface relative w-full rounded-[22px] overflow-hidden flex flex-col md:flex-row items-center justify-between p-3.5 sm:p-5 md:p-7 gap-2.5 sm:gap-4 md:gap-6 box-border"
     >
       <video
         ref={videoRef}
@@ -525,33 +525,33 @@ function CowAppsFullCard() {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
           filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',
           willChange: 'filter',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-[#000]/60 via-[#000]/30 to-[#000]/65 pointer-events-none" />
+      <div className="card-bg-overlay cow-apps-overlay absolute inset-0 bg-gradient-to-[#000]/60 via-[#000]/30 to-[#000]/65 pointer-events-none" />
 
       {/* Left Column on Desktop / Top Section on Mobile */}
       <div className="relative z-10 w-full md:max-w-[340px] flex flex-col items-center md:items-start text-center md:text-left gap-1 sm:gap-1.5 flex-shrink-0">
-        <span className="font-mono text-[0.66rem] sm:text-[0.76rem] tracking-[0.2em] text-[#38bdf8] font-bold uppercase flex items-center gap-1.5">
+        <span className="card-category-label font-mono text-[0.66rem] sm:text-[0.76rem] tracking-[0.2em] text-[#38bdf8] font-bold uppercase flex items-center gap-1.5">
           <Sparkles size={12} className="text-[#38bdf8]" />
           Project 03 · Rural Tech
         </span>
-        <h2 className="text-[1.25rem] sm:text-[1.75rem] md:text-[2.1rem] font-extrabold text-white leading-[1.12] tracking-tight drop-shadow-md">
+        <h2 className="card-title text-[1.25rem] sm:text-[1.75rem] md:text-[2.1rem] font-extrabold text-white leading-[1.12] tracking-tight drop-shadow-md">
           <span className="text-[#38bdf8]">Offline AI</span> Apps
         </h2>
-        <p className="text-[0.72rem] sm:text-[0.8rem] md:text-[0.85rem] text-[#f0ede6]/90 leading-snug sm:leading-relaxed max-w-[360px]">
+        <p className="card-description text-[0.72rem] sm:text-[0.8rem] md:text-[0.85rem] text-[#f0ede6]/90 leading-snug sm:leading-relaxed max-w-[360px]">
           Two field-ready Flutter apps engineered for rural Punjab with zero internet.
         </p>
 
         {/* Architecture Specs Pill */}
         <div className="flex flex-wrap justify-center md:justify-start gap-1.5 mt-0.5 sm:mt-1">
-          <span className="text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-[#38bdf8]/20 text-[#38bdf8] border border-[#38bdf8]/35 font-mono flex items-center gap-1">
+          <span className="card-spec-pill text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-[#38bdf8]/20 text-[#38bdf8] border border-[#38bdf8]/35 font-mono flex items-center gap-1">
             <Zap size={9} /> &lt;2s On-Device ML
           </span>
-          <span className="text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-white/12 text-white/95 border border-white/25 font-mono flex items-center gap-1">
+          <span className="card-spec-pill-neutral text-[0.6rem] sm:text-[0.64rem] px-2 py-0.5 rounded-full bg-white/12 text-white/95 border border-white/25 font-mono flex items-center gap-1">
             <Cpu size={9} /> 100% Offline SQLite
           </span>
         </div>
@@ -559,7 +559,7 @@ function CowAppsFullCard() {
         <div className="flex items-center gap-2 mt-1 sm:mt-2">
           <Link
             to="/case-studies/doodhisaab"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#38bdf8] text-[#080808] text-[0.68rem] sm:text-[0.76rem] font-bold shadow-md hover:scale-105 transition-transform"
+            className="card-btn-primary inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-[#38bdf8] text-[#080808] text-[0.68rem] sm:text-[0.76rem] font-bold shadow-md hover:scale-105 transition-transform"
           >
             Case Studies <ArrowRight size={10} />
           </Link>
@@ -581,8 +581,8 @@ function CowAppsFullCard() {
                   height={52}
                   className="w-11 h-11 sm:w-13 sm:h-13 object-contain rounded-xl shadow-md" />
                 <div className="flex flex-col gap-0.5">
-                  <h3 className="text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">DoodHisaab</h3>
-                  <p className="text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
+                  <h3 className="card-flip-title text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">DoodHisaab</h3>
+                  <p className="card-flip-desc text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
                     Dairy ledger & receipts
                   </p>
                 </div>
@@ -606,9 +606,9 @@ function CowAppsFullCard() {
                 <div className="flex flex-col gap-0.5 mt-0.5">
                   <div className="flex items-center gap-1">
                     <Milk size={10} className="text-[#d4a853]" />
-                    <span className="text-white text-[0.7rem] sm:text-[0.76rem] font-bold truncate">DoodHisaab</span>
+                    <span className="card-flip-title text-white text-[0.7rem] sm:text-[0.76rem] font-bold truncate">DoodHisaab</span>
                   </div>
-                  <p className="text-white/85 text-[0.54rem] sm:text-[0.6rem] leading-tight">
+                  <p className="card-flip-desc text-white/85 text-[0.54rem] sm:text-[0.6rem] leading-tight">
                     <span className="text-[#d4a853] font-semibold">Milk ledger</span> — deliveries & profit.
                   </p>
                   <Link
@@ -636,8 +636,8 @@ function CowAppsFullCard() {
                   height={52}
                   className="w-11 h-11 sm:w-13 sm:h-13 object-contain rounded-xl shadow-md" />
                 <div className="flex flex-col gap-0.5">
-                  <h3 className="text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Fasal Doctor</h3>
-                  <p className="text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
+                  <h3 className="card-flip-title text-white text-[0.82rem] sm:text-[0.92rem] font-bold leading-tight drop-shadow">Fasal Doctor</h3>
+                  <p className="card-flip-desc text-white/80 text-[0.6rem] sm:text-[0.66rem] leading-tight">
                     On-device crop disease AI
                   </p>
                 </div>
@@ -661,9 +661,9 @@ function CowAppsFullCard() {
                 <div className="flex flex-col gap-0.5 mt-0.5">
                   <div className="flex items-center gap-1">
                     <Leaf size={10} className="text-[#4ade80]" />
-                    <span className="text-white text-[0.7rem] sm:text-[0.76rem] font-bold truncate">Fasal Doctor</span>
+                    <span className="card-flip-title text-white text-[0.7rem] sm:text-[0.76rem] font-bold truncate">Fasal Doctor</span>
                   </div>
-                  <p className="text-white/85 text-[0.54rem] sm:text-[0.6rem] leading-tight">
+                  <p className="card-flip-desc text-white/85 text-[0.54rem] sm:text-[0.6rem] leading-tight">
                     <span className="text-[#4ade80] font-semibold">Offline AI</span> crop scan & cure.
                   </p>
                   <Link
@@ -695,8 +695,8 @@ const vgImgs = [
 
 function VideoGenFullCard() {
   return (
-    <div className="relative w-full rounded-[22px] overflow-hidden p-3.5 sm:p-5 md:p-7 text-center box-border flex flex-col items-center justify-between">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#080e1a] via-[#0a0f1e] to-[#060a14]" />
+    <div className="card-inner-surface relative w-full rounded-[22px] overflow-hidden p-3.5 sm:p-5 md:p-7 text-center box-border flex flex-col items-center justify-between">
+      <div className="card-bg-overlay videogen-overlay absolute inset-0 bg-gradient-to-br from-[#080e1a] via-[#0a0f1e] to-[#060a14]" />
 
       {/* Floating Parallax Layers */}
       <div className="absolute inset-0 z-[1] pointer-events-none opacity-45 sm:opacity-75">
@@ -720,48 +720,48 @@ function VideoGenFullCard() {
 
       {/* Top Header */}
       <div className="relative z-10 flex flex-col items-center gap-1">
-        <span className="font-mono text-[0.66rem] sm:text-[0.76rem] tracking-[0.22em] text-[#5b8fd4] font-bold uppercase">
+        <span className="card-category-label font-mono text-[0.66rem] sm:text-[0.76rem] tracking-[0.22em] text-[#5b8fd4] font-bold uppercase">
           Project 04 · 21 Open Repositories
         </span>
-        <h2 className="text-[1.25rem] sm:text-[1.85rem] md:text-[2.2rem] font-extrabold text-white leading-tight tracking-tight drop-shadow-md">
+        <h2 className="card-title text-[1.25rem] sm:text-[1.85rem] md:text-[2.2rem] font-extrabold text-white leading-tight tracking-tight drop-shadow-md">
           21 GitHub <span className="text-[#5b8fd4]">Projects</span>
         </h2>
       </div>
 
       {/* Center Bento Highlights */}
       <div className="relative z-10 w-full max-w-[640px] grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 text-left my-2 sm:my-3">
-        <div className="bg-[#080e1a]/85 backdrop-blur-md border border-[#5b8fd4]/25 p-2.5 rounded-xl">
+        <div className="videogen-bento bg-[#080e1a]/85 backdrop-blur-md border border-[#5b8fd4]/25 p-2.5 rounded-xl">
           <div className="text-[0.68rem] sm:text-[0.76rem] font-bold text-[#5b8fd4] flex items-center gap-1">
             <GitBranch size={11} /> Videogen-Max & yt-auto
           </div>
-          <p className="text-[0.58rem] sm:text-[0.64rem] text-white/85 leading-tight mt-0.5">
+          <p className="card-desc text-[0.58rem] sm:text-[0.64rem] text-white/85 leading-tight mt-0.5">
             Automated 1080p60 programmatic video engine ($0 cloud bill).
           </p>
         </div>
 
-        <div className="bg-[#080e1a]/85 backdrop-blur-md border border-[#5b8fd4]/25 p-2.5 rounded-xl">
+        <div className="videogen-bento bg-[#080e1a]/85 backdrop-blur-md border border-[#5b8fd4]/25 p-2.5 rounded-xl">
           <div className="text-[0.68rem] sm:text-[0.76rem] font-bold text-[#5b8fd4] flex items-center gap-1">
             <Mic size={11} /> TakeMyInterview-Ai
           </div>
-          <p className="text-[0.58rem] sm:text-[0.64rem] text-white/85 leading-tight mt-0.5">
+          <p className="card-desc text-[0.58rem] sm:text-[0.64rem] text-white/85 leading-tight mt-0.5">
             Real-time voice-to-voice local AI interview coach.
           </p>
         </div>
 
-        <div className="bg-[#080e1a]/85 backdrop-blur-md border border-[#5b8fd4]/25 p-2.5 rounded-xl">
+        <div className="videogen-bento bg-[#080e1a]/85 backdrop-blur-md border border-[#5b8fd4]/25 p-2.5 rounded-xl">
           <div className="text-[0.68rem] sm:text-[0.76rem] font-bold text-[#5b8fd4] flex items-center gap-1">
             <Bot size={11} /> Neo Assistant & MCP
           </div>
-          <p className="text-[0.58rem] sm:text-[0.64rem] text-white/85 leading-tight mt-0.5">
+          <p className="card-desc text-[0.58rem] sm:text-[0.64rem] text-white/85 leading-tight mt-0.5">
             Air-gapped local GPU voice assistant & legal servers.
           </p>
         </div>
 
-        <div className="bg-[#080e1a]/85 backdrop-blur-md border border-[#5b8fd4]/25 p-2.5 rounded-xl">
+        <div className="videogen-bento bg-[#080e1a]/85 backdrop-blur-md border border-[#5b8fd4]/25 p-2.5 rounded-xl">
           <div className="text-[0.68rem] sm:text-[0.76rem] font-bold text-[#5b8fd4] flex items-center gap-1">
             <Leaf size={11} /> DoodHisaab & Fasal Doctor
           </div>
-          <p className="text-[0.58rem] sm:text-[0.64rem] text-white/85 leading-tight mt-0.5">
+          <p className="card-desc text-[0.58rem] sm:text-[0.64rem] text-white/85 leading-tight mt-0.5">
             Offline dairy ledger & on-device crop disease scanner.
           </p>
         </div>
@@ -773,13 +773,13 @@ function VideoGenFullCard() {
           href="https://github.com/gurination1"
           target="_blank"
           rel="me noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-[#5b8fd4]/20 border border-[#5b8fd4]/40 backdrop-blur-md text-[#5b8fd4] text-[0.7rem] sm:text-[0.78rem] font-bold hover:bg-[#5b8fd4]/30 transition-colors"
+          className="videogen-gh-btn inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-[#5b8fd4]/20 border border-[#5b8fd4]/40 backdrop-blur-md text-[#5b8fd4] text-[0.7rem] sm:text-[0.78rem] font-bold hover:bg-[#5b8fd4]/30 transition-colors"
         >
           <GitBranch size={11} /> 21 Repos on GitHub <ExternalLink size={9} />
         </a>
         <Link
           to="/services/automated-video-generation-engine"
-          className="inline-flex items-center gap-1 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-white/10 border border-white/20 text-white text-[0.7rem] sm:text-[0.78rem] font-semibold hover:bg-white/20 transition-colors"
+          className="card-btn-secondary inline-flex items-center gap-1 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg bg-white/10 border border-white/20 text-white text-[0.7rem] sm:text-[0.78rem] font-semibold hover:bg-white/20 transition-colors"
         >
           Explore VideoGen <ArrowRight size={10} />
         </Link>
@@ -841,7 +841,7 @@ const Card: React.FC<CardProps> = ({ id, title, description, index, totalCards, 
           top: `calc(-3vh + ${index * 14}px)`,
           transformOrigin: 'top',
         }}
-        className="card-content"
+        className="card-content stacked-card glass-card-item"
       >
         {/* ── High-Performance GPU-Accelerated Sweeping Shine Border ── */}
         <div
@@ -887,8 +887,8 @@ export const StackedCards: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} style={{ background: '#0a0a0a', width: '100%' }}>
-      <section style={{ color: '#fff', width: '100%', position: 'relative' }}>
+    <div ref={containerRef} className="stacked-cards-container" style={{ width: '100%' }}>
+      <section className="stacked-cards-section" style={{ width: '100%', position: 'relative' }}>
         {cardData.map((card, index) => (
           <Card
             key={card.id}

@@ -82,7 +82,7 @@ export const GlassEffect: React.FC<GlassEffectProps> = ({
 
   const content = (
     <div
-      className={`relative flex flex-col font-semibold overflow-hidden cursor-pointer transition-all duration-300 ${className}`}
+      className={`liquid-glass-card relative flex flex-col font-semibold overflow-hidden cursor-pointer transition-all duration-300 ${className}`}
       style={glassStyle}
     >
       {/* 1. Hardware-Accelerated Glass Refraction Backdrop */}
@@ -96,7 +96,7 @@ export const GlassEffect: React.FC<GlassEffectProps> = ({
       />
       {/* 2. Frosted Liquid Glass Ambient Tint */}
       <div
-        className="absolute inset-0 z-10 rounded-inherit pointer-events-none"
+        className="glass-ambient-tint absolute inset-0 z-10 rounded-inherit pointer-events-none"
         style={{
           background: darkOverlay
             ? "linear-gradient(135deg, rgba(20, 30, 48, 0.94) 0%, rgba(10, 16, 28, 0.90) 100%)"

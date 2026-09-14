@@ -25,7 +25,7 @@ const Word: React.FC<WordProps> = ({ children, progress, range, isHighlighted })
       <span className="absolute select-none opacity-20 text-slate-500">{children}</span>
       <motion.span
         style={{ opacity }}
-        className={isHighlighted ? "copy-mark" : "text-white font-medium"}
+        className={isHighlighted ? "copy-mark font-bold" : "magic-text-word font-medium"}
       >
         {children}
       </motion.span>
