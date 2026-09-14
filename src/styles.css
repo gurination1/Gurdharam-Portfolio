@@ -1119,16 +1119,209 @@ html.day .about-copy [class*="text-slate"] {
   color: rgba(0, 0, 0, 0.28) !important;
 }
 
-/* Leadership Duo / Founder Cards in Daylight */
-html.day .founder-card {
-  background: rgba(255, 255, 255, 0.78) !important;
-  border-color: rgba(0, 0, 0, 0.09) !important;
-  box-shadow: 0 14px 34px -12px rgba(80, 50, 100, 0.08) !important;
+/* ─── Home About Action Buttons ─── */
+.about-action-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-pill-action {
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-pill-gold {
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  background: rgba(212, 168, 83, 0.08);
+}
+.btn-pill-gold:hover {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+.btn-pill-cold {
+  border: 1px solid var(--accent-cold);
+  color: var(--accent-cold);
+  background: rgba(91, 143, 212, 0.08);
+}
+.btn-pill-cold:hover {
+  background: var(--accent-cold);
+  color: #000;
+}
+
+.btn-pill-websites {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #f0ede6;
+  background: rgba(255, 255, 255, 0.06);
+}
+.btn-pill-websites:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.btn-pill-about {
+  border: 1px solid rgba(212, 168, 83, 0.5);
+  color: var(--accent-gold);
+  background: rgba(212, 168, 83, 0.08);
+}
+.btn-pill-about:hover {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+html.day .btn-pill-gold {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1.5px solid rgba(212, 168, 83, 0.6) !important;
+  color: #8c5b05 !important;
+  box-shadow: 0 4px 12px -2px rgba(212, 168, 83, 0.15) !important;
+}
+html.day .btn-pill-gold:hover {
+  background: #d4a853 !important;
+  color: #000000 !important;
+}
+
+html.day .btn-pill-cold {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.5) !important;
+  color: #0369a1 !important;
+  box-shadow: 0 4px 12px -2px rgba(59, 130, 246, 0.15) !important;
+}
+html.day .btn-pill-cold:hover {
+  background: #38bdf8 !important;
+  color: #000000 !important;
+}
+
+html.day .btn-pill-websites {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.16) !important;
+  color: #141312 !important;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08) !important;
+}
+html.day .btn-pill-websites:hover {
+  background: #141312 !important;
+  color: #ffffff !important;
+  border-color: #141312 !important;
+}
+
+html.day .btn-pill-about {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1.5px solid rgba(212, 168, 83, 0.6) !important;
+  color: #8c5b05 !important;
+  box-shadow: 0 4px 12px -2px rgba(212, 168, 83, 0.15) !important;
+}
+html.day .btn-pill-about:hover {
+  background: #d4a853 !important;
+  color: #000000 !important;
+}
+
+/* ─── AnimatedStatsStrip in Daylight ─── */
+html.day .animated-stats-strip {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .animated-stats-strip .divide-white\/10 > :not([hidden]) ~ :not([hidden]),
+html.day .animated-stats-strip .stats-strip-content > * + * {
+  border-left-color: rgba(0, 0, 0, 0.10) !important;
+}
+
+html.day .animated-stats-strip .stats-strip-unit,
+html.day .animated-stats-strip .stats-strip-label,
+html.day .animated-stats-strip .text-\[\#9a958c\] {
+  color: #3b3731 !important;
+  font-weight: 600 !important;
+}
+
+/* ─── Chips & Tag Boxes in Daylight ─── */
+html.day .chips span,
+html.day .project-tags span {
+  background: rgba(255, 255, 255, 0.90) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #1a1815 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.day .chips span:hover,
+html.day .project-tags span:hover {
+  background: #ffffff !important;
+  border-color: rgba(212, 168, 83, 0.6) !important;
+  color: #8c5b05 !important;
+  box-shadow: 0 4px 12px -2px rgba(212, 168, 83, 0.2) !important;
+}
+
+html.day .chips span:nth-child(-n + 3),
+html.day .project-tags span:nth-child(1),
+html.day .project-tags span:nth-child(3) {
+  border-color: rgba(212, 168, 83, 0.5) !important;
+  color: #8c5b05 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* ─── Daylight Harmonization: /about Page ─── */
+html.day .about-page-root {
+  background: transparent !important;
   color: #141312 !important;
 }
 
+html.day .about-page-header {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.day .about-page-header .about-header-studio-name {
+  color: #3b3731 !important;
+}
+
+html.day .about-page-header .about-nav-link {
+  color: #3b3731 !important;
+}
+html.day .about-page-header .about-nav-link:hover {
+  color: #8c5b05 !important;
+}
+
+html.day .about-hero-title {
+  color: #141312 !important;
+}
+
+html.day .about-hero-subtitle {
+  color: #3b3731 !important;
+}
+
+html.day .founder-card {
+  background: rgba(255, 255, 255, 0.90) !important;
+  border: 1px solid rgba(0, 0, 0, 0.10) !important;
+  box-shadow: 0 16px 40px -12px rgba(80, 50, 100, 0.10) !important;
+}
+
+html.day .founder-name {
+  color: #141312 !important;
+}
+
+html.day .founder-tagline {
+  color: #4a453e !important;
+}
+
 html.day .founder-bio {
-  color: #423d37 !important;
+  color: #3b3731 !important;
+}
+
+html.day .founder-bio strong {
+  color: #141312 !important;
 }
 
 html.day .founder-portrait-frame {
@@ -1136,10 +1329,140 @@ html.day .founder-portrait-frame {
   border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
+html.day .founder-socials a {
+  background: rgba(255, 255, 255, 0.90) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #141312 !important;
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+html.day .founder-socials a:hover {
+  border-color: rgba(212, 168, 83, 0.6) !important;
+  color: #8c5b05 !important;
+}
+
 html.day .founder-chips span {
-  background: rgba(0, 0, 0, 0.04) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  color: #5a554c !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #1f1d1a !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.day .synergy-section {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1.5px solid rgba(212, 168, 83, 0.40) !important;
+  box-shadow: 0 20px 50px -15px rgba(80, 50, 100, 0.10) !important;
+}
+
+html.day .synergy-kicker {
+  color: #8c5b05 !important;
+}
+
+html.day .synergy-sub {
+  color: #555048 !important;
+}
+
+html.day .synergy-heading {
+  color: #141312 !important;
+}
+
+html.day .synergy-desc {
+  color: #3b3731 !important;
+}
+
+html.day .synergy-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.10) !important;
+  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .synergy-num {
+  color: #8c5b05 !important;
+  font-weight: 700 !important;
+}
+
+html.day .synergy-card-title {
+  color: #141312 !important;
+}
+
+html.day .synergy-card-desc {
+  color: #454038 !important;
+}
+
+html.day .deployed-kicker {
+  color: #8c5b05 !important;
+}
+
+html.day .deployed-heading {
+  color: #141312 !important;
+}
+
+html.day .deployed-badge {
+  background: rgba(212, 168, 83, 0.15) !important;
+  border-color: rgba(212, 168, 83, 0.45) !important;
+  color: #8c5b05 !important;
+  font-weight: 600 !important;
+}
+
+html.day .deployed-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.10) !important;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.day .deployed-num {
+  color: #8c5b05 !important;
+  font-weight: 700 !important;
+}
+
+html.day .deployed-card-title {
+  color: #141312 !important;
+}
+
+html.day .deployed-card-desc {
+  color: #454038 !important;
+}
+
+html.day .deployed-link {
+  color: #8c5b05 !important;
+  font-weight: 600 !important;
+}
+
+html.day .commission-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(254, 243, 199, 0.45) 50%, rgba(255, 255, 255, 0.96) 100%) !important;
+  border: 1.5px solid rgba(212, 168, 83, 0.45) !important;
+  box-shadow: 0 25px 60px -15px rgba(80, 50, 100, 0.12) !important;
+}
+
+html.day .commission-kicker {
+  color: #8c5b05 !important;
+}
+
+html.day .commission-heading {
+  color: #141312 !important;
+}
+
+html.day .commission-desc {
+  color: #3b3731 !important;
+}
+
+html.day .commission-btn-secondary {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: #141312 !important;
+}
+html.day .commission-btn-secondary:hover {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+html.day .commission-btn-pricing {
+  background: rgba(91, 143, 212, 0.15) !important;
+  border-color: rgba(91, 143, 212, 0.45) !important;
+  color: #0369a1 !important;
+}
+html.day .commission-btn-pricing:hover {
+  background: rgba(91, 143, 212, 0.25) !important;
 }
 
 /* ─── Daylight Harmonization: StoryFlow ─── */
@@ -2016,40 +2339,44 @@ html.day .stacked-cards-section {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Daylight / Light Mode Luxury Glassmorphism */
+/* Daylight / Light Mode Luxury Glassmorphism & High-Contrast Hardening */
 html.day .stacked-card,
 html.day [class*="stacked-card"],
 html.day .glass-card-item {
-  background: rgba(255, 255, 255, 0.88) !important;
+  background: #ffffff !important;
   backdrop-filter: blur(28px) saturate(190%) !important;
   -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.75) !important;
-  box-shadow: 0 24px 60px -12px rgba(80, 50, 100, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 28px 65px -12px rgba(25, 15, 45, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06) !important;
   color: #0f172a !important;
+}
+
+html.day .card-inner-surface {
+  background: #ffffff !important;
 }
 
 /* Background Video in Daylight */
 html.day .stacked-card .card-bg-video {
-  opacity: 0.22 !important;
+  opacity: 0.18 !important;
   filter: saturate(1.15) brightness(1.05) !important;
 }
 
 /* Card Ambient Tint & Specular Overlays in Daylight */
 html.day .stacked-card .card-bg-overlay,
 html.day .calling-agent-overlay {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(254, 243, 199, 0.42) 50%, rgba(255, 255, 255, 0.86) 100%) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 243, 199, 0.52) 48%, rgba(255, 255, 255, 0.92) 100%) !important;
 }
 
 html.day .whatsapp-bot-overlay {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(220, 252, 231, 0.42) 50%, rgba(255, 255, 255, 0.86) 100%) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 252, 231, 0.52) 48%, rgba(255, 255, 255, 0.92) 100%) !important;
 }
 
 html.day .cow-apps-overlay {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(224, 242, 254, 0.42) 50%, rgba(255, 255, 255, 0.86) 100%) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(224, 242, 254, 0.52) 48%, rgba(255, 255, 255, 0.92) 100%) !important;
 }
 
 html.day .videogen-overlay {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(238, 242, 255, 0.48) 50%, rgba(255, 255, 255, 0.90) 100%) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(238, 242, 255, 0.52) 48%, rgba(255, 255, 255, 0.92) 100%) !important;
 }
 
 /* Headings & Text Clarity in Daylight */
@@ -2072,82 +2399,99 @@ html.day .stacked-card .card-category-label {
 
 /* Brand Accents with Accessible Contrast in Daylight */
 html.day .stacked-card .text-\[\#f59e0b\] {
-  color: #d97706 !important;
+  color: #b45309 !important;
+  font-weight: 700 !important;
 }
 html.day .stacked-card .text-\[\#22c55e\] {
-  color: #16a34a !important;
+  color: #15803d !important;
+  font-weight: 700 !important;
 }
 html.day .stacked-card .text-\[\#38bdf8\] {
-  color: #0284c7 !important;
+  color: #0369a1 !important;
+  font-weight: 700 !important;
 }
 html.day .stacked-card .text-\[\#5b8fd4\] {
-  color: #2563eb !important;
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
 }
 html.day .stacked-card .text-\[\#d4a853\] {
-  color: #b45309 !important;
+  color: #92400e !important;
+  font-weight: 700 !important;
 }
 html.day .stacked-card .text-\[\#4ade80\] {
-  color: #15803d !important;
+  color: #166534 !important;
+  font-weight: 700 !important;
 }
 
 /* Badges & Telemetry Pills in Daylight */
 html.day .stacked-card .card-spec-pill-neutral {
-  background: rgba(0, 0, 0, 0.05) !important;
-  color: #1e293b !important;
-  border-color: rgba(0, 0, 0, 0.12) !important;
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  font-weight: 600 !important;
 }
 
 /* Action Buttons & Links in Daylight */
 html.day .stacked-card .card-btn-secondary {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border-color: rgba(0, 0, 0, 0.12) !important;
+  background: rgba(0, 0, 0, 0.06) !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.14) !important;
   color: #0f172a !important;
+  font-weight: 600 !important;
 }
 html.day .stacked-card .card-btn-secondary:hover {
-  background: rgba(0, 0, 0, 0.10) !important;
+  background: rgba(0, 0, 0, 0.12) !important;
   color: #000000 !important;
 }
 
 /* VideoGen Bento Cards in Daylight */
 html.day .stacked-card .videogen-bento {
-  background: rgba(255, 255, 255, 0.88) !important;
-  border-color: rgba(91, 143, 212, 0.35) !important;
-  box-shadow: 0 4px 16px -2px rgba(91, 143, 212, 0.10) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid rgba(91, 143, 212, 0.35) !important;
+  box-shadow: 0 6px 20px -2px rgba(91, 143, 212, 0.12) !important;
 }
 html.day .stacked-card .videogen-bento p {
   color: #334155 !important;
 }
 
 html.day .stacked-card .videogen-gh-btn {
-  background: rgba(91, 143, 212, 0.12) !important;
-  border-color: rgba(91, 143, 212, 0.35) !important;
+  background: rgba(91, 143, 212, 0.14) !important;
+  border: 1px solid rgba(91, 143, 212, 0.40) !important;
   color: #1d4ed8 !important;
+  font-weight: 600 !important;
 }
 html.day .stacked-card .videogen-gh-btn:hover {
-  background: rgba(91, 143, 212, 0.20) !important;
+  background: rgba(91, 143, 212, 0.24) !important;
 }
 
 /* FlipCards & Liquid Glass inside StackedCards in Daylight */
 html.day .stacked-card .liquid-glass-card {
-  box-shadow: 0 10px 24px -4px rgba(80, 50, 100, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
 html.day .stacked-card .glass-ambient-tint {
-  background: rgba(255, 255, 255, 0.86) !important;
+  background: #ffffff !important;
+  opacity: 0.96 !important;
 }
 
 html.day .stacked-card .card-flip-title {
   color: #0f172a !important;
+  font-weight: 700 !important;
   text-shadow: none !important;
 }
 
 html.day .stacked-card .card-flip-desc {
-  color: #475569 !important;
+  color: #334155 !important;
+  font-weight: 500 !important;
+  text-shadow: none !important;
 }
 
 html.day .stacked-card .card-flip-tag {
-  background: rgba(0, 0, 0, 0.04) !important;
-  border-color: rgba(0, 0, 0, 0.10) !important;
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  font-weight: 600 !important;
 }
 
 .section,

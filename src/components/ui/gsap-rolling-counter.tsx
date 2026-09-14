@@ -131,19 +131,19 @@ export default function AnimatedStatsStrip({ className = '' }: AnimatedStatsStri
       ref={stripRef}
       onMouseEnter={() => rollAll(1.2)}
       onClick={() => rollAll(1.4)}
-      className={`group relative overflow-hidden rounded-xl border border-white/10 bg-[#0c0c0c]/85 p-2.5 backdrop-blur-md transition-all duration-300 hover:border-[#d4a853]/40 hover:shadow-[0_8px_24px_-8px_rgba(212,168,83,0.3)] cursor-pointer ${className}`}
+      className={`animated-stats-strip group relative overflow-hidden rounded-xl border border-white/10 bg-[#0c0c0c]/85 p-2.5 backdrop-blur-md transition-all duration-300 hover:border-[#d4a853]/40 hover:shadow-[0_8px_24px_-8px_rgba(212,168,83,0.3)] cursor-pointer ${className}`}
     >
       {/* Top Gold Shimmer Line on Hover */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#d4a853]/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       
-      <div className="flex items-center justify-between divide-x divide-white/10 text-center font-mono">
+      <div className="stats-strip-content flex items-center justify-between divide-x divide-white/10 text-center font-mono">
         {/* Metric 1 */}
         <div className="flex-1 px-1 flex flex-col items-center">
           <div className="flex items-center justify-center gap-0.5">
             <RollingNumber value="1" suffix="+" color="#d4a853" />
-            <span className="text-[0.62rem] font-bold text-[#9a958c] ml-0.5">YR</span>
+            <span className="stats-strip-unit text-[0.62rem] font-bold text-[#9a958c] ml-0.5">YR</span>
           </div>
-          <div className="text-[0.58rem] uppercase tracking-wider text-[#9a958c] mt-0.5">
+          <div className="stats-strip-label text-[0.58rem] uppercase tracking-wider text-[#9a958c] mt-0.5">
             Hard Exp
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function AnimatedStatsStrip({ className = '' }: AnimatedStatsStri
           <div className="flex items-center justify-center">
             <RollingNumber value="20" suffix="+" color="#38bdf8" />
           </div>
-          <div className="text-[0.58rem] uppercase tracking-wider text-[#9a958c] mt-0.5">
+          <div className="stats-strip-label text-[0.58rem] uppercase tracking-wider text-[#9a958c] mt-0.5">
             Clients Work
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function AnimatedStatsStrip({ className = '' }: AnimatedStatsStri
           <div className="flex items-center justify-center">
             <RollingNumber value="15" suffix="+" color="#25D366" />
           </div>
-          <div className="text-[0.58rem] uppercase tracking-wider text-[#9a958c] mt-0.5">
+          <div className="stats-strip-label text-[0.58rem] uppercase tracking-wider text-[#9a958c] mt-0.5">
             Shipped
           </div>
         </div>

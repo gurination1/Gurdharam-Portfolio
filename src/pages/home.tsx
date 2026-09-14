@@ -1076,17 +1076,17 @@ function About() {
               <span key={chip}>{chip}</span>
             ))}
           </div>
-          <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link to="/services/ai-automation" className="btn-primary" style={{ padding: '0.8rem 1.5rem', border: '1px solid var(--accent-gold)', borderRadius: '99px', color: 'var(--accent-gold)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>
+          <div className="about-action-buttons">
+            <Link to="/services/ai-automation" className="btn-pill-action btn-pill-gold">
               AI Automation Services
             </Link>
-            <Link to="/services/web-development" className="btn-primary" style={{ padding: '0.8rem 1.5rem', border: '1px solid var(--accent-cold)', borderRadius: '99px', color: 'var(--accent-cold)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>
+            <Link to="/services/web-development" className="btn-pill-action btn-pill-cold">
               Web Development Services
             </Link>
-            <Link to="/websites" className="btn-primary" style={{ padding: '0.8rem 1.5rem', border: '1px solid rgba(255,255,255,0.25)', borderRadius: '99px', color: '#f0ede6', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em', background: 'rgba(255,255,255,0.04)' }}>
-              Live Websites & 3D Showcase →
+            <Link to="/websites" className="btn-pill-action btn-pill-websites">
+              Live Websites &amp; 3D Showcase →
             </Link>
-            <Link to="/about" className="btn-primary" style={{ padding: '0.8rem 1.5rem', border: '1px solid rgba(212,168,83,0.5)', borderRadius: '99px', color: 'var(--accent-gold)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em', background: 'rgba(212,168,83,0.08)' }}>
+            <Link to="/about" className="btn-pill-action btn-pill-about">
               About Us / Leadership Duo →
             </Link>
           </div>

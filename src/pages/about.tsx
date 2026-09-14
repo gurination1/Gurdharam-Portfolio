@@ -16,6 +16,7 @@ import {
   ExternalLink 
 } from 'lucide-react';
 import Footer from '../components/ui/footer';
+import { ThemeToggle } from '../components/ui/theme-toggle';
 import { getWhatsAppUrl } from '../lib/whatsapp';
 
 function GithubIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
@@ -52,9 +53,10 @@ export default function AboutPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#080808] text-[#f0ede6] selection:bg-[#d4a853] selection:text-black">
+    <div className="about-page-root min-h-screen bg-[#080808] text-[#f0ede6] selection:bg-[#d4a853] selection:text-black relative">
+      <div className="daylight-aurora-bg" aria-hidden="true" />
       {/* Top Sticky Navigation */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#080808]/85 border-b border-[#f0ede6]/10 px-4 md:px-8 py-3.5 flex items-center justify-between">
+      <header className="about-page-header sticky top-0 z-50 backdrop-blur-md bg-[#080808]/85 border-b border-[#f0ede6]/10 px-4 md:px-8 py-3.5 flex items-center justify-between transition-colors duration-300">
         <div className="flex items-center gap-4">
           <Link
             to="/"
@@ -64,7 +66,7 @@ export default function AboutPage() {
             <span>Return to Hub</span>
           </Link>
           <span className="hidden sm:inline text-xs text-[#f0ede6]/30">|</span>
-          <span className="hidden sm:inline text-xs font-mono tracking-wider text-[#f0ede6]/60">
+          <span className="about-header-studio-name hidden sm:inline text-xs font-mono tracking-wider text-[#f0ede6]/60">
             GURDHARAM ENTERPRISE STUDIO
           </span>
         </div>
@@ -72,13 +74,13 @@ export default function AboutPage() {
         <div className="flex items-center gap-3">
           <Link
             to="/websites"
-            className="hidden md:inline-block text-xs font-mono text-[#f0ede6]/70 hover:text-[#d4a853] transition"
+            className="about-nav-link hidden md:inline-block text-xs font-mono text-[#f0ede6]/70 hover:text-[#d4a853] transition"
           >
             Websites &amp; 3D
           </Link>
           <Link
             to="/services"
-            className="hidden md:inline-block text-xs font-mono text-[#f0ede6]/70 hover:text-[#d4a853] transition"
+            className="about-nav-link hidden md:inline-block text-xs font-mono text-[#f0ede6]/70 hover:text-[#d4a853] transition"
           >
             AI Services
           </Link>
@@ -91,6 +93,7 @@ export default function AboutPage() {
             <MessageCircle className="w-3.5 h-3.5" />
             <span>Direct WhatsApp</span>
           </a>
+          <ThemeToggle />
         </div>
       </header>
 
@@ -297,43 +300,43 @@ export default function AboutPage() {
         </section>
 
         {/* Academic Synergy & Institutional Edge Banner */}
-        <section className="mb-20 rounded-2xl bg-gradient-to-br from-[#141414] to-[#0a0a0a] border border-[#d4a853]/25 p-6 sm:p-10">
+        <section className="synergy-section mb-20 rounded-2xl bg-gradient-to-br from-[#141414] to-[#0a0a0a] border border-[#d4a853]/25 p-6 sm:p-10 transition-colors duration-300">
           <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
-            <span className="text-xs font-mono tracking-widest text-[#d4a853] uppercase flex items-center gap-2">
+            <span className="synergy-kicker text-xs font-mono tracking-widest text-[#d4a853] uppercase flex items-center gap-2">
               <GraduationCap className="w-4 h-4 text-[#d4a853]" />
               THE BFGI DEON BATHINDA FOUNDATION
             </span>
-            <span className="text-xs font-mono text-[#f0ede6]/60">
+            <span className="synergy-sub text-xs font-mono text-[#f0ede6]/60">
               Baba Farid Group of Institutions (BFGI), Deon, Bathinda
             </span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight mb-4">
+          <h3 className="synergy-heading text-xl sm:text-2xl font-bold uppercase tracking-tight mb-4">
             Why Our Academic Setting Drives Industrial Real-World Impact
           </h3>
-          <p className="text-sm sm:text-base text-[#f0ede6]/75 leading-relaxed mb-8 max-w-4xl">
+          <p className="synergy-desc text-sm sm:text-base text-[#f0ede6]/75 leading-relaxed mb-8 max-w-4xl">
             Studying at Baba Farid Group of Institutions (BFGI), Deon, Bathinda places our engineering core at ground zero of Punjab’s agricultural and commercial heartland. Rather than developing isolated laboratory experiments or superficial software wrappers, we test directly alongside real farming clusters, retail showrooms, healthcare facilities, and educational institutes throughout Malwa and Northern India.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-xl bg-black/40 border border-white/5 flex flex-col gap-2">
-              <span className="text-xs font-mono text-[#d4a853]">01 / FIELD EMPIRICISM</span>
-              <h4 className="text-base font-bold uppercase text-white">Empirical Agricultural Science</h4>
-              <p className="text-xs text-[#c8c4bc] leading-relaxed">
+            <div className="synergy-card p-5 rounded-xl bg-black/40 border border-white/5 flex flex-col gap-2 transition-all duration-300">
+              <span className="synergy-num text-xs font-mono text-[#d4a853]">01 / FIELD EMPIRICISM</span>
+              <h4 className="synergy-card-title text-base font-bold uppercase text-white">Empirical Agricultural Science</h4>
+              <p className="synergy-card-desc text-xs text-[#c8c4bc] leading-relaxed">
                 Direct crop trial data, plant pathology verification, and milk testing mechanics informing machine learning algorithms.
               </p>
             </div>
-            <div className="p-5 rounded-xl bg-black/40 border border-white/5 flex flex-col gap-2">
-              <span className="text-xs font-mono text-[#d4a853]">02 / NEURAL COMPUTING</span>
-              <h4 className="text-base font-bold uppercase text-white">BCA (AI / ML) Rigor</h4>
-              <p className="text-xs text-[#c8c4bc] leading-relaxed">
+            <div className="synergy-card p-5 rounded-xl bg-black/40 border border-white/5 flex flex-col gap-2 transition-all duration-300">
+              <span className="synergy-num text-xs font-mono text-[#d4a853]">02 / NEURAL COMPUTING</span>
+              <h4 className="synergy-card-title text-base font-bold uppercase text-white">BCA (AI / ML) Rigor</h4>
+              <p className="synergy-card-desc text-xs text-[#c8c4bc] leading-relaxed">
                 Advanced data structures, neural network architectures, and full-stack API pipelines built from first computational principles.
               </p>
             </div>
-            <div className="p-5 rounded-xl bg-black/40 border border-white/5 flex flex-col gap-2">
-              <span className="text-xs font-mono text-[#d4a853]">03 / COMMERCIAL PACKAGING</span>
-              <h4 className="text-base font-bold uppercase text-white">Creative Storytelling</h4>
-              <p className="text-xs text-[#c8c4bc] leading-relaxed">
+            <div className="synergy-card p-5 rounded-xl bg-black/40 border border-white/5 flex flex-col gap-2 transition-all duration-300">
+              <span className="synergy-num text-xs font-mono text-[#d4a853]">03 / COMMERCIAL PACKAGING</span>
+              <h4 className="synergy-card-title text-base font-bold uppercase text-white">Creative Storytelling</h4>
+              <p className="synergy-card-desc text-xs text-[#c8c4bc] leading-relaxed">
                 Transforming complex engineering pipelines into intuitive visual stories, spatial Three.js sites, and high-converting commercial funnels.
               </p>
             </div>
@@ -341,64 +344,64 @@ export default function AboutPage() {
         </section>
 
         {/* Deployed Systems & Enterprise Proof */}
-        <section className="mb-20">
+        <section className="deployed-section mb-20 transition-colors duration-300">
           <div className="flex items-center justify-between flex-wrap gap-2 mb-8">
             <div>
-              <span className="text-xs font-mono tracking-widest text-[#d4a853] uppercase block mb-1">
+              <span className="deployed-kicker text-xs font-mono tracking-widest text-[#d4a853] uppercase block mb-1">
                 [ 02 // PROOF &amp; DEPLOYED SYSTEMS ]
               </span>
-              <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight">
+              <h3 className="deployed-heading text-2xl sm:text-3xl font-bold uppercase tracking-tight">
                 Architected &amp; Deployed Platforms
               </h3>
             </div>
-            <span className="text-xs font-mono text-[#d4a853] bg-[#d4a853]/10 border border-[#d4a853]/30 px-3 py-1.5 rounded-full">
+            <span className="deployed-badge text-xs font-mono text-[#d4a853] bg-[#d4a853]/10 border border-[#d4a853]/30 px-3 py-1.5 rounded-full">
               MSME UDYAM-PB-03-0079744
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#f0ede6]/10 flex flex-col gap-3">
-              <span className="text-xs font-mono text-[#d4a853]">01 / AGRITECH &amp; RURAL ERP</span>
-              <h4 className="text-lg font-bold uppercase text-white">FasalDoctor &amp; DoodhHisaab</h4>
-              <p className="text-xs text-[#c8c4bc] leading-relaxed">
+            <div className="deployed-card p-6 rounded-2xl bg-[#0e0e0e] border border-[#f0ede6]/10 flex flex-col gap-3 transition-all duration-300">
+              <span className="deployed-num text-xs font-mono text-[#d4a853]">01 / AGRITECH &amp; RURAL ERP</span>
+              <h4 className="deployed-card-title text-lg font-bold uppercase text-white">FasalDoctor &amp; DoodhHisaab</h4>
+              <p className="deployed-card-desc text-xs text-[#c8c4bc] leading-relaxed">
                 FasalDoctor detects plant pathology with offline on-device Edge ML. DoodhHisaab digitizes dairy procurement across rural collection centers with zero internet dependency.
               </p>
               <div className="mt-auto pt-3">
                 <Link
                   to="/case-studies/fasal-doctor"
-                  className="text-xs font-mono text-[#d4a853] hover:underline flex items-center gap-1 uppercase"
+                  className="deployed-link text-xs font-mono text-[#d4a853] hover:underline flex items-center gap-1 uppercase"
                 >
                   View Case Study <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#f0ede6]/10 flex flex-col gap-3">
-              <span className="text-xs font-mono text-[#d4a853]">02 / AI AUTOMATION &amp; CRM</span>
-              <h4 className="text-lg font-bold uppercase text-white">Meta Cloud &amp; Voice Agents</h4>
-              <p className="text-xs text-[#c8c4bc] leading-relaxed">
+            <div className="deployed-card p-6 rounded-2xl bg-[#0e0e0e] border border-[#f0ede6]/10 flex flex-col gap-3 transition-all duration-300">
+              <span className="deployed-num text-xs font-mono text-[#d4a853]">02 / AI AUTOMATION &amp; CRM</span>
+              <h4 className="deployed-card-title text-lg font-bold uppercase text-white">Meta Cloud &amp; Voice Agents</h4>
+              <p className="deployed-card-desc text-xs text-[#c8c4bc] leading-relaxed">
                 Direct Meta WhatsApp Cloud API webhooks with zero monthly reseller markup. Automated appointment booking, lead qualification, and multilingual voice telephony.
               </p>
               <div className="mt-auto pt-3">
                 <Link
                   to="/services"
-                  className="text-xs font-mono text-[#d4a853] hover:underline flex items-center gap-1 uppercase"
+                  className="deployed-link text-xs font-mono text-[#d4a853] hover:underline flex items-center gap-1 uppercase"
                 >
                   View 15+ Industry Hubs <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#f0ede6]/10 flex flex-col gap-3">
-              <span className="text-xs font-mono text-[#d4a853]">03 / SPATIAL WEB PLATFORMS</span>
-              <h4 className="text-lg font-bold uppercase text-white">₹5k–₹20k Flat-Rate Websites</h4>
-              <p className="text-xs text-[#c8c4bc] leading-relaxed">
+            <div className="deployed-card p-6 rounded-2xl bg-[#0e0e0e] border border-[#f0ede6]/10 flex flex-col gap-3 transition-all duration-300">
+              <span className="deployed-num text-xs font-mono text-[#d4a853]">03 / SPATIAL WEB PLATFORMS</span>
+              <h4 className="deployed-card-title text-lg font-bold uppercase text-white">₹5k–₹20k Flat-Rate Websites</h4>
+              <p className="deployed-card-desc text-xs text-[#c8c4bc] leading-relaxed">
                 Ultra-fast 120fps Three.js 3D spatial showcases, zero-CLS architecture, and high-conversion editorial typography built without cookie-cutter templates.
               </p>
               <div className="mt-auto pt-3">
                 <Link
                   to="/websites"
-                  className="text-xs font-mono text-[#d4a853] hover:underline flex items-center gap-1 uppercase"
+                  className="deployed-link text-xs font-mono text-[#d4a853] hover:underline flex items-center gap-1 uppercase"
                 >
                   Explore Live Websites <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
@@ -408,14 +411,14 @@ export default function AboutPage() {
         </section>
 
         {/* Commission & Direct Contact CTA */}
-        <section className="rounded-2xl bg-gradient-to-r from-[#121212] via-[#1a1712] to-[#121212] border border-[#d4a853]/35 p-8 sm:p-12 text-center flex flex-col items-center">
-          <span className="text-xs font-mono tracking-widest text-[#d4a853] uppercase mb-2">
+        <section className="commission-section rounded-2xl bg-gradient-to-r from-[#121212] via-[#1a1712] to-[#121212] border border-[#d4a853]/35 p-8 sm:p-12 text-center flex flex-col items-center transition-all duration-300">
+          <span className="commission-kicker text-xs font-mono tracking-widest text-[#d4a853] uppercase mb-2">
             DIRECT FOUNDER ACCESS
           </span>
-          <h3 className="text-2xl sm:text-4xl font-bold uppercase tracking-tight mb-4">
+          <h3 className="commission-heading text-2xl sm:text-4xl font-bold uppercase tracking-tight mb-4">
             Commission a Project Directly with the Founders
           </h3>
-          <p className="text-sm sm:text-base text-[#f0ede6]/75 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="commission-desc text-sm sm:text-base text-[#f0ede6]/75 max-w-2xl mx-auto leading-relaxed mb-8">
             Speak directly with Gurdharam Jeet Singh and Manveer Singh. No account managers, no agency markup, no outsourced code. Direct engineering clarity from intake to production deployment.
           </p>
 
@@ -424,20 +427,20 @@ export default function AboutPage() {
               href={whatsappDirectUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-mono tracking-wider uppercase bg-[#d4a853] text-black font-semibold hover:opacity-90 transition flex items-center gap-2"
+              className="commission-btn-primary px-6 py-3.5 rounded-full text-xs sm:text-sm font-mono tracking-wider uppercase bg-[#d4a853] text-black font-semibold hover:opacity-90 transition flex items-center gap-2"
             >
               <MessageCircle className="w-4 h-4" />
               <span>Direct WhatsApp Intake with Founders</span>
             </a>
             <a
               href="mailto:gurination1@gmail.com"
-              className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-mono tracking-wider uppercase bg-white/5 text-[#f0ede6] border border-white/15 hover:bg-white/10 transition"
+              className="commission-btn-secondary px-6 py-3.5 rounded-full text-xs sm:text-sm font-mono tracking-wider uppercase bg-white/5 text-[#f0ede6] border border-white/15 hover:bg-white/10 transition"
             >
               gurination1@gmail.com
             </a>
             <Link
               to="/websites"
-              className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-mono tracking-wider uppercase bg-[#5b8fd4]/10 text-[#79a8e8] border border-[#5b8fd4]/30 hover:bg-[#5b8fd4]/20 transition"
+              className="commission-btn-pricing px-6 py-3.5 rounded-full text-xs sm:text-sm font-mono tracking-wider uppercase bg-[#5b8fd4]/10 text-[#79a8e8] border border-[#5b8fd4]/30 hover:bg-[#5b8fd4]/20 transition"
             >
               View Pricing Tiers (₹5k–₹20k)
             </Link>

@@ -190,6 +190,7 @@ function Main() {
           <Route path="/blog/flutter-escpos-bluetooth-thermal-printer-offline" element={<BlogPostFlutterEscpos />} />
           <Route path="/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency" element={<BlogPostWebrtcAudioworklet />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/about.html" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
