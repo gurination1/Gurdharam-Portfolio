@@ -4,9 +4,9 @@ export const ThemeToggle: React.FC = () => {
   const [isDay, setIsDay] = useState<boolean>(false);
 
   useEffect(() => {
-    // Check initial state from localStorage or document
+    // Dark mode is default unless user explicitly chose 'day'
     const saved = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
-    const currentIsDay = saved === 'day' || document.documentElement.classList.contains('day');
+    const currentIsDay = saved === 'day';
     setIsDay(currentIsDay);
 
     if (currentIsDay) {

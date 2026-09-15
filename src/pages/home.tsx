@@ -881,10 +881,10 @@ function Hero() {
             We build <Mark>AI systems that eliminate 90% of manual work</Mark>, automate lead generation 24/7 on WhatsApp, and engineer luxury websites that convert traffic into enterprise revenue.
           </p>
           <div className="hero-actions">
-            <LiquidGlassMagneticButton variant="blue" size="sm" onClick={() => navigateTo('#work')}>
+            <LiquidGlassMagneticButton className="hero-btn-work" variant="blue" size="sm" onClick={() => navigateTo('#work')}>
               View Work <ArrowUpRight size={15} />
             </LiquidGlassMagneticButton>
-            <LiquidGlassMagneticButton variant="talk" size="sm" onClick={() => navigateTo('mailto:gurination1@gmail.com')}>
+            <LiquidGlassMagneticButton className="hero-btn-talk" variant="talk" size="sm" onClick={() => navigateTo('mailto:gurination1@gmail.com')}>
               Talk <MessageCircle size={15} />
             </LiquidGlassMagneticButton>
           </div>

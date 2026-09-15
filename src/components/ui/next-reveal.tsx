@@ -50,7 +50,7 @@ export default function FlipTextReveal({
 
       <style>{`
         .flip-container {
-          --bg-color: #09090b;
+          --bg-color: transparent;
           --text-color: #ffffff;
           --btn-bg: #27272a;
           --btn-text: #ffffff;
@@ -60,16 +60,16 @@ export default function FlipTextReveal({
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: clamp(2rem, 7vw, 4rem) clamp(1rem, 4vw, 2rem);
-          background-color: var(--bg-color);
+          padding: clamp(1rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2rem);
+          background-color: transparent;
           color: var(--text-color);
-          border-radius: 16px;
           overflow: hidden;
-          min-height: 320px;
           width: 100%;
-          transition: background-color 0.4s ease, color 0.4s ease;
           perspective: 800px;
-          box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.22);
+        }
+
+        html.day .flip-container {
+          --text-color: #09090b;
         }
 
         .flip-container .title {
