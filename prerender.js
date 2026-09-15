@@ -266,6 +266,48 @@ const routes = [
     `
   },
   {
+    path: '/terms',
+    title: 'Terms of Service & Independent Contractor Agreement | Gurdharam AI Engineering',
+    description: 'Commercial Master Services Agreement (MSA), client deliverables, independent contractor work-for-hire rules, product-wise sales commissions, and 24-month non-circumvention terms.',
+    canonical: 'https://www.gurdharam.com/terms',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.gurdharam.com/terms#webpage",
+          "url": "https://www.gurdharam.com/terms",
+          "name": "Terms of Service, MSA & Independent Contractor Policy",
+          "description": "Standard commercial terms, client deliverables, independent contractor rules, product-wise commissions, and 24-month non-circumvention covenants."
+        }
+      ]
+    },
+    html: `
+      <main>
+        <header>
+          <h1>Terms of Service, Master Services Agreement & Recruitment Policy</h1>
+          <p>Commercial Legal Standards (US Delaware Standard & Indian IT/Contract Acts) • Effective September 15, 2026</p>
+        </header>
+        <section id="client-terms">
+          <h2>1. Client Master Services Agreement (MSA)</h2>
+          <p>All software development, AI automation, and 3D WebGL web engineering are governed by agreed SOW deliverables. 50% upfront engineering deposit, 50% upon completed staging QA. 100% full source code ownership transferred to client upon cleared final payment.</p>
+        </section>
+        <section id="contractor-terms">
+          <h2>2. Independent Contractor & Developer Rules</h2>
+          <p>Developers and technical specialists operate strictly as Independent Contractors (Form 1099-NEC / Indian Contract Act). 100% Work Made for Hire IP assignment under 17 U.S.C. § 101 and Section 17 Indian Copyright Act 1957.</p>
+        </section>
+        <section id="commission-policy">
+          <h2>3. Sales Recruitment & Product-Wise Commission Schedule</h2>
+          <p>Transparent product commissions: ₹1,000 / $20 USD on Starter Business (₹5k), ₹1,500 / $30 USD on Growth SEO (₹7k), ₹2,500 / $50 USD on 2D+3D Interactive (₹12k), ₹4,000 / $100 USD on Flagship (₹20k), and 15-20% on AI Enterprise deals. Disbursed within 5-7 business days of cleared client payment.</p>
+        </section>
+        <section id="non-circumvention">
+          <h2>4. 24-Month Strict Non-Circumvention Covenant</h2>
+          <p>Contractors, developers, and sales affiliates agree not to solicit or provide services directly to Studio clients for 24 months post-termination. Violations subject to injunctive relief and 100% liquidated damages.</p>
+        </section>
+      </main>
+    `
+  },
+  {
     path: '/websites',
     title: 'Website Rates & Showcase | Gurdharam',
     description: 'Transparent website packages (₹5k Basic, ₹7k SEO, ₹12k Interactive 3D, ₹20k Flagship Spatial) and live production client showcase with real PC views.',

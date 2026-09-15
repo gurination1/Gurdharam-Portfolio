@@ -33,8 +33,8 @@ const SPRING_TRANSITION_CONFIG: Transition = {
 };
 
 const variants: Variants = {
-  hidden: { filter: "blur(10px)", opacity: 0 },
-  visible: { filter: "blur(0px)", opacity: 1 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 
 const ContainerScrollContext = React.createContext<ContainerScrollContextValue | undefined>(undefined);
@@ -148,9 +148,9 @@ export const ContainerInset = React.forwardRef<HTMLDivElement, ContainerInsetPro
     {
       className,
       style,
-      insetYRange = [45, 0],
-      insetXRange = [45, 0],
-      roundednessRange = [1000, 16],
+      insetYRange = [15, 0],
+      insetXRange = [10, 0],
+      roundednessRange = [28, 16],
       ...props
     },
     ref,

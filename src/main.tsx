@@ -56,6 +56,7 @@ const BlogPostMetaWebhook = lazy(() => import('./pages/blog-post-meta-webhook'))
 const BlogPostFlutterEscpos = lazy(() => import('./pages/blog-post-flutter-escpos'));
 const BlogPostWebrtcAudioworklet = lazy(() => import('./pages/blog-post-webrtc-audioworklet'));
 const AboutPage = lazy(() => import('./pages/about'));
+const TermsPage = lazy(() => import('./pages/terms'));
 const NotFoundPage = lazy(() => import('./pages/not-found'));
 
 function CanonicalUpdater() {
@@ -143,6 +144,7 @@ function Main() {
           <Route path="/services/indic-ai-voice-agent-developer" element={<IndicAIVoiceAgentDeveloper />} />
           <Route path="/services/ai-automation-agency-india" element={<AIAutomationAgencyIndia />} />
           <Route path="/websites" element={<WebsitesShowcase />} />
+          <Route path="/websites.html" element={<WebsitesShowcase />} />
           <Route path="/showcase" element={<WebsitesShowcase />} />
           <Route path="/websites-portfolio" element={<WebsitesShowcase />} />
           
@@ -191,6 +193,8 @@ function Main() {
           <Route path="/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency" element={<BlogPostWebrtcAudioworklet />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/about.html" element={<AboutPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/terms.html" element={<TermsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

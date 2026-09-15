@@ -51,6 +51,7 @@ import BlogPostMetaWebhook from './pages/blog-post-meta-webhook';
 import BlogPostFlutterEscpos from './pages/blog-post-flutter-escpos';
 import BlogPostWebrtcAudioworklet from './pages/blog-post-webrtc-audioworklet';
 import AboutPage from './pages/about';
+import TermsPage from './pages/terms';
 import NotFoundPage from './pages/not-found';
 export function render(url: string) {
   try {
@@ -59,6 +60,7 @@ export function render(url: string) {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/terms" element={<TermsPage />} />
           <Route path="/services" element={<ServicesHubPage />} />
           <Route path="/services/web-development" element={<WebDevelopment />} />
           <Route path="/services/ai-automation" element={<AiAutomation />} />
@@ -75,6 +77,7 @@ export function render(url: string) {
           <Route path="/services/indic-ai-voice-agent-developer" element={<IndicAIVoiceAgentDeveloper />} />
           <Route path="/services/ai-automation-agency-india" element={<AIAutomationAgencyIndia />} />
           <Route path="/websites" element={<WebsitesShowcase />} />
+          <Route path="/websites.html" element={<WebsitesShowcase />} />
           <Route path="/showcase" element={<WebsitesShowcase />} />
           <Route path="/websites-portfolio" element={<WebsitesShowcase />} />
           

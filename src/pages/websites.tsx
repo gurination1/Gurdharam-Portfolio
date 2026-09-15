@@ -26,6 +26,7 @@ interface PricingTier {
   id: string;
   name: string;
   price: string;
+  priceUsd: string;
   originalPrice?: string;
   tagline: string;
   badge?: string;
@@ -47,7 +48,8 @@ const PRICING_TIERS: PricingTier[] = [
     id: 'basic-5k',
     name: 'Starter Business',
     price: '₹5,000',
-    originalPrice: '₹8,000',
+    priceUsd: '$100 USD',
+    originalPrice: '₹8,000 / $150 USD',
     tagline: 'Clean, high-speed single-page web presence',
     highlightPill: '⚡ 48-Hour Rapid Launch',
     bestFor: 'Freelancers, interior decorators, consultants, or local vendors who share their portfolio directly on WhatsApp & Instagram.',
@@ -65,7 +67,7 @@ const PRICING_TIERS: PricingTier[] = [
     exampleName: 'Kirat Interior (Core Layout)',
     exampleUrl: 'https://www.kiratinterior.com/',
     exampleNote: 'Baseline luxury catalog & inquiry funnel (Without GSC fast-indexing or Google Local schema)',
-    whatsappMessage: "Hi Gurdharam, I want to book the ₹5,000 Starter Business Website package.",
+    whatsappMessage: "Hi Gurdharam, I want to book the ₹5,000 / $100 USD Starter Business Website package.",
     accentBorder: 'border-white/15 hover:border-white/40',
     accentBg: 'bg-[#111111]/90',
   },
@@ -73,7 +75,8 @@ const PRICING_TIERS: PricingTier[] = [
     id: 'basic-plus-7k',
     name: 'Growth Business + SEO',
     price: '₹7,000',
-    originalPrice: '₹12,000',
+    priceUsd: '$150 USD',
+    originalPrice: '₹12,000 / $220 USD',
     tagline: 'High-ranking local flagship engineered for Google Search',
     badge: 'MOST POPULAR',
     badgeColor: 'bg-[#d4a853] text-[#080808]',
@@ -81,7 +84,7 @@ const PRICING_TIERS: PricingTier[] = [
     bestFor: 'Showrooms, furniture studios, clinics, architects, & stores that want actual paying customers finding them first on Google.',
     timeline: '3–5 Days Delivery',
     features: [
-      { title: 'Everything in Starter Business (₹5,000)', included: true },
+      { title: 'Everything in Starter Business (₹5,000 / $100 USD)', included: true },
       { title: 'Google Search Console (GSC) API Instant Indexing', included: true, detail: 'Pushed to Google index in hours' },
       { title: '100% Google LocalBusiness Schema & Geo Coordinates', included: true, detail: 'Rich local search snippets' },
       { title: 'Local Search Keyword Optimization & Meta Tags', included: true, detail: 'Target your city & region' },
@@ -93,7 +96,7 @@ const PRICING_TIERS: PricingTier[] = [
     exampleName: 'Kirat Interior (Live Production Flagship)',
     exampleUrl: 'https://www.kiratinterior.com/',
     exampleNote: 'Top-ranked in Bathinda for bespoke furniture via LocalBusiness schema & high-conversion WhatsApp funnel',
-    whatsappMessage: "Hi Gurdharam, I want to book the ₹7,000 Growth Business + SEO package with Google indexing.",
+    whatsappMessage: "Hi Gurdharam, I want to book the ₹7,000 / $150 USD Growth Business + SEO package with Google indexing.",
     accentBorder: 'border-[#d4a853] shadow-[0_0_40px_rgba(212,168,83,0.18)]',
     accentBg: 'bg-[#15130f]/95',
   },
@@ -101,7 +104,8 @@ const PRICING_TIERS: PricingTier[] = [
     id: 'interactive-12k',
     name: '2D + 3D Interactive',
     price: '₹12,000',
-    originalPrice: '₹18,000',
+    priceUsd: '$250 USD',
+    originalPrice: '₹18,000 / $350 USD',
     tagline: 'Three.js WebGL fog atmosphere, circular arc kinematics & fluid 120Hz motion',
     badge: 'HIGH TECH',
     badgeColor: 'bg-[#38bdf8] text-[#080808]',
@@ -109,7 +113,7 @@ const PRICING_TIERS: PricingTier[] = [
     bestFor: 'Healthtech platforms, clinical diagnostics, modern agencies, and innovative brands demanding interactive WebGL depth and kinetic choreography over static templates.',
     timeline: '5–7 Days Delivery',
     features: [
-      { title: 'Everything in Growth + SEO (₹7,000)', included: true },
+      { title: 'Everything in Growth + SEO (₹7,000 / $150 USD)', included: true },
       { title: 'Three.js / WebGL Fog Atmosphere & 3D Interactive Canvas', included: true, detail: 'Procedural GPU shader render' },
       { title: 'Interactive SVG Circular Arc Kinematics', included: true, detail: 'Rotational timeline choreography' },
       { title: 'Lenis Hardware-Accelerated Smooth Scroll', included: true, detail: 'Ultra-fluid 60–120Hz physics' },
@@ -122,7 +126,7 @@ const PRICING_TIERS: PricingTier[] = [
     exampleName: 'BioPrac (Live Production Flagship)',
     exampleUrl: 'https://gurination1.github.io/bioprac/',
     exampleNote: 'Live clinical health platform featuring Three.js WebGL fog atmosphere, SVG circular arc kinematics & 500+ biomarker telemetry',
-    whatsappMessage: "Hi Gurdharam, I want to commission the ₹12,000 2D + 3D Interactive Website package like BioPrac.",
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹12,000 / $250 USD 2D + 3D Interactive Website package like BioPrac.",
     accentBorder: 'border-[#38bdf8]/50 hover:border-[#38bdf8]/80 shadow-[0_0_30px_rgba(56,189,248,0.12)]',
     accentBg: 'bg-[#0b161b]/90',
   },
@@ -130,7 +134,8 @@ const PRICING_TIERS: PricingTier[] = [
     id: 'flagship-20k',
     name: 'Ultra 3D Flagship',
     price: '₹20,000',
-    originalPrice: '₹35,000',
+    priceUsd: '$500 USD',
+    originalPrice: '₹35,000 / $700 USD',
     tagline: 'Awwwards-grade cinematic 3D spatial experience',
     badge: 'STUDIO FLAGSHIP',
     badgeColor: 'bg-gradient-to-r from-[#d4a853] to-[#e6c07b] text-[#080808]',
@@ -150,7 +155,7 @@ const PRICING_TIERS: PricingTier[] = [
     exampleName: 'Dream Heights & Gurdharam.com',
     exampleUrl: 'https://dreamheights-source.vercel.app/',
     exampleNote: 'Luxury gated residences on Ring Road Bathinda (2&3 BHK, saltwater pool, Day/Night engine) & Framer spatial flagship',
-    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 Ultra 3D Spatial Flagship Website like Dream Heights.",
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 / $500 USD Ultra 3D Spatial Flagship Website like Dream Heights.",
     accentBorder: 'border-[#d4a853] shadow-[0_0_45px_rgba(212,168,83,0.25)]',
     accentBg: 'bg-[#18140c]/95',
   },
@@ -511,32 +516,32 @@ export default function WebsitesShowcase() {
                 onClick={() => scrollToTier('basic-5k')}
                 className="cursor-pointer rounded-lg border border-white/10 bg-white/5 p-2.5 text-left hover:border-[#d4a853] hover:text-[#d4a853] transition-all"
               >
-                <div className="text-white font-bold">₹5,000 Starter</div>
-                <div className="text-[0.65rem] text-[#9a958c]">Digital card & catalog</div>
+                <div className="text-white font-bold">₹5,000 / $100</div>
+                <div className="text-[0.65rem] text-[#9a958c]">Starter Digital Card</div>
               </button>
               <button
                 onClick={() => scrollToTier('basic-plus-7k')}
                 className="cursor-pointer rounded-lg border border-[#d4a853] bg-[#d4a853]/15 p-2.5 text-left text-[#d4a853] transition-all shadow-[0_0_15px_rgba(212,168,83,0.15)]"
               >
                 <div className="font-bold flex items-center justify-between">
-                  <span>₹7,000 SEO</span>
+                  <span>₹7,000 / $150</span>
                   <Flame className="h-3 w-3 text-[#d4a853]" />
                 </div>
-                <div className="text-[0.65rem] text-[#d4a853]/80">Google search leads</div>
+                <div className="text-[0.65rem] text-[#d4a853]/80">SEO &amp; Inbound Leads</div>
               </button>
               <button
                 onClick={() => scrollToTier('interactive-12k')}
                 className="cursor-pointer rounded-lg border border-white/10 bg-white/5 p-2.5 text-left hover:border-[#38bdf8] hover:text-[#38bdf8] transition-all"
               >
-                <div className="text-white font-bold">₹12,000 3D</div>
-                <div className="text-[0.65rem] text-[#9a958c]">Interactive GLTF orbit</div>
+                <div className="text-white font-bold">₹12,000 / $250</div>
+                <div className="text-[0.65rem] text-[#9a958c]">Interactive 3D WebGL</div>
               </button>
               <button
                 onClick={() => scrollToTier('flagship-20k')}
                 className="cursor-pointer rounded-lg border border-white/10 bg-white/5 p-2.5 text-left hover:border-[#d4a853] hover:text-[#d4a853] transition-all"
               >
-                <div className="text-white font-bold">₹20,000 Flagship</div>
-                <div className="text-[0.65rem] text-[#9a958c]">120 FPS spatial twin</div>
+                <div className="text-white font-bold">₹20,000 / $500</div>
+                <div className="text-[0.65rem] text-[#9a958c]">120 FPS Spatial Twin</div>
               </button>
             </div>
           </div>
@@ -545,7 +550,7 @@ export default function WebsitesShowcase() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 font-mono text-xs text-[#f0ede6]">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
               <Zap className="h-3.5 w-3.5 text-[#d4a853]" />
-              <span>₹5k – ₹20k Flat Pricing</span>
+              <span>₹5k–₹20k ($100–$500) Flat Pricing</span>
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
               <Check className="h-3.5 w-3.5 text-[#25D366]" />
@@ -615,16 +620,19 @@ export default function WebsitesShowcase() {
 
                   {/* Price Block */}
                   <div className="mb-6 border-b border-white/10 pb-5">
-                    <div className="flex items-baseline gap-2">
+                    <div className="flex flex-wrap items-baseline gap-2">
                       <span className="font-['Syne'] text-3xl font-extrabold text-white">
                         {tier.price}
+                      </span>
+                      <span className="font-['Syne'] text-xl font-bold text-[#d4a853]">
+                        / {tier.priceUsd}
                       </span>
                       {tier.originalPrice && (
                         <span className="font-mono text-xs line-through text-[#9a958c]">
                           {tier.originalPrice}
                         </span>
                       )}
-                      <span className="font-mono text-xs text-[#d4a853]">/ flat</span>
+                      <span className="font-mono text-xs text-[#9a958c]">/ flat</span>
                     </div>
                     <div className="mt-1.5 flex items-center gap-1.5 font-mono text-[0.7rem] text-[#25D366]">
                       <Clock className="h-3 w-3" />
@@ -695,7 +703,7 @@ export default function WebsitesShowcase() {
                   }`}
                 >
                   <MessageCircle className="h-3.5 w-3.5" />
-                  <span>ORDER {tier.price} PACKAGE</span>
+                  <span>ORDER {tier.price} / {tier.priceUsd} PACKAGE</span>
                 </a>
 
                 {/* Deep Tier Specs Link */}
@@ -739,10 +747,10 @@ export default function WebsitesShowcase() {
               <thead>
                 <tr className="border-b border-white/10 bg-white/[0.02] font-mono">
                   <th className="p-4 text-[#9a958c]">FEATURE / DELIVERABLE</th>
-                  <th className="p-4 text-center text-white">₹5,000<br/><span className="text-[#9a958c] text-[0.65rem]">BASIC</span></th>
-                  <th className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5">₹7,000<br/><span className="text-[0.65rem]">BASIC+ SEO</span></th>
-                  <th className="p-4 text-center text-[#38bdf8]">₹12,000<br/><span className="text-[#9a958c] text-[0.65rem]">2D+3D</span></th>
-                  <th className="p-4 text-center text-[#d4a853]">₹20,000<br/><span className="text-[#9a958c] text-[0.65rem]">FLAGSHIP</span></th>
+                  <th className="p-4 text-center text-white">₹5,000 / $100<br/><span className="text-[#9a958c] text-[0.65rem]">BASIC</span></th>
+                  <th className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5">₹7,000 / $150<br/><span className="text-[0.65rem]">BASIC+ SEO</span></th>
+                  <th className="p-4 text-center text-[#38bdf8]">₹12,000 / $250<br/><span className="text-[#9a958c] text-[0.65rem]">2D+3D</span></th>
+                  <th className="p-4 text-center text-[#d4a853]">₹20,000 / $500<br/><span className="text-[#9a958c] text-[0.65rem]">FLAGSHIP</span></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5 font-mono text-[0.75rem]">
@@ -851,7 +859,7 @@ export default function WebsitesShowcase() {
                     : 'border border-white/10 bg-white/5 text-[#9a958c] hover:border-white/20 hover:text-white'
                 }`}
               >
-                LOCAL BUSINESS (₹5K–₹7K)
+                LOCAL BUSINESS (₹5K–₹7K / $100–$150)
               </button>
               <button
                 onClick={() => setActiveShowcaseFilter('spatial-3d')}
@@ -861,7 +869,7 @@ export default function WebsitesShowcase() {
                     : 'border border-white/10 bg-white/5 text-[#9a958c] hover:border-white/20 hover:text-white'
                 }`}
               >
-                3D SPATIAL (₹12K–₹20K)
+                3D SPATIAL (₹12K–₹20K / $250–$500)
               </button>
               <button
                 onClick={() => setActiveShowcaseFilter('apps')}

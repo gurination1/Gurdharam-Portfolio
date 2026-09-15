@@ -1149,13 +1149,7 @@ function AIBotShowcase() {
   return (
     <section className="ai-bot-section" id="ai-bots" data-toc data-toc-title="AI Bots" data-toc-depth="2">
       <ContainerScroll className="ai-scroll">
-        <ContainerSticky
-          className="ai-sticky"
-          style={{
-            background:
-              'radial-gradient(42% 42% at 50% 16%, rgba(91, 143, 212, 0.3) 0%, rgba(8, 15, 39, 0.86) 48%, #050505 100%)',
-          }}
-        >
+        <ContainerSticky className="ai-sticky">
           <AnimatedTextPath
             className="ai-orbit"
             text="AUTONOMOUS AI BOTS - LOCAL LLM PIPELINES - TOOL CALLS - VIDEO AGENTS - "
@@ -1191,9 +1185,9 @@ function AIBotShowcase() {
                 ['03', 'Sleek App-like Web Development: Progressive Web Apps (PWAs) with hardware-accelerated animations and offline-first database synchronization.'],
                 ['04', 'Faceless Media & Marketing Automation: Automated video creation pipelines (Rumble, YouTube Shorts, Reels) using FFmpeg to scale traffic cheaper than traditional ads.'],
               ].map(([no, body]) => (
-                <div key={no} style={{ borderLeft: '1px solid rgba(255, 255, 255, 0.08)', paddingLeft: '1rem' }}>
-                  <span style={{ display: 'block', color: 'var(--accent-gold)', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', marginBottom: '0.25rem' }}>{no}</span>
-                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', lineHeight: '1.4', margin: 0 }}>{body}</p>
+                <div key={no} className="ai-point-card">
+                  <span className="ai-point-no">{no}</span>
+                  <p className="ai-point-text">{body}</p>
                 </div>
               ))}
             </div>

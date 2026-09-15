@@ -1586,11 +1586,18 @@ html.day .ai-bot-section {
 }
 
 html.day .ai-sticky {
-  background:
-    radial-gradient(42% 42% at 50% 16%, rgba(175, 109, 255, 0.22) 0%, rgba(255, 255, 255, 0.88) 55%, rgba(253, 247, 244, 0.98) 100%) !important;
-  color: #141312 !important;
+  background: transparent !important;
+  background-image: none !important;
+  color: #09090b !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+html.day .ai-video-frame {
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 20px 60px -15px rgba(80, 50, 100, 0.1) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: blur(12px) !important;
 }
 
 html.day .ai-intro h2 {
@@ -1617,25 +1624,34 @@ html.day .ai-flip .char,
 html.day .ai-flip {
   color: #09090b !important;
   text-shadow: none !important;
+  filter: none !important;
 }
 
+html.day .ai-point-card,
 html.day .ai-points > div {
-  border-left-color: rgba(0, 0, 0, 0.14) !important;
+  border-left-color: rgba(0, 0, 0, 0.16) !important;
 }
 
+html.day .ai-point-text,
 html.day .ai-points p {
-  color: #475569 !important;
+  color: #334155 !important;
 }
 
+html.day .ai-point-no,
 html.day .ai-points span {
   color: #b45309 !important;
   font-weight: 700 !important;
 }
 
 html.day .ai-orbit text,
-html.day .ai-orbit path,
 html.day .ai-orbit textPath {
-  fill: #64748b !important;
+  fill: #475569 !important;
+  color: #475569 !important;
+}
+
+html.day .ai-orbit path {
+  fill: none !important;
+  stroke: none !important;
 }
 
 html.day .ai-hero-button {
@@ -1643,6 +1659,37 @@ html.day .ai-hero-button {
   color: #ffffff !important;
   border: 1px solid #18181b !important;
   box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ─── Daylight Harmonization: FAQs ─── */
+html.day #faq,
+html.day section#faq {
+  background: transparent !important;
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+html.day #faq h2 {
+  color: #09090b !important;
+}
+html.day #faq p {
+  color: #475569 !important;
+}
+html.day #faq .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05) !important;
+}
+html.day #faq span.text-slate-300 {
+  color: #09090b !important;
+}
+html.day #faq .border-b {
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+html.day #faq button,
+html.day #faq [data-radix-collection-item] span {
+  color: #09090b !important;
+}
+html.day #faq .text-slate-300 {
+  color: #334155 !important;
 }
 
 /* ─── Daylight Harmonization: FAQ Section ─── */
