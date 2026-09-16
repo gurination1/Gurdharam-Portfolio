@@ -267,8 +267,8 @@ const routes = [
   },
   {
     path: '/terms',
-    title: 'Terms of Service & Independent Contractor Agreement | Gurdharam AI Engineering',
-    description: 'Commercial Master Services Agreement (MSA), client deliverables, independent contractor work-for-hire rules, product-wise sales commissions, and 24-month non-circumvention terms.',
+    title: 'Terms of Service & Contractor Policy | Gurdharam',
+    description: 'Commercial MSA terms, deliverables, work-for-hire IP rules, sales commission schedules, and 24-month non-circumvention terms by Gurdharam AI.',
     canonical: 'https://www.gurdharam.com/terms',
     jsonld: {
       "@context": "https://schema.org",
@@ -277,8 +277,10 @@ const routes = [
           "@type": "WebPage",
           "@id": "https://www.gurdharam.com/terms#webpage",
           "url": "https://www.gurdharam.com/terms",
-          "name": "Terms of Service, MSA & Independent Contractor Policy",
-          "description": "Standard commercial terms, client deliverables, independent contractor rules, product-wise commissions, and 24-month non-circumvention covenants."
+          "name": "Terms of Service & Contractor Policy | Gurdharam",
+          "description": "Commercial MSA terms, deliverables, work-for-hire IP rules, sales commission schedules, and 24-month non-circumvention terms by Gurdharam AI.",
+          "isPartOf": { "@id": "https://www.gurdharam.com/#website" },
+          "about": { "@id": "https://www.gurdharam.com/#organization" }
         }
       ]
     },
@@ -1011,7 +1013,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/blog/sarvam-indic-voice-ai-telephony-agent',
     title: 'Sub-300ms Indic Voice AI Telephony | Gurdharam',
-    description: 'Engineering breakdown of full-duplex Indic voice callers using Pipecat, Sarvam AI, Exotel WebSockets, and Silero VAD over 8kHz PSTN lines.',
+    description: 'Engineering breakdown of full-duplex Indic voice callers using Pipecat, Sarvam AI, Exotel WebSockets, and Silero VAD over 8kHz PSTN phone lines.',
     canonical: 'https://www.gurdharam.com/blog/sarvam-indic-voice-ai-telephony-agent',
     jsonld: {
       "@context": "https://schema.org",
@@ -1847,7 +1849,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/services/website-design-company-chandigarh',
     title: 'Website Design Company Chandigarh | Gurdharam',
-    description: 'Top Chandigarh web design agency. Custom React, Next.js, and 3D WebGL sites for brands, clinics, & enterprises in Chandigarh & Tricity.',
+    description: 'Top Chandigarh web design studio. Custom React, Next.js, and 3D WebGL sites for ambitious brands, clinics, and enterprises in Chandigarh Tricity.',
     canonical: 'https://www.gurdharam.com/services/website-design-company-chandigarh',
     jsonld: {
       "@context": "https://schema.org",
@@ -2427,7 +2429,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/case-studies/fasal-doctor',
     title: 'Fasal Doctor Offline Crop AI Case Study',
-    description: 'Detailed case study of Fasal Doctor, an offline agritech app using TensorFlow Lite and MobileNetV2 for crop disease detection in Punjab.',
+    description: 'Comprehensive case study of Fasal Doctor, an offline agritech app using TensorFlow Lite and MobileNetV2 for on-device crop disease diagnosis in Punjab.',
     canonical: 'https://www.gurdharam.com/case-studies/fasal-doctor',
     jsonld: {
       "@context": "https://schema.org",
@@ -3156,7 +3158,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/blog/multimodal-judge-ai-video-quality-gate',
     title: 'Multimodal Judge AI Quality Gates | Gurdharam',
-    description: 'Engineering guide on building automated video quality gates using Gemini Multimodal Judge AI, FFmpeg blackdetect, and dynamic audio ducking on GitHub Actions.',
+    description: 'Guide on automated video quality gates using Gemini Multimodal Judge AI, FFmpeg blackdetect, and dynamic audio ducking on GitHub Actions runners.',
     canonical: 'https://www.gurdharam.com/blog/multimodal-judge-ai-video-quality-gate',
     jsonld: {
       "@context": "https://schema.org",
@@ -3195,7 +3197,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/blog/meta-whatsapp-cloud-api-webhook-architecture',
     title: 'Meta WhatsApp Cloud API Webhook | Gurdharam',
-    description: 'Complete architectural guide to self-hosting Meta WhatsApp Cloud API webhooks with HMAC-SHA256 signature verification, Redis deduplication, and zero SaaS fees.',
+    description: 'Architectural guide to self-hosting Meta WhatsApp Cloud API webhooks with HMAC-SHA256 signature verification, Redis deduplication, and zero SaaS fees.',
     canonical: 'https://www.gurdharam.com/blog/meta-whatsapp-cloud-api-webhook-architecture',
     jsonld: {
       "@context": "https://schema.org",
@@ -3234,7 +3236,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/blog/flutter-escpos-bluetooth-thermal-printer-offline',
     title: 'Offline Flutter ESC/POS Thermal Print | Gurdharam',
-    description: 'Engineering guide on integrating offline Flutter apps with 58mm/80mm Bluetooth ESC/POS thermal printers and embedded SQLite WAL mode in rural field conditions.',
+    description: 'Engineering guide on integrating offline Flutter apps with Bluetooth ESC/POS thermal printers and embedded SQLite WAL mode in rural field conditions.',
     canonical: 'https://www.gurdharam.com/blog/flutter-escpos-bluetooth-thermal-printer-offline',
     jsonld: {
       "@context": "https://schema.org",
@@ -3273,7 +3275,7 @@ app.post('/api/webhook', async (req, res) => {
   {
     path: '/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency',
     title: 'Sub-300ms WebRTC AudioWorklet Voice AI | Gurdharam',
-    description: 'Technical blueprint for sub-300ms conversational Voice AI using Web Audio API AudioWorklet, 16kHz PCM streaming, client-side Silero ONNX VAD, and Indic TTS.',
+    description: 'Technical blueprint for sub-300ms Voice AI using Web Audio API AudioWorklet, 16kHz PCM streaming, client-side Silero ONNX VAD, and Indic TTS synthesis.',
     canonical: 'https://www.gurdharam.com/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency',
     jsonld: {
       "@context": "https://schema.org",
@@ -3612,6 +3614,7 @@ const masterFooter = `
                 <li><a href="/blog/high-ticket-webgl-3d-spatial-digital-twin">WebGL 3D Spatial Digital Twin</a></li>
                 <li><a href="/blog/offline-ai-crop-disease-scanner-flutter">Offline Crop AI Scanner Article</a></li>
                 <li><a href="/blog/whatsapp-ai-agents-healthcare-india">WhatsApp AI Booking Bots Article</a></li>
+                <li><a href="/terms">Terms &amp; Contractor Policy</a></li>
               </ul>
             </div>
             <div>

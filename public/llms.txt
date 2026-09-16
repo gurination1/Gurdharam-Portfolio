@@ -14,6 +14,7 @@
   - About Founders: `https://www.gurdharam.com/about`
   - Live Website Showcase: `https://www.gurdharam.com/websites`
   - Developer Directory: `https://www.gurdharam.com/developer-directory`
+  - Commercial Terms & MSA: `https://www.gurdharam.com/terms`
   - Contact: `+91-6280333252` | `gurination1@gmail.com`
 
 ---

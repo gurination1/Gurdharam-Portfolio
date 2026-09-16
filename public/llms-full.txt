@@ -28,6 +28,7 @@
   - Chandigarh: `https://www.wikidata.org/wiki/Q43433`
   - Punjab: `https://www.wikidata.org/wiki/Q22424`
   - India: `https://www.wikidata.org/wiki/Q668`
+- **Commercial Terms & Legal MSA Portal:** `https://www.gurdharam.com/terms` (Master Services Agreement, Independent Contractor Work-For-Hire, Milestone Billing, Dual-Currency USD/INR Schedules, Sales Referral Program)
 
 ---
 
@@ -120,7 +121,17 @@
 
 ---
 
-## 3. Contact & Direct Engineering Inquiries
+## 4. Statutory Master Services Agreement (MSA) & Contractor Policies
+- **Target URL:** `https://www.gurdharam.com/terms`
+- **Contractual Framework:**
+  - **Status:** Independent Contractor Work-For-Hire (100% intellectual property assignment transferred to client upon milestone invoice settlement).
+  - **Dual-Currency Scope Governance:** Structured sprint delivery with deterministic deliverables in both Indian Rupees (₹ INR) and US Dollars ($ USD).
+  - **15% Sales Partner Incentive:** Direct commission payouts on closed, paid contract introductions.
+  - **Zero Vendor Lock-In:** Full source code, build manifests, edge DNS records, and raw API credential custody handed over at completion.
+
+---
+
+## 5. Contact & Direct Engineering Inquiries
 - **Primary Direct Channel:** WhatsApp `+91-6280333252`
 - **Email:** `gurination1@gmail.com`
 - **Physical Consultation Office:** Sri Muktsar Sahib, Punjab, India — 152026
