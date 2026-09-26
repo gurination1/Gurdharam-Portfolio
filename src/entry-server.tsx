@@ -44,6 +44,7 @@ import CaseStudyKiratInterior from './pages/case-study-kirat-interior';
 import CaseStudyBioPrac from './pages/case-study-bioprac';
 import CaseStudyDreamHeights from './pages/case-study-dreamheights';
 import CaseStudyNeovrit from './pages/case-study-neovrit';
+import CaseStudyBranders from './pages/case-study-branders';
 import BlogPostAffordableWebsite from './pages/blog-post-affordable-website';
 import BlogPostThreeJSOptimization from './pages/blog-post-threejs-optimization';
 import BlogPostMultimodalJudge from './pages/blog-post-multimodal-judge';
@@ -109,6 +110,7 @@ export function render(url: string) {
           <Route path="/case-studies/bioprac" element={<CaseStudyBioPrac />} />
           <Route path="/case-studies/dreamheights" element={<CaseStudyDreamHeights />} />
           <Route path="/case-studies/neovrit" element={<CaseStudyNeovrit />} />
+          <Route path="/case-studies/branders" element={<CaseStudyBranders />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/dpdp-act-compliant-air-gapped-llm-legal-tech" element={<BlogPostDPDPLegal />} />
           <Route path="/blog/ai-college-admission-bot-punjab" element={<BlogPostAICollege />} />

@@ -135,6 +135,10 @@
       "destination": "/terms.html"
     },
     {
+      "source": "/case-studies/branders",
+      "destination": "/case-studies/branders.html"
+    },
+    {
       "source": "/((?!api|assets|.*\\..*).*)",
       "destination": "/index.html"
     }

@@ -412,8 +412,8 @@ const TIER_CONFIGS: Record<TierKey, TierConfig> = {
       title: 'Dream Heights // Luxury Gated Residences (Bathinda)',
       displayUrl: 'dreamheights-source.vercel.app',
       liveUrl: 'https://dreamheights-source.vercel.app/',
-      secondaryUrl: 'https://framersite.vercel.app/',
-      secondaryLabel: 'FRAMER 3D',
+      secondaryUrl: 'https://gurination1.github.io/branders/',
+      secondaryLabel: 'BRANDERS 3D ATELIER',
       imageSrc: '/assets/showcase/dreamheights-pc.webp',
       tagline: '"A place to live — to return year after year." — 2 & 3 BHK Gated Residences',
       description: 'Premier gated luxury community on Malout-Badal Ring Road, Bathinda by Dream Land Promoters. Features bespoke 2 & 3 BHK residences, ground floor basements, penthouse duplexes, interactive Day/Night lighting atmosphere engine, saltwater pool, spa, jacuzzi, 24/7 security, difference cursor canvas, and custom Lenis + Barba smooth choreography.',
@@ -441,7 +441,7 @@ const TIER_CONFIGS: Record<TierKey, TierConfig> = {
       },
       {
         q: 'What real production clients have used this?',
-        a: 'Dream Heights (Malout-Badal Ring Road, Bathinda by Dream Land Promoters) and our own studio headquarters flagship (Gurdharam.com).'
+        a: 'Dream Heights (Malout-Badal Ring Road, Bathinda by Dream Land Promoters), Branders (Bespoke Automotive Atelier), and our own studio headquarters flagship (Gurdharam.com).'
       }
     ]
   }

@@ -38,6 +38,13 @@ interface PricingTier {
   exampleName: string;
   exampleUrl: string;
   exampleNote: string;
+  demos?: {
+    name: string;
+    tag: string;
+    url: string;
+    note: string;
+    shortLabel: string;
+  }[];
   whatsappMessage: string;
   accentBorder: string;
   accentBg: string;
@@ -152,10 +159,26 @@ const PRICING_TIERS: PricingTier[] = [
       { title: 'Full SSR / SSG Prerendered Zero-Flicker Architecture', included: true },
       { title: 'Priority Developer Support & Quarterly Refresh Pass', included: true },
     ],
-    exampleName: 'Dream Heights & Gurdharam.com',
+    exampleName: 'Dream Heights & Branders Atelier',
     exampleUrl: 'https://dreamheights-source.vercel.app/',
-    exampleNote: 'Luxury gated residences on Ring Road Bathinda (2&3 BHK, saltwater pool, Day/Night engine) & Framer spatial flagship',
-    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 / $500 USD Ultra 3D Spatial Flagship Website like Dream Heights.",
+    exampleNote: 'Luxury gated residences on Ring Road Bathinda (Day/Night engine) & Branders automotive 3D tuning atelier',
+    demos: [
+      {
+        name: 'Dream Heights',
+        tag: 'REAL ESTATE 3D',
+        url: 'https://dreamheights-source.vercel.app/',
+        note: 'Luxury 2&3 BHK gated residences with real-time Day/Night lighting engine',
+        shortLabel: 'Dream Heights'
+      },
+      {
+        name: 'Branders',
+        tag: 'AUTOMOTIVE 3D',
+        url: 'https://gurination1.github.io/branders/',
+        note: 'Bespoke car tuning atelier with interactive Forge preloader & video blend',
+        shortLabel: 'Branders'
+      }
+    ],
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 / $500 USD Ultra 3D Spatial Flagship Website like Dream Heights or Branders.",
     accentBorder: 'border-[#d4a853] shadow-[0_0_45px_rgba(212,168,83,0.25)]',
     accentBg: 'bg-[#18140c]/95',
   },
@@ -306,6 +329,35 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     internalCaseStudyLabel: 'REAL ESTATE 3D VERTICAL'
   },
   {
+    id: 'branders',
+    title: 'Branders // Bespoke Automotive Atelier & Custom Tuning Studio',
+    category: 'spatial-3d',
+    categoryLabel: 'AWWWARDS-GRADE AUTOMOTIVE FLAGSHIP',
+    tierBadge: 'TIER: ₹20,000 [ULTRA 3D FLAGSHIP]',
+    tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
+    liveUrl: 'https://gurination1.github.io/branders/',
+    displayUrl: 'gurination1.github.io/branders',
+    imageSrc: '/assets/showcase/branders-pc.webp',
+    tagline: '"For Those Who Refuse Ordinary" — Bespoke Styling & Performance Engineering',
+    description: 'Awwwards-caliber bespoke automotive customization atelier platform. Engineered with an authentic interactive Forge-style preloader gate, continuous hero video-blend choreography, Lenis 120Hz smooth kinetic scroll physics, flagship fleet showcase (Mercedes G-Wagon, Porsche GT3 RS, Land Rover Defender), and high-ticket consultation inquiry funnel.',
+    highlightDeliverables: [
+      { label: 'Architecture', value: 'Bespoke Automotive 3D' },
+      { label: 'Preloader', value: 'Interactive Forge Gate' },
+      { label: 'Motion Physics', value: '120Hz Lenis Kinetic Flow' },
+      { label: 'Fleet Models', value: 'G-Wagon, GT3 RS, Defender' }
+    ],
+    specs: [
+      'Interactive RevealFlow entrance preloader with seamless video-blend hero transition',
+      'Hardware-accelerated kinetic typography scale and Lenis smooth scroll engine',
+      'Direct high-ticket booking funnel for vehicle customization & tuning inquiries'
+    ],
+    techPills: ['Awwwards Grade', 'Video Blend', 'Lenis Scroll', 'TailwindCSS', 'WebGL 3D', 'Vercel Edge'],
+    rateText: '₹20,000 / $500 USD (Flagship Spatial Tier)',
+    inquiryMessage: "Hi Gurdharam, I saw the Branders automotive showcase (gurination1.github.io/branders). I want to commission an Awwwards-grade luxury flagship website.",
+    internalCaseStudyUrl: '/case-studies/branders',
+    internalCaseStudyLabel: 'AUTOMOTIVE 3D CASE STUDY'
+  },
+  {
     id: 'gurdharam-hq',
     title: 'Gurdharam.com // Autonomous AI & Spatial Flagship',
     category: 'spatial-3d',
@@ -441,6 +493,7 @@ const FAQS = [
 export default function WebsitesShowcase() {
   const [activeShowcaseFilter, setActiveShowcaseFilter] = useState<'all' | 'business' | 'spatial-3d' | 'apps'>('all');
   const [highlightedTier, setHighlightedTier] = useState<string | null>(null);
+  const [activeTierDemos, setActiveTierDemos] = useState<Record<string, number>>({});
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -673,21 +726,79 @@ export default function WebsitesShowcase() {
 
                   {/* Real Client Example Proof */}
                   <div className="mb-6 rounded-xl border border-white/10 bg-black/40 p-3.5">
-                    <span className="font-mono text-[0.65rem] uppercase tracking-wider text-[#d4a853] block mb-1">
-                      REAL PRODUCTION EXAMPLE:
-                    </span>
-                    <a 
-                      href={tier.exampleUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="font-['Syne'] font-bold text-sm text-white hover:text-[#d4a853] flex items-center gap-1.5 transition-colors"
-                    >
-                      <span>{tier.exampleName}</span>
-                      <ExternalLink className="h-3 w-3 text-[#d4a853]" />
-                    </a>
-                    <p className="mt-1 font-mono text-[0.68rem] text-[#9a958c] leading-normal">
-                      {tier.exampleNote}
-                    </p>
+                    {tier.demos && tier.demos.length > 0 ? (
+                      <div>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="font-mono text-[0.62rem] uppercase tracking-wider text-[#d4a853]">
+                            REAL PRODUCTION DEMOS (2):
+                          </span>
+                          <div className="flex items-center gap-1">
+                            {tier.demos.map((d, dIdx) => {
+                              const isActive = (activeTierDemos[tier.id] ?? 0) === dIdx;
+                              return (
+                                <button
+                                  key={dIdx}
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    setActiveTierDemos(prev => ({ ...prev, [tier.id]: dIdx }));
+                                  }}
+                                  className={`cursor-pointer rounded px-2 py-0.5 font-mono text-[0.6rem] transition-all ${
+                                    isActive
+                                      ? 'bg-[#d4a853] text-[#080808] font-bold shadow-[0_0_8px_rgba(212,168,83,0.3)]'
+                                      : 'bg-white/5 text-[#9a958c] hover:bg-white/10 hover:text-white'
+                                  }`}
+                                >
+                                  {d.shortLabel}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                        {(() => {
+                          const curDemo = tier.demos[activeTierDemos[tier.id] ?? 0];
+                          return (
+                            <>
+                              <a 
+                                href={curDemo.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="font-['Syne'] font-bold text-sm text-white hover:text-[#d4a853] flex items-center justify-between transition-colors"
+                              >
+                                <span className="flex items-center gap-1.5 truncate mr-1">
+                                  <span>{curDemo.name}</span>
+                                  <span className="text-[0.6rem] font-mono text-[#d4a853]/80 border border-[#d4a853]/30 rounded px-1.5 py-0.2 shrink-0">
+                                    {curDemo.tag}
+                                  </span>
+                                </span>
+                                <ExternalLink className="h-3 w-3 text-[#d4a853] shrink-0" />
+                              </a>
+                              <p className="mt-1 font-mono text-[0.68rem] text-[#9a958c] leading-normal min-h-[32px]">
+                                {curDemo.note}
+                              </p>
+                            </>
+                          );
+                        })()}
+                      </div>
+                    ) : (
+                      <>
+                        <span className="font-mono text-[0.65rem] uppercase tracking-wider text-[#d4a853] block mb-1">
+                          REAL PRODUCTION EXAMPLE:
+                        </span>
+                        <a 
+                          href={tier.exampleUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="font-['Syne'] font-bold text-sm text-white hover:text-[#d4a853] flex items-center gap-1.5 transition-colors"
+                        >
+                          <span>{tier.exampleName}</span>
+                          <ExternalLink className="h-3 w-3 text-[#d4a853]" />
+                        </a>
+                        <p className="mt-1 font-mono text-[0.68rem] text-[#9a958c] leading-normal min-h-[32px]">
+                          {tier.exampleNote}
+                        </p>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -815,7 +926,7 @@ export default function WebsitesShowcase() {
                   <td className="p-4 text-center text-[#9a958c]">Kirat Interior (Core)</td>
                   <td className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5 font-bold">Kirat Interior (Live)</td>
                   <td className="p-4 text-center text-[#38bdf8]">BioPrac &amp; NEOVRIT</td>
-                  <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights & Gurdharam.com</td>
+                  <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights &amp; Branders</td>
                 </tr>
               </tbody>
             </table>

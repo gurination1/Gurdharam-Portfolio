@@ -233,6 +233,9 @@ export default function BlogPostAffordableWebsite() {
             <li>
               • <a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Dream Heights</a>: 3D spatial architectural digital twin with real-time Day/Night lighting engine. Read the <Link to="/case-studies/dreamheights" className="underline">Dream Heights 3D Case Study</Link>.
             </li>
+            <li>
+              • <a href="https://gurination1.github.io/branders/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Branders</a>: Awwwards-grade luxury automotive customization atelier with interactive Forge preloader and video-blend hero. Read the <Link to="/case-studies/branders" className="underline">Branders 3D Case Study</Link>.
+            </li>
           </ul>
         </section>
 

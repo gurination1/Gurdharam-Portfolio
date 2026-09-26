@@ -227,6 +227,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/case-studies/branders" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
+                  Branders 3D Automotive Case Study
+                </Link>
+              </li>
+              <li>
                 <Link to="/case-studies/neovrit" className="py-1 px-1 block text-slate-400 hover:text-white transition-colors">
                   NEOVRIT 3D Simulation Case Study
                 </Link>

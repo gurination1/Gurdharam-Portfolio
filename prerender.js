@@ -3039,6 +3039,45 @@ app.post('/api/webhook', async (req, res) => {
       </main>`
   },
   {
+    path: '/case-studies/branders',
+    title: 'Branders 3D Automotive Case Study | Gurdharam',
+    description: 'Automotive 3D case study: Engineering the Branders luxury car atelier website with interactive Forge preloader, video-blend hero, and Lenis scroll.',
+    canonical: 'https://www.gurdharam.com/case-studies/branders',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/case-studies/branders#article",
+          "headline": "Branders 3D Case Study: Bespoke Automotive Atelier & Video-Blend Engine",
+          "description": "Automotive 3D case study: Engineering the Branders luxury car atelier website with interactive Forge preloader, video-blend hero, and Lenis scroll.",
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.gurdharam.com/#person",
+            "name": "Gurdharam Jeet Singh"
+          }
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Case Study · Automotive Spatial 3D</span>
+          <h1>Branders Case Study — Bespoke Automotive Atelier 3D Spatial Flagship &amp; Video-Blend Engine</h1>
+          <p>Awwwards-caliber bespoke automotive modification platform for Branders. Featuring an authentic Forge-style interactive preloader gate, continuous hero video-blend choreography, and Lenis 120Hz kinetic scroll physics.</p>
+        </header>
+        <section>
+          <h2>Quantified Automotive Engineering Results</h2>
+          <ul>
+            <li>4.9 minute average dwell time for supercar collectors and tuning enthusiasts</li>
+            <li>94% interactive preloader gate completion and retention rate</li>
+            <li>120 FPS kinetic momentum flow engineered with Lenis hardware scroll</li>
+            <li>Flagship fleet showcase featuring Porsche 911 GT3 RS, Mercedes G 63, and Land Rover Defender</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/websites">Website Packages</a> | <a href="/services/luxury-3d-spatial-website-design">Spatial Flagship Package</a></p></footer>
+      </main>`
+  },
+  {
     path: '/blog/affordable-business-website-development-india',
     title: 'Affordable Website Design India | Gurdharam',
     description: 'Comprehensive guide to building high-ranking business websites under ₹10,000 in India. Hand-coded React, free edge CDN hosting, and Google Local SEO.',
@@ -3589,6 +3628,7 @@ const masterFooter = `
                 <li><a href="/case-studies/kirat-interior">Kirat Interior Case Study</a></li>
                 <li><a href="/case-studies/bioprac">BioPrac 3D Fog Case Study</a></li>
                 <li><a href="/case-studies/dreamheights">Dream Heights 3D Case Study</a></li>
+                <li><a href="/case-studies/branders">Branders 3D Case Study</a></li>
                 <li><a href="/case-studies/neovrit">NEOVRIT 3D Simulation Case Study</a></li>
                 <li><a href="/case-studies/doodhisaab">DoodHisaab Case Study</a></li>
                 <li><a href="/case-studies/fasal-doctor">Fasal Doctor Case Study</a></li>
