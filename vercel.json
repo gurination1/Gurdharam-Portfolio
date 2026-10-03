@@ -38,6 +38,15 @@
       ]
     },
     {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/(feed|rss).xml",
       "headers": [
         {
@@ -137,6 +146,10 @@
     {
       "source": "/case-studies/branders",
       "destination": "/case-studies/branders.html"
+    },
+    {
+      "source": "/case-studies/solum-minerals",
+      "destination": "/case-studies/solum-minerals.html"
     },
     {
       "source": "/((?!api|assets|.*\\..*).*)",

@@ -25,7 +25,7 @@ export default function CaseStudyBioPrac() {
             <Activity className="h-3.5 w-3.5" />
             <span>CASE STUDY // CLINICAL INTELLIGENCE &amp; THREE.JS ARCHITECTURE</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
             BioPrac // Precision Health Console <br />
             <span className="text-[#38bdf8]">Three.js Fog Atmosphere &amp; Circular Arc Kinematics</span>
           </h1>
@@ -66,22 +66,22 @@ export default function CaseStudyBioPrac() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#38bdf8]/30 bg-[#38bdf8]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">GPU RENDER LOOP</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">60–120 FPS</div>
+            <div className="text-3xl font-extrabold text-white">60–120 FPS</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">WebGL Fog Atmosphere</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">BIOMARKERS</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">500+</div>
+            <div className="text-3xl font-extrabold text-white">500+</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Diagnostic Telemetry</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">CODE PAYLOAD</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">&lt; 150 KB</div>
+            <div className="text-3xl font-extrabold text-white">&lt; 150 KB</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Zero Video Bloat</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">SCROLL KINETICS</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">120Hz Lenis</div>
+            <div className="text-3xl font-extrabold text-white">120Hz Lenis</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Hardware Synchronized</p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function CaseStudyBioPrac() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#38bdf8]">
             // 01. THE CLINICAL &amp; ARCHITECTURAL CHALLENGE
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Presenting Deep Diagnostic Intelligence Without User Fatigue
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -107,7 +107,7 @@ export default function CaseStudyBioPrac() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#38bdf8]">
             // 02. PROCEDURAL WEBGL &amp; SVG ARC MATH
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Three.js Fog Atmosphere, Kinetic Arc Rotations &amp; Telemetry
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -143,7 +143,7 @@ export default function CaseStudyBioPrac() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#38bdf8]">
             // 03. PRODUCTION IMPACT &amp; VERIFICATION
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Awwwards-Grade Visual Authority in Healthtech
           </h2>
           <ul className="space-y-3 font-mono text-xs text-[#f0ede6]">
@@ -167,7 +167,7 @@ export default function CaseStudyBioPrac() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#38bdf8]">
             // READY TO BUILD AN INTERACTIVE 3D WEB PLATFORM?
           </span>
-          <h3 className="mt-2 text-2xl font-bold font-['Syne'] text-white">
+          <h3 className="mt-2 text-2xl font-bold text-white">
             Commission a 2D + 3D WebGL Platform for ₹12,000
           </h3>
           <p className="mt-2 text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

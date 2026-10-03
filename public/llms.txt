@@ -79,6 +79,7 @@
   - **NEOVRIT** (`https://neovrit.vercel.app`): 3D simulation agency with interactive Three.js GLTF model orbit viewport.
   - **Dream Heights** (`https://dreamheights-source.vercel.app/`): 2&3 BHK luxury residences on Ring Road Bathinda with Day/Night lighting engine. Dedicated vertical: `https://www.gurdharam.com/services/website-design-real-estate-builders`.
   - **Branders** (`https://gurination1.github.io/branders/`): Bespoke automotive modification atelier platform with interactive Forge preloader gate, continuous hero video-blend choreography & Lenis 120Hz kinetic scroll.
+  - **Solum Minerals** (`https://gurination1.github.io/solum-minerals/`): Agricultural biotechnology digital twin platform with custom Skiper9 5-bar stairs preloader, Three.js cellular visualizer & Splide kinetic carousels.
   - **Gurdharam HQ** (`https://www.gurdharam.com`): Studio headquarters with procedural WebGL particle canvas & sub-500ms voice AI.
 
 ---
@@ -106,4 +107,5 @@
 20. `https://www.gurdharam.com/blog/flutter-escpos-bluetooth-thermal-printer-offline` — Offline Bluetooth ESC/POS Byte Streaming & SQLite WAL in Flutter.
 21. `https://www.gurdharam.com/blog/webrtc-audioworklet-voice-ai-sub-300ms-latency` — Sub-300ms Conversational Voice AI via Web Audio Worklets & Silero ONNX VAD.
 22. `https://www.gurdharam.com/case-studies/branders` — Awwwards-Caliber Automotive 3D Spatial Atelier & Video-Blend Engine.
+23. `https://www.gurdharam.com/case-studies/solum-minerals` — Agricultural Biotechnology 3D Digital Twin & Skiper9 Stairs Preloader.
 

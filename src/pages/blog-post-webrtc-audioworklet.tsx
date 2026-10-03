@@ -25,7 +25,7 @@ export default function BlogPostWebrtcAudioworklet() {
             <Radio className="h-3.5 w-3.5" />
             <span>ENGINEERING SPEC // FULL-DUPLEX REAL-TIME VOICE TELEMETRY</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
             Sub-300ms Voice AI Latency <br />
             <span className="text-[#a855f7]">Web Audio Worklets, Silero VAD &amp; Indic Telephony</span>
           </h1>
@@ -47,22 +47,22 @@ export default function BlogPostWebrtcAudioworklet() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#a855f7]/30 bg-[#a855f7]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#a855f7] block mb-1">TURN-TAKING SPEED</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">285 ms</div>
+            <div className="text-3xl font-extrabold text-white">285 ms</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">End-to-End Latency</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">BARGE-IN CUTOFF</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">&lt; 40 ms</div>
+            <div className="text-3xl font-extrabold text-white">&lt; 40 ms</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Silero ONNX Worker</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">AUDIO BUFFER</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">128 Samples</div>
+            <div className="text-3xl font-extrabold text-white">128 Samples</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Zero Main-Thread Junk</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">INDIC DIALECTS</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">3 Languages</div>
+            <div className="text-3xl font-extrabold text-white">3 Languages</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Punjabi, Hindi, English</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function BlogPostWebrtcAudioworklet() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#a855f7]">
             // 01. THE ACOUSTIC CONVERSATIONAL THRESHOLD
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Why Latency &gt; 500ms Destroys Conversational Credibility
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -88,7 +88,7 @@ export default function BlogPostWebrtcAudioworklet() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#a855f7]">
             // 02. AUDIOWORKLET &amp; PCM STREAMING ENGINE
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Running 16kHz PCM DSP on Dedicated Audio Render Threads
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -133,7 +133,7 @@ registerProcessor('pcm-recorder-worklet', PCMRecorderWorklet);`}
           <span className="font-mono text-xs uppercase tracking-widest text-[#a855f7]">
             // 03. CLIENT-SIDE BARGE-IN INTERRUPTIONS
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Silero ONNX in Web Workers: 35ms Human Interruption Detection
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -153,7 +153,7 @@ registerProcessor('pcm-recorder-worklet', PCMRecorderWorklet);`}
 
         {/* Reverse Silo Links */}
         <section className="mb-14 rounded-2xl border border-white/10 bg-[#0a0a0a] p-6 md:p-8">
-          <h3 className="text-lg font-bold font-['Syne'] text-white mb-4">
+          <h3 className="text-lg font-bold text-white mb-4">
             Related Voice AI Services &amp; Architectures
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -190,7 +190,7 @@ registerProcessor('pcm-recorder-worklet', PCMRecorderWorklet);`}
 
         {/* CTA */}
         <div className="p-8 rounded-2xl border border-[#a855f7]/30 bg-gradient-to-br from-[#a855f7]/10 via-[#0a0a0a] to-[#0a0a0a] text-center space-y-4">
-          <h2 className="text-xl md:text-2xl font-bold font-['Syne'] text-white">
+          <h2 className="text-xl md:text-2xl font-bold text-white">
             Need Low-Latency Conversational Voice AI?
           </h2>
           <p className="text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

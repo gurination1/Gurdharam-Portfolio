@@ -25,7 +25,7 @@ export default function BlogPostFlutterEscpos() {
             <Printer className="h-3.5 w-3.5" />
             <span>ENGINEERING SPEC // HARDWARE EMBEDDED FLUTTER &amp; SQLITE WAL</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
             Offline Bluetooth Thermal Printing <br />
             <span className="text-[#f59e0b]">Raw ESC/POS Byte Streaming &amp; SQLite WAL in Flutter</span>
           </h1>
@@ -47,22 +47,22 @@ export default function BlogPostFlutterEscpos() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#f59e0b]/30 bg-[#f59e0b]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#f59e0b] block mb-1">PRINT LATENCY</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">&lt; 180 ms</div>
+            <div className="text-3xl font-extrabold text-white">&lt; 180 ms</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Raw Byte Streaming</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">CLOUD DEPENDENCY</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">0.0%</div>
+            <div className="text-3xl font-extrabold text-white">0.0%</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">100% Offline Edge</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">SQLITE CONCURRENCY</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">WAL Mode</div>
+            <div className="text-3xl font-extrabold text-white">WAL Mode</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Zero Lock Contention</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">PAPER EFFICIENCY</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">58mm / 80mm</div>
+            <div className="text-3xl font-extrabold text-white">58mm / 80mm</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Dynamic ESC Width</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function BlogPostFlutterEscpos() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#f59e0b]">
             // 01. THE RURAL FIELD DILEMMA
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Why High-Level Printing SDKs Fail in Rural Field Environments
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -88,7 +88,7 @@ export default function BlogPostFlutterEscpos() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#f59e0b]">
             // 02. HARDWARE BYTE STREAMING ARCHITECTURE
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Direct ESC/POS Opcode Generation &amp; Bluetooth SPP Sockets
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -147,7 +147,7 @@ export default function BlogPostFlutterEscpos() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#f59e0b]">
             // 03. HIGH-CONCURRENCY DATABASE INTEGRITY
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             SQLite Write-Ahead Logging (WAL) Mode Under Heavy Field Load
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -168,7 +168,7 @@ await db.execute('PRAGMA cache_size = 10000;');`}
 
         {/* Reverse Silo Links */}
         <section className="mb-14 rounded-2xl border border-white/10 bg-[#0a0a0a] p-6 md:p-8">
-          <h3 className="text-lg font-bold font-['Syne'] text-white mb-4">
+          <h3 className="text-lg font-bold text-white mb-4">
             Related Offline Mobile &amp; Agritech Deployments
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -205,7 +205,7 @@ await db.execute('PRAGMA cache_size = 10000;');`}
 
         {/* CTA */}
         <div className="p-8 rounded-2xl border border-[#f59e0b]/30 bg-gradient-to-br from-[#f59e0b]/10 via-[#0a0a0a] to-[#0a0a0a] text-center space-y-4">
-          <h2 className="text-xl md:text-2xl font-bold font-['Syne'] text-white">
+          <h2 className="text-xl md:text-2xl font-bold text-white">
             Need Offline Hardware or Mobile App Engineering?
           </h2>
           <p className="text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

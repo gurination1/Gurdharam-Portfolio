@@ -107,12 +107,14 @@
   - **NEOVRIT** (`https://neovrit.vercel.app`): 3D simulation agency with interactive Three.js GLTF model orbit viewport.
   - **Dream Heights** (`https://dreamheights-source.vercel.app/`): 2&3 BHK luxury residences on Ring Road Bathinda with Day/Night lighting engine. Dedicated vertical: `https://www.gurdharam.com/services/website-design-real-estate-builders`.
   - **Branders** (`https://gurination1.github.io/branders/`): Bespoke automotive modification atelier platform with interactive Forge preloader gate, continuous hero video-blend choreography & Lenis 120Hz kinetic scroll.
+  - **Solum Minerals** (`https://gurination1.github.io/solum-minerals/`): Agricultural biotechnology digital twin platform with custom Skiper9 5-bar stairs preloader, Three.js cellular visualizer & Splide kinetic carousels.
   - **Gurdharam HQ** (`https://www.gurdharam.com`): Studio headquarters with procedural WebGL particle canvas & sub-500ms voice AI.
 - **Dedicated Case Studies & Deep Dives:**
   - Kirat Interior: `https://www.gurdharam.com/case-studies/kirat-interior` (#1 Google Local Ranking & WhatsApp Lead Funnel)
   - BioPrac: `https://www.gurdharam.com/case-studies/bioprac` (Three.js WebGL Fog & Clinical Diagnostic Telemetry Console)
   - Dream Heights: `https://www.gurdharam.com/case-studies/dreamheights` (Real Estate Digital Twin & Day/Night Lighting Engine)
   - Branders: `https://www.gurdharam.com/case-studies/branders` (Automotive 3D Spatial Atelier & Video-Blend Engine)
+  - Solum Minerals: `https://www.gurdharam.com/case-studies/solum-minerals` (Bio-Agritech 3D Digital Twin & Skiper9 Stairs Preloader)
   - Affordable Website Guide: `https://www.gurdharam.com/blog/affordable-business-website-development-india`
   - Mobile WebGL 3D Guide: `https://www.gurdharam.com/blog/threejs-webgl-performance-mobile-optimization`
   - NEOVRIT 3D Simulation: `https://www.gurdharam.com/case-studies/neovrit` (Interactive Three.js GLTF Orbit & DRACO)

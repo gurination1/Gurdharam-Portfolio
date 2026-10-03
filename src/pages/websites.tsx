@@ -159,9 +159,9 @@ const PRICING_TIERS: PricingTier[] = [
       { title: 'Full SSR / SSG Prerendered Zero-Flicker Architecture', included: true },
       { title: 'Priority Developer Support & Quarterly Refresh Pass', included: true },
     ],
-    exampleName: 'Dream Heights & Branders Atelier',
+    exampleName: 'Dream Heights, Branders & Solum Minerals',
     exampleUrl: 'https://dreamheights-source.vercel.app/',
-    exampleNote: 'Luxury gated residences on Ring Road Bathinda (Day/Night engine) & Branders automotive 3D tuning atelier',
+    exampleNote: 'Luxury gated residences (Day/Night engine), Branders automotive 3D atelier & Solum Minerals carbon bio-fertilizers',
     demos: [
       {
         name: 'Dream Heights',
@@ -176,9 +176,16 @@ const PRICING_TIERS: PricingTier[] = [
         url: 'https://gurination1.github.io/branders/',
         note: 'Bespoke car tuning atelier with interactive Forge preloader & video blend',
         shortLabel: 'Branders'
+      },
+      {
+        name: 'Solum Minerals',
+        tag: 'BIO-AGRITECH 3D',
+        url: 'https://gurination1.github.io/solum-minerals/',
+        note: 'Carbon-encapsulated agricultural bio-fertilizers with Skiper9 preloader & digital twin',
+        shortLabel: 'Solum Minerals'
       }
     ],
-    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 / $500 USD Ultra 3D Spatial Flagship Website like Dream Heights or Branders.",
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 / $500 USD Ultra 3D Spatial Flagship Website like Dream Heights, Branders or Solum Minerals.",
     accentBorder: 'border-[#d4a853] shadow-[0_0_45px_rgba(212,168,83,0.25)]',
     accentBg: 'bg-[#18140c]/95',
   },
@@ -189,6 +196,8 @@ interface ShowcaseItem {
   title: string;
   category: 'business' | 'spatial-3d' | 'apps';
   categoryLabel: string;
+  nicheRegion?: string;
+  nicheTags?: string[];
   tierBadge: string;
   tierColor: string;
   liveUrl: string;
@@ -213,6 +222,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     title: 'Kirat Interior // Luxury Furniture & Modular Studio',
     category: 'business',
     categoryLabel: 'CLIENT PRODUCTION FLAGSHIP',
+    nicheRegion: 'Bathinda, Punjab',
+    nicheTags: ['#1 Google Search', 'LocalBusiness Schema', 'Luxury Furniture'],
     tierBadge: 'TIER: ₹7,000 [GROWTH + SEO]',
     tierColor: 'border-[#d4a853] bg-[#d4a853]/15 text-[#d4a853]',
     liveUrl: 'https://www.kiratinterior.com/',
@@ -242,6 +253,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     title: 'BioPrac // Precision Preventative Health & Cellular Diagnostics',
     category: 'spatial-3d',
     categoryLabel: 'CLINICAL INTELLIGENCE & INTERACTIVE ARCHITECTURE',
+    nicheRegion: 'Global / Telehealth',
+    nicheTags: ['Clinical AI', 'Three.js Fog', '500+ Biomarkers'],
     tierBadge: 'TIER: ₹12,000 [2D + 3D INTERACTIVE — MAIN FLAGSHIP]',
     tierColor: 'border-[#38bdf8] bg-[#38bdf8]/15 text-[#38bdf8]',
     liveUrl: 'https://gurination1.github.io/bioprac/',
@@ -272,6 +285,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     title: 'NEOVRIT // 3D Simulation & AI Engineering Studio',
     category: 'spatial-3d',
     categoryLabel: '3D SPATIAL & AI AGENCY',
+    nicheRegion: 'India & Global',
+    nicheTags: ['3D Simulation', 'Three.js GLTF Orbit', 'Lenis Physics'],
     tierBadge: 'TIER: ₹12,000 [2D + 3D INTERACTIVE — SECONDARY]',
     tierColor: 'border-[#38bdf8]/60 bg-[#38bdf8]/10 text-[#38bdf8]',
     liveUrl: 'https://neovrit.vercel.app',
@@ -301,6 +316,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     title: 'Dream Heights // Luxury Gated Residences (Bathinda)',
     category: 'spatial-3d',
     categoryLabel: 'ULTRA-LUXURY ARCHITECTURAL FLAGSHIP',
+    nicheRegion: 'Bathinda, Punjab',
+    nicheTags: ['Luxury Real Estate', 'Day/Night GLSL Engine', '2&3 BHK Penthouses'],
     tierBadge: 'TIER: ₹20,000 [ULTRA 3D FLAGSHIP]',
     tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
     liveUrl: 'https://dreamheights-source.vercel.app/',
@@ -333,6 +350,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     title: 'Branders // Bespoke Automotive Atelier & Custom Tuning Studio',
     category: 'spatial-3d',
     categoryLabel: 'AWWWARDS-GRADE AUTOMOTIVE FLAGSHIP',
+    nicheRegion: 'Global Automotive',
+    nicheTags: ['Supercar Atelier', 'Forge Preloader', '120Hz Video-Blend'],
     tierBadge: 'TIER: ₹20,000 [ULTRA 3D FLAGSHIP]',
     tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
     liveUrl: 'https://gurination1.github.io/branders/',
@@ -358,10 +377,43 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     internalCaseStudyLabel: 'AUTOMOTIVE 3D CASE STUDY'
   },
   {
+    id: 'solum-minerals',
+    title: 'Solum Minerals // Bio-Agritech & Carbon Soil Micronutrients',
+    category: 'spatial-3d',
+    categoryLabel: 'AWWWARDS-GRADE BIO-AGRITECH FLAGSHIP',
+    nicheRegion: 'USA & Global',
+    nicheTags: ['Bio-Agritech', 'Skiper9 Stairs Preloader', 'Carbon Digital Twin'],
+    tierBadge: 'TIER: ₹20,000 [ULTRA 3D FLAGSHIP]',
+    tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
+    liveUrl: 'https://gurination1.github.io/solum-minerals/',
+    displayUrl: 'gurination1.github.io/solum-minerals',
+    imageSrc: '/assets/showcase/solum-minerals-pc.webp',
+    tagline: '"Fertilizer, Reinvented. For Your Crops. For the Planet." — Carbon Capsule Micronutrients',
+    description: 'Awwwards-grade agricultural biotechnology digital twin platform. Built with custom 5-bar Skiper9 stairs preloader, high-efficiency Three.js digital twin showcase, Splide interactive carousels, responsive mobile WebGL video choreography, carbon capsule micronutrient telemetry, and high-ticket B2B distributor funnels.',
+    highlightDeliverables: [
+      { label: 'Architecture', value: 'Bio-Agritech 3D Spatial' },
+      { label: 'Preloader', value: 'Skiper9 5-Bar Stairs' },
+      { label: 'Motion Physics', value: '120Hz Splide + WebGL' },
+      { label: 'Technology', value: 'Carbon Capsule Tech' }
+    ],
+    specs: [
+      'Skiper9 interactive 5-bar stairs preloader with seamless brand reveal transition',
+      'Bio-agriculture digital twin visualization & carbon capsule micronutrient telemetry',
+      'Direct high-ticket B2B distributor booking funnel & agricultural quote routing'
+    ],
+    techPills: ['Awwwards Grade', 'Skiper9 Preloader', 'Splide.js', 'TailwindCSS', 'WebGL 3D', 'Vercel Edge'],
+    rateText: '₹20,000 / $500 USD (Flagship Spatial Tier)',
+    inquiryMessage: "Hi Gurdharam, I saw the Solum Minerals bio-agritech showcase (gurination1.github.io/solum-minerals). I want to commission an Awwwards-grade luxury flagship website.",
+    internalCaseStudyUrl: '/case-studies/solum-minerals',
+    internalCaseStudyLabel: 'BIO-AGRITECH 3D CASE STUDY'
+  },
+  {
     id: 'gurdharam-hq',
     title: 'Gurdharam.com // Autonomous AI & Spatial Flagship',
     category: 'spatial-3d',
     categoryLabel: 'STUDIO HEADQUARTERS FLAGSHIP',
+    nicheRegion: 'Global Studio HQ',
+    nicheTags: ['AI Systems Engineering', 'Sub-500ms Voice AI', 'WebGL Particles'],
     tierBadge: 'TIER: ₹20,000 [FLAGSHIP SPATIAL]',
     tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
     liveUrl: 'https://www.gurdharam.com',
@@ -389,6 +441,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     title: 'DoodhHisaab // Offline Dairy Ledger App',
     category: 'apps',
     categoryLabel: 'OFFLINE ENTERPRISE SUITE',
+    nicheRegion: 'Punjab, India',
+    nicheTags: ['Offline SQLite', 'Bluetooth ESC/POS', 'Dairy ERP'],
     tierBadge: 'CUSTOM ENTERPRISE',
     tierColor: 'border-emerald-500/40 bg-emerald-500/15 text-emerald-400',
     liveUrl: 'https://www.gurdharam.com/case-studies/doodhisaab',
@@ -416,6 +470,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     title: 'FasalDoctor // On-Device Neural Diagnostics',
     category: 'apps',
     categoryLabel: 'ON-DEVICE ML & AGRI',
+    nicheRegion: 'Punjab, India',
+    nicheTags: ['Quantized Edge-AI', '85ms On-Device TFLite', 'Plant Pathology'],
     tierBadge: 'CUSTOM ENTERPRISE',
     tierColor: 'border-emerald-500/40 bg-emerald-500/15 text-emerald-400',
     liveUrl: 'https://www.gurdharam.com/case-studies/fasal-doctor',
@@ -443,6 +499,8 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     title: 'TakeMyInterview.ai // Realtime Voice AI Agent',
     category: 'apps',
     categoryLabel: 'REALTIME VOICE AI',
+    nicheRegion: 'Global Enterprise',
+    nicheTags: ['WebRTC Audio Stream', 'Sub-500ms Voice Agent', 'Interactive Coding'],
     tierBadge: 'CUSTOM ENTERPRISE',
     tierColor: 'border-purple-500/40 bg-purple-500/15 text-purple-400',
     liveUrl: 'https://www.gurdharam.com/case-studies/takemyinterview-ai',
@@ -550,7 +608,7 @@ export default function WebsitesShowcase() {
             <span>TRANSPARENT RATES & PRODUCTION SHOWCASE // 2026</span>
           </div>
 
-          <h1 className="mb-6 font-['Syne'] text-[clamp(1.4rem,6.2vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
+          <h1 className="mb-6 text-[clamp(1.4rem,6.2vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
             Systems That Scale.<br />
             <span className="text-[#d4a853]">Web Architecture That Sells.</span>
           </h1>
@@ -628,7 +686,7 @@ export default function WebsitesShowcase() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // CLEAR & HONEST ENGINEERING RATES
             </span>
-            <h2 className="mt-2 font-['Syne'] text-2xl sm:text-4xl font-extrabold text-white leading-snug">
+            <h2 className="mt-2 text-2xl sm:text-4xl font-extrabold text-white leading-snug">
               Choose the Right Architecture for Your Business
             </h2>
             <p className="mt-3 text-sm text-[#9a958c] max-w-xl mx-auto">
@@ -660,7 +718,7 @@ export default function WebsitesShowcase() {
                 <div>
                   {/* Tier Title & Price */}
                   <div className="mb-4">
-                    <h3 className="font-['Syne'] text-xl font-bold text-white">
+                    <h3 className="text-xl font-bold text-white">
                       {tier.name}
                     </h3>
                     <div className="mt-1 inline-block rounded border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[0.68rem] text-[#d4a853]">
@@ -674,10 +732,10 @@ export default function WebsitesShowcase() {
                   {/* Price Block */}
                   <div className="mb-6 border-b border-white/10 pb-5">
                     <div className="flex flex-wrap items-baseline gap-2">
-                      <span className="font-['Syne'] text-3xl font-extrabold text-white">
+                      <span className="text-3xl font-extrabold text-white">
                         {tier.price}
                       </span>
-                      <span className="font-['Syne'] text-xl font-bold text-[#d4a853]">
+                      <span className="text-xl font-bold text-[#d4a853]">
                         / {tier.priceUsd}
                       </span>
                       {tier.originalPrice && (
@@ -730,7 +788,7 @@ export default function WebsitesShowcase() {
                       <div>
                         <div className="flex items-center justify-between mb-2">
                           <span className="font-mono text-[0.62rem] uppercase tracking-wider text-[#d4a853]">
-                            REAL PRODUCTION DEMOS (2):
+                            REAL PRODUCTION DEMOS ({tier.demos.length}):
                           </span>
                           <div className="flex items-center gap-1">
                             {tier.demos.map((d, dIdx) => {
@@ -763,7 +821,7 @@ export default function WebsitesShowcase() {
                                 href={curDemo.url} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="font-['Syne'] font-bold text-sm text-white hover:text-[#d4a853] flex items-center justify-between transition-colors"
+                                className="font-bold text-sm text-white hover:text-[#d4a853] flex items-center justify-between transition-colors"
                               >
                                 <span className="flex items-center gap-1.5 truncate mr-1">
                                   <span>{curDemo.name}</span>
@@ -789,7 +847,7 @@ export default function WebsitesShowcase() {
                           href={tier.exampleUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="font-['Syne'] font-bold text-sm text-white hover:text-[#d4a853] flex items-center gap-1.5 transition-colors"
+                          className="font-bold text-sm text-white hover:text-[#d4a853] flex items-center gap-1.5 transition-colors"
                         >
                           <span>{tier.exampleName}</span>
                           <ExternalLink className="h-3 w-3 text-[#d4a853]" />
@@ -848,7 +906,7 @@ export default function WebsitesShowcase() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // FEATURE BREAKDOWN
             </span>
-            <h2 className="mt-1 font-['Syne'] text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">
               Side-by-Side Architectural Comparison
             </h2>
           </div>
@@ -926,7 +984,7 @@ export default function WebsitesShowcase() {
                   <td className="p-4 text-center text-[#9a958c]">Kirat Interior (Core)</td>
                   <td className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5 font-bold">Kirat Interior (Live)</td>
                   <td className="p-4 text-center text-[#38bdf8]">BioPrac &amp; NEOVRIT</td>
-                  <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights &amp; Branders</td>
+                  <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights, Branders &amp; Solum</td>
                 </tr>
               </tbody>
             </table>
@@ -934,19 +992,19 @@ export default function WebsitesShowcase() {
         </div>
       </section>
 
-      {/* SECTION 3: VISUAL CLIENT SHOWCASE WITH PC SCREENSHOT MOCKUPS */}
+      {/* SECTION 3: VISUAL CLIENT SHOWCASE (ADELT.IO EDITORIAL STYLE) */}
       <section id="showcase" className="relative scroll-mt-20 px-6 py-20 lg:py-24 border-b border-white/10">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
-                // VERIFIED DIGITAL BUILDS
+                // PRODUCTION SHOWCASE &amp; VERIFIED CASES
               </span>
-              <h2 className="mt-2 font-['Syne'] text-3xl font-extrabold text-white sm:text-4xl">
-                Real Projects. Real Performance.
+              <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                Featured Cases
               </h2>
-              <p className="mt-2 text-sm text-[#9a958c] max-w-lg">
-                Explore real desktop views of deployed websites and platforms built for commercial clients.
+              <p className="mt-2 text-sm sm:text-base text-[#9a958c] max-w-xl">
+                Explore production builds engineered for commercial conversion, architectural 3D spatial immersion, and Google search dominance.
               </p>
             </div>
 
@@ -995,67 +1053,77 @@ export default function WebsitesShowcase() {
             </div>
           </div>
 
-          {/* Clean Showcase Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* Adelt.io Style Case Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
             {filteredItems.map((item) => (
               <article
                 key={item.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 backdrop-blur-md transition-all duration-300 hover:border-[#d4a853]/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)] sm:p-8"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] border border-white/10 bg-[#0d0d0d] p-6 lg:p-7 backdrop-blur-md transition-all duration-500 hover:border-white/25 hover:bg-[#121212] hover:shadow-[0_24px_60px_rgba(0,0,0,0.85)]"
               >
                 <div>
-                  {/* Card Header: Tier Badge & Category */}
+                  {/* Top Bar: Region / Category & Tier Pill */}
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                    <span className={`rounded border px-2.5 py-1 font-mono text-[0.68rem] font-bold ${item.tierColor}`}>
-                      {item.tierBadge}
-                    </span>
-                    <span className="font-mono text-[0.68rem] text-[#9a958c]">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[0.65rem] tracking-wider text-[#9a958c]">
                       {item.categoryLabel}
                     </span>
+                    <span className={`rounded-full border px-3 py-1 font-mono text-[0.65rem] font-bold ${item.tierColor}`}>
+                      {item.tierBadge}
+                    </span>
                   </div>
 
-                  {/* Browser Window Device Mockup Shell */}
-                  <div className="relative mb-6 overflow-hidden rounded-xl border border-white/15 bg-[#050505] shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]">
-                    {/* Browser Toolbar Header */}
-                    <div className="flex items-center justify-between border-b border-white/10 bg-[#141414] px-3.5 py-2">
-                      <div className="flex items-center gap-1.5">
-                        <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]/80" />
-                      </div>
-                      <div className="flex items-center gap-1.5 rounded-md border border-white/10 bg-black/60 px-3 py-0.5 font-mono text-[0.65rem] text-[#9a958c]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#25D366]" />
-                        <span>https://{item.displayUrl}</span>
-                      </div>
-                      <ExternalLink className="h-3 w-3 text-[#9a958c]" />
+                  {/* Visual Preview Shell (Adelt Thumbnail Style) */}
+                  <a
+                    href={item.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative mb-6 block overflow-hidden rounded-2xl border border-white/10 bg-[#050505] shadow-2xl transition-transform duration-500 aspect-[16/10] w-full"
+                  >
+                    {/* Floating URL Badge */}
+                    <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1 font-mono text-[0.62rem] text-white/90 backdrop-blur-md">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#25D366] animate-pulse" />
+                      <span>https://{item.displayUrl}</span>
                     </div>
 
-                    {/* Screenshot Image */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/90">
-                      <img
-                        src={item.imageSrc}
-                        alt={item.title}
-                        loading="lazy"
-                        className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                      />
-                      {/* Subtle hover gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    </div>
-                  </div>
+                    {/* Image with Adelt-style Zoom on Hover */}
+                    <img
+                      src={item.imageSrc}
+                      alt={item.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
 
-                  {/* Title & Tagline */}
-                  <h3 className="font-['Syne'] text-xl font-bold text-white sm:text-2xl">
+                    {/* Gradient Overlay */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+
+                    {/* Floating Hover Visit Pill (Bottom-Right) */}
+                    <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 rounded-full bg-white text-black px-3.5 py-1.5 font-bold text-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
+                      <span>Visit Live</span>
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                    </div>
+                  </a>
+
+                  {/* Title & Signature Adelt Niche Line */}
+                  <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-[#d4a853] transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="mt-1 font-mono text-xs text-[#d4a853]">
-                    {item.tagline}
+
+                  {/* Adelt.io Niche Tagline: Region – Tag 1, Tag 2 */}
+                  <div className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-[#9a958c]">
+                    <span className="text-white font-medium">{item.nicheRegion || 'Production'}</span>
+                    <span className="text-white/40">–</span>
+                    <span className="text-[#d4a853]">{item.nicheTags ? item.nicheTags.join(', ') : item.categoryLabel}</span>
+                  </div>
+
+                  <p className="mt-2 font-mono text-xs text-[#d4a853]/90 italic">
+                    &ldquo;{item.tagline.replace(/^"|"$/g, '')}&rdquo;
                   </p>
 
-                  <p className="mt-3 text-xs leading-relaxed text-[#9a958c]">
+                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-[#9a958c] line-clamp-3">
                     {item.description}
                   </p>
 
                   {/* Key Highlights Deliverables Box */}
-                  <div className="mt-4 grid grid-cols-2 gap-2 rounded-xl border border-white/5 bg-black/40 p-3">
+                  <div className="mt-4 grid grid-cols-2 gap-2 rounded-xl border border-white/5 bg-white/[0.02] p-3">
                     {item.highlightDeliverables.map((d, dIdx) => (
                       <div key={dIdx} className="font-mono text-[0.68rem]">
                         <span className="text-[#9a958c] block">{d.label}:</span>
@@ -1079,7 +1147,7 @@ export default function WebsitesShowcase() {
                     {item.techPills.map((p, pIdx) => (
                       <span
                         key={pIdx}
-                        className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-[0.65rem] text-[#9a958c]"
+                        className="rounded-md border border-white/5 bg-white/5 px-2.5 py-0.5 font-mono text-[0.65rem] text-[#9a958c]"
                       >
                         {p}
                       </span>
@@ -1148,7 +1216,7 @@ export default function WebsitesShowcase() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="mt-2 font-['Syne'] text-3xl font-extrabold text-white">
+            <h2 className="mt-2 text-3xl font-extrabold text-white">
               Everything You Need to Know Before Starting
             </h2>
           </div>
@@ -1159,7 +1227,7 @@ export default function WebsitesShowcase() {
                 key={idx}
                 className="rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 backdrop-blur-sm"
               >
-                <h3 className="font-['Syne'] text-base font-bold text-white sm:text-lg flex items-start gap-3">
+                <h3 className="text-base font-bold text-white sm:text-lg flex items-start gap-3">
                   <span className="font-mono text-xs text-[#d4a853] shrink-0 mt-1">0{idx + 1}.</span>
                   <span>{faq.q}</span>
                 </h3>
@@ -1180,7 +1248,7 @@ export default function WebsitesShowcase() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // READY TO SCALE YOUR BRAND ONLINE?
           </span>
-          <h2 className="mt-3 font-['Syne'] text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
             Let&apos;s Build Your Website in the Next 3 to 7 Days
           </h2>
           <p className="mt-3 text-sm text-[#9a958c] max-w-xl mx-auto">

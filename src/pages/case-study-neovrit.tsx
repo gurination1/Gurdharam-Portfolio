@@ -25,7 +25,7 @@ export default function CaseStudyNeovrit() {
             <Box className="h-3.5 w-3.5" />
             <span>CASE STUDY // 3D SIMULATION AGENCY &amp; INTERACTIVE GLTF VIEWPORT</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
             NEOVRIT // 3D Simulation Agency <br />
             <span className="text-[#38bdf8]">Interactive Three.js GLTF Orbit &amp; DRACO Compression</span>
           </h1>
@@ -66,22 +66,22 @@ export default function CaseStudyNeovrit() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#38bdf8]/30 bg-[#38bdf8]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">INTERACTIVE ORBIT</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">60 FPS</div>
+            <div className="text-3xl font-extrabold text-white">60 FPS</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Mobile WebGL Loop</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">DRACO COMPRESSION</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">2.1 MB</div>
+            <div className="text-3xl font-extrabold text-white">2.1 MB</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Down from 48MB CAD</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">TIME TO INTERACTIVE</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">&lt; 1.2s</div>
+            <div className="text-3xl font-extrabold text-white">&lt; 1.2s</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Worker Mesh Decode</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">LEAD CONVERSION</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">+240%</div>
+            <div className="text-3xl font-extrabold text-white">+240%</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Enterprise Inquiries</p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function CaseStudyNeovrit() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#38bdf8]">
             // 01. THE TECHNICAL CHALLENGE
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Delivering Industrial 3D CAD Simulations Without Browser Freezes
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -107,7 +107,7 @@ export default function CaseStudyNeovrit() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#38bdf8]">
             // 02. THREE.JS &amp; WEBGL PIPELINE ARCHITECTURE
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Google DRACO Decompression, Web Workers &amp; Bounded Orbit Controls
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -143,7 +143,7 @@ export default function CaseStudyNeovrit() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#38bdf8]">
             // 03. MEASURED PRODUCTION OUTCOMES
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Enterprise Client Trust &amp; Dwell Time Acceleration
           </h2>
           <div className="space-y-3 pt-2">
@@ -163,7 +163,7 @@ export default function CaseStudyNeovrit() {
 
         {/* Reverse Silo Cross-Links */}
         <section className="mb-14 rounded-2xl border border-white/10 bg-[#0a0a0a] p-6 md:p-8">
-          <h3 className="text-lg font-bold font-['Syne'] text-white mb-4">
+          <h3 className="text-lg font-bold text-white mb-4">
             Explore 3D WebGL Packages &amp; Technical Blueprints
           </h3>
           <p className="text-xs md:text-sm text-[#9a958c] mb-6">
@@ -203,7 +203,7 @@ export default function CaseStudyNeovrit() {
 
         {/* CTA Bar */}
         <div className="p-8 rounded-2xl border border-[#38bdf8]/30 bg-gradient-to-br from-[#38bdf8]/10 via-[#0a0a0a] to-[#0a0a0a] text-center space-y-4">
-          <h2 className="text-xl md:text-2xl font-bold font-['Syne'] text-white">
+          <h2 className="text-xl md:text-2xl font-bold text-white">
             Need an Interactive 3D WebGL Experience for Your Brand?
           </h2>
           <p className="text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

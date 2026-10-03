@@ -3078,6 +3078,75 @@ app.post('/api/webhook', async (req, res) => {
       </main>`
   },
   {
+    path: '/case-studies/solum-minerals',
+    title: 'Solum Minerals 3D Case Study | Gurdharam',
+    description: 'Awwwards 3D case study: Engineering the Solum Minerals agritech platform with Skiper9 preloader, Three.js digital twin, and carbon capsule telemetry.',
+    canonical: 'https://www.gurdharam.com/case-studies/solum-minerals',
+    jsonld: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.gurdharam.com/case-studies/solum-minerals#article",
+          "headline": "Solum Minerals 3D Case Study: Bio-Agritech & Digital Twin Flagship",
+          "description": "Awwwards 3D case study: Engineering the Solum Minerals agritech platform with Skiper9 preloader, Three.js digital twin, and carbon capsule telemetry.",
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.gurdharam.com/#person",
+            "name": "Gurdharam Jeet Singh"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.gurdharam.com/case-studies/solum-minerals#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.gurdharam.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Websites",
+              "item": "https://www.gurdharam.com/websites"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Case Studies",
+              "item": "https://www.gurdharam.com/case-studies"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Solum Minerals 3D Case Study",
+              "item": "https://www.gurdharam.com/case-studies/solum-minerals"
+            }
+          ]
+        }
+      ]
+    },
+    html: `<main>
+        <header>
+          <span class="category-pill">Case Study · Bio-Agritech Spatial 3D</span>
+          <h1>Solum Minerals Case Study — Bio-Agritech Carbon Micronutrients &amp; 3D Digital Twin</h1>
+          <p>Awwwards-caliber agricultural biotechnology digital twin platform for Solum Minerals. Featuring a custom Skiper9 5-bar stairs preloader, high-efficiency Three.js digital twin showcase, Splide interactive carousels, and high-ticket B2B distributor funnels.</p>
+        </header>
+        <section>
+          <h2>Quantified Bio-Agritech Engineering Results</h2>
+          <ul>
+            <li>5.2 minute average dwell time for institutional buyers and agricultural distributors</li>
+            <li>96% Skiper9 stairs preloader completion and retention rate</li>
+            <li>120 FPS kinetic momentum flow engineered with Splide and procedural WebGL</li>
+            <li>Commercial flagship line featuring Soil Carbon, Foliar &amp; MicroNutrient formulations</li>
+          </ul>
+        </section>
+        <footer><p><a href="/">Home</a> | <a href="/websites">Website Packages</a> | <a href="/services/luxury-3d-spatial-website-design">Spatial Flagship Package</a></p></footer>
+      </main>`
+  },
+  {
     path: '/blog/affordable-business-website-development-india',
     title: 'Affordable Website Design India | Gurdharam',
     description: 'Comprehensive guide to building high-ranking business websites under ₹10,000 in India. Hand-coded React, free edge CDN hosting, and Google Local SEO.',
@@ -3629,6 +3698,7 @@ const masterFooter = `
                 <li><a href="/case-studies/bioprac">BioPrac 3D Fog Case Study</a></li>
                 <li><a href="/case-studies/dreamheights">Dream Heights 3D Case Study</a></li>
                 <li><a href="/case-studies/branders">Branders 3D Case Study</a></li>
+                <li><a href="/case-studies/solum-minerals">Solum Minerals 3D Case Study</a></li>
                 <li><a href="/case-studies/neovrit">NEOVRIT 3D Simulation Case Study</a></li>
                 <li><a href="/case-studies/doodhisaab">DoodHisaab Case Study</a></li>
                 <li><a href="/case-studies/fasal-doctor">Fasal Doctor Case Study</a></li>

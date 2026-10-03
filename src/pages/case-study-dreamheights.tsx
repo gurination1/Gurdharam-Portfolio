@@ -25,7 +25,7 @@ export default function CaseStudyDreamHeights() {
             <Award className="h-3.5 w-3.5" />
             <span>CASE STUDY // ULTRA-LUXURY ARCHITECTURAL DIGITAL TWIN</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
             Dream Heights // 3D Spatial Flagship <br />
             <span className="text-[#d4a853]">Day/Night Lighting Engine &amp; Real Estate Visualizer</span>
           </h1>
@@ -66,22 +66,22 @@ export default function CaseStudyDreamHeights() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#d4a853]/30 bg-[#d4a853]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">DWELL TIME</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">5.8 Min</div>
+            <div className="text-3xl font-extrabold text-white">5.8 Min</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">NRI / HNI Engagement</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">VIP INQUIRIES</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">+190%</div>
+            <div className="text-3xl font-extrabold text-white">+190%</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Site Tour Bookings</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">SHADER ENGINE</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">Day / Night</div>
+            <div className="text-3xl font-extrabold text-white">Day / Night</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Real-time Lighting</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">STATUTORY COMPLIANCE</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">100% RERA</div>
+            <div className="text-3xl font-extrabold text-white">100% RERA</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Punjab RERA Sec 11(2)</p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function CaseStudyDreamHeights() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 01. THE REAL ESTATE SALES BOTTLENECK
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Static Brochures Cannot Convey Spatial Luxury to Overseas Buyers
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -107,7 +107,7 @@ export default function CaseStudyDreamHeights() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 02. SPATIAL 3D ARCHITECTURE &amp; GLSL LIGHTING
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Three.js Digital Twin &amp; Interactive Day/Night Atmosphere
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -143,7 +143,7 @@ export default function CaseStudyDreamHeights() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 03. QUANTIFIED RESULTS &amp; SALES CONVERSION
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Dramatically Accelerated High-Ticket Property Closures
           </h2>
           <ul className="space-y-3 font-mono text-xs text-[#f0ede6]">
@@ -167,7 +167,7 @@ export default function CaseStudyDreamHeights() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // REAL ESTATE BUILDERS &amp; ARCHITECTURE FIRMS
           </span>
-          <h3 className="mt-2 text-2xl font-bold font-['Syne'] text-white">
+          <h3 className="mt-2 text-2xl font-bold text-white">
             Commission a 3D Spatial Digital Twin for ₹20,000
           </h3>
           <p className="mt-2 text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

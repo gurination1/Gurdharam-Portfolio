@@ -53,6 +53,8 @@ interface TierConfig {
     liveUrl: string;
     secondaryUrl?: string;
     secondaryLabel?: string;
+    tertiaryUrl?: string;
+    tertiaryLabel?: string;
     imageSrc: string;
     tagline: string;
     description: string;
@@ -414,6 +416,8 @@ const TIER_CONFIGS: Record<TierKey, TierConfig> = {
       liveUrl: 'https://dreamheights-source.vercel.app/',
       secondaryUrl: 'https://gurination1.github.io/branders/',
       secondaryLabel: 'BRANDERS 3D ATELIER',
+      tertiaryUrl: 'https://gurination1.github.io/solum-minerals/',
+      tertiaryLabel: 'SOLUM MINERALS 3D',
       imageSrc: '/assets/showcase/dreamheights-pc.webp',
       tagline: '"A place to live — to return year after year." — 2 & 3 BHK Gated Residences',
       description: 'Premier gated luxury community on Malout-Badal Ring Road, Bathinda by Dream Land Promoters. Features bespoke 2 & 3 BHK residences, ground floor basements, penthouse duplexes, interactive Day/Night lighting atmosphere engine, saltwater pool, spa, jacuzzi, 24/7 security, difference cursor canvas, and custom Lenis + Barba smooth choreography.',
@@ -425,7 +429,7 @@ const TIER_CONFIGS: Record<TierKey, TierConfig> = {
       ],
       specs: [
         'Interactive Day / Night lighting atmosphere switch with architectural pin hotspots',
-        'Bespoke editorial typography (Bodoni Moda & Pinyon Script) with difference cursor canvas',
+        'Bespoke editorial typography with difference cursor canvas',
         'Lenis hardware-accelerated smooth scrolling with Barba page transition engine'
       ],
       rateText: '₹20,000 Flat'
@@ -441,7 +445,7 @@ const TIER_CONFIGS: Record<TierKey, TierConfig> = {
       },
       {
         q: 'What real production clients have used this?',
-        a: 'Dream Heights (Malout-Badal Ring Road, Bathinda by Dream Land Promoters), Branders (Bespoke Automotive Atelier), and our own studio headquarters flagship (Gurdharam.com).'
+        a: 'Dream Heights (Malout-Badal Ring Road, Bathinda by Dream Land Promoters), Branders (Bespoke Automotive Atelier), Solum Minerals (Bio-Agritech Digital Twin), and our own studio headquarters flagship (Gurdharam.com).'
       }
     ]
   }
@@ -511,7 +515,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span>{config.badge}</span>
           </div>
 
-          <h1 className="mb-6 font-['Syne'] text-[clamp(1.5rem,6vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
+          <h1 className="mb-6 text-[clamp(1.5rem,6vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
             {config.h1Line1}<br />
             <span className={activeKey === 'interactive-12k' ? 'text-[#38bdf8]' : 'text-[#d4a853]'}>
               {config.h1Highlight}
@@ -580,7 +584,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // PACKAGE SPECIFICATIONS &amp; DELIVERABLES
             </span>
-            <h2 className="mt-1 font-['Syne'] text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">
               Everything Included in the {config.price} Package
             </h2>
           </div>
@@ -591,7 +595,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
                 <span className="font-mono text-xs text-[#d4a853] block mb-1">
                   TIER ARCHITECTURE
                 </span>
-                <h3 className="font-['Syne'] text-3xl font-extrabold text-white">
+                <h3 className="text-3xl font-extrabold text-white">
                   {config.title}
                 </h3>
                 <p className="mt-2 text-sm text-[#9a958c] max-w-xl leading-relaxed">
@@ -601,7 +605,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
 
               <div className="text-left md:text-right shrink-0">
                 <div className="flex items-baseline gap-2 md:justify-end">
-                  <span className="font-['Syne'] text-4xl font-extrabold text-white">
+                  <span className="text-4xl font-extrabold text-white">
                     {config.price}
                   </span>
                   {config.originalPrice && (
@@ -665,7 +669,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // TECHNICAL ADVANTAGES
             </span>
-            <h2 className="mt-1 font-['Syne'] text-3xl font-extrabold text-white">
+            <h2 className="mt-1 text-3xl font-extrabold text-white">
               Why This Architecture Dominates Competitors
             </h2>
           </div>
@@ -690,7 +694,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
                   <span className="font-mono text-[0.65rem] text-[#d4a853] block mb-1 uppercase tracking-wider">
                     {df.stat}
                   </span>
-                  <h3 className="font-['Syne'] text-base font-bold text-white mb-2">
+                  <h3 className="text-base font-bold text-white mb-2">
                     {df.title}
                   </h3>
                   <p className="text-xs leading-relaxed text-[#9a958c]">
@@ -710,7 +714,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // REAL PRODUCTION BENCHMARK
             </span>
-            <h2 className="mt-1 font-['Syne'] text-3xl font-extrabold text-white">
+            <h2 className="mt-1 text-3xl font-extrabold text-white">
               Live Proof in Production
             </h2>
             <p className="mt-2 text-sm text-[#9a958c]">
@@ -747,7 +751,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             {/* Content & Deliverables */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
               <div>
-                <h3 className="font-['Syne'] text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-white">
                   {config.example.title}
                 </h3>
                 <p className="font-mono text-xs text-[#d4a853] mt-1">
@@ -772,6 +776,17 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
                     className="inline-flex items-center gap-1.5 rounded-lg border border-[#d4a853]/30 bg-[#d4a853]/10 px-3 py-2 font-mono text-xs text-[#d4a853] hover:bg-[#d4a853] hover:text-black transition-colors"
                   >
                     <span>{config.example.secondaryLabel || 'SECONDARY LINK'}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                )}
+                {config.example.tertiaryUrl && (
+                  <a
+                    href={config.example.tertiaryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#25D366]/30 bg-[#25D366]/10 px-3 py-2 font-mono text-xs text-[#25D366] hover:bg-[#25D366] hover:text-black transition-colors"
+                  >
+                    <span>{config.example.tertiaryLabel || 'TERTIARY LINK'}</span>
                     <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
                 )}
@@ -812,7 +827,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // QUESTIONS &amp; ANSWERS
             </span>
-            <h2 className="mt-1 font-['Syne'] text-3xl font-extrabold text-white">
+            <h2 className="mt-1 text-3xl font-extrabold text-white">
               Frequently Asked Questions for {config.price} Tier
             </h2>
           </div>
@@ -823,7 +838,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
                 key={idx}
                 className="rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 backdrop-blur-sm"
               >
-                <h3 className="font-['Syne'] text-base font-bold text-white sm:text-lg flex items-start gap-3">
+                <h3 className="text-base font-bold text-white sm:text-lg flex items-start gap-3">
                   <span className="font-mono text-xs text-[#d4a853] shrink-0 mt-1">0{idx + 1}.</span>
                   <span>{faq.q}</span>
                 </h3>
@@ -844,7 +859,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // READY TO LAUNCH?
           </span>
-          <h2 className="mt-3 font-['Syne'] text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
             Book Your {config.price} Package Today
           </h2>
           <p className="mt-3 text-sm text-[#9a958c] max-w-xl mx-auto">

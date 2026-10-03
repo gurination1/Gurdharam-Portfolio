@@ -12,7 +12,7 @@ export function RollingNumber({ value, suffix = '+', color = '#d4a853' }: Rollin
   const chars = value.split('');
 
   return (
-    <span className="inline-flex items-center font-['Syne'] font-extrabold text-sm sm:text-base leading-none select-none">
+    <span className="inline-flex items-center font-extrabold text-sm sm:text-base leading-none select-none">
       {chars.map((char, i) => {
         const isNum = !isNaN(Number(char));
         const num = isNum ? Number(char) : 0;

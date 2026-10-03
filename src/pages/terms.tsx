@@ -107,7 +107,7 @@ export default function TermsPage() {
             <span>COMMERCIAL LEGAL STANDARD • US &amp; INDIA COMPLIANT</span>
           </div>
 
-          <h1 className="font-['Syne'] text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
             Terms of Service, Master Services Agreement &amp; Recruitment Policy
           </h1>
 
@@ -232,7 +232,7 @@ export default function TermsPage() {
               </div>
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">PART 1</span>
-                <h2 className="font-['Syne'] text-xl sm:text-2xl font-bold text-white">
+                <h2 className="text-xl sm:text-2xl font-bold text-white">
                   Client Master Services Agreement (MSA) &amp; Engagement Terms
                 </h2>
               </div>
@@ -298,7 +298,7 @@ export default function TermsPage() {
               </div>
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#38bdf8]">PART 2</span>
-                <h2 className="font-['Syne'] text-xl sm:text-2xl font-bold text-white">
+                <h2 className="text-xl sm:text-2xl font-bold text-white">
                   Independent Contractor &amp; Developer Recruitment Agreement
                 </h2>
               </div>
@@ -354,7 +354,7 @@ export default function TermsPage() {
               </div>
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#25D366]">PART 3</span>
-                <h2 className="font-['Syne'] text-xl sm:text-2xl font-bold text-white">
+                <h2 className="text-xl sm:text-2xl font-bold text-white">
                   Sales Recruitment, Deal Commissions &amp; Affiliate Payout Policy
                 </h2>
               </div>
@@ -459,7 +459,7 @@ export default function TermsPage() {
               </div>
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">PART 4 &amp; 5</span>
-                <h2 className="font-['Syne'] text-xl sm:text-2xl font-bold text-white">
+                <h2 className="text-xl sm:text-2xl font-bold text-white">
                   24-Month Strict Non-Circumvention, NDA &amp; Liability Caps
                 </h2>
               </div>
@@ -540,7 +540,7 @@ export default function TermsPage() {
               <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853] block mb-1">
                 LEGAL NOTICES &amp; CONTRACT EXECUTION
               </span>
-              <h3 className="font-['Syne'] text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-white">
                 Have a Legal or Contractor Inquiry?
               </h3>
               <p className="mt-1 text-xs text-[#9a958c] max-w-lg leading-relaxed">

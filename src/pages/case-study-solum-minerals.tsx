@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, CheckCircle2, TrendingUp, Search, MessageSquare, Zap, ExternalLink, ArrowUpRight, Award, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Zap, ExternalLink, ArrowUpRight, Award, Gauge, ShieldCheck, Sparkles, Sprout } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/ui/footer';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
 
-export default function CaseStudyKiratInterior() {
+export default function CaseStudySolumMinerals() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Kirat Interior Case Study | Gurdharam";
+    document.title = "Solum Minerals 3D Case Study | Gurdharam";
   }, []);
 
   return (
@@ -23,14 +23,14 @@ export default function CaseStudyKiratInterior() {
         <header className="mb-14">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#d4a853]/30 bg-[#d4a853]/10 px-3.5 py-1 font-mono text-xs text-[#d4a853]">
             <Award className="h-3.5 w-3.5" />
-            <span>CASE STUDY // #1 RANKED LOCAL SEARCH DOMINANCE</span>
+            <span>CASE STUDY // BIO-AGRITECH DIGITAL TWIN &amp; 3D SPATIAL</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
-            Kirat Interior // Bespoke Modular Furniture Studio <br />
-            <span className="text-[#d4a853]">Achieving #1 Google Local SEO Dominance</span>
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight text-white mb-6">
+            Solum Minerals // Bio-Agritech <br />
+            <span className="text-[#d4a853]">Carbon Micronutrients &amp; 3D Digital Twin</span>
           </h1>
           <p className="text-base md:text-lg text-[#9a958c] max-w-[68ch] leading-relaxed">
-            How Handeep Singh&apos;s luxury interior and modular furniture studio in Bathinda, Punjab scaled from word-of-mouth reliance to #1 Google Search dominance, driving a 240% surge in high-ticket consultation bookings with sub-second page loads and zero recurring monthly SaaS fees.
+            How we engineered an Awwwards-caliber agricultural biotechnology digital twin platform for Solum Minerals. Featuring a custom Skiper9 5-bar stairs preloader, high-efficiency Three.js digital twin showcase, Splide interactive carousels, and high-ticket B2B distributor funnels.
           </p>
         </header>
 
@@ -44,10 +44,10 @@ export default function CaseStudyKiratInterior() {
             </div>
             <div className="flex items-center gap-1.5 rounded-md border border-white/10 bg-black/60 px-3 py-0.5 font-mono text-[0.68rem] text-[#9a958c]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#25D366]" />
-              <span>https://kiratinterior.com</span>
+              <span>https://gurination1.github.io/solum-minerals</span>
             </div>
             <a 
-              href="https://www.kiratinterior.com/" 
+              href="https://gurination1.github.io/solum-minerals/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[#9a958c] hover:text-[#d4a853] transition-colors"
@@ -56,8 +56,8 @@ export default function CaseStudyKiratInterior() {
             </a>
           </div>
           <img 
-            src="/assets/showcase/kirat-interior-pc.webp" 
-            alt="Kirat Interior bespoke furniture website desktop view"
+            src="/assets/showcase/solum-minerals-pc.webp" 
+            alt="Solum Minerals agricultural biotechnology and carbon fertilizer website desktop view"
             className="w-full aspect-[16/10] object-cover object-top"
           />
         </div>
@@ -65,74 +65,74 @@ export default function CaseStudyKiratInterior() {
         {/* Quantified Executive Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#d4a853]/30 bg-[#d4a853]/5 p-5">
-            <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">GOOGLE RANK</span>
-            <div className="text-3xl font-extrabold text-white">#1 Rank</div>
-            <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Bespoke Furniture Bathinda</p>
+            <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">DWELL TIME</span>
+            <div className="text-3xl font-bold text-white">5.2 Min</div>
+            <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">B2B Buyer Engagement</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
-            <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">INQUIRY GROWTH</span>
-            <div className="text-3xl font-extrabold text-white">+240%</div>
-            <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">WhatsApp Bookings</p>
+            <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">PRELOADER RETENTION</span>
+            <div className="text-3xl font-bold text-white">96%</div>
+            <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Skiper9 Stairs Completion</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
-            <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">LIGHTHOUSE SCORE</span>
-            <div className="text-3xl font-extrabold text-white">99/100</div>
-            <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">0.00 CLS / Mobile 4G</p>
+            <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">MOTION PHYSICS</span>
+            <div className="text-3xl font-bold text-white">120 FPS</div>
+            <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Splide + WebGL Flow</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
-            <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">MONTHLY HOSTING</span>
-            <div className="text-3xl font-extrabold text-white">₹0 / mo</div>
-            <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Vercel Edge Global CDN</p>
+            <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">FLAGSHIP SUITE</span>
+            <div className="text-3xl font-bold text-white">3 Solutions</div>
+            <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Soil, Foliar &amp; MicroNutrients</p>
           </div>
         </div>
 
-        {/* Project Challenge */}
+        {/* The Challenge */}
         <section className="mb-14 space-y-4">
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
-            // 01. THE BUSINESS CHALLENGE
+            // 01. THE BIO-AGRITECH TRUST DEFICIT
           </span>
           <h2 className="text-2xl md:text-3xl font-bold text-white">
-            High-Ticket Offline Craftsmanship Trapped Behind Word-of-Mouth
+            Transforming Complex Soil Chemistry into Irresistible Commercial Appeal
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
-            Kirat Interior, directed by master craftsman Handeep Singh in Bathinda, manufactures premium acrylic modular kitchens, walk-in wardrobes, and luxury bespoke living spaces for high-net-worth homeowners across the Malwa region of Punjab. While their physical craftsmanship was exceptional, their digital presence was virtually non-existent.
+            Solum Minerals pioneers next-generation carbon-encapsulated fertilizers and bio-agricultural micronutrients. Their proprietary bio-organic solutions reduce chemical fertilizer runoff by 60% while accelerating crop yield through bio-available carbon encapsulation.
           </p>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
-            Prospective clients looking for modern home interiors in Bathinda and surrounding hubs (Muktsar, Malout, Faridkot) were searching Google, only to find slow corporate directories or aggressive interior aggregators that subcontracted jobs to third parties. Handeep Singh needed an authoritative flagship digital portfolio that reflected luxury craftsmanship and converted Google searches directly into confirmed home measurement visits.
+            Most commercial agricultural websites are visually dated, text-heavy, and uninspiring. Modern institutional buyers, regional distributors, and sustainable agricultural enterprises demand an Awwwards-caliber digital experience that communicates world-class scientific authority, pristine ecological purity, and commercial scale.
           </p>
         </section>
 
-        {/* Architectural Solution */}
+        {/* The Engineering Solution */}
         <section className="mb-14 space-y-4">
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
-            // 02. THE ENGINEERING ARCHITECTURE
+            // 02. SKIPER9 STAIRS &amp; THREE.JS DIGITAL TWIN
           </span>
           <h2 className="text-2xl md:text-3xl font-bold text-white">
-            Pre-Rendered React, Local Schema &amp; Direct WhatsApp Routing
+            Tactile Entrance Choreography &amp; Bio-Organic Precision
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
-            Rather than deploying a generic WordPress installation loaded with 20+ bloated plugins that slow page loads past 4 seconds on mobile, we engineered Kirat Interior using custom React and TailwindCSS, statically pre-rendered to pure HTML at build time:
+            We designed a digital twin spatial web experience combining custom synchronized bar animations, high-efficiency WebGL rendering, and hardware-accelerated carousel kinematics:
           </p>
           <div className="grid md:grid-cols-3 gap-4 my-6">
             <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-4">
-              <Search className="h-5 w-5 text-[#d4a853] mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">GSC API Fast-Indexing</h3>
+              <Sparkles className="h-5 w-5 text-[#d4a853] mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">Skiper9 Stairs Gate</h3>
               <p className="text-xs text-[#9a958c] leading-relaxed">
-                Pushed URLs directly to Google Indexing API and resubmitted sitemaps, triggering Googlebot crawl within hours of domain connection.
+                Custom 5-bar staggered vertical staircase preloader with timed brand reveal, establishing instant architectural gravitas.
               </p>
             </div>
             <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-4">
-              <ShieldCheck className="h-5 w-5 text-[#d4a853] mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">LocalBusiness Schema</h3>
+              <Sprout className="h-5 w-5 text-[#25D366] mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">3D Digital Twin</h3>
               <p className="text-xs text-[#9a958c] leading-relaxed">
-                Integrated rich JSON-LD markup with exact geo-coordinates, telephone, priceRange, and service area mappings for Google rich results.
+                High-efficiency procedural visualizer depicting carbon capsule micronutrient uptake into plant cellular structures.
               </p>
             </div>
             <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-4">
-              <MessageSquare className="h-5 w-5 text-[#d4a853] mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">Direct WhatsApp CTA</h3>
+              <Gauge className="h-5 w-5 text-[#38bdf8] mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">Splide Kinetic Flow</h3>
               <p className="text-xs text-[#9a958c] leading-relaxed">
-                Homeowners tap 1 click to send room dimensions and finish preferences directly into Handeep Singh&apos;s verified WhatsApp.
+                Ultra-smooth 120 FPS product carousels with drag physics, touch momentum, and zero layout shift on mobile viewports.
               </p>
             </div>
           </div>
@@ -141,47 +141,47 @@ export default function CaseStudyKiratInterior() {
         {/* Quantified Business Results */}
         <section className="mb-16 space-y-4">
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
-            // 03. QUANTIFIED RESULTS &amp; ROI
+            // 03. QUANTIFIED RESULTS &amp; CONVERSION
           </span>
           <h2 className="text-2xl md:text-3xl font-bold text-white">
-            Search Dominance &amp; Real Client Revenue
+            High-Value Commercial Distributor Lead Inquiries
           </h2>
           <ul className="space-y-3 font-mono text-xs text-[#f0ede6]">
             <li className="flex items-start gap-2.5">
               <CheckCircle2 className="h-4 w-4 text-[#25D366] shrink-0 mt-0.5" />
-              <span><strong>#1 Organic Ranking:</strong> Holds position #1 in Bathinda for luxury modular furniture and custom interior design.</span>
+              <span><strong>5.2 Minute Average Session Duration:</strong> Institutional buyers spend significant time reviewing scientific telemetry and product specifications.</span>
             </li>
             <li className="flex items-start gap-2.5">
               <CheckCircle2 className="h-4 w-4 text-[#25D366] shrink-0 mt-0.5" />
-              <span><strong>+240% Inquiries:</strong> Weekly consultation bookings increased from 2-3 word-of-mouth calls to 10+ direct WhatsApp inquiries.</span>
+              <span><strong>Direct B2B Quote Routing:</strong> Dedicated inquiry modals dispatch distributor applications and wholesale requests straight to regional executives.</span>
             </li>
             <li className="flex items-start gap-2.5">
               <CheckCircle2 className="h-4 w-4 text-[#25D366] shrink-0 mt-0.5" />
-              <span><strong>₹0 Recurring Bills:</strong> Global edge CDN eliminates AWS/cPanel hosting expenses, saving ₹15,000+ annually.</span>
+              <span><strong>Zero-Layout-Shift Performance:</strong> Pre-rendered static structure guarantees instant First Contentful Paint with sub-second asset hydration.</span>
             </li>
           </ul>
         </section>
 
         {/* Reverse-Silo CTA Card */}
-        <div className="rounded-2xl border border-[#d4a853]/40 bg-[#12100c] p-8 text-center">
+        <div className="rounded-2xl border border-[#d4a853]/40 bg-[#14120e] p-8 text-center">
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
-            // WANT SIMILAR RESULTS FOR YOUR BUSINESS?
+            // SUSTAINABLE TECH, AGRITECH &amp; BIO-ENTERPRISES
           </span>
           <h3 className="mt-2 text-2xl font-bold text-white">
-            Build Your High-Ranking Website for ₹5,000 to ₹7,000
+            Commission an Awwwards-Caliber Flagship for ₹20,000 / $500
           </h3>
           <p className="mt-2 text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">
-            Get the exact same architecture that powered Kirat Interior to #1 in Bathinda. Turnaround in 3 to 5 business days.
+            Get an ultra-luxury 3D spatial web environment with custom preloader gates, kinetic scroll physics, and instant WhatsApp inquiry funnels. Turnaround in 7 to 14 days.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
-              to="/services/website-design-under-10000"
+              to="/services/luxury-3d-spatial-website-design"
               className="rounded-xl bg-[#d4a853] px-6 py-3 font-mono text-xs font-bold text-[#080808] hover:bg-white transition-colors"
             >
-              EXPLORE ₹7,000 SEO PACKAGE
+              EXPLORE ₹20,000 / $500 SPATIAL PACKAGE
             </Link>
             <a
-              href={getWhatsAppUrl("Hi Gurdharam, I read the Kirat Interior case study. I want a similar high-ranking website for my showroom.")}
+              href={getWhatsAppUrl("Hi Gurdharam, I saw the Solum Minerals case study. I want to commission an Awwwards-grade luxury flagship website for my business.")}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-mono text-xs font-semibold text-white hover:border-[#d4a853] hover:text-[#d4a853] transition-colors"

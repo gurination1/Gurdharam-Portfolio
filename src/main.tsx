@@ -50,6 +50,7 @@ const CaseStudyBioPrac = lazy(() => import('./pages/case-study-bioprac'));
 const CaseStudyDreamHeights = lazy(() => import('./pages/case-study-dreamheights'));
 const CaseStudyNeovrit = lazy(() => import('./pages/case-study-neovrit'));
 const CaseStudyBranders = lazy(() => import('./pages/case-study-branders'));
+const CaseStudySolumMinerals = lazy(() => import('./pages/case-study-solum-minerals'));
 const BlogPostAffordableWebsite = lazy(() => import('./pages/blog-post-affordable-website'));
 const BlogPostThreeJSOptimization = lazy(() => import('./pages/blog-post-threejs-optimization'));
 const BlogPostMultimodalJudge = lazy(() => import('./pages/blog-post-multimodal-judge'));
@@ -178,6 +179,7 @@ function Main() {
           <Route path="/case-studies/dreamheights" element={<CaseStudyDreamHeights />} />
           <Route path="/case-studies/neovrit" element={<CaseStudyNeovrit />} />
           <Route path="/case-studies/branders" element={<CaseStudyBranders />} />
+          <Route path="/case-studies/solum-minerals" element={<CaseStudySolumMinerals />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/dpdp-act-compliant-air-gapped-llm-legal-tech" element={<BlogPostDPDPLegal />} />
           <Route path="/blog/ai-college-admission-bot-punjab" element={<BlogPostAICollege />} />

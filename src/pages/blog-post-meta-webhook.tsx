@@ -25,7 +25,7 @@ export default function BlogPostMetaWebhook() {
             <MessageSquare className="h-3.5 w-3.5" />
             <span>ENGINEERING SPEC // DIRECT META CLOUD API ARCHITECTURE</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
             Self-Hosting Meta WhatsApp Webhooks <br />
             <span className="text-[#25D366]">HMAC-SHA256 Security, Redis Deduplication &amp; Zero SaaS Fees</span>
           </h1>
@@ -47,22 +47,22 @@ export default function BlogPostMetaWebhook() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#25D366]/30 bg-[#25D366]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">RECURRING SAAS FEE</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">₹0 / Mo</div>
+            <div className="text-3xl font-extrabold text-white">₹0 / Mo</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Direct Meta Graph API</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">FREE CONVERSATIONS</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">1,000 / Mo</div>
+            <div className="text-3xl font-extrabold text-white">1,000 / Mo</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Direct from Meta</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">ACK LATENCY</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">&lt; 85 ms</div>
+            <div className="text-3xl font-extrabold text-white">&lt; 85 ms</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Prevents Meta Retries</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">SECURITY STANDARD</span>
-            <div className="font-['Syne'] text-3xl font-extrabold text-white">HMAC-256</div>
+            <div className="text-3xl font-extrabold text-white">HMAC-256</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Timing-Safe Verified</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function BlogPostMetaWebhook() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#25D366]">
             // 01. THE WHATSAPP SAAS MARKUP TAX
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Why Intermediary Aggregators Drain Small Business Margins
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -88,7 +88,7 @@ export default function BlogPostMetaWebhook() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#25D366]">
             // 02. PRODUCTION WEBHOOK ARCHITECTURE
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Cryptographic Handshakes, Webhook Verification &amp; Redis Locks
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -160,7 +160,7 @@ if (!isNew) {
           <span className="font-mono text-xs uppercase tracking-widest text-[#25D366]">
             // 03. ANNUAL FINANCIAL ADVANTAGE
           </span>
-          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Direct Cloud API vs. SaaS Aggregators (Annual TCO)
           </h2>
           <div className="overflow-x-auto my-6">
@@ -200,7 +200,7 @@ if (!isNew) {
 
         {/* Reverse Silo Links */}
         <section className="mb-14 rounded-2xl border border-white/10 bg-[#0a0a0a] p-6 md:p-8">
-          <h3 className="text-lg font-bold font-['Syne'] text-white mb-4">
+          <h3 className="text-lg font-bold text-white mb-4">
             Explore 12 Specialized WhatsApp Vertical Solutions
           </h3>
           <p className="text-xs md:text-sm text-[#9a958c] mb-6">
@@ -240,7 +240,7 @@ if (!isNew) {
 
         {/* CTA */}
         <div className="p-8 rounded-2xl border border-[#25D366]/30 bg-gradient-to-br from-[#25D366]/10 via-[#0a0a0a] to-[#0a0a0a] text-center space-y-4">
-          <h2 className="text-xl md:text-2xl font-bold font-['Syne'] text-white">
+          <h2 className="text-xl md:text-2xl font-bold text-white">
             Ready to Cut Out WhatsApp SaaS Fees Permanently?
           </h2>
           <p className="text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">
