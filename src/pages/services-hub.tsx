@@ -30,7 +30,7 @@ export default function ServicesHubPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[#d4a853]/15 border border-[#d4a853]/30 text-[#d4a853] mb-3">
             <Sparkles className="w-3.5 h-3.5" /> Curated Digital Flagships & 3D WebGL
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 font-['Syne']">
             Live Websites, 3D Spatial Engines & AI Platforms
           </h2>
           <p className="text-slate-300 text-sm leading-relaxed">

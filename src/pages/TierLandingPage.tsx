@@ -515,7 +515,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span>{config.badge}</span>
           </div>
 
-          <h1 className="mb-6 text-[clamp(1.5rem,6vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
+          <h1 className="mb-6 font-['Syne'] text-[clamp(1.5rem,6vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
             {config.h1Line1}<br />
             <span className={activeKey === 'interactive-12k' ? 'text-[#38bdf8]' : 'text-[#d4a853]'}>
               {config.h1Highlight}
@@ -584,7 +584,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // PACKAGE SPECIFICATIONS &amp; DELIVERABLES
             </span>
-            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="mt-1 font-['Syne'] text-2xl font-bold text-white sm:text-3xl">
               Everything Included in the {config.price} Package
             </h2>
           </div>
@@ -595,7 +595,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
                 <span className="font-mono text-xs text-[#d4a853] block mb-1">
                   TIER ARCHITECTURE
                 </span>
-                <h3 className="text-3xl font-extrabold text-white">
+                <h3 className="font-['Syne'] text-3xl font-extrabold text-white">
                   {config.title}
                 </h3>
                 <p className="mt-2 text-sm text-[#9a958c] max-w-xl leading-relaxed">
@@ -605,7 +605,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
 
               <div className="text-left md:text-right shrink-0">
                 <div className="flex items-baseline gap-2 md:justify-end">
-                  <span className="text-4xl font-extrabold text-white">
+                  <span className="font-['Syne'] text-4xl font-extrabold text-white">
                     {config.price}
                   </span>
                   {config.originalPrice && (
@@ -669,7 +669,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // TECHNICAL ADVANTAGES
             </span>
-            <h2 className="mt-1 text-3xl font-extrabold text-white">
+            <h2 className="mt-1 font-['Syne'] text-3xl font-extrabold text-white">
               Why This Architecture Dominates Competitors
             </h2>
           </div>
@@ -694,7 +694,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
                   <span className="font-mono text-[0.65rem] text-[#d4a853] block mb-1 uppercase tracking-wider">
                     {df.stat}
                   </span>
-                  <h3 className="text-base font-bold text-white mb-2">
+                  <h3 className="font-['Syne'] text-base font-bold text-white mb-2">
                     {df.title}
                   </h3>
                   <p className="text-xs leading-relaxed text-[#9a958c]">
@@ -714,7 +714,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // REAL PRODUCTION BENCHMARK
             </span>
-            <h2 className="mt-1 text-3xl font-extrabold text-white">
+            <h2 className="mt-1 font-['Syne'] text-3xl font-extrabold text-white">
               Live Proof in Production
             </h2>
             <p className="mt-2 text-sm text-[#9a958c]">
@@ -751,7 +751,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             {/* Content & Deliverables */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
               <div>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="font-['Syne'] text-2xl font-bold text-white">
                   {config.example.title}
                 </h3>
                 <p className="font-mono text-xs text-[#d4a853] mt-1">
@@ -827,7 +827,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // QUESTIONS &amp; ANSWERS
             </span>
-            <h2 className="mt-1 text-3xl font-extrabold text-white">
+            <h2 className="mt-1 font-['Syne'] text-3xl font-extrabold text-white">
               Frequently Asked Questions for {config.price} Tier
             </h2>
           </div>
@@ -838,7 +838,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
                 key={idx}
                 className="rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 backdrop-blur-sm"
               >
-                <h3 className="text-base font-bold text-white sm:text-lg flex items-start gap-3">
+                <h3 className="font-['Syne'] text-base font-bold text-white sm:text-lg flex items-start gap-3">
                   <span className="font-mono text-xs text-[#d4a853] shrink-0 mt-1">0{idx + 1}.</span>
                   <span>{faq.q}</span>
                 </h3>
@@ -859,7 +859,7 @@ export default function TierLandingPage({ tierKey: propKey }: { tierKey?: TierKe
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // READY TO LAUNCH?
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 className="mt-3 font-['Syne'] text-3xl font-extrabold text-white sm:text-4xl">
             Book Your {config.price} Package Today
           </h2>
           <p className="mt-3 text-sm text-[#9a958c] max-w-xl mx-auto">

@@ -25,7 +25,7 @@ export default function CaseStudyKiratInterior() {
             <Award className="h-3.5 w-3.5" />
             <span>CASE STUDY // #1 RANKED LOCAL SEARCH DOMINANCE</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
             Kirat Interior // Bespoke Modular Furniture Studio <br />
             <span className="text-[#d4a853]">Achieving #1 Google Local SEO Dominance</span>
           </h1>
@@ -66,22 +66,22 @@ export default function CaseStudyKiratInterior() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#d4a853]/30 bg-[#d4a853]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">GOOGLE RANK</span>
-            <div className="text-3xl font-extrabold text-white">#1 Rank</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">#1 Rank</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Bespoke Furniture Bathinda</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">INQUIRY GROWTH</span>
-            <div className="text-3xl font-extrabold text-white">+240%</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">+240%</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">WhatsApp Bookings</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">LIGHTHOUSE SCORE</span>
-            <div className="text-3xl font-extrabold text-white">99/100</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">99/100</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">0.00 CLS / Mobile 4G</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">MONTHLY HOSTING</span>
-            <div className="text-3xl font-extrabold text-white">₹0 / mo</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">₹0 / mo</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Vercel Edge Global CDN</p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function CaseStudyKiratInterior() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 01. THE BUSINESS CHALLENGE
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             High-Ticket Offline Craftsmanship Trapped Behind Word-of-Mouth
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -107,7 +107,7 @@ export default function CaseStudyKiratInterior() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 02. THE ENGINEERING ARCHITECTURE
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             Pre-Rendered React, Local Schema &amp; Direct WhatsApp Routing
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -143,7 +143,7 @@ export default function CaseStudyKiratInterior() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 03. QUANTIFIED RESULTS &amp; ROI
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             Search Dominance &amp; Real Client Revenue
           </h2>
           <ul className="space-y-3 font-mono text-xs text-[#f0ede6]">
@@ -167,7 +167,7 @@ export default function CaseStudyKiratInterior() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // WANT SIMILAR RESULTS FOR YOUR BUSINESS?
           </span>
-          <h3 className="mt-2 text-2xl font-bold text-white">
+          <h3 className="mt-2 text-2xl font-bold font-['Syne'] text-white">
             Build Your High-Ranking Website for ₹5,000 to ₹7,000
           </h3>
           <p className="mt-2 text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

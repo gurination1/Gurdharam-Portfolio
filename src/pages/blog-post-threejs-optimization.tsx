@@ -87,7 +87,7 @@ export default function BlogPostThreeJSOptimization() {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold text-white leading-tight mb-6">
             Three.js WebGL Mobile Optimization: <br />
             <span className="text-[#38bdf8]">Achieving Locked 60–120 FPS on Mobile Devices</span>
           </h1>
@@ -99,7 +99,7 @@ export default function BlogPostThreeJSOptimization() {
 
         {/* Technical Highlights Card */}
         <div className="rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 mb-12">
-          <h2 className="text-lg font-bold text-white mb-3">Core Performance Rules for Production WebGL:</h2>
+          <h2 className="font-['Syne'] text-lg font-bold text-white mb-3">Core Performance Rules for Production WebGL:</h2>
           <ul className="space-y-2 font-mono text-xs text-[#f0ede6]">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-4 w-4 text-[#38bdf8] shrink-0 mt-0.5" />
@@ -118,7 +118,7 @@ export default function BlogPostThreeJSOptimization() {
 
         {/* Section 1 */}
         <section className="space-y-4 mb-12">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-['Syne'] font-bold text-white">
             1. The High-DPI Mobile Bottleneck: Device Pixel Ratio Clamping
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -133,7 +133,7 @@ export default function BlogPostThreeJSOptimization() {
 
         {/* Section 2 */}
         <section className="space-y-4 mb-12">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-['Syne'] font-bold text-white">
             2. Geometry &amp; Texture Streaming: DRACO Compression
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -146,7 +146,7 @@ export default function BlogPostThreeJSOptimization() {
 
         {/* Section 3: Case Study Applications */}
         <section className="space-y-4 mb-14">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-['Syne'] font-bold text-white">
             3. Battle-Tested in Production: BioPrac &amp; NEOVRIT
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -170,7 +170,7 @@ export default function BlogPostThreeJSOptimization() {
 
         {/* CTA Card */}
         <div className="mt-12 rounded-2xl border border-[#38bdf8]/40 bg-[#0b161b] p-8 text-center">
-          <h3 className="text-2xl font-bold text-white">
+          <h3 className="text-2xl font-bold font-['Syne'] text-white">
             Commission a 3D WebGL Platform for Your Brand
           </h3>
           <p className="mt-2 text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

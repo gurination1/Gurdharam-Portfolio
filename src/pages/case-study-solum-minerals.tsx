@@ -25,7 +25,7 @@ export default function CaseStudySolumMinerals() {
             <Award className="h-3.5 w-3.5" />
             <span>CASE STUDY // BIO-AGRITECH DIGITAL TWIN &amp; 3D SPATIAL</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
             Solum Minerals // Bio-Agritech <br />
             <span className="text-[#d4a853]">Carbon Micronutrients &amp; 3D Digital Twin</span>
           </h1>
@@ -66,22 +66,22 @@ export default function CaseStudySolumMinerals() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#d4a853]/30 bg-[#d4a853]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">DWELL TIME</span>
-            <div className="text-3xl font-bold text-white">5.2 Min</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">5.2 Min</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">B2B Buyer Engagement</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">PRELOADER RETENTION</span>
-            <div className="text-3xl font-bold text-white">96%</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">96%</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Skiper9 Stairs Completion</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">MOTION PHYSICS</span>
-            <div className="text-3xl font-bold text-white">120 FPS</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">120 FPS</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Splide + WebGL Flow</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">FLAGSHIP SUITE</span>
-            <div className="text-3xl font-bold text-white">3 Solutions</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">3 Solutions</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Soil, Foliar &amp; MicroNutrients</p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function CaseStudySolumMinerals() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 01. THE BIO-AGRITECH TRUST DEFICIT
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             Transforming Complex Soil Chemistry into Irresistible Commercial Appeal
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -107,7 +107,7 @@ export default function CaseStudySolumMinerals() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 02. SKIPER9 STAIRS &amp; THREE.JS DIGITAL TWIN
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             Tactile Entrance Choreography &amp; Bio-Organic Precision
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -116,21 +116,21 @@ export default function CaseStudySolumMinerals() {
           <div className="grid md:grid-cols-3 gap-4 my-6">
             <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-4">
               <Sparkles className="h-5 w-5 text-[#d4a853] mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">Skiper9 Stairs Gate</h3>
+              <h3 className="font-['Syne'] font-bold text-white text-sm mb-1">Skiper9 Stairs Gate</h3>
               <p className="text-xs text-[#9a958c] leading-relaxed">
                 Custom 5-bar staggered vertical staircase preloader with timed brand reveal, establishing instant architectural gravitas.
               </p>
             </div>
             <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-4">
               <Sprout className="h-5 w-5 text-[#25D366] mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">3D Digital Twin</h3>
+              <h3 className="font-['Syne'] font-bold text-white text-sm mb-1">3D Digital Twin</h3>
               <p className="text-xs text-[#9a958c] leading-relaxed">
                 High-efficiency procedural visualizer depicting carbon capsule micronutrient uptake into plant cellular structures.
               </p>
             </div>
             <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-4">
               <Gauge className="h-5 w-5 text-[#38bdf8] mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">Splide Kinetic Flow</h3>
+              <h3 className="font-['Syne'] font-bold text-white text-sm mb-1">Splide Kinetic Flow</h3>
               <p className="text-xs text-[#9a958c] leading-relaxed">
                 Ultra-smooth 120 FPS product carousels with drag physics, touch momentum, and zero layout shift on mobile viewports.
               </p>
@@ -143,7 +143,7 @@ export default function CaseStudySolumMinerals() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 03. QUANTIFIED RESULTS &amp; CONVERSION
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             High-Value Commercial Distributor Lead Inquiries
           </h2>
           <ul className="space-y-3 font-mono text-xs text-[#f0ede6]">
@@ -167,7 +167,7 @@ export default function CaseStudySolumMinerals() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // SUSTAINABLE TECH, AGRITECH &amp; BIO-ENTERPRISES
           </span>
-          <h3 className="mt-2 text-2xl font-bold text-white">
+          <h3 className="mt-2 text-2xl font-['Syne'] font-bold text-white">
             Commission an Awwwards-Caliber Flagship for ₹20,000 / $500
           </h3>
           <p className="mt-2 text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

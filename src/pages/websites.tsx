@@ -608,7 +608,7 @@ export default function WebsitesShowcase() {
             <span>TRANSPARENT RATES & PRODUCTION SHOWCASE // 2026</span>
           </div>
 
-          <h1 className="mb-6 text-[clamp(1.4rem,6.2vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
+          <h1 className="mb-6 font-['Syne'] text-[clamp(1.4rem,6.2vw,3.5rem)] font-extrabold uppercase tracking-tight text-white leading-[1.2]">
             Systems That Scale.<br />
             <span className="text-[#d4a853]">Web Architecture That Sells.</span>
           </h1>
@@ -686,7 +686,7 @@ export default function WebsitesShowcase() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // CLEAR & HONEST ENGINEERING RATES
             </span>
-            <h2 className="mt-2 text-2xl sm:text-4xl font-extrabold text-white leading-snug">
+            <h2 className="mt-2 font-['Syne'] text-2xl sm:text-4xl font-extrabold text-white leading-snug">
               Choose the Right Architecture for Your Business
             </h2>
             <p className="mt-3 text-sm text-[#9a958c] max-w-xl mx-auto">
@@ -718,7 +718,7 @@ export default function WebsitesShowcase() {
                 <div>
                   {/* Tier Title & Price */}
                   <div className="mb-4">
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="font-['Syne'] text-xl font-bold text-white">
                       {tier.name}
                     </h3>
                     <div className="mt-1 inline-block rounded border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[0.68rem] text-[#d4a853]">
@@ -732,10 +732,10 @@ export default function WebsitesShowcase() {
                   {/* Price Block */}
                   <div className="mb-6 border-b border-white/10 pb-5">
                     <div className="flex flex-wrap items-baseline gap-2">
-                      <span className="text-3xl font-extrabold text-white">
+                      <span className="font-['Syne'] text-3xl font-extrabold text-white">
                         {tier.price}
                       </span>
-                      <span className="text-xl font-bold text-[#d4a853]">
+                      <span className="font-['Syne'] text-xl font-bold text-[#d4a853]">
                         / {tier.priceUsd}
                       </span>
                       {tier.originalPrice && (
@@ -821,7 +821,7 @@ export default function WebsitesShowcase() {
                                 href={curDemo.url} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="font-bold text-sm text-white hover:text-[#d4a853] flex items-center justify-between transition-colors"
+                                className="font-['Syne'] font-bold text-sm text-white hover:text-[#d4a853] flex items-center justify-between transition-colors"
                               >
                                 <span className="flex items-center gap-1.5 truncate mr-1">
                                   <span>{curDemo.name}</span>
@@ -847,7 +847,7 @@ export default function WebsitesShowcase() {
                           href={tier.exampleUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="font-bold text-sm text-white hover:text-[#d4a853] flex items-center gap-1.5 transition-colors"
+                          className="font-['Syne'] font-bold text-sm text-white hover:text-[#d4a853] flex items-center gap-1.5 transition-colors"
                         >
                           <span>{tier.exampleName}</span>
                           <ExternalLink className="h-3 w-3 text-[#d4a853]" />
@@ -906,7 +906,7 @@ export default function WebsitesShowcase() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // FEATURE BREAKDOWN
             </span>
-            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="mt-1 font-['Syne'] text-2xl font-bold text-white sm:text-3xl">
               Side-by-Side Architectural Comparison
             </h2>
           </div>
@@ -1000,7 +1000,7 @@ export default function WebsitesShowcase() {
               <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
                 // PRODUCTION SHOWCASE &amp; VERIFIED CASES
               </span>
-              <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+              <h2 className="mt-2 font-['Syne'] text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
                 Featured Cases
               </h2>
               <p className="mt-2 text-sm sm:text-base text-[#9a958c] max-w-xl">
@@ -1103,7 +1103,7 @@ export default function WebsitesShowcase() {
                   </a>
 
                   {/* Title & Signature Adelt Niche Line */}
-                  <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-[#d4a853] transition-colors leading-snug">
+                  <h3 className="font-['Syne'] text-2xl font-bold tracking-tight text-white group-hover:text-[#d4a853] transition-colors leading-snug">
                     {item.title}
                   </h3>
 
@@ -1216,7 +1216,7 @@ export default function WebsitesShowcase() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
               // FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="mt-2 text-3xl font-extrabold text-white">
+            <h2 className="mt-2 font-['Syne'] text-3xl font-extrabold text-white">
               Everything You Need to Know Before Starting
             </h2>
           </div>
@@ -1227,7 +1227,7 @@ export default function WebsitesShowcase() {
                 key={idx}
                 className="rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 backdrop-blur-sm"
               >
-                <h3 className="text-base font-bold text-white sm:text-lg flex items-start gap-3">
+                <h3 className="font-['Syne'] text-base font-bold text-white sm:text-lg flex items-start gap-3">
                   <span className="font-mono text-xs text-[#d4a853] shrink-0 mt-1">0{idx + 1}.</span>
                   <span>{faq.q}</span>
                 </h3>
@@ -1248,7 +1248,7 @@ export default function WebsitesShowcase() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // READY TO SCALE YOUR BRAND ONLINE?
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 className="mt-3 font-['Syne'] text-3xl font-extrabold text-white sm:text-4xl">
             Let&apos;s Build Your Website in the Next 3 to 7 Days
           </h2>
           <p className="mt-3 text-sm text-[#9a958c] max-w-xl mx-auto">

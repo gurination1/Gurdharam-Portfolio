@@ -25,7 +25,7 @@ export default function CaseStudyBranders() {
             <Award className="h-3.5 w-3.5" />
             <span>CASE STUDY // AWWWARDS-GRADE AUTOMOTIVE ATELIER &amp; 3D SPATIAL</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
             Branders // Bespoke Automotive Atelier <br />
             <span className="text-[#d4a853]">3D Spatial Flagship &amp; Video-Blend Engine</span>
           </h1>
@@ -66,22 +66,22 @@ export default function CaseStudyBranders() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#d4a853]/30 bg-[#d4a853]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">DWELL TIME</span>
-            <div className="text-3xl font-extrabold text-white">4.9 Min</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">4.9 Min</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Car Enthusiast Engagement</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">PRELOADER RETENTION</span>
-            <div className="text-3xl font-extrabold text-white">94%</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">94%</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Interactive Gate Completion</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">MOTION PHYSICS</span>
-            <div className="text-3xl font-extrabold text-white">120 FPS</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">120 FPS</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Lenis Kinetic Smooth Flow</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#f0ede6] block mb-1">FLEET SHOWCASE</span>
-            <div className="text-3xl font-extrabold text-white">3 Flagships</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">3 Flagships</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">G-Wagon, GT3 RS, Defender</p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function CaseStudyBranders() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 01. THE LUXURY AUTOMOTIVE BOTTLENECK
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             High-End Vehicle Tuning Requires Visceral, Tactile Presentation
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -107,7 +107,7 @@ export default function CaseStudyBranders() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 02. FORGE PRELOADER &amp; VIDEO-BLEND CHOREOGRAPHY
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             Cinematic RevealFlow Gate &amp; Hardware-Accelerated Physics
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -143,7 +143,7 @@ export default function CaseStudyBranders() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // 03. QUANTIFIED RESULTS &amp; CONVERSION
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             High-Ticket Build Consultation Inquiries
           </h2>
           <ul className="space-y-3 font-mono text-xs text-[#f0ede6]">
@@ -167,7 +167,7 @@ export default function CaseStudyBranders() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#d4a853]">
             // AUTOMOTIVE STUDIOS, TUNERS &amp; HIGH-TICKET BRANDS
           </span>
-          <h3 className="mt-2 text-2xl font-bold text-white">
+          <h3 className="mt-2 text-2xl font-bold font-['Syne'] text-white">
             Commission an Awwwards-Caliber Flagship for ₹20,000 / $500
           </h3>
           <p className="mt-2 text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

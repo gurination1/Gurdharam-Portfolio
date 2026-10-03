@@ -95,7 +95,7 @@ export default function BlogPostAffordableWebsite() {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold text-white leading-tight mb-6">
             Affordable Business Website Design in India: <br />
             <span className="text-[#d4a853]">Building High-Ranking Sites Under ₹10,000</span>
           </h1>
@@ -107,7 +107,7 @@ export default function BlogPostAffordableWebsite() {
 
         {/* Executive Summary Card */}
         <div className="rounded-2xl border border-white/10 bg-[#0f0f0f] p-6 mb-12">
-          <h2 className="text-lg font-bold text-white mb-3">Key Takeaways for Indian Business Owners:</h2>
+          <h2 className="font-['Syne'] text-lg font-bold text-white mb-3">Key Takeaways for Indian Business Owners:</h2>
           <ul className="space-y-2 font-mono text-xs text-[#f0ede6]">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-4 w-4 text-[#25D366] shrink-0 mt-0.5" />
@@ -126,7 +126,7 @@ export default function BlogPostAffordableWebsite() {
 
         {/* Section 1 */}
         <section className="space-y-4 mb-12">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-['Syne'] font-bold text-white">
             1. The Hidden Flaws of WordPress &amp; Generic Website Builders
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -139,7 +139,7 @@ export default function BlogPostAffordableWebsite() {
 
         {/* Section 2 */}
         <section className="space-y-4 mb-12">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-['Syne'] font-bold text-white">
             2. The Modern Alternative: Pre-Rendered React on Edge CDNs
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -172,7 +172,7 @@ export default function BlogPostAffordableWebsite() {
 
         {/* Section 3: The 4 Pricing Tiers */}
         <section className="space-y-4 mb-12">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-['Syne'] font-bold text-white">
             3. Transparent Engineering Packages: ₹5,000 to ₹20,000
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -220,7 +220,7 @@ export default function BlogPostAffordableWebsite() {
 
         {/* Section 4: Real Proof */}
         <section className="space-y-4 mb-14">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-['Syne'] font-bold text-white">
             4. Real Production Verification: Kirat Interior &amp; Dream Heights
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -244,7 +244,7 @@ export default function BlogPostAffordableWebsite() {
 
         {/* CTA Card */}
         <div className="mt-12 rounded-2xl border border-[#d4a853]/40 bg-[#12100c] p-8 text-center">
-          <h3 className="text-2xl font-bold text-white">
+          <h3 className="text-2xl font-bold font-['Syne'] text-white">
             Ready to Launch Your High-Ranking Website?
           </h3>
           <p className="mt-2 text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">

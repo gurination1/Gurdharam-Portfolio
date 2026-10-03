@@ -25,7 +25,7 @@ export default function BlogPostMultimodalJudge() {
             <ShieldCheck className="h-3.5 w-3.5" />
             <span>ENGINEERING SPEC // AUTONOMOUS MEDIA QUALITY ASSURANCE</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-['Syne'] font-extrabold leading-tight text-white mb-6">
             Multimodal Judge AI &amp; Quality Gates <br />
             <span className="text-[#ff5f56]">Zero-Defect Autonomous Video Publishing on GitHub Actions</span>
           </h1>
@@ -47,22 +47,22 @@ export default function BlogPostMultimodalJudge() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           <div className="rounded-xl border border-[#ff5f56]/30 bg-[#ff5f56]/5 p-5">
             <span className="font-mono text-[0.68rem] text-[#ff5f56] block mb-1">QUALITY THRESHOLD</span>
-            <div className="text-3xl font-extrabold text-white">&ge; 85/100</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">&ge; 85/100</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Gemini Vision Rubric</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#25D366] block mb-1">BLACK FRAME DETECT</span>
-            <div className="text-3xl font-extrabold text-white">0.0%</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">0.0%</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">FFmpeg Hardware Gate</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#38bdf8] block mb-1">AUDIO DUCKING</span>
-            <div className="text-3xl font-extrabold text-white">-18 dB</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">-18 dB</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">Dynamic Sidechain</p>
           </div>
           <div className="rounded-xl border border-white/10 bg-[#0f0f0f] p-5">
             <span className="font-mono text-[0.68rem] text-[#d4a853] block mb-1">SERVER OVERHEAD</span>
-            <div className="text-3xl font-extrabold text-white">$0 / Mo</div>
+            <div className="font-['Syne'] text-3xl font-extrabold text-white">$0 / Mo</div>
             <p className="font-mono text-[0.68rem] text-[#9a958c] mt-1">100% GHA Serverless</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function BlogPostMultimodalJudge() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#ff5f56]">
             // 01. THE CRITICAL BOTTLENECK OF UNATTENDED VIDEO
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             Why Traditional Programmatic Video Pipelines Fail Silently
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -94,7 +94,7 @@ export default function BlogPostMultimodalJudge() {
           <span className="font-mono text-xs uppercase tracking-widest text-[#ff5f56]">
             // 02. ARCHITECTURAL BLUEPRINT
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             The Three-Tier Verification Engine: Code &amp; Vision
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -153,7 +153,7 @@ ffmpeg -i output.mp4 -af "silencedetect=noise=-45dB:d=1.5" -vn -f null - 2>&1 | 
           <span className="font-mono text-xs uppercase tracking-widest text-[#ff5f56]">
             // 03. AUTOMATED RECOVERY LOOP
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-['Syne'] font-bold text-white">
             Programmatic Re-Prompting When Scores Drop Below 85
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
@@ -176,7 +176,7 @@ ffmpeg -i output.mp4 -af "silencedetect=noise=-45dB:d=1.5" -vn -f null - 2>&1 | 
 
         {/* Reverse Silo Links */}
         <section className="mb-14 rounded-2xl border border-white/10 bg-[#0a0a0a] p-6 md:p-8">
-          <h3 className="text-lg font-bold text-white mb-4">
+          <h3 className="text-lg font-bold font-['Syne'] text-white mb-4">
             Related Autonomous AI &amp; Video Pipelines
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -213,7 +213,7 @@ ffmpeg -i output.mp4 -af "silencedetect=noise=-45dB:d=1.5" -vn -f null - 2>&1 | 
 
         {/* CTA */}
         <div className="p-8 rounded-2xl border border-[#ff5f56]/30 bg-gradient-to-br from-[#ff5f56]/10 via-[#0a0a0a] to-[#0a0a0a] text-center space-y-4">
-          <h2 className="text-xl md:text-2xl font-bold text-white">
+          <h2 className="text-xl md:text-2xl font-bold font-['Syne'] text-white">
             Need Autonomous Video Pipelines for Your Business?
           </h2>
           <p className="text-xs md:text-sm text-[#9a958c] max-w-lg mx-auto">
