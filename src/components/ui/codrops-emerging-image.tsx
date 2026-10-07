@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import * as THREE from 'three';
+import type * as ThreeModule from 'three';
 import gsap from 'gsap';
 import { motion } from 'framer-motion';
 import { TextArc } from './text-arc-effect';
@@ -259,15 +259,15 @@ export default function CodropsEmergingImage({
   const [diameter, setDiameter] = useState<number>(310);
 
   const threeRefs = useRef<{
-    renderer: THREE.WebGLRenderer | null;
-    scene: THREE.Scene | null;
-    camera: THREE.OrthographicCamera | null;
-    material: THREE.ShaderMaterial | null;
-    mesh: THREE.Mesh | null;
-    texture: THREE.Texture | null;
+    renderer: ThreeModule.WebGLRenderer | null;
+    scene: ThreeModule.Scene | null;
+    camera: ThreeModule.OrthographicCamera | null;
+    material: ThreeModule.ShaderMaterial | null;
+    mesh: ThreeModule.Mesh | null;
+    texture: ThreeModule.Texture | null;
     animTween: gsap.core.Tween | null;
     reqId: number | null;
-    clock: THREE.Clock;
+    clock: ThreeModule.Clock | null;
     isIntersecting: boolean;
   }>({
     renderer: null,
@@ -278,7 +278,7 @@ export default function CodropsEmergingImage({
     texture: null,
     animTween: null,
     reqId: null,
-    clock: new THREE.Clock(),
+    clock: null,
     isIntersecting: false,
   });
 
@@ -320,143 +320,154 @@ export default function CodropsEmergingImage({
 
     const refs = threeRefs.current;
     let isDisposed = false;
+    let cleanupFn: (() => void) | null = null;
 
-    try {
-      const renderer = new THREE.WebGLRenderer({
-        canvas,
-        alpha: true,
-        antialias: true,
-        powerPreference: 'high-performance',
-      });
-      renderer.setPixelRatio(Math.min(typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1, 2));
-      refs.renderer = renderer;
+    import('three').then((THREE) => {
+      if (isDisposed || !container.isConnected) return;
+      refs.clock = new THREE.Clock();
 
-      const scene = new THREE.Scene();
-      refs.scene = scene;
+      try {
+        const renderer = new THREE.WebGLRenderer({
+          canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: 'high-performance',
+        });
+        renderer.setPixelRatio(Math.min(typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1, 2));
+        refs.renderer = renderer;
 
-      const camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0.1, 10);
-      camera.position.z = 1;
-      refs.camera = camera;
+        const scene = new THREE.Scene();
+        refs.scene = scene;
 
-      const textureLoader = new THREE.TextureLoader();
-      textureLoader.load(
-        src,
-        (tex) => {
-          if (isDisposed) return;
-          tex.generateMipmaps = true;
-          tex.minFilter = THREE.LinearMipmapLinearFilter;
-          refs.texture = tex;
+        const camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0.1, 10);
+        camera.position.z = 1;
+        refs.camera = camera;
 
-          const rect = container.getBoundingClientRect();
-          const width = Math.max(1, rect.width);
-          const height = Math.max(1, rect.height);
+        const textureLoader = new THREE.TextureLoader();
+        textureLoader.load(
+          src,
+          (tex) => {
+            if (isDisposed) return;
+            tex.generateMipmaps = true;
+            tex.minFilter = THREE.LinearMipmapLinearFilter;
+            refs.texture = tex;
 
-          renderer.setSize(width, height, false);
+            const rect = container.getBoundingClientRect();
+            const width = Math.max(1, rect.width);
+            const height = Math.max(1, rect.height);
 
-          const uniforms = {
-            uTime: { value: 0 },
-            uFillColor: { value: new THREE.Color(fillColor) },
-            uProgress: { value: 0 },
-            uType: { value: type },
-            uPixels: { value: PIXELS },
-            uTexture: { value: tex },
-            uTextureSize: {
-              value: new THREE.Vector2(tex.image.width || 1024, tex.image.height || 1024),
-            },
-            uElementSize: { value: new THREE.Vector2(width, height) },
-          };
+            renderer.setSize(width, height, false);
 
-          const material = new THREE.ShaderMaterial({
-            vertexShader: VERTEX_SHADER,
-            fragmentShader: FRAGMENT_SHADER,
-            uniforms,
-            transparent: true,
-            depthTest: false,
-            depthWrite: false,
-          });
-          refs.material = material;
+            const uniforms = {
+              uTime: { value: 0 },
+              uFillColor: { value: new THREE.Color(fillColor) },
+              uProgress: { value: 0 },
+              uType: { value: type },
+              uPixels: { value: PIXELS },
+              uTexture: { value: tex },
+              uTextureSize: {
+                value: new THREE.Vector2(tex.image.width || 1024, tex.image.height || 1024),
+              },
+              uElementSize: { value: new THREE.Vector2(width, height) },
+            };
 
-          const geometry = new THREE.PlaneGeometry(1, 1);
-          const mesh = new THREE.Mesh(geometry, material);
-          refs.mesh = mesh;
-          scene.add(mesh);
+            const material = new THREE.ShaderMaterial({
+              vertexShader: VERTEX_SHADER,
+              fragmentShader: FRAGMENT_SHADER,
+              uniforms,
+              transparent: true,
+              depthTest: false,
+              depthWrite: false,
+            });
+            refs.material = material;
 
-          setIsLoaded(true);
+            const geometry = new THREE.PlaneGeometry(1, 1);
+            const mesh = new THREE.Mesh(geometry, material);
+            refs.mesh = mesh;
+            scene.add(mesh);
 
-          if (refs.isIntersecting) {
-            triggerEmerge();
+            setIsLoaded(true);
+
+            if (refs.isIntersecting) {
+              triggerEmerge();
+            }
+          },
+          undefined,
+          (err) => {
+            console.warn('Fallback: texture loading fallback active.', err);
+            setFallbackMode(true);
+            setIsLoaded(true);
           }
-        },
-        undefined,
-        (err) => {
-          console.warn('Fallback: texture loading fallback active.', err);
-          setFallbackMode(true);
-          setIsLoaded(true);
-        }
-      );
+        );
 
-      // Animation Loop
-      let running = true;
-      const animate = () => {
-        if (!running || isDisposed) return;
-        if (refs.material) {
-          refs.material.uniforms.uTime.value = refs.clock.getElapsedTime();
-        }
-        if (refs.renderer && refs.scene && refs.camera) {
-          refs.renderer.render(refs.scene, refs.camera);
-        }
+        // Animation Loop
+        let running = true;
+        const animate = () => {
+          if (!running || isDisposed) return;
+          if (refs.material && refs.clock) {
+            refs.material.uniforms.uTime.value = refs.clock.getElapsedTime();
+          }
+          if (refs.renderer && refs.scene && refs.camera) {
+            refs.renderer.render(refs.scene, refs.camera);
+          }
+          refs.reqId = requestAnimationFrame(animate);
+        };
         refs.reqId = requestAnimationFrame(animate);
-      };
-      refs.reqId = requestAnimationFrame(animate);
 
-      // Resize observer
-      const resizeObserver = new ResizeObserver((entries) => {
-        for (const entry of entries) {
-          const { width, height } = entry.contentRect;
-          if (width > 0 && height > 0 && refs.renderer && refs.material) {
-            refs.renderer.setSize(width, height, false);
-            refs.material.uniforms.uElementSize.value.set(width, height);
+        // Resize observer
+        const resizeObserver = new ResizeObserver((entries) => {
+          for (const entry of entries) {
+            const { width, height } = entry.contentRect;
+            if (width > 0 && height > 0 && refs.renderer && refs.material) {
+              refs.renderer.setSize(width, height, false);
+              refs.material.uniforms.uElementSize.value.set(width, height);
+            }
           }
-        }
-      });
-      resizeObserver.observe(container);
+        });
+        resizeObserver.observe(container);
 
-      // Scroll-triggered IntersectionObserver
-      const intersectionObserver = new IntersectionObserver(
-        ([entry]) => {
-          refs.isIntersecting = entry.isIntersecting;
-          if (entry.isIntersecting) {
-            triggerEmerge();
+        // Scroll-triggered IntersectionObserver
+        const intersectionObserver = new IntersectionObserver(
+          ([entry]) => {
+            refs.isIntersecting = entry.isIntersecting;
+            if (entry.isIntersecting) {
+              triggerEmerge();
+            }
+          },
+          { threshold: 0.15 }
+        );
+        intersectionObserver.observe(container);
+
+        cleanupFn = () => {
+          running = false;
+          if (refs.reqId !== null) cancelAnimationFrame(refs.reqId);
+          if (refs.animTween) refs.animTween.kill();
+          resizeObserver.disconnect();
+          intersectionObserver.disconnect();
+
+          if (refs.mesh) {
+            refs.mesh.geometry.dispose();
+            scene.remove(refs.mesh);
           }
-        },
-        { threshold: 0.15 }
-      );
-      intersectionObserver.observe(container);
-
-      return () => {
-        isDisposed = true;
-        running = false;
-        if (refs.reqId !== null) cancelAnimationFrame(refs.reqId);
-        if (refs.animTween) refs.animTween.kill();
-        resizeObserver.disconnect();
-        intersectionObserver.disconnect();
-
-        if (refs.mesh) {
-          refs.mesh.geometry.dispose();
-          scene.remove(refs.mesh);
-        }
-        if (refs.material) refs.material.dispose();
-        if (refs.texture) refs.texture.dispose();
-        if (refs.renderer) refs.renderer.dispose();
-      };
-    } catch (e) {
-      console.warn('WebGL not available; fallback 2D active.', e);
+          if (refs.material) refs.material.dispose();
+          if (refs.texture) refs.texture.dispose();
+          if (refs.renderer) refs.renderer.dispose();
+        };
+      } catch (e) {
+        console.warn('WebGL not available; fallback 2D active.', e);
+        setFallbackMode(true);
+        setIsLoaded(true);
+      }
+    }).catch((err) => {
+      console.warn('Failed to load Three.js dynamically; fallback active.', err);
       setFallbackMode(true);
       setIsLoaded(true);
-      return () => {
-        isDisposed = true;
-      };
-    }
+    });
+
+    return () => {
+      isDisposed = true;
+      if (cleanupFn) cleanupFn();
+    };
   }, [src, fillColor, type, triggerEmerge]);
 
   return (

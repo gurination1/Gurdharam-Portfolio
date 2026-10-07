@@ -16,6 +16,11 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 1000,
+    modulePreload: {
+      resolveDependencies: (filename, deps) => {
+        return deps.filter((dep) => !dep.includes('vendor-3d'));
+      },
+    },
     rollupOptions: {
       output: {
         manualChunks(id) {
