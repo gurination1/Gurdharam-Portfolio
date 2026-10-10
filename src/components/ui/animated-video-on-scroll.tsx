@@ -121,6 +121,7 @@ export const HeroVideo = React.forwardRef<HTMLVideoElement, HTMLMotionProps<"vid
         muted
         loop
         playsInline
+        preload="none"
         style={{ scale, ...style }}
         {...props}
       />

@@ -287,6 +287,10 @@ html.has-custom-cursor #cursor-canvas {
   gap: 1.3rem;
   background: #050505;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: auto;
 }
 
 .loader-grid {
@@ -304,6 +308,8 @@ html.has-custom-cursor #cursor-canvas {
   font-family: var(--font-mono);
   font-size: clamp(4rem, 11vw, 10rem);
   color: var(--accent-gold);
+  font-variant-numeric: tabular-nums;
+  contain: layout paint;
 }
 
 .loader-mark {

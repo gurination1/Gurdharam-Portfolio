@@ -121,7 +121,7 @@ function navigateTo(target) {
   window.location.href = target;
 }
 
-function usePortfolioMotion() {
+function usePortfolioMotion(onPreloaderComplete?: () => void) {
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.documentElement.classList.toggle('reduce-motion', reduce);
@@ -147,6 +147,8 @@ function usePortfolioMotion() {
       gsap.ticker.lagSmoothing(0);
     }
 
+    const splitInstances: any[] = [];
+
     const ctx = gsap.context(() => {
       const isBotOrCrawler = typeof navigator !== 'undefined' && (
         Boolean(navigator.webdriver) ||
@@ -159,85 +161,96 @@ function usePortfolioMotion() {
 
       const shouldBypass = reduce || isBotOrCrawler || isSlowConnection;
 
+      const initDeferredSplit = () => {
+        document.querySelectorAll('[data-split]').forEach((el) => {
+          try {
+            const split = new SplitType(el, { types: 'words' });
+            splitInstances.push(split);
+            gsap.from(split.words, {
+              scrollTrigger: { trigger: el, start: 'top 78%' },
+              y: 16,
+              opacity: 0,
+              stagger: 0.025,
+              duration: reduce ? 0.01 : 0.55,
+              ease: 'power3.out',
+            });
+          } catch (e) {}
+        });
+        ScrollTrigger.refresh();
+      };
+
       if (shouldBypass) {
         gsap.set('.preloader', { display: 'none' });
         gsap.set('.hero-word', { yPercent: 0, opacity: 1 });
         gsap.set('.hero-meta, .signal-strip, .hero-sub, .hero-actions, .hero-card, .site-nav', { y: 0, opacity: 1 });
+        onPreloaderComplete?.();
+        initDeferredSplit();
       } else {
         let initialized = false;
         const runPreloader = () => {
           if (initialized) return;
           initialized = true;
 
-          const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-          tl.to('.loader-count', {
-            textContent: 100,
-            duration: 1.1,
+          const preloaderEl = document.querySelector('.preloader') as HTMLElement | null;
+          const countEl = document.querySelector('.loader-count') as HTMLElement | null;
+          const countObj = { value: 0 };
+
+          const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+          // Ultra-smooth 0 -> 100 counter with no DOM query in onUpdate
+          tl.to(countObj, {
+            value: 100,
+            duration: 0.85,
             ease: 'power2.inOut',
-            snap: { textContent: 1 },
             onUpdate() {
-              const el = document.querySelector('.loader-count');
-              if (el) {
-                el.textContent = String(Math.round(Number(el.textContent))).padStart(3, '0');
+              if (countEl) {
+                countEl.textContent = String(Math.round(countObj.value)).padStart(3, '0');
               }
             },
           })
-            .from('.loader-mark path', { strokeDashoffset: 260, duration: 0.55, stagger: 0.08 }, '-=0.4')
-            .from('.loader-name span', { yPercent: 110, duration: 0.45, stagger: 0.02 }, '-=0.25')
+            .from('.loader-mark path', { strokeDashoffset: 260, duration: 0.48, stagger: 0.06, ease: 'power2.out' }, '-=0.45')
+            .from('.loader-name span', { yPercent: 110, duration: 0.38, stagger: 0.015, ease: 'power3.out' }, '-=0.3')
             .to('.preloader', {
               yPercent: -100,
-              duration: 0.85,
+              duration: 0.65,
               ease: 'expo.inOut',
+              pointerEvents: 'none',
               onComplete: () => {
-                const el = document.querySelector('.preloader') as HTMLElement | null;
-                if (el) el.style.display = 'none';
+                if (preloaderEl) preloaderEl.style.display = 'none';
+                onPreloaderComplete?.();
+                if ('requestIdleCallback' in window) {
+                  (window as any).requestIdleCallback(initDeferredSplit, { timeout: 1200 });
+                } else {
+                  setTimeout(initDeferredSplit, 100);
+                }
               }
             })
             .from('.hero-word', {
               yPercent: 120,
               opacity: 0,
-              duration: 0.95,
-              stagger: 0.1,
+              duration: 0.85,
+              stagger: 0.08,
               ease: 'expo.out',
-            }, '-=0.25')
+            }, '-=0.35')
             .from('.hero-meta, .signal-strip, .hero-sub, .site-nav', {
               y: 20,
               opacity: 0,
-              stagger: 0.05,
-              duration: 0.7,
+              stagger: 0.04,
+              duration: 0.6,
               ease: 'expo.out',
-            }, '-=0.7')
+            }, '-=0.6')
             .from('.hero-card', {
               y: 24,
               opacity: 0,
-              duration: 0.8,
+              duration: 0.7,
               ease: 'expo.out',
-            }, '-=0.6');
+            }, '-=0.5');
         };
 
-        if (typeof document !== 'undefined') {
-          if (document.readyState === 'complete') {
-            runPreloader();
-          } else {
-            window.addEventListener('load', runPreloader, { once: true });
-            setTimeout(runPreloader, 600);
-          }
-        } else {
+        requestAnimationFrame(() => {
           runPreloader();
-        }
-      }
-
-      document.querySelectorAll('[data-split]').forEach((el) => {
-        const split = new SplitType(el, { types: 'words' });
-        gsap.from(split.words, {
-          scrollTrigger: { trigger: el, start: 'top 78%' },
-          y: 16,
-          opacity: 0,
-          stagger: 0.025,
-          duration: reduce ? 0.01 : 0.55,
-          ease: 'power3.out',
         });
-      });
+      }
 
       gsap.utils.toArray('.stat-number').forEach((el) => {
         const target = Number(el.dataset.target);
@@ -301,6 +314,9 @@ function usePortfolioMotion() {
     });
 
     return () => {
+      splitInstances.forEach((s) => {
+        try { s.revert(); } catch (e) {}
+      });
       ctx.revert();
       if (lenis) {
         try {
@@ -392,29 +408,33 @@ function useMagnetic() {
   }, []);
 }
 
-function SignalCanvas() {
-  const canvasRef = useRef(null);
+function SignalCanvas({ active = true }: { active?: boolean }) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const isIntersecting = useIntersection(canvasRef);
   const isIntersectingRef = useRef(isIntersecting);
-  const drawRef = useRef<() => void>(null);
+  const drawRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     isIntersectingRef.current = isIntersecting;
-    if (isIntersecting && drawRef.current) {
+    if (isIntersecting && active && drawRef.current) {
       drawRef.current();
     }
-  }, [isIntersecting]);
+  }, [isIntersecting, active]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
     let frame = 0;
     let raf = 0;
     let running = false;
     let width = window.innerWidth;
     let height = window.innerHeight;
     const pointer = { x: -9999, y: -9999 };
-    const particles = Array.from({ length: width < 768 ? 36 : 92 }, (_, index) => ({
+    const particleCount = width < 768 ? 24 : 46;
+    const particles = Array.from({ length: particleCount }, (_, index) => ({
       x: Math.random(),
       y: Math.random(),
       vx: (Math.random() - 0.5) * 0.00035,
@@ -426,7 +446,7 @@ function SignalCanvas() {
     const resize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
       canvas.style.width = `${width}px`;
@@ -434,13 +454,13 @@ function SignalCanvas() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    const move = (event) => {
+    const move = (event: MouseEvent) => {
       pointer.x = event.clientX;
       pointer.y = event.clientY;
     };
 
     const draw = () => {
-      if (!isIntersectingRef.current) {
+      if (!isIntersectingRef.current || !active) {
         running = false;
         return;
       }
@@ -450,7 +470,13 @@ function SignalCanvas() {
       ctx.fillStyle = 'rgba(8,8,8,0.18)';
       ctx.fillRect(0, 0, width, height);
 
-      particles.forEach((p, index) => {
+      // Batch line strokes into single path
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(212,168,83,0.08)';
+      ctx.lineWidth = 1;
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
         p.x += p.vx + Math.sin(frame + p.phase) * 0.00003;
         p.y += p.vy + Math.cos(frame + p.phase) * 0.00003;
         if (p.x < 0 || p.x > 1) p.vx *= -1;
@@ -460,44 +486,58 @@ function SignalCanvas() {
 
         const x = p.x * width;
         const y = p.y * height;
-        const pd = Math.hypot(pointer.x - x, pointer.y - y);
-        if (pd < 140) {
-          p.x -= ((pointer.x - x) / 140) * 0.0012;
-          p.y -= ((pointer.y - y) / 140) * 0.0012;
+        const dxp = pointer.x - x;
+        const dyp = pointer.y - y;
+        const pdSq = dxp * dxp + dyp * dyp;
+        if (pdSq < 19600) {
+          p.x -= (dxp / 140) * 0.0012;
+          p.y -= (dyp / 140) * 0.0012;
         }
 
-        for (let j = index + 1; j < particles.length; j += 1) {
+        for (let j = i + 1; j < particles.length; j++) {
           const q = particles[j];
           const qx = q.x * width;
           const qy = q.y * height;
-          const d = Math.hypot(qx - x, qy - y);
-          if (d < 126) {
-            ctx.strokeStyle = `rgba(212,168,83,${(1 - d / 126) * 0.13})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
+          const dx = qx - x;
+          const dy = qy - y;
+          const distSq = dx * dx + dy * dy;
+          if (distSq < 15876) {
             ctx.moveTo(x, y);
             ctx.lineTo(qx, qy);
-            ctx.stroke();
           }
         }
+      }
+      ctx.stroke();
 
-        ctx.fillStyle = pd < 120 ? 'rgba(232,192,112,0.92)' : 'rgba(212,168,83,0.42)';
+      // Draw particle dots
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        const x = p.x * width;
+        const y = p.y * height;
+        const dxp = pointer.x - x;
+        const dyp = pointer.y - y;
+        const isNear = (dxp * dxp + dyp * dyp) < 14400;
+
+        ctx.fillStyle = isNear ? 'rgba(232,192,112,0.92)' : 'rgba(212,168,83,0.42)';
         ctx.beginPath();
-        ctx.arc(x, y, pd < 120 ? p.r * 1.8 : p.r, 0, Math.PI * 2);
+        ctx.arc(x, y, isNear ? p.r * 1.8 : p.r, 0, Math.PI * 2);
         ctx.fill();
-      });
+      }
+
       raf = requestAnimationFrame(draw);
     };
 
     const startLoop = () => {
-      if (!running) {
+      if (!running && active) {
         draw();
       }
     };
     drawRef.current = startLoop;
 
     resize();
-    startLoop();
+    if (active) {
+      startLoop();
+    }
     window.addEventListener('resize', resize);
     window.addEventListener('pointermove', move, { passive: true });
     return () => {
@@ -506,7 +546,7 @@ function SignalCanvas() {
       window.removeEventListener('pointermove', move);
       drawRef.current = null;
     };
-  }, []);
+  }, [active]);
 
   return <canvas className="signal-canvas" ref={canvasRef} aria-hidden="true" />;
 }
@@ -806,11 +846,11 @@ function TechLogoMarquee() {
   );
 }
 
-function Hero() {
+function Hero({ preloaderDone = false }: { preloaderDone?: boolean }) {
   return (
     <section className="hero" id="top">
       <HeroMeteor />
-      <SignalCanvas />
+      <SignalCanvas active={preloaderDone} />
       <div className="hero-meta">
         <span>[ AVAILABLE FOR WORK ]</span>
         <span>MSME ID: UDYAM-PB-03-0079744</span>
@@ -872,10 +912,12 @@ function Hero() {
         <aside className="hero-card" data-cursor="hover">
           <div className="hero-spline-shell">
             <Spotlight className="-top-40 left-0 md:left-20 md:-top-24" fill="white" />
-            <SplineScene
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="hero-spline"
-            />
+            {preloaderDone && (
+              <SplineScene
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="hero-spline"
+              />
+            )}
           </div>
           <p className="hero-copy">
             We build <Mark>AI systems that eliminate 90% of manual work</Mark>, automate lead generation 24/7 on WhatsApp, and engineer luxury websites that convert traffic into enterprise revenue.
@@ -1347,7 +1389,12 @@ function Contact() {
 }
 
 function App() {
-  usePortfolioMotion();
+  const [preloaderDone, setPreloaderDone] = useState(false);
+  const handlePreloaderDone = React.useCallback(() => {
+    setPreloaderDone(true);
+  }, []);
+
+  usePortfolioMotion(handlePreloaderDone);
   useGlobalPointerVars();
   useCardSpotlight();
   useMagnetic();
@@ -1360,7 +1407,7 @@ function App() {
       <WipeMenu />
       <DynamicIslandTOC selector=".section-label, [data-toc]" />
       <main>
-        <Hero />
+        <Hero preloaderDone={preloaderDone} />
         <TechLogoMarquee />
         <About />
         <PortfolioStory />

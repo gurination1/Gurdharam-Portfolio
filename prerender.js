@@ -3904,7 +3904,10 @@ function formatAuthoritativeJsonLd(jsonld, routePath) {
     // Guarantee body/root never contains conflicting JSON-LD scripts
     routeHtml = routeHtml.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/g, '');
 
-    const routeContent = `\n${routeHtml}\n`;
+    // For root path '/', bypass SSR DOM injection into #root to prevent createRoot DOM tear-down and main thread lag,
+    // while keeping 100% of the rich SEO <head> tags, title, meta descriptions, and Schema.org JSON-LD graph.
+    const isRoot = route.path === '/';
+    const routeContent = isRoot ? '' : `\n${routeHtml}\n`;
     let pageHtml = template
       .replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${routeContent}</div>`)
       .replace(/<title>[\s\S]*?<\/title>/, `<title>${route.title}</title>`)
@@ -3936,7 +3939,7 @@ function formatAuthoritativeJsonLd(jsonld, routePath) {
 
     if (route.path === '/') {
       fs.writeFileSync(templatePath, pageHtml, 'utf8');
-      console.log("Pre-rendered root / index.html successfully with SSR");
+      console.log("Pre-rendered root / index.html successfully (clean root mount + full SEO head tags)");
     } else if (route.path === '/404') {
       pageHtml = pageHtml.replace('</head>', '  <meta name="robots" content="noindex, nofollow" />\n</head>');
       fs.writeFileSync(path.join(distPath, '404.html'), pageHtml, 'utf8');

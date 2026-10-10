@@ -66,6 +66,13 @@ export const ReggaeCanvasCursor: React.FC = () => {
       scale: 0,
     };
 
+    function startLoop() {
+      if (!animId) {
+        lastTime = performance.now();
+        animId = requestAnimationFrame(render);
+      }
+    }
+
     function onFirstPointer(x: number, y: number) {
       if (!isVisible) {
         isVisible = true;
@@ -79,6 +86,7 @@ export const ReggaeCanvasCursor: React.FC = () => {
           ease: 'power3.out',
           overwrite: 'auto',
         });
+        startLoop();
       }
     }
 
@@ -219,10 +227,8 @@ export const ReggaeCanvasCursor: React.FC = () => {
 
     // High-refresh continuous render loop with framerate-independent exponential dampening
     function render(now: number) {
-      if (!ctx) return;
-      if (!isVisible) {
-        lastTime = now;
-        animId = requestAnimationFrame(render);
+      if (!ctx || !isVisible) {
+        animId = null;
         return;
       }
       const dt = Math.min((now - lastTime) / 1000, 0.1);
@@ -259,7 +265,6 @@ export const ReggaeCanvasCursor: React.FC = () => {
       animId = requestAnimationFrame(render);
     }
 
-    animId = requestAnimationFrame(render);
     (window as any).__reggaeCursor = { circle, render, isVisible: () => isVisible, setHover };
 
     return () => {
