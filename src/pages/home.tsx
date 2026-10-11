@@ -14,7 +14,7 @@ const PointsChart = lazy(() => import('@/components/ui/points-chart').then((m) =
 import { LiquidGlassMagneticButton } from '@/components/ui/liquidglassmagneticbutton';
 import { DynamicIslandTOC } from '@/components/ui/dynamic-island-toc';
 import { FluidTextMorph } from '@/components/ui/fluid-text-morph';
-import FlipTextReveal from '@/components/ui/next-reveal';
+import EditorialTextReveal from '@/components/ui/editorial-text-reveal';
 import SendButton from '@/components/ui/send-button';
 import ImageParticleField from '@/components/ui/image-particle-field';
 import ParticleAnimation from '@/components/ui/particle-animation';
@@ -137,8 +137,8 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
       const shouldBypass = reduce || isBotOrCrawler || isSlowConnection;
 
       if (shouldBypass) {
-        gsap.set('.preloader', { display: 'none' });
-        gsap.set('.hero-word', { yPercent: 0, opacity: 1 });
+        gsap.set('.ldr', { display: 'none' });
+        gsap.set('.hero-line, .hero-word', { y: 0, yPercent: 0, opacity: 1 });
         gsap.set('.hero-meta, .signal-strip, .hero-sub, .hero-actions, .hero-card, .site-nav', { y: 0, opacity: 1 });
         startLenis();
         onPreloaderComplete?.();
@@ -148,57 +148,93 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
           if (initialized) return;
           initialized = true;
 
-          const preloaderEl = document.querySelector('.preloader') as HTMLElement | null;
-          const countEl = document.querySelector('.loader-count') as HTMLElement | null;
-          const countObj = { value: 0 };
+          const preloaderEl = document.querySelector('.ldr') as HTMLElement | null;
+          if (!preloaderEl) {
+            startLenis();
+            onPreloaderComplete?.();
+            return;
+          }
 
-          const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-
-          // Ultra-smooth 0 -> 100 counter with no DOM query in onUpdate
-          tl.to(countObj, {
-            value: 100,
-            duration: 0.72,
-            ease: 'power2.inOut',
-            onUpdate() {
-              if (countEl) {
-                countEl.textContent = String(Math.round(countObj.value)).padStart(3, '0');
-              }
+          const tl = gsap.timeline({
+            defaults: { ease: 'power3.inOut' },
+            onComplete: () => {
+              if (preloaderEl) preloaderEl.style.display = 'none';
+              startLenis();
+              onPreloaderComplete?.();
             },
-          })
-            .from('.loader-mark path', { strokeDashoffset: 260, duration: 0.45, stagger: 0.05, ease: 'power2.out' }, '-=0.4')
-            .from('.loader-name span', { yPercent: 110, duration: 0.35, stagger: 0.012, ease: 'power3.out' }, '-=0.25')
-            .to('.loader-count, .loader-mark, .loader-name, .loader-copy, .loader-grid', {
-              opacity: 0,
-              y: -16,
-              duration: 0.22,
-              ease: 'power2.in',
-              onComplete: () => {
-                // Trigger 120 FPS hardware-composited curtain lift on GPU thread
-                if (preloaderEl) {
-                  preloaderEl.classList.add('preloader-lift');
-                }
-                // Hero entrance reveals as curtain clears
-                gsap.fromTo('.hero-word',
-                  { yPercent: 100, opacity: 0 },
-                  { yPercent: 0, opacity: 1, duration: 0.65, stagger: 0.05, ease: 'power3.out', delay: 0.08 }
-                );
-                gsap.fromTo('.hero-meta, .signal-strip, .hero-sub, .site-nav',
-                  { y: 16, opacity: 0 },
-                  { y: 0, opacity: 1, stagger: 0.03, duration: 0.45, ease: 'power3.out', delay: 0.12 }
-                );
-                gsap.fromTo('.hero-card',
-                  { y: 18, opacity: 0 },
-                  { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out', delay: 0.16 }
-                );
+          });
 
-                // Settle preloader and initialize background systems once off-screen
-                setTimeout(() => {
-                  if (preloaderEl) preloaderEl.style.display = 'none';
-                  startLenis();
-                  onPreloaderComplete?.();
-                }, 630);
-              }
-            });
+          // 1. Entrance: Corner tags glide up from mask
+          tl.fromTo(
+            '.ldr_nm_el span',
+            { yPercent: 110 },
+            { yPercent: 0, duration: 0.45, stagger: 0.05, ease: 'power3.out' },
+            0.05
+          );
+
+          // 2. Entrance: Pristine GURDHARAM letters reveal cleanly with zero splits
+          tl.fromTo(
+            '.ldr_char',
+            { yPercent: 115, opacity: 0 },
+            { yPercent: 0, opacity: 1, duration: 0.45, stagger: 0.018, ease: 'power3.out' },
+            0.12
+          );
+
+          // 3. Entrance: Enterprise Studio badge reveals
+          tl.fromTo(
+            '.ldr_logo_badge span',
+            { yPercent: 110, opacity: 0 },
+            { yPercent: 0, opacity: 1, duration: 0.38, ease: 'power3.out' },
+            0.25
+          );
+
+          // Hold logo in full view (0.55s hold)
+
+          // 4. Exit: Corner tags slide down through masks
+          tl.to(
+            '.ldr_nm_el span',
+            { yPercent: 140, duration: 0.32, stagger: 0.03, ease: 'power3.in' },
+            '+=0.55'
+          );
+
+          // 5. Exit: Pristine center logo clears cleanly
+          tl.to(
+            '.ldr_logo',
+            { opacity: 0, scale: 0.98, duration: 0.28, ease: 'power2.in' },
+            '<0.05'
+          );
+
+          // 6. Minimal dual-split curtain tear: Top curtain sweeps UP, bottom curtain sweeps DOWN
+          tl.to(
+            '.ldr_curtain_top',
+            { yPercent: -100, duration: 0.85, ease: 'power4.inOut', force3D: true },
+            '-=0.08'
+          );
+          tl.to(
+            '.ldr_curtain_bottom',
+            { yPercent: 100, duration: 0.85, ease: 'power4.inOut', force3D: true },
+            '<'
+          );
+
+          // 7. Hero section entrance glides up in tandem as gold curtains pull away
+          tl.fromTo(
+            '.hero-line',
+            { y: 35, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.65, stagger: 0.08, ease: 'power3.out' },
+            '-=0.55'
+          );
+          tl.fromTo(
+            '.hero-meta, .signal-strip, .hero-sub, .site-nav',
+            { y: 16, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.03, duration: 0.45, ease: 'power3.out' },
+            '-=0.5'
+          );
+          tl.fromTo(
+            '.hero-card',
+            { y: 18, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' },
+            '-=0.45'
+          );
         };
 
         requestAnimationFrame(() => {
@@ -707,20 +743,32 @@ function WipeMenu() {
 
 function Preloader() {
   return (
-    <div className="preloader" aria-hidden="true">
-      <div className="loader-grid" />
-      <div className="loader-count">000</div>
-      <svg className="loader-mark" viewBox="0 0 220 120">
-        <path d="M55 35 C32 35 20 53 20 72 C20 95 38 108 62 108 C83 108 98 95 98 74 L98 63 L63 63" />
-        <path d="M112 20 L112 105 C112 115 105 119 96 119" />
-        <path d="M145 91 C153 103 168 109 184 109 C202 109 213 99 213 85 C213 66 197 62 179 56 C162 50 150 44 150 30 C150 17 162 9 180 9 C193 9 204 14 211 24" />
-      </svg>
-      <div className="loader-name">
-        {'GURDHARAM JEET SINGH'.split('').map((char, index) => (
-          <span key={`${char}-${index}`}>{char === ' ' ? '\u00a0' : char}</span>
-        ))}
+    <div className="ldr" aria-hidden="true">
+      <div className="ldr_curtain ldr_curtain_top" />
+      <div className="ldr_curtain ldr_curtain_bottom" />
+      <div className="ldr_nm">
+        <div className="ldr_nm_el">
+          <span>AI SYSTEMS ARCHITECT</span>
+        </div>
+        <div className="ldr_nm_el">
+          <span>MSME: UDYAM-PB-03-0079744</span>
+        </div>
+        <div className="ldr_nm_el">
+          <span>GURDHARAM JEET SINGH</span>
+        </div>
       </div>
-      <p className="loader-copy">SIGNAL / SILENCE / SYSTEM ONLINE</p>
+      <div className="ldr_logo">
+        <div className="ldr_logo_main">
+          {'GURDHARAM'.split('').map((char, index) => (
+            <span key={`${char}-${index}`} className="ldr_char">
+              {char}
+            </span>
+          ))}
+        </div>
+        <div className="ldr_logo_badge">
+          <span>ENTERPRISE AI STUDIO</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -1125,7 +1173,7 @@ function AIBotShowcase() {
           />
           <ContainerAnimated className="ai-intro">
             <h2 className="section-label">[ 04 - AI & BOTS ]</h2>
-            <FlipTextReveal word="AI BOT SYSTEMS" className="ai-flip" showReplay={false} />
+            <EditorialTextReveal text="AI BOT SYSTEMS" className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase mb-4" />
             <p>
               I build autonomous AI bots and WhatsApp agents for Indian businesses. These systems plan tasks, call tools, generate media, move files, and run locally when privacy matters.
             </p>
