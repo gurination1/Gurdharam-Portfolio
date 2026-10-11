@@ -280,6 +280,8 @@ export default function CodropsEmergingImage({
     reqId: null,
     clock: null,
     isIntersecting: false,
+    startLoop: undefined as (() => void) | undefined,
+    pauseLoop: undefined as (() => void) | undefined,
   });
 
   const triggerEmerge = useCallback(() => {
@@ -291,12 +293,17 @@ export default function CodropsEmergingImage({
     }
 
     refs.material.uniforms.uProgress.value = 0;
+    refs.startLoop?.();
 
     refs.animTween = gsap.to(refs.material.uniforms.uProgress, {
       value: 1,
       duration: 1.5,
       ease: 'power2.out',
       overwrite: true,
+      onComplete: () => {
+        // Once emerged, render final settled state and park WebGL render loop
+        refs.pauseLoop?.();
+      },
     });
   }, []);
 
@@ -340,10 +347,26 @@ export default function CodropsEmergingImage({
     };
 
     const startAnimate = () => {
+      running = true;
       if (!refs.reqId && refs.isIntersecting && !isDisposed) {
         refs.reqId = requestAnimationFrame(animate);
       }
     };
+
+    const pauseAnimate = () => {
+      running = false;
+      if (refs.reqId !== null) {
+        cancelAnimationFrame(refs.reqId);
+        refs.reqId = null;
+      }
+      if (refs.renderer && refs.scene && refs.camera && refs.material && refs.clock) {
+        refs.material.uniforms.uTime.value = refs.clock.getElapsedTime();
+        refs.renderer.render(refs.scene, refs.camera);
+      }
+    };
+
+    refs.startLoop = startAnimate;
+    refs.pauseLoop = pauseAnimate;
 
     const initThree = () => {
       if (initialized || isDisposed || !container.isConnected) return;
@@ -527,21 +550,16 @@ export default function CodropsEmergingImage({
 
       {/* 2. Middle Layer (z-10): Rotating Text Arc Animation (BEHIND foreground cutout) */}
       {arcText && (
-        <motion.div
-          className="absolute pointer-events-none z-10 flex items-center justify-center"
-          animate={{ rotate: 360 }}
-          transition={{
-            repeat: Infinity,
-            duration: 20,
-            ease: 'linear',
-          }}
+        <div
+          className="absolute pointer-events-none z-10 flex items-center justify-center animate-[spin_20s_linear_infinite]"
+          style={{ willChange: 'transform' }}
         >
           <TextArc 
             text={arcText} 
             diameter={diameter} 
             textClassName="text-[0.72rem] md:text-[0.82rem] font-bold font-mono tracking-widest text-[#d4a853] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
           />
-        </motion.div>
+        </div>
       )}
 
       {/* 3. Top Layer (z-20): Cutout PNG on TOP of the text animation */}

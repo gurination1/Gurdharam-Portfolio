@@ -67,8 +67,6 @@ export default function WhatsAppWidget() {
           aria-label="Chat with us on WhatsApp"
         >
           <MessageCircle size={28} />
-          {/* Pulse effect */}
-          <span className="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-75" style={{ zIndex: -1 }}></span>
           
           {/* Tooltip */}
           <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-white text-black text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">

@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 interface SendButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
@@ -7,19 +6,19 @@ interface SendButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
 
 const SendButton = ({ label = "Send", className, ...props }: SendButtonProps) => {
   return (
-    <StyledWrapper className={className}>
+    <div className={`send-button-wrapper ${className || ''}`}>
       <button
-        className="send-button flex items-center rounded-2xl bg-blue-600 text-white text-lg font-medium px-5 py-2 pl-[0.9em] overflow-hidden transition-all duration-200 cursor-pointer active:scale-95"
+        className="send-button flex items-center rounded-2xl bg-blue-600 text-white text-lg font-medium px-5 py-2 pl-[0.9em] overflow-hidden transition-all duration-200 cursor-pointer active:scale-95 group"
         {...props}
       >
         <div className="svg-wrapper-1 flex items-center">
-          <div className="svg-wrapper flex items-center">
+          <div className="svg-wrapper flex items-center transition-transform duration-300 group-hover:translate-x-[1.2em] group-hover:rotate-45 group-hover:scale-110">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               width={24}
               height={24}
-              className="transition-transform duration-300 origin-center"
+              className="origin-center"
               aria-hidden="true"
             >
               <path fill="none" d="M0 0h24v24H0z" />
@@ -30,29 +29,10 @@ const SendButton = ({ label = "Send", className, ...props }: SendButtonProps) =>
             </svg>
           </div>
         </div>
-        <span className="ml-1 transition-transform duration-300">{label}</span>
+        <span className="ml-1 transition-transform duration-300 group-hover:translate-x-[5em]">{label}</span>
       </button>
-    </StyledWrapper>
+    </div>
   );
 };
-
-const StyledWrapper = styled.div`
-  button:hover .svg-wrapper {
-    animation: fly-1 0.6s ease-in-out infinite alternate;
-  }
-
-  button:hover svg {
-    transform: translateX(1.2em) rotate(45deg) scale(1.1);
-  }
-
-  button:hover span {
-    transform: translateX(5em);
-  }
-
-  @keyframes fly-1 {
-    from { transform: translateY(0.1em); }
-    to { transform: translateY(-0.1em); }
-  }
-`;
 
 export default SendButton;

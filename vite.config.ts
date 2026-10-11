@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   ssr: {
-    noExternal: ['styled-components', 'framer-motion', 'lucide-react', 'clsx', 'tailwind-merge'],
+    noExternal: ['framer-motion', 'lucide-react', 'clsx', 'tailwind-merge'],
   },
   build: {
     chunkSizeWarningLimit: 1000,
@@ -38,6 +38,9 @@ export default defineConfig({
           }
           if (id.includes('node_modules/framer-motion') || id.includes('node_modules/motion')) {
             return 'vendor-motion';
+          }
+          if (id.includes('node_modules/gsap') || id.includes('node_modules/lenis') || id.includes('node_modules/split-type')) {
+            return 'vendor-gsap';
           }
           if (id.includes('node_modules/lucide-react')) {
             return 'vendor-icons';

@@ -82,6 +82,7 @@ export default function ParticleAnimation({
     let running = false;
 
     const onMouseMove = (e: MouseEvent) => {
+      if (!isIntersectingRef.current) return;
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     };
@@ -93,7 +94,7 @@ export default function ParticleAnimation({
     };
 
     const emitParticle = () => {
-      if (mouse.diff <= 0.01) return;
+      if (!isIntersectingRef.current || mouse.diff <= 0.08 || particles.length >= 24) return;
       const particle = new Particle(mouse.smoothX, mouse.smoothY, Math.max(1, mouse.diff * 0.16), particles, color);
       particles.push(particle);
       wrapperRef.current?.prepend(particle.el);

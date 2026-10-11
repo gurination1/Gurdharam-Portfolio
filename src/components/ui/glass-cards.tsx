@@ -800,20 +800,24 @@ const Card: React.FC<CardProps> = ({ id, title, description, index, totalCards, 
 
     const targetScale = 1 - (totalCards - index) * 0.02;
     gsap.set(card, { scale: 1, transformOrigin: 'center top', willChange: 'transform', force3D: true });
-    const trigger = ScrollTrigger.create({
-      trigger: container,
-      start: 'top center',
-      end: 'bottom center',
-      scrub: 0.6,
-      fastScrollEnd: 2500,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        const scale = gsap.utils.interpolate(1, targetScale, self.progress);
-        gsap.set(card, { scale: Math.max(scale, targetScale), transformOrigin: 'center top', force3D: true });
+    const tween = gsap.to(card, {
+      scale: targetScale,
+      transformOrigin: 'center top',
+      ease: 'none',
+      force3D: true,
+      scrollTrigger: {
+        trigger: container,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 0.6,
+        fastScrollEnd: 2500,
+        anticipatePin: 1,
       },
     });
-    return () => { trigger.kill(); };
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
   }, [index, totalCards]);
 
   return (
@@ -857,11 +861,11 @@ const Card: React.FC<CardProps> = ({ id, title, description, index, totalCards, 
           }}
         >
           <div
+            className="shine-spin-element"
             style={{
               position: 'absolute',
               inset: '-150%',
               background: `conic-gradient(from 0deg, transparent 0deg, ${color} 45deg, #ffffff 85deg, ${color} 125deg, transparent 180deg, transparent 360deg)`,
-              animation: 'shine-spin 5.5s linear infinite',
               willChange: 'transform',
               transform: 'translateZ(0)',
             }}

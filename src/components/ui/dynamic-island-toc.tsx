@@ -26,7 +26,7 @@ function CircleProgress({ percentage }: { percentage: number }) {
   return (
     <svg width={size} height={size} className="shrink-0 -rotate-90">
       <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke="var(--muted)" strokeWidth={strokeWidth} />
-      <motion.circle
+      <circle
         cx={size / 2}
         cy={size / 2}
         r={radius}
@@ -34,9 +34,10 @@ function CircleProgress({ percentage }: { percentage: number }) {
         stroke="var(--foreground)"
         strokeWidth={strokeWidth}
         strokeDasharray={circumference}
-        initial={{ strokeDashoffset: circumference }}
-        animate={{ strokeDashoffset: offset }}
-        transition={{ duration: 0.15, ease: "easeOut" }}
+        style={{
+          strokeDashoffset: offset,
+          transition: "stroke-dashoffset 0.18s ease-out",
+        }}
         strokeLinecap="round"
       />
     </svg>
@@ -46,11 +47,13 @@ function CircleProgress({ percentage }: { percentage: number }) {
 type DynamicIslandTOCProps = {
   children?: ReactNode
   selector?: string
+  preloaderDone?: boolean
 }
 
 export function DynamicIslandTOC({
   children,
   selector = "article h1, article h2, article h3, article h4, .prose h1, .prose h2, .prose h3, .prose h4, [data-toc]",
+  preloaderDone = true,
 }: DynamicIslandTOCProps) {
   const [headings, setHeadings] = useState<HeadingData[]>([])
   const [activeId, setActiveId] = useState<string | null>(null)
@@ -97,12 +100,20 @@ export function DynamicIslandTOC({
 
     const timer = setTimeout(getHeadings, 100)
     return () => clearTimeout(timer)
-  }, [selector])
+  }, [selector, preloaderDone])
 
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      const total = document.documentElement.scrollHeight - window.innerHeight
-      setProgress(total > 0 ? Math.min(100, Math.max(0, (window.scrollY / total) * 100)) : 0)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const total = document.documentElement.scrollHeight - window.innerHeight
+          const next = total > 0 ? Math.round(Math.min(100, Math.max(0, (window.scrollY / total) * 100))) : 0
+          setProgress((prev) => (Math.abs(prev - next) >= 1 ? next : prev))
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })

@@ -48,8 +48,11 @@ export const HeroMeteor: React.FC = () => {
       star.style.setProperty('--m-angle', rnd(8, 14).toFixed(1) + 'deg');
       star.style.setProperty('--m-travel', Math.round(w * 1.15 + 300) + 'px');
       star.style.animation = 'none';
-      void star.offsetWidth; // force reflow
-      star.style.animation = `hero-meteor-fly ${rnd(1.15, 1.75).toFixed(2)}s linear`;
+      requestAnimationFrame(() => {
+        if (star) {
+          star.style.animation = `hero-meteor-fly ${rnd(1.15, 1.75).toFixed(2)}s linear`;
+        }
+      });
     }
 
     const onAnimStart = () => {
@@ -74,9 +77,9 @@ export const HeroMeteor: React.FC = () => {
 
     window.addEventListener('themechange', onThemeChange);
 
-    // Initial check: if night mode, schedule first meteor
+    // Initial check: if night mode, schedule first meteor after preloader curtain has settled
     if (!document.documentElement.classList.contains('day')) {
-      schedule(1800);
+      schedule(4500);
     }
 
     return () => {

@@ -62,7 +62,7 @@ export default function ImageParticleField({
     const buildParticles = () => {
       if (!image.naturalWidth || !image.naturalHeight) return;
 
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dpr = Math.min(window.devicePixelRatio || 1, 1.25);
       const rect = canvas.getBoundingClientRect();
       canvasWidth = Math.max(1, Math.floor(rect.width));
       canvasHeight = Math.max(1, Math.floor(rect.height));

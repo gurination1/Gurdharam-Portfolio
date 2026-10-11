@@ -16,14 +16,19 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
 
   useEffect(() => {
     if (!isVisible) return
-    const id = (window as any).requestIdleCallback
-      ? (window as any).requestIdleCallback(() => setShouldLoad(true), { timeout: 2000 })
-      : setTimeout(() => setShouldLoad(true), 1000)
-    return () => {
-      if ((window as any).cancelIdleCallback) {
-        (window as any).cancelIdleCallback(id)
+    let idleId: any = null
+    const timer = setTimeout(() => {
+      if ((window as any).requestIdleCallback) {
+        idleId = (window as any).requestIdleCallback(() => setShouldLoad(true), { timeout: 3000 })
       } else {
-        clearTimeout(id)
+        setShouldLoad(true)
+      }
+    }, 2200)
+
+    return () => {
+      clearTimeout(timer)
+      if (idleId && (window as any).cancelIdleCallback) {
+        (window as any).cancelIdleCallback(idleId)
       }
     }
   }, [isVisible])

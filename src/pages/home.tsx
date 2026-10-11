@@ -6,9 +6,7 @@ import { motion } from 'framer-motion';
 import { AlertTriangle, ArrowUpRight, Bot, BrainCircuit, CheckCircle2, Code2, Cpu, HeartPulse, Mail, MessageCircle, MoveRight, ShieldCheck, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SplitType from 'split-type';
 import Lenis from 'lenis';
-import VanillaTilt from 'vanilla-tilt';
 import { SplineScene } from '@/components/ui/splite';
 import { Spotlight } from '@/components/ui/spotlight';
 import FlowArt, { FlowSection } from '@/components/ui/story-scroll';
@@ -62,29 +60,9 @@ import "../styles.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const portfolioAssets = import.meta.glob('/public/assets/portfolio/*', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-});
-
-const assetList = Object.values(portfolioAssets);
-
-function pickAsset(...needles) {
-  const lowered = needles.map((needle) => needle.toLowerCase());
-  const found = assetList.find((asset) => {
-    const normalizedAsset = decodeURIComponent(String(asset)).toLowerCase();
-    return lowered.some((needle) => normalizedAsset.includes(needle));
-  });
-  if (found && typeof found === 'string') {
-    return found.replace(/^\/public/, '');
-  }
-  return found;
-}
-
-const personImage = pickAsset('styling', 'person', 'me', 'gurdharam', 'jeet', 'singh', 'profile', 'photo') || '/assets/gurdharam-portrait-bg.webp';
+const personImage = '/assets/gurdharam-portrait-bg.webp';
 const secondPageImage = '/assets/portfolio/second-page.jpg';
-const quoteParticleImage = pickAsset('quote-particle-source');
+const quoteParticleImage = '/assets/portfolio/second-page.jpg';
 const fallbackSecondPageImage = '/assets/portfolio/second-page.jpg';
 
 
@@ -126,28 +104,25 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.documentElement.classList.toggle('reduce-motion', reduce);
 
-    const lenis = reduce
-      ? null
-      : new Lenis({
-          duration: 1.05,
-          easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
-          smoothWheel: true,
-        });
-
+    let lenis: any = null;
     const updateRaf = (time: number) => {
       if (lenis) {
         lenis.raf(time * 1000);
       }
     };
 
-    if (lenis) {
+    const startLenis = () => {
+      if (reduce || lenis) return;
+      lenis = new Lenis({
+        duration: 1.05,
+        easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
+        smoothWheel: true,
+      });
       (window as any).lenis = lenis;
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add(updateRaf);
-      gsap.ticker.lagSmoothing(1000, 16);
-    }
-
-    const splitInstances: any[] = [];
+      gsap.ticker.lagSmoothing(0);
+    };
 
     const ctx = gsap.context(() => {
       const isBotOrCrawler = typeof navigator !== 'undefined' && (
@@ -161,69 +136,12 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
 
       const shouldBypass = reduce || isBotOrCrawler || isSlowConnection;
 
-      const initDeferredSplit = () => {
-        document.querySelectorAll('[data-split]').forEach((el) => {
-          try {
-            const split = new SplitType(el, { types: 'words' });
-            splitInstances.push(split);
-            gsap.from(split.words, {
-              scrollTrigger: { trigger: el, start: 'top 78%' },
-              y: 16,
-              opacity: 0,
-              stagger: 0.025,
-              duration: reduce ? 0.01 : 0.55,
-              ease: 'power3.out',
-            });
-          } catch (e) {}
-        });
-        ScrollTrigger.refresh();
-      };
-
-      const initScrollTriggers = () => {
-        gsap.utils.toArray('.stat-number').forEach((el) => {
-          const target = Number(el.dataset.target);
-          gsap.to(el, {
-            scrollTrigger: { trigger: el, start: 'top 82%', once: true },
-            textContent: target,
-            snap: { textContent: 1 },
-            duration: reduce ? 0.01 : 1.4,
-            ease: 'power2.out',
-          });
-        });
-
-        gsap.utils.toArray('.skill-row').forEach((row, index) => {
-          const pct = row.dataset.pct;
-          const fill = row.querySelector('.skill-fill');
-          gsap.fromTo(
-            fill,
-            { scaleX: 0 },
-            {
-              scaleX: pct / 100,
-              transformOrigin: 'left',
-              scrollTrigger: { trigger: row, start: 'top 85%', once: true },
-              duration: reduce ? 0.01 : 1.15,
-              delay: index * 0.05,
-              ease: 'expo.out',
-            },
-          );
-        });
-
-        gsap.from('.contact-word > span', {
-          scrollTrigger: { trigger: '.contact', start: 'top 70%', once: true },
-          yPercent: 110,
-          stagger: 0.04,
-          duration: reduce ? 0.01 : 0.8,
-          ease: 'expo.out',
-        });
-      };
-
       if (shouldBypass) {
         gsap.set('.preloader', { display: 'none' });
         gsap.set('.hero-word', { yPercent: 0, opacity: 1 });
         gsap.set('.hero-meta, .signal-strip, .hero-sub, .hero-actions, .hero-card, .site-nav', { y: 0, opacity: 1 });
+        startLenis();
         onPreloaderComplete?.();
-        initDeferredSplit();
-        initScrollTriggers();
       } else {
         let initialized = false;
         const runPreloader = () => {
@@ -239,7 +157,7 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
           // Ultra-smooth 0 -> 100 counter with no DOM query in onUpdate
           tl.to(countObj, {
             value: 100,
-            duration: 0.75,
+            duration: 0.72,
             ease: 'power2.inOut',
             onUpdate() {
               if (countEl) {
@@ -251,49 +169,36 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
             .from('.loader-name span', { yPercent: 110, duration: 0.35, stagger: 0.012, ease: 'power3.out' }, '-=0.25')
             .to('.loader-count, .loader-mark, .loader-name, .loader-copy, .loader-grid', {
               opacity: 0,
-              y: -15,
+              y: -16,
               duration: 0.22,
               ease: 'power2.in',
-            })
-            .to('.preloader', {
-              yPercent: -100,
-              duration: 0.55,
-              ease: 'power3.inOut',
-              pointerEvents: 'none',
               onComplete: () => {
-                if (preloaderEl) preloaderEl.style.display = 'none';
-                onPreloaderComplete?.();
-                const runDeferred = () => {
-                  initDeferredSplit();
-                  initScrollTriggers();
-                };
-                if ('requestIdleCallback' in window) {
-                  (window as any).requestIdleCallback(runDeferred, { timeout: 1000 });
-                } else {
-                  setTimeout(runDeferred, 80);
+                // Trigger 120 FPS hardware-composited curtain lift on GPU thread
+                if (preloaderEl) {
+                  preloaderEl.classList.add('preloader-lift');
                 }
+                // Hero entrance reveals as curtain clears
+                gsap.fromTo('.hero-word',
+                  { yPercent: 100, opacity: 0 },
+                  { yPercent: 0, opacity: 1, duration: 0.65, stagger: 0.05, ease: 'power3.out', delay: 0.08 }
+                );
+                gsap.fromTo('.hero-meta, .signal-strip, .hero-sub, .site-nav',
+                  { y: 16, opacity: 0 },
+                  { y: 0, opacity: 1, stagger: 0.03, duration: 0.45, ease: 'power3.out', delay: 0.12 }
+                );
+                gsap.fromTo('.hero-card',
+                  { y: 18, opacity: 0 },
+                  { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out', delay: 0.16 }
+                );
+
+                // Settle preloader and initialize background systems once off-screen
+                setTimeout(() => {
+                  if (preloaderEl) preloaderEl.style.display = 'none';
+                  startLenis();
+                  onPreloaderComplete?.();
+                }, 630);
               }
-            }, '-=0.06')
-            .from('.hero-word', {
-              yPercent: 110,
-              opacity: 0,
-              duration: 0.75,
-              stagger: 0.06,
-              ease: 'power3.out',
-            }, '-=0.35')
-            .from('.hero-meta, .signal-strip, .hero-sub, .site-nav', {
-              y: 18,
-              opacity: 0,
-              stagger: 0.03,
-              duration: 0.55,
-              ease: 'power3.out',
-            }, '-=0.55')
-            .from('.hero-card', {
-              y: 20,
-              opacity: 0,
-              duration: 0.65,
-              ease: 'power3.out',
-            }, '-=0.45');
+            });
         };
 
         requestAnimationFrame(() => {
@@ -303,9 +208,6 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
     });
 
     return () => {
-      splitInstances.forEach((s) => {
-        try { s.revert(); } catch (e) {}
-      });
       ctx.revert();
       if (lenis) {
         try {
@@ -332,8 +234,9 @@ function useGlobalPointerVars() {
   }, []);
 }
 
-function useCardSpotlight() {
+function useCardSpotlight(active: boolean = true) {
   useEffect(() => {
+    if (!active) return undefined;
     const cards = [...document.querySelectorAll('.hero, .project-card, .hero-card')];
     const cleanups = cards.map((card) => {
       let rect = null;
@@ -360,12 +263,12 @@ function useCardSpotlight() {
       };
     });
     return () => cleanups.forEach((cleanup) => cleanup());
-  }, []);
+  }, [active]);
 }
 
-function useMagnetic() {
+function useMagnetic(active: boolean = true) {
   useEffect(() => {
-    if (!window.matchMedia('(pointer: fine)').matches) return undefined;
+    if (!active || !window.matchMedia('(pointer: fine)').matches) return undefined;
     const els = [...document.querySelectorAll('[data-magnetic]')];
     const cleanups = els.map((el) => {
       let rect = null;
@@ -394,7 +297,7 @@ function useMagnetic() {
       };
     });
     return () => cleanups.forEach((cleanup) => cleanup());
-  }, []);
+  }, [active]);
 }
 
 function SignalCanvas({ active = true }: { active?: boolean }) {
@@ -1144,6 +1047,29 @@ function Skills({ preloaderDone = false }: { preloaderDone?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isVisible = useIntersection(containerRef);
 
+  useEffect(() => {
+    if (!isVisible) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray('.skill-row').forEach((row: any, index: number) => {
+        const pct = row.dataset.pct;
+        const fill = row.querySelector('.skill-fill');
+        gsap.fromTo(
+          fill,
+          { scaleX: 0 },
+          {
+            scaleX: pct / 100,
+            transformOrigin: 'left',
+            duration: reduce ? 0.01 : 1.15,
+            delay: index * 0.04,
+            ease: 'expo.out',
+          },
+        );
+      });
+    }, containerRef);
+    return () => ctx.revert();
+  }, [isVisible]);
+
   return (
     <section className="section skills" ref={containerRef}>
       <h2 className="section-label">[ 03 - CAPABILITIES ]</h2>
@@ -1386,16 +1312,79 @@ function Contact() {
   );
 }
 
+function useProgressiveStages(start: boolean) {
+  const [stage, setStage] = useState(() => {
+    if (typeof window === 'undefined') return 4;
+    const isBot = /bot|googlebot|bingbot|crawler|spider|robot|crawling|lighthouse|headless|prerender|bytespider/i.test(navigator.userAgent);
+    const hasHash = Boolean(window.location.hash);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return (isBot || hasHash || reduce) ? 4 : 0;
+  });
+
+  useEffect(() => {
+    if (!start || stage >= 4) return;
+    let cancelled = false;
+
+    const advance = (nextStage: number) => {
+      if (cancelled) return;
+      React.startTransition(() => {
+        setStage((curr) => Math.max(curr, nextStage));
+      });
+      requestAnimationFrame(() => {
+        try {
+          ScrollTrigger.refresh();
+        } catch (_) {}
+      });
+    };
+
+    // Paced background schedule — leaves main thread 100% idle during hero entrance
+    const timers = [
+      setTimeout(() => advance(1), 350),
+      setTimeout(() => advance(2), 1200),
+      setTimeout(() => advance(3), 2200),
+      setTimeout(() => advance(4), 3200),
+    ];
+
+    // Responsive scroll promotion: if user scrolls before timers fire, mount ahead of viewport
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if (y > 40 && stage < 1) advance(1);
+      if (y > 350 && stage < 2) advance(2);
+      if (y > 900 && stage < 3) advance(3);
+      if (y > 1600 && stage < 4) advance(4);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      cancelled = true;
+      timers.forEach(clearTimeout);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [start, stage]);
+
+  return stage;
+}
+
 function App() {
-  const [preloaderDone, setPreloaderDone] = useState(false);
+  const [preloaderDone, setPreloaderDone] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    const isBot = /bot|googlebot|bingbot|crawler|spider|robot|crawling|lighthouse|headless|prerender|bytespider/i.test(navigator.userAgent);
+    const hasHash = Boolean(window.location.hash);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return isBot || hasHash || reduce;
+  });
+
   const handlePreloaderDone = React.useCallback(() => {
     setPreloaderDone(true);
   }, []);
 
+  const stage = useProgressiveStages(preloaderDone);
+
   usePortfolioMotion(handlePreloaderDone);
   useGlobalPointerVars();
-  useCardSpotlight();
-  useMagnetic();
+  useCardSpotlight(preloaderDone);
+  useMagnetic(preloaderDone);
 
   return (
     <>
@@ -1403,18 +1392,30 @@ function App() {
       <Preloader />
       <div className="grain" aria-hidden="true" />
       <WipeMenu />
-      <DynamicIslandTOC selector=".section-label, [data-toc]" />
+      <DynamicIslandTOC selector=".section-label, [data-toc]" preloaderDone={preloaderDone} />
       <main>
         <Hero preloaderDone={preloaderDone} />
         <TechLogoMarquee />
-        <About />
-        <PortfolioStory />
-        <Projects />
-        <Skills preloaderDone={preloaderDone} />
-        <AIBotShowcase />
-        <TextRevealFAQs />
-        <Quote />
-        <Contact />
+        {stage >= 1 && <About />}
+        {stage >= 2 && (
+          <>
+            <PortfolioStory />
+            <Projects />
+          </>
+        )}
+        {stage >= 3 && (
+          <>
+            <Skills preloaderDone={preloaderDone} />
+            <AIBotShowcase />
+          </>
+        )}
+        {stage >= 4 && (
+          <>
+            <TextRevealFAQs />
+            <Quote />
+            <Contact />
+          </>
+        )}
       </main>
     </>
   );
