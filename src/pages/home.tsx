@@ -192,16 +192,48 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
             0.25
           );
 
-          // Hold logo in full view (0.45s hold)
+          // 4. Entrance: Sleek loading bar reveals
+          tl.fromTo(
+            '.ldr_progress',
+            { opacity: 0, y: 8 },
+            { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' },
+            0.28
+          );
 
-          // 4. Exit: Corner tags slide down through masks
+          // 5. Dynamic loading bar fill & numeric counter (00% -> 100%)
+          const progressObj = { val: 0 };
+          const numEl = document.querySelector('.ldr_progress_num') as HTMLElement | null;
+          tl.to(
+            '.ldr_bar_fill',
+            { scaleX: 1, duration: 0.75, ease: 'power2.inOut' },
+            0.35
+          );
+          tl.to(
+            progressObj,
+            {
+              val: 100,
+              duration: 0.75,
+              ease: 'power2.inOut',
+              onUpdate: () => {
+                if (numEl) {
+                  const rounded = Math.round(progressObj.val);
+                  numEl.textContent = `${rounded < 10 ? '0' : ''}${rounded}%`;
+                }
+              },
+            },
+            0.35
+          );
+
+          // Hold logo in full view with 100% complete (0.2s hold)
+
+          // 6. Exit: Corner tags slide down through masks
           tl.to(
             '.ldr_nm_el span',
             { yPercent: 140, duration: 0.35, stagger: 0.03, ease: 'power3.in' },
-            '+=0.45'
+            '+=0.2'
           );
 
-          // 5. Exit: Pristine center logo clears cleanly
+          // 7. Exit: Pristine center logo & progress bar clear cleanly
           tl.to(
             '.ldr_logo',
             { opacity: 0, scale: 0.98, duration: 0.28, ease: 'power2.in' },
@@ -751,6 +783,15 @@ function Preloader() {
         </div>
         <div className="ldr_logo_badge">
           <span>ENTERPRISE AI STUDIO</span>
+        </div>
+        <div className="ldr_progress">
+          <div className="ldr_bar_track">
+            <div className="ldr_bar_fill" />
+          </div>
+          <div className="ldr_progress_meta">
+            <span className="ldr_progress_label">INITIALIZING SYSTEM</span>
+            <span className="ldr_progress_num">00%</span>
+          </div>
         </div>
       </div>
     </div>
