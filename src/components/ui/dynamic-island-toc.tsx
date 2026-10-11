@@ -71,15 +71,26 @@ export function DynamicIslandTOC({
   }, [])
 
   useEffect(() => {
+    let timeoutId: any = null
     const getHeadings = () => {
       const elements = Array.from(document.querySelectorAll(selector)) as HTMLElement[]
+      const seenIds = new Set<string>()
       const validHeadings = elements
-        .filter((el) => !el.hasAttribute("data-toc-ignore"))
+        .filter((el) => {
+          if (el.hasAttribute("data-toc-ignore")) return false
+          // Deduplicate if child has section-label and parent has data-toc
+          const parentWithToc = el.parentElement?.closest(selector)
+          if (parentWithToc && parentWithToc !== el) return false
+          return true
+        })
         .map((el, index) => {
           if (!el.id) {
             const generatedId = el.textContent?.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "") || `toc-heading-${index}`
             el.id = generatedId
           }
+
+          if (seenIds.has(el.id)) return null
+          seenIds.add(el.id)
 
           const depthAttr = el.getAttribute("data-toc-depth")
           let level = 2
@@ -90,16 +101,47 @@ export function DynamicIslandTOC({
             if (tagName.startsWith("H") && tagName.length === 2) level = parseInt(tagName[1], 10)
           }
 
-          const text = el.getAttribute("data-toc-title") || el.textContent || "Section"
+          const rawText = el.getAttribute("data-toc-title") || el.textContent || "Section"
+          const text = rawText.trim()
           return { id: el.id, text, level, element: el }
         })
+        .filter(Boolean) as HeadingData[]
 
       validHeadings.sort((a, b) => (a.element.compareDocumentPosition(b.element) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1))
-      setHeadings(validHeadings)
+      if (validHeadings.length > 0) {
+        setHeadings(validHeadings)
+      }
     }
 
-    const timer = setTimeout(getHeadings, 100)
-    return () => clearTimeout(timer)
+    getHeadings()
+
+    // Immediate & paced backups as progressive stages mount
+    const timers = [
+      setTimeout(getHeadings, 150),
+      setTimeout(getHeadings, 600),
+      setTimeout(getHeadings, 1500),
+      setTimeout(getHeadings, 2600),
+      setTimeout(getHeadings, 3800),
+    ]
+
+    // Live MutationObserver on main document container
+    let mutationTimer: any = null
+    const observer = new MutationObserver(() => {
+      clearTimeout(mutationTimer)
+      mutationTimer = setTimeout(getHeadings, 80)
+    })
+
+    const targetNode = document.querySelector('main') || document.body
+    if (targetNode) {
+      observer.observe(targetNode, { childList: true, subtree: true })
+    }
+
+    return () => {
+      timers.forEach(clearTimeout)
+      clearTimeout(timeoutId)
+      clearTimeout(mutationTimer)
+      observer.disconnect()
+    }
   }, [selector, preloaderDone])
 
   useEffect(() => {
@@ -269,7 +311,11 @@ export function DynamicIslandTOC({
                         e.stopPropagation()
                         const yOffset = -80
                         const y = h.element.getBoundingClientRect().top + window.scrollY + yOffset
-                        window.scrollTo({ top: y, behavior: "smooth" })
+                        if ((window as any).lenis) {
+                          (window as any).lenis.scrollTo(y)
+                        } else {
+                          window.scrollTo({ top: y, behavior: "smooth" })
+                        }
                         setIsExpanded(false)
                       }}
                       style={{ paddingLeft: `${paddingLeft}px` }}

@@ -27,6 +27,10 @@ function CallingAgentFullCard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
+    videoRef.current?.play().catch(() => {});
+  }, []);
+
+  useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsModalOpen(false);
     };
@@ -41,7 +45,6 @@ function CallingAgentFullCard() {
 
   const handleMouseLeave = () => {
     setHovered(false);
-    videoRef.current?.pause();
   };
 
   return (
@@ -53,13 +56,15 @@ function CallingAgentFullCard() {
       <video
         ref={videoRef}
         src="/assets/portfolio/calling-agent-video.mp4"
+        poster="/assets/portfolio/calling-agent-poster.jpg"
+        autoPlay
         muted
         loop
         playsInline
-        preload="none"
+        preload="auto"
         className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
-          filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',
+          filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.82) contrast(1.02)',
           willChange: 'filter',
         }}
       />
@@ -265,6 +270,10 @@ function WhatsAppBotFullCard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
+    videoRef.current?.play().catch(() => {});
+  }, []);
+
+  useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsModalOpen(false);
     };
@@ -279,7 +288,6 @@ function WhatsAppBotFullCard() {
 
   const handleMouseLeave = () => {
     setHovered(false);
-    videoRef.current?.pause();
   };
 
   return (
@@ -291,13 +299,15 @@ function WhatsAppBotFullCard() {
       <video
         ref={videoRef}
         src="/assets/portfolio/whatsapp-bot-video.mp4"
+        poster="/assets/portfolio/whatsapp-bot-poster.jpg"
+        autoPlay
         muted
         loop
         playsInline
-        preload="none"
+        preload="auto"
         className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
-          filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',
+          filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.82) contrast(1.02)',
           willChange: 'filter',
         }}
       />
@@ -502,6 +512,10 @@ function CowAppsFullCard() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hovered, setHovered] = useState(false);
 
+  useEffect(() => {
+    videoRef.current?.play().catch(() => {});
+  }, []);
+
   const handleMouseEnter = () => {
     setHovered(true);
     videoRef.current?.play().catch(() => {});
@@ -509,7 +523,6 @@ function CowAppsFullCard() {
 
   const handleMouseLeave = () => {
     setHovered(false);
-    videoRef.current?.pause();
   };
 
   return (
@@ -521,13 +534,15 @@ function CowAppsFullCard() {
       <video
         ref={videoRef}
         src="/assets/portfolio/cow-video.mp4"
+        poster="/assets/portfolio/cow-video-poster.jpg"
+        autoPlay
         muted
         loop
         playsInline
-        preload="none"
+        preload="auto"
         className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
-          filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',
+          filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.82) contrast(1.02)',
           willChange: 'filter',
         }}
       />

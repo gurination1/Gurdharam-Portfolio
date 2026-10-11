@@ -121,7 +121,7 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
       (window as any).lenis = lenis;
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add(updateRaf);
-      gsap.ticker.lagSmoothing(0);
+      gsap.ticker.lagSmoothing(500, 33);
     };
 
     const ctx = gsap.context(() => {
@@ -158,9 +158,13 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
           const tl = gsap.timeline({
             defaults: { ease: 'power3.inOut' },
             onComplete: () => {
-              if (preloaderEl) preloaderEl.style.display = 'none';
+              if (preloaderEl) {
+                preloaderEl.style.display = 'none';
+              }
               startLenis();
-              onPreloaderComplete?.();
+              requestAnimationFrame(() => {
+                onPreloaderComplete?.();
+              });
             },
           });
 
@@ -188,13 +192,13 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
             0.25
           );
 
-          // Hold logo in full view (0.55s hold)
+          // Hold logo in full view (0.45s hold)
 
           // 4. Exit: Corner tags slide down through masks
           tl.to(
             '.ldr_nm_el span',
-            { yPercent: 140, duration: 0.32, stagger: 0.03, ease: 'power3.in' },
-            '+=0.55'
+            { yPercent: 140, duration: 0.35, stagger: 0.03, ease: 'power3.in' },
+            '+=0.45'
           );
 
           // 5. Exit: Pristine center logo clears cleanly
@@ -204,36 +208,16 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
             '<0.05'
           );
 
-          // 6. Minimal dual-split curtain tear: Top curtain sweeps UP, bottom curtain sweeps DOWN
+          // 6. Signature 120 FPS Dual-Split Curtain Sweep (pure GPU compositor thread)
           tl.to(
             '.ldr_curtain_top',
-            { yPercent: -100, duration: 0.85, ease: 'power4.inOut', force3D: true },
+            { yPercent: -105, duration: 1.05, ease: 'power3.inOut', force3D: true },
             '-=0.08'
           );
           tl.to(
             '.ldr_curtain_bottom',
-            { yPercent: 100, duration: 0.85, ease: 'power4.inOut', force3D: true },
+            { yPercent: 105, duration: 1.05, ease: 'power3.inOut', force3D: true },
             '<'
-          );
-
-          // 7. Hero section entrance glides up in tandem as gold curtains pull away
-          tl.fromTo(
-            '.hero-line',
-            { y: 35, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.65, stagger: 0.08, ease: 'power3.out' },
-            '-=0.55'
-          );
-          tl.fromTo(
-            '.hero-meta, .signal-strip, .hero-sub, .site-nav',
-            { y: 16, opacity: 0 },
-            { y: 0, opacity: 1, stagger: 0.03, duration: 0.45, ease: 'power3.out' },
-            '-=0.5'
-          );
-          tl.fromTo(
-            '.hero-card',
-            { y: 18, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' },
-            '-=0.45'
           );
         };
 
@@ -788,7 +772,7 @@ function TechLogoMarquee() {
 
 function Hero({ preloaderDone = false }: { preloaderDone?: boolean }) {
   return (
-    <section className="hero" id="top">
+    <section className="hero" id="top" data-toc data-toc-title="[ 00 - TOP ]" data-toc-depth="1">
       <HeroMeteor />
       <SignalCanvas active={preloaderDone} />
       <div className="hero-meta">
@@ -851,7 +835,7 @@ function Hero({ preloaderDone = false }: { preloaderDone?: boolean }) {
         </div>
         <aside className="hero-card" data-cursor="hover">
           <div className="hero-spline-shell">
-            <Spotlight className="-top-40 left-0 md:left-20 md:-top-24" fill="white" />
+            {preloaderDone && <Spotlight className="-top-40 left-0 md:left-20 md:-top-24" fill="white" />}
             {preloaderDone && (
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
@@ -882,7 +866,7 @@ function Hero({ preloaderDone = false }: { preloaderDone?: boolean }) {
 
 function PortfolioStory() {
   return (
-    <section id="story" data-toc data-toc-title="Story" data-toc-depth="2">
+    <section id="story" data-toc data-toc-title="[ 02 - STORY ]" data-toc-depth="2">
       <FlowArt aria-label="Gurdharam portfolio story" className="story-flow">
         <FlowSection aria-label="Who I am" style={{ backgroundColor: '#fd5200', color: '#fff' }}>
           <p className="text-xs font-bold uppercase tracking-[0.2em]">01 - Who I am</p>
@@ -998,9 +982,12 @@ function About() {
     <section
       className="section about has-about-visual"
       id="about"
+      data-toc
+      data-toc-title="[ 01 - ABOUT ]"
+      data-toc-depth="2"
       style={{ '--about-image': `url("${aboutShowcaseImage}")` } as React.CSSProperties}
     >
-      <h2 className="section-label">[ 01 - ABOUT ]</h2>
+      <h2 className="section-label" data-toc-ignore>[ 01 - ABOUT ]</h2>
       <div className="about-scroll-stage">
         <PerspectiveContainerScroll
           titleComponent={
@@ -1084,8 +1071,8 @@ function MaskTiles() {
 
 function Projects() {
   return (
-    <section className="section projects" id="work">
-      <h2 className="section-label">[ 02 - WORK ]</h2>
+    <section className="section projects" id="work" data-toc data-toc-title="[ 03 - WORK ]" data-toc-depth="2">
+      <h2 className="section-label" data-toc-ignore>[ 02 - WORK ]</h2>
       <StackedCards />
     </section>
   );
@@ -1119,8 +1106,8 @@ function Skills({ preloaderDone = false }: { preloaderDone?: boolean }) {
   }, [isVisible]);
 
   return (
-    <section className="section skills" ref={containerRef}>
-      <h2 className="section-label">[ 03 - CAPABILITIES ]</h2>
+    <section className="section skills" id="capabilities" data-toc data-toc-title="[ 04 - CAPABILITIES ]" data-toc-depth="2" ref={containerRef}>
+      <h2 className="section-label" data-toc-ignore>[ 03 - CAPABILITIES ]</h2>
       <div className="skills-layout">
         <div className="skills-panel">
           {skills.map(([name, pct]) => (
@@ -1161,7 +1148,7 @@ function Skills({ preloaderDone = false }: { preloaderDone?: boolean }) {
 
 function AIBotShowcase() {
   return (
-    <section className="ai-bot-section" id="ai-bots" data-toc data-toc-title="AI Bots" data-toc-depth="2">
+    <section className="ai-bot-section" id="ai-bots" data-toc data-toc-title="[ 05 - AI & BOTS ]" data-toc-depth="2">
       <ContainerScroll className="ai-scroll">
         <ContainerSticky className="ai-sticky">
           <AnimatedTextPath
@@ -1172,7 +1159,7 @@ function AIBotShowcase() {
             rotation={28}
           />
           <ContainerAnimated className="ai-intro">
-            <h2 className="section-label">[ 04 - AI & BOTS ]</h2>
+            <h2 className="section-label" data-toc-ignore>[ 04 - AI & BOTS ]</h2>
             <EditorialTextReveal text="AI BOT SYSTEMS" className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase mb-4" />
             <p>
               I build autonomous AI bots and WhatsApp agents for Indian businesses. These systems plan tasks, call tools, generate media, move files, and run locally when privacy matters.
@@ -1238,7 +1225,7 @@ function HomeFAQ() {
   ];
 
   return (
-    <section className="faq-panel">
+    <section className="faq-panel" id="faqs" data-toc data-toc-title="[ 06 - FAQS ]" data-toc-depth="2">
       <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
         <span style={{ color: 'var(--accent-gold)', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem', textAlign: 'center' }}>
           [ Frequently Asked Questions ]
@@ -1298,7 +1285,7 @@ function Contact() {
   }, [titleNumber, titles]);
 
   return (
-    <section className="contact" id="contact">
+    <section className="contact" id="contact" data-toc data-toc-title="[ 07 - CONTACT ]" data-toc-depth="2">
       <ParticleAnimation className="contact-particles" />
       <h2 className="contact-word" aria-label={`Let's build ${titles[titleNumber].replace('.', '').toLowerCase()}`}>
         <span>LET'S BUILD</span>
@@ -1378,11 +1365,19 @@ function useProgressiveStages(start: boolean) {
       React.startTransition(() => {
         setStage((curr) => Math.max(curr, nextStage));
       });
-      requestAnimationFrame(() => {
-        try {
-          ScrollTrigger.refresh();
-        } catch (_) {}
-      });
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        (window as any).requestIdleCallback(() => {
+          try {
+            ScrollTrigger.refresh();
+          } catch (_) {}
+        });
+      } else {
+        setTimeout(() => {
+          try {
+            ScrollTrigger.refresh();
+          } catch (_) {}
+        }, 120);
+      }
     };
 
     // Paced background schedule — leaves main thread 100% idle during hero entrance
@@ -1440,7 +1435,7 @@ function App() {
       <Preloader />
       <div className="grain" aria-hidden="true" />
       <WipeMenu />
-      <DynamicIslandTOC selector=".section-label, [data-toc]" preloaderDone={preloaderDone} />
+      <DynamicIslandTOC selector="[data-toc]" preloaderDone={preloaderDone} />
       <main>
         <Hero preloaderDone={preloaderDone} />
         <TechLogoMarquee />

@@ -224,29 +224,22 @@ section {
   transform: translateZ(0);
 }
 
-html.has-custom-cursor #cursor-canvas {
-  display: block !important;
-}
-
 @media (min-width: 769px) {
-  html.has-custom-cursor,
-  html.has-custom-cursor body,
-  html.has-custom-cursor a,
-  html.has-custom-cursor button,
-  html.has-custom-cursor [role="button"],
-  html.has-custom-cursor .btn-circle_link,
-  html.has-custom-cursor [data-cursor],
-  html.has-custom-cursor [data-hover],
-  html.has-custom-cursor .cursor-pointer,
-  html.has-custom-cursor summary,
-  html.has-custom-cursor label,
-  html.has-custom-cursor [class*="cursor-"] {
+  #cursor-canvas {
+    display: block !important;
+  }
+
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
     cursor: none !important;
   }
 
-  html.has-custom-cursor input,
-  html.has-custom-cursor textarea,
-  html.has-custom-cursor select {
+  input,
+  textarea,
+  [contenteditable="true"] {
     cursor: text !important;
   }
 }
@@ -279,10 +272,13 @@ html.has-custom-cursor #cursor-canvas {
   left: 0;
   right: 0;
   width: 100%;
-  height: 50.1%;
+  height: 50.5%;
   background: #d4a853; /* Luxury warm architectural gold */
   z-index: 5;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .ldr_curtain_top {
@@ -1879,7 +1875,7 @@ html.day footer .bg-black\/40 {
 .hero {
   position: relative;
   min-height: 100svh;
-  padding: 7rem clamp(1rem, 4vw, 4rem) 3rem;
+  padding: clamp(5.6rem, 7.8vh, 6.2rem) clamp(1rem, 4vw, 4rem) 3rem;
   overflow: hidden;
 }
 
@@ -1946,7 +1942,7 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: clamp(3rem, 8vh, 5rem);
+  margin-bottom: clamp(1rem, 2.2vh, 1.6rem);
 }
 
 .hero-grid {
@@ -1955,7 +1951,7 @@ footer {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(360px, min(44vw, 620px));
   gap: clamp(1.25rem, 3vw, 3.5rem);
-  align-items: center;
+  align-items: start;
 }
 
 .hero-grid > div:first-child {
@@ -4259,7 +4255,7 @@ footer {
   .hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(340px, min(42vw, 470px));
     gap: clamp(1.2rem, 3.5vw, 2.4rem);
-    align-items: center;
+    align-items: start;
   }
 
   .hero-title {
