@@ -95,6 +95,8 @@ export const ReggaeCanvasCursor: React.FC = () => {
       mouseY = y;
       if (!isVisible) {
         onFirstPointer(x, y);
+      } else {
+        startLoop();
       }
     }
 
@@ -138,6 +140,7 @@ export const ReggaeCanvasCursor: React.FC = () => {
     // Tactile physical squish on click
     const handleMouseDown = () => {
       if (!isVisible) return;
+      startLoop();
       gsap.to(circle, {
         scale: 0.74,
         duration: 0.14,
@@ -148,6 +151,7 @@ export const ReggaeCanvasCursor: React.FC = () => {
 
     const handleMouseUp = () => {
       if (!isVisible) return;
+      startLoop();
       gsap.to(circle, {
         scale: 1,
         duration: 0.34,
@@ -175,6 +179,7 @@ export const ReggaeCanvasCursor: React.FC = () => {
     function setHover(hover: boolean) {
       if (isHovering === hover) return;
       isHovering = hover;
+      startLoop();
       gsap.to(circle, {
         radius: hover ? circle.hoverRadius : circle.baseRadius,
         duration: hover ? 0.36 : 0.28,
@@ -225,6 +230,8 @@ export const ReggaeCanvasCursor: React.FC = () => {
     document.addEventListener('mouseout', handleMouseOut, { passive: true });
     window.addEventListener('scroll', handleScroll, { passive: true });
 
+    let restFrames = 0;
+
     // High-refresh continuous render loop with framerate-independent exponential dampening
     function render(now: number) {
       if (!ctx || !isVisible) {
@@ -245,12 +252,19 @@ export const ReggaeCanvasCursor: React.FC = () => {
       const dy = mouseY - circle.y;
 
       // Sub-pixel snapping when resting to eliminate antialiasing shimmer
-      if (Math.abs(dx) < 0.04 && Math.abs(dy) < 0.04) {
+      const isResting = Math.abs(dx) < 0.04 && Math.abs(dy) < 0.04;
+      if (isResting) {
         circle.x = mouseX;
         circle.y = mouseY;
+        if (!gsap.isTweening(circle)) {
+          restFrames++;
+        } else {
+          restFrames = 0;
+        }
       } else {
         circle.x += dx * factor;
         circle.y += dy * factor;
+        restFrames = 0;
       }
 
       const curRadius = circle.radius * circle.scale;
@@ -260,6 +274,12 @@ export const ReggaeCanvasCursor: React.FC = () => {
         ctx.fillStyle = '#ffffff';
         ctx.fill();
         ctx.closePath();
+      }
+
+      // Park loop when cursor is stationary
+      if (restFrames > 10) {
+        animId = null;
+        return;
       }
 
       animId = requestAnimationFrame(render);

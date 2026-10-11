@@ -80,7 +80,6 @@ const FlowArt: React.FC<FlowArtProps> = ({ children, className, "aria-label": ar
           const scaleTween = gsap.to(inner, {
             scale: isMobile ? 0.96 : 0.92,
             opacity: 0.35,
-            filter: isMobile ? "none" : "blur(4px)",
             ease: "none",
             scrollTrigger: {
               trigger: nextSection,

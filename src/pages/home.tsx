@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState, lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -12,7 +12,7 @@ import VanillaTilt from 'vanilla-tilt';
 import { SplineScene } from '@/components/ui/splite';
 import { Spotlight } from '@/components/ui/spotlight';
 import FlowArt, { FlowSection } from '@/components/ui/story-scroll';
-import { PointsChart } from '@/components/ui/points-chart';
+const PointsChart = lazy(() => import('@/components/ui/points-chart').then((m) => ({ default: m.PointsChart })));
 import { LiquidGlassMagneticButton } from '@/components/ui/liquidglassmagneticbutton';
 import { DynamicIslandTOC } from '@/components/ui/dynamic-island-toc';
 import { FluidTextMorph } from '@/components/ui/fluid-text-morph';
@@ -144,7 +144,7 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
       (window as any).lenis = lenis;
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add(updateRaf);
-      gsap.ticker.lagSmoothing(0);
+      gsap.ticker.lagSmoothing(1000, 16);
     }
 
     const splitInstances: any[] = [];
@@ -179,12 +179,51 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
         ScrollTrigger.refresh();
       };
 
+      const initScrollTriggers = () => {
+        gsap.utils.toArray('.stat-number').forEach((el) => {
+          const target = Number(el.dataset.target);
+          gsap.to(el, {
+            scrollTrigger: { trigger: el, start: 'top 82%', once: true },
+            textContent: target,
+            snap: { textContent: 1 },
+            duration: reduce ? 0.01 : 1.4,
+            ease: 'power2.out',
+          });
+        });
+
+        gsap.utils.toArray('.skill-row').forEach((row, index) => {
+          const pct = row.dataset.pct;
+          const fill = row.querySelector('.skill-fill');
+          gsap.fromTo(
+            fill,
+            { scaleX: 0 },
+            {
+              scaleX: pct / 100,
+              transformOrigin: 'left',
+              scrollTrigger: { trigger: row, start: 'top 85%', once: true },
+              duration: reduce ? 0.01 : 1.15,
+              delay: index * 0.05,
+              ease: 'expo.out',
+            },
+          );
+        });
+
+        gsap.from('.contact-word > span', {
+          scrollTrigger: { trigger: '.contact', start: 'top 70%', once: true },
+          yPercent: 110,
+          stagger: 0.04,
+          duration: reduce ? 0.01 : 0.8,
+          ease: 'expo.out',
+        });
+      };
+
       if (shouldBypass) {
         gsap.set('.preloader', { display: 'none' });
         gsap.set('.hero-word', { yPercent: 0, opacity: 1 });
         gsap.set('.hero-meta, .signal-strip, .hero-sub, .hero-actions, .hero-card, .site-nav', { y: 0, opacity: 1 });
         onPreloaderComplete?.();
         initDeferredSplit();
+        initScrollTriggers();
       } else {
         let initialized = false;
         const runPreloader = () => {
@@ -200,7 +239,7 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
           // Ultra-smooth 0 -> 100 counter with no DOM query in onUpdate
           tl.to(countObj, {
             value: 100,
-            duration: 0.85,
+            duration: 0.75,
             ease: 'power2.inOut',
             onUpdate() {
               if (countEl) {
@@ -208,109 +247,59 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
               }
             },
           })
-            .from('.loader-mark path', { strokeDashoffset: 260, duration: 0.48, stagger: 0.06, ease: 'power2.out' }, '-=0.45')
-            .from('.loader-name span', { yPercent: 110, duration: 0.38, stagger: 0.015, ease: 'power3.out' }, '-=0.3')
+            .from('.loader-mark path', { strokeDashoffset: 260, duration: 0.45, stagger: 0.05, ease: 'power2.out' }, '-=0.4')
+            .from('.loader-name span', { yPercent: 110, duration: 0.35, stagger: 0.012, ease: 'power3.out' }, '-=0.25')
+            .to('.loader-count, .loader-mark, .loader-name, .loader-copy, .loader-grid', {
+              opacity: 0,
+              y: -15,
+              duration: 0.22,
+              ease: 'power2.in',
+            })
             .to('.preloader', {
               yPercent: -100,
-              duration: 0.65,
-              ease: 'expo.inOut',
+              duration: 0.55,
+              ease: 'power3.inOut',
               pointerEvents: 'none',
               onComplete: () => {
                 if (preloaderEl) preloaderEl.style.display = 'none';
                 onPreloaderComplete?.();
+                const runDeferred = () => {
+                  initDeferredSplit();
+                  initScrollTriggers();
+                };
                 if ('requestIdleCallback' in window) {
-                  (window as any).requestIdleCallback(initDeferredSplit, { timeout: 1200 });
+                  (window as any).requestIdleCallback(runDeferred, { timeout: 1000 });
                 } else {
-                  setTimeout(initDeferredSplit, 100);
+                  setTimeout(runDeferred, 80);
                 }
               }
-            })
+            }, '-=0.06')
             .from('.hero-word', {
-              yPercent: 120,
+              yPercent: 110,
               opacity: 0,
-              duration: 0.85,
-              stagger: 0.08,
-              ease: 'expo.out',
+              duration: 0.75,
+              stagger: 0.06,
+              ease: 'power3.out',
             }, '-=0.35')
             .from('.hero-meta, .signal-strip, .hero-sub, .site-nav', {
+              y: 18,
+              opacity: 0,
+              stagger: 0.03,
+              duration: 0.55,
+              ease: 'power3.out',
+            }, '-=0.55')
+            .from('.hero-card', {
               y: 20,
               opacity: 0,
-              stagger: 0.04,
-              duration: 0.6,
-              ease: 'expo.out',
-            }, '-=0.6')
-            .from('.hero-card', {
-              y: 24,
-              opacity: 0,
-              duration: 0.7,
-              ease: 'expo.out',
-            }, '-=0.5');
+              duration: 0.65,
+              ease: 'power3.out',
+            }, '-=0.45');
         };
 
         requestAnimationFrame(() => {
           runPreloader();
         });
       }
-
-      gsap.utils.toArray('.stat-number').forEach((el) => {
-        const target = Number(el.dataset.target);
-        gsap.to(el, {
-          scrollTrigger: { trigger: el, start: 'top 82%', once: true },
-          textContent: target,
-          snap: { textContent: 1 },
-          duration: reduce ? 0.01 : 1.4,
-          ease: 'power2.out',
-        });
-      });
-
-      gsap.utils.toArray('.project-card').forEach((card, index) => {
-        gsap.from(card.querySelectorAll('.mask-tile'), {
-          scrollTrigger: { trigger: card, start: 'top 82%', once: true },
-          opacity: 0,
-          scale: 0.84,
-          stagger: { amount: reduce ? 0 : 0.42, from: 'random' },
-          duration: reduce ? 0.01 : 0.35,
-          ease: 'expo.out',
-        });
-        if (!reduce && window.matchMedia('(pointer: fine)').matches) {
-          VanillaTilt.init(card, { max: 5, speed: 500, glare: true, 'max-glare': 0.12 });
-        }
-        gsap.to(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 16%',
-            end: 'bottom top',
-            scrub: reduce ? false : 0.8,
-          },
-          scale: 0.97 - index * 0.006,
-          opacity: 0.92,
-        });
-      });
-
-      gsap.utils.toArray('.skill-row').forEach((row, index) => {
-        const pct = row.dataset.pct;
-        const fill = row.querySelector('.skill-fill');
-        gsap.fromTo(
-          fill,
-          { scaleX: 0 },
-          {
-            scaleX: pct / 100,
-            transformOrigin: 'left',
-            scrollTrigger: { trigger: row, start: 'top 85%', once: true },
-            duration: reduce ? 0.01 : 1.15,
-            delay: index * 0.05,
-            ease: 'expo.out',
-          },
-        );
-      });
-
-      gsap.from('.contact-word > span', {
-        scrollTrigger: { trigger: '.contact', start: 'top 70%', once: true },
-        yPercent: 110,
-        stagger: 0.04,
-        duration: reduce ? 0.01 : 0.8,
-        ease: 'expo.out',
-      });
     });
 
     return () => {
@@ -1151,9 +1140,12 @@ function Projects() {
   );
 }
 
-function Skills() {
+function Skills({ preloaderDone = false }: { preloaderDone?: boolean }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isVisible = useIntersection(containerRef);
+
   return (
-    <section className="section skills">
+    <section className="section skills" ref={containerRef}>
       <h2 className="section-label">[ 03 - CAPABILITIES ]</h2>
       <div className="skills-layout">
         <div className="skills-panel">
@@ -1165,13 +1157,19 @@ function Skills() {
             </div>
           ))}
         </div>
-        <PointsChart
-          title="Capability curve"
-          data={skillChartData}
-          height={280}
-          levels={[{ value: 80, color: 'var(--accent-gold)' }]}
-          className="capability-chart"
-        />
+        {preloaderDone && isVisible ? (
+          <Suspense fallback={<div className="capability-chart" style={{ height: 280 }} />}>
+            <PointsChart
+              title="Capability curve"
+              data={skillChartData}
+              height={280}
+              levels={[{ value: 80, color: 'var(--accent-gold)' }]}
+              className="capability-chart"
+            />
+          </Suspense>
+        ) : (
+          <div className="capability-chart" style={{ height: 280 }} />
+        )}
       </div>
       <div className="tools-cloud">
         {['ComfyUI', 'FFmpeg', 'TFLite', 'Qwen / llama.cpp', 'Piper TTS', 'Git / GitHub', 'Supabase', 'NVENC GPU Encoding', 'Stable Diffusion', 'ChromaDB', 'Whisper STT'].map((tool) => <span key={tool}>{tool}</span>)}
@@ -1412,7 +1410,7 @@ function App() {
         <About />
         <PortfolioStory />
         <Projects />
-        <Skills />
+        <Skills preloaderDone={preloaderDone} />
         <AIBotShowcase />
         <TextRevealFAQs />
         <Quote />

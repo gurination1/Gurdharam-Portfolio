@@ -109,15 +109,39 @@ export const ContainerSticky = React.forwardRef<HTMLDivElement, React.HTMLAttrib
 );
 
 export const HeroVideo = React.forwardRef<HTMLVideoElement, HTMLMotionProps<"video">>(
-  ({ style, className, ...props }, ref) => {
+  ({ style, className, src, ...props }, forwardedRef) => {
     const { scrollYProgress } = useContainerScrollContext();
     const scale = useTransform(scrollYProgress, [0, 0.8], [0.7, 1]);
+    const internalRef = React.useRef<HTMLVideoElement | null>(null);
+    const [shouldLoad, setShouldLoad] = React.useState(false);
+
+    React.useEffect(() => {
+      const el = internalRef.current;
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            el.play().catch(() => {});
+          } else {
+            el.pause();
+          }
+        },
+        { rootMargin: "250px" }
+      );
+      observer.observe(el);
+      return () => observer.disconnect();
+    }, []);
 
     return (
       <motion.video
-        ref={ref}
+        ref={(node) => {
+          internalRef.current = node;
+          if (typeof forwardedRef === "function") forwardedRef(node);
+          else if (forwardedRef) (forwardedRef as any).current = node;
+        }}
         className={cn("relative z-10 size-auto max-h-full max-w-full", className)}
-        autoPlay
+        src={shouldLoad ? src : undefined}
         muted
         loop
         playsInline

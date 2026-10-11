@@ -18,16 +18,22 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     modulePreload: {
       resolveDependencies: (filename, deps) => {
-        return deps.filter((dep) => !dep.includes('vendor-3d'));
+        return deps.filter((dep) => !dep.includes('vendor-spline') && !dep.includes('vendor-three') && !dep.includes('vendor-charts'));
       },
     },
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules/three') || id.includes('node_modules/@splinetool')) {
-            return 'vendor-3d';
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/') || id.includes('node_modules/react-router') || id.includes('node_modules/scheduler/')) {
+            return 'vendor-react';
           }
-          if (id.includes('node_modules/recharts')) {
+          if (id.includes('node_modules/@splinetool')) {
+            return 'vendor-spline';
+          }
+          if (id.includes('node_modules/three')) {
+            return 'vendor-three';
+          }
+          if (id.includes('node_modules/recharts') || id.includes('node_modules/d3-')) {
             return 'vendor-charts';
           }
           if (id.includes('node_modules/framer-motion') || id.includes('node_modules/motion')) {

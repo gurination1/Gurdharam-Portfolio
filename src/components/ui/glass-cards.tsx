@@ -56,7 +56,7 @@ function CallingAgentFullCard() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
           filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',
@@ -294,7 +294,7 @@ function WhatsAppBotFullCard() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
           filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',
@@ -524,7 +524,7 @@ function CowAppsFullCard() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         className="card-bg-video absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{
           filter: hovered ? 'brightness(0.95) saturate(1.08)' : 'brightness(0.78) contrast(1.02)',

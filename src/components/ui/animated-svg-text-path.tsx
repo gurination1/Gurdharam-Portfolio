@@ -42,7 +42,7 @@ const AnimatedTextPath: React.FC<AnimatedTextPathProps> = ({
     });
 
     const props = { duration, ease: "none", repeat: -1 };
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({ paused: true });
     animationRef.current = tl;
 
     tl.fromTo(
@@ -58,7 +58,17 @@ const AnimatedTextPath: React.FC<AnimatedTextPathProps> = ({
       0,
     );
 
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        tl.play();
+      } else {
+        tl.pause();
+      }
+    }, { threshold: 0.05 });
+    observer.observe(svg);
+
     return () => {
+      observer.disconnect();
       animationRef.current?.kill();
     };
   }, [duration, fontSize, letterSpacing, pathId, reversed, text]);
