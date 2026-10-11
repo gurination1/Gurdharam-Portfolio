@@ -171,7 +171,7 @@ export const ReggaeCanvasCursor: React.FC = () => {
       '.footer_link', '[data-scroll-reveal]', '.loc-path-s_title',
       '[data-cookies="accept"]', '[data-cookies="decline"]',
       '.btn-menu', '.apart-card_link', '[data-cursor]', '.cursor-pointer',
-      'summary', '.project-card', '.hero-card', '.glass-card', '.tag',
+      'summary', '.project-card', '.glass-card', '.tag',
       '.service-card', '.tier-card', '.pricing-card', '.faq-item', '.badge',
       '.contact-talk-button', '.cta-pill', '.nav-pill', '.magnetic-wrap'
     ].join(', ');

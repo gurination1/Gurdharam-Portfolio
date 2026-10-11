@@ -12,24 +12,11 @@ interface SplineSceneProps {
 export function SplineScene({ scene, className }: SplineSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isVisible = useIntersection(containerRef)
-  const [shouldLoad, setShouldLoad] = useState(false)
+  const [shouldLoad, setShouldLoad] = useState(true)
 
   useEffect(() => {
-    if (!isVisible) return
-    let idleId: any = null
-    const timer = setTimeout(() => {
-      if ((window as any).requestIdleCallback) {
-        idleId = (window as any).requestIdleCallback(() => setShouldLoad(true), { timeout: 3000 })
-      } else {
-        setShouldLoad(true)
-      }
-    }, 2200)
-
-    return () => {
-      clearTimeout(timer)
-      if (idleId && (window as any).cancelIdleCallback) {
-        (window as any).cancelIdleCallback(idleId)
-      }
+    if (isVisible) {
+      setShouldLoad(true)
     }
   }, [isVisible])
 

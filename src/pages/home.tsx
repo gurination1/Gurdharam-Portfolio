@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { SplineScene } from '@/components/ui/splite';
 import { Spotlight } from '@/components/ui/spotlight';
+import { preloadInitialAssets } from '@/lib/preload-assets';
 import FlowArt, { FlowSection } from '@/components/ui/story-scroll';
 const PointsChart = lazy(() => import('@/components/ui/points-chart').then((m) => ({ default: m.PointsChart })));
 import { LiquidGlassMagneticButton } from '@/components/ui/liquidglassmagneticbutton';
@@ -155,102 +156,120 @@ function usePortfolioMotion(onPreloaderComplete?: () => void) {
             return;
           }
 
-          const tl = gsap.timeline({
-            defaults: { ease: 'power3.inOut' },
-            onComplete: () => {
-              if (preloaderEl) {
-                preloaderEl.style.display = 'none';
-              }
-              startLenis();
-              requestAnimationFrame(() => {
-                onPreloaderComplete?.();
-              });
-            },
-          });
+          // 1. Entrance timeline: Corner tags, letters, badge, and progress bar
+          const entranceTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-          // 1. Entrance: Corner tags glide up from mask
-          tl.fromTo(
+          entranceTl.fromTo(
             '.ldr_nm_el span',
             { yPercent: 110 },
-            { yPercent: 0, duration: 0.45, stagger: 0.05, ease: 'power3.out' },
+            { yPercent: 0, duration: 0.45, stagger: 0.05 },
             0.05
           );
 
-          // 2. Entrance: Pristine GURDHARAM letters reveal cleanly with zero splits
-          tl.fromTo(
+          entranceTl.fromTo(
             '.ldr_char',
             { yPercent: 115, opacity: 0 },
-            { yPercent: 0, opacity: 1, duration: 0.45, stagger: 0.018, ease: 'power3.out' },
+            { yPercent: 0, opacity: 1, duration: 0.45, stagger: 0.018 },
             0.12
           );
 
-          // 3. Entrance: Enterprise Studio badge reveals
-          tl.fromTo(
+          entranceTl.fromTo(
             '.ldr_logo_badge span',
             { yPercent: 110, opacity: 0 },
-            { yPercent: 0, opacity: 1, duration: 0.38, ease: 'power3.out' },
+            { yPercent: 0, opacity: 1, duration: 0.38 },
             0.25
           );
 
-          // 4. Entrance: Sleek loading bar reveals
-          tl.fromTo(
+          entranceTl.fromTo(
             '.ldr_progress',
             { opacity: 0, y: 8 },
-            { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' },
+            { opacity: 1, y: 0, duration: 0.35 },
             0.28
           );
 
-          // 5. Dynamic loading bar fill & numeric counter (00% -> 100%)
-          const progressObj = { val: 0 };
+          // 2. Functional Asset Preloading (Spline 3D Scene + WebGL Runtime + Fonts + Media)
+          const barFill = document.querySelector('.ldr_bar_fill') as HTMLElement | null;
           const numEl = document.querySelector('.ldr_progress_num') as HTMLElement | null;
-          tl.to(
-            '.ldr_bar_fill',
-            { scaleX: 1, duration: 0.75, ease: 'power2.inOut' },
-            0.35
-          );
-          tl.to(
-            progressObj,
-            {
-              val: 100,
-              duration: 0.75,
-              ease: 'power2.inOut',
+          const labelEl = document.querySelector('.ldr_progress_label') as HTMLElement | null;
+          const displayProgress = { val: 0 };
+          let hasExited = false;
+
+          const runExit = () => {
+            if (hasExited) return;
+            hasExited = true;
+
+            if (labelEl) labelEl.textContent = 'SYSTEM INITIALIZED';
+            if (numEl) numEl.textContent = '100%';
+            if (barFill) barFill.style.transform = 'scaleX(1)';
+
+            const exitTl = gsap.timeline({
+              onComplete: () => {
+                if (preloaderEl) {
+                  preloaderEl.style.display = 'none';
+                }
+                startLenis();
+                requestAnimationFrame(() => {
+                  onPreloaderComplete?.();
+                });
+              },
+            });
+
+            // Brief hold at 100% complete
+            exitTl.to(
+              '.ldr_nm_el span',
+              { yPercent: 140, duration: 0.32, stagger: 0.025, ease: 'power3.in' },
+              '+=0.12'
+            );
+            exitTl.to(
+              '.ldr_logo',
+              { opacity: 0, scale: 0.98, duration: 0.25, ease: 'power2.in' },
+              '<0.04'
+            );
+            exitTl.to(
+              '.ldr_curtain_top',
+              { yPercent: -105, duration: 0.85, ease: 'power3.inOut', force3D: true },
+              '-=0.06'
+            );
+            exitTl.to(
+              '.ldr_curtain_bottom',
+              { yPercent: 105, duration: 0.85, ease: 'power3.inOut', force3D: true },
+              '<'
+            );
+          };
+
+          // Stream real bytes & asset progress
+          preloadInitialAssets((realPercent) => {
+            gsap.to(displayProgress, {
+              val: realPercent,
+              duration: 0.35,
+              ease: 'power1.out',
+              overwrite: 'auto',
               onUpdate: () => {
-                if (numEl) {
-                  const rounded = Math.round(progressObj.val);
-                  numEl.textContent = `${rounded < 10 ? '0' : ''}${rounded}%`;
+                const current = Math.min(100, Math.max(0, Math.round(displayProgress.val)));
+                if (numEl) numEl.textContent = `${current < 10 ? '0' : ''}${current}%`;
+                if (barFill) barFill.style.transform = `scaleX(${current / 100})`;
+              },
+              onComplete: () => {
+                if (realPercent >= 100) {
+                  runExit();
                 }
               },
-            },
-            0.35
-          );
-
-          // Hold logo in full view with 100% complete (0.2s hold)
-
-          // 6. Exit: Corner tags slide down through masks
-          tl.to(
-            '.ldr_nm_el span',
-            { yPercent: 140, duration: 0.35, stagger: 0.03, ease: 'power3.in' },
-            '+=0.2'
-          );
-
-          // 7. Exit: Pristine center logo & progress bar clear cleanly
-          tl.to(
-            '.ldr_logo',
-            { opacity: 0, scale: 0.98, duration: 0.28, ease: 'power2.in' },
-            '<0.05'
-          );
-
-          // 6. Signature 120 FPS Dual-Split Curtain Sweep (pure GPU compositor thread)
-          tl.to(
-            '.ldr_curtain_top',
-            { yPercent: -105, duration: 1.05, ease: 'power3.inOut', force3D: true },
-            '-=0.08'
-          );
-          tl.to(
-            '.ldr_curtain_bottom',
-            { yPercent: 105, duration: 1.05, ease: 'power3.inOut', force3D: true },
-            '<'
-          );
+            });
+          }).then(() => {
+            gsap.to(displayProgress, {
+              val: 100,
+              duration: 0.2,
+              ease: 'power1.out',
+              onUpdate: () => {
+                const current = Math.min(100, Math.max(0, Math.round(displayProgress.val)));
+                if (numEl) numEl.textContent = `${current < 10 ? '0' : ''}${current}%`;
+                if (barFill) barFill.style.transform = `scaleX(${current / 100})`;
+              },
+              onComplete: () => {
+                runExit();
+              },
+            });
+          });
         };
 
         requestAnimationFrame(() => {
@@ -289,7 +308,7 @@ function useGlobalPointerVars() {
 function useCardSpotlight(active: boolean = true) {
   useEffect(() => {
     if (!active) return undefined;
-    const cards = [...document.querySelectorAll('.hero, .project-card, .hero-card')];
+    const cards = [...document.querySelectorAll('.hero, .project-card')];
     const cleanups = cards.map((card) => {
       let rect = null;
       const updateRect = () => {
@@ -874,9 +893,8 @@ function Hero({ preloaderDone = false }: { preloaderDone?: boolean }) {
             className="mt-4 hero-roller"
           />
         </div>
-        <aside className="hero-card" data-cursor="hover">
+        <aside className="hero-card">
           <div className="hero-spline-shell">
-            {preloaderDone && <Spotlight className="-top-40 left-0 md:left-20 md:-top-24" fill="white" />}
             {preloaderDone && (
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"

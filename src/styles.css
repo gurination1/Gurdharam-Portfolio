@@ -1926,7 +1926,7 @@ html.day footer .bg-black\/40 {
 .hero {
   position: relative;
   min-height: auto;
-  padding: clamp(4.6rem, 5.8vh, 5.4rem) clamp(1rem, 4vw, 4rem) clamp(1.8rem, 3vh, 2.6rem);
+  padding: clamp(5.4rem, 6.8vh, 6.2rem) clamp(1rem, 4vw, 4rem) clamp(1.8rem, 2.6vh, 2.4rem);
   overflow: hidden;
 }
 
@@ -2249,8 +2249,10 @@ footer {
   min-width: 0;
 }
 
+.hero-card::before,
 .hero-card::after {
-  display: none;
+  display: none !important;
+  content: none !important;
 }
 
 .hero-spline-shell {
@@ -2263,9 +2265,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 34px 70px rgba(0, 0, 0, 0.34));
-  mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
 }
 
 .hero-spline {
@@ -4326,8 +4325,6 @@ footer {
 
   .hero-spline-shell {
     min-height: clamp(380px, 43vw, 520px);
-    mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 94%, transparent 100%);
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 94%, transparent 100%);
   }
 
   .hero-spline {
@@ -4708,8 +4705,6 @@ footer {
   .hero-spline-shell {
     min-height: clamp(300px, 80vw, 390px);
     overflow: visible;
-    mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
   }
 
   .hero-spline {
