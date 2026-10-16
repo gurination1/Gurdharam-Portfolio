@@ -157,7 +157,7 @@ export default function BlogPostThreeJSOptimization() {
               • <a href="https://gurination1.github.io/bioprac/" target="_blank" rel="noopener noreferrer" className="text-[#38bdf8] hover:underline font-bold">BioPrac</a>: Features procedural GPU fog shaders and circular arc kinematics maintaining locked 60 FPS on iOS and Android viewports. Read the <Link to="/case-studies/bioprac" className="underline">BioPrac Three.js Case Study</Link>.
             </li>
             <li>
-              • <a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Dream Heights</a>: Renders an entire gated luxury residential community in 3D with Day/Night lighting and floorplan hotspots. Read the <Link to="/case-studies/dreamheights" className="underline">Dream Heights 3D Case Study</Link>.
+              • <a href="https://gurination1.github.io/solum-minerals/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Solum Minerals</a>: 3D bio-agritech digital twin with carbon particle GLSL shaders and Skiper9 preloader. Read the <Link to="/case-studies/solum-minerals" className="underline">Solum Minerals 3D Case Study</Link>.
             </li>
             <li>
               • <a href="https://gurination1.github.io/branders/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Branders</a>: Awwwards-grade luxury automotive atelier with interactive Forge preloader gate and continuous video-blend choreography. Read the <Link to="/case-studies/branders" className="underline">Branders 3D Case Study</Link>.

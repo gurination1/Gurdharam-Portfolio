@@ -221,7 +221,7 @@ export default function BlogPostAffordableWebsite() {
         {/* Section 4: Real Proof */}
         <section className="space-y-4 mb-14">
           <h2 className="text-2xl font-['Syne'] font-bold text-white">
-            4. Real Production Verification: Kirat Interior &amp; Dream Heights
+            4. Real Production Verification: Kirat Interior &amp; Branders 3D
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-[#9a958c]">
             Don&apos;t just take our word for it. Inspect real businesses running this exact architecture today:
@@ -231,7 +231,7 @@ export default function BlogPostAffordableWebsite() {
               • <a href="https://www.kiratinterior.com/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Kirat Interior</a>: Ranked #1 on Google in Bathinda for luxury modular furniture via our ₹7k Growth SEO tier. Read the <Link to="/case-studies/kirat-interior" className="underline">Kirat Interior Technical Case Study</Link>.
             </li>
             <li>
-              • <a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Dream Heights</a>: 3D spatial architectural digital twin with real-time Day/Night lighting engine. Read the <Link to="/case-studies/dreamheights" className="underline">Dream Heights 3D Case Study</Link>.
+              • <a href="https://gurination1.github.io/solum-minerals/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Solum Minerals</a>: Bio-agritech 3D digital twin platform with carbon encapsulation visualizer and Skiper9 preloader. Read the <Link to="/case-studies/solum-minerals" className="underline">Solum Minerals 3D Case Study</Link>.
             </li>
             <li>
               • <a href="https://gurination1.github.io/branders/" target="_blank" rel="noopener noreferrer" className="text-[#d4a853] hover:underline font-bold">Branders</a>: Awwwards-grade luxury automotive customization atelier with interactive Forge preloader and video-blend hero. Read the <Link to="/case-studies/branders" className="underline">Branders 3D Case Study</Link>.

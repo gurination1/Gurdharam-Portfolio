@@ -159,17 +159,10 @@ const PRICING_TIERS: PricingTier[] = [
       { title: 'Full SSR / SSG Prerendered Zero-Flicker Architecture', included: true },
       { title: 'Priority Developer Support & Quarterly Refresh Pass', included: true },
     ],
-    exampleName: 'Dream Heights, Branders & Solum Minerals',
-    exampleUrl: 'https://dreamheights-source.vercel.app/',
-    exampleNote: 'Luxury gated residences (Day/Night engine), Branders automotive 3D atelier & Solum Minerals carbon bio-fertilizers',
+    exampleName: 'Branders & Solum Minerals',
+    exampleUrl: 'https://gurination1.github.io/branders/',
+    exampleNote: 'Branders automotive 3D atelier & Solum Minerals carbon bio-fertilizers',
     demos: [
-      {
-        name: 'Dream Heights',
-        tag: 'REAL ESTATE 3D',
-        url: 'https://dreamheights-source.vercel.app/',
-        note: 'Luxury 2&3 BHK gated residences with real-time Day/Night lighting engine',
-        shortLabel: 'Dream Heights'
-      },
       {
         name: 'Branders',
         tag: 'AUTOMOTIVE 3D',
@@ -185,7 +178,7 @@ const PRICING_TIERS: PricingTier[] = [
         shortLabel: 'Solum Minerals'
       }
     ],
-    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 / $500 USD Ultra 3D Spatial Flagship Website like Dream Heights, Branders or Solum Minerals.",
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 / $500 USD Ultra 3D Spatial Flagship Website like Branders or Solum Minerals.",
     accentBorder: 'border-[#d4a853] shadow-[0_0_45px_rgba(212,168,83,0.25)]',
     accentBg: 'bg-[#18140c]/95',
   },
@@ -310,40 +303,6 @@ const SHOWCASE_ITEMS: ShowcaseItem[] = [
     inquiryMessage: "Hi Gurdharam, I want an interactive 3D website like NEOVRIT with Three.js and smooth scrolling.",
     internalCaseStudyUrl: '/case-studies/neovrit',
     internalCaseStudyLabel: 'NEOVRIT 3D SPECS'
-  },
-  {
-    id: 'dreamheights',
-    title: 'Dream Heights // Luxury Gated Residences (Bathinda)',
-    category: 'spatial-3d',
-    categoryLabel: 'ULTRA-LUXURY ARCHITECTURAL FLAGSHIP',
-    nicheRegion: 'Bathinda, Punjab',
-    nicheTags: ['Luxury Real Estate', 'Day/Night GLSL Engine', '2&3 BHK Penthouses'],
-    tierBadge: 'TIER: ₹20,000 [ULTRA 3D FLAGSHIP]',
-    tierColor: 'border-[#d4a853] bg-[#d4a853]/20 text-[#d4a853]',
-    liveUrl: 'https://dreamheights-source.vercel.app/',
-    displayUrl: 'dreamheights-source.vercel.app',
-    secondaryLiveUrl: 'https://framersite.vercel.app/',
-    secondaryDisplayUrl: 'framersite.vercel.app',
-    imageSrc: '/assets/showcase/dreamheights-pc.webp',
-    tagline: '"A place to live — to return year after year." — 2 & 3 BHK Gated Residences',
-    description: 'Premier gated luxury community on Malout-Badal Ring Road, Bathinda by Dream Land Promoters. Features bespoke 2 & 3 BHK residences, ground floor basements, penthouse duplexes, interactive Day/Night lighting atmosphere engine, saltwater pool, spa, jacuzzi, 24/7 security, difference cursor canvas, and custom Lenis + Barba smooth choreography.',
-    highlightDeliverables: [
-      { label: 'Residences', value: '2 & 3 BHK Gated Penthouses' },
-      { label: 'Lighting Engine', value: 'Day / Night Atmosphere Switcher' },
-      { label: 'Wellness Amenities', value: 'Saltwater Pool, Spa & Jacuzzi' },
-      { label: 'Location', value: 'Ring Road, Bathinda' }
-    ],
-    specs: [
-      'Interactive Day / Night lighting atmosphere switch with architectural pin hotspots',
-      'Bespoke editorial typography (Bodoni Moda & Pinyon Script) with difference cursor canvas',
-      'Lenis hardware-accelerated smooth scrolling with Barba page transition engine',
-      'Integrated VIP call booking modal & direct WhatsApp lead acquisition funnel'
-    ],
-    techPills: ['Day/Night Engine', 'Lenis Scroll', 'Barba.js', 'Typekit / Bodoni', 'WebGL Pins', 'Framer 3D'],
-    rateText: '₹20,000 (Flagship Spatial Tier)',
-    inquiryMessage: "Hi Gurdharam, I want a luxury architectural flagship website like Dream Heights (dreamheights-source.vercel.app).",
-    internalCaseStudyUrl: '/services/website-design-real-estate-builders',
-    internalCaseStudyLabel: 'REAL ESTATE 3D VERTICAL'
   },
   {
     id: 'branders',
@@ -984,7 +943,7 @@ export default function WebsitesShowcase() {
                   <td className="p-4 text-center text-[#9a958c]">Kirat Interior (Core)</td>
                   <td className="p-4 text-center text-[#d4a853] bg-[#d4a853]/5 font-bold">Kirat Interior (Live)</td>
                   <td className="p-4 text-center text-[#38bdf8]">BioPrac &amp; NEOVRIT</td>
-                  <td className="p-4 text-center text-[#d4a853] font-bold">Dream Heights, Branders &amp; Solum</td>
+                  <td className="p-4 text-center text-[#d4a853] font-bold">Branders &amp; Solum Minerals</td>
                 </tr>
               </tbody>
             </table>

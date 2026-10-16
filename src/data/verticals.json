@@ -535,7 +535,7 @@
     "parentPath": "/services/web-development",
     "parentName": "Web Development Services",
     "painPoint": "Real estate developers spend lakhs on outdoor hoardings and print brochures, but lose NRI and HNI buyers because their websites are static PDFs or sluggish WordPress templates.",
-    "example": "NRI investor searches 'Luxury Gated Residences Ring Road Bathinda' -> Explores Dream Heights 3D visualizer, toggles Day/Night lighting, views 2&3 BHK floorplans, and schedules VIP site tour via WhatsApp.",
+    "example": "NRI investor searches 'Luxury Gated Residences Ring Road' -> Explores interactive 3D spatial visualizer, toggles Day/Night lighting, views 2&3 BHK floorplans, and schedules VIP site tour via WhatsApp.",
     "roi": [
       { "metric": "NRI / HNI Engagement Time", "value": "5.8 Min", "detail": "Interactive Day/Night lighting engine and spatial 3D floorplans hold buyer attention 4x longer." },
       { "metric": "VIP Site Tour Inquiries", "value": "+190%", "detail": "Integrated VIP concierge booking modal routes high-intent buyers directly to developer sales leadership." },

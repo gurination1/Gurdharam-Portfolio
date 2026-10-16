@@ -373,7 +373,7 @@ const TIER_CONFIGS: Record<TierKey, TierConfig> = {
     highlightPill: '👑 Awwwards-Caliber 3D Spatial Environment',
     accentBorder: 'border-[#d4a853] shadow-[0_0_45px_rgba(212,168,83,0.25)]',
     accentBg: 'bg-[#18140c]/95',
-    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 Ultra 3D Spatial Flagship Website like Dream Heights.",
+    whatsappMessage: "Hi Gurdharam, I want to commission the ₹20,000 Ultra 3D Spatial Flagship Website like Branders or Solum Minerals.",
     features: [
       { title: 'Full Three.js WebGL / Framer Spatial Architecture', included: true },
       { title: '120 FPS Cinematic Camera Walkthroughs & Transitions', included: true },
@@ -411,26 +411,24 @@ const TIER_CONFIGS: Record<TierKey, TierConfig> = {
       }
     ],
     example: {
-      title: 'Dream Heights // Luxury Gated Residences (Bathinda)',
-      displayUrl: 'dreamheights-source.vercel.app',
-      liveUrl: 'https://dreamheights-source.vercel.app/',
-      secondaryUrl: 'https://gurination1.github.io/branders/',
-      secondaryLabel: 'BRANDERS 3D ATELIER',
-      tertiaryUrl: 'https://gurination1.github.io/solum-minerals/',
-      tertiaryLabel: 'SOLUM MINERALS 3D',
-      imageSrc: '/assets/showcase/dreamheights-pc.webp',
-      tagline: '"A place to live — to return year after year." — 2 & 3 BHK Gated Residences',
-      description: 'Premier gated luxury community on Malout-Badal Ring Road, Bathinda by Dream Land Promoters. Features bespoke 2 & 3 BHK residences, ground floor basements, penthouse duplexes, interactive Day/Night lighting atmosphere engine, saltwater pool, spa, jacuzzi, 24/7 security, difference cursor canvas, and custom Lenis + Barba smooth choreography.',
+      title: 'Branders // Bespoke Automotive Atelier & Custom Tuning Studio',
+      displayUrl: 'gurination1.github.io/branders',
+      liveUrl: 'https://gurination1.github.io/branders/',
+      secondaryUrl: 'https://gurination1.github.io/solum-minerals/',
+      secondaryLabel: 'SOLUM MINERALS 3D',
+      imageSrc: '/assets/showcase/branders-pc.webp',
+      tagline: '"For Those Who Refuse Ordinary" — Bespoke Styling & Performance Engineering',
+      description: 'Awwwards-caliber bespoke automotive customization atelier platform. Engineered with an authentic interactive Forge-style preloader gate, continuous hero video-blend choreography, Lenis 120Hz smooth kinetic scroll physics, flagship fleet showcase, and high-ticket consultation inquiry funnel.',
       deliverables: [
-        { label: 'Residences', value: '2 & 3 BHK Gated Penthouses' },
-        { label: 'Lighting Engine', value: 'Day / Night Atmosphere Switcher' },
-        { label: 'Wellness Amenities', value: 'Saltwater Pool, Spa & Jacuzzi' },
-        { label: 'Location', value: 'Ring Road, Bathinda' }
+        { label: 'Category', value: 'Bespoke Automotive Atelier' },
+        { label: 'Engine', value: 'Forge 3D & 120Hz Video-Blend' },
+        { label: 'Performance', value: 'Sub-second Zero Lag Flow' },
+        { label: 'Platform', value: 'Global Spatial Web' }
       ],
       specs: [
-        'Interactive Day / Night lighting atmosphere switch with architectural pin hotspots',
-        'Bespoke editorial typography with difference cursor canvas',
-        'Lenis hardware-accelerated smooth scrolling with Barba page transition engine'
+        'Interactive 3D Forge preloader with custom GLSL lighting shaders',
+        'Hardware-accelerated 120Hz video blend canvas and camera choreography',
+        'Lenis physics-based smooth scrolling and VIP inquiry funnel'
       ],
       rateText: '₹20,000 Flat'
     },
@@ -445,7 +443,7 @@ const TIER_CONFIGS: Record<TierKey, TierConfig> = {
       },
       {
         q: 'What real production clients have used this?',
-        a: 'Dream Heights (Malout-Badal Ring Road, Bathinda by Dream Land Promoters), Branders (Bespoke Automotive Atelier), Solum Minerals (Bio-Agritech Digital Twin), and our own studio headquarters flagship (Gurdharam.com).'
+        a: 'Branders (Bespoke Automotive Atelier), Solum Minerals (Bio-Agritech Digital Twin), and our own studio headquarters flagship (Gurdharam.com).'
       }
     ]
   }

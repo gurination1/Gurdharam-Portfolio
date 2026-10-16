@@ -518,7 +518,7 @@ const menuLinks = [
   {
     label: 'Websites & 3D Spatial',
     href: '/websites',
-    tagline: '₹5k–₹20k Flat Rates • Kirat Interior & Dream Heights 3D',
+    tagline: '₹5k–₹20k Flat Rates • Kirat Interior, Branders & Solum 3D',
   },
   {
     label: 'AI Automation & Bots',

@@ -322,7 +322,7 @@ const routes = [
           "@id": "https://www.gurdharam.com/websites#collection",
           "url": "https://www.gurdharam.com/websites",
           "name": "Website Development Rates (₹5,000 - ₹20,000) & Live Client Showcase",
-          "description": "Transparent website development rates and production client showcase: Kirat Interior (₹5k/₹7k), BioPrac (₹12k), NEOVRIT Studio (₹12k), and Dream Heights & Gurdharam.com (₹20k)."
+          "description": "Transparent website development rates and production client showcase: Kirat Interior (₹5k/₹7k), BioPrac (₹12k), NEOVRIT Studio (₹12k), Branders (₹20k), Solum Minerals (₹20k), and Gurdharam.com (₹20k)."
         }
       ]
     },
@@ -338,7 +338,8 @@ const routes = [
             <li><a href="https://www.kiratinterior.com/" target="_blank" rel="noopener noreferrer">Kirat Interior</a>: Bespoke luxury furniture & interior studio in Bathinda, Punjab. Hand-coded responsive UI with instant WhatsApp inquiries. <a href="/services/website-design-furniture-interior">[View Furniture & Interior Vertical]</a></li>
             <li><a href="https://gurination1.github.io/bioprac/" target="_blank" rel="noopener noreferrer">BioPrac Clinical Console</a>: Next-gen preventative healthcare platform with Three.js WebGL fog atmosphere, circular arc kinematics & 500+ biomarker telemetry. <a href="/services/3d-webgl-website-development">[View 3D WebGL Specs]</a></li>
             <li><a href="https://neovrit.vercel.app" target="_blank" rel="noopener noreferrer">NEOVRIT Studio</a>: 3D × AI agency web environment featuring Three.js WebGL GLTF model viewport and 120Hz smooth scrolling.</li>
-            <li><a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer">Dream Heights Luxury Residences</a>: Flagship real estate 3D platform with Day/Night lighting engine, interactive floorplans, and zero mobile lag. <a href="/services/website-design-real-estate-builders">[View Real Estate 3D Vertical]</a></li>
+            <li><a href="https://gurination1.github.io/branders/" target="_blank" rel="noopener noreferrer">Branders Bespoke Automotive Atelier</a>: Awwwards-grade luxury automotive customization atelier with interactive Forge preloader and 120Hz video-blend canvas. <a href="/case-studies/branders">[View Branders 3D Case Study]</a></li>
+            <li><a href="https://gurination1.github.io/solum-minerals/" target="_blank" rel="noopener noreferrer">Solum Minerals Bio-Agritech</a>: 3D digital twin platform with carbon particle GLSL shaders and Skiper9 preloader. <a href="/case-studies/solum-minerals">[View Solum Minerals 3D Case Study]</a></li>
             <li><a href="https://www.gurdharam.com">Gurdharam.com Headquarters</a>: Spatial engineering portfolio with procedural particle canvas, sub-500ms voice AI, and 100/100 Core Web Vitals.</li>
             <li><a href="/case-studies/doodhisaab">DoodHisaab Case Study</a>: Offline-first dairy management mobile application built with Flutter and on-device SQLite.</li>
             <li><a href="/case-studies/fasal-doctor">Fasal Doctor Case Study</a>: Agricultural computer vision application powered by on-device TensorFlow Lite neural diagnostics.</li>
@@ -722,8 +723,8 @@ const routes = [
           </ul>
         </section>
         <section>
-          <h2>Real-World Production Proof: Dream Heights & Gurdharam.com</h2>
-          <p>Inspect <a href="https://dreamheights-source.vercel.app/" target="_blank" rel="noopener noreferrer">Dream Heights</a> (luxury gated residences on Ring Road Bathinda with Day/Night lighting engine and saltwater pool visualizer) and <a href="https://www.gurdharam.com">Gurdharam.com</a> studio headquarters.</p>
+          <h2>Real-World Production Proof: Branders, Solum Minerals & Gurdharam.com</h2>
+          <p>Inspect <a href="https://gurination1.github.io/branders/" target="_blank" rel="noopener noreferrer">Branders</a> (bespoke automotive 3D atelier), <a href="https://gurination1.github.io/solum-minerals/" target="_blank" rel="noopener noreferrer">Solum Minerals</a> (3D bio-agritech digital twin), and <a href="https://www.gurdharam.com">Gurdharam.com</a> studio headquarters.</p>
         </section>
         <footer>
           <p><a href="/websites">View All Website Packages</a> | <a href="/services/website-design-real-estate-builders">Real Estate 3D Vertical</a> | <a href="/">Studio Home</a></p>
@@ -3000,45 +3001,6 @@ app.post('/api/webhook', async (req, res) => {
       </main>`
   },
   {
-    path: '/case-studies/dreamheights',
-    title: 'Dream Heights 3D Case Study | Gurdharam',
-    description: 'Architectural case study: Building Dream Heights 3D real estate digital twin with Day/Night lighting engine, floorplan pins, and zero mobile lag.',
-    canonical: 'https://www.gurdharam.com/case-studies/dreamheights',
-    jsonld: {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "TechArticle",
-          "@id": "https://www.gurdharam.com/case-studies/dreamheights#article",
-          "headline": "Dream Heights 3D Case Study: Real Estate Digital Twin & Day/Night Lighting",
-          "description": "Architectural case study: Building Dream Heights 3D real estate digital twin with Day/Night lighting engine, floorplan pins, and zero mobile lag.",
-          "author": {
-            "@type": "Person",
-            "@id": "https://www.gurdharam.com/#person",
-            "name": "Gurdharam Jeet Singh"
-          }
-        }
-      ]
-    },
-    html: `<main>
-        <header>
-          <span class="category-pill">Case Study · Real Estate Spatial 3D</span>
-          <h1>Dream Heights Case Study — 3D Spatial Digital Twin & Day/Night Lighting Engine</h1>
-          <p>Awwwards-caliber 3D spatial web platform for Dream Land Promoters' flagship gated luxury residences on Ring Road Bathinda. Real-time Day/Night lighting atmosphere engine, floorplan hotspots, and 120 FPS camera choreography.</p>
-        </header>
-        <section>
-          <h2>Quantified Real Estate Results</h2>
-          <ul>
-            <li>5.8 minute average dwell time for prospective NRI and HNI luxury home buyers</li>
-            <li>+190% increase in VIP site tour bookings via integrated WhatsApp concierge modal</li>
-            <li>Interactive Day/Night atmosphere switcher powered by custom WebGL GLSL shaders</li>
-            <li>100% compliant with Punjab RERA Act Sec 11(2) statutory disclosures</li>
-          </ul>
-        </section>
-        <footer><p><a href="/">Home</a> | <a href="/websites">Website Packages</a> | <a href="/services/luxury-3d-spatial-website-design">Spatial Flagship Package</a></p></footer>
-      </main>`
-  },
-  {
     path: '/case-studies/branders',
     title: 'Branders 3D Automotive Case Study | Gurdharam',
     description: 'Automotive 3D case study: Engineering the Branders luxury car atelier website with interactive Forge preloader, video-blend hero, and Lenis scroll.',
@@ -3696,7 +3658,6 @@ const masterFooter = `
               <ul>
                 <li><a href="/case-studies/kirat-interior">Kirat Interior Case Study</a></li>
                 <li><a href="/case-studies/bioprac">BioPrac 3D Fog Case Study</a></li>
-                <li><a href="/case-studies/dreamheights">Dream Heights 3D Case Study</a></li>
                 <li><a href="/case-studies/branders">Branders 3D Case Study</a></li>
                 <li><a href="/case-studies/solum-minerals">Solum Minerals 3D Case Study</a></li>
                 <li><a href="/case-studies/neovrit">NEOVRIT 3D Simulation Case Study</a></li>

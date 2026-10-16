@@ -24,6 +24,16 @@ module.exports = function handler(req, res) {
 
   if (req.method === 'POST') {
     console.log('Incoming WhatsApp Webhook Event:', JSON.stringify(req.body, null, 2));
+    // Forward directly to Railway enterprise WABA AI engine
+    try {
+      fetch('https://guribot-wa-production.up.railway.app/webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(req.body)
+      }).catch(err => console.error('Error forwarding to Railway:', err));
+    } catch (e) {
+      console.error('Fetch error:', e);
+    }
     return res.status(200).json({ status: 'ok' });
   }
 
