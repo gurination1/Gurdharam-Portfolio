@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 
 /**
- * 1:1 Implementation of ReGGae Canvas Cursor
+ * 1:1 Implementation of ReGGae Canvas Cursor (Dream Heights)
  * High-DPI hardware-accelerated difference canvas cursor
  * Features:
  * - 0 ghost dot on initial load (starts scale: 0, off-screen)
@@ -160,7 +160,7 @@ export const ReggaeCanvasCursor: React.FC = () => {
       });
     };
 
-    // Interactive element hover selectors matching Flagship + Portfolio
+    // Interactive element hover selectors matching Dream Heights + Portfolio
     const interactiveSelector = [
       'a', 'button', '[role="button"]', 'input', 'textarea', 'select', 'label',
       '.btn-circle', '.btn-circle_link', '[hover-nav-item]', '[data-hover]',

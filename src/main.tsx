@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import verticalsData from './data/verticals.json';
 import citiesData from './data/cities.json';
 import SchemaMarkup from './components/SchemaMarkup';
@@ -47,7 +47,7 @@ const WebsitesShowcase = lazy(() => import('./pages/websites'));
 const TierLandingPage = lazy(() => import('./pages/TierLandingPage'));
 const CaseStudyKiratInterior = lazy(() => import('./pages/case-study-kirat-interior'));
 const CaseStudyBioPrac = lazy(() => import('./pages/case-study-bioprac'));
-// const CaseStudyDreamHeights = lazy(() => import('./pages/case-study-dreamheights'));
+const CaseStudyDreamHeights = lazy(() => import('./pages/case-study-dreamheights'));
 const CaseStudyNeovrit = lazy(() => import('./pages/case-study-neovrit'));
 const CaseStudyBranders = lazy(() => import('./pages/case-study-branders'));
 const CaseStudySolumMinerals = lazy(() => import('./pages/case-study-solum-minerals'));
@@ -176,7 +176,7 @@ function Main() {
           <Route path="/case-studies/takemyinterview-ai" element={<TakeMyInterviewCaseStudy />} />
           <Route path="/case-studies/kirat-interior" element={<CaseStudyKiratInterior />} />
           <Route path="/case-studies/bioprac" element={<CaseStudyBioPrac />} />
-          <Route path="/case-studies/dreamheights" element={<Navigate to="/websites" replace />} />
+          <Route path="/case-studies/dreamheights" element={<CaseStudyDreamHeights />} />
           <Route path="/case-studies/neovrit" element={<CaseStudyNeovrit />} />
           <Route path="/case-studies/branders" element={<CaseStudyBranders />} />
           <Route path="/case-studies/solum-minerals" element={<CaseStudySolumMinerals />} />

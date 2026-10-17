@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { StaticRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { StaticRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/home';
 import AiAutomation from './pages/ai-automation';
@@ -42,7 +42,7 @@ import WebsitesShowcase from './pages/websites';
 import TierLandingPage from './pages/TierLandingPage';
 import CaseStudyKiratInterior from './pages/case-study-kirat-interior';
 import CaseStudyBioPrac from './pages/case-study-bioprac';
-// import CaseStudyDreamHeights from './pages/case-study-dreamheights';
+import CaseStudyDreamHeights from './pages/case-study-dreamheights';
 import CaseStudyNeovrit from './pages/case-study-neovrit';
 import CaseStudyBranders from './pages/case-study-branders';
 import CaseStudySolumMinerals from './pages/case-study-solum-minerals';
@@ -109,7 +109,7 @@ export function render(url: string) {
           <Route path="/case-studies/takemyinterview-ai" element={<TakeMyInterviewCaseStudy />} />
           <Route path="/case-studies/kirat-interior" element={<CaseStudyKiratInterior />} />
           <Route path="/case-studies/bioprac" element={<CaseStudyBioPrac />} />
-          <Route path="/case-studies/dreamheights" element={<Navigate to="/websites" replace />} />
+          <Route path="/case-studies/dreamheights" element={<CaseStudyDreamHeights />} />
           <Route path="/case-studies/neovrit" element={<CaseStudyNeovrit />} />
           <Route path="/case-studies/branders" element={<CaseStudyBranders />} />
           <Route path="/case-studies/solum-minerals" element={<CaseStudySolumMinerals />} />
